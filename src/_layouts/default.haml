@@ -3,5 +3,20 @@
     %head
         %title Project Ares Documentation
         %link{:href => "css/bootstrap.css", :rel => "stylesheet"}
+        %link{:href => "css/style.css", :rel => "stylesheet"}
     %body
+        .navbar.navbar-static-top
+            .navbar-inner
+                .container
+                    %a.brand{:href => ""}
+                        %img{:src => "https://oc.tc/assets/logo.png"}
+                        Project Ares Documentation
+                    .nav-collapse.collapse
+                        %ul.nav
+                            %li.active
+                                %a{:href => ""} Home
+                            %li
+                                %a{:href => ""} Modules
+                            %li
+                                %a{:href => ""} Examples
         = yield
