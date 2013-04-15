@@ -1,0 +1,70 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 Spawns
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Spawns are defined as follows.
+
+                        <spawns>
+                            <spawn team="red" kit="red" yaw="90">
+                                <cuboid min="-2,13,71" max="-9,13,78"/>
+                            </spawn>
+                            <spawn team="blue" kit="blue" yaw="-90">
+                                <cuboid min="2,13,-71" max="9,13,-78"/>
+                            </spawn>
+                            <default yaw="0">
+                                <cuboid min="-1,16,-1" max="2,20,2"/>
+                            </default>
+                        </spawns>
+
+                    The default element specifies where observers and players without a team spawn. There should only be a single default spawn.  
+                    `yaw=""` specifies what direction the player is looking horizontally from -180&deg; to 180&deg;. South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.  
+
+                    `TIP:` You can copy the yaw from the F3 screen in minecraft.  
+
+                    Multiple spawns from the same team can be grouped inside of a single `<spawns team="team name">` element. Spawn positions are picked randomly inside of the defined regions. The plugin will not validate the spawn position by default. Regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
+
+                    Spawn elements accept more that one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
+
+                        <spawns team="blue">
+                            <!-- Blue Team Spawn A -->
+                            <spawn yaw="270">
+                                <cuboid min="-58,4,-56" max="-56,4,-54"/>
+                            </spawn>
+                            <spawn yaw="0">
+                                <cuboid min="-62,4,-50" max="-64,4,-48"/>
+                            </spawn>
+                            <!-- Blue Team Spawn B -->
+                            <spawn yaw="90">
+                                <cuboid min="59,4,-54" max="57,4,-56"/>
+                            </spawn>
+                            <spawn yaw="0">
+                                <cuboid min="65,4,-48" max="63,4,-50"/>
+                            </spawn>
+                        </spawns>
+                        
+                        <!-- Example spawns from Harb -->
+                        <spawns>
+                            <spawns safe="true">
+                                <spawn team="blue" kit="blue" yaw="0">
+                                    <cuboid min="-15,32,-57" max="16,42,-32"/>
+                                    <point>0.5,33,-47.5</point>
+                                </spawn>
+                                <spawn team="red" kit="red" yaw="180">
+                                    <cuboid min="-15,32,33" max="16,42,58"/>
+                                    <point>0.5,33,48.5</point>
+                                </spawn>
+                            </spawns>
+                            <default yaw="90">
+                                <cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/>
+                            </default>
+                        </spawns>
+
+

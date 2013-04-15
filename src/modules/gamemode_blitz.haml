@@ -1,0 +1,23 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Modes
+.container
+    %section
+        .page-header
+            %h1 Blitz
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    The game will run for a specified amount of time, players will have to find and kill enemy players. Each player has a limited amount of lives, and after they are used up the player is moved to the observer team. The match ends after the specified amount of time, or when one team is eliminated. If the match timer ends before a team is eliminated the team with the most players remaining wins.
+
+                    [Time Formatters](/reference/formatting#time_formatters)
+
+                        <blitz>
+                            <!-- Time till the match ends in minutes -->
+                            <time>10m</time>        
+                            
+                            <!-- Amount of lives each player has-->
+                            <lives>1</lives>        
+                        </blitz>

@@ -2,8 +2,11 @@
 %html
     %head
         %title Project Ares Documentation
-        %link{:href => "css/bootstrap.css", :rel => "stylesheet"}
-        %link{:href => "css/style.css", :rel => "stylesheet"}
+        %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}
+        %link{:href => "/css/style.css", :rel => "stylesheet"}
+        %link{:href => "/js/highlight.js/styles/custom.css", :rel => "stylesheet"}
+        %script{:src => "/js/highlight.js/highlight.pack.js"}
+        %script hljs.initHighlightingOnLoad();
     %body
         .navbar.navbar-static-top
             .navbar-inner
@@ -14,9 +17,30 @@
                     .nav-collapse.collapse
                         %ul.nav
                             %li{:class => (current_page.include?("index") ? "active" : "")}
-                                %a{:href => "/"} Home
+                                %a{:href => "/"}
+                                    .i.icon-home
+                                    Home
                             %li{:class => (current_page.include?("modules") ? "active" : "")}
-                                %a{:href => "/modules"} Modules
+                                %a{:href => "/modules/main"}
+                                    .i.icon-th-large
+                                    Modules
+                            %li{:class => (current_page.include?("reference") ? "active" : "")}
+                                %a{:href => "/reference/inventory"}
+                                    .i.icon-book
+                                    Reference
                             %li{:class => (current_page.include?("examples") ? "active" : "")}
-                                %a{:href => "/examples"} Examples
+                                %a{:href => "/examples"}
+                                    .i.icon-file
+                                    Examples
         = yield
+        .container
+            %hr
+            %footer
+                %ul.nav.nav-pills
+                    %li.pull-left
+                        %a &copy; 2013 Project Ares
+                    %li.pull-right
+                        %a{:href => "maps.oc.tc"} Maps
+                    %li.pull-right
+                        %a{:href => "oc.tc/revisions"}
+                            Revisions

@@ -1,0 +1,54 @@
+.jumbotron.subhead
+    .container
+        %h1 Reference
+        /%p.lead Main map element
+.container
+    %section
+        .page-header
+            %h1 Formatting Codes
+        .row
+            = partial('reference_sidebar')
+            .span9
+                :markdown
+                    ##### Colours
+
+                        0 BLACK
+                        1 DARK_BLUE
+                        2 DARK_GREEN
+                        3 DARK_AQUA
+                        4 DARK_RED
+                        5 DARK_PURPLE
+                        6 GOLD
+                        7 GRAY
+                        8 DARK_GRAY
+                        9 BLUE
+                        a GREEN
+                        b AQUA
+                        c RED
+                        d LIGHT_PURPLE
+                        e YELLOW
+                        f WHITE        
+
+                    <br/>
+                    ##### Text
+
+                        k MAGIC
+                        l BOLD
+                        m STRIKETHROUGH
+                        n UNDERLINE
+                        o ITALIC
+
+                    Copied from: [bukkit docs - Chat Color](http://jd.bukkit.org/doxygen/d7/dc0/enumorg_1_1bukkit_1_1ChatColor.html)  
+                    See: [bukkit docs - Dye Colour](http://jd.bukkit.org/doxygen/d2/d1c/enumorg_1_1bukkit_1_1DyeColor.html) for valid wool and dye color names.
+
+                    <br/>
+                    ##### [Time Formatters](id:time_formatters)
+
+                    Time Values with no formatter default to seconds.
+
+                        y Year
+                        mo Month
+                        d Day
+                        h Hour
+                        m Minute
+                        s Seconds

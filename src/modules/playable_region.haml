@@ -1,0 +1,23 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 TNT
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    The playable region is defined as follows. Playable regions prevent any playing player from exiting or doing anything outside off the region. It also blocks damage from TNT, mobs, etc.
+
+                        <playable>
+                            <region name="main-area"/>
+                        </playable>
+
+                    Of course you will first need to create a region with `name="main-area"` or directly use a [region](/modules/regions) area.
+
+                        <playable>
+                            <cuboid min="-32,0,33" max="33,20,-32"/>
+                        </playable>

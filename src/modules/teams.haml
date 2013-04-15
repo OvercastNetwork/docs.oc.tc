@@ -1,0 +1,22 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Settings
+.container
+    %section
+        .page-header
+            %h1 Teams
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Setup the teams, their names and represented colours. See [bukkit colours](#colours_S) for valid team colours. The player limit for each team is defined inside of the `max=""` attribute. Teams can have a custom overhead colour with the `overhead-color=""` attribute.  
+
+                    `NOTE:` It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
+
+                        <teams>
+                           <team color="dark red" max="50">Red Team</team>
+                           <team color="blue" max="50">Blue Team</team>
+                        </teams>
+
+                    Don't forget that the total maximum number of players in the above example is 100. Maps currently have a player limit of 150, so 100 players in total would allow 50 observers.

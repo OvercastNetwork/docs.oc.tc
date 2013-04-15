@@ -1,0 +1,164 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 Regions
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    The area a region applies too is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates.
+
+                        <!-- Note that Y is the up/down axis in minecraft -->
+                        
+                        <rectangle name="something" min="X1,Z1" max="X2,Z2"/>
+                        <!-- A Rectangle from X1,Z1 to X2,Z2 -->
+                        
+                        <cuboid name="something" min="X1,Y1,Z1" max="X2,Y2,Z2"/>
+                        <!-- A rectangular solid from X1,Y1,Z1 to X2,Y2,Z2 -->
+                        
+                        <circle name="something" center="X1,Z1," radius="R"/>
+                        <!-- A circle located at X1,Z1 with a radius of R -->
+                        <!-- Goes from 0 to map height, i.e. PGM doesn't check the players Y position -->
+                        
+                        <cylinder name"something" base="X1,Y1,Z1" radius="R" height="H"/>
+                        <!-- A cylinder located at X1,Z1,Y1 with a radius of R and a height of H -->    
+                        
+                        <sphere name"something" origin="X1,Y1,Z1" radius="R"/>
+                        <!-- A sphere located at X1,Y1,Z1 with a radius of R -->
+                        
+                        <block>X,Y,Z</block>
+                        <!-- A single block located at | X,Y,Z -->
+                        
+                        
+                        <!-- Region area and combination attributes -->
+                        name="name"
+
+
+
+                    Regions can be grouped inside of `<apply>` elements or region combination elements.  
+                    Filters and kits are applied to regions as attributes of the `<apply>` element.
+
+                        <apply><region1>..</apply>
+                        
+                        
+                        <!-- Attributes of the <apply> element -->
+                        
+                        enter="filter name"
+                        <!-- Filter player enter events-->
+                        
+                        exit="filter name"
+                        <!-- Filter player exit events-->
+                        
+                        block="filter name"
+                        <!-- Filter block place and break events-->
+                        
+                        block-place="filter name"
+                        <!-- Filter block place events-->
+                        
+                        block-break="filter name"
+                        <!-- Filter block break events-->
+                        
+                        use="filter name"
+                        <!-- Filter right-click events-->
+                        
+                        kit="kit name"
+
+                    Example kit region from [Anathema](https://maps.oc.tc/Anathema/map.xml).
+
+                        <!-- Give a kit to players entering the region -->
+                        <apply kit="knight">
+                            <region name="r-knight"/>
+                            <region name="b-knight"/>
+                        </apply>
+
+
+                    Similar to [kits](/modules/kits) regions are referenced by their `name=""`.
+                    To use regions in spawns, portals etc reference them by their name.
+
+                        <!-- Referencing a named region -->
+                        <region name="region name"/>
+
+
+                    `TIP:` Use the worldedit wand to help in defining regions, select an area and do /size. It will display two 3D coordinates. To use these coordinates you will have to add 1 to the greater axis of the coordinates. In other words; take whichever X value is higher and add 1 to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for any elements with just one coordinate such as: `<block>` or `<sphere>`.
+
+                    For example : `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,-5"`.
+                    <!--![Regions](./images/selections.png)-->
+
+                    <br>
+                    ####[Example regions](id:regionExamples_S)
+
+                        <filter name="only-blue" parents="deny-players">
+                            <allow><team>blue</team></allow>
+                        </filter>
+
+                        <regions>
+                            <!-- Blue Team Base -->
+                            <!-- This cuboid region has the filter named 'only-blue' applied to it. -->
+                            <apply enter="only-blue" message="You may not enter the enemy team's base!">
+                                <cuboid min="49,13,4" max="37,10,-4"/>
+                            </apply>
+                            <apply block="deny-all" message="You may not modify the base!">
+                                <cuboid min="50,14,-5" max="36,7,5"/>
+                            </apply>
+                            
+                            <!-- Blue Team Tree -->
+                            <apply block="deny-all" message="This tree is protected, go figure.">
+                                <cylinder base="83.5,0,-47.5" radius="4" height="40"/>
+                            </apply>
+                        </regions>
+
+                    Example regions from Harb using [region combinations](#regionCombinations_S):
+
+                        <regions>
+                            <rectangle name="main-area" min="-50,-32" max="51,33"/>
+                            <union name="bases">
+                                <rectangle name="blue-base" min="-20,-62" max="21,-32"/>
+                                <rectangle name="red-base" min="-20,33" max="21,63"/>
+                            </union>
+                            <complement name="portals-area">
+                                <rectangle min="-56,-2" max="57,3"/>
+                                <region name="main-area"/>
+                            </complement>
+                            <apply block="deny-all">
+                                <!-- Protect portal areas -->
+                                <region name="portals-area"/>
+                            </apply>
+                            <apply block="no-tnt" message="You may not place TNT in the bases.">
+                                <region name="bases"/>
+                            </apply>
+                        </regions>
+
+                    <br>
+                    ####[Region Combinations](id:regionCombinations_S)
+
+                    Regions can be inverted, combined, subtracted, or intersected by putting them inside of the following elements.
+
+                        <negative><region></negative>
+                        <!-- Inverse of a region -->
+                           
+                        <union><region1><region2></union>
+                        <!-- Combination of multiple regions -->
+                           
+                        <complement><region1><region2>..</complement>
+                        <!-- Subtracts successive regions from the first defined region -->
+                           
+                        <intersect><region1><region2>...</intersect>
+                        <!-- Returns the area that multiple regions intersect with -->
+
+                    ![Region Combinations .png](/img/regions.png)
+
+                    Example:
+
+                        <regions>
+                            <!-- Blue Team Base -->
+                            <apply enter="only-blue" message="You may not enter the enemy team's base!">
+                                <union>
+                                    <cuboid min="-20,8,-75" max="11,41,-79"/>
+                                    <cuboid min="8,8,-80" max="13,41,-75"/>
+                                </union>
+                            </apply>
+                        </regions>

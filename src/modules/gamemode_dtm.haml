@@ -1,0 +1,24 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Modes
+.container
+    %section
+        .page-header
+            %h1 Destroy the Monument
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Players have to locate and destroy certain objects from the enemy team, such as an obsidian pillar, etc. Teams win after a specified percentage of the enemy teams destroyables are destroyed. Teams can have multiple destroyables and they can be made out of multiple materials. Multiple materials should be separated with a semicolon `;`.
+
+                        <destroyables name="Monument" materials="obsidian" completion="100%">
+                            <destroyable owner="blue">
+                               <cuboid min="46,16,26" max="45,14,25"/>
+                            </destroyable>
+                            <destroyable owner="red">
+                               <cuboid min="-44,16,-24" max="-45,14,-25"/>
+                            </destroyable>
+                        </destroyables>
+
+                    Completion specifies how much of the material inside of the region must be removed for it to count as destroyed. This means that if the destroyable is 50% obsidian, and 50% wood and completion is set to 100%; then all the obsidian must be removed. The plugin won't care 1&cent; about the wood.
