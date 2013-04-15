@@ -1,0 +1,43 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Settings
+.container
+    %section
+        .page-header
+            %h1 Other Settings
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through.
+
+                        <timelock>on</timelock>  <!-- Defaults to off -->
+
+                    <br/>
+                    Set the max build height, this can also be accomplished with the [playable region](/modules/playable_region).
+
+                        <maxbuildheight>38</maxbuildheight>
+
+                    <br/>
+                    Change friendly fire, this will allow teammates to shoot each-other, instead of the arrow being absorbed.
+
+                        <friendlyfire>on</friendlyfire> <!-- Defaults to off -->
+
+                    <br/>
+                    The maps difficulty can be specified from 0 (peaceful) to 3 (hard). If not specified it defaults to the default worlds difficulty. This mainly influences a players food bar.
+
+                        <difficulty>1</difficulty>
+                    
+                    <br/>
+                    Specify if a player can starve to death, usually used with the difficulty setting.
+                        
+                        <hunger>
+                            <depletion>off</depletion>
+                        </hunger>
+
+                    <br/>
+                    The multitrade module allows multiple people to trade with the same villager.
+
+                        <multitrade/>
+

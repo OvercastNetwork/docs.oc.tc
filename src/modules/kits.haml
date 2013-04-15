@@ -1,0 +1,30 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Settings
+.container
+    %section
+        .page-header
+            %h1 Kits
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. Kits are referenced by their `name=""` from [spawns](/modules/spawns) and [regions](/modules/regions).
+
+
+                        <kits>
+                            <kit name="spawn">
+                                <item slot="0">iron sword</item>
+                                <item slot="8" amount="32">bread</item>
+                                <potion duration="5" amplifier="1">heal</potion>
+                            </kit>
+                            <kit name="red" parents="spawn">
+                                <helmet color="cd0000">leather helmet</helmet>
+                            </kit>
+                            <kit name="blue" parents="spawn">
+                                <helmet color="0066cc">leather helmet</helmet>
+                            </kit>
+                        </kits>
+
+                    In the example above players from blue team will get a blue helmet, players from red team will get a red helmet; both teams will get the items from the spawn kit. The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
