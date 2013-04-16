@@ -17,7 +17,7 @@
 
                     Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you need to apply them to regions for them to do something. Filters can inherit filters using the `parents=""` attribute.
 
-                    <br>
+                    <br/>
                     ####Predefined Filters
 
                         allow-all / deny-all
@@ -47,15 +47,16 @@
                         allow-mobs / deny-mobs
                         <!-- allows or denies all mobs spawns, regardless of type -->
 
-                    <br>
+                    <br/>
                     ####Filter Exceptions
                     Filters can have exceptions such as blocking all player access and then allowing a certain team access. Exceptions are put inside of `<allow>` or `<deny>` elements.
 
                         <!-- Exception elements -->
                         <team>team name</team>
                         <block>block name</block>
-                        
-                    Example:
+                    
+                    <br/>
+                    Example
 
                         <filter name="only-red" parents="deny-players">
                             <allow><team>red</team></allow>
@@ -69,12 +70,13 @@
                             <deny><block>TNT</block></deny>
                         </filter>
 
-                    <br>
-                    ####[Void Filter](id:voidFilter_S)
+                    <br/>
+                    ####[Void Filter](id:voidFilter)
 
                     If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
                     The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
 
+                    <br/>
                     Example from [RFV3](https://maps.oc.tc/RFV3/map.xml)
 
                         <filters>

@@ -5,12 +5,14 @@
 .container
     %section
         .page-header
-            %h1 TNT
+            %h1 Playable Region
         .row
             = partial('modules_sidebar')
             .span9
                 :markdown
                     The playable region is defined as follows. Playable regions prevent any playing player from exiting or doing anything outside off the region. It also blocks damage from TNT, mobs, etc.
+
+                    This can also be accomplished with a regular [region](/modules/regions) and the correct [filters](/modules/filters).
 
                         <playable>
                             <region name="main-area"/>
