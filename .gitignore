@@ -4,3 +4,4 @@
 /vendor/bundle
 .ruby-version
 .bundle/config
+/build/
