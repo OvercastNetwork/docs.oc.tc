@@ -18,19 +18,19 @@
                         %ul.nav
                             %li{:class => (current_page.include?("index") ? "active" : "")}
                                 %a{:href => "/"}
-                                    .i.icon-home
+                                    %i.icon-home
                                     Home
                             %li{:class => (current_page.include?("modules") ? "active" : "")}
                                 %a{:href => "/modules/main"}
-                                    .i.icon-th-large
+                                    %i.icon-th-large
                                     Modules
                             %li{:class => (current_page.include?("reference") ? "active" : "")}
                                 %a{:href => "/reference/inventory"}
-                                    .i.icon-book
+                                    %i.icon-book
                                     Reference
                             %li{:class => (current_page.include?("examples") ? "active" : "")}
                                 %a{:href => "/examples"}
-                                    .i.icon-file
+                                    %i.icon-file
                                     Examples
         = yield
         .container
