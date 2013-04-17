@@ -2,6 +2,7 @@
 # (haml and sass are included by default)
 # require 'slim'
 # require 'coffee-script'
+require 'securerandom'
 
 configuration.preview_server_port = 4000
 configuration.default_template_engine = :haml
