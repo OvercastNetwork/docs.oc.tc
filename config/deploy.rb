@@ -31,6 +31,6 @@ namespace :deploy do
     end
 
     task :build_code, :except => { :no_release => true } do
-        run "bundle exec staticmatic build #{latest_release}"
+        run "cd #{latest_release} && bundle exec staticmatic build"
     end
 end

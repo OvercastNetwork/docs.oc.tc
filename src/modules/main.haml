@@ -1,7 +1,7 @@
 .jumbotron.subhead
     .container
         %h1 Modules
-        /%p.lead Map XML Modules
+        %p.lead Main Map Element
 .container
     %section
         .page-header
@@ -11,9 +11,9 @@
             .span9
                 :markdown
                     Every map XML file must contain the base `<map>` module.
-                    
+
                     It specifies what version of PGM plugin the XML file was created for; the map name, version, objective, authors and contributors.
-                    
+
                         <?xml version="1.0"?>
                         <map proto="1.3.0"> <!-- Failsafe to prevent old versions of PGM from loading newer maps -->
                         <name>Map Name</name> <!-- The maps name, shouldn't be too long -->
@@ -26,7 +26,7 @@
                         <contributors>
                             <contributor contribution="A contribution">aHelper</contributor>
                         </contributors>
-                        
+
                         <!-- Map modules, i.e. objectives, regions, spawns. -->
-                        
+
                         </map>
