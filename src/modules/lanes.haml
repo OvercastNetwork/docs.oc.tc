@@ -1,0 +1,27 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 Lanes
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Lanes are used in CTW style maps with two parallel lanes for the teams. They prevent players from leaving their teams lane and entering the enemies.
+
+                    <br/>
+                    Example from [Parallax](https://maps.oc.tc/Parallax)
+
+                        <lanes>
+                            <lane team="blue">
+                                <region name="blue-lane-total"/>
+                                <region name="blue-spawn-rooms"/>
+                            </lane>
+                            <lane team="red">
+                                <region name="red-lane-total"/>
+                                <region name="red-spawn-rooms"/>
+                            </lane>
+                        </lanes>

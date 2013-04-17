@@ -1,0 +1,96 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 Filters
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    
+                        <filters>
+                            <filter name="no-world" parents="deny-world"></filter>
+                        </filters>
+
+                    Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you need to apply them to regions for them to do something. Filters can inherit filters using the `parents=""` attribute.
+
+                    <br/>
+                    ####Predefined Filters
+
+                        allow-all / deny-all
+                        <!-- allows or denies every filter -->
+                        
+                        allow-players / deny-players
+                        <!-- allow or deny player access -->
+                        
+                        allow-blocks / deny-blocks
+                        <!-- allow or deny placement and breaking of blocks -->
+                        
+                        allow-place / deny-place
+                        <!-- allow or deny placement of blocks -->
+                        
+                        allow-break / deny-break
+                        <!-- allow or deny breaking of blocks -->
+                        
+                        allow-world / deny-world
+                        <!-- allow or deny block transformations such as fire spread, water flowing, etc -->
+                        
+                        allow-spawns / deny-spawns
+                        <!-- allows or denies player spawns -->
+                        
+                        allow-entities / deny-entities
+                        <!-- determines if entities will be allowed -->
+                        
+                        allow-mobs / deny-mobs
+                        <!-- allows or denies all mobs spawns, regardless of type -->
+
+                    <br/>
+                    ####Filter Exceptions
+                    Filters can have exceptions such as blocking all player access and then allowing a certain team access. Exceptions are put inside of `<allow>` or `<deny>` elements.
+
+                        <!-- Exception elements -->
+                        <team>team name</team>
+                        <block>block name</block>
+                    
+                    <br/>
+                    Example
+
+                        <filter name="only-red" parents="deny-players">
+                            <allow><team>red</team></allow>
+                        </filter>
+                        
+                        <filter name="gold-blocks" parents="deny-block">
+                            <allow><block>gold block</block></allow>
+                        </filter>
+                        
+                        <filter name="no-tnt" parents="allow-all">
+                            <deny><block>TNT</block></deny>
+                        </filter>
+
+                    <br/>
+                    ####[Void Filter](id:voidFilter)
+
+                    If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
+                    The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
+
+                    <br/>
+                    Example from [RFV3](https://maps.oc.tc/RFV3/map.xml)
+
+                        <filters>
+                            <filter name="no-void" parents="allow-all">
+                                <deny><void/></deny>
+                            </filter>
+                        </filters>
+
+                        <regions>
+                            <apply block="no-void" message="You may not edit the void area">
+                                <negative>
+                                 <rectangle min="-14,-12" max="15,13"/>
+                                 <region name="portals"/>
+                                </negative>
+                            </apply>
+                        </regions>
+

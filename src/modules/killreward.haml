@@ -1,0 +1,24 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Filters & Regions
+.container
+    %section
+        .page-header
+            %h1 Kill Reward
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    The kill reward module allows a player to get an item when they kill someone. The parameters are wrapped in a `<killreward>` block.
+                    So far, the only reward availible is an `<item>`.
+
+                    `e.g.` This module can be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armour, etc.
+
+                    <br/>
+                    Example
+
+                        <!-- Kill Reward from Rift XML -->
+                        <killreward>
+                            <item amount="2">emerald</item>
+                        </killreward>
