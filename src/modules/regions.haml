@@ -24,10 +24,10 @@
                         <!-- A circle located at X1,Z1 with a radius of R -->
                         <!-- Goes from 0 to map height, i.e. PGM doesn't check the players Y position -->
                         
-                        <cylinder name"something" base="X1,Y1,Z1" radius="R" height="H"/>
+                        <cylinder name="something" base="X1,Y1,Z1" radius="R" height="H"/>
                         <!-- A cylinder located at X1,Z1,Y1 with a radius of R and a height of H -->    
                         
-                        <sphere name"something" origin="X1,Y1,Z1" radius="R"/>
+                        <sphere name="something" origin="X1,Y1,Z1" radius="R"/>
                         <!-- A sphere located at X1,Y1,Z1 with a radius of R -->
                         
                         <block>X,Y,Z</block>
@@ -37,8 +37,12 @@
                         <!-- Region area and combination attributes -->
                         name="name"
 
+                    `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
 
+                    For example : `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,-5"`.
+                    <!--![Regions](./images/selections.png)-->
 
+                    <br/>
                     Regions can be grouped inside of `<apply>` elements or region combination elements.  
                     Filters and kits are applied to regions as attributes of the `<apply>` element.
 
@@ -48,24 +52,25 @@
                         <!-- Attributes of the <apply> element -->
                         
                         enter="filter name"
-                        <!-- Filter player enter events-->
+                        <!-- Filter player enter events -->
                         
                         exit="filter name"
-                        <!-- Filter player exit events-->
+                        <!-- Filter player exit events -->
                         
                         block="filter name"
-                        <!-- Filter block place and break events-->
+                        <!-- Filter block place and break events -->
                         
                         block-place="filter name"
-                        <!-- Filter block place events-->
+                        <!-- Filter block place events -->
                         
                         block-break="filter name"
-                        <!-- Filter block break events-->
+                        <!-- Filter block break events -->
                         
                         use="filter name"
-                        <!-- Filter right-click events-->
+                        <!-- Filter right-click events -->
                         
                         kit="kit name"
+                        <!-- Give a kit to players entering the region -->
 
                     <br/>
                     Example kit region from [Anathema](https://maps.oc.tc/Anathema/map.xml).
@@ -77,17 +82,12 @@
                         </apply>
 
 
-                    Similar to [kits](/modules/kits) regions are referenced by their `name=""`.
+                    Similar to kits regions are referenced by their `name=""`.
                     To use regions in spawns, portals etc reference them by their name.
 
                         <!-- Referencing a named region -->
                         <region name="region name"/>
 
-
-                    `TIP:` Use the worldedit wand to help in defining regions, select an area and do /size. It will display two 3D coordinates. To use these coordinates you will have to add 1 to the greater axis of the coordinates. In other words; take whichever X value is higher and add 1 to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for any elements with just one coordinate such as: `<block>` or `<sphere>`.
-
-                    For example : `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,-5"`.
-                    <!--![Regions](./images/selections.png)-->
 
                     <br/>
                     ####[Example regions](id:regionExamples)
