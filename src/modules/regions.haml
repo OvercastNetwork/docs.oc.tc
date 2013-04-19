@@ -46,7 +46,7 @@
                     Regions can be grouped inside of `<apply>` elements or region combination elements.  
                     Filters and kits are applied to regions as attributes of the `<apply>` element.
 
-                        <apply><region1>..</apply>
+                        <apply><region name="region1"/>..</apply>
                         
                         
                         <!-- Attributes of the <apply> element -->
@@ -139,16 +139,16 @@
 
                     Regions can be inverted, combined, subtracted, or intersected by putting them inside of the following elements.
 
-                        <negative><region></negative>
+                        <negative><region name="opti-region"/></negative>
                         <!-- Inverse of a region -->
                            
-                        <union><region1><region2></union>
+                        <union><region name="region1"/><region name="region2"/>..</union>
                         <!-- Combination of multiple regions -->
                            
-                        <complement><region1><region2>..</complement>
+                        <complement><region name="region1"/><region name="region2"/>..</complement>
                         <!-- Subtracts successive regions from the first defined region -->
                            
-                        <intersect><region1><region2>...</intersect>
+                        <intersect><region name="region1"/><region name="region2"/>..</intersect>
                         <!-- Returns the area that multiple regions intersect with -->
 
                     ![Region Combinations .png](/img/regions.png)
