@@ -141,3 +141,12 @@ a.brand img {
 hr {
     border-top-color: #BBB;
 }
+
+code {
+   padding: 1px 4px;
+}
+
+.right-ref-link {
+    float: right;
+    margin-left: 8px;
+}

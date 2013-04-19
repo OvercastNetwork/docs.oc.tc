@@ -1,0 +1,197 @@
+.jumbotron.subhead
+    .container
+        %h1 Examples
+        %p.lead XML File Examples
+.container
+    %section
+        .page-header
+            %h1 Harb
+        .row
+            = partial('examples_sidebar')
+            .span9
+                :markdown
+                    >If you're interested in the backstory of harb read: [The Story of Harb](https://oc.tc/forums/topics/50eba925f344228923000196) - By SH4D0W_HAWK
+
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/main)
+                    Specify the XML file version and then open the main map module and specify the maps name, version and objective.
+
+                        <?xml version="1.0"?>
+
+                        <map proto="1.3.0">
+                        <name>Harb</name>
+                        <version>1.3.2</version>
+                        <objective>Be the team with the least amount of deaths after 10 minutes.</objective>
+
+                    <br/>
+                    This map has 2 major authors specified and no contributors.
+
+                        <authors>
+                            <author>SH4D0W_HAWK</author>
+                            <author>Plastix</author>
+                        </authors>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/teams)
+                    Define two teams, their [colors](/reference/formatting) and names.
+
+                        <teams>
+                            <team color="blue" max="50">Blue Team</team>
+                            <team color="dark red" max="50">Red Team</team>
+                        </teams>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/filters)
+                    Custom filter definition that denies TNT blocks. When applied to a region with `block=""` it denies placing and breaking. To only deny placing apply it with `block-place=""`.
+
+                        <filters>
+                            <filter name="no-tnt" parents="allow-all">
+                                <deny><block>TNT</block></deny>
+                            </filter>
+                        </filters>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/regions)
+                    Define several named regions. Apply the `no-tnt` filter to the region named `bases` and `deny-all` block placing/breaking to the `portals-area` region.
+
+                        <regions>
+                            <rectangle name="main-area" min="-50,-32" max="51,33"/>
+                            <union name="bases">
+                                <rectangle name="blue-base" min="-20,-62" max="21,-32"/>
+                                <rectangle name="red-base" min="-20,33" max="21,63"/>
+                            </union>
+                            <complement name="portals-area">
+                                <rectangle min="-56,-2" max="57,3"/>
+                                <region name="main-area"/>
+                            </complement>
+
+                            <apply block="deny-all"> <!-- protect portal areas -->
+                                <region name="portals-area"/>
+                            </apply>
+                            <apply block="no-tnt" message="You may not place TNT in the bases.">
+                                <region name="bases"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/playable_region)
+                    This playable area consists of multiple regions that are combined. These regions are defined in the `<regions>` module and are referenced here by their name.
+
+                        <playable>
+                            <region name="main-area"/>
+                            <region name="bases"/>
+                            <region name="portals-area"/>
+                        </playable>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/kits)
+                    Each team kit has leather armour coloured in their team color and they inherit the main spawn kit.
+
+                        <kits>
+                            <kit name="spawn">
+                                <item slot="0">stone sword</item>
+                                <item slot="1" enchantment="arrow infinite:1">bow</item>
+                                <item slot="28" amount="1">arrow</item>
+                                <item slot="3" amount="64">cooked chicken</item>
+                                <item slot="2" amount="2">TNT</item>
+                                <item slot="5" amount="32">ladder</item>
+                                <item slot="4" amount="3">golden apple</item>
+                                <item slot="6" name="TNT Defuser" lore="`7Right click to defuse teammate's TNT">shears</item>
+                                <item slot="7" damage="8194">potion</item> <!-- potion of swiftness 1 -->
+                                <potion duration="5">heal</potion>
+                                <potion duration="10">damage resistance</potion>
+                            </kit>
+                            <kit name="red" parents="spawn">
+                                <helmet color="cd0000">leather helmet</helmet>
+                                <chestplate color="cd0000" enchantment="protection explosions:3">leather chestplate</chestplate>
+                                <leggings color="cd0000">leather leggings</leggings>
+                                <boots color="cd0000">leather boots</boots>
+                            </kit>
+                            <kit name="blue" parents="spawn">
+                                <helmet color="0066cc">leather helmet</helmet>
+                                <chestplate color="0066cc" enchantment="protection explosions:3">leather chestplate</chestplate>
+                                <leggings color="0066cc">leather leggings</leggings>
+                                <boots color="0066cc">leather boots</boots>
+                            </kit>
+                        </kits>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/spawns)
+                    Harb has pretty unique spawns in that they are cuboids covering a large area of the map that transverse multiple Z levels. This allows players to spawn on roofs and inside buildings. Because of this `safe="true"` is specified to prevent players from spawning midair or in walls. The `<point>` definition is a failsafe in case the PGM plugin can't find a safe spawn inside the region.
+
+                        <spawns>
+                            <spawns safe="true">
+                                <spawn team="blue" kit="blue" yaw="0">
+                                    <cuboid min="-15,32,-57" max="16,42,-32"/>
+                                    <point>0.5,33,-47.5</point>
+                                </spawn>
+                                <spawn team="red" kit="red" yaw="180">
+                                    <cuboid min="-15,32,33" max="16,42,58"/>
+                                    <point>0.5,33,48.5</point>
+                                </spawn>
+                            </spawns>
+                            <default yaw="90"><cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/></default>
+                        </spawns>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/portals)
+                    These portals link two opposite sides of the map together. They move the players current position by 110 blocks so that they end up infront of the other portal.
+
+                        <portals>
+                            <portal x="110">
+                                <cuboid min="-56,33,-1" max="-55,35,2"/>
+                            </portal>
+                            <portal x="-110">
+                                <cuboid min="56,33,-1" max="57,35,2"/>
+                            </portal>
+                        </portals>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/gamemode_tdm)
+                    Set the game type to team death-match and specify a max run time of 10 minutes in seconds.
+
+                        <score>
+                            <time>600</time> <!-- 10 minutes -->
+                        </score>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    Repair stone swords, bows, and shears when dropped or when the player picks one up.
+
+                        <toolrepair>
+                            <tool>stone sword</tool>
+                            <tool>bow</tool>
+                            <tool>shears</tool>
+                        </toolrepair>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    Remove armour, arrows, ladders, cooked chicken, etc. To prevent the playing field and player inventories from getting cluttered with items.
+
+                        <itemremove>
+                            <item>leather helmet</item>
+                            <item>leather chestplate</item>
+                            <item>leather leggings</item>
+                            <item>leather boots</item>
+                            <item>arrow</item>
+                            <item>ladder</item> 
+                            <item>cooked chicken</item>
+                            <item>glass bottle</item>
+                            <item>golden apple</item>
+                            <item>clay ball</item>
+                            <item>glowstone dust</item>
+                            <item>string</item>
+                        </itemremove>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/tnt)
+                    Instantly ignite TNT when placed and disable TNT explosions from breaking bocks.
+
+                        <tnt>
+                            <instantignite>on</instantignite>
+                            <blockdamage>off</blockdamage>
+                        </tnt>
+
+                    <br/>
+                    Close the main `<map>` module.
+
+                        </map>
