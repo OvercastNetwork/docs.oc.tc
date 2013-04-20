@@ -5,7 +5,7 @@
 .container
     %section
         .page-header
-            %h1 Items
+            %h1 Items & Armor
         .row
             = partial('modules_sidebar')
             .span9
@@ -15,7 +15,7 @@
                     List of item names: [bukkit docs - Material](http://jd.bukkit.org/apidocs/org/bukkit/Material.html)
 
                         <item>Item name or id</item>
-                        
+
                         <!-- Item attributes -->
                         slot="0"
                         name="Name String"
@@ -25,7 +25,7 @@
                         damage="0"
 
 
-                    The `slot=""` attribute specifies where the item will be placed in the inventory. [Inventory slot reference](/reference/inventory).  
+                    The `slot=""` attribute specifies where the item will be placed in the inventory. [Inventory slot reference](/reference/inventory).
                     Enchantments use the bukkit [enchantment name](/reference/enchantments), the level of the enchantment is specified after a colon `:`. Multiple enchantments are separated by a semicolon `;`.
 
                         <item enchantment="sharpness:2">iron sword</item> <!-- A sharpness II iron sword -->
@@ -52,7 +52,9 @@
                         <boots enchantment="protection fall:1" lore="The Winged Boots of Hermes">iron boots</boots>
 
                     Items like leather armour are coloured with the `color=""` attribute.
-                    The colour is represented in hexadecimal.
+                    The colour is represented in hexadecimal. See [Minecraft wiki - Dye Data Values](http://www.minecraftwiki.net/wiki/Dyeing#Data_values) for a list of hex colours for the different dyes.
+
+                    `NOTE:` The hex colour value is specified without the hash `#` symbol.
 
                         <helmet color="cd0000">leather helmet</helmet>
 
