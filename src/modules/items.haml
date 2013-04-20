@@ -5,7 +5,7 @@
 .container
     %section
         .page-header
-            %h1 Items
+            %h1 Items & Armour
         .row
             = partial('modules_sidebar')
             .span9
@@ -52,7 +52,9 @@
                         <boots enchantment="protection fall:1" lore="The Winged Boots of Hermes">iron boots</boots>
 
                     Items like leather armour are coloured with the `color=""` attribute.
-                    The colour is represented in hexadecimal.
+                    The colour is represented in hexadecimal. See [Minecraft wiki - Dye Data Values](http://www.minecraftwiki.net/wiki/Dyeing#Data_values) for a list of hex colours for the different dyes.
+
+                    `NOTE:` The hex colour value is specified without the hash `#` symbol.
 
                         <helmet color="cd0000">leather helmet</helmet>
 
