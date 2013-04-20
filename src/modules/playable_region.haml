@@ -10,12 +10,18 @@
             = partial('modules_sidebar')
             .span9
                 :markdown
-                    The playable region is defined as follows. Playable regions prevent any playing player from exiting or doing anything outside off the region. It also blocks damage from TNT, mobs, etc.
+                    Playable regions prevent any playing player from exiting or doing anything outside off the region. It also blocks damage from TNT, mobs, etc.
 
-                    This can also be accomplished with a regular [region](/modules/regions) and the correct [filters](/modules/filters).
+                    This can also be accomplished with a regular [region](/modules/regions) with the correct [filters](/modules/filters).
+
+                    If there are multiple regions inside the `<playable>` module they are combined in a union, if you want to combine them differently put them into a [region combination](/modules/regions#regionCombinations).
+
+                    <br/>
+                    The playable region is defined as follows.
 
                         <playable>
                             <region name="main-area"/>
+                            <cylinder base="-520.5,8,210.5" height="5" radius="10"/>
                         </playable>
 
                     Of course you will first need to create a region with `name="main-area"` or directly use a [region](/modules/regions) area.

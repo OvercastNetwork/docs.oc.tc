@@ -24,7 +24,7 @@
             %li{:class => (current_page.include?("modules/kits") ? "active" : "")}
                 %a{:href => "/modules/kits"} Kits
             %li{:class => (current_page.include?("modules/items") ? "active" : "")}
-                %a{:href => "/modules/items"} Items
+                %a{:href => "/modules/items"} Items & Armour
             %li{:class => (current_page.include?("modules/potions") ? "active" : "")}
                 %a{:href => "/modules/potions"} Potion Effects
             %li{:class => (current_page.include?("modules/repair_remove") ? "active" : "")}
@@ -35,6 +35,8 @@
                 %a{:href => "/modules/tnt"} TNT
             %li{:class => (current_page.include?("modules/mobs") ? "active" : "")}
                 %a{:href => "/modules/mobs"} Mob Spawning
+            %li{:class => (current_page.include?("modules/killreward") ? "active" : "")}
+                %a{:href => "/modules/killreward"} Kill Reward
             %li{:class => (current_page.include?("modules/other_settings") ? "active" : "")}
                 %a{:href => "/modules/other_settings"} Other Settings
         %h4 Filters & Regions
@@ -53,5 +55,3 @@
                 %a{:href => "/modules/portals"} Portals
             %li{:class => (current_page.include?("modules/score_boxes") ? "active" : "")}
                 %a{:href => "/modules/score_boxes"} Score Boxes
-            %li{:class => (current_page.include?("modules/killreward") ? "active" : "")}
-                %a{:href => "/modules/killreward"} Kill Reward
