@@ -10,12 +10,12 @@
             = partial('modules_sidebar')
             .span9
                 :markdown
+                    Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you have to apply them to regions for them to do something. Filters can inherit other filters using the `parents=""` attribute. They return one of three possible states for an action; allow, deny and abstain.
                     
                         <filters>
                             <filter name="no-world" parents="deny-world"></filter>
                         </filters>
 
-                    Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you need to apply them to regions for them to do something. Filters can inherit other filters using the `parents=""` attribute. They return one of three possible states for an action; allow, deny and abstain.
 
                     <br/>
                     ####Predefined Filters

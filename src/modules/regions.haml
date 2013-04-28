@@ -10,7 +10,9 @@
             = partial('modules_sidebar')
             .span9
                 :markdown
-                    The area a region applies too is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates.
+                    Regions are used to define, among other things, the area a filter applies to or where a portal links from.
+
+                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. All regions and region combinations can have a `name=""` attribute to reference them from kits, portals, etc.
 
                         <!-- Note that Y is the up/down axis in minecraft -->
                         
@@ -30,12 +32,9 @@
                         <sphere name="something" origin="X1,Y1,Z1" radius="R"/>
                         <!-- A sphere located at X1,Y1,Z1 with a radius of R -->
                         
-                        <block>X,Y,Z</block>
+                        <block name="something">X,Y,Z</block>
                         <!-- A single block located at | X,Y,Z -->
-                        
-                        
-                        <!-- Region area and combination attributes -->
-                        name="name"
+
 
                     `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
 
@@ -43,13 +42,14 @@
                     <!--![Regions](./images/selections.png)-->
 
                     <br/>
-                    Regions can be grouped inside of `<apply>` elements or region combination elements.  
-                    Filters and kits are applied to regions as attributes of the `<apply>` element.
+                    #####Applying Filters and Kits to Regions
+
+                    Filters and kits are applied to regions as attributes of the `<apply>` element. The apply element can contain more that one region. If the apply element contains more than one region the same settings applied to all of them.
 
                         <apply><region name="region1"/>..</apply>
                         
                         
-                        <!-- Attributes of the <apply> element -->
+                    Attributes of the `<apply>` element
                         
                         enter="filter name"
                         <!-- Filter player enter events -->
@@ -72,6 +72,9 @@
                         kit="kit name"
                         <!-- Give a kit to players entering the region -->
 
+                        message="region message"
+                        <!-- Send a message to the player if the filter modifies the event -->
+
                     <br/>
                     Example kit region from [Anathema](https://maps.oc.tc/Anathema/map.xml).
 
@@ -83,7 +86,7 @@
 
 
                     Similar to kits regions are referenced by their `name=""`.
-                    To use regions in spawns, portals etc reference them by their name.
+                    To use regions in spawns, portals, etc., reference them by their name.
 
                         <!-- Referencing a named region -->
                         <region name="region name"/>
