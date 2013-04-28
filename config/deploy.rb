@@ -7,7 +7,7 @@ set :rvm_path, "$HOME/.rvm"
 set :rvm_bin_path, "$HOME/.rvm/bin"
 
 set :application, "docs"
-set :repository, "git@github.com:ProjectAres/docs.oc.tc.git"
+set :repository, "git@github.com:OvercastNetwork/docs.oc.tc.git"
 
 set :scm, :git
 set :branch, "master"
