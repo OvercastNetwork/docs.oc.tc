@@ -12,7 +12,7 @@ Pull requests should have the following things:
    For example:  
    `Describe the XYZ module with more detail.` or `Add detailed description for XYZ.` is good, but: `Added XYZ.` isn't.
    
-2. Content should be grammatically correct and the spelling should be US English, i.e. Color not Colour.
+2. Content should be grammatically correct and the spelling should be US English, e.g. Color not Colour.
 
 
 #### Previewing your changes
