@@ -9,30 +9,138 @@
         .row
             = partial('reference_sidebar')
             .span9
-                :markdown
-                        SPEED - Increases movement speed.
-                        SLOW - Decreases movement speed.
-                        FAST_DIGGING - Increases dig speed.
-                        SLOW_DIGGING - Decreases dig speed.
-                        INCREASE_DAMAGE - Increases damage dealt.
-                        HEAL - Heals an entity.
-                        HARM - Hurts an entity.
-                        JUMP - Increases jump height.
-                        CONFUSION - Warps vision on the client.
-                        REGENERATION - Regenerates health.
-                        DAMAGE_RESISTANCE - Decreases damage dealt to an entity.
-                        FIRE_RESISTANCE - Stops fire damage.
-                        WATER_BREATHING - Allows breathing underwater.
-                        INVISIBILITY - Grants invisibility.
-                        BLINDNESS - Blinds an entity.
-                        NIGHT_VISION - Allows an entity to see in the dark.
-                        HUNGER - Increases hunger.
-                        WEAKNESS - Decreases damage dealt by an entity.
-                        POISON - Deals damage to an entity over time.
-                        
-                        <!-- May not work as expected with PGM -->
-                        WITHER - Deals damage to an entity over time and gives the health to the shooter.
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th ID
+                            %th Name
+                            %th Description
+                    %tbody
+                        %tr
+                            %td
+                                %code 1
+                            %td
+                                %code SPEED
+                            %td Increases movement speed.
+                        %tr
+                            %td
+                                %code 2
+                            %td
+                                %code SLOW
+                            %td Decreases movement speed.
+                        %tr
+                            %td
+                                %code 3
+                            %td
+                                %code FAST_DIGGING
+                            %td Increases dig speed.
+                        %tr
+                            %td
+                                %code 4
+                            %td
+                                %code SLOW_DIGGING
+                            %td Decreases dig speed.
+                        %tr
+                            %td
+                                %code 5
+                            %td
+                                %code INCREASE_DAMAGE
+                            %td Increases damage dealt.
+                        %tr
+                            %td
+                                %code 6
+                            %td
+                                %code HEAL
+                            %td Heals an entity.
+                        %tr
+                            %td
+                                %code 7
+                            %td
+                                %code HARM
+                            %td Hurts an entity.
+                        %tr
+                            %td
+                                %code 8
+                            %td
+                                %code JUMP
+                            %td Increases jump height.
+                        %tr
+                            %td
+                                %code 9
+                            %td
+                                %code CONFUSION
+                            %td Warps vision on the client.
+                        %tr
+                            %td
+                                %code 10
+                            %td
+                                %code REGENERATION
+                            %td Regenerates health.
+                        %tr
+                            %td
+                                %code 11
+                            %td
+                                %code DAMAGE_RESISTANCE
+                            %td Decreases damage dealt to an entity.
+                        %tr
+                            %td
+                                %code 12
+                            %td
+                                %code FIRE_RESISTANCE
+                            %td Stops fire damage.
+                        %tr
+                            %td
+                                %code 13
+                            %td
+                                %code WATER_BREATHING
+                            %td Allows breathing underwater.
+                        %tr
+                            %td
+                                %code 14
+                            %td
+                                %code INVISIBILITY
+                            %td Grants invisibility.
+                        %tr
+                            %td
+                                %code 15
+                            %td
+                                %code BLINDNESS
+                            %td Blinds an entity.
+                        %tr
+                            %td
+                                %code 16
+                            %td
+                                %code NIGHT_VISION
+                            %td Allows an entity to see in the dark.
+                        %tr
+                            %td
+                                %code 17
+                            %td
+                                %code HUNGER
+                            %td Increases hunger.
+                        %tr
+                            %td
+                                %code 18
+                            %td
+                                %code WEAKNESS
+                            %td Decreases damage dealt by an entity.
+                        %tr
+                            %td
+                                %code 19
+                            %td
+                                %code POISON
+                            %td Deals damage to an entity over time.
+                        %tr           
+                            %td
+                                %code 20
+                            %td
+                                %code WITHER
+                            %td
+                                Deals damage to an entity over time and gives the health to the shooter.
+                                %code *
 
+                :markdown
+                    `*` May not work as expected with PGM
 
                     Copied from: [bukkit docs - Potion Effect Types](http://jd.bukkit.org/doxygen/d3/d70/classorg_1_1bukkit_1_1potion_1_1PotionEffectType.html)  
                     See: [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions) for potion damage values.
