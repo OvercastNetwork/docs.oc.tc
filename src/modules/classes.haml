@@ -1,0 +1,89 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Settings
+.container
+    %section
+        .page-header
+            %h1 Classes
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    Classes allow the player to pick a specific class at the beginning of the game which gives them special abilities. Classes can be used on any map type, however care must be taken to balance them properly. Players can then change their class ingame with the `/class` command.
+
+                        <classes family="ghost" sticky="true">
+                            <class name="Demon" default="true" description="Smoke and Fire!" sticky="false">
+                                <permission>grenades.use</permission>
+                                <kit>
+                                    <potion duration="oo" amplifier="2" ambient="true">damage resistance</potion>
+                                    <potion duration="oo" amplifier="1" ambient="true">speed</potion>
+                                    <item slot="8" amount="16">cooked beef</item>
+                                    <item slot="1" amount="5" name="`3Grenade">fireball</item>
+                                </kit>
+                            </class>
+                        </classes>
+
+                    <br/>
+                    #### Class attributes
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Attribute
+                            %th Description
+                    %tbody
+                        %tr
+                            %td
+                                %code name=""
+                            %td 
+                                Name of the class.
+                        %tr
+                            %td
+                                %code description=""
+                            %td 
+                                Description shown in /classses
+                        %tr
+                            %td
+                                %code longdescription=""
+                            %td 
+                                Description shown in class picker menu.
+                        %tr
+                            %td
+                                %code icon="STONE"
+                            %td 
+                                Icon (material) shown in the class picker menu.
+                        %tr
+                            %td
+                                %code family="ghost"
+                            %td 
+                                "group" of classes (ghost squadron is "ghost").
+                        %tr
+                            %td
+                                %code sticky="false"
+                            %td 
+                                If set to
+                                %code true
+                                players can't change the class mid game, instead they have to rejoin.
+                        %tr
+                            %td
+                                %code default="false"
+                            %td 
+                                Specify if the class is the default class for new players.
+                        %tr
+
+                :markdown
+                    See: [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names.
+                    <br/>
+                    #### Class submodules
+                    A class module can contain `<permission>` nodes and kits. Permission nodes give players with that class specific permissions. Players can be give any permission from any of the currently loaded plugins.
+
+                        <class name="Leprachaun" description="Sticky XP Orbs and sharp gold with double jump!" longdescription="XP bar is a double-jump cooldown, use Bootle O' Enchanting to track enemies with XP orbs!" icon="exp bottle">
+                            <!-- The classes permissions -->
+                            <permission>doublejump.use</permission>
+                            <permission>gs.ability.agility</permission>
+                            <!-- The classes kit -->
+                            <kit parents="potions">
+                                <item slot="0" amount="5" name="`a`lBottle o' Gold">exp bottle</item>
+                                <item slot="2" amount="16">cooked beef</item>
+                            </kit>
+                        </class>
