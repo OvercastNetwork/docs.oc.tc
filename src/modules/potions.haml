@@ -13,11 +13,13 @@
                     To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
 
                         <potion duration="10" amplifier="4">damage resistance</potion>
-                        <potion duration="900" amplifier="1">jump</potion>
+                        <potion duration="900" amplifier="1" ambient="true">jump</potion>
 
                     Potions effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and amplifier what level / how strong the potion is. The potion type is specified using the [potion name](/reference/potion_effects).
 
                     `NOTE:` Infinite duration can be specified by using `oo` as the duration.
+
+                    Specifing `ambient="true"` will increase the amount of particles a player emits and make the particles translucent.
 
                     <br/>
                     To give a potion as an item you have to use:
