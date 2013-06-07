@@ -25,7 +25,7 @@
                         </classes>
 
                     <br/>
-                    #### Class attributes
+                    ##### Class attributes
                 %table.table.table-striped.table-hover.table-condensed.table-bordered
                     %thead
                         %tr
@@ -41,7 +41,8 @@
                             %td
                                 %code description=""
                             %td 
-                                Description shown in /classses
+                                Description shown in 
+                                %code /classes
                         %tr
                             %td
                                 %code longdescription=""
@@ -49,7 +50,7 @@
                                 Description shown in class picker menu.
                         %tr
                             %td
-                                %code icon="STONE"
+                                %code icon=""
                             %td 
                                 Icon (material) shown in the class picker menu.
                         %tr
@@ -72,9 +73,11 @@
                         %tr
 
                 :markdown
-                    See: [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names.
+                    The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.  
+                    See [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names for the `icon=""` attribute.
+                    
                     <br/>
-                    #### Class submodules
+                    ##### Class submodules
                     A class module can contain `<permission>` nodes and kits. Permission nodes give players with that class specific permissions. Players can be give any permission from any of the currently loaded plugins.
 
                         <class name="Leprachaun" description="Sticky XP Orbs and sharp gold with double jump!" longdescription="XP bar is a double-jump cooldown, use Bootle O' Enchanting to track enemies with XP orbs!" icon="exp bottle">
