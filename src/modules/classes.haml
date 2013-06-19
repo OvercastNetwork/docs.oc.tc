@@ -35,52 +35,52 @@
                         %tr
                             %td
                                 %code name=""
-                            %td 
+                            %td
                                 Name of the class.
                         %tr
                             %td
                                 %code description=""
-                            %td 
-                                Description shown in 
+                            %td
+                                Description shown in
                                 %code /classes
                         %tr
                             %td
                                 %code longdescription=""
-                            %td 
+                            %td
                                 Description shown in class picker menu.
                         %tr
                             %td
                                 %code icon=""
-                            %td 
+                            %td
                                 Icon (material) shown in the class picker menu.
                         %tr
                             %td
                                 %code family="ghost"
-                            %td 
+                            %td
                                 "group" of classes (ghost squadron is "ghost").
                         %tr
                             %td
                                 %code sticky="false"
-                            %td 
+                            %td
                                 If set to
                                 %code true
                                 players can't change the class mid game, instead they have to rejoin.
                         %tr
                             %td
                                 %code default="false"
-                            %td 
+                            %td
                                 Specify if the class is the default class for new players.
                         %tr
 
                 :markdown
-                    The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.  
+                    The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.
                     See [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names for the `icon=""` attribute.
-                    
+
                     <br/>
                     ##### Class submodules
                     A class module can contain `<permission>` nodes and kits. Permission nodes give players with that class specific permissions. Players can be give any permission from any of the currently loaded plugins.
 
-                        <class name="Leprachaun" description="Sticky XP Orbs and sharp gold with double jump!" longdescription="XP bar is a double-jump cooldown, use Bootle O' Enchanting to track enemies with XP orbs!" icon="exp bottle">
+                        <class name="Leprachaun" description="Sticky XP Orbs and sharp gold with double jump!" longdescription="XP bar is a double-jump cooldown, use Bottle O' Enchanting to track enemies with XP orbs!" icon="exp bottle">
                             <!-- The classes permissions -->
                             <permission>doublejump.use</permission>
                             <permission>gs.ability.agility</permission>
