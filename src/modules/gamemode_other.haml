@@ -5,11 +5,12 @@
 .container
     %section
         .page-header
-            %h1 Ghost Squadron
+            %h1 Other Game Modes
         .row
             = partial('modules_sidebar')
             .span9
                 :markdown
+                    #### Ghost Squadron
                     Enables the ghostsquadron gamemode and all its features.
 
                     `NOTE:` This module must be used in conjunction with another gamemode.
@@ -21,3 +22,16 @@
                             <broadcastLives>false</broadcastLives>
                             <title>Ghost Squadron</title>
                         </blitz>
+
+                    <br/>
+                    #### Rage
+                    Enable the one hit kill, rage style gamemode.
+                    
+                    `NOTE:` This module must be used in conjunction with another gamemode.
+
+                        <rage/>
+
+                        <score>
+                            <time>8m</time>                                    
+                            <limit>15</limit>
+                        </score>
