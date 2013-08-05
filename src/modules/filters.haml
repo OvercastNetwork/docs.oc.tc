@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Filters & Regions
-.container
     %section
-        .page-header
-            %h1 Filters
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Filters
                 :markdown
                     Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you have to apply them to regions for them to do something. Filters can inherit other filters using the `parents=""` attribute. They return one of three possible states for an action; allow, deny and abstain.
                     

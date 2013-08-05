@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Filters & Regions
-.container
     %section
-        .page-header
-            %h1 Portals
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Portals
                 :markdown
                     Portals move a player that enters the specified region to a exact location or by by a certain offset amount. 
 

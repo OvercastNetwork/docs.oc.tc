@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Settings
-.container
     %section
-        .page-header
-            %h1 Mob Spawning
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Mob Spawning
                 :markdown
                     By default PGM disables all mob spawning. Enable specific mob spawning with the `<mobs>` element, uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
 

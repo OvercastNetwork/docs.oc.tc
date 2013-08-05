@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Settings
-.container
     %section
-        .page-header
-            %h1 Classes
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Classes
                 :markdown
                     Classes allow the player to pick a specific class at the beginning of the game which gives them special abilities. Classes can be used on any map type, however care must be taken to balance them properly. Players can then change their class ingame with the `/class` command.
 

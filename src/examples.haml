@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Examples
         %p.lead XML File Examples
-.container
     %section
-        .page-header
-            %h1 Examples
         .row
             = partial('examples_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Examples
                 :markdown
-                    Commented XML files from maps in the rotation. Files are split up into their individual modules and the module's function is described. Each section contains a link [<i class="icon-share-alt"></i>](#) to the relevant module's page.
+                    Commented XML files from maps in the rotation. Files are split up into their individual modules and the module's function is described. Each section contains a link [<i class="glyphicon glyphicon-share-alt"></i>](#) to the relevant module's page.
 

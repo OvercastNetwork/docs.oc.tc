@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Examples
         %p.lead XML File Examples
-.container
     %section
-        .page-header
-            %h1 GS: Eldritch
         .row
             = partial('examples_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 GS: Eldritch
                 :markdown
                     [<i class="icon-share-alt right-ref-link"></i>](/modules/main)
                     Specify the main map element. Name, version, objective, ect.

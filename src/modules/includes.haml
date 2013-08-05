@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead XML Helpers
-.container
     %section
-        .page-header
-            %h1 XML File Includes
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 XML File Includes
                 :markdown
                     A XML file can be split into multiple files and then included into the main one by using the include element. This allows you to keep the main file more organized by including sections such as kits or classes.
 

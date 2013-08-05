@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Filters & Regions
-.container
     %section
-        .page-header
-            %h1 Playable Region
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Playable Region
                 :markdown
                     Playable regions prevent any playing player from exiting or doing anything outside of the region. It also blocks damage from TNT, mobs, etc.
 

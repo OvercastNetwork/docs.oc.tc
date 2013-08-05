@@ -4,42 +4,50 @@
         %title PGM XML Documentation
         %meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
         - @rand = SecureRandom.hex(13)
-        %link{:href => "/css/bootstrap.css?" + @rand, :rel => "stylesheet"}
+        %link{:href => "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.css", :rel => "stylesheet"}
+        %link{:href => "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap-theme.css", :rel => "stylesheet"}
         %link{:href => "/css/style.css?" + @rand, :rel => "stylesheet"}
         %link{:href => "/css/custom-highlight.css?" + @rand, :rel => "stylesheet"}
         %link{:href => "//oc.tc/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
         %link{:href => "//oc.tc/favicon.ico", :rel => "apple-touch-icon", :type => "image/x-icon"}
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"}
+        %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
+        %script{:src => "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.js"}
         %script hljs.initHighlightingOnLoad();
     %body
-        .navbar.navbar-static-top
-            .navbar-inner
-                .container
-                    %a.brand{:href => "/"}
+        %header.navbar.navbar-default.navbar-static-top{:role => "navigation"}
+            .container
+                .navbar-header
+                    %button.navbar-toggle{:type => "button", :"data-toggle" => "collapse", :"data-target" => ".navbar-main-collapse"}
+                        %span.sr-only Toggle navigation
+                        %span.icon-bar
+                        %span.icon-bar
+                        %span.icon-bar
+                    %a.navbar-brand{:href => "/"}
                         %img{:src => "https://oc.tc/assets/logo.png"}
                         PGM XML Documentation
-                    .nav-collapse.collapse
-                        %ul.nav
-                            %li{:class => (current_page.include?("index") ? "active" : "")}
-                                %a{:href => "/"}
-                                    %i.icon-home
-                                    Home
-                            %li{:class => (current_page.include?("modules") ? "active" : "")}
-                                %a{:href => "/modules/main"}
-                                    %i.icon-th-large
-                                    Modules
-                            %li{:class => (current_page.include?("reference") ? "active" : "")}
-                                %a{:href => "/reference/inventory"}
-                                    %i.icon-book
-                                    Reference
-                            %li{:class => (current_page.include?("examples") ? "active" : "")}
-                                %a{:href => "/examples"}
-                                    %i.icon-file
-                                    Examples
+                %nav.collapse.navbar-collapse.navbar-main-collapse
+                    %ul.nav.navbar-nav
+                        %li{:class => (current_page.include?("index") ? "active" : "")}
+                            %a{:href => "/"}
+                                %i.glyphicon.glyphicon-home
+                                Home
+                        %li{:class => (current_page.include?("modules") ? "active" : "")}
+                            %a{:href => "/modules/main"}
+                                %i.glyphicon.glyphicon-th-large
+                                Modules
+                        %li{:class => (current_page.include?("reference") ? "active" : "")}
+                            %a{:href => "/reference/inventory"}
+                                %i.glyphicon.glyphicon-book
+                                Reference
+                        %li{:class => (current_page.include?("examples") ? "active" : "")}
+                            %a{:href => "/examples"}
+                                %i.glyphicon.glyphicon-file
+                                Examples
         = yield
         .container
             %hr
-            %footer
+            %footer.docs-footer
                 %ul.nav.nav-pills
                     %li.pull-left
                         %a &copy; 2013 Overcast Network

@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Reference
         /%p.lead Main map element
-.container
     %section
-        .page-header
-            %h1 Formatting Codes
         .row
             = partial('reference_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Formatting Codes
                 :markdown
                     Text formatting codes are used to create fancy colorized text, they are prefixed with either a `` ` or a `§`. After using a formatting code such as `§o` (italic) it has to be reset, otherwise it will continue until the end of the text.
 
