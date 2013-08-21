@@ -1,0 +1,66 @@
+.jumbotron.subhead
+    .container
+        %h1 Modules
+        %p.lead Game Modes
+.container
+    %section
+        .page-header
+            %h1 KotH
+        .row
+            = partial('modules_sidebar')
+            .span9
+                :markdown
+                    KotH is a gamemode in which you capture a set amount of "hills" to win. Generally KotH maps have a [time limit](/modules/other_settings) to help remove extrememly long stalemates. If the time runs out before one team wins, the team with the most hills captured at the time will win. If teams have an equal number of hills the game is a tie.
+
+                       <king>
+                           <hills>
+                               <hill name="Hill" capture-time="1m" type="variable" ratio="1"> <!-- type isn't actually used, should be "variable" -->
+                                   <capture>
+                                       <region name="captureRegion"/>
+                                   </capture>
+                                   <progress>
+                                       <region name="progressRegion"/>
+                                   </progress>
+                                   <captured>
+                                       <region name="capturedRegion"/>
+                                   </captured>
+                               </hill>
+                          </hills>
+                          <wins>
+                              <win team="red">
+                                  <hill>Hill</hill>
+                              </win>
+                              <win team="blue">
+                                  <hill>Hill</hill>
+                              </win>
+                         </wins>
+                     </king>
+
+                The hill name is the name that will appear on the scoreboard, as you need to register it as a hill using the name. Capture time can be any amount of time, and support [Time Formatters](/reference/formatting#time_formatters). Ratio is how many players a single player will count for. If you set your ratio to 2, and one player stands on the hill, it would react as if two players are standing on the hill.
+                
+                Capture is the region in which players must stand to capture the hill. Progress is the region in which the colors of clay/wool will change, according to the capturing team's team color. The captured region doesn't have to be the progress region, as some might think. It also changed the color of clay/wool to the team's color, but only after the hill has been captured.
+                
+                Wins are based upon if a team has all the hills in their `<win>` element. That being said, you can make red team capture Left Hill and Middle hill to win, while blue team needs to capture Right Hill and Middle hill to win. If you want multiple hills, and want the team to win only when they are all captured, you can use [filter matchers](/modules/filters):
+
+                    <wins>
+                        <win team="red">
+                            <any>
+                                <all>
+                                    <hill>Left Hill</hill>
+                                    <hill>Middle Hill</hill>
+                                    <hill>Right Hill</hill>
+                                </all>
+                            </any>
+                        </win>
+                        <win team="blue">
+                            <any>
+                                <all>
+                                    <hill>Left Hill</hill>
+                                    <hill>Middle Hill</hill>
+                                    <hill>Right Hill</hill>
+                                </all>
+                            </any>
+                        </win>
+                    </wins>
+                <br/>
+                Examples and more info found on the [KotH Example Page](/examples/gamemode_koth).
