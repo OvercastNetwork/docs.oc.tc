@@ -20,7 +20,8 @@
 
                     <br/>
                     [<i class="icon-share-alt right-ref-link"></i>](/modules/includes)
-                    Include the default classes. Look [here](https://maps.oc.tc/GS/classes.xml) for the defaults. `NOTE:` You may need to change browsers to veiw the actual tags.
+                    Include the default [ghostsquadron classes](https://maps.oc.tc/GS/classes.xml).  
+                    The included XML specifies that this is a [ghostsquadron](/modules/gamemode_other#gs) map and sets up all the relevant classes & kits.
 
                         <include src="../classes.xml"/>
 
@@ -34,7 +35,7 @@
 
                     <br/>
                     [<i class="icon-share-alt right-ref-link"></i>](/modules/includes)
-                    Create two teams, specify their [color](/reference/formatting) and max.
+                    Create two teams, specify their [color](/reference/formatting) and max players.
 
                         <teams>
                             <team color="blue" max="8">Blue Team</team>
@@ -43,7 +44,7 @@
 
                     <br/>
                     [<i class="icon-share-alt right-ref-link"></i>](/modules/regions)
-                    Create the [playable region](/modules/playable_region) and deny all block interaction.
+                    Create the main area and deny all block interaction.
 
                         <regions>
                             <rectangle name="main-area" min="-oo,-oo" max="oo,oo"/>
@@ -54,7 +55,7 @@
 
                     <br/>
                     [<i class="icon-share-alt right-ref-link"></i>](/modules/playable_region)
-                    Apply the playable region.
+                    Assign the region named 'main-area' as the [playable region](/modules/playable_region).
 
                         <playable>
                             <region name="main-area"/>
