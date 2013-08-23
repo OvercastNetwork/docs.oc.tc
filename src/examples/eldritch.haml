@@ -1,0 +1,85 @@
+.jumbotron.subhead
+    .container
+        %h1 Examples
+        %p.lead XML File Examples
+.container
+    %section
+        .page-header
+            %h1 GS: Eldritch
+        .row
+            = partial('examples_sidebar')
+            .span9
+                :markdown
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/main)
+                    Specify the main map element. Name, version, objective, ect.
+
+                        <map proto="1.3.0">
+                        <name>GS: Eldritch</name>
+                        <version>v02</version>
+                        <objective>Kill the enemy's squadron!</objective>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/includes)
+                    Include the default classes. Look [here](https://maps.oc.tc/GS/classes.xml) for the defaults. `NOTE:` You may need to change browsers to veiw the actual tags.
+
+                        <include src="../classes.xml"/>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/main)
+                    Specify the map author, there are no contributors.
+
+                        <authors>
+                            <author>Vechs</author>
+                        </authors>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/includes)
+                    Create two teams, specify their [color](/reference/formatting) and max.
+
+                        <teams>
+                            <team color="blue" max="8">Blue Team</team>
+                            <team color="dark red" max="8">Red Team</team>
+                        </teams>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/regions)
+                    Create the [playable region](/modules/playable_region) and deny all block interaction.
+
+                        <regions>
+                            <rectangle name="main-area" min="-oo,-oo" max="oo,oo"/>
+                            <apply block="deny-players">
+                                <region name="main-area"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/playable_region)
+                    Apply the playable region.
+
+                        <playable>
+                            <region name="main-area"/>
+                        </playable>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/spawns)
+                    Specify the two team's spawn points, as well as the observer spawn point.
+
+                        <spawns>
+                            <spawns>
+                                <spawn team="blue" yaw="90">
+                                    <cuboid min="584,24,-303" max="591,24,-296"/>
+                                </spawn>
+                                <spawn team="red" yaw="-90">
+                                    <cuboid min="522,24,-264" max="529,24,-257"/>
+                                </spawn>
+                            </spawns>
+                            <default>
+                                <point yaw="145">580.5,32,-248.5</point>
+                            </default>
+                        </spawns>
+
+                    <br/>
+                    [<i class="icon-share-alt right-ref-link"></i>](/modules/main)
+                    Close the main `<map>` element.
+
+                        </map>
