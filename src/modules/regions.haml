@@ -38,7 +38,7 @@
 
                     `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
 
-                    For example : `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,5"`.
+                    For example: `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,5"`.
                     <!--![Regions](./images/selections.png)-->
 
                     <br/>
@@ -48,33 +48,47 @@
 
                         <apply><region name="region1"/>..</apply>
                         
-                        
+                    
                     Attributes of the `<apply>` element
-                        
-                        enter="filter name"
-                        <!-- Filter player enter events -->
-                        
-                        exit="filter name"
-                        <!-- Filter player exit events -->
-                        
-                        block="filter name"
-                        <!-- Filter block place and break events -->
-                        
-                        block-place="filter name"
-                        <!-- Filter block place events -->
-                        
-                        block-break="filter name"
-                        <!-- Filter block break events -->
-                        
-                        use="filter name"
-                        <!-- Filter right-click events -->
-                        
-                        kit="kit name"
-                        <!-- Give a kit to players entering the region -->
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Attribute
+                            %th Description
+                        %tr
+                            %td
+                                %code enter="filter name"
+                            %td Filter player enter events
+                        %tr
+                            %td
+                                %code exit="filter name"
+                            %td Filter player exit events
+                        %tr
+                            %td
+                                %code block="filter name"
+                            %td Filter block place and break events
+                        %tr
+                            %td
+                                %code block-place="filter name"
+                            %td Filter block place events
+                        %tr
+                            %td
+                                %code block-break="filter name"
+                            %td Filter block break events
+                        %tr
+                            %td
+                                %code use="filter name"
+                            %td Filter right-click events
+                        %tr
+                            %td
+                                %code kit="filter name"
+                            %td Give a kit to players entering the region
+                        %tr
+                            %td
+                                %code message="region message"
+                            %td Send a message to the player if the filter modifies the event
 
-                        message="region message"
-                        <!-- Send a message to the player if the filter modifies the event -->
-
+                :markdown
                     <br/>
                     Example kit region from [Anathema](https://maps.oc.tc/Anathema/map.xml).
 
@@ -168,3 +182,44 @@
                                 </union>
                             </apply>
                         </regions>
+
+
+                    <br/>
+                    ####[Point Providers](id:pointProviders)
+
+                    A point provider is used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
+                    Input can be a region, a region combination or simply an exact `X,Y,Z` coordinate.
+
+                        <point yaw="90" pitch="50" angle="">X,Y,Z</point>
+
+                    <br/>
+                    Attributes of the `<point>` element.
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Attribute
+                            %th Description
+                        %tr
+                            %td
+                                %code yaw=""
+                            %td specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
+                        %tr
+                            %td{:colspan => "5"}
+                                %i South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
+                        %tr
+                            %td
+                                %code pitch=""
+                            %td specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
+                        %tr
+                            %td{:colspan => "5"}
+                                %i -90&deg; is straight up 90&deg; is straight down.
+                        %tr
+                            %td
+                                %code angle="X,Y,Z"
+                            %td specifies the exact block coordinates that the player should look at.
+
+                :markdown
+
+                    `NOTE:` The pitch and yaw arguments can also accept a X,Y,Z coordinate.  
+                    `TIP:` Copy the yaw from the F3 screen in minecraft (labled as `f`).  
+
