@@ -5,6 +5,8 @@
                 %a{:href => "/modules/main"} Main Map Element
             %li{:class => (current_page.include?("modules/includes") ? "active" : "")}
                 %a{:href => "/modules/includes"} XML File Includes
+            %li{:class => (current_page.include?("modules/tutorial") ? "active" : "")}
+                %a{:href => "/modules/tutorial"} Map Tutorial
         %h4 Game Modes
         %ul.nav.nav-pills.nav-stacked
             %li{:class => (current_page.include?("modules/gamemode_ctw") ? "active" : "")}
@@ -53,6 +55,8 @@
                 %a{:href => "/modules/filters"} Filters
             %li{:class => (current_page.include?("modules/regions") ? "active" : "")}
                 %a{:href => "/modules/regions"} Regions
+            %li{:class => (current_page.include?("modules/point_providers") ? "active" : "")}
+                %a{:href => "/modules/point_providers"} Point Providers
             %li{:class => (current_page.include?("modules/spawns") ? "active" : "")}
                 %a{:href => "/modules/spawns"} Spawns
             %li{:class => (current_page.include?("modules/playable_region") ? "active" : "")}
