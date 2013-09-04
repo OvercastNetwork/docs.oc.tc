@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Reference
         /%p.lead Main map element
-.container
     %section
-        .page-header
-            %h1 Item Enchantments
         .row
             = partial('reference_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Item Enchantments
                 %p
                     %code NOTE:
                     PGM allows enchantments to be applied to any item.

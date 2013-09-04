@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Settings
-.container
     %section
-        .page-header
-            %h1 Kill Reward
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Kill Reward
                 :markdown
                     The kill reward module allows a player to get an item when they kill someone. The parameters are wrapped in a `<killreward>` block.
                     So far, the only reward available is an `<item>`.

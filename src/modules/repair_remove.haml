@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Settings
-.container
     %section
-        .page-header
-            %h1 Remove & Repair
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Repair & Remove
                 :markdown
                     Defines tools that will be automatically repaired when dropped and picked up again. This will also merge items that are picked up, i.e., picking up an iron sword would result in it merging with your sword and repairing it. Repaired items will keep their enchantment, unlike vanilla minecraft where they will not.
 

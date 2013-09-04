@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Main Map Element
-.container
     %section
-        .page-header
-            %h1 Main map element
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Main map element
                 :markdown
                     Every map XML file must contain the base `<map>` module. It also contains modules that specify the map name, version, objective, authors and contributors. All of these modules are required in a complete XML file except the `<contributors>` module.
 

@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Settings
-.container
     %section
-        .page-header
-            %h1 TNT
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 TNT
                 :markdown
                     You can modify TNT explosion & placing behavior with this module.
                     

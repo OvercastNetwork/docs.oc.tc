@@ -1,14 +1,13 @@
-.jumbotron.subhead
-    .container
+.container
+    .jumbotron.subhead
         %h1 Modules
         %p.lead Game Modes
-.container
     %section
-        .page-header
-            %h1 Capture the Wool
         .row
             = partial('modules_sidebar')
-            .span9
+            .col-lg-9
+                .page-header
+                    %h1 Capture the Wool
                 :markdown
                     Players have to retrieve wool blocks from the enemy teams side of the map and then put them on their victory monument(s). The area a wool has to be placed in is protected by default to prevent it from being blocked with another block.
 
