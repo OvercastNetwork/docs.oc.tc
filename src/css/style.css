@@ -61,7 +61,7 @@ code {
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .page-header h1 {
     margin-top: 0 !important;
   }
