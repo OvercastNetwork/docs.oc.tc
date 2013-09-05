@@ -1,67 +1,36 @@
-.col-sm-3
-    .sidebar
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("modules/main") ? "active" : "")}
-                %a{:href => "/modules/main"} Main Map Element
-            %li{:class => (current_page.include?("modules/includes") ? "active" : "")}
-                %a{:href => "/modules/includes"} XML File Includes
-            %li{:class => (current_page.include?("modules/tutorial") ? "active" : "")}
-                %a{:href => "/modules/tutorial"} Map Tutorial
-        %h4 Game Modes
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("modules/gamemode_ctw") ? "active" : "")}
-                %a{:href => "/modules/gamemode_ctw"} Capture the Wool
-            %li{:class => (current_page.include?("modules/gamemode_dtm") ? "active" : "")}
-                %a{:href => "/modules/gamemode_dtm"} Destroy the Monument
-            %li{:class => (current_page.include?("modules/gamemode_blitz") ? "active" : "")}
-                %a{:href => "/modules/gamemode_blitz"} Blitz
-            %li{:class => (current_page.include?("modules/gamemode_dtc") ? "active" : "")}
-                %a{:href => "/modules/gamemode_dtc"} Destroy the Core
-            %li{:class => (current_page.include?("modules/gamemode_tdm") ? "active" : "")}
-                %a{:href => "/modules/gamemode_tdm"} Team Death-match
-            %li{:class => (current_page.include?("modules/gamemode_other") ? "active" : "")}
-                %a{:href => "/modules/gamemode_other"} Other Game Modes
-        %h4 Game Settings
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("modules/teams") ? "active" : "")}
-                %a{:href => "/modules/teams"} Teams
-            %li{:class => (current_page.include?("modules/rules") ? "active" : "")}
-                %a{:href => "/modules/rules"} Rules
-            %li{:class => (current_page.include?("modules/kits") ? "active" : "")}
-                %a{:href => "/modules/kits"} Kits
-            %li{:class => (current_page.include?("modules/classes") ? "active" : "")}
-                %a{:href => "/modules/classes"} Classes
-            %li{:class => (current_page.include?("modules/items") ? "active" : "")}
-                %a{:href => "/modules/items"} Items & Armor
-            %li{:class => (current_page.include?("modules/potions") ? "active" : "")}
-                %a{:href => "/modules/potions"} Potion Effects
-            %li{:class => (current_page.include?("modules/repair_remove") ? "active" : "")}
-                %a{:href => "/modules/repair_remove"} Repair & Remove
-            %li{:class => (current_page.include?("modules/disabledamage") ? "active" : "")}
-                %a{:href => "/modules/disabledamage"} Disable Damage
-            %li{:class => (current_page.include?("modules/projectiles") ? "active" : "")}
-                %a{:href => "/modules/projectiles"} Projectiles
-            %li{:class => (current_page.include?("modules/tnt") ? "active" : "")}
-                %a{:href => "/modules/tnt"} TNT
-            %li{:class => (current_page.include?("modules/mobs") ? "active" : "")}
-                %a{:href => "/modules/mobs"} Mob Spawning
-            %li{:class => (current_page.include?("modules/killreward") ? "active" : "")}
-                %a{:href => "/modules/killreward"} Kill Reward
-            %li{:class => (current_page.include?("modules/other_settings") ? "active" : "")}
-                %a{:href => "/modules/other_settings"} Other Settings
-        %h4 Filters & Regions
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("modules/filters") ? "active" : "")}
-                %a{:href => "/modules/filters"} Filters
-            %li{:class => (current_page.include?("modules/regions") ? "active" : "")}
-                %a{:href => "/modules/regions"} Regions
-            %li{:class => (current_page.include?("modules/spawns") ? "active" : "")}
-                %a{:href => "/modules/spawns"} Spawns
-            %li{:class => (current_page.include?("modules/playable_region") ? "active" : "")}
-                %a{:href => "/modules/playable_region"} Playable Region
-            %li{:class => (current_page.include?("modules/lanes") ? "active" : "")}
-                %a{:href => "/modules/lanes"} Lanes
-            %li{:class => (current_page.include?("modules/portals") ? "active" : "")}
-                %a{:href => "/modules/portals"} Portals
-            %li{:class => (current_page.include?("modules/score_boxes") ? "active" : "")}
-                %a{:href => "/modules/score_boxes"} Score Boxes
+- @nav_title = "XML Modules"
+- @subnav_content = [\
+- {"path" => "modules/main", "name" => "Main Map Element"},\
+- {"path" => "modules/includes", "name" => "XML File Includes"},\
+- {"path" => "modules/tutorial", "name" => "Map Tutorial"},\
+- "Game Modes",\
+- {"path" => "modules/gamemode_ctw", "name" => "Capture the Wool"},\
+- {"path" => "modules/gamemode_dtm", "name" => "Destroy the Monument"},\
+- {"path" => "modules/gamemode_blitz", "name" => "Blitz"},\
+- {"path" => "modules/gamemode_dtc", "name" => "Destroy the Core"},\
+- {"path" => "modules/gamemode_tdm", "name" => "Team Death-match"},\
+- {"path" => "modules/gamemode_other", "name" => "Other Game Modes"},\
+- "Game Settings",\
+- {"path" => "modules/teams", "name" => "Teams"},\
+- {"path" => "modules/rules", "name" => "Rules"},\
+- {"path" => "modules/kits", "name" => "Kits"},\
+- {"path" => "modules/classes", "name" => "Classes"},\
+- {"path" => "modules/items", "name" => "Items & Armor"},\
+- {"path" => "modules/potions", "name" => "Potion Effects"},\
+- {"path" => "modules/repair_remove", "name" => "Repair & Remove"},\
+- {"path" => "modules/disabledamage", "name" => "Disable Damage"},\
+- {"path" => "modules/projectiles", "name" => "Projectiles"},\
+- {"path" => "modules/tnt", "name" => "TNT"},\
+- {"path" => "modules/mobs", "name" => "Mob Spawning"},\
+- {"path" => "modules/killreward", "name" => "Kill Reward"},\
+- {"path" => "modules/other_settings", "name" => "Other Settings"},\
+- "Filters & Regions",\
+- {"path" => "modules/filters", "name" => "Filters"},\
+- {"path" => "modules/regions", "name" => "Regions"},\
+- {"path" => "modules/spawns", "name" => "Spawns"},\
+- {"path" => "modules/playable_region", "name" => "Playable Region"},\
+- {"path" => "modules/lanes", "name" => "Lanes"},\
+- {"path" => "modules/portals", "name" => "Portals"},\
+- {"path" => "modules/score_boxes", "name" => "Score Boxes"}]
+
+= partial('sidebar')

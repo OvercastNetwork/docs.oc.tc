@@ -1,11 +1,8 @@
-.col-sm-3
-    .sidebar
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("reference/inventory") ? "active" : "")}
-                %a{:href => "/reference/inventory"} Inventory
-            %li{:class => (current_page.include?("reference/formatting") ? "active" : "")}
-                %a{:href => "/reference/formatting"} Formatting & Colors
-            %li{:class => (current_page.include?("reference/enchantments") ? "active" : "")}
-                %a{:href => "/reference/enchantments"} Enchantments
-            %li{:class => (current_page.include?("reference/potion_effects") ? "active" : "")}
-                %a{:href => "/reference/potion_effects"} Potions
+- @nav_title = "General Reference"
+- @subnav_content = [\
+- {"path" => "reference/inventory", "name" => "Inventory"},\
+- {"path" => "reference/formatting", "name" => "Formatting & Colors"},\
+- {"path" => "reference/enchantments", "name" => "Enchantments"},\
+- {"path" => "reference/potion_effects", "name" => "Potions"}]
+
+= partial('sidebar')

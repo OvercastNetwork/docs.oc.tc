@@ -1,13 +1,9 @@
-.col-sm-3
-    .sidebar
-        %ul.nav.nav-pills.nav-stacked
-            %li{:class => (current_page.include?("examples/snowy_wars") ? "active" : "")}
-                %a{:href => "/examples/snowy_wars"} Snowy Wars
-            %li{:class => (current_page.include?("examples/viridun") ? "active" : "")}
-                %a{:href => "/examples/viridun"} Viridun
-            %li{:class => (current_page.include?("examples/harb") ? "active" : "")}
-                %a{:href => "/examples/harb"} Harb
-            %li{:class => (current_page.include?("examples/rfv3") ? "active" : "")}
-                %a{:href => "/examples/rfv3"} Race For Victory 3
-            %li{:class => (current_page.include?("examples/eldritch") ? "active" : "")}
-                %a{:href => "/examples/eldritch"} GS: Eldritch
+- @nav_title = "Map XML Examples"
+- @subnav_content = [\
+- {"path" => "examples/snowy_wars", "name" => "Snowy Wars"},\
+- {"path" => "examples/viridun", "name" => "Viridun"},\
+- {"path" => "examples/harb", "name" => "Harb"},\
+- {"path" => "examples/rfv3", "name" => "Race For Victory 3"},\
+- {"path" => "examples/eldritch", "name" => "GS: Eldritch"}]
+
+= partial('sidebar')
