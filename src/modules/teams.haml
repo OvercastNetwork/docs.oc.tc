@@ -11,7 +11,7 @@
                 :markdown
                     Setup the teams, their names and represented colors. See [bukkit colors](/reference/formatting) for valid team colors. The player limit for each team is defined inside of the `max=""` attribute. Teams can have a custom overhead color with the `overhead-color=""` attribute.  
 
-                    `NOTE:` It is common for maps to only have 2 teams, although more are possible. It usually just causes confusion. Also max overfill is not needed but will define the maximim size a team can ever be. No one will be able to join past that point. Without it defind the max overfill will be 25% over the maximum team size.
+                    `NOTE:` It is common for maps to only have 2 teams, although more are possible. It usually just causes confusion. Max overfill sets the hard limit for team sizes. If no max overflow is explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overflow team size is reached. 
 
                         <teams>
                            <team color="dark red" max="50" max-overfill="70">Red Team</team>
