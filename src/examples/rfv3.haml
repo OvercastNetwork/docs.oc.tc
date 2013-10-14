@@ -42,6 +42,62 @@
                         </rules>
 
                     <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/tutorial)
+                    Setup the tutorial module by including its default settings from the `tutorial.xml` and then specify each of the points of interest on the map.
+
+                        <include src="tutorial.xml"/>
+                        <tutorial>
+                            <stage title="Capture the Wool">
+                                <message>
+                                    <line>§rThis map is a §a§lCapture the Wool §r(CTW) map</line>
+                                    <line>The objective is to grab the wool on the other team's side and return it to your base.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="90" pitch="50">44,60,0</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Blue Team Base">
+                                <message>
+                                    <line>§rThis is the §9Blue Team §rbase. You spawn with gear ready to go into battle!</line>
+                                    <line>You can use the water portals on either side to quickly exit the base.</line>
+                                    <line>The chests contain extra supplies to help you build defenses or bridge to the enemy side.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="180">0.5,2,102</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Iron Supplies">
+                                <message>
+                                    <line>Here is the iron supply for §9Blue Team§r. Note that §cRed Team §rhas the same thing on their side.</line>
+                                    <line>You can craft iron armor to prepare yourself for battle.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="35" pitch="30">14,25,63</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Red Wool Rooms">
+                                <message>
+                                    <line>These are §cRed team§r's wool rooms housing §alime§r, §dpink§r, and §6orange`r.</line>
+                                    <line>§9Blue Team §rhas §5purple§r, §eyellow`r, and §3cyan §rwools.</line>
+                                    <line>Red Team should defend these rooms against Blue Team invaders who are trying to steal the wool and make it back alive.</line>
+                                    <line>There are special goodies inside that will help you fight your way out.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="-107" pitch="10">-115,22,-95</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Victory Monument">
+                                <message>
+                                    <line>This is one of three of §9Blue Team§r's victory monuments.</line>
+                                    <line>The three colored wools from the §cRed Team§r's wool rooms must be placed in the victory monuments for the match to end.</line>
+                                    <line>Note that Red Team has three identical victory monuments for their respective wools.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="0">0.5,15,137</point>
+                                </teleport>
+                            </stage>
+
+                    <br/>
                     [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/teams)
                     Define two teams, their [colors](/reference/formatting) and names.
 
