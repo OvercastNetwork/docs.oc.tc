@@ -41,9 +41,9 @@
                     <!--![Regions](./images/selections.png)-->
 
                     <br/>
-                    ####Applying Filters and Kits to Regions
+                    ####Applying Filters, Kits, and Velocity to Regions
 
-                    Filters and kits are applied to regions as attributes of the `<apply>` element. The apply element can contain more that one region. If the apply element contains more than one region the same settings applied to all of them.
+                    Filters, kits, and velocity are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
 
                         <apply><region name="region1"/>..</apply>
                         
@@ -87,6 +87,10 @@
                             %td
                                 %code message="region message"
                             %td Send a message to the player if the filter modifies the event
+                        %tr
+                            %td
+                                %code velocity="velocity to add or set"
+                            %td Add or set velocity when a player enters the region
 
                 :markdown
                     <br/>
@@ -148,6 +152,72 @@
                             </apply>
                             <apply block="no-tnt" message="You may not place TNT in the bases.">
                                 <region name="bases"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    Velocity can be applies in two ways, either by adding to the player's current velocity or by setting it. When setting the velocity, you use `@` in front of the number you want set. Otherwise you input the number of velocity you want added to the player's `x`, `y`, or `z` velocities.
+                    
+                    An example from [SuperPRISM](https://maps.oc.tc/SuperPRISM/map.xml), using velocity for jump pads
+
+                        <regions>
+                            <!--  Yellow Pads  -->
+                            <apply velocity="@-0.4,1.1,0.0">
+                                <cuboid min="-1081,1,-2116" max="-1078,2,-2113"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1062,1,-2123" max="-1059,2,-2120"/>
+                            </apply>
+                            <apply velocity="@0.0,1.7,-0.4">
+                                <cuboid min="-1083,1,-2161" max="-1080,2,-2158"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,0.4">
+                                <cuboid min="-1101,1,-2153" max="-1098,2,-2150"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1056,1,-2133" max="-1053,2,-2130"/>
+                            </apply>
+                            <!--  Green pads room 1  -->
+                            <apply velocity="@0.4,1.4,0.0">
+                                <cuboid min="-1043,1,-2164" max="-1040,2,-2161"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,0.4">
+                                <cuboid min="-1025,1,-2177" max="-1021,2,-2174"/>
+                            </apply>
+                            <apply velocity="@-0.4,1.4,0.0">
+                                <cuboid min="-1029,1,-2196" max="-1026,2,-2193"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1056,1,-2182" max="-1053,2,-2179"/>
+                            </apply>
+                            <!--  Green pads room 2  -->
+                            <apply velocity="@0.0,1.4,0.4">
+                                <cuboid min="-1110,1,-2152" max="-1107,2,-2149"/>
+                            </apply>
+                            <apply velocity="@0.4,1.4,0.0">
+                                <cuboid min="-1137,1,-2138" max="-1134,2,-2135"/>
+                            </apply>
+                            <apply velocity="@ 0.0,1.4,-0.4">
+                                <cuboid min="-1142,1,-2157" max="-1139,2,-2154"/>
+                            </apply>
+                            <apply velocity="@-0.4,1.4,0.0">
+                                <cuboid min="-1123,1,-2170" max="-1120,2,-2167"/>
+                            </apply>
+                            <!--  Cyan Pads  -->
+                            <apply velocity="@0.4,1.1,0.0">
+                                <cuboid min="-1085,1,-2218" max="-1082,2,-2215"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,0.4">
+                                <cuboid min="-1104,1,-2211" max="-1101,2,-2208"/>
+                            </apply>
+                            <apply velocity="@0.0,1.7,0.4">
+                                <cuboid min="-1083,1,-2173" max="-1080,2,-2170"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,0.4">
+                                <cuboid min="-1110,1,-2201" max="-1107,2,-2198"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1065,1,-2181" max="-1062,2,-2178"/>
                             </apply>
                         </regions>
 
