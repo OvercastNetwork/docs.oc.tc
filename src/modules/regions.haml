@@ -41,9 +41,9 @@
                     <!--![Regions](./images/selections.png)-->
 
                     <br/>
-                    ####Applying Filters and Kits to Regions
+                    ####Applying Filters, Kits, and Velocity to Regions
 
-                    Filters and kits are applied to regions as attributes of the `<apply>` element. The apply element can contain more that one region. If the apply element contains more than one region the same settings applied to all of them.
+                    Filters, kits, and velocity changes are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
 
                         <apply><region name="region1"/>..</apply>
                         
@@ -87,6 +87,10 @@
                             %td
                                 %code message="region message"
                             %td Send a message to the player if the filter modifies the event
+                        %tr
+                            %td
+                                %code velocity="velocity to add or set"
+                            %td Modify or set a players velocity when they enter the region
 
                 :markdown
                     <br/>
@@ -148,6 +152,23 @@
                             </apply>
                             <apply block="no-tnt" message="You may not place TNT in the bases.">
                                 <region name="bases"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    Velocity can be applied in two ways, either by modifying the player's current velocity or by setting an exact value. The velocity is specified as a `X,Y,Z` vector. To set an exact velocity use `@` in front of the value.
+
+                    `NOTE:` Modifying a players velocity is currently broken and will just set it. 
+                    
+                    Partial example from [SuperPRISM](https://maps.oc.tc/SuperPRISM/map.xml), using velocity for jump pads
+
+                        <regions>
+                            <!--  Yellow Pads  -->
+                            <apply velocity="@-0.4,1.1,0.0">
+                                <cuboid min="-1081,1,-2116" max="-1078,2,-2113"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1062,1,-2123" max="-1059,2,-2120"/>
                             </apply>
                         </regions>
 
