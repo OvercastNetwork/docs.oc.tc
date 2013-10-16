@@ -41,6 +41,19 @@
                     <!--![Regions](./images/selections.png)-->
 
                     <br/>
+                    #### Referencing a Named Region 
+
+                    Similar to kits regions are referenced by their `name=""`.
+                    To use regions in spawns, portals, etc., reference them by their name.
+
+                    	<regions>
+                            <rectangle name="named-region" min="-50,-50" max="50,50"/>
+                        </regions>
+
+                    	<!-- Region reference -->
+                        <region name="named-region"/>
+
+                    <br/>
                     ####Applying Filters, Kits, and Velocity to Regions
 
                     Filters, kits, and velocity changes are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
@@ -93,8 +106,11 @@
                             %td Modify or set a players velocity when they enter the region
 
                 :markdown
+
                     <br/>
-                    Example kit region from [Anathema](https://maps.oc.tc/Anathema/map.xml).
+                    ####[Example regions](id:regionExamples)
+
+                    Applying kits to a region:
 
                         <!-- Give a kit to players entering the region -->
                         <apply kit="knight">
@@ -102,16 +118,7 @@
                             <region name="b-knight"/>
                         </apply>
 
-
-                    Similar to kits regions are referenced by their `name=""`.
-                    To use regions in spawns, portals, etc., reference them by their name.
-
-                        <!-- Referencing a named region -->
-                        <region name="region name"/>
-
-
-                    <br/>
-                    ####[Example regions](id:regionExamples)
+                    Applying filters to a region:
 
                         <filter name="only-blue" parents="deny-players">
                             <allow><team>blue</team></allow>
@@ -133,8 +140,7 @@
                             </apply>
                         </regions>
 
-                    <br/>
-                    Example regions from Harb using [region combinations](#regionCombinations)
+                    Example regions from Harb using [region combinations](#regionCombinations).
 
                         <regions>
                             <rectangle name="main-area" min="-50,-32" max="51,33"/>
