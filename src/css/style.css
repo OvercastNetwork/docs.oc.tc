@@ -24,6 +24,11 @@ body {
     background-color: #e7e7e7;
 }
 
+body { 
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .jumbotron {
     position: relative;
     color: #fff;
