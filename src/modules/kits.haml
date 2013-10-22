@@ -9,7 +9,9 @@
                 .page-header
                     %h1 Kits
                 :markdown
-                    Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. Kits are referenced by their `name=""` from [spawns](/modules/spawns) and [regions](/modules/regions). Note that a kit will not empty a inventory, but rather overwrite the slots. If you want an empty slot, you can use air as the material. See [Babylon](https://maps.oc.tc/Babylon/map.xml) for an example on a complete empty inventory kit.
+                    Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. They are referenced by their `name=""` from [spawns](/modules/spawns) and [regions](/modules/regions).
+
+                    Note that a kit will not empty a inventory, but rather overwrite specific slots. If you want to guarantee that a slot is empty use air as the material for that slot. See the [Babylon map XML](https://maps.oc.tc/Babylon/map.xml) for an example of a completely empty inventory kit.
 
                         <kits>
                             <kit name="spawn">
