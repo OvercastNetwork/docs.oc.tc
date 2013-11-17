@@ -7,6 +7,7 @@ body {
     margin-right: 8px;
     margin-bottom: -11px;
     float: left;
+    width: 32px;
 }
 
 .navbar a i.glyphicon,
