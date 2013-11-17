@@ -1,0 +1,60 @@
+.container
+    .jumbotron.jumbotron-mini
+        %h1 Modules
+        %p.lead Game Settings
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Other Settings
+                :markdown
+                    Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through.
+
+                        <timelock>on</timelock>  <!-- Defaults to off -->
+
+                    <br/>
+                    Set the max build height, this can also be accomplished with the [playable region](/modules/playable_region).
+
+                        <maxbuildheight>38</maxbuildheight>
+
+                    <br/>
+                    Change friendly fire, this will allow teammates to shoot each-other, instead of the arrow being absorbed.
+
+                        <friendlyfire>on</friendlyfire> <!-- Defaults to off -->
+
+                    <br/>
+                    Change friendly fire arrow refund, this will refund arrows teammates have blocked from non infinity bows.
+
+                        <friendlyfirerefund>off</friendlyfirerefund> <!-- Defaults to on -->
+
+                    <br/>
+                    The maps difficulty can be specified from 0 (peaceful) to 3 (hard). If not specified it defaults to the default worlds difficulty. This mainly influences a players food bar.
+
+                        <difficulty>1</difficulty>
+
+                    <br/>
+                    Change the maps dimension. Can be set to `NETHER`, `NORMAL` and `THE_END`, defaults to normal.
+                    `NOTE:` This is currently broken so do not use it!
+
+                        <dimension>NETHER</dimension>
+                    
+                    <br/>
+                    Specify if a player can starve to death, usually used with the difficulty setting.
+                        
+                        <hunger>
+                            <depletion>off</depletion>
+                        </hunger>
+
+                    <br/>
+                    The multitrade module allows multiple people to trade with the same villager.
+
+                        <multitrade/>
+
+                    <br/>
+                    Specify a time limit for any objective map. If the time runs out before the objective is completed, the match ends in a tie.
+
+                    `NOTE:` You can use [time formatters](/reference/formatting#time_formatters) to specify the time in minutes, etc.
+
+                        <time result="objectives">1500</time>
+

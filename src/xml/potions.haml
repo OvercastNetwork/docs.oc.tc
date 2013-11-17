@@ -1,0 +1,28 @@
+.container
+    .jumbotron.jumbotron-mini
+        %h1 Modules
+        %p.lead Game Settings
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Potion Effects
+                :markdown
+                    To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
+
+                        <potion duration="10" amplifier="4">damage resistance</potion>
+                        <potion duration="900" amplifier="1" ambient="true">jump</potion>
+
+                    Potions effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and amplifier what level / how strong the potion is. The potion type is specified using the [potion name](/reference/potion_effects).
+
+                    `NOTE:` Infinite duration can be specified by using `oo` as the duration.
+
+                    Specifing `ambient="true"` will increase the amount of particles a player emits and make the particles translucent.
+
+                    <br/>
+                    To give a potion as an item you have to use:
+
+                        <item slot="3" damage="8229">potion</item>
+
+                    The damage specifies the potion type. [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions).

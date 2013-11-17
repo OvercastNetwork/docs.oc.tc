@@ -1,0 +1,253 @@
+.container
+    .jumbotron.jumbotron-mini
+        %h1 Modules
+        %p.lead Filters & Regions
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Regions
+                :markdown
+                    Regions are used to define, among other things, the area a filter applies to or where a portal links from.
+
+                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. All regions and region combinations can have a `name=""` attribute to reference them from kits, portals, etc.
+
+                        <!-- Note that Y is the up/down axis in minecraft -->
+                        
+                        <rectangle name="something" min="X1,Z1" max="X2,Z2"/>
+                        <!-- A Rectangle from X1,Z1 to X2,Z2 -->
+                        
+                        <cuboid name="something" min="X1,Y1,Z1" max="X2,Y2,Z2"/>
+                        <!-- A rectangular solid from X1,Y1,Z1 to X2,Y2,Z2 -->
+                        
+                        <circle name="something" center="X1,Z1" radius="R"/>
+                        <!-- A circle located at X1,Z1 with a radius of R -->
+                        <!-- Goes from 0 to map height, i.e. PGM doesn't check the players Y position -->
+                        
+                        <cylinder name="something" base="X1,Y1,Z1" radius="R" height="H"/>
+                        <!-- A cylinder located at X1,Z1,Y1 with a radius of R and a height of H -->    
+                        
+                        <sphere name="something" origin="X1,Y1,Z1" radius="R"/>
+                        <!-- A sphere located at X1,Y1,Z1 with a radius of R -->
+                        
+                        <block name="something">X,Y,Z</block>
+                        <!-- A single block located at | X,Y,Z -->
+
+
+                    `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
+
+                    For example: `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,5"`.
+                    <!--![Regions](./images/selections.png)-->
+
+                    <br/>
+                    #### Referencing a Named Region 
+
+                    Similar to kits regions are referenced by their `name=""`.
+                    To use regions in spawns, portals, etc., reference them by their name.
+
+                    	<regions>
+                            <rectangle name="named-region" min="-50,-50" max="50,50"/>
+                        </regions>
+
+                    	<!-- Region reference -->
+                        <region name="named-region"/>
+
+                    <br/>
+                    ####Applying Filters, Kits, and Velocity to Regions
+
+                    Filters, kits, and velocity changes are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
+
+                        <apply><region name="region1"/>..</apply>
+                        
+                    
+                    Attributes of the `<apply>` element
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Attribute
+                            %th Description
+                    %tdata
+                        %tr
+                            %td
+                                %code enter="filter name"
+                            %td Filter player enter events
+                        %tr
+                            %td
+                                %code exit="filter name"
+                            %td Filter player exit events
+                        %tr
+                            %td
+                                %code block="filter name"
+                            %td Filter block place and break events
+                        %tr
+                            %td
+                                %code block-place="filter name"
+                            %td Filter block place events
+                        %tr
+                            %td
+                                %code block-break="filter name"
+                            %td Filter block break events
+                        %tr
+                            %td
+                                %code use="filter name"
+                            %td Filter right-click events
+                        %tr
+                            %td
+                                %code kit="filter name"
+                            %td Give a kit to players entering the region
+                        %tr
+                            %td
+                                %code message="region message"
+                            %td Send a message to the player if the filter modifies the event
+                        %tr
+                            %td
+                                %code velocity="velocity to add or set"
+                            %td Modify or set a players velocity when they enter the region
+
+                :markdown
+
+                    <br/>
+                    ####[Example regions](id:regionExamples)
+
+                    Applying kits to a region:
+
+                        <!-- Give a kit to players entering the region -->
+                        <apply kit="knight">
+                            <region name="r-knight"/>
+                            <region name="b-knight"/>
+                        </apply>
+
+                    Applying filters to a region:
+
+                        <filter name="only-blue" parents="deny-players">
+                            <allow><team>blue</team></allow>
+                        </filter>
+
+                        <regions>
+                            <!-- Blue Team Base -->
+                            <!-- This cuboid region has the filter named 'only-blue' applied to it. -->
+                            <apply enter="only-blue" message="You may not enter the enemy team's base!">
+                                <cuboid min="49,13,4" max="37,10,-4"/>
+                            </apply>
+                            <apply block="deny-all" message="You may not modify the base!">
+                                <cuboid min="50,14,-5" max="36,7,5"/>
+                            </apply>
+                            
+                            <!-- Blue Team Tree -->
+                            <apply block="deny-all" message="This tree is protected, go figure.">
+                                <cylinder base="83.5,0,-47.5" radius="4" height="40"/>
+                            </apply>
+                        </regions>
+
+                    Example regions from Harb using [region combinations](#regionCombinations).
+
+                        <regions>
+                            <rectangle name="main-area" min="-50,-32" max="51,33"/>
+                            <union name="bases">
+                                <rectangle name="blue-base" min="-20,-62" max="21,-32"/>
+                                <rectangle name="red-base" min="-20,33" max="21,63"/>
+                            </union>
+                            <complement name="portals-area">
+                                <rectangle min="-56,-2" max="57,3"/>
+                                <region name="main-area"/>
+                            </complement>
+                            <apply block="deny-all">
+                                <!-- Protect portal areas -->
+                                <region name="portals-area"/>
+                            </apply>
+                            <apply block="no-tnt" message="You may not place TNT in the bases.">
+                                <region name="bases"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    Velocity can be applied in two ways, either by modifying the player's current velocity or by setting an exact value. The velocity is specified as a `X,Y,Z` vector. To set an exact velocity use `@` in front of the value.
+
+                    `NOTE:` Modifying a players velocity is currently broken and will just set it. 
+                    
+                    Partial example from [SuperPRISM](https://maps.oc.tc/SuperPRISM/map.xml), using velocity for jump pads
+
+                        <regions>
+                            <!--  Yellow Pads  -->
+                            <apply velocity="@-0.4,1.1,0.0">
+                                <cuboid min="-1081,1,-2116" max="-1078,2,-2113"/>
+                            </apply>
+                            <apply velocity="@0.0,1.4,-0.4">
+                                <cuboid min="-1062,1,-2123" max="-1059,2,-2120"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    ####[Region Combinations](id:regionCombinations)
+
+                    Regions can be inverted, combined, subtracted, or intersected by putting them inside of the following elements.
+
+                        <negative><region name="opti-region"/></negative>
+                        <!-- Inverse of a region -->
+                           
+                        <union><region name="region1"/><region name="region2"/>..</union>
+                        <!-- Combination of multiple regions -->
+                           
+                        <complement><region name="region1"/><region name="region2"/>..</complement>
+                        <!-- Subtracts successive regions from the first defined region -->
+                           
+                        <intersect><region name="region1"/><region name="region2"/>..</intersect>
+                        <!-- Returns the area that multiple regions intersect with -->
+
+                    ![Region Combinations .png](/img/regions.png)
+
+                    <br/>
+                    Example
+
+                        <regions>
+                            <!-- Blue Team Base -->
+                            <apply enter="only-blue" message="You may not enter the enemy team's base!">
+                                <union>
+                                    <cuboid min="-20,8,-75" max="11,41,-79"/>
+                                    <cuboid min="8,8,-80" max="13,41,-75"/>
+                                </union>
+                            </apply>
+                        </regions>
+
+
+                    <br/>
+                    ####[Point Providers](id:pointProviders)
+
+                    A point provider is used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
+                    Input can be a region, a region combination or simply an exact `X,Y,Z` coordinate.
+
+                        <point yaw="90" pitch="50" angle="">X,Y,Z</point>
+
+                    <br/>
+                    Attributes of the `<point>` element.
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Attribute
+                            %th Description
+                    %tdata
+                        %tr
+                            %td
+                                %code yaw=""
+                            %td specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
+                        %tr
+                            %td{:colspan => "5"}
+                                %i South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
+                        %tr
+                            %td
+                                %code pitch=""
+                            %td specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
+                        %tr
+                            %td{:colspan => "5"}
+                                %i -90&deg; is straight up 90&deg; is straight down.
+                        %tr
+                            %td
+                                %code angle="X,Y,Z"
+                            %td specifies the exact block coordinates that the player should look at.
+
+                :markdown
+
+                    `NOTE:` The pitch and yaw arguments can also accept a X,Y,Z coordinate.  
+                    `TIP:` Copy the yaw from the F3 screen in minecraft (labled as `f`).  
+

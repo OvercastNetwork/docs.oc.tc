@@ -1,7 +1,7 @@
 !!! 5
 %html
     %head
-        %title PGM XML Documentation
+        %title PGM Documentation
         %meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
         %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
         - @rand = SecureRandom.hex(13)
@@ -21,7 +21,7 @@
                 .navbar-header
                     %a.navbar-brand{:href => "/"}
                         %img{:src => "https://oc.tc/assets/logo.png"}
-                        PGM XML Documentation
+                        PGM Documentation
                     %button.navbar-toggle{:type => "button", :"data-toggle" => "collapse", :"data-target" => ".navbar-main-collapse"}
                         %span.sr-only Toggle navigation
                         %span.icon-bar
@@ -29,22 +29,27 @@
                         %span.icon-bar
                 %nav.collapse.navbar-collapse.navbar-main-collapse
                     %ul.nav.navbar-nav.navbar-right
-                        %li{:class => (current_page.include?("index") ? "active" : "")}
+                        %li{:class => (current_page.include?("/src/index") ? "active" : "")}
                             %a{:href => "/"}
                                 %i.glyphicon.glyphicon-home
-                                Home
-                        %li{:class => (current_page.include?("modules") ? "active" : "")}
-                            %a{:href => "/modules/main"}
-                                %i.glyphicon.glyphicon-th-large
-                                Modules
-                        %li{:class => (current_page.include?("reference") ? "active" : "")}
-                            %a{:href => "/reference/inventory"}
-                                %i.glyphicon.glyphicon-book
-                                Reference
-                        %li{:class => (current_page.include?("examples") ? "active" : "")}
-                            %a{:href => "/examples"}
+                                Overview
+                        %li{:class => (current_page.include?("/src/xml") ? "active" : "")}
+                            %a{:href => "/xml/"}
                                 %i.glyphicon.glyphicon-file
-                                Examples
+                                XML Docs
+                        %li{:class => (current_page.include?("/src/api") ? "active" : "")}
+                            %a{:href => "/api/"}
+                                %i.glyphicon.glyphicon-globe
+                                API Docs
+        - if current_page.include?("/xml/")
+            .container
+                %ul.nav.nav-tabs.subnav
+                    = partial('xml_nav')
+        - elsif current_page.include?("/api/")
+            .container
+                %ul.nav.nav-tabs.subnav
+                    = partial('api_nav')
+
         = yield
         .container
             %hr

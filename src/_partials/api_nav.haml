@@ -1,0 +1,8 @@
+%li.pull-right{:class => (current_page.include?("/src/api/reference") ? "active" : "")}
+    %a{:href => "/api/reference/"}
+        %i.glyphicon.glyphicon-book
+        Reference
+%li.pull-right{:class => (current_page.match(/\/src\/api\/[^\/]*$/) != nil ? "active" : "")}
+    %a{:href => "/api/"}
+        %i.glyphicon.glyphicon-transfer
+        Usage

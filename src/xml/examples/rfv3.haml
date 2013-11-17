@@ -1,0 +1,356 @@
+.container
+    .jumbotron.jumbotron-mini
+        %h1 Examples
+        %p.lead XML File Examples
+    %section
+        .row
+            = partial('examples_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Race for Victory 3
+                :markdown
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/main)
+                    Specify the XML file version and then open the main map module and specify the maps name, version and objective.
+
+                        <?xml version="1.0"?>
+                        <map proto="1.3.0">
+                        <name>Race for Victory 3</name>
+                        <version>1.2.5</version>
+                        <objective>Take the enemy's wool located to either side of the enemy's base and place it in your victory monument.</objective>
+
+                    <br/>
+                    Specify the maps authors and contributors. Each author and contributors `contribution=""` attribute is set to their specific contribution to the map.
+                    
+                        <authors>
+                            <author contribution="map design and master gardener">MonsieurApple</author>
+                            <author contribution="map design and code memorization">Plastix</author>
+                            <author contribution="map design and beautification">IM_A_H0B0</author>
+                        </authors>
+                        <contributors>
+                            <contributor contribution="item management and shenanigan manager">Anxuiz</contributor>
+                            <contributor contribution="portals and various asthetics">Torn_Ares</contributor>
+                            <contributor contribution="words">KasiCrafter</contributor>
+                        </contributors>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/rules)
+                    Specify some map specific rules.
+
+                        <rules>
+                            <rule>Do not block spawn(s)</rule>
+                            <rule>Do not team spleef</rule>
+                        </rules>
+
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/tutorial)
+                    Setup the tutorial module by including its default settings from the `tutorial.xml`, and then specify each of the points of interest on the map.
+
+                        <include src="tutorial.xml"/>
+                        <tutorial>
+                            <stage title="Capture the Wool">
+                                <message>
+                                    <line>§rThis map is a §a§lCapture the Wool §r(CTW) map</line>
+                                    <line>The objective is to grab the wool on the other team's side and return it to your base.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="90" pitch="50">44,60,0</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Blue Team Base">
+                                <message>
+                                    <line>§rThis is the §9Blue Team §rbase. You spawn with gear ready to go into battle!</line>
+                                    <line>You can use the water portals on either side to quickly exit the base.</line>
+                                    <line>The chests contain extra supplies to help you build defenses or bridge to the enemy side.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="180">0.5,2,102</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Iron Supplies">
+                                <message>
+                                    <line>Here is the iron supply for §9Blue Team§r. Note that §cRed Team §rhas the same thing on their side.</line>
+                                    <line>You can craft iron armor to prepare yourself for battle.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="35" pitch="30">14,25,63</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Red Wool Rooms">
+                                <message>
+                                    <line>These are §cRed team§r's wool rooms housing §alime§r, §dpink§r, and §6orange`r.</line>
+                                    <line>§9Blue Team §rhas §5purple§r, §eyellow`r, and §3cyan §rwools.</line>
+                                    <line>Red Team should defend these rooms against Blue Team invaders who are trying to steal the wool and make it back alive.</line>
+                                    <line>There are special goodies inside that will help you fight your way out.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="-107" pitch="10">-115,22,-95</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Victory Monument">
+                                <message>
+                                    <line>This is one of three of §9Blue Team§r's victory monuments.</line>
+                                    <line>The three colored wools from the §cRed Team§r's wool rooms must be placed in the victory monuments for the match to end.</line>
+                                    <line>Note that Red Team has three identical victory monuments for their respective wools.</line>
+                                </message>
+                                <teleport>
+                                    <point yaw="0">0.5,15,137</point>
+                                </teleport>
+                            </stage>
+
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/teams)
+                    Define two teams, their [colors](/reference/formatting) and names.
+
+                        <teams>
+                            <team color="blue" max="50">Blue Team</team>
+                            <team color="dark red" max="50">Red Team</team>
+                        </teams>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/spawns)
+                    Specify spawns for the two teams.
+
+                        <spawns>
+                            <spawns kit="spawn">
+                                <spawn team="blue" yaw="180"><cylinder base="0.5,2,91.5" radius="5" height="0"/></spawn>
+                                <spawn team="red" yaw="0"><cylinder base="0.5,2,-90.5" radius="5" height="0"/></spawn>
+                            </spawns>
+                            <default yaw="270"><cylinder base="44.5,8,0.5" radius="4" height="0"/></default>
+                        </spawns>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/kits)
+                    Team spawn kits, both teams get the same kit.
+
+                        <kits>
+                            <kit name="spawn">
+                                <item slot="0">iron sword</item>
+                                <item slot="1" enchantment="dig speed:7;arrow infinite:1">bow</item>
+                                <item slot="28">arrow</item>
+                                <item slot="2" enchantment="durability:3;dig speed:1">iron pickaxe</item>
+                                <item slot="3" amount="64" damage="1">log</item>
+                                <item slot="4" amount="64">glass</item>
+                                <item slot="6">milk bucket</item>
+                                <item slot="7">golden apple</item>
+                                <item slot="8" amount="64">cooked fish</item>
+                            </kit>
+                        </kits>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/filters)
+                    Create several named filters including a no-void filter.
+
+                        <filters>
+                            <filter name="no-void" parents="allow-all">
+                                <deny><void/></deny>
+                            </filter>
+
+                            <filter name="only-blue" parents="deny-players deny-world">
+                                <allow><team>blue</team></allow>
+                            </filter>
+
+                            <filter name="only-red" parents="deny-players deny-world">
+                                <allow><team>red</team></allow>
+                            </filter>
+                        </filters>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/regions)
+                    Define all the regions, since the playing area of this map is pretty complex there are lots of regions and combinations of regions.
+
+                        <regions>
+                            <union name="portals">
+                                <circle center="-48.5,-90.5" radius="8"/>
+                                <circle center="49.5,-90.5" radius="8"/>
+                                <circle center="0.5,-139.5" radius="8"/>
+                                <circle center="49.5,91.5" radius="8"/>
+                                <circle center="-48.5,91.5" radius="8"/>
+                                <circle center="0.5,140.5" radius="8"/>
+                            </union>
+
+                            <!-- void protection -->
+                            <apply block="no-void" message="You may not edit the void area">
+                                <negative>
+                                    <rectangle min="-14,-12" max="15,13"/>
+                                    <region name="portals"/>
+                                </negative>
+                            </apply>
+
+                            <!-- portal protections -->
+                            <apply block="deny-all">
+                                <region name="portals"/>
+                            </apply>
+
+                            <apply block="deny-all" message="You may not modify your supply room">
+                                <complement name="blue-supplies">
+                                    <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                    <cylinder base="0.5,7,91.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
+                                </complement>
+                                <complement name="red-supplies">
+                                    <circle center="0.5,-90.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                    <cylinder base="0.5,7,-90.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
+                                </complement>
+                            </apply>
+
+                            <!-- the wools red has to get -->
+                            <union name="red-wool-rooms">
+                                <circle name="yellow-island" center="-83.5,91.5" radius="11"/>
+                                <circle name="purple-island" center="84.5,91.5" radius="11"/>
+                                <circle name="cyan-island" center="0.5,175.5" radius="11"/>
+                            </union>
+
+                            <!-- the wools blue has to get -->
+                            <union name="blue-wool-rooms">
+                                <circle name="orange-island" center="84.5,-90.5" radius="11"/>
+                                <circle name="lime-island" center="-83.5,-90.5" radius="11"/>
+                                <circle name="pink-island" center="0.5,-174.5" radius="11"/>
+                            </union>
+
+                            <!-- the blocks outside of blue's wool rooms -->
+                            <complement name="outside-yellow">
+                                <circle center="-83.5,91.5" radius="14.9"/>
+                                <region name="yellow-island"/>
+                            </complement>
+                            <complement name="outside-purple">
+                                <circle center="84.5,91.5" radius="14.9"/>
+                                <region name="purple-island"/>
+                            </complement>
+                            <complement name="outside-cyan">
+                                <circle center="0.5,175.5" radius="14.9"/>
+                                <region name="cyan-island"/>
+                            </complement>
+
+                            <!-- the blocks outside of red's wool rooms -->
+                            <complement name="outside-orange">
+                                <circle center="84.5,-90.5" radius="14.9"/>
+                                <region name="orange-island"/>
+                            </complement>
+                            <complement name="outside-lime">
+                                <circle center="-83.5,-90.5" radius="14.9"/>
+                                <region name="lime-island"/>
+                            </complement>
+                            <complement name="outside-pink">
+                                <circle center="0.5,-174.5" radius="14.9"/>
+                                <region name="pink-island"/>
+                            </complement>
+
+                            <!-- wool room rules -->
+                            <apply block="only-blue" use="only-blue">
+                                <region name="blue-wool-rooms"/>
+                            </apply>
+                            <apply enter="only-blue" message="You may not enter your own wool room.">
+                                <region name="blue-wool-rooms"/>
+                            </apply>
+                            <apply block="only-red" use="only-red">
+                                <region name="red-wool-rooms"/>
+                            </apply>
+                            <apply enter="only-red" message="You may not enter your own wool room.">
+                                <region name="red-wool-rooms"/>
+                            </apply>
+
+                            <!-- no block placement outside wool rooms -->
+                            <apply block="deny-all">
+                                <region name="outside-yellow"/>
+                                <region name="outside-purple"/>
+                                <region name="outside-cyan"/>
+                                <region name="outside-orange"/>
+                                <region name="outside-lime"/>
+                                <region name="outside-pink"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/portals)
+                    Specify the team base portals and where they link from. There are two portals out of each team base and one back inside.
+
+                        <portals>
+                            <!-- portals in red base -->
+                            <portal x="-33" y="7">
+                                <cuboid min="-12,2,-92" max="-11,5,-89"/>
+                            </portal>
+                            <portal x="33" y="7">
+                                <cuboid min="12,2,-92" max="13,5,-89"/>
+                            </portal>
+
+                            <!-- portals in blue base -->
+                            <portal x="33" y="7">
+                                <cuboid min="12,2,90" max="13,5,93"/>
+                            </portal>
+                            <portal x="-33" y="7">
+                                <cuboid min="-12,2,90" max="-11,5,93"/>
+                            </portal>
+
+                            <!-- portal back to blue base -->
+                            <portal filter="only-blue" z="-33" y="-13">
+                                <cuboid min="-1,15,134" max="2,18,135"/>
+                            </portal>
+
+                            <!-- portal back to red base -->
+                            <portal filter="only-red" z="34" y="-13">
+                                <cuboid min="-1,15,-134" max="2,18,-133"/>
+                            </portal>
+                        </portals>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    Specify that iron swords, diamond pickaxes, and bows get repaired when dropped or when the player picks one up. Since the player only needs one arrow because the bows are enchanted with `infinite:1` arrows are also specified here. This prevents players from collecting huge stacks of arrows and spewing them all over on death. Repairing arrows instead of removing them also has the advantage of the player being able to accidental drop a arrow and not lose it.
+
+                        <toolrepair>
+                            <tool>iron sword</tool>
+                            <tool>iron pickaxe</tool>
+                            <tool>bow</tool>
+                            <tool>arrow</tool>
+                        </toolrepair>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    Remove specific items when they get dropped to prevent the map from getting cluttered.
+
+                        <itemremove>
+                            <item>log</item>
+                            <item>wood</item>
+                            <item>milk bucket</item>
+                            <item>cooked fish</item>
+                            <item>golden apple</item>
+                            <item>glass</item>
+                            <item>seeds</item>
+                            <item>sugar cane</item>
+                            <item>string</item>
+                            <item>glowstone dust</item>
+                        </itemremove>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/other_settings)
+                    The maps max build height in blocks.
+
+                        <maxbuildheight>40</maxbuildheight>
+                    
+                    <br/>
+                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/gamemode_ctw)
+                    Specify a Capture the Wool type game, and the locations where the wools have to be placed by each team.
+                        
+                        <wools>
+                            <wool team="red" color="purple">
+                                <block>-49,10,-91</block>
+                            </wool>
+                            <wool team="red" color="yellow">
+                                <block>49,10,-91</block>
+                            </wool>
+                            <wool team="red" color="cyan">
+                                <block>0,16,-140</block>
+                            </wool>
+                            <wool team="blue" color="lime">
+                                <block>49,10,91</block>
+                            </wool>
+                            <wool team="blue" color="orange">
+                                <block>-49,10,91</block>
+                            </wool>
+                            <wool team="blue" color="pink">
+                                <block>0,16,140</block>
+                            </wool>
+                        </wools>
+                    
+                    <br/>
+                    Close the main `<map>` module.
+
+                        </map>
