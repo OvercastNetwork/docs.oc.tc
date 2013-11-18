@@ -3,27 +3,50 @@
         .page-header
             %h1 Welcome
         %p
-            The docs pertaining to XML files and the web API can be found here.
-            %br This information is useful to people who wish to create XML files for maps; or Overcast Network related minecraft mods, applications, etc.
+            Documentation pertaining to XML files and the web API can be found here.
+        %p
+            This information is useful to people who wish to create XML files for maps; or Overcast Network related minecraft mods, applications, etc.
+        %br
         .row
             .col-md-6.text-center
                 .well
-                    %h1 
+                    %h1
                         %i.glyphicon.glyphicon-file
                     %h4 XML Documentation
-                    %p These docs provide valuable information for coding XML files. XML files are needed in order for any map released on the Overcast Network to function. The XML defines aspects of the game such as spawn points, kits and more.
+                    %p
+                        These docs provide valuable information for coding
+                        %br
+                        XML files. XML files are needed in order for any map
+                        %br
+                        released on the Overcast Network to function. The XML
+                        %br
+                        defines aspects of the game such as spawn points, kits and more.
                     %a.btn.btn-primary.btn-lg{:href => "/xml/"} Browse the XML docs
 
 
             .col-md-6.text-center
                 .well
-                    %h1 
+                    %h1
                         %i.glyphicon.glyphicon-globe
                     %h4 Web API Documentation
-                    %p Here you can find out how to access data relating to Overcast Network and its users. This API can be used to query a users score, the maps currently being played, and more. 
+                    %p
+                        Here you can find out how to access data relating to the
+                        %br
+                        Overcast Network and its users. This API can be used to
+                        %br
+                        query a users score, maps currently being played, and more.
+                        %br
+                        %b Note:
+                        The Web API is incomplete and in
+                        %i BETA.
                     %a.btn.btn-primary.btn-lg{:href => "/api/"} Browse the API docs
 
         %p.text-muted
             This documentation is open source and can be found on
-            %a{:href => "https://github.com/OvercastNetwork/docs.oc.tc/"} github.
-            If you see any errors or lack of information feel free to make a pull request or issue.
+            = succeed '.' do
+                %a{:href => "https://github.com/OvercastNetwork/docs.oc.tc/", :target => :blank} GitHub
+            If you see any errors or lack of information, feel free to
+            %a{:href => "https://github.com/OvercastNetwork/docs.oc.tc/issues/new", :target => :blank} report an issue
+            or
+            = succeed '.' do
+                %a{:href => "https://github.com/OvercastNetwork/docs.oc.tc/fork", :target => :blank} make a pull request
