@@ -1,0 +1,160 @@
+.container
+    .jumbotron.jumbotron-mini
+        %h1 Modules
+        %p.lead Filters & Regions
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Filters
+                :markdown
+                    Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you have to apply them to regions for them to do something. Filters can inherit other filters using the `parents=""` attribute. They return one of three possible states for an action; allow, deny and abstain.
+                    
+                        <filters>
+                            <filter name="no-world" parents="deny-world"></filter>
+                        </filters>
+
+
+                    <br/>
+                    ####Predefined Filters
+
+                        allow-all / deny-all
+                        <!-- allows or denies everything -->
+                        
+                        allow-players / deny-players
+                        <!-- allow or deny player access -->
+                        
+                        allow-blocks / deny-blocks
+                        <!-- allow or deny placement and breaking of blocks -->
+                        
+                        allow-place / deny-place
+                        <!-- allow or deny placement of blocks -->
+                        
+                        allow-break / deny-break
+                        <!-- allow or deny breaking of blocks -->
+                        
+                        allow-world / deny-world
+                        <!-- allow or deny block transformations such as fire spread, water flowing, etc -->
+                        
+                        allow-spawns / deny-spawns
+                        <!-- allows or denies player spawns -->
+                        
+                        allow-entities / deny-entities
+                        <!-- determines if entities will be allowed -->
+                        
+                        allow-mobs / deny-mobs
+                        <!-- allows or denies all mobs spawns, regardless of type -->
+
+
+                    <br/>
+                    ####Filter Exceptions
+                    Filters can have exceptions such as blocking all player access and then allowing a certain team access. Exceptions are put inside of `<allow>` or `<deny>` elements.
+
+                        <!-- Exception elements -->
+                        <team>team name</team>
+                        <block>block name</block>
+                    
+                    <br/>
+                    Example
+
+                        <filter name="only-red" parents="deny-players">
+                            <allow><team>red</team></allow>
+                        </filter>
+                        
+                        <filter name="gold-blocks" parents="deny-block">
+                            <allow><block>gold block</block></allow>
+                        </filter>
+                        
+                        <filter name="no-tnt" parents="allow-all">
+                            <deny><block>TNT</block></deny>
+                        </filter>
+
+
+                    <br/>
+                    ####[Filter Matchers](id:filterMatchers)
+
+                    To modify or combine the results of multiple filters use these matchers.
+
+                        <!-- Invert the filters result. -->
+                        <not><filter name="deny-gold" /></not>
+                        
+                        <!-- Allow if one of the containing filters is allow. -->
+                        <one><filter name="filter1" />..</one>
+
+                        <!-- Allow only if all of the containing filters are allow. -->
+                        <all><filter name="filter1" />..</all>
+
+                        <!-- Allow if any of the containing fiters are allow. -->
+                        <any><filter name="filter1" />..</any>
+                    
+                    <br/>
+                    Example from [Snowy Wars](https://maps.oc.tc/Snowy%20Wars/map.xml)
+
+                        <filters>
+                            <filter name="deny-icemelt">
+                                <not><all><!-- DENY if world and ice, ALLOW if not world, ABSTAIN if world and not ice -->
+                                    <any><!-- ALLOW if world, DENY else -->
+                                        <filter name="allow-world" />
+                                        <filter name="deny-all" />
+                                    </any>
+                                    <block>ice</block><!-- ALLOW if ice, ABSTAIN else -->
+                                </all></not>
+                            </filter>
+                        </filters>
+
+                    First we specify the filter and its name `(deny-icemelt)`. Then what we filter gets put into a `<all>` matcher and then into a `<not>` matcher.
+                    So `<all>` that we filter has to `<not>` be true for the filter to allow.
+
+                    We also have a `<any>` matcher with two filters in it, this means that the filter gets checked twice. Once for `allow-world` and then again for `deny-all`.
+
+                    The following things get checked:
+
+                        <!-- Returns allow if the the caller is world and the block is ice -->
+                        <!-- So we allow natural melting of the ice but then deny it with the <not> matcher -->
+                        <all>
+                            <filter name="allow-world" />
+                            <block>ice</block>
+                        </all>
+
+                        <!-- Returns deny if the block is ice. -->
+                        <!-- So we deny breaking of ice blocks but then allow it with the <not> matcher -->
+                        <all>
+                            <filter name="deny-all" />
+                            <block>ice</block>
+                        </all>
+
+
+                    So for the ice to be able to melt or be broken all of the following have to be true.
+
+                    * If the caller is the world (allow-world) and the block is ice then do `<not>` allow.
+                    * If the caller is anything else (deny-all) and the block is ice then allow.
+                    * If the block is not ice abstain, i.e. ignore the filter and continue as normal.
+
+                    Also see: [Viridun](https://maps.oc.tc/Viridun/map.xml)
+
+
+                    <br/>
+                    ####[Void Filter](id:voidFilter)
+
+                    If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
+                    The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
+
+                    <br/>
+                    Example from [RFV3](https://maps.oc.tc/RFV3/map.xml)
+
+                        <filters>
+                            <filter name="no-void" parents="allow-all">
+                                <deny><void/></deny>
+                            </filter>
+                        </filters>
+
+                        <regions>
+                            <apply block="no-void" message="You may not edit the void area">
+                                <negative>
+                                    <rectangle min="-14,-12" max="15,13"/>
+                                    <region name="portals"/>
+                                </negative>
+                            </apply>
+                        </regions>
+

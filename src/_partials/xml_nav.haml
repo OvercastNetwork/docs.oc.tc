@@ -1,0 +1,12 @@
+%li.pull-right{:class => (current_page.include?("/src/xml/examples") ? "active" : "")}
+    %a{:href => "/xml/examples/"}
+        %i.glyphicon.glyphicon-file
+        Examples
+%li.pull-right{:class => (current_page.include?("/src/xml/reference") ? "active" : "")}
+    %a{:href => "/xml/reference/inventory"}
+        %i.glyphicon.glyphicon-book
+        Reference
+%li.pull-right{:class => (current_page.match(/\/src\/xml\/[^\/]*$/) != nil ? "active" : "")}
+    %a{:href => "/xml/"}
+        %i.glyphicon.glyphicon-th-large
+        Modules

@@ -6,8 +6,12 @@
         %ul.dropdown-menu.subnav-dropdown{:role => "menu", :"style" => "width: 100%;"}
             - @subnav_content.each do |item|
                 - if item.kind_of?(Hash)
-                    %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                        %a{:href => "/#{item['path']}"} #{item['name']}
+                    - if item.has_key?('match')
+                        %li{:class => (current_page.match(item['match']) ? "active" : "")}
+                            %a{:href => "/#{item['path']}"} #{item['name']}
+                    - else
+                        %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
+                            %a{:href => "/#{item['path']}"} #{item['name']}
                 - elsif item.kind_of?(String)
                     %li.divider
                     %li.dropdown-header #{item}
@@ -17,8 +21,12 @@
         %ul.nav.nav-pills.nav-stacked.docs-nav-pills
             - @subnav_content.each do |item|
                 - if item.kind_of?(Hash)
-                    %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                        %a{:href => "/#{item['path']}"} #{item['name']}
+                    - if item.has_key?('match')
+                        %li{:class => (current_page.match(item['match']) ? "active" : "")}
+                            %a{:href => "/#{item['path']}"} #{item['name']}
+                    - else
+                        %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
+                            %a{:href => "/#{item['path']}"} #{item['name']}
                 - elsif item.kind_of?(String)
                     %li
                         %h4 #{item}
