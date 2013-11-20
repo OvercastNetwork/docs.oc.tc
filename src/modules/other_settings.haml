@@ -52,9 +52,13 @@
                         <multitrade/>
 
                     <br/>
-                    Specify a time limit for any objective map. If the time runs out before the objective is completed, the match ends in a tie.
-
-                    `NOTE:` You can use [time formatters](/reference/formatting#time_formatters) to specify the time in minutes, etc.
+                    You can specify a time limit for any map. 
 
                         <time result="objectives">1500</time>
+
+                    <br/>
+                    The result attribute determines which team wins when the time runs out. It can be the name of a team, or one of the
+                    special values "tie" for no winner, or "objectives" for the team that has the most objectives completed.
+
+                    `NOTE:` You can use [time formatters](/reference/formatting#time_formatters) to specify the time in minutes, etc.
 
