@@ -14,7 +14,7 @@
                     List of item names: [bukkit docs - Material](http://jd.bukkit.org/apidocs/org/bukkit/Material.html)
 
                         <item>Item name or id</item>
-
+ 
                         <!-- Item attributes -->
                         slot="0"
                         name="Name String"
@@ -22,6 +22,7 @@
                         lore="Lore String"
                         color="RRGGBB"
                         damage="0"
+                        attributes="attribute:add:lvl"
 
 
                     The `slot=""` attribute specifies where the item will be placed in the inventory. [Inventory slot reference](/reference/inventory).
@@ -46,15 +47,23 @@
                         <chestplate>diamond chestplate</chestplate>
                         <leggings>gold leggings</leggings>
                         <boots>leather boots</boots>
-
+ 
                     Enchanting, naming or giving armor lore works the same way as with items.
 
                         <boots enchantment="protection fall:1" lore="The Winged Boots of Hermes">iron boots</boots>
 
                     Items like leather armor are colored with the `color=""` attribute.
                     The color is represented in hexadecimal. See [Minecraft wiki - Dye Data Values](http://www.minecraftwiki.net/wiki/Dyeing#Data_values) for a list of hex colors for the different dyes.
-
+ 
                     `NOTE:` The hex color value is specified without the hash `#` symbol.
-
+ 
                         <helmet color="cd0000">leather helmet</helmet>
+ 
+                    The `attributes=""` will allow you to set an attribute to an item or a piece of armor. Look at [Minecraft wiki - Attributes](http://minecraft.gamepedia.com/Attribute) for a list of different attributes.
 
+                        <chestplate attributes="generic.knockbackResistance:add:1">chainmail chestplate</chestplate>
+                        <item attributes="generic.knockbackResistance:add:1">diamond spade</item>
+                        <item attributes="generic.knockbackResistance:add:1;generic.movementSpeed:add:2">diamond spade</item>
+                        <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings> <!-- Unit of maxHealth is in half-hearts -->
+
+                    `NOTE:` Negative lvl values are allowed; however, sometimes don't work as expected.
