@@ -1,0 +1,76 @@
+.container
+    .jumbotron.subhead
+        %h1 Reference
+        /%p.lead Main map element
+    %section
+        .row
+            = partial('reference_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Item Attributes
+                %h5 Attributes Available on All Living Entities
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Name
+                            %th Description
+                            %th Default Base
+                            %th Min
+                            %th Max
+                    %tbody
+                        %tr
+                            %td
+                                %code generic.maxHealth
+                            %td The maximum health of this mob; determines the highest Health they may be healed to.
+                            %td 20.0
+                            %td 0.0
+                            %td 2147483647.0 (231 − 1)
+                        %tr
+                            %td
+                                %code generic.followRange
+                            %td The range in blocks within which a mob with this attribute will target players or other mobs to track. Exiting this range will cause the mob to cease following the player/mob. Actual value used by most mobs is 16; for Zombies it is 40.
+                            %td 32.0
+                            %td 0.0
+                            %td 2048.0
+                        %tr
+                            %td
+                                %code generic.knockbackResistance
+                            %td Resistance to knockback from attacks, explosions, and projectiles. 1.0 is full resistance.
+                            %td 0.0
+                            %td 0.0
+                            %td 1.0
+                        %tr
+                            %td
+                                %code generic.movementSpeed
+                            %td Speed of movement in some unknown metric. The mob's maximum speed in blocks/second is a bit over 43 times this value, but can be affected by various conditions.
+                            %td 0.7
+                            %td 0.0
+                            %td ∞
+                        %tr
+                            %td
+                                %code generic.attackDamage
+                            %td Damage dealt by attacks, in half-hearts.
+                            %td 1.0
+                            %td 0.0
+                            %td ∞
+                %h5 Attributes for Horses
+                %code NOTE: 
+                This is useful if you want custom attributes for horse armor.
+                %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %thead
+                        %tr
+                            %th Name
+                            %th Description
+                            %th Default Base
+                            %th Min
+                            %th Max
+                    %tbody
+                        %tr
+                            %td
+                                %code horse.jumpStrength
+                            %td Horse jump strength in some unknown metric.
+                            %td 0.7
+                            %td 0.0
+                            %td 2
+                :markdown
+                    Copied from: [Minecraft Wiki Attributes](http://minecraft.gamepedia.com/Attribute)
