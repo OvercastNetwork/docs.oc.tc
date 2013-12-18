@@ -1,0 +1,33 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Blocks
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Block Drops
+                :markdown
+                    This module can be used to set custom block drops. Within `<rule>` you set the block that is broke and the item that is dropped.
+
+                        <blockdrops>
+                            <rule>
+                                <block>iron ore</block>
+                                <drops>
+                                    <item>iron ingot</item>
+                                </drops>
+                            </rule>
+                            <rule>
+                                <block>lapis ore</block>
+                                <drops>
+                                    <item>lapis ore</item>
+                                </drops>
+                            </rule>
+                            <rule>
+                                <block>emerald ore</block>
+                                <drops>
+                                    <item>emerald ore</item>
+                                </drops>
+                            </rule>
+                        </blockdrops>
