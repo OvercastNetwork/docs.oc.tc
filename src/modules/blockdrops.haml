@@ -1,0 +1,57 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Blocks
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Block Drops
+                :markdown
+                    This module can be used to set custom block drops. Within `<rule>` you can specify the items which are dropped when breaking specific blocks.
+
+                        <blockdrops>
+                            <rule>
+                                <block>iron ore</block>
+                                <drops>
+                                    <item>iron ingot</item>
+                                </drops>
+                            </rule>
+                            <rule>
+                                <block>lapis ore</block>
+                                <drops>
+                                    <item>lapis ore</item>
+                                </drops>
+                            </rule>
+                            <rule>
+                                <block>emerald ore</block>
+                                <drops>
+                                    <item>emerald ore</item>
+                                </drops>
+                            </rule>
+                        </blockdrops>
+                    </br>
+                    #### [Rules](id:bdrule)
+
+                        <rule>
+                            <!-- Gold ore is the block that is broken -->
+                            <block>gold ore</block>
+                            <drops>
+                                <!-- Gold ingot is the item that will be dropped when the gold ore is broken -->
+                                <item>gold ingot</item>
+                            </drops>
+                        </rule>
+                    </br>
+                    #### [Multiple Block Drops](id:bdmulti)
+                    You can also have multiple items drop from one block.
+
+                        <rule>
+                            <!-- Wool will be the block that is broken -->
+                            <block>wool</block>
+                            <drops>
+                                <!-- You can also set all the factors of items. I.E: Amount, Damage, Lore, Name, Etc. -->
+                                <item amount="3">stone</item>
+                                <item damage="5" amount="10">wool</item>
+                            </drops>
+                        </rule>
