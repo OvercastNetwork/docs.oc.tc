@@ -1,0 +1,53 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Blocks
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Renewables
+                :markdown
+                    This module can create regions in which destroyed or altered blocks will gradually be restored to their original state.
+
+                    The `<renewables>` tag can contain any number of `<renewable>` tags. Each `<renewable>` must have a `<region>` tag
+                    to limit it to a particular region. Larger regions are more demanding on server resources, so don't make them any
+                    larger than necessary. Regions under 10,000 blocks in volume should be safe. If a larger region is needed, it's best to inquire with a PGM developer or administrator first.
+
+                    The `<renewable>` tag has several options to control how blocks are renewed:
+
+                    The `rate` attribute is the approximate number of blocks that will be restored per second.
+
+                    The `grow` option causes blocks to only be restored adjacent to other blocks that are already restored. This option is enabled by default. If set to false, blocks will be restored at completely random locations, even in mid-air.
+
+                    The `particles` and `sound` options control the effects when blocks are restored. These are also enabled by default.
+
+                    The `avoid-entities` option, which is on by default, prevents blocks from being restored within a few meters of a player.
+
+                    By default, all blocks in the region are renewable. Multiple `<renew>` tags can be used inside the `<renewable>` to specify only particular blocks to renew.
+
+                    `<replace>` tags specify which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.
+
+                    Normally, blocks will be restored to their exact state when the map was loaded. If some block types are specified in
+                    `<shuffle>` tags, blocks of those types in the original region will be restored to a block type chosen at random from
+                    the shuffleable types. The approximate proportions of block types from the original region will be preserved.
+
+                        <renewables>
+                            <renewable rate="2.5" grow="true" particles="true" sound="true" avoid-entities="true">
+                                <region>
+                                    <cylinder base="0,117,0" radius="6" height="13"/>
+                                </region>
+                                <!-- These are the blocks that will renew -->
+                                <renew>iron ore</renew>
+                                <renew>glowstone</renew>
+                                <renew>stone</renew>
+                                <!-- These blocks can be replaced by renewing blocks -->
+                                <replace>air</replace>
+                                <replace>lava</replace>
+                                <replace>stationary lava</replace>
+                                <!-- These blocks will switch with each other when they renew -->
+                                <shuffle>stone</shuffle>
+                                <shuffle>iron ore</shuffle>
+                            </renewable>
+                        </renewables>

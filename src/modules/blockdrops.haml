@@ -1,0 +1,56 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Blocks
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Block Drops
+                :markdown
+                    This module can be used to customize what items drop when blocks are mined, and what the mined block is replaced with. 
+
+                    The `<blockdrops>` tag can contain any number of `<rule>` tags. Each `<rule>` can have any number of `<block>` tags
+                    to specify which block types the rule applies to.
+
+                    The `<drops>` tag contains a list of `<item>`s to drop when a matching block is mined. These items can include any special data, such as custom names, enchantments, attributes, etc.
+                    See [items](/modules/items) for details on how to use the `<item>` tag. XP orbs can also be dropped by specifying the
+                    amount of XP in the `<experience>` tag.
+
+                    The `<replacement>` tag can be used to specify a block other than air to replace the original block with when mined.
+
+                    A `<region>` tag can be used to limit the rule to particular regions (see [regions](/modules/regions)).
+
+                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
+                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of how the block is mined.
+
+                    Custom drops do not apply to blocks broken by means other than mining, such as explosions or flowing water.
+
+                        <blockdrops>
+                            <rule>
+                                <region>
+                                    <cuboid min="1,2,3" max="4,5,6"/>
+                                </region>
+                                <block>iron ore</block>
+                                <block>iron block</block>
+                                <drops>
+                                    <item>iron ingot</item>
+                                </drops>
+                                <experience>1</experience>
+                                <replacement>stone</replacement>
+                                <wrongtool>false</wrongtool>
+                            </rule>
+                            <rule>
+                                <block>lapis ore</block>
+                                <drops>
+                                    <item>lapis ore</item>
+                                </drops>
+                            </rule>
+                            <rule>
+                                <block>emerald ore</block>
+                                <drops>
+                                    <item>emerald ore</item>
+                                </drops>
+                            </rule>
+                        </blockdrops>
