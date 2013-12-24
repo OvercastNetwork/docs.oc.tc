@@ -52,6 +52,17 @@
                         <multitrade/>
 
                     <br/>
+                    The auto-respawn module allows the map creator to require that players automatically respawn after the designated time (or, if no time is specified, the default of 0 seconds). If the respawn time is less than 1 second, PGM will wait a half-second before respawning the player, allowing the death to fully complete.
+
+                    To use the default time of 0 seconds:
+
+                        <autorespawn/>
+
+                    To specify your own time:
+                        
+                        <autorespawn time="3s"/>
+
+                    <br/>
                     You can specify a time limit for any map. 
 
                         <time result="objectives">1500</time>
