@@ -15,7 +15,7 @@ set :deploy_to, "/home/deploy/apps/docs"
 set :user, "deploy"
 set :port, 50210
 
-server 'dal02.oc.tc', :app, :db, :web, :primary => true
+server '198.143.187.179', :app, :db, :web, :primary => true
 
 default_environment["RAILS_ENV"] = "production"
 
