@@ -6,6 +6,12 @@ GEM
       mime-types
       xml-simple
     builder (3.2.2)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     chunky_png (1.2.8)
     compass (0.12.2)
       chunky_png (~> 1.2)
@@ -13,9 +19,19 @@ GEM
       sass (~> 3.1)
     fssm (0.2.10)
     haml (3.1.8)
+    highline (1.6.20)
     mime-types (1.23)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     rack (1.5.2)
     rdiscount (2.1.6)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.9)
     staticmatic2 (2.1.6)
       aws-s3
@@ -33,6 +49,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano (= 2.15.5)
   haml
   rdiscount
+  rvm-capistrano
   staticmatic2
