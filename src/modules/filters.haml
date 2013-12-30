@@ -77,16 +77,16 @@
                     To modify or combine the results of multiple filters use these matchers.
 
                         <!-- Invert the filters result. -->
-                        <not><filter name="deny-gold" /></not>
+                        <not><filter name="deny-gold"/></not>
                         
                         <!-- Allow if one of the containing filters is allow. -->
-                        <one><filter name="filter1" />..</one>
+                        <one><filter name="filter1"/>..</one>
 
                         <!-- Allow only if all of the containing filters are allow. -->
-                        <all><filter name="filter1" />..</all>
+                        <all><filter name="filter1"/>..</all>
 
                         <!-- Allow if any of the containing fiters are allow. -->
-                        <any><filter name="filter1" />..</any>
+                        <any><filter name="filter1"/>..</any>
                     
                     <br/>
                     Example from [Snowy Wars](https://maps.oc.tc/Snowy%20Wars/map.xml)
@@ -95,8 +95,8 @@
                             <filter name="deny-icemelt">
                                 <not><all><!-- DENY if world and ice, ALLOW if not world, ABSTAIN if world and not ice -->
                                     <any><!-- ALLOW if world, DENY else -->
-                                        <filter name="allow-world" />
-                                        <filter name="deny-all" />
+                                        <filter name="allow-world"/>
+                                        <filter name="deny-all"/>
                                     </any>
                                     <block>ice</block><!-- ALLOW if ice, ABSTAIN else -->
                                 </all></not>
@@ -113,14 +113,14 @@
                         <!-- Returns allow if the the caller is world and the block is ice -->
                         <!-- So we allow natural melting of the ice but then deny it with the <not> matcher -->
                         <all>
-                            <filter name="allow-world" />
+                            <filter name="allow-world"/>
                             <block>ice</block>
                         </all>
 
                         <!-- Returns deny if the block is ice. -->
                         <!-- So we deny breaking of ice blocks but then allow it with the <not> matcher -->
                         <all>
-                            <filter name="deny-all" />
+                            <filter name="deny-all"/>
                             <block>ice</block>
                         </all>
 
