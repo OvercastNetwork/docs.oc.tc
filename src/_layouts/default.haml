@@ -57,3 +57,8 @@
                     %li.pull-right
                         %a{:href => "https://oc.tc/revisions/docs"}
                             Revisions
+                    %li.pull-right
+                        - commit_long = `git rev-parse HEAD`
+                        - commit_short = `git rev-parse --short HEAD`
+                        %a{:href => "http://github.com/OvercastNetwork/docs.oc.tc/commit/" + commit_long}
+                            Git rev: #{commit_short}
