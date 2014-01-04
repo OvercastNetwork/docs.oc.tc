@@ -1,0 +1,97 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Game Modes
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1
+                        King of the Hill
+                :markdown
+                    KotH is a gamemode in which you capture and hold a hill to collect points. The first team to reach a preset amount of points wins. A KotH map can have multiple hills each with their own attributes such as capture time.
+
+                        <king>
+                            <hills>
+                                <hill name="Hill" capture-time="10s" ratio="1">
+                                    <capture><region name="hill"/></capture>
+                                    <progress><cuboid min="-5,71,-5" max="5,71,5"/></progress>
+                                    <!-- Hack because you have to have this regions -->
+                                    <captured><cuboid min="0,0,0" max="0,0,0"/></captured>
+                                </hill>
+                            </hills>
+                        </king>
+
+                    <br/>
+                    #### Hill attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code name=""
+                                %td
+                                    Name of the hill, displayed on the scoreboard.
+                                %td
+                                    %span.label.label-primary N/A
+                            %tr
+                                %td
+                                    %code capture-time=""
+                                %td
+                                    Time to capture the hill.
+                                %td
+                                    30 sec
+                            %tr
+                                %td
+                                    %code points=""
+                                %td
+                                    Points to give per second to the owning team.
+                                %td
+                                    1
+                :markdown
+                    Capture time can be any amount of time, and supports [Time Formatters](/reference/formatting#time_formatters).
+
+                    <br/>
+                    #### Hill sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code= html_escape('<capture> <region name="hill"/> </capture>')
+                                %td
+                                    The region players have to stand in to capture the hill.
+                            %tr
+                                %td
+                                    %code= html_escape('<progress> <region name="capture"/> </progress>')
+                                %td
+                                    The region to display capture progress.
+                            %tr
+                                %td
+                                    %code= html_escape('<captured> <region name="captured"/> </captured>')
+                                %td
+                                    The region to display if the hill is captured.
+
+                :markdown
+                    Capture progress is displayed inside the defined `<progress>` region using the dominating teams wool/clay color. After a hill is captured the `<captured>` region is also filled with that teams wool/clay color. If the `<captured>` region is not present it will use the `<progress>` region to display captured status. The progress and captured regions must be cuboids otherwise the plugin will throw an error.
+
+                    <br/>
+                    #### [Scoring](id:scoring)
+                    KotH games end use the `<score>` module to end the game when one team reaches a preset amount of points. The `<king/>` tag prevents teams from getting points when killing players, this means they have to actually capture the hill to get points.
+
+                    `NOTE:` King of the Hill maps may __not__ have a time limit.
+
+                        <score>
+                            <limit>500</limit>
+                            <king/>
+                        </score>
