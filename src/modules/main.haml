@@ -9,14 +9,14 @@
                 .page-header
                     %h1 Main map element
                 :markdown
-                    Every map XML file must contain the base `<map>` module. It also contains modules that specify the map name, version, objective, authors and contributors. All of these modules are required in a complete XML file except the `<contributors>` module.
+                    Every map XML file must contain the base `<map>` module. It also contains modules that specify the map name, version, objective, authors and contributors. All of these modules are required in a complete XML file except the `<contributors>` module. The objective is the text that players see when they join the match, and so it's important for this to be very clear, concise, and informative.
 
-                    The `proto=""` attribute specifies what PGM version the XML file was created for. If this value is higher than the version of the loaded PGM plugin the map won't load, if it's lower the map will load like normal. Basically its just a failsafe to prevent old version of PGM from loading maps with newer features.
+                    The `proto=""` attribute specifies what PGM version the XML file was created for. If this value is higher than the version of PGM that is running, the map won't load. If it's lower, the map will load but the XML may be interpreted in an outdated way. Mapmakers should always use the latest supported XML version, and this may be required of new maps that are to be added to the Overcast Network rotations.
 
-                    Current map proto is `1.3.0`.
+                    Current map proto is `1.3.1`.
 
                         <?xml version="1.0"?>
-                        <map proto="1.3.0">
+                        <map proto="1.3.1">
                         <name>Map Name</name> <!-- The map's name, shouldn't be too long -->
                         <version>1.0</version> <!-- The map version -->
                         <objective>Short description about the maps objective.</objective>
