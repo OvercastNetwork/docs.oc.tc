@@ -62,48 +62,49 @@
                         
                     
                     Attributes of the `<apply>` element
-                %table.table.table-striped.table-hover.table-condensed.table-bordered
-                    %thead
-                        %tr
-                            %th Attribute
-                            %th Description
-                    %tdata
-                        %tr
-                            %td
-                                %code enter="filter name"
-                            %td Filter player enter events
-                        %tr
-                            %td
-                                %code leave="filter name"
-                            %td Filter player leave events
-                        %tr
-                            %td
-                                %code block="filter name"
-                            %td Filter block place and break events
-                        %tr
-                            %td
-                                %code block-place="filter name"
-                            %td Filter block place events
-                        %tr
-                            %td
-                                %code block-break="filter name"
-                            %td Filter block break events
-                        %tr
-                            %td
-                                %code use="filter name"
-                            %td Filter right-click events
-                        %tr
-                            %td
-                                %code kit="filter name"
-                            %td Give a kit to players entering the region
-                        %tr
-                            %td
-                                %code message="region message"
-                            %td Send a message to the player if the filter modifies the event
-                        %tr
-                            %td
-                                %code velocity="velocity to add or set"
-                            %td Modify or set a players velocity when they enter the region
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code enter="filter name"
+                                %td Filter player enter events
+                            %tr
+                                %td
+                                    %code leave="filter name"
+                                %td Filter player leave events
+                            %tr
+                                %td
+                                    %code block="filter name"
+                                %td Filter block place and break events
+                            %tr
+                                %td
+                                    %code block-place="filter name"
+                                %td Filter block place events
+                            %tr
+                                %td
+                                    %code block-break="filter name"
+                                %td Filter block break events
+                            %tr
+                                %td
+                                    %code use="filter name"
+                                %td Filter right-click events
+                            %tr
+                                %td
+                                    %code kit="filter name"
+                                %td Give a kit to players entering the region
+                            %tr
+                                %td
+                                    %code message="region message"
+                                %td Send a message to the player if the filter modifies the event
+                            %tr
+                                %td
+                                    %code velocity="velocity to add or set"
+                                %td Modify or set a players velocity when they enter the region
 
                 :markdown
 
@@ -221,30 +222,31 @@
 
                     <br/>
                     Attributes of the `<point>` element.
-                %table.table.table-striped.table-hover.table-condensed.table-bordered
-                    %thead
-                        %tr
-                            %th Attribute
-                            %th Description
-                    %tdata
-                        %tr
-                            %td
-                                %code yaw=""
-                            %td specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
-                        %tr
-                            %td{:colspan => "5"}
-                                %i South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
-                        %tr
-                            %td
-                                %code pitch=""
-                            %td specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
-                        %tr
-                            %td{:colspan => "5"}
-                                %i -90&deg; is straight up 90&deg; is straight down.
-                        %tr
-                            %td
-                                %code angle="X,Y,Z"
-                            %td specifies the exact block coordinates that the player should look at.
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code yaw=""
+                                %td specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
+                            %tr
+                                %td{:colspan => "5"}
+                                    %i South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
+                            %tr
+                                %td
+                                    %code pitch=""
+                                %td specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
+                            %tr
+                                %td{:colspan => "5"}
+                                    %i -90&deg; is straight up 90&deg; is straight down.
+                            %tr
+                                %td
+                                    %code angle="X,Y,Z"
+                                %td specifies the exact block coordinates that the player should look at.
 
                 :markdown
 

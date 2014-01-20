@@ -25,51 +25,52 @@
 
                     <br/>
                     ##### Class attributes
-                %table.table.table-striped.table-hover.table-condensed.table-bordered
-                    %thead
-                        %tr
-                            %th Attribute
-                            %th Description
-                    %tbody
-                        %tr
-                            %td
-                                %code name=""
-                            %td
-                                Name of the class.
-                        %tr
-                            %td
-                                %code description=""
-                            %td
-                                Description shown in
-                                %code /classes
-                        %tr
-                            %td
-                                %code longdescription=""
-                            %td
-                                Description shown in class picker menu.
-                        %tr
-                            %td
-                                %code icon=""
-                            %td
-                                Icon (material) shown in the class picker menu.
-                        %tr
-                            %td
-                                %code family="ghost"
-                            %td
-                                "group" of classes (ghost squadron is "ghost").
-                        %tr
-                            %td
-                                %code sticky="false"
-                            %td
-                                If set to
-                                %code true
-                                players can't change the class mid game, instead they have to rejoin.
-                        %tr
-                            %td
-                                %code default="false"
-                            %td
-                                Specify if the class is the default class for new players.
-                        %tr
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code name=""
+                                %td
+                                    Name of the class.
+                            %tr
+                                %td
+                                    %code description=""
+                                %td
+                                    Description shown in
+                                    %code /classes
+                            %tr
+                                %td
+                                    %code longdescription=""
+                                %td
+                                    Description shown in class picker menu.
+                            %tr
+                                %td
+                                    %code icon=""
+                                %td
+                                    Icon (material) shown in the class picker menu.
+                            %tr
+                                %td
+                                    %code family="ghost"
+                                %td
+                                    "group" of classes (ghost squadron is "ghost").
+                            %tr
+                                %td
+                                    %code sticky="false"
+                                %td
+                                    If set to
+                                    %code true
+                                    players can't change the class mid game, instead they have to rejoin.
+                            %tr
+                                %td
+                                    %code default="false"
+                                %td
+                                    Specify if the class is the default class for new players.
+                            %tr
 
                 :markdown
                     The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.
