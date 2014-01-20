@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Snowy Wars
                 :markdown
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/main)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/main)
                     Every map XML file starts with the XML header and then the base `<map>` module.
 
                         <?xml version="1.0"?>
@@ -28,7 +28,7 @@
                         </authors>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/teams)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
                     Define two teams, their [colors](/reference/formatting) and names.
 
                         <teams>
@@ -37,13 +37,13 @@
                         </teams>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/other_settings)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/other_settings)
                     The maps max build height in blocks.
 
                         <maxbuildheight>20</maxbuildheight>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/spawns)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
                     Specify where the previously defined teams will spawn. Both teams have two spawn cylinders, players will spawn in one at random at a random location inside the cylinder. We also specify what kit the players will get when spawning. The kits are defined further down in the maps XML file and are referenced here by name.
 
                     The direction a player faces when spawning in a region is defined by putting the region inside a `<spawn>` element and specifying the `yaw=""` attribute.
@@ -69,7 +69,7 @@
                         </spawns>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/gamemode_dtm)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_dtm)
                     The objective of the map, in this case a monument made out of obsidian. Both monuments get assigned a `owner=""` which specifies who's team it belongs to. The team who destroys the enemies monument first wins.
 
                         <destroyables name="Monument" completion="100%" materials="obsidian">
@@ -82,7 +82,7 @@
                         </destroyables>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/filters)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
                     A slightly complex block filter that prevents ice from melting naturally. See [filter matchers](/modules/filters#filterMatchers) for a more detailed explanation.
 
                         <filters>
@@ -98,7 +98,7 @@
                         </filters>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/regions)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
                     The regions of the map. Here we specify a rectangle region named `playable` it will be referenced from the playable region module lower down. The `playable` region gets the `deny-icemelt` filter applied. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base.
 
                         <regions>
@@ -114,7 +114,7 @@
                         </regions>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/playable_region)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
                     The playable region, it references a region named `playable` defined in the `<regions>` module.
 
                         <playable>
@@ -122,7 +122,7 @@
                         </playable>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/kits)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
                     Each team kit has leather armor colored in their team color and they inherit the main spawn kit.
 
                         <kits>
@@ -153,7 +153,7 @@
                         </kits>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Specify that iron swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up.
 
                         <toolrepair>
@@ -164,7 +164,7 @@
                         </toolrepair>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Remove arrows, leather armor, wood, apples and obsidian when it is dropped. Items that get dropped from block–break actions also get removed.
 
                         <itemremove>
@@ -179,7 +179,7 @@
                         </itemremove>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/tnt)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/tnt)
                     Specify that TNT ignites instantly when placed and does not destroy blocks.
 
                         <tnt>

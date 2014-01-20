@@ -12,6 +12,7 @@
         %link{:href => "//oc.tc/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
         %link{:href => "//oc.tc/favicon.ico", :rel => "apple-touch-icon", :type => "image/x-icon"}
         %link{:href => "//fonts.googleapis.com/css?family=Lato:700,400,300", :rel => "stylesheet"}
+        %link{:href => "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css", :rel => "stylesheet"}
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"}
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"}
@@ -32,19 +33,19 @@
                     %ul.nav.navbar-nav.navbar-right
                         %li{:class => (current_page.include?("index") ? "active" : "")}
                             %a{:href => "/"}
-                                %i.glyphicon.glyphicon-home
+                                %i.fa.fa-home
                                 Home
                         %li{:class => (current_page.include?("modules") ? "active" : "")}
                             %a{:href => "/modules/main"}
-                                %i.glyphicon.glyphicon-th-large
+                                %i.fa.fa-th-large
                                 Modules
                         %li{:class => (current_page.include?("reference") ? "active" : "")}
                             %a{:href => "/reference/inventory"}
-                                %i.glyphicon.glyphicon-book
+                                %i.fa.fa-book
                                 Reference
                         %li{:class => (current_page.include?("examples") ? "active" : "")}
                             %a{:href => "/examples"}
-                                %i.glyphicon.glyphicon-file
+                                %i.fa.fa-file-text
                                 Examples
         = yield
         .container

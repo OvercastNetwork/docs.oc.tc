@@ -11,7 +11,7 @@
                 :markdown
                     >If you're interested in the backstory of harb read: [The Story of Harb](https://oc.tc/forums/topics/50eba925f344228923000196) - By SH4D0W_HAWK
 
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/main)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/main)
                     Specify the XML file version and then open the main map module and specify the maps name, version and objective.
 
                         <?xml version="1.0"?>
@@ -30,7 +30,7 @@
                         </authors>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/teams)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
                     Define two teams, their [colors](/reference/formatting) and names.
 
                         <teams>
@@ -39,7 +39,7 @@
                         </teams>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/filters)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
                     Custom filter definition that denies TNT blocks. When applied to a region with `block=""` it denies placing and breaking. To only deny placing apply it with `block-place=""`.
 
                         <filters>
@@ -49,7 +49,7 @@
                         </filters>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/regions)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
                     Define several named regions. Apply the `no-tnt` filter to the region named `bases` and `deny-all` block placing/breaking to the `portals-area` region.
 
                         <regions>
@@ -72,7 +72,7 @@
                         </regions>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/playable_region)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
                     This playable area consists of multiple regions that are combined. These regions are defined in the `<regions>` module and are referenced here by their name.
 
                         <playable>
@@ -82,7 +82,7 @@
                         </playable>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/kits)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
                     Each team kit has leather armor colored in their team color and they inherit the main spawn kit.
 
                         <kits>
@@ -114,7 +114,7 @@
                         </kits>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/spawns)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
                     Harb has pretty unique spawns in that they are cuboids covering a large area of the map that transverse multiple Z levels. This allows players to spawn on roofs and inside buildings. Because of this `safe="true"` is specified to prevent players from spawning midair or in walls. The `<point>` definition is a failsafe in case the PGM plugin can't find a safe spawn inside the region.
 
                         <spawns>
@@ -132,7 +132,7 @@
                         </spawns>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/portals)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/portals)
                     These portals link two opposite sides of the map together. They move the players current position by 110 blocks so that they end up infront of the other portal.
 
                         <portals>
@@ -145,7 +145,7 @@
                         </portals>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/gamemode_tdm)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_tdm)
                     Set the game type to team death-match and specify a max run time of 10 minutes in seconds.
 
                         <score>
@@ -153,7 +153,7 @@
                         </score>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Repair stone swords, bows, and shears when dropped or when the player picks one up.
 
                         <toolrepair>
@@ -163,7 +163,7 @@
                         </toolrepair>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Remove armor, arrows, ladders, cooked chicken, etc. To prevent the playing field and player inventories from getting cluttered with items.
 
                         <itemremove>
@@ -182,7 +182,7 @@
                         </itemremove>
 
                     <br/>
-                    [<i class="glyphicon glyphicon-share-alt right-ref-link"></i>](/modules/tnt)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/tnt)
                     Instantly ignite TNT when placed and disable TNT explosions from breaking blocks.
 
                         <tnt>
