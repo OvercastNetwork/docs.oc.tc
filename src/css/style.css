@@ -14,14 +14,15 @@ body {
     margin-bottom: 1px;
 }
 
-.navbar .navbar-nav > .active > a {
-    background-color: #f2f2f2;
-}
-
-.navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus {
+.navbar .navbar-nav > li:not(.active) > a:hover,
+.navbar .navbar-nav > li:not(.active) > a:focus {
     color: #555555;
-    background-color: #e7e7e7;
+    background-color: #f2f2f2;
+    background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #ebebeb 100%);
+    background-image: linear-gradient(to bottom, #f2f2f2 0%, #ebebeb 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffebebeb', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .jumbotron {
