@@ -1,0 +1,32 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Filters & Regions
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Proximity Alarms
+                :markdown
+                    Proximity alarms can be used to alert players when an enemy enters a specified area. Flares will go off around the protected area, with the color of the detected player's team, and all allied players will receive an alert message with sound.
+
+                        <proximity-alarms>
+                            <proximity-alarm message="Enemy detected at Blue monument!" flare-radius="4">
+                                <region>
+                                    <cylinder base="27.5,119,-26.5" radius="7.5" height="15"/>
+                                </region>
+                                <detect>
+                                    <team>red</team>
+                                </detect>
+                            </proximity-alarm>
+                        </proximity-alarms>
+
+                    `message="..."` is the message to show in chat when a player is detected. This message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If this attribute is missing then no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
+
+                    `flare-radius="#"` is the radius of the circular area in which flares will appear. The radius is relative to the center point of the region. If this attribute is missing then no flares will appear, and a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
+
+                    `<region>...</region>` contains the [region](/modules/regions) in which players are detected. The final region is the union of all regions that appear between these tags. Any type of region can be used, including references to named regions.
+
+                    `<detect>...</detect>` contains a [filter](/modules/filters) determining which players can trip the alarm. Only players who match this filter will be detected, and only players who do _not_ match this filter will receive text alerts, if there is one.
+
