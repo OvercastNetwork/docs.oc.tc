@@ -22,11 +22,30 @@
                             </proximity-alarm>
                         </proximity-alarms>
 
-                    `message="..."` is the message to show in chat when a player is detected. This message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If this attribute is missing then no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
+                    <br/>
+                    ##### Proximity-alarm attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code message=""
+                                %td Message to show in chat when a player is detected.
+                            %tr
+                                %td
+                                    %code flare-radius="#"
+                                %td Radius of the circular area to show flares in, centered on the proximity-alarm region.
 
-                    `flare-radius="#"` is the radius of the circular area in which flares will appear. The radius is relative to the center point of the region. If this attribute is missing then no flares will appear, and a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
+                :markdown
+                    The proximity-alarm message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If this attribute is missing no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
 
-                    `<region>...</region>` contains the [region](/modules/regions) in which players are detected. The final region is the union of all regions that appear between these tags. Any type of region can be used, including references to named regions.
+                    Flares will only be set off if a `flare-radius=""` is defined. If this attribute is missing a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
 
-                    `<detect>...</detect>` contains a [filter](/modules/filters) determining which players can trip the alarm. Only players who match this filter will be detected, and only players who do _not_ match this filter will receive text alerts, if there is one.
+                    The `<region>...</region>` tags contain the [region](/modules/regions) in which players are detected. The final region is the union of all regions that appear between these tags. Any type of region can be used, including references to named regions.
+
+                    Who the proximity-alarm detects is defined in the `<detect>...</detect>` tags with a [filter](/modules/filters). Only players who match this filter will be detected, and players who do _not_ match this filter will receive text alerts, if there is one.
 
