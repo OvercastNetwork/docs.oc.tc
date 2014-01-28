@@ -1,0 +1,47 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Game Settings
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Gamerules
+                :markdown
+                    Minecraft's game rules can be set via the `<gamerules>` element in the map.xml.  Syntax is as follows:
+
+                        <gamerules>
+                            <doDaylightCycle>false</doDaylightCycle>
+                            <naturalRegeneration>false</naturalRegeneration>
+                        </gamerules>
+
+                    `NOTE:` When specifing the `doDaylightCycle` gamerule, you should either use the `<doDaylightCycle>` element, or `<timelock>`.  One will overwrite the other, so be consistent.
+
+                    Currently supported gamerules include:
+                  
+                    * `commandBlockOutput` - Allows command block output to be shown in chat.
+                    
+                    * `doFireTick` - Toggles whether firespread occurs.
+                    
+                    * `doTileDrops` - Toggles whether tile entities drop.
+                    
+                    * `doMobLoot` - Toggles whether mobs drop loot on death.
+
+                    * `mobGriefing` - Toggles whether mobs such as Creepers and Endermen cause enviromental damage.
+                    
+                    * `naturalRegeneration` - Toggles whether or not players naturally regain heath.
+                    
+                    * `doDaylightCycle` - Toggles whether or not the time tick occurs.
+
+                    Unspported gamerules unclude:
+
+                    * `doMobSpawning` - Not supported in favor of `<mobs>`.
+
+                    * `keepInventory` - Not supported since PGM already solves this with kits.
+
+                    Currently supported gamerule values include:
+
+                    * `true`
+
+                    * `false`
