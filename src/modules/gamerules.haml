@@ -9,39 +9,87 @@
                 .page-header
                     %h1 Gamerules
                 :markdown
-                    Minecraft's game rules can be set via the `<gamerules>` element in the map.xml.  Syntax is as follows:
+                    Minecraft's game rules can be set via the `<gamerules>` element in the `map.xml`. Syntax is as follows:
 
                         <gamerules>
                             <doDaylightCycle>false</doDaylightCycle>
                             <naturalRegeneration>false</naturalRegeneration>
                         </gamerules>
 
-                    `NOTE:` When specifing the `doDaylightCycle` gamerule, you should either use the `<doDaylightCycle>` element, or `<timelock>`.  One will overwrite the other, so be consistent.
+                    `NOTE:` When specifying the `doDaylightCycle` gamerule, you should either use the `<doDaylightCycle>` element, or `<timelock>`.  One will overwrite the other, so be consistent.
 
-                    Currently supported gamerules include:
+                    <br/>
+                    ##### Currently supported gamerules
                   
-                    * `commandBlockOutput` - Allows command block output to be shown in chat.
-                    
-                    * `doFireTick` - Toggles whether firespread occurs.
-                    
-                    * `doTileDrops` - Toggles whether tile entities drop.
-                    
-                    * `doMobLoot` - Toggles whether mobs drop loot on death.
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Rule Name
+                                %th Description
+                                %th Values
+                        %tdata
+                            %tr
+                                %td
+                                    %code commandBlockOutput
+                                %td Allows command block output to be shown in chat.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code doFireTick
+                                %td Toggles whether firespread occurs.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code doTileDrops
+                                %td Toggles whether tile entities drop.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code doMobLoot
+                                %td Toggles whether mobs drop loot on death.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code mobGriefing
+                                %td Toggles whether mobs such as Creepers and Endermen cause enviromental damage.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code naturalRegeneration
+                                %td Toggles whether or not players naturally regain heath.
+                                %td
+                                    %span.label.label-primary true / false
+                            %tr
+                                %td
+                                    %code doDaylightCycle
+                                %td Toggles whether or not the time tick occurs.
+                                %td
+                                    %span.label.label-primary true / false
 
-                    * `mobGriefing` - Toggles whether mobs such as Creepers and Endermen cause enviromental damage.
-                    
-                    * `naturalRegeneration` - Toggles whether or not players naturally regain heath.
-                    
-                    * `doDaylightCycle` - Toggles whether or not the time tick occurs.
-
-                    Unspported gamerules unclude:
-
-                    * `doMobSpawning` - Not supported in favor of `<mobs>`.
-
-                    * `keepInventory` - Not supported since PGM already solves this with kits.
-
-                    Currently supported gamerule values include:
-
-                    * `true`
-
-                    * `false`
+                :markdown
+                    ##### Unsupported gamerules
+                  
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Rule
+                                %th Reason
+                        %tdata
+                            %tr
+                                %td
+                                    %code doMobSpawning
+                                %td
+                                    Not supported in favor of the 
+                                    %a{:href => "/modules/mobs"} mobs
+                                    element.
+                            %tr
+                                %td
+                                    %code keepInventory
+                                %td Not supported since PGM already solves this with kits.
