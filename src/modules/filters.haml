@@ -17,36 +17,71 @@
 
 
                     <br/>
-                    ####Predefined Filters
+                    ##### Predefined Filters
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th{:colspan => "2"} Name
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code allow-all
+                                %td
+                                    %code deny-all
+                                %td Filter all events.
+                            %tr
+                                %td
+                                    %code allow-players
+                                %td
+                                    %code deny-players
+                                %td Filter player access.
+                            %tr
+                                %td
+                                    %code allow-blocks
+                                %td
+                                    %code deny-blocks
+                                %td Filter block breaking and placing.
+                            %tr
+                                %td
+                                    %code allow-place
+                                %td
+                                    %code deny-place
+                                %td Filter block placing.
+                            %tr
+                                %td
+                                    %code allow-break
+                                %td
+                                    %code deny-break
+                                %td Filter block breaking.
+                            %tr
+                                %td
+                                    %code allow-world
+                                %td
+                                    %code deny-world
+                                %td Filter block transformations such as fire spread, water flowing, etc.
+                            %tr
+                                %td
+                                    %code allow-spawns
+                                %td
+                                    %code deny-spawns
+                                %td Filter player spawning.
+                            %tr
+                                %td
+                                    %code allow-entities
+                                %td
+                                    %code deny-entities
+                                %td Filter entities.
+                            %tr
+                                %td
+                                    %code allow-mobs
+                                %td
+                                    %code deny-mobs
+                                %td Filter all mob spawns, regardless of type.
 
-                        allow-all / deny-all
-                        <!-- allows or denies everything -->
-                        
-                        allow-players / deny-players
-                        <!-- allow or deny player access -->
-                        
-                        allow-blocks / deny-blocks
-                        <!-- allow or deny placement and breaking of blocks -->
-                        
-                        allow-place / deny-place
-                        <!-- allow or deny placement of blocks -->
-                        
-                        allow-break / deny-break
-                        <!-- allow or deny breaking of blocks -->
-                        
-                        allow-world / deny-world
-                        <!-- allow or deny block transformations such as fire spread, water flowing, etc -->
-                        
-                        allow-spawns / deny-spawns
-                        <!-- allows or denies player spawns -->
-                        
-                        allow-entities / deny-entities
-                        <!-- determines if entities will be allowed -->
-                        
-                        allow-mobs / deny-mobs
-                        <!-- allows or denies all mobs spawns, regardless of type -->
 
-
+                :markdown
                     <br/>
                     ####Filter Exceptions
                     Filters can have exceptions such as blocking all player access and then allowing a certain team access. Exceptions are put inside of `<allow>` or `<deny>` elements.
