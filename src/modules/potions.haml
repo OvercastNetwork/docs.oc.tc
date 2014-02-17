@@ -7,7 +7,7 @@
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Potion Effects
+                    %h1 Potions & Potion Effects
                 :markdown
                     To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
 
@@ -18,7 +18,7 @@
 
                     `NOTE:` Infinite duration can be specified by using `oo` as the duration.
 
-                    Specifing `ambient="true"` will increase the amount of particles a player emits and make the particles translucent.
+                    Specifying `ambient="true"` will increase the amount of particles a player emits and make the particles translucent.
 
                     <br/>
                     To give a potion as an item you have to use:
@@ -26,3 +26,43 @@
                         <item slot="3" damage="8229">potion</item>
 
                     The damage specifies the potion type. [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions).
+
+                    <br/>
+                    #### Custom potion item effects
+                    Custom effects can be added to a potion item with the `potions=""` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion items damage value will define the potion color and if it's a splash or normal potion.  
+
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Specifier
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code potion_name
+                                %td Name of the potion effect.
+                                %td 
+                                    %a{:href => "/reference/potion_effects"} Potion names
+                            %tr
+                                %td
+                                    %code duration
+                                %td Length of the potion effect in minecraft ticks.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code potency
+                                %td What level the potion effect is, 0 is equal to a lvl 1 potion.
+                                %td
+                                    %span.label.label-primary 0-2
+                            %tr
+                                %td
+                                    %code ambient
+                                %td Specify if the potion effect is ambient. (Decreased and translucent particle effects.)
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
+
+                        <item slot="1" damage="8227" potions="fire resistance:900:0:false">potion</item>
