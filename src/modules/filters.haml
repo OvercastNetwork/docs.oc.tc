@@ -8,16 +8,27 @@
             .col-sm-9
                 .page-header
                     %h1 Filters
-                :markdown
-                    Filters are used to filter player, block and world events in regions. The filter name is used to reference it inside of regions. On their own filters do nothing, you have to apply them to regions for them to do something. Filters can inherit other filters using the `parents=""` attribute. They return one of three possible states for an action; allow, deny and abstain.
-                    
+                :markdown                    
+                    Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. The filter's name is used to reference it inside other filters and regions.
+                
+                    * `ALLOW` The filter specifically allows the query.
+                    * `DENY` The filter specifically denies the query.
+                    * `ABSTAIN` None of the filters queried have any opinion on the subject.
+
+                    Abstain is usually interpreted as allow, this means that if the filter doesn't explicitly deny the query it will be allowed.
+
                         <filters>
-                            <filter name="no-world" parents="deny-world"></filter>
+                            <filter name="filter-name">
+                                <!-- Filter elements -->
+                            </filter>
+
+                            <!-- More filters-->
                         </filters>
 
-
+                :markdown
                     <br/>
-                    ##### Predefined Filters
+                    ##### Master Filters
+                    These are the main filters that can be used to allow or deny all of a certain type of event.
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
@@ -71,46 +82,75 @@
 
                 :markdown
                     <br/>
-                    ####Filter Exceptions
-                    Filters can have exceptions such as blocking all player access and then allowing a certain team access. Exceptions are put inside of `<allow>` or `<deny>` elements.
+                    #### Filter Matchers
+                    Filters can have matchers to allow things such as blocking all player access and then allowing a certain team access. Matchers are usually used inside filter modifier elements.
 
-                        <!-- Exception elements -->
+                        <filter name="filter1"/>
                         <team>team name</team>
                         <block>block name</block>
-                    
-                    <br/>
-                    Example
 
-                        <filter name="only-red" parents="deny-players">
-                            <allow><team>red</team></allow>
-                        </filter>
-                        
-                        <filter name="gold-blocks" parents="deny-block">
-                            <allow><block>gold block</block></allow>
-                        </filter>
-                        
-                        <filter name="no-tnt" parents="allow-all">
-                            <deny><block>TNT</block></deny>
-                        </filter>
+                        <spawn>spawn reason</spawn>
+                        <mob>mob name</mob>
+                        <entity>entity name</entity>
+
+                    For a examples on how to use the `<spawn>` & `<mob>` elements see [mob spawning](/modules/mobs).
 
 
                     <br/>
-                    ####[Filter Matchers](id:filterMatchers)
+                    #### [Filter Modifiers](id:filterModifiers)
+                    To modify filters with matchers or combine the results of multiple filters use these modifiers. The filter element defaults to `<any>` style matching.
 
-                    To modify or combine the results of multiple filters use these matchers.
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code &lt;not&gt;&lt;/not&gt;
+                                %td Invert the filters result. Returns <code>DENY</code> if the sub filter returns <code>ALLOW</code>, <code>ALLOW</code> if the sub filter returns <code>DENY</code> and <code>ABSTAIN</code> if it returns <code>ABSTAIN</code>.
+                            %tr
+                                %td
+                                    %code &lt;one&gt;&lt;/one&gt;
+                                %td Returns <code>ALLOW</code> if exactly one of the sub-filters returns <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if there are more than one sub filter that specifies <code>ALLOW</code> or none specify <code>ALLOW</code> and at least one specifies <code>DENY</code>.
+                            %tr
+                                %td
+                                    %code &lt;all&gt;&lt;/all&gt;
+                                %td Returns <code>ALLOW</code> if all of the sub-filters specify <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if one or more of the sub-filters specify <code>DENY</code>.
 
-                        <!-- Invert the filters result. -->
-                        <not><filter name="deny-gold"/></not>
-                        
-                        <!-- Allow if one of the containing filters is allow. -->
-                        <one><filter name="filter1"/>..</one>
+                            %tr
+                                %td
+                                    %code &lt;any&gt;&lt;/any&gt;
+                                %td Returns <code>ALLOW</code> if any of the sub-filters return <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if none of the sub-filters specify <code>ALLOW</code> and at least one sub filter specified <code>DENY</code>.
 
-                        <!-- Allow only if all of the containing filters are allow. -->
-                        <all><filter name="filter1"/>..</all>
 
-                        <!-- Allow if any of the containing fiters are allow. -->
-                        <any><filter name="filter1"/>..</any>
-                    
+                :markdown
+                    Examples
+
+                        <filters>
+                            <filter name="only-gold">
+                                <block>gold block</block>
+                            </filter>
+
+                            <!-- Applied with block="" filter will only allow red team to place blocks. -->
+                            <!-- Applied with enter="" filter will only allow red team to enter region. -->
+                            <filter name="red-team">
+                                <team>red</team>
+                            </filter>
+                        </filters>
+
+                    ````
+                    <filters>
+                        <filter name="no-tnt">
+                            <not><block>TNT</block></not>
+                        </filter>
+                    </filters>
+                    ````
+
+                    The player wants to place a TNT block, the filter gets asked; "Is this block place-able?". The filter checks the `<block>` matcher, it matches and returns `ALLOW`. The block matcher is contained in a `<not>` modifier so the `ALLOW` gets turned into a `DENY`.
+
                     <br/>
                     Example from [Snowy Wars](https://maps.oc.tc/Snowy%20Wars/map.xml)
 
@@ -158,7 +198,7 @@
 
 
                     <br/>
-                    ####[Void Filter](id:voidFilter)
+                    #### [Void Filter](id:voidFilter)
 
                     If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
                     The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
@@ -181,3 +221,42 @@
                             </apply>
                         </regions>
 
+                    <br>
+                    <hr>
+                    #### Legacy Style Filters
+                    <div class="alert alert-warning"><strong>Note!</strong> This filter behavior will be depreciated in PGM 2.0.</div>
+
+                    Legacy style filters use the `<allow>` and `<deny>` elements with the filter `parents=""` attribute to modify what gets filtered. This behavior is not compatible with the new format introduced in proto `v1.3.0` and can not be combined in the same filter.
+
+                    #####  Filter Modifiers
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code &lt;allow&gt;&lt;filter name="filter1"/&gt;..&lt;/allow&gt;
+                                %td Allow containing filter matchers.
+                            %tr
+                                %td
+                                    %code &lt;deny&gt;&lt;filter name="filter1"/&gt;..&lt;/deny&gt;
+                                %td Deny containing filter matchers.
+                :markdown
+                    Example
+
+                        <filters>
+                            <filter name="only-red" parents="deny-players">
+                                <allow><team>red</team></allow>
+                            </filter>
+                            
+                            <filter name="gold-blocks" parents="deny-block">
+                                <allow><block>gold block</block></allow>
+                            </filter>
+                            
+                            <filter name="no-tnt" parents="allow-all">
+                                <deny><block>TNT</block></deny>
+                            </filter>
+                        </filters>
