@@ -13,16 +13,46 @@
 
                     List of item names: [bukkit docs - Material](http://jd.bukkit.org/apidocs/org/bukkit/Material.html)
 
-                        <item>Item name or id</item>
-                        
-                        <!-- Item attributes -->
-                        slot="0"
-                        name="Name String"
-                        enchantment="enchantment:lvl"
-                        lore="Lore String"
-                        color="RRGGBB"
-                        damage="0"
-                        attributes="attribute:add:lvl"
+                        <item>item_material_name</item>
+
+                    <br/>
+                    ##### Item Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code slot="0"
+                                %td Slot where the item will be placed in the players inventory.
+                            %tr
+                                %td
+                                    %code name="Name String"
+                                %td The items name.
+                            %tr
+                                %td
+                                    %code enchantment="enchantment:lvl"
+                                %td The item's enchantment(s).
+                            %tr
+                                %td
+                                    %code lore="Lore String"
+                                %td Custom lore string.
+                            %tr
+                                %td
+                                    %code damage="0"
+                                %td The items damage, used for items such as birch logs.
+                            %tr
+                                %td
+                                    %code attributes="attribute:op:lvl"
+                                %td Custom attributes, for example, increased health or faster movement speed.
+                            %tr
+                                %td
+                                    %code color="RRGGBB"
+                                %td Leather armor color.
+                :markdown
 
 
                     The `slot=""` attribute specifies where the item will be placed in the inventory. [Inventory slot reference](/reference/inventory).
@@ -41,7 +71,7 @@
 
                     <br/>
                     #### Armor
-                    Armor slots have predefined tags to make it easier to give them to a player. They accept most of the properties of normal items.
+                    Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.
 
                         <helmet>iron helmet</helmet>
                         <chestplate>diamond chestplate</chestplate>
@@ -58,12 +88,27 @@
                     `NOTE:` The hex color value is specified without the hash `#` symbol.
 
                         <helmet color="cd0000">leather helmet</helmet>
- 
-                    The `attributes=""` will allow you to set an attribute to an item or a piece of armor. Look at [Minecraft wiki - Attributes](http://minecraft.gamepedia.com/Attribute) for a list of different attributes.
+                    
+                    <br/>
+                    #### Custom attributes
+
+                    The `attributes=""` attribute will allow you to set the attribute('s) for a item or a piece of armor. Look at the [attributes reference](/reference/attributes) page for a list of the different attributes. The attribute definition is separated by colons `:`, and consists of the attributes name, operation and level. Multiple attributes are separated by a semicolon `;`.
+
+                    Attribute operations:
+
+                    * `ADD` Add level to original level value.
+                    * `BASE` Add level * base to original level value.
+                    * `MULTIPLY` Multiply original level value by level.
+
+                    <br/>
+                    Examples
 
                         <chestplate attributes="generic.knockbackResistance:add:1">chainmail chestplate</chestplate>
+
                         <item attributes="generic.knockbackResistance:add:1">diamond spade</item>
                         <item attributes="generic.knockbackResistance:add:1;generic.movementSpeed:add:2">diamond spade</item>
-                        <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings> <!-- Unit of maxHealth is in half-hearts -->
+
+                        <!-- Unit of maxHealth is in half-hearts -->
+                        <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings>
 
                     `NOTE:` Negative attribute values are allowed; however, sometimes don't work as expected.
