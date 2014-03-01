@@ -1,24 +1,23 @@
-.col-sm-3
-    .btn-group.subnav.visible-xs
-        %button.btn.btn-default.btn-block.subnav-btn.dropdown-toggle{:type => "button", :"data-toggle" => "dropdown"}
-            #{@nav_title}
-            %span.caret
-        %ul.dropdown-menu.subnav-dropdown{:role => "menu", :"style" => "width: 100%;"}
-            - @subnav_content.each do |item|
-                - if item.kind_of?(Hash)
-                    %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                        %a{:href => "/#{item['path']}"} #{item['name']}
-                - elsif item.kind_of?(String)
-                    %li.divider
-                    %li.dropdown-header #{item}
+.btn-group.subnav.visible-xs
+    %button.btn.btn-default.btn-block.subnav-btn.dropdown-toggle{:type => "button", :"data-toggle" => "dropdown"}
+        #{@nav_title}
+        %span.caret
+    %ul.dropdown-menu.subnav-dropdown{:role => "menu", :"style" => "width: 100%;"}
+        - @subnav_content.each do |item|
+            - if item.kind_of?(Hash)
+                %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
+                    %a{:href => "/#{item['path']}"} #{item['name']}
+            - elsif item.kind_of?(String)
+                %li.divider
+                %li.dropdown-header #{item}
 
 
-    .sidebar.hidden-xs
-        %ul.nav.nav-pills.nav-stacked.docs-nav-pills
-            - @subnav_content.each do |item|
-                - if item.kind_of?(Hash)
-                    %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                        %a{:href => "/#{item['path']}"} #{item['name']}
-                - elsif item.kind_of?(String)
-                    %li
-                        %h4 #{item}
+.sidebar.hidden-xs
+    %ul.nav.nav-pills.nav-stacked.docs-nav-pills
+        - @subnav_content.each do |item|
+            - if item.kind_of?(Hash)
+                %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
+                    %a{:href => "/#{item['path']}"} #{item['name']}
+            - elsif item.kind_of?(String)
+                %li
+                    %h4 #{item}
