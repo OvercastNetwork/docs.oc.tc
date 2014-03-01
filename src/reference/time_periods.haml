@@ -1,0 +1,51 @@
+.container
+    .jumbotron.subhead
+        %h1 Reference
+        /%p.lead Main map element
+    %section
+        .row
+            = partial('reference_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Time Periods
+                :markdown
+                    Time periods are numbers suffixed with a time unit. Periods with no formatter suffix default to seconds.
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Suffix
+                                %th Duration
+                        %tbody
+                            %tr
+                                %td
+                                    %code y
+                                %td Year
+                            %tr
+                                %td
+                                    %code mo
+                                %td Month
+                            %tr
+                                %td
+                                    %code d
+                                %td Day
+                            %tr
+                                %td
+                                    %code h
+                                %td Hour
+                            %tr
+                                %td
+                                    %code m
+                                %td Minute
+                            %tr
+                                %td
+                                    %code s
+                                %td Seconds
+                    :markdown
+                        Example
+
+                            <score>
+                                <!-- 5 minutes -->
+                                <time>5m</time>
+                            </score>
+
