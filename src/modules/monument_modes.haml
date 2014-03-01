@@ -9,13 +9,41 @@
                 .page-header
                     %h1 Monument Modes
                 :markdown
-                    **Notice**: Modes require a map protocol version of at least `1.3.2`.
+                    <div class="alert alert-info alert-small"><strong>Notice:</strong> Modes require a map protocol version of at least <b>1.3.2</b></div>
 
                     This module can be used to customize the modes that cores and destroyables cycle through, and at what duration they do so.
 
-                    The `<modes>` tag can contain any number of `<mode>` tags. Each `<mode>` has configurable characteristics that define it.
+                    The `<modes>` tag can contain any number of `<mode>` tags with different durations. Each `<mode>` has configurable characteristics that define it.
 
-                    **Example**:
+                    ##### Mode Tag Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code after=""
+                                %td Time from the start of the game till this mode takes effect.
+                                %td
+                                    %a{:href => "/reference/formatting#time_formatters"} Time Period
+                            %tr
+                                %td
+                                    %code material=""
+                                %td Material the core/destroyable changes to.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/apidocs/org/bukkit/Material.html"} Bukkit Material
+                            %tr
+                                %td
+                                    %code name=""
+                                %td Custom mode name, used for the mode change notice.
+                                %td
+                                    %span.label.label-primary String
+                :markdown
+                    Example
 
                         <modes>
                             <mode after="10m" material="gold block"/>
@@ -27,8 +55,10 @@
                             <mode after="5s" material="coal block" name="`eEASY MODE"/>
                         </modes>
 
-                    This specifies a mode that will change the material of affected objectives to coal block after 10 minutes of gameplay, with the following chat message:
+                    This specifies a mode that will change the material of affected objectives to coal block after 10 minutes of gameplay, with the following chat message: `> > > EASY MODE < < <`
 
-                        > > > EASY MODE < < <
+                    `NOTE:` In order for an objective to change modes, it must have `mode-changes="true"` in its element tag.
 
-                    **Note**: In order for an objective to change modes, it must have `mode-changes="true"` in its element tag.
+                        <destroyables name="Monument" materials="obsidian" mode-changes="true">
+                            <!-- destroyables... -->
+                        </destroyable>
