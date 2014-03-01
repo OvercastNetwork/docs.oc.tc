@@ -119,6 +119,10 @@ code {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ffbcbcbc', GradientType=0);
 }
 
+.alert.alert-small {
+    padding: 5px 7px 3px 7px;
+}
+
 @media (min-width: 768px) {
     .page-header h1 {
         margin-top: 0 !important;
