@@ -11,26 +11,67 @@
                 :markdown
                     This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with. 
 
-                    The `<blockdrops>` tag can contain any number of `<rule>` tags, and each `<rule>` can contain various sub-tags:
+                    The `<blockdrops>` module can contain any number of `<rule>` elements, and each `<rule>` can contain various sub-elements.
 
-                    The `<drops>` tag contains a list of `<item>`s to drop when a matching block is broken. These items can include any special data, such as custom names, enchantments, attributes, etc.
-                    See [items](/modules/items) for details on how to use the `<item>` tag. XP orbs can also be dropped by specifying the
-                    amount of XP in the `<experience>` tag.
+                    ##### Rule Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tdata
+                            %tr
+                                %td
+                                    %code &lt;filter&gt;
+                                %td Filter what blocks get modified by this rule.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %code &lt;region&gt;
+                                %td The region this rule applies to.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %code &lt;drops&gt;
+                                %td The items which get dropped when a matching block is mined.
+                                %td
+                                    %a{:href => "/modules/items"} Items
+                            %tr
+                                %td
+                                    %code &lt;experience&gt;
+                                %td The amount of XP that gets dropped.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code &lt;replacement&gt;
+                                %td What to replace the mined block with. (Defaults to air)
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/apidocs/org/bukkit/Material.html"} Bukkit Material
+                            %tr
+                                %td
+                                    %code &lt;wrongtool&gt;
+                                %td Drop items regardless of what tool was used to mine the block.
+                                %td
+                                    %span.label.label-primary true/false
 
-                    The `<replacement>` tag can be used to specify a block other than air to replace the original block with when broken.
 
-                    A `<filter>` tag can contain [filters](/modules/filters) that limit the rule to particular blocks.
-                    If multiple filters are listed, the rule will apply when '''any''' of them match.
-                    If filters such as <team> are used here then no items will drop if the block is mined by a non-matching player, but the `<replacement>` block is unaffected by this.
+                :markdown
 
-                    Likewise, a `<region>` tag can be used to limit the rule to particular [regions](/modules/regions).
+                    The `<filter>` element is used to limit the rule to particular blocks. If multiple filters are listed, the rule will apply when *any* of them match. This filter is usually used to only filter what blocks the rule applies to. If filters such as `<team>` are used then no items or XP will drop if the block is mined by a non-matching player, the rules `<replacement>` material will still take effect however.
 
-                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
-                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen if the block is mined with any tool.
+                    Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. XP orbs are dropped by specifying the amount in the `<experience>` tag.
 
-                    Custom drops also apply to blocks broken by explosions. In this case, the custom drops are reduced by 70% just like default drops, though this can be customized through the [TNT module](/modules/tnt).
+                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel. 
+                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of what tool was used.
+                    
+                    Custom drops also apply to blocks broken by explosions. In this case, the custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
 
-                    Blocks broken by means other than mining or explosions currently do not cause custom drops.
+                    Examples
 
                         <blockdrops>
                             <rule>
