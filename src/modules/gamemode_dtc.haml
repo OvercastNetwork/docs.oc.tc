@@ -9,8 +9,47 @@
                 .page-header
                     %h1 Destroy the Core
                 :markdown
-                    Players have to locate and break the enemy teams core, usually an obsidian sphere filled with lava. The lava has to leak out a certain amount for the game to end. Teams can have more than one core. Cores automatically change from their base material to gold after 15 minutes and glass after 20.
-                    The materials attribute follows the system of Obsidian -> Gold, Gold -> Glass. However if you set the material to anything other than Obsidian, Gold or Glass, it will not cycle to another block type.
+                    Players have to locate and break the enemy teams core, usually an obsidian sphere filled with lava. The lava has to leak out a certain amount for the game to end. Teams can have more than one core and each core can be made out of different materials.
+
+                    By default cores automatically change from their base material to gold after 15 minutes and glass after 20. The materials attribute follows the system of Obsidian -> Gold, Gold -> Glass. However if you set the material to anything other than Obsidian, Gold or Glass, it will not cycle to another block type.  This behavior can be modified with the [monument modes](/modules/monument_modes) module.
+
+                    ##### Core Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code leak="5"
+                                %td Distance the cores contents have to leak in blocks.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code material="obsidian"
+                                %td The cores material, used to do automatic mode changes.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/apidocs/org/bukkit/Material.html"} Bukkit Material
+                            %tr
+                                %td
+                                    %code team=""
+                                %td Team the core belongs to, i.e. its owner.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code mode-changes=""
+                                %td 
+                                    Specify if this core uses custom
+                                    = succeed "." do
+                                        %a{:href => "/modules/monument_modes"} monument modes
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
 
                         <cores material="obsidian" leak="8">
                             <core team="blue"><cuboid min="10,15,12" max="12,13,16"/></core>
