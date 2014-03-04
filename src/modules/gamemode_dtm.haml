@@ -9,7 +9,53 @@
                 .page-header
                     %h1 Destroy the Monument
                 :markdown
-                    Players have to locate and destroy certain objects from the enemy team, such as an obsidian pillar, etc. Teams win after a specified percentage of the enemy teams destroyables are destroyed. Teams can have multiple destroyables and they can be made out of multiple materials. Multiple materials should be separated with a semicolon `;`.
+                    Players have to locate and destroy certain objects from the enemy team, such as an obsidian pillar, etc. Teams win after a specified percentage of the enemy teams destroyables are destroyed. Teams can have multiple destroyables and they can be made out of multiple materials.
+
+                    ##### Destroyable Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code name=""
+                                %td The destroyables name.
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code materials=""
+                                %td 
+                                    The destroyables materials, multiple materials are separated with a semicolon 
+                                    %code ;
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/apidocs/org/bukkit/Material.html"} Bukkit Material
+                            %tr
+                                %td
+                                    %code owner=""
+                                %td The destroyables owner.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code completion=""
+                                %td Percentage of the destroyable that needs to be destroyed for a win.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code mode-changes=""
+                                %td 
+                                    Specify if this destroyable uses custom
+                                    = succeed "." do
+                                        %a{:href => "/modules/monument_modes"} monument modes
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
 
                         <destroyables name="Monument" materials="obsidian" completion="100%">
                             <destroyable owner="blue">
