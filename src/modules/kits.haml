@@ -14,7 +14,7 @@
                     Note that a kit will not empty a inventory, but rather overwrite specific slots. If you want to guarantee that a slot is empty use air as the material for that slot. See the [Babylon map XML](https://maps.oc.tc/Babylon/map.xml) for an example of a completely empty inventory kit.
 
                         <kits>
-                            <kit name="spawn">
+                            <kit name="spawn" force="true">
                                 <item slot="0">iron sword</item>
                                 <item slot="8" amount="32">bread</item>
                                 <potion duration="5" amplifier="1">heal</potion>
@@ -28,3 +28,52 @@
                         </kits>
 
                     In the example above players from blue team will get a blue helmet, players from red team will get a red helmet; both teams will get the items from the spawn kit. The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
+
+                    <br/>
+                    #### Health & Hunger Kits
+                    A players health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
+
+                    By default health or hunger values are only increased, not decreased. For example, a player with 5 hearts (10 points) will not get a 5 health point kit applied, however a 20 point kit will be applied. This can be overwritten with a kits `force="true"` attribute.
+
+                    <br/>
+                    ##### Health & Hunger elements
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code= html_escape('<health></health>')
+                                %td
+                                    Health value in 1/2 heart increments.
+                                %td
+                                    %span.label.label-primary 1 - 20
+                            %tr
+                                %td
+                                    %code= html_escape('<saturation></saturation>')
+                                %td
+                                    Food saturation, always equal to or less than the players food level.
+                                %td
+                                    %span.label.label-primary Float
+                            %tr
+                                %td
+                                    %code= html_escape('<foodlevel></foodlevel>')
+                                %td
+                                    Food level in 1/2 drumstick increments.
+                                %td
+                                    %span.label.label-primary 0 - 20
+
+                :markdown
+
+                        <kit name="health" force="true">
+                            <health>10</health>
+                        </kit>
+
+                        <kit name="hunger">
+                            <saturation>20</saturation>
+                            <foodlevel>20</foodlevel>
+                        </kit>
