@@ -13,6 +13,37 @@
 
                     Note that a kit will not empty a inventory, but rather overwrite specific slots. If you want to guarantee that a slot is empty use air as the material for that slot. See the [Babylon map XML](https://maps.oc.tc/Babylon/map.xml) for an example of a completely empty inventory kit.
 
+                    ##### Kit Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code name=""
+                                %td The kits name, used to reference it in spawns, etc. 
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code parents=""
+                                %td Comma separated list of all the kits parents. 
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code force=""
+                                %td Force apply the kit.
+                                %td
+                                    %span.label.label-primary true/false
+
+                :markdown
+                    The force attribute will act differently for the individual sub-elements. If force is true, conflicting items or armor will be replaced instead of smartly merged & repaired, health & hunger will be set instead of only increased, and potion effects will be replaced instead of only non-existent effects added.
+
                         <kits>
                             <kit name="spawn" force="true">
                                 <item slot="0">iron sword</item>
