@@ -21,7 +21,35 @@
                                <!-- Light blue wool can not be crafted, it must be picked up -->
                            </wool>
                         </wools>
-                        
+
+                    ##### Wool Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code team=""
+                                %td The team which has to place the wool.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code color=""
+                                %td The wools color.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/doxygen/d2/d1c/enumorg_1_1bukkit_1_1DyeColor.html"} Bukkit Dye Color
+                            %tr
+                                %td
+                                    %code craftable=""
+                                %td Specify if the wool can be crafted, e.g. with white wool and dye.
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
                     You can group multiple victory monuments from the same team inside a single `<wools team="team name">` element; and then define that teams individual wool colors inside of a `<wool>` element.
 
                         <wools team="red">
@@ -40,5 +68,3 @@
                                 <block>-117,26,-121</block>
                             </wool>
                         </wools>
-                       
-                    See [bukkit docs - Dye Color](http://jd.bukkit.org/doxygen/d2/d1c/enumorg_1_1bukkit_1_1DyeColor.html) for valid wool color names.
