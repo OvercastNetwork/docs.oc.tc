@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Teams
                 :markdown
-                    Setup the teams, their names and represented colors. See [bukkit colors](/reference/formatting) for valid team colors. The player limit for each team is defined inside of the `max=""` attribute. Teams can have a custom overhead color with the `overhead-color=""` attribute. Max overfill sets the hard limit for team sizes. If no max overfill is explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
+                    Setup the teams, their names and represented colors. See [chat colors](/reference/formatting#chatColors) for valid team colors. The player limit for each team is defined inside of the `max=""` attribute. Teams can have a custom overhead color with the `overhead-color=""` attribute. Max overfill sets the hard limit for team sizes. If no max overfill is explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
                     Teams are referenced in [regions](/modules/regions), [spawns](/modules/spawns) etc., by their name. The name matcher is case insensitive and fuzzy. For example, the teams below can be referenced with either `"Red Team" / "Blue Team"` or simply `"red" / "blue"`. When referencing teams care should be taken to make it obvious which team is being specified.
 
