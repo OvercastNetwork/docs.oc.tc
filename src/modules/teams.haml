@@ -9,11 +9,49 @@
                 .page-header
                     %h1 Teams
                 :markdown
-                    Setup the teams, their names and represented colors. See [chat colors](/reference/formatting#chatColors) for valid team colors. The player limit for each team is defined inside of the `max=""` attribute. Teams can have a custom overhead color with the `overhead-color=""` attribute. Max overfill sets the hard limit for team sizes. If no max overfill is explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
+                    Setup the teams, their names and represented colors.
 
-                    Teams are referenced in [regions](/modules/regions), [spawns](/modules/spawns) etc., by their name. The name matcher is case insensitive and fuzzy. For example, the teams below can be referenced with either `"Red Team" / "Blue Team"` or simply `"red" / "blue"`. When referencing teams care should be taken to make it obvious which team is being specified.
+                    Teams are referenced in regions, spawns, etc., by their name. The name matcher is case insensitive and fuzzy. For example, the teams below can be referenced with either `"Red Team" / "Blue Team"` or simply `"red" / "blue"`. When referencing teams care should be taken to make it obvious which team is being specified.
 
-                    `NOTE:` It is common for maps to only have 2 teams, although more are possible. It usually just causes confusion. 
+                    The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
+
+                    It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
+
+                    ##### Team Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code color=""
+                                %td The teams color.
+                                %td
+                                    %a{:href => "/reference/formatting#chatColors"} Chat Color Name
+                            %tr
+                                %td
+                                    %code max=""
+                                %td Maximum team size. (soft limit)<br/> <i>Players with certain privileges may join over this limit till <code>max-overfill</code> is reached.</i>
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code max-overfill=""
+                                %td Maximum team size hard limit. Must be greater than the defined <code>max</code>.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code overhead-color=""
+                                %td The color the text above each team members avatar is.
+                                %td
+                                    %a{:href => "/reference/formatting#chatColors"} Chat Color Name
+
+                :markdown
 
                         <teams>
                            <team color="dark red" max="50" max-overfill="70">Red Team</team>
