@@ -9,37 +9,43 @@
                 .page-header
                     %h1 Other Settings
                 :markdown
+                    #### Time Lock
                     Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through. This can also be accomplished with the [gamerules](/modules/gamerules) `doDaylightCycle` rule.
 
                         <timelock>on</timelock>  <!-- Defaults to off -->
 
                     <br/>
+                    #### Max Build Height
                     Set the max build height, this can also be accomplished with the [playable region](/modules/playable_region).
 
                         <maxbuildheight>38</maxbuildheight>
 
                     <br/>
+                    #### Friendly Fire
                     Change friendly fire, this will allow teammates to kill each-other. Arrows will be absorbed if they hit a teammate.
 
                         <friendlyfire>on</friendlyfire> <!-- Defaults to off -->
 
-                    <br/>
                     Change friendly fire arrow refund, this will refund arrows teammates have blocked from non infinity bows.
 
                         <friendlyfirerefund>off</friendlyfirerefund> <!-- Defaults to on -->
 
                     <br/>
-                    The maps difficulty can be specified from 0 (peaceful) to 3 (hard). If not specified it defaults to the default worlds difficulty. This mainly influences a players food bar.
+                    #### Difficulty
+                    The maps difficulty can be specified from `0` (peaceful) to `3` (hard). If not specified it defaults to the default worlds difficulty. This mainly influences a players food bar.
 
                         <difficulty>1</difficulty>
 
                     <br/>
-                    Change the maps dimension. Can be set to `NETHER`, `NORMAL` and `THE_END`, defaults to normal.
-                    `NOTE:` This is currently broken so do not use it!
+                    #### Dimension
+                    Change the maps dimension. Can be set to `NETHER`, `NORMAL` and `THE_END`, defaults to normal.  
+                    
+                    `NOTE:` This is currently broken.
 
                         <dimension>NETHER</dimension>
                     
                     <br/>
+                    #### Hunger
                     Specify if a player can starve to death, usually used with the difficulty setting.
                         
                         <hunger>
@@ -47,29 +53,29 @@
                         </hunger>
 
                     <br/>
+                    #### Multitrade
                     The multitrade module allows multiple people to trade with the same villager.
 
                         <multitrade/>
 
                     <br/>
+                    #### Auto Respawn
                     The auto-respawn module allows the map creator to require that players automatically respawn after the designated time greater than 20 ticks (or, if no time is specified, the default of 1 second). If the respawn time is less than 1 second, PGM will wait a whole-second before respawning the player, allowing the death to fully complete and the velocity to be cleared.
 
                     To use the default time of 1 second (20 ticks):
 
                         <autorespawn/>
 
-                    To specify your own time:
+                    To specify a custom [time period](/reference/time_periods):
                         
                         <autorespawn time="3s"/>
 
                     <br/>
-                    You can specify a time limit for any map. 
+                    #### Time Limit
+                    A time limit can be specified for all map types except [KoTH](/modules/gamemode_koth). 
 
                         <time result="objectives">1500</time>
 
-                    <br/>
                     The result attribute determines which team wins when the time runs out. It can be the name of a team, or one of the
-                    special values "tie" for no winner, or "objectives" for the team that has the most objectives completed.
-
-                    `NOTE:` You can use the [time period](/reference/time_periods) format to specify the time in minutes, etc.
+                    special values "tie" for no winner, or "objectives" for the team that has the most objectives completed. The [time period](/reference/time_periods) format can be used to specify the time in minutes, etc.
 
