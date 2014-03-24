@@ -11,18 +11,32 @@
                 :markdown
                     By default PGM disables all mob spawning. Enable specific mob spawning with the `<mobs>` element, uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
 
+                    #####  Mob Spawning Filter Matchers
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %code &lt;spawn&gt;spawn_reason&lt;/spawn&gt;
+                                %td Spawn event reason.
+                            %tr
+                                %td
+                                    %code &lt;mob&gt;mob_name&lt;/mob&gt;
+                                %td The mob to filter.
+                            %tr
+                                %td
+                                    %code &lt;entity&gt;entity_name&lt;/entity&gt;
+                                %td The entity to filter.
+
+                :markdown
                     Valid mob names can be found on the [bukkit docs - Creature Type](http://jd.bukkit.org/doxygen/da/d7e/enumorg_1_1bukkit_1_1entity_1_1CreatureType.html).  
                     Spawn reasons can be found here: [bukkit docs - Spawn Reason](http://jd.bukkit.org/rb/doxygen/d6/d38/enumorg_1_1bukkit_1_1event_1_1entity_1_1CreatureSpawnEvent_1_1SpawnReason.html).
 
-                        <mobs></mobs>
-                        
-                        <!-- Filter elements -->
-                        
-                        <spawn>spawn reason</spawn>
-                        <mob>mob name</mob>
-                        <entity>entity name</entity>
 
-                    <br/>
                     Examples
 
                         <!-- Only allow mobs to spawn from monster spawners. -->
@@ -33,7 +47,8 @@
                         </mobs>
 
 
-                        <!-- Example from Cake Wars (https://maps.oc.tc/Cake%20Wars/map.xml). -->
+                    Example from [Cake Wars](http://maps.oc.tc/DTC/Standard/Cake%20Wars/map.xml).
+
                         <mobs>
                             <filter parents="deny-all">
                                 <allow>
