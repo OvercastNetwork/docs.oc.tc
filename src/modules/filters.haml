@@ -152,7 +152,7 @@
                     The player wants to place a TNT block, the filter gets asked; "Is this block place-able?". The filter checks the `<block>` matcher, it matches and returns `ALLOW`. The block matcher is contained in a `<not>` modifier so the `ALLOW` gets turned into a `DENY`.
 
                     <br/>
-                    Example from [Snowy Wars](https://maps.oc.tc/Snowy%20Wars/map.xml)
+                    Example from [Snowy Wars](http://maps.oc.tc/DTM/Standard/Snowy%20Wars/map.xml)
 
                         <filters>
                             <filter name="deny-icemelt">
@@ -194,7 +194,7 @@
                     * If the caller is anything else (deny-all) and the block is ice then allow.
                     * If the block is not ice abstain, i.e. ignore the filter and continue as normal.
 
-                    Also see: [Viridun](https://maps.oc.tc/Viridun/map.xml)
+                    Also see: [Viridun](https://maps.oc.tc/TDM/Standard/Viridun/map.xml)
 
 
                     <br/>
@@ -204,7 +204,7 @@
                     The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
 
                     <br/>
-                    Example from [RFV3](https://maps.oc.tc/RFV3/map.xml)
+                    Example from [RFV3](https://maps.oc.tc/CTW/Standard/RFV3/map.xml)
 
                         <filters>
                             <filter name="no-void" parents="allow-all">
