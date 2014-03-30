@@ -9,18 +9,15 @@
                 .page-header
                     %h1 Formatting Codes
                 :markdown
-                    Text formatting codes are used to create fancy colorized text, they are prefixed with either a `` ` or a `§`. After using a formatting code such as `§o` (italic) it has to be reset, otherwise it will continue until the end of the text.
-
-                    `NOTE:` It is recommended that the same formatting code prefix is used in the whole XML file.
+                    Text formatting codes are used to create fancy colorized text, they are prefixed with a grave symbol `` `. After using a formatting code such as ``o` (italic) it has to be reset, otherwise it will continue until the end of the text.
 
                     Examples
 
-                        <!-- Using ` as the formatting code prefix -->
                         <item name="`iFrozen `rWater">snowball</item>
                         
-                        <!-- Using § as the formatting code prefix -->
-                        <line>This is one of three of §9Blue Team§r's victory monuments.</line>
-                        <item name="§1Blue §4Red §rNone">book</item>
+                        <line>This is one of three of `9Blue Team`r's victory monuments.</line>
+
+                        <item name="`1Blue `4Red `rNone">book</item>
 
                     <br/>
                     ##### [Chat Colors](id:chatColors)
@@ -138,6 +135,6 @@
                     To have a line all italic and one word red you will have to to do the following.
 
                         <!-- Everything is italic and the word "italic" is also red -->
-                        <line>§oThis is a §citalic §r§itext with a single red word.</line>
+                        <line>`oThis is a `citalic `r`itext with a single red word.</line>
 
                     Copied from: [bukkit docs - Chat Color](http://jd.bukkit.org/doxygen/d7/dc0/enumorg_1_1bukkit_1_1ChatColor.html)  
