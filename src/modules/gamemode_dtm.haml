@@ -42,17 +42,31 @@
                                     %a{:href => "/modules/teams"} Team Name
                             %tr
                                 %td
-                                    %code completion=""
+                                    %code completion="100"
                                 %td Percentage of the destroyable that needs to be destroyed for a win.
                                 %td
-                                    %span.label.label-primary Number
+                                    %span.label.label-primary 0 - 100
                             %tr
                                 %td
-                                    %code mode-changes=""
+                                    %code mode-changes="false"
                                 %td 
                                     Specify if this destroyable uses custom
                                     = succeed "." do
                                         %a{:href => "/modules/monument_modes"} monument modes
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show-progress="false"
+                                %td 
+                                    Show this destroyables progress in the scoreboard.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code repairable="true"
+                                %td 
+                                    Specify if the destroyable can be repaired.
                                 %td
                                     %span.label.label-primary true/false
                 :markdown
