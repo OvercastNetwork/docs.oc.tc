@@ -11,6 +11,8 @@
                 :markdown
                     The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element. Only one default spawn element should be defined per map XML.
 
+                    The main `<spawns>` element accepts a `bedspawn="on"` attribute to allow players to spawn at a saved bed spawn location. If a player has a bed spawn location set it overrides all other spawn regions for that player. 
+
                         <spawns>
                             <spawn team="red" kit="red" yaw="90">
                                 <cuboid min="-2,13,71" max="-9,13,78"/>
@@ -22,6 +24,36 @@
                                 <cuboid min="-1,16,-1" max="2,20,2"/>
                             </default>
                         </spawns>
+
+                    ##### Spawn Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code team=""
+                                %td The team this spawn applies to.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code safe="false"
+                                %td Validate that the player spawns in a safe location.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code kit=""
+                                %td The kit to apply to players when they are spawned in this spawn.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit Name
+
+                :markdown
 
                     The default element specifies where observers and players without a team spawn. There should only be a single default spawn.  
                     `yaw=""` specifies what direction the player is looking horizontally from -180&deg; to 180&deg;. South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.  

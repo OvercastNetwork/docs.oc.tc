@@ -22,13 +22,55 @@
 
                     Position and direction attributes of the `<portal>` element are relative to the players location and where they are looking. Prefix values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.  
 
-                    `yaw=""` specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.  
-                    _South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;._
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code x=""
+                                    %code y=""
+                                    %code z=""
+                                %td Offset the players <code>X,Y,Z</code> position by the amount specified.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code filter=""
+                                %td Filter player access.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter Name
+                            %tr
+                                %td
+                                    %code sound="true"
+                                %td Play the portal sound
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code protect="false"
+                                %td Protect the portal entrance and exit regions.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code yaw=""
+                                %td Specify the direction the player is looking horizontally from -180&deg; to 180&deg;.<br/><i>South 0, East -90, North 180 and West 90.</i>
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code pitch=""
+                                %td Specify the direction the player is looking vertically from -90&deg; to 90&deg;.<br/><i>-90 is straight up 90 is straight down.</i>
+                                %td
+                                    %span.label.label-primary Number
 
-                    `pitch=""` specifies what direction the player is looking vertically from -90&deg; to 90&deg;.  
-                    _-90&deg; is straight up 90&deg; is straight down._
-
-                    `TIP:` Copy the yaw from the F3 screen in minecraft (labled as `f`).  
+                :markdown
+                    `TIP:` Copy the yaw from the F3 screen in minecraft (labeled as `f`).  
 
                     <br/>
                     Examples
