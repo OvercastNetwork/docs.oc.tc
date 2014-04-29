@@ -9,11 +9,18 @@
                 .page-header
                     %h1 Projectiles
                 :markdown
-                    Bows can be modified to shoot a different projectile at a custom speed. The PGM plugin will calculate the damage the projectile does using the same formula as minecraft does for arrows. This means that a flying fish with a velocity of 40 will almost certainly kill you.
+                    Bows can be modified to shoot a different projectile at a custom speed. The PGM plugin will calculate the damage the projectile does using the same formula as minecraft does for arrows. This means that a flying fish with a velocity of 40 will almost certainly kill you. Projectiles can also have custom [potion effects](/modules/potions) which are applied to the target when it is hit.
                     
                         <modifybowprojectile>
                             <projectile>EnderPearl</projectile>
                             <velocityMod>2.5</velocityMod>
+
+                            <!-- Projectile potion effect -->
+                            <potion duration="5" amplifier="1">poison</potion>
+                        </modifybowprojectile>
+
+                        <modifybowprojectile>
+                            <potion duration="8" amplifier="1">wither</potion>
                         </modifybowprojectile>
 
 
