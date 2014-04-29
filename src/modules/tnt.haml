@@ -9,17 +9,48 @@
                 .page-header
                     %h1 TNT
                 :markdown
-                    You can modify TNT explosion & placing behavior with this module.
+                    You can modify TNT explosion & placing behavior with this module. Destruction of terrain can be easily disabled with the blockdamage element. If it is set to `false` the yield element will have no effect since there won't be any block drops. TNT damage can be further limited with the [disable damage module](/modules/disabledamage#block_explosion).
                     
+
+                %h5 TNT Module Elements
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code &lt;instantignite&gt;false&lt;/instantignite&gt;
+                                %td Instantly ignite TNT when placed.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code &lt;blockdamage&gt;true&lt;/blockdamage&gt;
+                                %td Specify if TNT destroys the terrain.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code &lt;yield&gt;&lt;/yield&gt;
+                                %td
+                                    Modify the amount of items dropped by the explosion as a percentage.<br/>
+                                    %i Not valid when <code>blockdamage</code> is false.
+                                %td
+                                    %span.label.label-primary 0 - 1.0
+                            %tr
+                                %td
+                                    %code &lt;fuse&gt;&lt;/fuse&gt;
+                                %td 
+                                    Time till the TNT explodes once it is ignited.<br/>
+                                    %i Must be a value less than 4 seconds since the TNT entity vanishes after that.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                :markdown
                         <tnt>
-                            <!-- TNT instantly ignites when placed -->
                             <instantignite>on</instantignite>
-                            
-                            <!-- TNT doesn't destroy the terrain -->
-                            <blockdamage>off</blockdamage>
-                            
-                            <!-- Modify the amount of items dropped by the explosion as a percentage -->
-                            <yield>0</yield>
+                            <fuse>2s</fuse>
                         </tnt>
-
-
