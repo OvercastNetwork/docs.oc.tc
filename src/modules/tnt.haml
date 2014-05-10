@@ -23,19 +23,19 @@
                         %tdata
                             %tr
                                 %td
-                                    %code &lt;instantignite&gt;false&lt;/instantignite&gt;
+                                    %code= html_escape('<instantignite>false</instantignite>')
                                 %td Instantly ignite TNT when placed.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
-                                    %code &lt;blockdamage&gt;true&lt;/blockdamage&gt;
+                                    %code= html_escape('<blockdamage>true</blockdamage>')
                                 %td Specify if TNT destroys the terrain.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
-                                    %code &lt;yield&gt;&lt;/yield&gt;
+                                    %code= html_escape('<yield></yield>')
                                 %td
                                     Modify the amount of items dropped by the explosion as a percentage.<br/>
                                     %i Not valid when <code>blockdamage</code> is false.
@@ -43,7 +43,14 @@
                                     %span.label.label-primary 0 - 1.0
                             %tr
                                 %td
-                                    %code &lt;fuse&gt;&lt;/fuse&gt;
+                                    %code= html_escape('<power></power>')
+                                %td
+                                    Modify the explosions block radius.<br/>
+                                %td
+                                    %span.label.label-primary 0 - 20.0
+                            %tr
+                                %td
+                                    %code= html_escape('<fuse></fuse>')
                                 %td 
                                     Time till the TNT explodes once it is ignited.<br/>
                                     %i Must be a value less than 4 seconds since the TNT entity vanishes after that.
