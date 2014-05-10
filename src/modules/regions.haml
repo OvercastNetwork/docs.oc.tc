@@ -170,6 +170,14 @@
                                 <region name="bases"/>
                             </apply>
                         </regions>
+                        
+                    Multiple filters can be applied to a region by using multiple apply attributes.
+                    Exaple from Boom - it uses `block-break` and `block-place` attributes on the same apply tag.
+                    
+                    <apply block-break="only-sandstone-stairs" block-place="deny-all" message="You may not modify the TNT spawning area">
+                        <rectangle min="-6,-58" max="7,-47"/>
+                        <rectangle min="-6,48" max="7,59"/>
+                    </apply>
 
                     <br/>
                     Velocity can be applied in two ways, either by modifying the player's current velocity or by setting an exact value. The velocity is specified as a `X,Y,Z` vector. To set an exact velocity vector, put `@` only in front of the first value.
