@@ -10,7 +10,7 @@
                     %h1
                         King of the Hill
                 :markdown
-                    KotH is a gamemode in which you capture and hold a hill to collect points. The first team to reach a preset amount of points wins. A KotH map can have multiple hills each with their own attributes such as capture time.
+                    KotH is a gamemode in which you capture and hold a hill to collect points. The first team to reach a preset amount of points wins. A KotH map can have multiple hills each with their own attributes such as capture time
 
                         <king>
                             <hills>
@@ -32,7 +32,7 @@
                             %tr
                                 %th Name
                                 %th Description
-                                %th Default
+                                %th Value
                         %tbody
                             %tr
                                 %td
@@ -40,23 +40,89 @@
                                 %td
                                     Name of the hill, displayed on the scoreboard.
                                 %td
-                                    %span.label.label-primary N/A
+                                    %span.label.label-primary String
                             %tr
                                 %td
-                                    %code capture-time=""
+                                    %code capture-time="30s"
                                 %td
                                     Time to capture the hill.
                                 %td
-                                    30 sec
+                                    %a{:href => "/reference/time_periods"} Time Period
                             %tr
                                 %td
-                                    %code points=""
+                                    %code points="1"
                                 %td
                                     Points to give per second to the owning team.
                                 %td
-                                    1
+                                    %span.label.label-primary Number
+
+                            %tr
+                                %td
+                                    %code capture-rule="exclusive"
+                                %td
+                                    Rule used to decide who is in control of the point at any given moment.
+                                %td
+                                    %a{:href => "#capture_rule"} Capture Rule
+                            %tr
+                                %td
+                                    %code scaled-time="false"
+                                %td
+                                    Capture faster with more team players on the hill.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show-progress="false"
+                                %td
+                                    Show capture percentage in the sidebar.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code neutral-state="false"
+                                %td
+                                    Hill must be un-captured before it can be captured again.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code incremental="false"
+                                %td
+                                    Capture progress is retained even if capturing is interrupted. 
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code permanent="false"
+                                %td
+                                    Hill can only be captured once during the match.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code initial-owner=""
+                                %td
+                                    The team owning the hill when the match starts.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td 
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the BossBar, the Scoreboard.
+                                %td
+                                    %span.label.label-primary true/false
+
                 :markdown
-                    Capture time can be any amount of time, and supports [Time Periods](/reference/time_periods).
+                    ##### [Capture Rule](id:capture_rule)
+                    The capture rule defines the logic used to decide which team is in control of the hill. Values for `capture-rule` can be one of the following:
+                    
+                    * `exclusive` The team must be the only team with players on the hill. (default)
+                    * `majority` The team must have more players on the hill than all other teams combined.
+                    * `lead` The team must have more players on the hill than any other single team.
+
+                    Players who match either `capture-filter` or `defend-filter` are counted when calculating the `capture-rule`. Players who don't match either filter cannot affect the hill at all.
+
 
                     <br/>
                     #### Hill sub-elements
@@ -82,9 +148,19 @@
                                     %code= html_escape('<captured> <region name="captured"/> </captured>')
                                 %td
                                     The region to display if the hill is captured.
+                            %tr
+                                %td
+                                    %code= html_escape('<capture-filter> <filter name="capture"/> </capture-filter>')
+                                %td
+                                    Filter team players who can control this hill, defaults to all teams.
+                            %tr
+                                %td
+                                    %code= html_escape('<defend-filter> <filter name="defend"/> </defend-filter>')
+                                %td
+                                    Filter team players who can prevent teams from controlling the hill.
 
                 :markdown
-                    Capture progress is displayed inside the defined `<progress>` region using the dominating teams wool/clay color. After a hill is captured the `<captured>` region is also filled with that teams wool/clay color. If the `<captured>` region is not present it will use the `<progress>` region to display captured status. The progress and captured regions must be cuboids otherwise the plugin will throw an error.
+                    Capture progress is displayed inside the defined `<progress>` region using the dominating teams wool/clay/glass color. After a hill is captured the `<captured>` region is also filled with that teams wool/clay/glass color. If the `<captured>` region is not present it will use the `<progress>` region to display captured status. The progress and captured regions must be cuboids otherwise the plugin will throw an error.
 
                     <br/>
                     #### [Scoring](id:scoring)
