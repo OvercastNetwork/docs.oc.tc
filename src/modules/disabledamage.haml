@@ -138,3 +138,46 @@
 
                 :markdown
                     Copied from: [bukkit docs Damage Cause](http://jd.bukkit.org/rb/doxygen/de/d62/enumorg_1_1bukkit_1_1event_1_1entity_1_1EntityDamageEvent_1_1DamageCause.html)
+
+                    <br/>
+                    #### [Block Explosion Attributes](id:block_explosion)
+
+                    The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize who/what gets damaged. Only attributes with `false` as the value need to be explicitly defined since all attributes default to `true`.
+
+                        <disabledamage>
+                            <!-- TNT damages enemies and self, but not teammates -->
+                            <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
+                        </disabledamage>
+
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code ally="true"
+                                %td Damage to players on the same team as the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code self="true"
+                                %td Damage to the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code enemy="true"
+                                %td Damage to players not on the same team as the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code other="true"
+                                %td Any other damage caused by the explosion.
+                                %td
+                                    %span.label.label-primary true/false

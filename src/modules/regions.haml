@@ -109,7 +109,7 @@
                 :markdown
 
                     <br/>
-                    ####[Example regions](id:regionExamples)
+                    ##### [Example regions](id:regionExamples)
 
                     Applying kits to a region:
 
@@ -140,6 +140,15 @@
                                 <cylinder base="83.5,0,-47.5" radius="4" height="40"/>
                             </apply>
                         </regions>
+                        
+                    Multiple filters can be applied to a region at the same time by using different apply attributes.  
+                    Example from [Boom](https://maps.oc.tc/DTM/Standard/Boom/map.xml), it uses the `block-break` and `block-place` attributes on the same apply tag.
+                    
+                        <apply block-break="only-sandstone-stairs" block-place="deny-all" message="You may not modify the TNT spawning area">
+                            <rectangle min="-6,-58" max="7,-47"/>
+                            <rectangle min="-6,48" max="7,59"/>
+                        </apply>
+
 
                     Example regions from Harb using [region combinations](#regionCombinations).
 
