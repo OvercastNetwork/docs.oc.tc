@@ -29,8 +29,8 @@
                             %tr
                                 %td
                                     %code materials=""
-                                %td 
-                                    The destroyables materials, multiple materials are separated with a semicolon 
+                                %td
+                                    The destroyables materials, multiple materials are separated with a semicolon
                                     %code ;
                                 %td
                                     %a{:href => "http://jd.bukkit.org/apidocs/org/bukkit/Material.html"} Bukkit Material
@@ -49,7 +49,7 @@
                             %tr
                                 %td
                                     %code mode-changes="false"
-                                %td 
+                                %td
                                     Specify if this destroyable uses custom
                                     = succeed "." do
                                         %a{:href => "/modules/monument_modes"} monument modes
@@ -58,15 +58,22 @@
                             %tr
                                 %td
                                     %code show-progress="false"
-                                %td 
+                                %td
                                     Show this destroyables progress in the scoreboard.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
                                     %code repairable="true"
-                                %td 
+                                %td
                                     Specify if the destroyable can be repaired.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the BossBar, the Scoreboard.
                                 %td
                                     %span.label.label-primary true/false
                 :markdown
