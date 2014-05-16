@@ -43,10 +43,20 @@
                             %tr
                                 %td
                                     %code mode-changes=""
-                                %td 
+                                %td
                                     Specify if this core uses custom
                                     = succeed "." do
                                         %a{:href => "/modules/monument_modes"} monument modes
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
+                                    %br
+                                    %code NOTE:
+                                    The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
                 :markdown
