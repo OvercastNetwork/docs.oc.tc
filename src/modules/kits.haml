@@ -25,13 +25,13 @@
                             %tr
                                 %td
                                     %code name=""
-                                %td The kits name, used to reference it in spawns, etc. 
+                                %td The kits name, used to reference it in spawns, etc.
                                 %td
                                     %span.label.label-primary String
                             %tr
                                 %td
                                     %code parents=""
-                                %td Comma separated list of all the kits parents. 
+                                %td Comma separated list of all the kits parents.
                                 %td
                                     %span.label.label-primary String
                             %tr
@@ -60,6 +60,7 @@
 
                     In the example above players from blue team will get a blue helmet, players from red team will get a red helmet; both teams will get the items from the spawn kit. The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
 
+                    `NOTE:` By default, `ambient="true"` is applied to all potions, but can be overriden with `ambient="false"`.
                     <br/>
                     #### Health & Hunger Kits
                     A players health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
