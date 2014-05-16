@@ -10,6 +10,7 @@
                     %h1
                         King of the Hill
                 :markdown
+
                     KotH is a gamemode in which you capture and hold a hill to collect points. The first team to reach a preset amount of points wins. A KotH map can have multiple hills each with their own attributes such as capture time, etc.
 
                         <king>
@@ -105,6 +106,13 @@
                                     The team owning the hill when the match starts.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td 
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the BossBar, the Scoreboard.
+                                %td
+                                    %span.label.label-primary true/false
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
