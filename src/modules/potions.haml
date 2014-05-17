@@ -18,7 +18,7 @@
 
                     `NOTE:` Infinite duration can be specified by using `oo` as the duration.
 
-                    Specifying `ambient="true"` will increase the amount of particles a player emits and make the particles translucent.
+                    By default, all potions have `ambient="true"` which decreases the amount of particles a player emits and make the particles translucent.
 
                     <br/>
                     To give a potion as an item you have to use:
@@ -29,7 +29,7 @@
 
                     <br/>
                     #### Custom potion item effects
-                    Custom effects can be added to a potion item with the `potions=""` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion items damage value will define the potion color and if it's a splash or normal potion.  
+                    Custom effects can be added to a potion item with the `potions=""` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion items damage value will define the potion color and if it's a splash or normal potion.
 
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
@@ -43,7 +43,7 @@
                                 %td
                                     %code potion_name
                                 %td Name of the potion effect.
-                                %td 
+                                %td
                                     %a{:href => "/reference/potion_effects"} Potion names
                             %tr
                                 %td
