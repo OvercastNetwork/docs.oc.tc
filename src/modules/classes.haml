@@ -12,7 +12,7 @@
                     Classes allow the player to pick a specific class at the beginning of the game which gives them special abilities. Classes can be used on any map type, however care must be taken to balance them properly. Players can then change their class ingame with the `/class` command.
 
                         <classes family="ghost" sticky="true">
-                            <class name="Demon" default="true" description="Smoke and Fire!" sticky="false">
+                            <class name="Demon" default="true" description="Smoke and Fire!" icon="fireball">
                                 <permission>grenades.use</permission>
                                 <kit>
                                     <potion duration="oo" amplifier="2" ambient="true">damage resistance</potion>
@@ -71,7 +71,13 @@
                                 %td
                                     Specify if the class is the default class for new players.
                             %tr
-
+                                %td
+                                    %code restrict="true"
+                                %td
+                                    If set to
+                                    %code false
+                                    only players with the proper permission can use the class.
+                            %tr
                 :markdown
                     The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.
                     See [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names for the `icon=""` attribute.
@@ -93,7 +99,7 @@
 
                     <br/>
                     ##### Permission Nodes
-                    The following permission nodes can be added to a class to give the player special ghost squadron abilities.
+                    The following permission nodes can be added to a class to give the player special ghost squadron abilities. `Note:` This only works on a map with `<ghostquadron/>` map!
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
