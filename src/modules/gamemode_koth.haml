@@ -88,7 +88,7 @@
                                 %td
                                     %code incremental="false"
                                 %td
-                                    Capture progress is retained even if capturing is interrupted. 
+                                    Capture progress is retained even if capturing is interrupted.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
@@ -105,11 +105,21 @@
                                     The team owning the hill when the match starts.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the BossBar, the Scoreboard.
+                                    %br
+                                    %code NOTE:
+                                    The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
+                                %td
+                                    %span.label.label-primary true/false
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
                     The capture rule defines the logic used to decide which team is in control of the hill. Values for `capture-rule` can be one of the following:
-                    
+
                     * `exclusive` The team must be the only team with players on the hill. (default)
                     * `majority` The team must have more players on the hill than all other teams combined.
                     * `lead` The team must have more players on the hill than any other single team.

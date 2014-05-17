@@ -12,9 +12,9 @@
                     Players have to retrieve wool blocks from the enemy teams side of the map and then put them on their victory monument(s). The area a wool has to be placed in is protected by default to prevent it from being blocked with another block.
 
                         <wools>
-                           <wool team="blue" color="lime">                  
+                           <wool team="blue" color="lime">
                                <block>0.5,11,-92.5</block>
-                               <!-- Blue team has to place a lime wool block at 0.5,11,-92.5 to win --> 
+                               <!-- Blue team has to place a lime wool block at 0.5,11,-92.5 to win -->
                            </wool>
                            <wool team="green" color="light blue" craftable="false">
                                <block>0.5,11,93.5</block>
@@ -47,6 +47,16 @@
                                 %td
                                     %code craftable=""
                                 %td Specify if the wool can be crafted, e.g. with white wool and dye.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show="true"
+                                %td
+                                    Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the BossBar, the Scoreboard.
+                                    %br
+                                    %code NOTE:
+                                    The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
                 :markdown
