@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Block Drops
                 :markdown
-                    This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with. 
+                    This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with.
 
                     The `<blockdrops>` module can contain any number of `<rule>` elements, and each `<rule>` can contain various sub-elements.
 
@@ -66,9 +66,9 @@
 
                     Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. XP orbs are dropped by specifying the amount in the `<experience>` tag.
 
-                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel. 
+                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
                     If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of what tool was used.
-                    
+
                     Custom drops also apply to blocks broken by explosions. In this case, the custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
 
                     Examples

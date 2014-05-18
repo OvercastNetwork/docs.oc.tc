@@ -11,7 +11,7 @@
                 :markdown
                     [<i class="fa fa-share right-ref-link"></i>](/modules/main)
                     Every map XML file starts with the XML header and then the base `<map>` module.
-                        
+
                         <?xml version="1.0"?>
                         <map proto="1.0.0">
                             <!-- Specifies what the map is called -->
@@ -30,11 +30,11 @@
                             <rules>
                                 <rule>Dispensers are disabled</rule>
                             </rules>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
                     This is used to prevent people from placing dispensers anywhere they are used.
-                
+
                             <filters>
                                 <filter name="deny-dispenser">
                                     <deny>
@@ -42,20 +42,20 @@
                                     </deny>
                                 </filter>
                             </filters>
-            
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
                     Defines the teams [colors](/reference/formatting#chatColors), names and how many people can be on the teams.
-            
+
                         <teams>
                             <team color="blue" max="24">Blue Team</team>
                             <team color="dark red" max="24">Red Team</team>
                         </teams>
-            
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
                      This region references the dispenser filter defined above and states where they will work.
-            
+
                         <regions>
                             <apply block-place="deny-dispenser">
                                 <negative>
@@ -63,11 +63,11 @@
                                 </negative>
                             </apply>
                         </regions>
-    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
-                    Specifiy where the previously named teams will spawn and what direction. 
-            
+                    Specifiy where the previously named teams will spawn and what direction.
+
                         <spawns>
                             <!-- The yaw=" " specifies what direction the team will spawn -->
                             <spawn team="blue" yaw="270">
@@ -80,22 +80,22 @@
                                 <cylinder base="-11.5,90,-33" radius="3" height="0"/>
                             </default>
                         </spawns>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
                     The playable region is the area that people can build on.
-                    
+
                         <playable>
                             <rectangle min="-100,-2" max="100,123"/>
                             <!--  Main area  -->
                             <rectangle min="-36,-14" max="12,-2"/>
                             <!--  Area between spawn tunnels  -->
                         </playable>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_dtc)
                     This specifies what material the core is made of, who the core belongs to and how far the lava needs to leak.
-                        
+
                         <cores material="obsidian" leak="10">
                             <core team="blue">
                                 <cuboid min="13,85,23" max="18,92,30"/>
@@ -104,15 +104,15 @@
                                 <cuboid min="-41,85,23" max="-36,92,30"/>
                             </core>
                         </cores>
-            
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/other_settings)
                     This specifies how high players can build however it doesn't stop them from going over this limit.
-            
+
                         <maxbuildheight>125</maxbuildheight>
-            
+
                     </br>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/main)
                     Close the main `<map>` module.
-                        
+
                         </map>
