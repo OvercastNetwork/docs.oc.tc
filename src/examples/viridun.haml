@@ -20,7 +20,7 @@
 
                     <br/>
                     Specify the maps authors and contributors. Each author and contributors `contribution=""` attribute is set to their specific contribution to the map.
-                    
+
                         <authors>
                             <author contribution="Map design and layout">OurLoneHero</author>
                         </authors>
@@ -28,7 +28,7 @@
                             <contributor contribution="Map design, aesthetic changes, and XML">IM_A_H0B0</contributor>
                             <contributor contribution="Design concepts and map design">ander301</contributor>
                         </contributors>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
@@ -53,7 +53,7 @@
                                         <any><!-- Returns allow if it is a matching block -->
                                             <block>PISTON_BASE</block>
                                             <block>PISTON_EXTENSION</block>
-                                            <block>PISTON_MOVING_PIECE</block>  
+                                            <block>PISTON_MOVING_PIECE</block>
                                             <block>PISTON_STICKY_BASE</block>
                                             <block>AIR</block><!-- Allow the piston to extend -->
                                             <block>FENCE</block><!-- Block being modified is a fence -->
@@ -63,7 +63,7 @@
                                 </any>
                             </filter>
                         </filters>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
                     Define the `main-area` and apply the maps custom `allow-redstone` filter on it.
@@ -83,7 +83,7 @@
                         <playable>
                             <region name="main-area"/>
                         </playable>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
                     Each team kit has leather armor colored in their team color and they inherit the main spawn kit.
@@ -111,7 +111,7 @@
                                 <boots color="0066cc" enchantment="protection fall:2">leather boots</boots>
                             </kit>
                         </kits>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
                     Define where the player spawns. Because the bases are complex multiple regions are defined for each team spawn. Each spawn also specifies the direction the player should face when spawning.
@@ -166,7 +166,7 @@
                             </spawns>
                             <default yaw="90"><cylinder base="51,27,-7.5" radius="10" height="0"/></default>
                         </spawns>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_tdm)
                     Set the game type to team deathmatch and specify a max run time of 15 minutes in seconds.
@@ -174,7 +174,7 @@
                         <score>
                             <time>900</time> <!-- 15 minutes -->
                         </score>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Specify that stone swords and bows get repaired when dropped or when the player picks one up.
@@ -183,7 +183,7 @@
                             <tool>stone sword</tool>
                             <tool>bow</tool>
                         </toolrepair>
-                
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Remove specific items such as armor when they get dropped to prevent the map from getting cluttered.
@@ -199,7 +199,7 @@
                             <item>glass bottle</item>
                             <item>potion:0</item><!-- Remove water bottles -->
                         </itemremove>
-                
+
                     <br/>
                     Close the main `<map>` module.
 

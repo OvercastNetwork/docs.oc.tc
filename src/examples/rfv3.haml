@@ -20,7 +20,7 @@
 
                     <br/>
                     Specify the maps authors and contributors. Each author and contributors `contribution=""` attribute is set to their specific contribution to the map.
-                    
+
                         <authors>
                             <author contribution="map design and master gardener">MonsieurApple</author>
                             <author contribution="map design and code memorization">Plastix</author>
@@ -31,7 +31,7 @@
                             <contributor contribution="portals and various asthetics">Torn_Ares</contributor>
                             <contributor contribution="words">KasiCrafter</contributor>
                         </contributors>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/rules)
                     Specify some map specific rules.
@@ -105,7 +105,7 @@
                             <team color="blue" max="50">Blue Team</team>
                             <team color="dark red" max="50">Red Team</team>
                         </teams>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
                     Specify spawns for the two teams.
@@ -117,7 +117,7 @@
                             </spawns>
                             <default yaw="270"><cylinder base="44.5,8,0.5" radius="4" height="0"/></default>
                         </spawns>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
                     Team spawn kits, both teams get the same kit.
@@ -135,7 +135,7 @@
                                 <item slot="8" amount="64">cooked fish</item>
                             </kit>
                         </kits>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
                     Create several named filters including a no-void filter.
@@ -153,7 +153,7 @@
                                 <allow><team>red</team></allow>
                             </filter>
                         </filters>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
                     Define all the regions, since the playing area of this map is pretty complex there are lots of regions and combinations of regions.
@@ -290,7 +290,7 @@
                                 <cuboid min="-1,15,-134" max="2,18,-133"/>
                             </portal>
                         </portals>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Specify that iron swords, diamond pickaxes, and bows get repaired when dropped or when the player picks one up. Since the player only needs one arrow because the bows are enchanted with `infinite:1` arrows are also specified here. This prevents players from collecting huge stacks of arrows and spewing them all over on death. Repairing arrows instead of removing them also has the advantage of the player being able to accidental drop a arrow and not lose it.
@@ -301,7 +301,7 @@
                             <tool>bow</tool>
                             <tool>arrow</tool>
                         </toolrepair>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
                     Remove specific items when they get dropped to prevent the map from getting cluttered.
@@ -318,17 +318,17 @@
                             <item>string</item>
                             <item>glowstone dust</item>
                         </itemremove>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/other_settings)
                     The maps max build height in blocks.
 
                         <maxbuildheight>40</maxbuildheight>
-                    
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_ctw)
                     Specify a Capture the Wool type game, and the locations where the wools have to be placed by each team.
-                        
+
                         <wools>
                             <wool team="red" color="purple">
                                 <block>-49,10,-91</block>
@@ -349,7 +349,7 @@
                                 <block>0,16,140</block>
                             </wool>
                         </wools>
-                    
+
                     <br/>
                     Close the main `<map>` module.
 

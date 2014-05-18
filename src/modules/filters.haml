@@ -8,9 +8,9 @@
             .col-sm-9
                 .page-header
                     %h1 Filters
-                :markdown                    
+                :markdown
                     Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. The filter's name is used to reference it inside other filters and regions.
-                
+
                     * `ALLOW` The filter specifically allows the query.
                     * `DENY` The filter specifically denies the query.
                     * `ABSTAIN` None of the filters queried have any opinion on the subject.
@@ -251,11 +251,11 @@
                             <filter name="only-red" parents="deny-players">
                                 <allow><team>red</team></allow>
                             </filter>
-                            
+
                             <filter name="gold-blocks" parents="deny-block">
                                 <allow><block>gold block</block></allow>
                             </filter>
-                            
+
                             <filter name="no-tnt" parents="allow-all">
                                 <deny><block>TNT</block></deny>
                             </filter>

@@ -9,18 +9,18 @@
                 .page-header
                     %h1 Portals
                 :markdown
-                    Portals move a player that enters the specified region to a exact location or by by a certain offset amount. 
+                    Portals move a player that enters the specified region to a exact location or by by a certain offset amount.
 
                         <portals>
                             <!-- Offset location, adds X,Y,Z, pitch and yaw to the players current location -->
                             <portal x="X" y="Y" z="Z" pitch="pitch" yaw="yaw" filter="filter name">
-                                
+
                                 <!-- Portal region, this is the region the player has to enter to be teleported -->
                                 <cuboid min="X1,Y1,Z1" max="X2,Y2,Z2"/>
                             </portal>
                         </portals>
 
-                    Position and direction attributes of the `<portal>` element are relative to the players location and where they are looking. Prefix values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.  
+                    Position and direction attributes of the `<portal>` element are relative to the players location and where they are looking. Prefix values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.
 
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
@@ -70,7 +70,7 @@
                                     %span.label.label-primary Number
 
                 :markdown
-                    `TIP:` Copy the yaw from the F3 screen in minecraft (labeled as `f`).  
+                    `TIP:` Copy the yaw from the F3 screen in minecraft (labeled as `f`).
 
                     <br/>
                     Examples
