@@ -15,7 +15,7 @@
                         <?xml version="1.0"?>
                         <map proto="#{$map_proto}">
                         <name>Race for Victory 3</name>
-                        <version>1.2.5</version>
+                        <version>1.2.8</version>
                         <objective>Take the enemy's wool located to either side of the enemy's base and place it in your victory monument.</objective>
 
                     <br/>
@@ -31,15 +31,6 @@
                             <contributor contribution="portals and various asthetics">Torn_Ares</contributor>
                             <contributor contribution="words">KasiCrafter</contributor>
                         </contributors>
-
-                    <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/rules)
-                    Specify some map specific rules.
-
-                        <rules>
-                            <rule>Do not block spawn(s)</rule>
-                            <rule>Do not team spleef</rule>
-                        </rules>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/tutorial)
@@ -96,6 +87,7 @@
                                     <point yaw="0">0.5,15,137</point>
                                 </teleport>
                             </stage>
+                        </tutorial>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
@@ -125,12 +117,13 @@
                         <kits>
                             <kit name="spawn">
                                 <item slot="0">iron sword</item>
-                                <item slot="1" enchantment="dig speed:7;arrow infinite:1">bow</item>
+                                <item slot="1" enchantment="arrow infinite:1">bow</item>
                                 <item slot="28">arrow</item>
                                 <item slot="2" enchantment="durability:3;dig speed:1">iron pickaxe</item>
-                                <item slot="3" amount="64" damage="1">log</item>
-                                <item slot="4" amount="64">glass</item>
-                                <item slot="6">milk bucket</item>
+                                <item slot="3">iron axe</item>
+                                <item slot="4" amount="64" damage="1">log</item>
+                                <item slot="5" amount="64">glass</item>
+                                <item slot="6">bucket</item>
                                 <item slot="7">golden apple</item>
                                 <item slot="8" amount="64">cooked fish</item>
                             </kit>
@@ -151,6 +144,30 @@
 
                             <filter name="only-red" parents="deny-players deny-world">
                                 <allow><team>red</team></allow>
+                            </filter>
+                            <filter name="only-red-usage">
+                                <not>
+                                    <all>
+                                        <any>
+                                            <block>chest</block>
+                                            <block>workbench</block>
+                                            <block>trap door</block>
+                                        </any>
+                                        <team>blue</team>
+                                    </all>
+                                </not>
+                            </filter>
+                            <filter name="only-blue-usage">
+                                <not>
+                                    <all>
+                                        <any>
+                                            <block>chest</block>
+                                            <block>workbench</block>
+                                            <block>trap door</block>
+                                        </any>
+                                        <team>red</team>
+                                    </all>
+                                </not>
                             </filter>
                         </filters>
 
@@ -180,7 +197,6 @@
                             <apply block="deny-all">
                                 <region name="portals"/>
                             </apply>
-
                             <apply block="deny-all" message="You may not modify your supply room">
                                 <complement name="blue-supplies">
                                     <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
@@ -235,13 +251,13 @@
                             </complement>
 
                             <!-- wool room rules -->
-                            <apply block="only-blue" use="only-blue">
+                            <apply block="only-blue" use="only-blue-usage">
                                 <region name="blue-wool-rooms"/>
                             </apply>
                             <apply enter="only-blue" message="You may not enter your own wool room.">
                                 <region name="blue-wool-rooms"/>
                             </apply>
-                            <apply block="only-red" use="only-red">
+                            <apply block="only-red" use="only-red-usage">
                                 <region name="red-wool-rooms"/>
                             </apply>
                             <apply enter="only-red" message="You may not enter your own wool room.">
@@ -292,24 +308,25 @@
                         </portals>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
-                    Specify that iron swords, diamond pickaxes, and bows get repaired when dropped or when the player picks one up. Since the player only needs one arrow because the bows are enchanted with `infinite:1` arrows are also specified here. This prevents players from collecting huge stacks of arrows and spewing them all over on death. Repairing arrows instead of removing them also has the advantage of the player being able to accidental drop a arrow and not lose it.
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+                    Specify that iron swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up. Since the player only needs one arrow because the bows are enchanted with `infinite:1` arrows are also specified here. This prevents players from collecting huge stacks of arrows and spewing them all over on death. Repairing arrows instead of removing them also has the advantage of the player being able to accidental drop a arrow and not lose it.
 
                         <toolrepair>
                             <tool>iron sword</tool>
                             <tool>iron pickaxe</tool>
+                            <tool>iron axe</tool>
                             <tool>bow</tool>
                             <tool>arrow</tool>
                         </toolrepair>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Remove specific items when they get dropped to prevent the map from getting cluttered.
 
                         <itemremove>
                             <item>log</item>
                             <item>wood</item>
-                            <item>milk bucket</item>
+                            <item>bucket</item>
                             <item>cooked fish</item>
                             <item>golden apple</item>
                             <item>glass</item>
@@ -331,22 +348,22 @@
 
                         <wools>
                             <wool team="red" color="purple">
-                                <block>-49,10,-91</block>
+                                <block location="-49,10,-91"/>
                             </wool>
                             <wool team="red" color="yellow">
-                                <block>49,10,-91</block>
+                                <block location="49,10,-91"/>
                             </wool>
                             <wool team="red" color="cyan">
-                                <block>0,16,-140</block>
+                                <block location="0,16,-140"/>
                             </wool>
                             <wool team="blue" color="lime">
-                                <block>49,10,91</block>
+                                <block location="49,10,91"/>
                             </wool>
                             <wool team="blue" color="orange">
-                                <block>-49,10,91</block>
+                                <block location="-49,10,91"/>
                             </wool>
                             <wool team="blue" color="pink">
-                                <block>0,16,140</block>
+                                <block location="0,16,140"/>
                             </wool>
                         </wools>
 

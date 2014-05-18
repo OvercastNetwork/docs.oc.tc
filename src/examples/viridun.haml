@@ -14,9 +14,9 @@
 
                         <?xml version="1.0"?>
                         <map proto="#{$map_proto}">
-                        <name>Viridun</name>
-                        <version>1.4.2</version>
-                        <objective>Be the team with the least amount of deaths after 15 minutes.</objective>
+                        <name>Viridun Blitz</name>
+                        <version>1.4.4</version>
+                        <objective>Eliminate the other team before 10 minutes is up</objective>
 
                     <br/>
                     Specify the maps authors and contributors. Each author and contributors `contribution=""` attribute is set to their specific contribution to the map.
@@ -66,23 +66,13 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                    Define the `main-area` and apply the maps custom `allow-redstone` filter on it.
+                    Define a region named `playable` and apply the maps custom `allow-redstone` filter to it.
 
                         <regions>
-                            <cylinder name="main-area" base="-46,0,-46" radius="200" height="120"/>
-
                             <apply block="allow-redstone">
-                                <region name="main-area"/>
+                                <rectangle name="playable" min="-oo,-oo" max="oo,oo"/>
                             </apply>
                         </regions>
-
-                    <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
-                    Specify the playable area, references the `main-area` defined in the regions module.
-
-                        <playable>
-                            <region name="main-area"/>
-                        </playable>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
@@ -168,15 +158,16 @@
                         </spawns>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_tdm)
-                    Set the game type to team deathmatch and specify a max run time of 15 minutes in seconds.
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_blitz)
+                    Set the game type to blitz and specify a max run time of 10 minutes.
 
-                        <score>
-                            <time>900</time> <!-- 15 minutes -->
-                        </score>
+                        <blitz>
+                            <time>10m</time>
+                            <lives>1</lives>
+                        </blitz>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Specify that stone swords and bows get repaired when dropped or when the player picks one up.
 
                         <toolrepair>
@@ -185,7 +176,7 @@
                         </toolrepair>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Remove specific items such as armor when they get dropped to prevent the map from getting cluttered.
 
                         <itemremove>
@@ -199,6 +190,12 @@
                             <item>glass bottle</item>
                             <item>potion:0</item><!-- Remove water bottles -->
                         </itemremove>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_blitz)
+                    Include the global blitz XML.
+
+                        <include src="blitz-global.xml"/>
 
                     <br/>
                     Close the main `<map>` module.

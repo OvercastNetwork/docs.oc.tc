@@ -16,9 +16,9 @@
 
                         <?xml version="1.0"?>
 
-                        <map proto="1.3.0">
+                        <map proto="#{$map_proto}">
                         <name>Harb</name>
-                        <version>1.3.2</version>
+                        <version>1.3.5</version>
                         <objective>Be the team with the least amount of deaths after 10 minutes.</objective>
 
                     <br/>
@@ -100,16 +100,16 @@
                                 <potion duration="10">damage resistance</potion>
                             </kit>
                             <kit name="red" parents="spawn">
-                                <helmet color="cd0000">leather helmet</helmet>
-                                <chestplate color="cd0000" enchantment="protection explosions:3">leather chestplate</chestplate>
-                                <leggings color="cd0000">leather leggings</leggings>
-                                <boots color="cd0000">leather boots</boots>
+                                <helmet color="cd0000" damage="-3000">leather helmet</helmet>
+                                <chestplate color="cd0000" enchantment="protection explosions:3" damage="-3000">leather chestplate</chestplate>
+                                <leggings color="cd0000" damage="-3000">leather leggings</leggings>
+                                <boots color="cd0000" damage="-3000">leather boots</boots>
                             </kit>
                             <kit name="blue" parents="spawn">
-                                <helmet color="0066cc">leather helmet</helmet>
-                                <chestplate color="0066cc" enchantment="protection explosions:3">leather chestplate</chestplate>
-                                <leggings color="0066cc">leather leggings</leggings>
-                                <boots color="0066cc">leather boots</boots>
+                                <helmet color="0066cc" damage="-3000">leather helmet</helmet>
+                                <chestplate color="0066cc" enchantment="protection explosions:3" damage="-3000">leather chestplate</chestplate>
+                                <leggings color="0066cc" damage="-3000">leather leggings</leggings>
+                                <boots color="0066cc" damage="-3000">leather boots</boots>
                             </kit>
                         </kits>
 
@@ -118,7 +118,7 @@
                     Harb has pretty unique spawns in that they are cuboids covering a large area of the map that transverse multiple Z levels. This allows players to spawn on roofs and inside buildings. Because of this `safe="true"` is specified to prevent players from spawning midair or in walls. The `<point>` definition is a failsafe in case the PGM plugin can't find a safe spawn inside the region.
 
                         <spawns>
-                            <spawns safe="true">
+                            <spawns safe="true" sequential="true">
                                 <spawn team="blue" kit="blue" yaw="0">
                                     <cuboid min="-15,32,-57" max="16,42,-32"/>
                                     <point>0.5,33,-47.5</point>
@@ -146,14 +146,14 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_tdm)
-                    Set the game type to team deathmatch and specify a max run time of 10 minutes in seconds.
+                    Set the game type to team deathmatch and specify a max run time of 10 minutes.
 
                         <score>
-                            <time>600</time> <!-- 10 minutes -->
+                            <time>10m</time>
                         </score>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Repair stone swords, bows, and shears when dropped or when the player picks one up.
 
                         <toolrepair>
@@ -163,7 +163,7 @@
                         </toolrepair>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Remove armor, arrows, ladders, cooked chicken, etc. To prevent the playing field and player inventories from getting cluttered with items.
 
                         <itemremove>
@@ -181,6 +181,13 @@
                             <item>string</item>
                         </itemremove>
 
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/killreward)
+                    Give players a golden apple every time they kill an enemy.
+
+                        <killreward>
+                            <item>golden apple</item>
+                        </killreward>
+
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/tnt)
                     Instantly ignite TNT when placed and disable TNT explosions from breaking blocks.
@@ -189,6 +196,14 @@
                             <instantignite>on</instantignite>
                             <blockdamage>off</blockdamage>
                         </tnt>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/disabledamage)
+                    Disable damage from TNT placed by teammates.
+
+                        <disabledamage>
+                            <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
+                        </disabledamage>
 
                     <br/>
                     Close the main `<map>` module.

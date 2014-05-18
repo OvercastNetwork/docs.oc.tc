@@ -13,35 +13,38 @@
                     Every map XML file starts with the XML header and then the base `<map>` module.
 
                         <?xml version="1.0"?>
-                        <map proto="1.0.0">
-                            <!-- Specifies what the map is called -->
-                            <name>Airship Battle</name>
-                            <!-- States what version the map is -->
-                            <version>100</version>
-                            <!-- Tells the teams what the objective is in order to win the game -->
-                            <objective>
-                                Leak lava from the enemy's obsidian core into the void.
-                            </objective>
-                            <!-- States who made the map -->
-                            <authors>
-                             <author>Dewtroid</author>
-                            </authors>
-                            <!-- Shows any map rules that are not in normal OCN rules -->
-                            <rules>
-                                <rule>Dispensers are disabled</rule>
-                            </rules>
+                        <map proto="#{$map_proto}">
+                        <!-- Specifies what the map is called -->
+                        <name>Airship Battle</name>
+                        <!-- States what version the map is -->
+                        <version>1.0.4</version>
+                        <!-- Tells the teams what the objective is in order to win the game -->
+                        <objective>Leak lava from the enemy's obsidian core into the void.</objective>
+                        <!-- States who made the map -->
+                        <authors>
+                         <author>Dewtroid</author>
+                        </authors>
+                        <!-- Shows any map rules that are not in normal OCN rules -->
+                        <rules>
+                            <rule>Dispensers are disabled</rule>
+                        </rules>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
-                    This is used to prevent people from placing dispensers anywhere they are used.
+                    These filters is used to prevent people from placing dispensers or obsidian in the regions they are applied to.
 
-                            <filters>
-                                <filter name="deny-dispenser">
-                                    <deny>
-                                        <block>dispenser</block>
-                                    </deny>
-                                </filter>
-                            </filters>
+                        <filters>
+                            <filter name="deny-dispenser">
+                                <not>
+                                    <block>dispenser</block>
+                                </not>
+                            </filter>
+                            <filter name="deny-obsidian">
+                                <not>
+                                    <block>obsidian</block>
+                                </not>
+                            </filter>
+                        </filters>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
@@ -54,26 +57,63 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                     This region references the dispenser filter defined above and states where they will work.
+                    These regions reference the dispenser and obsidian filters defined above and states where they will work.
 
                         <regions>
-                            <apply block-place="deny-dispenser">
+                            <!-- Apply the deny-dispenser filter to a infinite region -->
+                            <apply block-place="deny-dispenser" message="Dispensers are disabled on this map!">
+                                <rectangle min="-oo,-oo" max="oo,oo"/>
+                            </apply>
+                            <apply leave="deny-all" message="Don't exit the playing field!">
+                                <rectangle min="-102,-4" max="102,125"/> <!-- Main area -->
+                                <rectangle min="-36,-16" max="13,-2"/> <!-- Area between spawn tunnels -->
+                            </apply>
+                            <apply block="deny-all" message="Don't edit blocks outside the playing field!">
                                 <negative>
-                                    <rectangle min="0,0" max="0,0"/>
+                                    <union name="map">
+                                        <rectangle min="-100,-2" max="100,123"/> <!-- Main area -->
+                                        <rectangle min="-36,-14" max="13,-2"/> <!-- Area between spawn tunnels -->
+                                    </union>
                                 </negative>
+                            </apply>
+                            <apply block-break="deny-obsidian" message="You may not break obsidian outside the core area!">
+                                <complement>
+                                    <region name="map"/>
+                                    <cuboid min="13,85,23" max="18,92,30"/>
+                                    <cuboid min="-41,85,23" max="-36,92,30"/>
+                                </complement>
                             </apply>
                         </regions>
 
                     <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
+                    Define a kit with special TNT defuser shears.
+
+                        <kits>
+                            <kit name="shears">
+                                <item slot="8" name="`6TNT Defuser" lore="`7Right click to defuse teammate's TNT|`7Does not work in `9water`7!">shears</item>
+                            </kit>
+                        </kits>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+                    Remove shears, obsidian and gold block items from the playing field when they are dropped.
+
+                        <itemremove>
+                            <item>shears</item>
+                            <item>obsidian</item>
+                            <item>gold block</item>
+                        </itemremove>
+
+                    <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
-                    Specifiy where the previously named teams will spawn and what direction.
+                    Specify where the previously named teams will spawn, the kit they will spawn with and what direction they face.
 
                         <spawns>
-                            <!-- The yaw=" " specifies what direction the team will spawn -->
-                            <spawn team="blue" yaw="270">
+                            <spawn team="blue" yaw="270" kit="shears">
                                 <cuboid min="4.5,91,-34" max="7.5,91,-31"/>
                             </spawn>
-                            <spawn team="red" yaw="90">
+                            <spawn team="red" yaw="90" kit="shears">
                                 <cuboid min="-30.5,91,-34" max="-27.5,91,-31"/>
                             </spawn>
                             <default yaw="180">
@@ -82,19 +122,8 @@
                         </spawns>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
-                    The playable region is the area that people can build on.
-
-                        <playable>
-                            <rectangle min="-100,-2" max="100,123"/>
-                            <!--  Main area  -->
-                            <rectangle min="-36,-14" max="12,-2"/>
-                            <!--  Area between spawn tunnels  -->
-                        </playable>
-
-                    <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_dtc)
-                    This specifies what material the core is made of, who the core belongs to and how far the lava needs to leak.
+                    This specifies what material the core is made of, who each core belongs to and how far the lava needs to leak.
 
                         <cores material="obsidian" leak="10">
                             <core team="blue">

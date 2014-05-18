@@ -19,7 +19,7 @@
 
                         <!-- Set the maps name and version. -->
                         <name>Snowy Wars</name>
-                        <version>1.2</version>
+                        <version>1.3.2</version>
 
                         <!-- Specify the game objective and credit the creator of the map. -->
                         <objective>Break the obsidian from the enemy team's monument.</objective>
@@ -37,34 +37,28 @@
                         </teams>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/other_settings)
-                    The maps max build height in blocks.
-
-                        <maxbuildheight>20</maxbuildheight>
-
-                    <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
                     Specify where the previously defined teams will spawn. Both teams have two spawn cylinders, players will spawn in one at random at a random location inside the cylinder. We also specify what kit the players will get when spawning. The kits are defined further down in the maps XML file and are referenced here by name.
 
                     The direction a player faces when spawning in a region is defined by putting the region inside a `<spawn>` element and specifying the `yaw=""` attribute.
 
                         <spawns>
-                            <spawns team="red" kit="red">
-                                <spawn yaw="-45">
+                            <spawn team="red" kit="red">
+                                <point yaw="-45">
                                     <cylinder base="-619.5,11,259.5" height="0" radius="2"/> <!-- West -->
-                                </spawn>
-                                <spawn yaw="45">
+                                </point>
+                                <point yaw="45">
                                     <cylinder base="-571.5,11,259.5" height="0" radius="2"/> <!-- East -->
-                                </spawn>
-                            </spawns>
-                            <spawns team="blue" kit="blue">
-                                <spawn yaw="-135">
+                                </point>
+                            </spawn>
+                            <spawn team="blue" kit="blue">
+                                <point yaw="-135">
                                     <cylinder base="-619.5,11,349.5" height="0" radius="2"/> <!-- West -->
-                                </spawn>
-                                <spawn yaw="135">
+                                </point>
+                                <point yaw="135">
                                     <cylinder base="-571.5,11,349.5" height="0" radius="2"/> <!-- East -->
-                                </spawn>
-                            </spawns>
+                                </point>
+                            </spawn>
                             <default yaw="-90"><cuboid min="-544,13,302" max="-540,13,306"/></default>
                         </spawns>
 
@@ -99,7 +93,7 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                    The regions of the map. Here we specify a rectangle region named `playable` it will be referenced from the playable region module lower down. The `playable` region gets the `deny-icemelt` filter applied. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base.
+                    The regions of the map. Here we specify a rectangle region named `playable` and apply the `deny-icemelt` filter. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base. Additionally we create a variable height build limit using a region combination.
 
                         <regions>
                             <apply block="deny-icemelt">
@@ -111,15 +105,22 @@
                                 <cylinder base="-619.5,10,349.5" height="6" radius="5"/> <!-- West Blue -->
                                 <cylinder base="-571.5,10,349.5" height="6" radius="5"/> <!-- East -->
                             </apply>
+                            <apply block="deny-players" message="You may not build outside of the playing field.">
+                                <negative>
+                                    <region name="playable"/>
+                                </negative>
+                            </apply>
+                            <apply enter="deny-all" message="Don't enter the observers spawn area!">
+                                <cuboid min="-535,10,313" max="-549,oo,295"/>
+                            </apply>
+                            <apply block="deny-all" message="You have reach the maximum build limit!">
+                                <complement>
+                                    <cuboid name="above-20" min="-oo,21,-oo" max="oo,oo,oo"/>
+                                    <cylinder name="tower-a" base="-621.5,20,304.5" radius="5" height="3"/>
+                                    <cylinder name="tower-b" base="-569.5,20,304.5" radius="5" height="3"/>
+                                </complement>
+                            </apply>
                         </regions>
-
-                    <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/playable_region)
-                    The playable region, it references a region named `playable` defined in the `<regions>` module.
-
-                        <playable>
-                            <region name="playable" />
-                        </playable>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
@@ -153,18 +154,18 @@
                         </kits>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
-                    Specify that iron swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up.
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+                    Specify that stone swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up.
 
                         <toolrepair>
-                            <tool>iron sword</tool>
+                            <tool>stone sword</tool>
                             <tool>diamond pickaxe</tool>
                             <tool>iron axe</tool>
                             <tool>bow</tool>
                         </toolrepair>
 
                     <br/>
-                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove)
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
                     Remove arrows, leather armor, wood, apples and obsidian when it is dropped. Items that get dropped from block–break actions also get removed.
 
                         <itemremove>
