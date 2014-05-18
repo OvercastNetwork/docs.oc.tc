@@ -17,7 +17,7 @@ Pull requests should have the following things:
 
 #### Previewing your changes
 
-1. Install ruby, ruby on rails and bundle
+1. Install ruby, ruby on rails and bundler
 2. Run `bundle install` from the source root.
 3. Run `staticmatic preview` or `bundle exec staticmatic preview`
 4. Load `localhost:4000` in your browser.
