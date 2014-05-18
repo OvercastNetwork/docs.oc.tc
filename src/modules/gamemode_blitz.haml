@@ -11,6 +11,8 @@
                 :markdown
                     The game will run for a specified amount of time, players will have to find and kill enemy players. Each player has a limited amount of lives, and after they are used up the player is moved to the observer team. The match ends after the specified amount of time, or when one team is eliminated. If the match timer ends before a team is eliminated the team with the most players remaining wins.
 
+                    Blitz maps should include the [global blitz XML](https://maps.oc.tc/Blitz/blitz-global.xml) file.
+
                     The `<time>` elements duration will default to seconds unless it is formatted as a [time period](/reference/time_periods).
 
                         <blitz>
@@ -27,3 +29,6 @@
                             <!-- Used when informing the player that they can't join active games etc. -->
                             <title>Ghost Squadron</title>
                         </blitz>
+                        
+                        <include src="blitz-global.xml"/>
+
