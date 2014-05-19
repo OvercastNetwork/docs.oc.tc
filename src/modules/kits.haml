@@ -67,6 +67,7 @@
                     In the example above players from blue team will get a blue helmet, players from red team will get a red helmet; both teams will get the items from the spawn kit. The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
 
                     `NOTE:` By default, `ambient="true"` is applied to all potions but can be overriden with `ambient="false"`.
+
                     <br/>
                     #### Health & Hunger Kits
                     A players health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
@@ -114,4 +115,12 @@
                         <kit name="hunger">
                             <saturation>20</saturation>
                             <foodlevel>20</foodlevel>
+                        </kit>
+
+                    <br/>
+                    #### Knockback Reduction Kit
+                    Reduce (or increase) the knockback players receive when they have this kit applied. The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased, and anything lower than zero pushes the player to the attacker instead of away from them.
+
+                        <kit name="knockback-re">
+                            <knockback-reduction>0.5</knockback-reduction>
                         </kit>
