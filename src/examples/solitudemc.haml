@@ -1,0 +1,254 @@
+.container
+    .jumbotron.subhead
+        %h1 Examples
+        %p.lead XML File Examples
+    %section
+        .row
+            = partial('examples_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 SolitudeMC
+                :markdown
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/main)
+                    Every map XML file starts with the XML header and then the base `<map>` module.
+
+                        <map proto="#{$map_proto}">
+                        <!-- Specifies what the map is called -->
+                        <name>SolitudeMC</name>
+                        <!-- States what version the map is -->
+                        <version>1.2.3</version>
+                        <!-- Tells the teams what the objective is in order to win the game -->
+                        <objective>Leak lava from your enemy's core!</objective>
+
+                    <br/>
+                    Specify the maps authors and contributors.
+
+                        <authors>
+                            <author contribution="Main Author - Project starter, Building">matic0basle</author>
+                            <author contribution="Building">iLifting</author>
+                        </authors>
+                        <contributors>
+                            <contributor>duckagent007</contributor>
+                            <contributor contribution="Building Assist">_IQ</contributor>
+                            <contributor contribution="XML help">jolteony</contributor>
+                            <contributor contribution="XML help, Feedback">Mikeg542</contributor>
+                            <contributor contribution="Feedback, Moral support">xXFracXx</contributor>
+                            <contributor contribution="Feedback, Moral support">nixter1029</contributor>
+                            <contributor contribution="Feedback, Moral support">lonelyhornet</contributor>
+                        </contributors>
+
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/tutorial)
+                    Define the tutorial and its point of interest.
+
+                        <tutorial>
+                            <stage title="Destroy The Core">
+                                <message>
+                                    <line>
+                                    `rThis map is a `6`lMini Destroy The Core `r(Mini DTC) map
+                                    </line>
+                                    <line>
+                                    The objective is to break the core on the other team's side and leak lava out of it.
+                                    </line>
+                                </message>
+                                <teleport>
+                                    <point yaw="0" pitch="0">0,17,0</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Core Placement">
+                                <message>
+                                    <line>
+                                    The core is placed on the opponent's side, on a stained clay tower.
+                                    </line>
+                                    <line>
+                                    This is an example of a core (Purple team's core)
+                                    </line>
+                                </message>
+                                <teleport>
+                                    <point yaw="0" pitch="0">-20,30,36</point>
+                                </teleport>
+                            </stage>
+                            <stage title="Spawns">
+                                <message>
+                                    <line>
+                                    Each team spawns on their side, in a special house.
+                                    </line>
+                                </message>
+                                <teleport>
+                                    <point yaw="0" pitch="0">1,19,46</point>
+                                </teleport>
+                            </stage>
+                            <stage title="The teams">
+                                <message>
+                                    <line>
+                                    The teams on this map are Magenta and Cyan.
+                                    </line>
+                                    <line>
+                                    Here is an overview of the whole map.
+                                    </line>
+                                </message>
+                                <teleport>
+                                    <point yaw="90" pitch="65">55,45,0.5</point>
+                                </teleport>
+                            </stage>
+                        </tutorial>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
+                    These filters is used to prevent people from accesing dispencers & beacons and to prevent players placing blocks in some areas of the map.
+
+                        <filters>
+                            <filter name="no-void">
+                                <deny>
+                                    <void/>
+                                </deny>
+                            </filter>
+                            <filter name="deny-some">
+                                <deny>
+                                    <block>beacon</block>
+                                    <block>dispenser</block>
+                                </deny>
+                            </filter>
+                        </filters>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/teams)
+                    Defines the teams [colors](/reference/formatting#chatColors), names and how many people can be on the teams.
+
+                        <teams>
+                            <team color="dark aqua" max="14">Cyan Team</team>
+                            <team color="light purple" max="14">Magenta Team</team>
+                        </teams>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
+                    Define kits for each team with colored armor and colored stained clay.
+
+                        <kits>
+                            <kit name="spawn">
+                                <item slot="0">iron sword</item>
+                                <item slot="1">bow</item>
+                                <item slot="2">diamond pickaxe</item>
+                                <item slot="4" amount="64">stone</item>
+                                <item slot="5" amount="32">torch</item>
+                                <item slot="6" amount="32">ladder</item>
+                                <item slot="7">golden apple</item>
+                                <item slot="8" amount="32">cooked beef</item>
+                                <item slot="27" amount="32">arrow</item>
+                                <chestplate>gold chestplate</chestplate>
+                                <leggings>chainmail leggings</leggings>
+                            </kit>
+                            <kit name="magenta" parents="spawn">
+                                <helmet color="b24cd8">leather helmet</helmet>
+                                <boots color="b24cd8">leather boots</boots>
+                                <item slot="3" amount="64" damage="2">159</item>
+                            </kit>
+                            <kit name="cyan" parents="spawn">
+                                <helmet color="6699d8">leather helmet</helmet>
+                                <boots color="6699d8">leather boots</boots>
+                                <item slot="3" amount="64" damage="3">159</item>
+                            </kit>
+                        </kits>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
+                    These regions reference the filters defined above and states where they will work.
+
+                        <regions>
+                            <apply block="no-void" message="You may not build in the void!">
+                                <negative>
+                                    <rectangle name="whole-map" min="-29,66" max="30,-66"/>
+                                </negative>
+                            </apply>
+                            <apply block="deny-some" use="deny-some" message="Beacons and Dispensers are disabled on this map!">
+                                <rectangle min="-oo,-oo" max="oo,oo"/>
+                            </apply>
+                            <apply block="deny-all" message="You may not interact with the core beacon.">
+                                <rectangle min="-22,59" max="-19,56"/>
+                                <rectangle min="21,-55" max="24,-58"/>
+                            </apply>
+                            <apply block="deny-all" message="You may not destroy the spawns!">
+                                <cuboid min="4,17,-49" max="-3,25,-60"/>
+                                <cuboid min="-2,17,50" max="5,25,61"/>
+                            </apply>
+                        </regions>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+                    Remove muiltiple items from the playing field when they are dropped.
+
+                        <itemremove>
+                            <item>cooked beef</item>
+                            <item>arrow</item>
+                            <item>stone</item>
+                            <item>stained clay:2</item>
+                            <item>stained clay:3</item>
+                            <item>gold chestplate</item>
+                            <item>chainmail leggings</item>
+                            <item>leather helmet</item>
+                            <item>leather boots</item>
+                            <item>torch</item>
+                            <item>ladder</item>
+                            <item>golden apple</item>
+                        </itemremove>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/killreward)
+                    Repair multiple tools.
+
+                        <toolrepair>
+                            <tool>iron sword</tool>
+                            <tool>bow</tool>
+                            <tool>diamond pickaxe</tool>
+                        </toolrepair>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+                    have a kill reward players recieve for killing enemies.
+
+                        <killreward>
+                            <item amount="16">arrow</item>
+                            <item>golden apple</item>
+                        </killreward>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
+                    Specify where the previously named teams will spawn, the kit they will spawn with and what direction they face.
+
+                        <spawns safe="true">
+                            <spawn team="magenta" kit="magenta" yaw="0">
+                                <cuboid name="magenta-spawn" min="-1.0,18.0,58.0" max="2.0,18.0,55.0"/>
+                            </spawn>
+                            <spawn team="cyan" kit="cyan" yaw="180">
+                                <cuboid name="cyan-spawn" min="2.0,18.0,-58.0" max="-1.0,18.0,-55.0"/>
+                            </spawn>
+                            <default yaw="0">
+                                <cylinder name="default-spawn" base="-1.0,74.0,0" radius="5" height="0"/>
+                            </default>
+                        </spawns>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_dtc)
+                    This specifies what material the core is made of, who each core belongs to and how far the lava needs to leak.
+
+                        <cores material="obsidian" leak="6">
+                            <core team="cyan">
+                                <cuboid name="cyan-core" min="25,28,-47" max="19,34,-53"/>
+                            </core>
+                            <core team="magenta">
+                                <cuboid name="magenta-core" min="-24,28,47" max="-18,34,53"/>
+                            </core>
+                        </cores>
+
+                    <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/other_settings)
+                    This specifies how high players can build however it doesn't stop them from going over this limit.
+
+                        <maxbuildheight>36</maxbuildheight>
+
+                    </br>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/main)
+                    Close the main `<map>` module.
+
+                        </map>
