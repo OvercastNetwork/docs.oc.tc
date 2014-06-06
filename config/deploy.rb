@@ -1,10 +1,8 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-set :rvm_ruby_string, "ruby-2.0.0-p353"
-set :rvm_type, :user
-set :rvm_path, "$HOME/.rvm"
-set :rvm_bin_path, "$HOME/.rvm/bin"
+set :rvm_ruby_string, "ruby-2.1.2"
+set :rvm_type, :system
 
 set :application, "docs"
 set :repository, "git@github.com:OvercastNetwork/docs.oc.tc.git"
@@ -14,8 +12,9 @@ set :branch, "master"
 set :deploy_to, "/home/deploy/apps/docs"
 set :user, "deploy"
 set :port, 50210
+set :use_sudo, false
 
-server '198.143.187.179', :app, :db, :web, :primary => true
+server 'chi04.oc.tc', :app, :db, :web, :primary => true
 
 default_environment["RAILS_ENV"] = "production"
 
