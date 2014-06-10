@@ -118,6 +118,38 @@
                         </kit>
 
                     <br/>
+                    #### Walk Speed Kit
+                    Increase or decrease a players walking speed. The specified value is a multiplier of the default walking speed of `0.2`.
+
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code= html_escape('<walk-speed></walk-speed>')
+                                %td
+                                    Increase or decrease a players walking speed.
+                                %td
+                                    %span.label.label-primary 0 - 5.0
+
+                :markdown
+
+                        <kit name="rabbit">
+                            <!-- 1.8 times faster than a normal player -->
+                            <walk-speed>1.8</walk-speed>
+                        </kit>
+
+                        <kit name="tortoise">
+                            <!-- half as fast as a normal player -->
+                            <walk-speed>0.5</walk-speed>
+                        </kit>
+
+                    <br/>
                     #### Knockback Reduction Kit
                     Reduce (or increase) the knockback players receive when they have this kit applied. The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased, and anything lower than zero pushes the player to the attacker instead of away from them.
 
