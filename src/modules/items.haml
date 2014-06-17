@@ -23,48 +23,58 @@
                             %tr
                                 %th Attribute
                                 %th Description
+                                %th Value
                         %tdata
                             %tr
                                 %td
-                                    %code slot="0"
-                                %td Slot where the item will be placed in the players inventory.
+                                    %code slot=""
+                                %td
+                                    Slot where the item will be placed in the players inventory.
+                                %td
+                                    %a{:href => "/reference/inventory"} Inventory Slots
                             %tr
                                 %td
-                                    %code amount="64"
+                                    %code amount="1"
                                 %td The amount of items.
+                                %td
+                                    %span.label.label-primary Number
                             %tr
                                 %td
-                                    %code name="Name String"
+                                    %code name=""
                                 %td The items name.
+                                %td
+                                    %span.label.label-primary String
                             %tr
                                 %td
-                                    %code enchantment="enchantment:lvl"
+                                    %code enchantment=""
                                 %td The item's enchantment(s).
+                                %td
+                                    %a{:href => "/modules/items#enchantments"} Enchantment String
                             %tr
                                 %td
-                                    %code lore="Lore String"
+                                    %code lore=""
                                 %td Custom lore string.
+                                %td
+                                    %span.label.label-primary String
                             %tr
                                 %td
                                     %code damage="0"
                                 %td The items damage, used for items such as birch logs.
+                                %td
+                                    %span.label.label-primary Number
                             %tr
                                 %td
-                                    %code attributes="attribute:op:lvl"
+                                    %code attributes=""
                                 %td Custom attributes, for example, increased health or faster movement speed.
+                                %td
+                                    %a{:href => "/modules/items#attributes"} Attributes String
                             %tr
                                 %td
-                                    %code color="RRGGBB"
-                                %td Leather armor color.
+                                    %code color=""
+                                %td Leather armor color as a hexadecimal color. <code>RRGGBB</code>
+                                %td
+                                    %span.label.label-primary Hex Color
                 :markdown
-
-
-                    The `slot=""` attribute specifies where the item will be placed in the inventory. [Inventory slot reference](/reference/inventory).
-                    Enchantments use the bukkit [enchantment name](/reference/enchantments), the level of the enchantment is specified after a colon `:`. Multiple enchantments are separated by a semicolon `;`.
-
-                        <item enchantment="damage all:2">iron sword</item> <!-- A sharpness II iron sword -->
-                        <item enchantment="knockback:4">280</item> <!-- A knockback IV stick -->
-
 
                     Items can be give custom names and lore with the `name=""` and `lore=""` attributes. Colors and fancy text in item names or lore can be specified with the grave symbol `` ` and then the [formatting code](/reference/formatting). You can specify multiple lines of lore using a pipe symbol `|` for line breaks.
 
@@ -82,6 +92,24 @@
                         <leggings>gold leggings</leggings>
                         <boots>leather boots</boots>
 
+                    <br/>
+                    ##### Armor Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code locked="false"
+                                %td Prevent this armor item from being removed from the armor slot in any way.
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
+
                     Enchanting, naming or giving armor lore works the same way as with items.
 
                         <boots enchantment="protection fall:1" lore="The Winged Boots of Hermes">iron boots</boots>
@@ -94,11 +122,24 @@
                         <helmet color="cd0000">leather helmet</helmet>
 
                     <br/>
-                    #### Custom attributes
+                    #### [Enchantments](id:enchantments)
+
+                    Items and armor can have custom enchantments by using the `enchantment=""` attribute. Enchantments are specified by their bukkit name and the enchantment level separated by a colon `:`. Multiple enchantments are separated by a semicolon `;`.
+
+                    <br/>
+                    Examples
+
+                        <item enchantment="damage all:2">iron sword</item> <!-- A sharpness II iron sword -->
+                        <item enchantment="knockback:4">280</item> <!-- A knockback IV stick -->
+
+                        <boots enchantment="protection fall:2">gold boots</boots>
+
+                    <br/>
+                    #### [Attributes](id:attributes)
 
                     The `attributes=""` attribute will allow you to set the attribute('s) for a item or a piece of armor. Look at the [attributes reference](/reference/attributes) page for a list of the different attributes. The attribute definition is separated by colons `:`, and consists of the attributes name, operation and level. Multiple attributes are separated by a semicolon `;`.
 
-                    Attribute operations:
+                    ##### Attribute operations:
 
                     * `ADD` Add level to original level value.
                     * `BASE` Add level * base to original level value.
@@ -115,4 +156,4 @@
                         <!-- Unit of maxHealth is in half-hearts -->
                         <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings>
 
-                    `NOTE:` Negative attribute values are allowed; however, sometimes don't work as expected.
+                    `NOTE:` Negative attribute values are allowed; however sometimes they don't work as expected.
