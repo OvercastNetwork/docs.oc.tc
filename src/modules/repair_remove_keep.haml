@@ -32,11 +32,20 @@
 
                     <br/>
                     #### Item Keep
-                    Defines items that will be kept on death. These items will be merged with the players spawn kit when they re-spawn unless the kits `force` attribute is true.
+                    Defines items that will be kept on death. If there is a spawn kit, kept items will be given back *after* the kit is applied, except for equipped armor, which will replace any armor in the kit.
 
                         <itemkeep>
+                            <item>diamond sword</item>
+                            <item>tnt</item>
+                        </itemkeep>
+
+                    <br/>
+                    #### Armor Keep
+                    Similar to `<itemkeep>` except that the specified items are only kept if they are equipped in an armor slot.
+
+                        <armorkeep>
                             <item>iron helmet</item>
                             <item>iron chestplate</item>
                             <item>iron leggings</item>
                             <item>iron boots</item>
-                        </itemkeep>
+                        </armorkeep>
