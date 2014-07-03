@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
         %h1 Modules
-        %p.lead Main Map Element
+        %p.lead General
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Main map element
+                    %h1 Main Map Element
                 :markdown
                     Every map XML file must contain the base `<map>` module. It also contains modules that specify the map name, version, objective, authors and contributors. All of these modules are required in a complete XML file except the `<contributors>` module. The objective is the text that players see when they join the match, and so it's important for this to be very clear, concise, and informative.
 
