@@ -222,7 +222,19 @@
                             </apply>
                         </regions>
 
-                    <br>
+                    <br/>
+                    #### [Kill-Streak Filter](id:killStreakFilter)
+
+                    There is a matcher that matches players who have a specified number of kills since their last respawn.
+
+                    <br/>
+                    Examples
+
+                        <kill-streak min="3"/>      <!-- matches players with at least 3 kills -->
+                        <kill-streak max="5"/>      <!-- matches players with at most 5 kills -->
+                        <kill-streak count="4"/>    <!-- matches players with exactly 4 kills -->
+
+                    <br/>
                     <hr>
                     #### Legacy Style Filters
                     <div class="alert alert-warning"><strong>Note!</strong> This filter behavior will be depreciated in proto 2.0.</div>

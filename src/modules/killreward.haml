@@ -14,10 +14,23 @@
 
                     `e.g.` This module can be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
 
+                    You can optionally include a [filter](/modules/filters) that determines which players are eligible to receive the reward.
+
                     <br/>
                     Example
 
-                        <!-- Kill Reward from Rift XML -->
+                        <!-- Give two emeralds for all kills -->
                         <killreward>
                             <item amount="2">emerald</item>
+                        </killreward>
+
+                        <!-- Give a cactus to players on the red team for their third kill -->
+                        <killreward>
+                            <filter>
+                                <all>
+                                    <team>red</team>
+                                    <kill-streak count="3"/>
+                                </all>
+                            </filter>
+                            <item>cactus</item>
                         </killreward>
