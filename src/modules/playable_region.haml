@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Playable Region
                 :markdown
-                    Playable regions prevent any playing player doing **anything** outside the region, this includes movement. It also blocks damage from TNT, mobs, etc. If control over what exactly gets filtered is required a regular [region](/modules/regions) with the correct [filters](/modules/filters) should be used. Multiple regions inside the `<playable>` module they are combined in a union, if you want to combine them differently put them into a [region combination](/modules/regions#regionCombinations).
+                    Playable regions prevent any playing player doing **anything** outside the region, this includes movement. It also blocks damage from TNT, mobs, etc. If control over what exactly gets filtered is required a regular [region](/modules/regions) with the correct [filters](/modules/filters) should be used. Multiple regions inside the `<playable>` module they are combined in a union, if you want to combine them differently put them into a [region modifier](/modules/regions#regionModifiers).
 
                     It is recommended that the regions inside a playable region have no floor, this is to prevent players from getting stuck and hanging in the void.
 

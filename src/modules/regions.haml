@@ -11,28 +11,57 @@
                 :markdown
                     Regions are used to define, among other things, the area a filter applies to or where a portal links from.
 
-                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. All regions and region combinations can have a `name=""` attribute to reference them from kits, portals, etc.
+                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. All regions and region modifiers can have a `name=""` attribute to reference them from kits, portals, etc.
 
-                        <!-- Note that Y is the up/down axis in minecraft -->
-                        
-                        <rectangle name="something" min="X1,Z1" max="X2,Z2"/>
-                        <!-- A Rectangle from X1,Z1 to X2,Z2 -->
-                        
-                        <cuboid name="something" min="X1,Y1,Z1" max="X2,Y2,Z2"/>
-                        <!-- A rectangular solid from X1,Y1,Z1 to X2,Y2,Z2 -->
-                        
-                        <circle name="something" center="X1,Z1" radius="R"/>
-                        <!-- A circle located at X1,Z1 with a radius of R -->
-                        <!-- Goes from 0 to map height, i.e. PGM doesn't check the players Y position -->
-                        
-                        <cylinder name="something" base="X1,Y1,Z1" radius="R" height="H"/>
-                        <!-- A cylinder located at X1,Z1,Y1 with a radius of R and a height of H -->    
-                        
-                        <sphere name="something" origin="X1,Y1,Z1" radius="R"/>
-                        <!-- A sphere located at X1,Y1,Z1 with a radius of R -->
-                        
-                        <block name="something">X,Y,Z</block>
-                        <!-- A single block located at | X,Y,Z -->
+                    Note that Y is the up/down axis in minecraft, instead of Z like most coordinate systems.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed.table-bordered
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rectangle name="abc" min="X1,Z1" max="X2,Z2"/>')
+                                    %br
+                                    A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<cuboid name="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>')
+                                    %br
+                                    A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<circle name="abc" center="X,Z" radius="R"/>')
+                                    %br
+                                    A circle located at <code>X,Z</code> with a radius of <code>R</code> </br>
+                                    %i The region goes from 0 to map height, i.e. PGM doesn't check the players Y position
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<cylinder name="abc" base="X,Y,Z" radius="R" height="H"/>')
+                                    %br
+                                    A cylinder located at <code>X,Z,Y</code> with a radius of <code>R</code> and a height of <code>H</code>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<sphere name="abc" origin="X,Y,Z" radius="R"/>')
+                                    %br
+                                    A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<block name="abc">X,Y,Z</block>')
+                                    %br
+                                    A single block located at <code>X,Y,Z</code>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<empty name="abc"/>')
+                                    %br
+                                    A zero size/position region
+                :markdown
 
 
                     `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
@@ -46,15 +75,15 @@
                     Similar to kits regions are referenced by their `name=""`.
                     To use regions in spawns, portals, etc., reference them by their name.
 
-                    	<regions>
+                        <regions>
                             <rectangle name="named-region" min="-50,-50" max="50,50"/>
                         </regions>
 
-                    	<!-- Region reference -->
+                        <!-- Region reference -->
                         <region name="named-region"/>
 
                     <br/>
-                    ####Applying Filters, Kits, and Velocity to Regions
+                    #### Applying Filters, Kits, and Velocity to Regions
 
                     Filters, kits, and velocity changes are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
 
@@ -154,7 +183,7 @@
                         </apply>
 
 
-                    Example regions from Harb using [region combinations](#regionCombinations).
+                    Example regions from Harb using [region modifier](#regionModifiers).
 
                         <regions>
                             <rectangle name="main-area" min="-50,-32" max="51,33"/>
@@ -193,24 +222,60 @@
                         </regions>
 
                     <br/>
-                    ####[Region Combinations](id:regionCombinations)
+                    #### [Region Modifiers](id:regionModifiers)
 
                     Regions can be inverted, combined, subtracted, or intersected by putting them inside of the following elements.
 
-                        <negative><region name="opti-region"/></negative>
-                        <!-- Inverse of a region -->
-                           
-                        <union><region name="region1"/><region name="region2"/>..</union>
-                        <!-- Combination of multiple regions -->
-                           
-                        <complement><region name="region1"/><region name="region2"/>..</complement>
-                        <!-- Subtracts successive regions from the first defined region -->
-                           
-                        <intersect><region name="region1"/><region name="region2"/>..</intersect>
-                        <!-- Returns the area that multiple regions intersect with -->
+                .table-responsive
+                    %table.table.table-striped.table-condensed.table-bordered
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<negative><region name="region1"/></negative>')
+                                    %br
+                                    Inverse of a region.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape(' <union><region name="region1"/><region name="region2"/>..</union>')
+                                    %br
+                                    Combination of multiple regions.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<complement><region name="region1"/><region name="region2"/>..</complement>')
+                                    %br
+                                    Subtracts successive regions from the first defined region.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<intersect><region name="region1"/><region name="region2"/>..</intersect>')
+                                    %br
+                                    Returns the area that multiple regions intersect with.
 
+                :markdown
                     ![Region Combinations .png](/img/regions.png)
 
+                    Regions can be translated or mirrored with the following elements. When translating or mirroring a region the original is not modified instead a copy is created.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed.table-bordered
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<translate offset="X,Y,Z"><region name="region1"/></translate>')
+                                    %br
+                                    Copy and translate a region by <code>X,Y,Z</code> blocks.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<mirror normal="1,0,1" origin="100,50,0"><region name="region1"/></mirror>')
+                                    %br
+                                    Copy and mirror region by a axis around a point.
+
+                :markdown
                     <br/>
                     Example
 
@@ -224,12 +289,23 @@
                             </apply>
                         </regions>
 
+                        <regions>
+                            <apply block="deny-all" message="You may not under-bridge!">
+                                <cuboid name="red-underside" min="-oo,-oo,-oo" max="oo,41,40"/>
+                                <mirror origin="116,44,93" normal="0,0,1">
+                                    <region name="red-underside"/>
+                                </mirror>
+                                <cuboid min="-oo,-oo,-oo" max="oo,37,oo"/>
+                            </apply>
+                        </regions>
+
+
 
                     <br/>
-                    ####[Point Providers](id:pointProviders)
+                    #### [Point Providers](id:pointProviders)
 
                     A point provider is used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
-                    Input can be a region, a region combination or simply an exact `X,Y,Z` coordinate.
+                    Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
 
                         <point yaw="90" pitch="50" angle="">X,Y,Z</point>
 
