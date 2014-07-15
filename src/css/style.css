@@ -100,6 +100,14 @@ code {
    padding: 1px 4px;
 }
 
+td pre {
+    margin-bottom: 0;
+    display: inline-block;
+    border: none;
+    background: inherit;
+    padding: 0;
+}
+
 .right-ref-link {
     float: right;
     margin-left: 8px;

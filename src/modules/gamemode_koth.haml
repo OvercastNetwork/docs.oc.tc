@@ -148,27 +148,32 @@
                         %tbody
                             %tr
                                 %td
-                                    %code= html_escape('<capture> <region name="hill"/> </capture>')
+                                    %pre
+                                        %code= html_escape('<capture> <region name="hill"/> </capture>')
                                 %td
                                     The region players have to stand in to capture the hill.
                             %tr
                                 %td
-                                    %code= html_escape('<progress> <region name="capture"/> </progress>')
+                                    %pre
+                                        %code= html_escape('<progress> <region name="capture"/> </progress>')
                                 %td
                                     The region to display capture progress.
                             %tr
                                 %td
-                                    %code= html_escape('<captured> <region name="captured"/> </captured>')
+                                    %pre
+                                        %code= html_escape('<captured> <region name="captured"/> </captured>')
                                 %td
                                     The region to display if the hill is captured.
                             %tr
                                 %td
-                                    %code= html_escape('<capture-filter> <filter name="capture"/> </capture-filter>')
+                                    %pre
+                                        %code= html_escape('<capture-filter> <filter name="capture"/> </capture-filter>')
                                 %td
                                     Filter team players who can control this hill, defaults to all teams.
                             %tr
                                 %td
-                                    %code= html_escape('<defend-filter> <filter name="defend"/> </defend-filter>')
+                                    %pre
+                                        %code= html_escape('<defend-filter> <filter name="defend"/> </defend-filter>')
                                 %td
                                     Filter team players who can prevent teams from controlling the hill.
 

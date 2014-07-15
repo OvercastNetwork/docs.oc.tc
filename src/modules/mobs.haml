@@ -21,15 +21,18 @@
                         %tdata
                             %tr
                                 %td
-                                    %code &lt;spawn&gt;spawn_reason&lt;/spawn&gt;
+                                    %pre
+                                        %code= html_escape('<spawn>spawn_reason</spawn>')
                                 %td Spawn event reason.
                             %tr
                                 %td
-                                    %code &lt;mob&gt;mob_name&lt;/mob&gt;
+                                    %pre
+                                        %code= html_escape('<mob>mob_name</mob>')
                                 %td The mob to filter.
                             %tr
                                 %td
-                                    %code &lt;entity&gt;entity_name&lt;/entity&gt;
+                                    %pre
+                                        %code= html_escape('<entity>entity_name</entity>')
                                 %td The entity to filter.
 
                 :markdown

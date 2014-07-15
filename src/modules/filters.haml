@@ -104,25 +104,29 @@
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th Name
+                                %th{:style => "width: 125px;"} Name
                                 %th Description
                         %tdata
                             %tr
                                 %td
-                                    %code &lt;not&gt;&lt;/not&gt;
+                                    %pre
+                                        %code= html_escape('<not></not>')
                                 %td Invert the filters result. Returns <code>DENY</code> if the sub filter returns <code>ALLOW</code>, <code>ALLOW</code> if the sub filter returns <code>DENY</code> and <code>ABSTAIN</code> if it returns <code>ABSTAIN</code>.
                             %tr
                                 %td
-                                    %code &lt;one&gt;&lt;/one&gt;
+                                    %pre
+                                        %code= html_escape('<one></one>')
                                 %td Returns <code>ALLOW</code> if exactly one of the sub-filters returns <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if there are more than one sub filter that specifies <code>ALLOW</code> or none specify <code>ALLOW</code> and at least one specifies <code>DENY</code>.
                             %tr
                                 %td
-                                    %code &lt;all&gt;&lt;/all&gt;
+                                    %pre
+                                        %code= html_escape('<all></all>')
                                 %td Returns <code>ALLOW</code> if all of the sub-filters specify <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if one or more of the sub-filters specify <code>DENY</code>.
 
                             %tr
                                 %td
-                                    %code &lt;any&gt;&lt;/any&gt;
+                                    %pre
+                                        %code= html_escape('<any></any>')
                                 %td Returns <code>ALLOW</code> if any of the sub-filters return <code>ALLOW</code>, <code>ABSTAIN</code> if none of the sub-filters specify a preference on the query, and <code>DENY</code> if none of the sub-filters specify <code>ALLOW</code> and at least one sub filter specified <code>DENY</code>.
 
 
@@ -238,11 +242,13 @@
                         %tdata
                             %tr
                                 %td
-                                    %code &lt;allow&gt;&lt;filter name="filter1"/&gt;..&lt;/allow&gt;
+                                    %pre
+                                        %code= html_escape('<allow><filter name="filter1"/>..</allow>')
                                 %td Allow containing filter matchers.
                             %tr
                                 %td
-                                    %code &lt;deny&gt;&lt;filter name="filter1"/&gt;..&lt;/deny&gt;
+                                    %pre
+                                        %code= html_escape('<deny><filter name="filter1"/>..</deny>')
                                 %td Deny containing filter matchers.
                 :markdown
                     Example

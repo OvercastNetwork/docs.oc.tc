@@ -24,37 +24,43 @@
                         %tdata
                             %tr
                                 %td
-                                    %code &lt;filter&gt;
+                                    %pre
+                                        %code= html_escape('<filter>')
                                 %td Filter what blocks get modified by this rule.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
-                                    %code &lt;region&gt;
+                                    %pre
+                                        %code= html_escape('<region>')
                                 %td The region this rule applies to, treated as a region union.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
-                                    %code &lt;drops&gt;
+                                    %pre
+                                        %code= html_escape('<drops>')
                                 %td The items which get dropped when a matching block is mined.
                                 %td
                                     %a{:href => "/modules/items"} Items
                             %tr
                                 %td
-                                    %code &lt;experience&gt;
+                                    %pre
+                                        %code= html_escape('<experience>')
                                 %td The amount of XP that gets dropped.
                                 %td
                                     %span.label.label-primary Number
                             %tr
                                 %td
-                                    %code &lt;replacement&gt;
+                                    %pre
+                                        %code= html_escape('<replacement>')
                                 %td What to replace the mined block with. (Defaults to air)
                                 %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
                             %tr
                                 %td
-                                    %code &lt;wrongtool&gt;
+                                    %pre
+                                        %code= html_escape('<wrongtool>')
                                 %td Drop items regardless of what tool was used to mine the block.
                                 %td
                                     %span.label.label-primary true/false
