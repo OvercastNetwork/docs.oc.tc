@@ -21,3 +21,23 @@
                         <killreward>
                             <item amount="2">emerald</item>
                         </killreward>
+                    
+                    The kill reward module can be filtered by adding a `<filter>` tag inside the kill reward module
+
+                    `e.g.` You can use this to give certain team specific kill rewards that only that team can use.
+                    
+                    <br/>
+                    Example
+                        <!-- Kill Reward from Boombox XML -->
+                        <killreward>
+                            <filter>
+                                <team>defenders</team>
+                            </filter>
+                            <item amount="8">arrow</item>
+                        </killreward>
+                        <killreward>
+                            <filter>
+                                <team>attackers</team>
+                            </filter>
+                            <item amount="32">snow ball</item>
+                        </killreward>
