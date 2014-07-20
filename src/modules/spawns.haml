@@ -12,6 +12,8 @@
                     The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element. Only one default spawn element should be defined per map XML.
 
                     The main `<spawns>` element accepts a `bedspawn="on"` attribute to allow players to spawn at a saved bed spawn location. If a player has a bed spawn location set it overrides all other spawn regions for that player.
+                    
+                    `NOTE:` If a player uses a bedspawn, they will not spawn with their kit if one is specified.
 
                         <spawns>
                             <spawn team="red" kit="red" yaw="90">
