@@ -48,6 +48,12 @@
                                     %span.label.label-primary true/false
                             %tr
                                 %td
+                                    %code sequential="false"
+                                %td Spawns players at the next region in a list if the one prior to it isn't safe.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
                                     %code kit=""
                                 %td The kit to apply to players when they are spawned in this spawn.
                                 %td
@@ -63,6 +69,8 @@
                     Multiple spawns from the same team can be grouped inside of a single `<spawns team="team name">` element. Spawn positions are picked randomly inside of the defined regions. The plugin will not validate the spawn position by default. Regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
 
                     Spawn elements accept more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
+                    
+                    `NOTE:` Sequential spawns must be used in conjunction with safe spawns.
 
                         <spawns team="blue">
                             <!-- Blue Team Spawn A -->
@@ -96,4 +104,19 @@
                             <default yaw="90">
                                 <cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/>
                             </default>
+                        </spawns>
+                        
+                        <!-- Spawn regions taken from Sand Wars -->
+                        
+                        <spawns safe="true" sequential="true">
+                            <spawn team="blue" kit="blue" yaw="180">
+                                <cuboid min="-10,71,5" max="12,126,27"/> <!-- Players will spawn here first -->
+                                <cuboid min="-10,6,5" max="12,6,27"/> <!-- Secondary spawn if the first isn't avalible -->
+                                <point>1,8,0</point> <!-- Tertiary spawn if all other team spawns aren't safe -->
+                            </spawn>
+                            <spawn team="red" kit="red" yaw="0">
+                                <cuboid min="-10,71,-27" max="12,126,-5"/>
+                                <cuboid min="-10,6,-27" max="12,6,-5"/>
+                                <point>1,8,0</point>
+                            </spawn>
                         </spawns>
