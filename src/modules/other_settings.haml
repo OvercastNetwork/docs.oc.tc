@@ -76,3 +76,14 @@
                     special values "tie" for no winner, or "objectives" for the team that has the most objectives completed. The [time period](/reference/time_periods) format can be used to specify the time in minutes, etc.
 
                         <time result="objectives">5m</time>
+                        
+                    <br/>
+                    ###Broadcasts
+                    The broadcast module allows you to broadcast a message to all of the players at any given point in the match.
+                    Inside the broadcast tag you may specify either an `alert` or a `tip` tag. Inside the alert or tip tag you specify the attribute `after=""` inside here you put a [time period](/reference/time_periods).
+                    Broadcasts can also be colored using the formatting [codes](/reference/formatting)
+                    
+                        <broadcasts>
+                            <alert after="20s">This is an alert after 20 seconds</alert>
+                            <tip after="5m">This is a tip after 5 minutes</tip>
+                        </broadcasts>
