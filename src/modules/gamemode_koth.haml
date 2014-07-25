@@ -169,13 +169,13 @@
                                     %pre
                                         %code= html_escape('<capture-filter> <filter name="capture"/> </capture-filter>')
                                 %td
-                                    Filter team players who can control this hill, defaults to all teams.
+                                    Filter teams that can capture this hill, defaults to all teams. Teams that don't match this filter can still prevent other teams from capturing by standing on the hill. They can also uncapture the hill if neutral-state is enabled.
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<defend-filter> <filter name="defend"/> </defend-filter>')
+                                        %code= html_escape('<player-filter> <filter name="defend"/> </player-filter>')
                                 %td
-                                    Filter team players who can prevent teams from controlling the hill.
+                                    Filter players who can control this hill. Players who don't match this filter cannot affect the hill in any way.
 
                 :markdown
                     Capture progress is displayed inside the defined `<progress>` region using the dominating teams wool/clay/glass color. After a hill is captured the `<captured>` region is also filled with that teams wool/clay/glass color. If the `<captured>` region is not present it will use the `<progress>` region to display captured status. The progress and captured regions must be cuboids otherwise the plugin will throw an error.
