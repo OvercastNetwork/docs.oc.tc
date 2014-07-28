@@ -125,6 +125,14 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code id=""
+                                %td
+                                    The id used to reference the objective.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                            
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
@@ -138,6 +146,16 @@
 
 
                     <br/>
+                    
+                    ##### [Objective Filter Behaviour](id:objective_hill_behaviour)
+                    The logic for objective filters works differently than other objectives than for hills.
+                    By default, the filter will only allow for the team that owns the hill, and deny all other teams.
+                    Alternatively, you can specify a particular team. The filter will now allow everyone and everything if that team controls the hill, and deny everything if they don't
+                    
+                        <objective team="blue-team">central-hill</objective>
+
+                    <br/>
+                    
                     #### Hill sub-elements
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
