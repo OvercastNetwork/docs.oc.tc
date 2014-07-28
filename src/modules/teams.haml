@@ -50,12 +50,20 @@
                                 %td The color the text above each team members avatar is.
                                 %td
                                     %a{:href => "/reference/formatting#chatColors"} Chat Color Name
+                            %tr
+                                %td
+                                    %code id=""
+                                %td The id of a the team, used to reference the team in filters
+                                %td
+                                    %spawn.label.label-primary String
+                                    
 
                 :markdown
 
                         <teams>
-                           <team color="dark red" max="50" max-overfill="70">Red Team</team>
-                           <team color="blue" max="50" max-overfill="70">Blue Team</team>
+                           <team color="dark red" max="50" max-overfill="70" id="red-team">Red Team</team>
+                           <team color="blue" max="50" max-overfill="70" id="blue-team">Blue Team</team>
                         </teams>
 
                     The total maximum number of players in the example given above is 100, however, the max overfill will allow up to 140 players. Servers currently have a player limit of 150, so 100 players in total would allow 50 observers, or 10 observers if teams are at max overfill.
+                    The team id is used to refer to the team in filters, such as when allowing block events or denying access.
