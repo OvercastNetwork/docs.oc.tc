@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Mob Spawning
                 :markdown
-                    By default PGM disables all mob spawning. Enable specific mob spawning with the `<mobs>` element, uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
+                    By default PGM disables all mob spawning. The mobs module allows this behavior to be customized to allow spawning of specific mobs. It uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
 
                     #####  Mob Spawning Filter Matchers
                 .table-responsive
@@ -18,27 +18,31 @@
                             %tr
                                 %th Name
                                 %th Description
+                                %th Value
                         %tbody
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<spawn>spawn_reason</spawn>')
                                 %td Spawn event reason.
+                                %td
+                                    %a{:href=>"http://jd.bukkit.org/rb/doxygen/d6/d38/enumorg_1_1bukkit_1_1event_1_1entity_1_1CreatureSpawnEvent_1_1SpawnReason.html"}Bukkit Spawn Reason
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<mob>mob_name</mob>')
                                 %td The mob to filter.
+                                %td 
+                                    %a{:href=>"http://jd.bukkit.org/doxygen/da/d7e/enumorg_1_1bukkit_1_1entity_1_1CreatureType.html"}Bukkit Creature Type
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<entity>entity_name</entity>')
                                 %td The entity to filter.
+                                %td
+                                    %a{:href=>"http://jd.bukkit.org/rb/doxygen/d7/dbf/enumorg_1_1bukkit_1_1entity_1_1EntityType.html"}Bukkit Entity Type
 
                 :markdown
-                    Valid mob names can be found on the [bukkit docs - Creature Type](http://jd.bukkit.org/doxygen/da/d7e/enumorg_1_1bukkit_1_1entity_1_1CreatureType.html).
-                    Spawn reasons can be found here: [bukkit docs - Spawn Reason](http://jd.bukkit.org/rb/doxygen/d6/d38/enumorg_1_1bukkit_1_1event_1_1entity_1_1CreatureSpawnEvent_1_1SpawnReason.html).
-
 
                     Examples
 
