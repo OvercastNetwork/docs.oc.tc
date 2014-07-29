@@ -224,16 +224,20 @@
                     ####Objective Filters
                     You can also filter events based on whether or not an objective has been completed with the `<objective>` tag.
                     First you must define the objective and give it an id by adding the id attribute to the string, as follows:
-                      
+            
                         <core id="red-core" name="Core">...</core>
                         <hill id="central-hill">...</hill>
                       
-                    Then you add the objective tag to a filter fur use:
+                    The objective tag can then be used in a filter:
                       
                         <filter name="red-core-leaked">
                             <objective>red-core</objective>
                         </filter>
-                          
+                    
+                    Hills work seperately from other objectives:
+                    By default, it will return allow for the team controlling the hill, and deny all other teams.
+                    If a team is specified in the filter, it allow actions if that team controls the hill, and denies them if the team does not.
+                         <objective team="blue-team">central-hill</objective>
                     <br/>
                     <br>
                     <hr>
