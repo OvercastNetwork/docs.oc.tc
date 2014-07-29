@@ -82,18 +82,110 @@
 
                 :markdown
                     <br/>
-                    #### Filter Matchers
-                    Filters can have matchers to allow things such as blocking all player access and then allowing a certain team access. Matchers are usually used inside filter modifier elements.
+                    #### Filter Matcher Elements
+                    Filters use matcher elements to do things such as blocking all player access and then allowing a certain team access.
 
-                        <filter name="filter1"/>
-                        <team>team name</team>
-                        <block>block name</block>
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tdata
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter name="filter1"/>')
+                                %td Reference a filter by its name
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<team>team name</team>')
+                                %td Matches by a teams by their id
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<block>block name</block>')
+                                %td Matches blocks by their bukkit name
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<spawn>spawn reason</spawn>')
+                                %td 
+                                    Matches spawn event reasons, see 
+                                    %a{:href=>"/modules/mobs"} mob spawning
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<mob>mob name</mob>')
+                                %td 
+                                    Matches mobs by their name, see
+                                    %a{:href=>"/modules/mobs"} mob spawning
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<entity>entity name</entity>')
+                                %td Match entities, e.g. projectiles, boats, dropped items, etc.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kill-streak count="1"/>')
+                                %td
+                                    Match players with a certain range or amount of kills.
+                :markdown
 
-                        <spawn>spawn reason</spawn>
-                        <mob>mob name</mob>
-                        <entity>entity name</entity>
+                    <br/>
+                    #### [Kill-Streak Filter](id:killStreakFilter)
 
-                    For a examples on how to use the `<spawn>` & `<mob>` elements see [mob spawning](/modules/mobs).
+                    The kill-streak filter is a matcher that matches players who have a specified number of kills since their last re-spawn. This filter is commonly used in [kill rewards](/modules/killreward) but can also be used to restrict access to certain locations, etc.
+
+                    #####  Kill-Streak Filter Attributes
+
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tdata
+                            %tr
+                                %td
+                                    %code min=""
+                                %td Match players with at-least this many kills.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code max=""
+                                %td Match players with a maximum of this many kills.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code count=""
+                                %td
+                                    Match players with exactly this many kills.
+                                    %br
+                                    %i Can not be mixed with the <code>min</code> & <code>max</code> attributes.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code repeat=""
+                                %td Repeat the filter range
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
+                    Examples
+
+                        <kill-streak min="3"/>      <!-- matches players with at least 3 kills -->
+                        <kill-streak max="5"/>      <!-- matches players with at most 5 kills -->
+                        <kill-streak count="4"/>    <!-- matches players with exactly 4 kills -->
+
+                        <filter>
+                            <kill-streak repeat="true" count="10"/>    <!-- match for every 10th kill -->
+                        </filter>
 
 
                     <br/>
@@ -221,18 +313,6 @@
                                 <rectangle name="main-area" min="65,860" max="290,980"/>
                             </apply>
                         </regions>
-
-                    <br/>
-                    #### [Kill-Streak Filter](id:killStreakFilter)
-
-                    There is a matcher that matches players who have a specified number of kills since their last respawn.
-
-                    <br/>
-                    Examples
-
-                        <kill-streak min="3"/>      <!-- matches players with at least 3 kills -->
-                        <kill-streak max="5"/>      <!-- matches players with at most 5 kills -->
-                        <kill-streak count="4"/>    <!-- matches players with exactly 4 kills -->
 
                     <br/>
                     <hr>
