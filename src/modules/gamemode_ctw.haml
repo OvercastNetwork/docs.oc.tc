@@ -59,6 +59,13 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code id=""
+                                %td
+                                    An arbitrary string used to reference the hill from some other places in the XML. This will never be displayed in-game, it is only used within the XML.
+                                %td
+                                    %a{:href => "/modules/teams"} String
                 :markdown
                     You can group multiple victory monuments from the same team inside a single `<wools team="team name">` element; and then define that teams individual wool colors inside of a `<wool>` element.
 
