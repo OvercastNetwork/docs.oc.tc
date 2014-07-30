@@ -1,0 +1,29 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead General
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Match Information
+                :markdown
+                    #### Rules
+                    You can use the rules module to add custom rules to your map that are not already included in the standard Overcast Network rules. Regions and filters should be used to enforce access and block rules.
+
+                        <rules>
+                            <rule>A custom map rule</rule>
+                            <rule>Attempting to access the observer's platform is fine so long as you do not intend to prolong the match</rule>
+                        </rules>
+
+                    <br/>
+                    #### Broadcasts
+                    The broadcast module allows you to broadcast a message to all players at any given point in the match.
+                    Inside the broadcast tag you may specify either an alert or a tip tag with an `after=""` attribute. This attribute specifies how long after the match is started the broadcast is shown and accepts a [time period](/reference/time_periods) as the duration.  
+                    The text in broadcasts can be formatted by using [formatting codes](/reference/formatting).
+                    
+                        <broadcasts>
+                            <alert after="20s">This is an alert after 20 seconds</alert>
+                            <tip after="5m">This is a tip after 5 minutes</tip>
+                        </broadcasts>
