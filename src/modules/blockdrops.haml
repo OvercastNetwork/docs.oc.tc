@@ -64,6 +64,27 @@
                                 %td Drop items regardless of what tool was used to mine the block.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<fall-chance>')
+                                %td The percentage of blocks that will change to falling blocks when exploded.
+                                %td
+                                    %span.label.label-primary 0 - 1.0
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<land-chance>')
+                                %td The percentage of falling blocks that will change back to real blocks when they land. 
+                                %td
+                                    %span.label.label-primary 0 - 1.0
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<fall-speed>')
+                                %td A multiplier for the velocity of the blocks flying out from a explosion.
+                                %td
+                                    %span.label.label-primary Number
 
 
                 :markdown
@@ -111,4 +132,9 @@
                                     <item>emerald ore</item>
                                 </drops>
                             </rule>
+                            <rule>
+                                <fall-chance>0.3</fall-chance>
+                                <land-chance>0.8</land-chance>
+                                <fall-speed>1.5</fall-speed>
+                           </rule>
                         </blockdrops>
