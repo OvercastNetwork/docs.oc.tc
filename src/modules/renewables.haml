@@ -77,3 +77,32 @@
                                 <shuffle>iron ore</shuffle>
                             </renewable>
                         </renewables>
+   
+                    Renewables can also accept filters. They can be referenced from the `<filters>` module or defined directly in this module.
+
+                    `NOTE:` Instead of using `<renew>` `<replace>` and `<shuffle>` use `<renew-filter>` `<replace-filter>` and `<shuffle-filter>`
+
+                        <renewables>
+                            <renewable rate="1" grow="false" sound="true">
+                                <region>
+                                    <region name="quarry"/>
+                                </region>
+                                <!-- Referenced from <filters> -->
+                                <renew-filter>
+                                    <filter name="quarry-renew"/>
+                                </renew-filter>
+                                <!-- Defined directly -->
+                                <replace-filter>
+                                    <any>
+                                        <block>iron block</block>
+                                        <block>diamond block</block>
+                                        <block>gold block</block>
+                                    </any>
+                                </replace-filter>
+                                <shuffle-filter>
+                                    <not>
+                                        <block>emerald block</block>
+                                    </not>
+                                </shuffle-filter>
+                            </renewable>
+                        </renewables>
