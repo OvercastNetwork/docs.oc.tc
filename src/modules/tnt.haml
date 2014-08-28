@@ -11,34 +11,37 @@
                 :markdown
                     You can modify TNT explosion & placing behavior with this module. Destruction of terrain can be easily disabled with the blockdamage element. If it is set to `false` the yield element will have no effect since there won't be any block drops. TNT damage can be further limited with the [disable damage module](/modules/disabledamage#block_explosion).
 
+                    By default dispensers containing TNT will ignite their TNT when exploded. This behavior can be customized with the `<dispenser-tnt-limit>` and `<dispenser-tnt-multiplier>` elements, setting either of these to 0 will disable it.  
 
+
+                    <br/>
                 %h5 TNT Module Elements
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th Attribute
+                                %th Element & Default Value
                                 %th Description
                                 %th Value
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<instantignite>false</instantignite>')
+                                        %code= html_escape('<instantignite> false')
                                 %td Instantly ignite TNT when placed.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<blockdamage>true</blockdamage>')
+                                        %code= html_escape('<blockdamage> true')
                                 %td Specify if TNT destroys the terrain.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<yield></yield>')
+                                        %code= html_escape('<yield>')
                                 %td
                                     Modify the amount of items dropped by the explosion as a percentage.<br/>
                                     %i Not valid when <code>blockdamage</code> is false.
@@ -47,7 +50,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<power></power>')
+                                        %code= html_escape('<power>')
                                 %td
                                     Modify the explosions block radius.<br/>
                                 %td
@@ -55,14 +58,37 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<fuse></fuse>')
+                                        %code= html_escape('<fuse>')
                                 %td
                                     Time till the TNT explodes once it is ignited.<br/>
                                     %i Must be a value less than 4 seconds since the TNT entity vanishes after that.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<dispenser-tnt-limit> 64')
+                                %td
+                                    Max amount of TNT a dispenser ignites when exploded.
+                                %td
+                                    %span.label.label-primary 0 - 64
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<dispenser-tnt-multiplier> 0.25')
+                                %td
+                                    Multiplier for the amount of TNT ignited when a dispenser is exploded.
+                                %td
+                                    %span.label.label-primary 0 - 2.0
                 :markdown
+                    Examples
+
                         <tnt>
                             <instantignite>on</instantignite>
                             <fuse>2s</fuse>
+                        </tnt>
+
+                        <tnt>
+                            <dispenser-tnt-limit>8</dispenser-tnt-limit>
+                            <dispenser-tnt-multiplier>1</dispenser-tnt-multiplier>
                         </tnt>
