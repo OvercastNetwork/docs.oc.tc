@@ -30,9 +30,9 @@
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th Name
+                                %th{:style => "min-width: 215px;"} Name
                                 %th Description
-                                %th Value
+                                %th{:style => "min-width: 100px;"} Value
                         %tbody
                             %tr
                                 %td
@@ -131,6 +131,15 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code visual-materials=""
+                                %td
+                                    Filter the materials modified when updating the progress regions.
+                                    %br
+                                    %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filter
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
