@@ -65,22 +65,61 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code location=""
+                                %td Location where the wool can be found at, used to determine proximity.
+                                %td
+                                    %span.label.label-primary X,Y,Z
+                            %tr
+                                %td
+                                    %code woolproximity-metric="closest kill"
+                                %td
+                                    Metric used to determine proximity to the wool.
+                                    %br
+                                    Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
+                                %td
+                                    %span.label.label-primary Proximity Metric
+                            %tr
+                                %td
+                                    %code woolproximity-horizontal="false"
+                                %td
+                                    Only calculate horizontal distance for wool proximity.
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code monumentproximity-metric="closest block"
+                                %td
+                                    Metric used to determine proximity to the monument.
+                                    %br
+                                    Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
+                                %td
+                                    %span.label.label-primary Proximity Metric
+
+                            %tr
+                                %td
+                                    %code monumentproximity-horizontal="false"
+                                %td
+                                    Only calculate horizontal distance for monument proximity.
+                                %td
+                                    %span.label.label-primary true/false
                 :markdown
                     You can group multiple victory monuments from the same team inside a single `<wools team="team name">` element; and then define that teams individual wool colors inside of a `<wool>` element.
 
                         <wools team="red">
-                            <wool color="cyan">
+                            <wool color="cyan" location="32.5,14,0.5">
                                 <block>-60,26,-118</block>
                             </wool>
-                            <wool color="lime">
+                            <wool color="lime" location="0.5,10,21.5">
                                 <block>-60,26,-121</block>
                             </wool>
                         </wools>
                         <wools team="blue">
-                            <wool color="magenta">
+                            <wool color="magenta" location="-32.5,14,0.5">
                                 <block>-117,26,-115</block>
                             </wool>
-                            <wool color="lime">
+                            <wool color="lime" location="0.5,10,21.5">
                                 <block>-117,26,-121</block>
                             </wool>
                         </wools>
