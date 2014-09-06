@@ -81,11 +81,13 @@
                                     %a{:href => "#capture_rule"} Capture Rule
                             %tr
                                 %td
-                                    %code scaled-time="false"
+                                    %code time-multiplier="0"
                                 %td
-                                    Capture faster with more team players on the hill.
+                                    Adjust capture time relative to the amount of team players on the hill.
+                                    %br
+                                    %i Defaults to 0.1 on KotH maps.
                                 %td
-                                    %span.label.label-primary true/false
+                                    %span.label.label-primary Float
                             %tr
                                 %td
                                     %code show-progress="false"
