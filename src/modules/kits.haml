@@ -69,13 +69,12 @@
                     `NOTE:` By default, `ambient="true"` is applied to all potions but can be overriden with `ambient="false"`.
 
                     <br/>
-                    #### Health & Hunger Kits
+                    ### Health & Hunger Kits
                     A players health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
 
                     By default health or hunger values are only increased, not decreased. For example, a player with 5 hearts (10 points) will not get a 5 health point kit applied, however a 20 point kit will be applied. This can be overwritten with a kits `force="true"` attribute.
 
-                    <br/>
-                    ##### Health & Hunger elements
+                    ##### Health & Hunger Elements
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
@@ -121,7 +120,7 @@
                         </kit>
 
                     <br/>
-                    #### Walk Speed Kit
+                    ### Walk Speed Kit
                     Increase or decrease a players walking speed. The specified value is a multiplier of the default walking speed of `0.2`.
 
                 .table-responsive
@@ -154,7 +153,7 @@
                         </kit>
 
                     <br/>
-                    #### Knockback Reduction Kit
+                    ### Knockback Reduction Kit
                     Reduce (or increase) the knockback players receive when they have this kit applied. The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased, and anything lower than zero pushes the player to the attacker instead of away from them.
 
                         <kit name="knockback-re">

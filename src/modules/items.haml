@@ -15,7 +15,6 @@
 
                         <item>item_material_name</item>
 
-                    <br/>
                     ##### Item Attributes
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
@@ -84,7 +83,7 @@
                         <item lore="`eWarning!|`5Does damage!">iron sword</item> <!-- A sword with 2 lines of lore. -->
 
                     <br/>
-                    #### Armor
+                    ### Armor
                     Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.
 
                         <helmet>iron helmet</helmet>
@@ -92,7 +91,6 @@
                         <leggings>gold leggings</leggings>
                         <boots>leather boots</boots>
 
-                    <br/>
                     ##### Armor Attributes
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
@@ -122,7 +120,7 @@
                         <helmet color="cd0000">leather helmet</helmet>
 
                     <br/>
-                    #### [Enchantments](id:enchantments)
+                    ### [Enchantments](id:enchantments)
 
                     Items and armor can have custom enchantments by using the `enchantment=""` attribute. Enchantments are specified by their bukkit name and the enchantment level separated by a colon `:`. Multiple enchantments are separated by a semicolon `;`.
 
@@ -135,11 +133,11 @@
                         <boots enchantment="protection fall:2">gold boots</boots>
 
                     <br/>
-                    #### [Attributes](id:attributes)
+                    ### [Attributes](id:attributes)
 
                     The `attributes=""` attribute will allow you to set the attribute('s) for a item or a piece of armor. Look at the [attributes reference](/reference/attributes) page for a list of the different attributes. The attribute definition is separated by colons `:`, and consists of the attributes name, operation and level. Multiple attributes are separated by a semicolon `;`.
 
-                    ##### Attribute operations:
+                    **Attribute Operations:**
 
                     * `ADD` Add level to original level value.
                     * `BASE` Add level * base to original level value.

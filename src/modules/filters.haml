@@ -27,7 +27,7 @@
 
                 :markdown
                     <br/>
-                    ##### Master Filters
+                    #### Master Filters
                     These are the main filters that can be used to allow or deny all of a certain type of event.
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
@@ -82,7 +82,7 @@
 
                 :markdown
                     <br/>
-                    #### Filter Matcher Elements
+                    ### Filter Matcher Elements
                     Filters use matcher elements to do things such as blocking all player access and then allowing a certain team access.
 
                 .table-responsive
@@ -292,17 +292,37 @@
                         <objective>north-hill</objective>
 
 
+                    <br/>
+                    #### [Void Filter](id:voidFilter)
+
+                    If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
+                    The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
+
+                    Example from [Northern Mounts](https://maps.oc.tc/TDM/Standard/Northern%20Mounts/map.xml)
+
+                        <filters>
+                            <filter name="no-void">
+                                <not>
+                                    <void/>
+                                </not>
+                            </filter>
+                        </filters>
+                        <regions>
+                            <apply block="no-void" message="You may not modify the void area!">
+                                <rectangle name="main-area" min="65,860" max="290,980"/>
+                            </apply>
+                        </regions>
 
 
                     <br/>
-                    #### [Filter Modifiers](id:filterModifiers)
+                    ### [Filter Modifiers](id:filterModifiers)
                     To modify filters with matchers or combine the results of multiple filters use these modifiers. The filter element defaults to `<any>` style matching.
 
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th{:style => "width: 125px;"} Name
+                                %th{:style => "min-width: 125px;"} Name
                                 %th Description
                         %tbody
                             %tr
@@ -331,17 +351,14 @@
                 :markdown
                     Examples
 
-                        <filters>
-                            <filter name="only-gold">
-                                <block>gold block</block>
-                            </filter>
-
-                            <!-- Applied with block="" filter will only allow red team to place blocks. -->
-                            <!-- Applied with enter="" filter will only allow red team to enter region. -->
-                            <filter name="red-team">
-                                <team>red</team>
-                            </filter>
-                        </filters>
+                        <filter name="deny-yellow-explosions">
+                             <not>
+                                 <all>
+                                     <team>yellow</team>
+                                     <cause>explosion</cause>
+                                 </all>
+                             </not>
+                        </filter>
 
                     ````
                     <filters>
@@ -398,31 +415,9 @@
 
                     Also see: [Viridun](https://maps.oc.tc/TDM/Standard/Viridun/map.xml)
 
-
-                    <br/>
-                    #### [Void Filter](id:voidFilter)
-
-                    If your map is especially complex shaped you may have to use the `<void/>` tag to shape your filtered region.
-                    The `<void/>` tag checks the specified regions for blocks on the bottom layer of the world. It then creates an outline of those blocks and the specified filter is only active inside or outside that outline. Bridges are usually not detected because they are not at `y=0`. This can be fixed by creating a invisible silhouette of the bridge with block 36 at `y=0`.
-
-                    Example from [Northern Mounts](https://maps.oc.tc/TDM/Standard/Northern%20Mounts/map.xml)
-
-                        <filters>
-                            <filter name="no-void">
-                                <not>
-                                    <void/>
-                                </not>
-                            </filter>
-                        </filters>
-                        <regions>
-                            <apply block="no-void" message="You may not modify the void area!">
-                                <rectangle name="main-area" min="65,860" max="290,980"/>
-                            </apply>
-                        </regions>
-
                     <br/>
                     <hr>
-                    #### Legacy Style Filters
+                    ### Legacy Style Filters
                     <div class="alert alert-warning"><strong>Note!</strong> This filter behavior will be depreciated in proto 2.0.</div>
 
                     Legacy style filters use the `<allow>` and `<deny>` elements with the filter `parents=""` attribute to modify what gets filtered. This behavior is not compatible with the new format introduced in proto `v1.3.0` and can not be combined in the same filter.
