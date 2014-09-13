@@ -9,8 +9,11 @@
                 .page-header
                     %h1 Item Enchantments
                 %p
+                    Enchantments must be referenced by their Bukkit name in the XML. Bukkit names will always be uppercase with underscores for spaces, capitalization and underscores don't matter in the XML.
+                %p
                     %code NOTE:
-                    PGM allows enchantments to be applied to any item.
+                    PGM allows enchantments to be applied to any item regardless if the enchant was intended for it or not.
+                %br
 
                 %h5 Armor enchantments
                 .table-responsive
@@ -18,7 +21,8 @@
                         %thead
                             %tr
                                 %th ID
-                                %th Name
+                                %th Bukkit Name
+                                %th In-Game Name
                                 %th Description
                         %tbody
                             %tr
@@ -26,48 +30,64 @@
                                     %code 0
                                 %td
                                     %code PROTECTION_ENVIRONMENTAL
+                                %td
+                                    Protection
                                 %td Provides protection against environmental damage.
                             %tr
                                 %td
                                     %code 1
                                 %td
                                     %code PROTECTION_FIRE
+                                %td
+                                    Fire Protection
                                 %td Provides protection against fire damage.
                             %tr
                                 %td
                                     %code 2
                                 %td
                                     %code PROTECTION_FALL
+                                %td
+                                    Feather Falling
                                 %td Provides protection against fall damage.
                             %tr
                                 %td
                                     %code 3
                                 %td
                                     %code PROTECTION_EXPLOSIONS
+                                %td
+                                    Blast Protection
                                 %td Provides protection against explosive damage.
                             %tr
                                 %td
                                     %code 4
                                 %td
                                     %code PROTECTION_PROJECTILE
+                                %td
+                                    Projectile Protection
                                 %td Provides protection against projectile damage.
                             %tr
                                 %td
                                     %code 5
                                 %td
                                     %code OXYGEN
+                                %td
+                                    Respiration
                                 %td Decreases the rate of air loss whilst underwater.
                             %tr
                                 %td
                                     %code 6
                                 %td
                                     %code WATER_WORKER
+                                %td
+                                    Aqua Affinity
                                 %td Increases the speed at which a player may mine underwater.
                             %tr
                                 %td
                                     %code 7
                                 %td
                                     %code THORNS
+                                %td
+                                    Thorns
                                 %td Damages the attacker.
 
                 %h5 Tool enchantments
@@ -76,7 +96,8 @@
                         %thead
                             %tr
                                 %th ID
-                                %th Name
+                                %th Bukkit Name
+                                %th In-Game Name
                                 %th Description
                         %tbody
                             %tr
@@ -84,48 +105,64 @@
                                     %code 16
                                 %td
                                     %code DAMAGE_ALL
+                                %td
+                                    Sharpness
                                 %td Increases damage against all targets.
                             %tr
                                 %td
                                     %code 17
                                 %td
                                     %code DAMAGE_UNDEAD
+                                %td
+                                    Smite
                                 %td Increases damage against undead targets.
                             %tr
                                 %td
                                     %code 18
                                 %td
                                     %code DAMAGE_ARTHROPODS
+                                %td
+                                    Bane of Arthropods
                                 %td Increases damage against arthropod targets.
                             %tr
                                 %td
                                     %code 19
                                 %td
                                     %code KNOCKBACK
+                                %td
+                                    Knockback
                                 %td All damage to other targets will knock them back when hit.
                             %tr
                                 %td
                                     %code 20
                                 %td
                                     %code FIRE_ASPECT
+                                %td
+                                    Fire Aspect
                                 %td When attacking a target, has a chance to set them on fire.
                             %tr
                                 %td
                                     %code 21
                                 %td
                                     %code LOOT_BONUS_MOBS
+                                %td
+                                    Looting
                                 %td Provides a chance of gaining extra loot when killing monsters.
                             %tr
                                 %td
                                     %code 32
                                 %td
                                     %code DIG_SPEED
+                                %td
+                                    Efficiency
                                 %td Increases the rate at which you mine/dig.
                             %tr
                                 %td
                                     %code 33
                                 %td
                                     %code SILK_TOUCH
+                                %td
+                                    Silk Touch
                                 %td
                                     Allows blocks to drop themselves instead of fragments.
                                     %br
@@ -135,12 +172,16 @@
                                     %code 34
                                 %td
                                     %code DURABILITY
+                                %td
+                                    Unbreaking
                                 %td Decreases the rate at which a tool looses durability.
                             %tr
                                 %td
                                     %code 35
                                 %td
                                     %code LOOT_BONUS_BLOCKS
+                                %td
+                                    Fortune
                                 %td Provides a chance of gaining extra loot when destroying blocks.
 
                 %h5 Bow enchantments
@@ -149,7 +190,8 @@
                         %thead
                             %tr
                                 %th ID
-                                %th Name
+                                %th Bukkit Name
+                                %th In-Game Name
                                 %th Description
                         %tbody
                             %tr
@@ -157,25 +199,60 @@
                                     %code 48
                                 %td
                                     %code ARROW_DAMAGE
+                                %td
+                                    Power
                                 %td Provides extra damage when shooting arrows from bows.
                             %tr
                                 %td
                                     %code 49
                                 %td
                                     %code ARROW_KNOCKBACK
+                                %td
+                                    Punch
                                 %td Provides a knockback when an entity is hit by an arrow from a bow.
                             %tr
                                 %td
                                     %code 50
                                 %td
                                     %code ARROW_FIRE
+                                %td
+                                    Flame
                                 %td Sets entities on fire when hit by arrows shot from a bow.
                             %tr
                                 %td
                                     %code 51
                                 %td
                                     %code ARROW_INFINITE
+                                %td
+                                    Infinity
                                 %td Provides infinite arrows when shooting a bow.
 
+                %h5 Fishing enchantments
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th ID
+                                %th Bukkit Name
+                                %th In-Game Name
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code 61
+                                %td
+                                    %code LUCK
+                                %td
+                                    Luck of the Sea
+                                %td Decreases odds of catching worthless junk.
+                            %tr
+                                %td
+                                    %code 62
+                                %td
+                                    %code LURE
+                                %td
+                                    Lure
+                                %td Increases rate of fish biting your hook. 
+
                 :markdown
-                    Copied from: [bukkit docs Enchantments](http://jd.bukkit.org/doxygen/dd/d17/classorg_1_1bukkit_1_1enchantments_1_1Enchantment.html)
+                    Copied from: Minecraft and [Bukkit Java Docs - Enchantments](http://jd.bukkit.org/dev/doxygen/dd/d17/classorg_1_1bukkit_1_1enchantments_1_1Enchantment.html#pub-static-attribs)

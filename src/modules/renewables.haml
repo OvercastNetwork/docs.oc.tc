@@ -16,12 +16,12 @@
                     larger than necessary. Regions under 10,000 blocks in volume should be safe. If a larger region is needed, it's best to inquire with a PGM developer or administrator first.
 
                     <br/>
-                    ##### Renewable element attributes
+                    ##### Renewable Element Attributes
                 .table-responsive
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th Attribute & default value
+                                %th{:style => "min-width: 180px;"} Attribute & default value
                                 %th Description
                         %tbody
                             %tr
@@ -48,12 +48,63 @@
                                 %td
                                     %code avoid-entities="true"
                                 %td
-                                    Prevent blocks from being restored within a few meters of a player
+                                    Prevent blocks from being restored within a few meters of a player.
+
+                %h5 Renewable Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<region>')
+                                %td The region the renewable applies to.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<renew>')
+                                %td Blocks which are renewed in the defined region.
+                                %td{:rowspan => "3"}
+                                    %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Block Material
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<replace>')
+                                %td Blocks that can be replaced with renewing blocks.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<shuffle>')
+                                %td Blocks that will be randomly shuffled when renewed.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<renew-filter>')
+                                %td Filter blocks which are renewed.
+                                %td{:rowspan => "3"}
+                                    %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<replace-filter>')
+                                %td Filter which blocks are replaced.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<shuffle-filter>')
+                                %td Filter the shuffled blocks.
 
                 :markdown
                     By default, all blocks in the region are renewable. Multiple `<renew>` tags can be used inside the `<renewable>` to specify only particular blocks to renew.
 
-                    `<replace>` tags specify which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.
+                    The `<replace>` tags specify which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.
 
                     Normally, blocks will be restored to their exact state when the map was loaded. If some block types are specified in
                     `<shuffle>` tags, blocks of those types in the original region will be restored to a block type chosen at random from
@@ -75,5 +126,32 @@
                                 <!-- These blocks will switch with each other when they renew -->
                                 <shuffle>stone</shuffle>
                                 <shuffle>iron ore</shuffle>
+                            </renewable>
+                        </renewables>
+   
+                    Renewables can also accept filters. They can be referenced from the filters module or defined directly inside the `<renew-filter>`, `<replace-filter>` and `<shuffle-filter>` renewable sub-elements. These sub-elements filter the renew, replace and shuffle block definitions respectively.
+
+                        <renewables>
+                            <renewable rate="1" grow="false" sound="true">
+                                <region>
+                                    <region name="quarry"/>
+                                </region>
+                                <!-- Referenced from <filters> -->
+                                <renew-filter>
+                                    <filter name="quarry-renew"/>
+                                </renew-filter>
+                                <!-- Defined directly -->
+                                <replace-filter>
+                                    <any>
+                                        <block>iron block</block>
+                                        <block>diamond block</block>
+                                        <block>gold block</block>
+                                    </any>
+                                </replace-filter>
+                                <shuffle-filter>
+                                    <not>
+                                        <block>emerald block</block>
+                                    </not>
+                                </shuffle-filter>
                             </renewable>
                         </renewables>

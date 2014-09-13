@@ -30,10 +30,16 @@
                     %table.table.table-striped.table-hover.table-condensed.table-bordered
                         %thead
                             %tr
-                                %th Name
+                                %th{:style => "min-width: 215px;"} Name
                                 %th Description
-                                %th Value
+                                %th{:style => "min-width: 100px;"} Value
                         %tbody
+                            %tr
+                                %td
+                                    %code id=""
+                                %td Unique identifier used to reference hills from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
                             %tr
                                 %td
                                     %code name=""
@@ -125,6 +131,15 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code visual-materials=""
+                                %td
+                                    Filter the materials modified when updating the progress regions.
+                                    %br
+                                    %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filter
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
@@ -134,7 +149,7 @@
                     * `majority` The team must have more players on the hill than all other teams combined.
                     * `lead` The team must have more players on the hill than any other single team.
 
-                    Players who match either `capture-filter` or `defend-filter` are counted when calculating the `capture-rule`. Players who don't match either filter cannot affect the hill at all.
+                    Players who match either `capture-filter` or `player-filter` are counted when calculating the `capture-rule`. Players who don't match either filter cannot affect the hill at all.
 
 
                     <br/>

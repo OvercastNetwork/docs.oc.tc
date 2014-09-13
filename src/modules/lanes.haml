@@ -11,7 +11,23 @@
                 :markdown
                     Lanes are used in RFW style maps with two parallel lanes for the teams. They prevent players from leaving their teams lane and entering the enemies.
 
-                    <br/>
+                    ##### Lane Attributes
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code{:title => "Required"} team=""
+                                %td The team the lane belongs to and in which they have to stay inside.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+
+                :markdown
                     Example from [Parallax](https://maps.oc.tc/RFW/Standard/Parallax/map.xml)
 
                         <lanes>

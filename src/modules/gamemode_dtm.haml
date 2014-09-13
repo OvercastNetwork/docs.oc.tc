@@ -22,7 +22,13 @@
                         %tbody
                             %tr
                                 %td
-                                    %code name=""
+                                    %code id=""
+                                %td Unique identifier used to reference monuments from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code{:title => "Required"} name=""
                                 %td The destroyables name.
                                 %td
                                     %span.label.label-primary String
@@ -36,7 +42,7 @@
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
                             %tr
                                 %td
-                                    %code owner=""
+                                    %code{:title => "Required"} owner=""
                                 %td The destroyables owner.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
@@ -86,6 +92,24 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code proximity-metric="closest player"
+                                %td
+                                    Metric used to determine proximity to the destroyable.
+                                    %br
+                                    Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
+                                %td
+                                    %span.label.label-primary Proximity Metric
+                            %tr
+                                %td
+                                    %code proximity-horizontal="false"
+                                %td
+                                    Only calculate horizontal distance for destroyable proximity.
+                                %td
+                                    %span.label.label-primary true/false
+
+
                 :markdown
 
                         <destroyables name="Monument" materials="obsidian" completion="100%">

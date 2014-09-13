@@ -19,7 +19,7 @@
 
                         <!-- Set the maps name and version. -->
                         <name>Snowy Wars</name>
-                        <version>1.3.2</version>
+                        <version>1.3.4</version>
 
                         <!-- Specify the game objective and credit the creator of the map. -->
                         <objective>Break the obsidian from the enemy team's monument.</objective>
@@ -99,11 +99,11 @@
                             <apply block="deny-icemelt">
                                 <rectangle min="-635,232" max="-556,377" name="playable" />
                             </apply>
-                            <apply block="deny-players" message="Please don't break the spawns!">
-                                <cylinder base="-619.5,10,259.5" height="6" radius="5"/> <!-- West Red -->
-                                <cylinder base="-571.5,10,259.5" height="6" radius="5"/> <!-- East -->
-                                <cylinder base="-619.5,10,349.5" height="6" radius="5"/> <!-- West Blue -->
-                                <cylinder base="-571.5,10,349.5" height="6" radius="5"/> <!-- East -->
+                            <apply block="deny-all" message="Please don't edit the spawns!">
+                                <cylinder base="-619.5,10,259.5" height="6" radius="7"/> <!-- West Red -->
+                                <cylinder base="-571.5,10,259.5" height="6" radius="7"/> <!-- East -->
+                                <cylinder base="-619.5,10,349.5" height="6" radius="7"/> <!-- West Blue -->
+                                <cylinder base="-571.5,10,349.5" height="6" radius="7"/> <!-- East -->
                             </apply>
                             <apply block="deny-players" message="You may not build outside of the playing field.">
                                 <negative>

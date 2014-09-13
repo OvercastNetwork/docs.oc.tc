@@ -9,15 +9,46 @@
                 .page-header
                     %h1 Kill Reward
                 :markdown
-                    The kill reward module allows a player to get an item when they kill someone. The parameters are wrapped in a `<killreward>` block.
-                    So far, the only reward available is an `<item>`.
+                    The `<killreward>` module allows players to get items or a kit when they kill someone. A kill reward can contain either individual items, kits or references to kits. Kits defined inside the module can contain any of the features that normal [kits](/modules/kits) have.
+
 
                     `e.g.` This module can be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
 
-                    <br/>
-                    Example
+                    You can optionally include a [filter](/modules/filters#killStreakFilter) that determines which players are eligible to receive the reward.
 
-                        <!-- Kill Reward from Rift XML -->
+                    <br/>
+                    Examples
+
+                        <!-- Give two emeralds for all kills -->
                         <killreward>
                             <item amount="2">emerald</item>
+                        </killreward>
+
+                        <!-- Give a cactus to players on the red team for their third kill -->
+                        <killreward>
+                            <filter>
+                                <all>
+                                    <team>red</team>
+                                    <kill-streak count="3"/>
+                                </all>
+                            </filter>
+                            <item>cactus</item>
+                        </killreward>
+
+                    Kill rewards with kits
+
+                        <killreward>
+                            <kit>
+                                <item slot="0">iron sword</item>
+                                <helmet>iron helmet</helmet>
+                                <potion amplifier="2">speed</potion>
+                            </kit>
+                        </killreward>
+
+                        <!-- Give the "reward-kit" to the player for every 8th kill -->
+                        <killreward>
+                            <filter>
+                                <kill-streak count="8" repeat="true"/>
+                            </filter>
+                            <kit name="reward-kit"/>
                         </killreward>
