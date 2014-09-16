@@ -31,12 +31,6 @@
                         %tbody
                             %tr
                                 %td
-                                    %code commandBlockOutput
-                                %td Allows command block output to be shown in chat.
-                                %td
-                                    %span.label.label-primary true / false
-                            %tr
-                                %td
                                     %code doFireTick
                                 %td Toggles whether firespread occurs.
                                 %td
@@ -76,7 +70,7 @@
                     ##### Unsupported Gamerules
 
                 .table-responsive
-                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %table.table.table-striped.table-condensed.table-bordered
                         %thead
                             %tr
                                 %th Rule
@@ -93,3 +87,27 @@
                                 %td
                                     %code keepInventory
                                 %td Not supported since PGM already solves this with kits.
+                            %tr
+                                %td
+                                    %code commandBlockOutput
+                                %td Command blocks are disabled in PGM.
+                            %tr
+                                %td
+                                    %code logAdminCommands
+                                %td Not useful in custom maps.
+                            %tr
+                                %td
+                                    %code randomTickSpeed
+                                %td Not useful in custom maps.
+                            %tr
+                                %td
+                                    %code reducedDebugInfo
+                                %td Not useful in custom maps.
+                            %tr
+                                %td
+                                    %code sendCommandFeedback
+                                %td Not useful in custom maps.
+                            %tr
+                                %td
+                                    %code showDeathMessages
+                                %td Not useful in custom maps.
