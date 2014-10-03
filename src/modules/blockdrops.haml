@@ -9,9 +9,10 @@
                 .page-header
                     %h1 Block Drops
                 :markdown
-                    This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with.
+                    This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with. All sub-elements are optional, if there are no elements blocks will simply drop nothing.
 
-                    The `<blockdrops>` module can contain any number of `<rule>` elements, and each `<rule>` can contain various sub-elements.
+                    Custom drops also apply to blocks broken by explosions. The custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
+
 
                     ##### Rule Sub-elements
                 .table-responsive
@@ -64,6 +65,68 @@
                                 %td Drop items regardless of what tool was used to mine the block.
                                 %td
                                     %span.label.label-primary true/false
+
+
+                :markdown
+
+                    The `<filter>` element is used to limit the rule to particular blocks. If multiple filters are listed, the rule will apply when *any* of them match. This filter is usually used to only filter what blocks the rule applies to. If filters such as `<team>` are used then no items or XP will drop if the block is mined by a non-matching player, the rules `<replacement>` material will still take effect however.
+
+                    Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. XP orbs are dropped by specifying the amount in the `<experience>` tag.
+
+                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
+                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of what tool was used.
+
+                    Examples
+
+                        <blockdrops>
+                            <rule>
+                                <region>
+                                    <cuboid min="1,2,3" max="4,5,6"/>
+                                </region>
+                                <!-- Make iron blocks and ore drop iron ingots, and 1 XP -->
+                                <filter>
+                                    <block>iron ore</block>
+                                    <block>iron block</block>
+                                </filter>
+                                <drops>
+                                    <item>iron ingot</item>
+                                </drops>
+                                <experience>1</experience>
+                                <!-- Replace mined iron blocks and ore with stone -->
+                                <replacement>stone</replacement>
+                                <wrongtool>false</wrongtool>
+                            </rule>
+                        </blockdrops>
+
+                    ````
+                    <blockdrops>
+                        <!-- Emerald ore blocks drop ore instead of emerald items -->
+                        <rule>
+                            <filter>
+                                <block>emerald ore</block>
+                            </filter>
+                            <drops>
+                                <item>emerald ore</item>
+                            </drops>
+                        </rule>
+                    </blockdrops>
+                    ````
+
+
+                    <br/>
+                    ### Explosion behavior
+
+                    The behavior for blocks that become airborne due to explosions can be modified in addition to all the other drop rules. 
+
+                    ##### Rule Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
                             %tr
                                 %td
                                     %pre
@@ -85,56 +148,24 @@
                                 %td A multiplier for the velocity of the blocks flying out from a explosion.
                                 %td
                                     %span.label.label-primary Number
-
-
                 :markdown
-
-                    The `<filter>` element is used to limit the rule to particular blocks. If multiple filters are listed, the rule will apply when *any* of them match. This filter is usually used to only filter what blocks the rule applies to. If filters such as `<team>` are used then no items or XP will drop if the block is mined by a non-matching player, the rules `<replacement>` material will still take effect however.
-
-                    Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. XP orbs are dropped by specifying the amount in the `<experience>` tag.
-
-                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
-                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of what tool was used.
-
-                    Custom drops also apply to blocks broken by explosions. In this case, the custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
 
                     Examples
 
                         <blockdrops>
                             <rule>
-                                <region>
-                                    <cuboid min="1,2,3" max="4,5,6"/>
-                                </region>
-                                <filter>
-                                    <block>iron ore</block>
-                                    <block>iron block</block>
-                                </filter>
-                                <drops>
-                                    <item>iron ingot</item>
-                                </drops>
-                                <experience>1</experience>
-                                <replacement>stone</replacement>
-                                <wrongtool>false</wrongtool>
-                            </rule>
-                            <rule>
-                                <filter>
-                                    <block>lapis ore</block>
-                                </filter>
-                                <drops>
-                                    <item>lapis ore</item>
-                                </drops>
-                            </rule>
-                            <rule>
-                                <filter>
-                                    <block>emerald ore</block>
-                                </filter>
-                                <drops>
-                                    <item>emerald ore</item>
-                                </drops>
-                            </rule>
-                            <rule>
-                                <fall-chance>0.3</fall-chance>
+                                <!-- 50% of blocks broken by an explosion get turned into falling/flying blocks -->
+                                <fall-chance>0.5</fall-chance>
+                                <!-- 80% of the falling blocks will be placed when they land -->
                                 <land-chance>0.8</land-chance>
+                           </rule>
+
+                            <rule>
+                                <region>
+                                    <region name="central-region"/>
+                                </region>
+                                <!-- Increase the speed of flying blocks by 50% in the central region -->
                                 <fall-speed>1.5</fall-speed>
                            </rule>
                         </blockdrops>
+
