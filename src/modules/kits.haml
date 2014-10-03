@@ -159,3 +159,28 @@
                         <kit name="knockback-re">
                             <knockback-reduction>0.5</knockback-reduction>
                         </kit>
+
+
+                    <br/>
+                    ### Double Jump Kit
+                    Give players with this kit the ability to double-jump. This elements enabled attribute can be used to disable double-jump inside regions, etc.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code enabled="true"
+                                %td
+                                    Enable or disable double-jump.
+                                %td
+                                    %span.label.label-primary true/false
+                :markdown
+                        <kit name="jump">
+                            <double-jump/>
+                        </kit>
