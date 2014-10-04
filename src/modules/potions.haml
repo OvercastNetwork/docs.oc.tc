@@ -16,10 +16,37 @@
 
                     Potions effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and amplifier what level / how strong the potion is. The potion type is specified using the [potion name](/reference/potion_effects).
 
-                    `NOTE:` Infinite duration can be specified by using `oo` as the duration.
+                    ##### Potion Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code{:title => "Required"} duration=""
+                                %td
+                                    The time the potion effect last in seconds.
+                                    %i Infinite duration can be specified by using <code>oo</code> as the duration.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code amplifier="1"
+                                %td The strength of the potion effect.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %code ambient="false"
+                                %td Specify if the potion's particle effects are ambient.
+                                %td
+                                    %span.label.label-primary true/false
 
-                    By default, all potions have `ambient="true"` which decreases the amount of particles a player emits and make the particles translucent.
-
+                :markdown
                     <br/>
                     To give a potion as an item you have to use:
 
@@ -47,7 +74,7 @@
                                     %a{:href => "/reference/potion_effects"} Potion names
                             %tr
                                 %td
-                                    %code{:title => "Required"} duration
+                                    %code duration
                                 %td Length of the potion effect in minecraft ticks.
                                 %td
                                     %span.label.label-primary Number
