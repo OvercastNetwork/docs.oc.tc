@@ -156,6 +156,31 @@ td pre {
     padding: 5px 7px 4px 7px;
 }
 
+.table>thead>tr>td.danger, .table>tbody>tr>td.danger, .table>tfoot>tr>td.danger,
+.table>thead>tr>th.danger, .table>tbody>tr>th.danger, .table>tfoot>tr>th.danger,
+.table>thead>tr.danger>td, .table>tbody>tr.danger>td, .table>tfoot>tr.danger>td,
+.table>thead>tr.danger>th, .table>tbody>tr.danger>th, .table>tfoot>tr.danger>th {
+    border-bottom: 1px solid #E1AEAD !important;
+    border-top: 1px solid #E1AEAD !important;
+}
+
+.table>thead>tr:first-child>td.danger, .table>tbody>tr:first-child>td.danger, .table>tfoot>tr:first-child>td.danger,
+.table>thead>tr:first-child>th.danger, .table>tbody>tr:first-child>th.danger, .table>tfoot>tr:first-child>th.danger,
+.table>thead>tr:first-child.danger>td, .table>tbody>tr:first-child.danger>td, .table>tfoot>tr:first-child.danger>td,
+.table>thead>tr:first-child.danger>th, .table>tbody>tr:first-child.danger>th, .table>tfoot>tr:first-child.danger>th {
+    border-top: 2px solid #E1AEAD !important;
+}
+
+.table>thead>tr:first-child>th, .table>tbody>tr:first-child>th, .table>tfoot>tr:first-child>th, .table>thead>tr:first-child>td,
+.table>tbody>tr:first-child>td, .table>tfoot>tr:first-child>td {
+    border-top: 2px solid #ddd;
+}
+
+.table>thead>tr>th {
+    border-bottom: none;
+}
+
+
 @media (min-width: 768px) {
     .page-header h1 {
         margin-top: 0 !important;

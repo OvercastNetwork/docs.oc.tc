@@ -17,7 +17,7 @@
 
                     ##### Renewable Element Attributes
                 .table-responsive
-                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th{:style => "min-width: 180px;"} Attribute & Default Value
@@ -51,7 +51,7 @@
 
                 %h5 Renewable Sub-elements
                 .table-responsive
-                    %table.table.table-striped.table-condensed.table-bordered
+                    %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Element
@@ -70,35 +70,43 @@
                                     %pre
                                         %code= html_escape('<renew>')
                                 %td Blocks which are renewed in the defined region.
-                                %td{:rowspan => "3"}
+                                %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Block Material
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<replace>')
                                 %td Blocks that can be replaced with renewing blocks.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Block Material
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<shuffle>')
                                 %td Blocks that will be randomly shuffled when renewed.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Block Material
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<renew-filter>')
                                 %td Filter blocks which are renewed.
-                                %td{:rowspan => "3"}
+                                %td
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<replace-filter>')
                                 %td Filter which blocks are replaced.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<shuffle-filter>')
                                 %td Filter the shuffled blocks.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
 
                 :markdown
                     By default, all blocks in the region are renewable. Multiple `<renew>` tags can be used inside the `<renewable>` to specify only particular blocks to renew.

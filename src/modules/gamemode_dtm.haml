@@ -13,10 +13,10 @@
 
                     ##### Destroyable Attributes
                 .table-responsive
-                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Name
+                                %th Attribute
                                 %th Description
                                 %th Value
                         %tbody
@@ -26,7 +26,7 @@
                                 %td Unique identifier used to reference monuments from other places in the XML.
                                 %td
                                     %span.label.label-primary String
-                            %tr
+                            %tr.danger.text-danger
                                 %td
                                     %code{:title => "Required"} name=""
                                 %td The destroyables name.

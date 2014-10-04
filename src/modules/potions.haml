@@ -25,7 +25,7 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr
+                            %tr.danger.text-danger
                                 %td
                                     %code{:title => "Required"} duration=""
                                 %td
@@ -59,7 +59,7 @@
                     Custom effects can be added to a potion item with the `potions=""` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion items damage value will define the potion color and if it's a splash or normal potion.
 
                 .table-responsive
-                    %table.table.table-striped.table-hover.table-condensed.table-bordered
+                    %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Specifier
