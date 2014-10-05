@@ -23,6 +23,18 @@
                                 %th{:style => "min-width: 180px;"} Attribute & Default Value
                                 %th Description
                         %tbody
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %code region=""
+                                %td
+                                    Region where this renewable is located.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
                             %tr
                                 %td
                                     %code rate="1"
@@ -58,11 +70,17 @@
                                 %th Description
                                 %th Value/Children
                         %tbody
-                            %tr
+                            %tr.danger.text.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
-                                %td The region the renewable applies to.
+                                %td 
+                                    The region the renewable applies to.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code region
+                                        attribute of the renewable.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr

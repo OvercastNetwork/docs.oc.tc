@@ -9,19 +9,13 @@
                 .page-header
                     %h1 Portals
                 :markdown
-                    Portals move a player that enters the specified region to a exact location or by by a certain offset amount.
+                    Portals teleport a player that enters the specified region to an exact location, by a certain offset amount or to a random location inside a region.
 
-                        <portals>
-                            <!-- Offset location, adds X,Y,Z, pitch and yaw to the players current location -->
-                            <portal x="X" y="Y" z="Z" pitch="pitch" yaw="yaw" filter="filter name">
+                    The position and direction attributes of a portal are relative to the players location and where they are looking. Prefix these values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.
 
-                                <!-- Portal region, this is the region the player has to enter to be teleported -->
-                                <cuboid min="X1,Y1,Z1" max="X2,Y2,Z2"/>
-                            </portal>
-                        </portals>
+                    `TIP:` Copy the yaw from the F3 screen in minecraft (labeled as `f`).
 
-                    Position and direction attributes of the `<portal>` element are relative to the players location and where they are looking. Prefix values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.
-
+                    ##### Portal Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -38,6 +32,18 @@
                                 %td Offset the players <code>X,Y,Z</code> position by the amount specified.
                                 %td
                                     %span.label.label-primary Number
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %code region=""
+                                %td
+                                    Region where this portals entrance is located.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
                             %tr
                                 %td
                                     %code filter=""
@@ -75,32 +81,68 @@
                                 %td
                                     %span.label.label-primary Number
 
-                :markdown
-                    `TIP:` Copy the yaw from the F3 screen in minecraft (labeled as `f`).
+                %h5 Portal Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %pre
+                                        %code= html_escape('<region>')
+                                %td 
+                                    Region where this portals entrance is located.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code region
+                                        attribute of the portal.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<destination>')
+                                %td 
+                                    Destination of the portal, teleports players to a random point inside the region.
+                                    %br
+                                    %i Region is automatically filtered against block place.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
 
+                :markdown
                     <br/>
                     Examples
 
                         <!-- Portals from Harb -->
                         <portals>
-                            <!-- Adds 110 to the players X position, Y, Z, pitch & yaw remain unchanged.-->
+                            <!-- Adds 110 to the players X position, Y, Z, pitch & yaw remain unchanged -->
                             <portal x="110">
-                                <cuboid min="-56,33,-1" max="-55,35,2"/>
+                                <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
                             </portal>
-                            <!-- Subtracts 110 from the players X position, Y, Z, pitch & yaw remain unchanged.-->
+                            <!-- Subtracts 110 from the players X position, Y, Z, pitch & yaw remain unchanged -->
                             <portal x="-110">
-                                <cuboid min="56,33,-1" max="57,35,2"/>
+                                <region><cuboid min="56,33,-1" max="57,35,2"/></region>
                             </portal>
                         </portals>
 
-                        <!-- Hypothetical portals-->
                         <portals>
-                            <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged.-->
+                            <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged -->
                             <portal x="@10" y="@8" z="@45">
-                                <cuboid min="-56,33,-1" max="-55,35,2"/>
+                                <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
                             </portal>
-                            <!-- Adds 12 to the players Z position, turning them to face east and 10° up.-->
+
+                            <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
                             <portal z="12" pitch="@10" yaw="@-90">
-                                <cuboid min="-56,33,-1" max="-55,35,2"/>
+                                <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+                            </portal>
+
+                            <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
+                            <portal region="portal-entrance">
+                                <destination><region name="portal-exit"/></destination>
                             </portal>
                         </portals>

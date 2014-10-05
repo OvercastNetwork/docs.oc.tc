@@ -9,7 +9,7 @@
                 .page-header
                     %h1 Destroy the Core
                 :markdown
-                    Players have to locate and break the enemy team's core, usually an obsidian sphere filled with lava. The lava has to leak down a certain distance for the core to be destroyed. Teams can have more than one core and each core can be made out of different materials.
+                    Players have to locate and break the enemy team's core, usually an obsidian sphere filled with lava. The lava has to leak down a certain distance for the core to be destroyed. Lava should not be available anywhere else on the map, otherwise a core leak could be faked. This can also be avoided by keeping the lava far away enough from the core and not giving players buckets or the ability to craft them.
 
                     ##### Core Attributes
                 .table-responsive
@@ -32,6 +32,18 @@
                                 %td The core's name, used in notification messages.
                                 %td
                                     %span.label.label-primary String
+                            %tr.danger.text-danger{:title => "Required"}
+                                %td
+                                    %code region=""
+                                %td
+                                    A region containing the core.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
                             %tr
                                 %td
                                     %code leak="5"
@@ -44,9 +56,9 @@
                                 %td The core casing material, used to detect breaks, and for mode changes.
                                 %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
-                            %tr.danger.text-danger
+                            %tr.danger.text-danger{:title => "Required"}
                                 %td
-                                    %code{:title => "Required"} team=""
+                                    %code team=""
                                 %td Team the core belongs to, i.e. its owner.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
@@ -86,10 +98,37 @@
                                 %td
                                     %span.label.label-primary true/false
 
+                %h5 Core Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %pre
+                                        %code region=""
+                                %td 
+                                    A region containing the core.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code region
+                                        attribute of the core.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
+
                 :markdown
 
                         <cores material="obsidian" leak="8">
-                            <core team="blue"><cuboid min="10,15,12" max="12,13,16"/></core>
+                            <core team="blue">
+                                <region><cuboid min="10,15,12" max="12,13,16"/></region>
+                            </core>
                         </cores>
 
-                    Lava should not be available anywhere else on the map, otherwise a core leak could be faked. This can be avoided by keeping the lava far away enough from the core and not giving players buckets or the ability to craft them.
+                        <cores material="obsidian" leak="4">
+                            <core team="red" region="red-core"/>
+                        </cores>

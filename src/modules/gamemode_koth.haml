@@ -141,6 +141,42 @@
                                     %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %code capture=""
+                                %td
+                                    Region where this control point can be captured
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<capture>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
+                            %tr
+                                %td
+                                    %code progress=""
+                                %td
+                                    Region where this control points progress is displayed
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<progress>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
+                            %tr
+                                %td
+                                    %code captured=""
+                                %td
+                                    Region where this control points owner is displayed
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a  
+                                        %code= html_escape('<captured>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
@@ -158,39 +194,65 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th{:style => "min-width: 160px;"} Element
                                 %th Description
+                                %th Value/Children
                         %tbody
-                            %tr
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
                                     %pre
-                                        %code= html_escape('<capture> <region name="hill"/> </capture>')
+                                        %code= html_escape('<capture>')
                                 %td
                                     The region players have to stand in to capture the hill.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code= html_escape('capture')
+                                        attribute of the hill.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<progress> <region name="capture"/> </progress>')
+                                        %code= html_escape('<progress>')
                                 %td
                                     The region to display capture progress.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code= html_escape('progress')
+                                        attribute of the hill.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<captured> <region name="captured"/> </captured>')
+                                        %code= html_escape('<captured>')
                                 %td
                                     The region to display if the hill is captured.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code= html_escape('captured')
+                                        attribute of the hill.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<capture-filter> <filter name="capture"/> </capture-filter>')
+                                        %code= html_escape('<capture-filter>')
                                 %td
                                     Filter teams that can capture this hill, defaults to all teams. Teams that don't match this filter can still prevent other teams from capturing by standing on the hill. They can also uncapture the hill if neutral-state is enabled.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<player-filter> <filter name="defend"/> </player-filter>')
+                                        %code= html_escape('<player-filter>')
                                 %td
                                     Filter players who can control this hill. Players who don't match this filter cannot affect the hill in any way.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
 
                 :markdown
                     Capture progress is displayed inside the defined `<progress>` region using the dominating teams wool/clay/glass color. After a hill is captured the `<captured>` region is also filled with that teams wool/clay/glass color. If the `<captured>` region is not present it will use the `<progress>` region to display captured status. The progress and captured regions must be cuboids otherwise the plugin will throw an error.

@@ -13,8 +13,29 @@
 
                     Custom drops also apply to blocks broken by explosions. The custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
 
+                    ##### Rule Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code region=""
+                                %td 
+                                    The region this rule applies to.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a 
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
 
-                    ##### Rule Sub-elements
+                %h5 Rule Sub-elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -34,7 +55,13 @@
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
-                                %td The region this rule applies to, treated as a region union.
+                                %td
+                                    The region this rule applies to, treated as a region union.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code region
+                                        attribute of the rule.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr
