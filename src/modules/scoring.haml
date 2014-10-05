@@ -1,0 +1,123 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Filters & Regions
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Scoring
+                :markdown
+                    The score module can be used to give matches a time or score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
+
+                    ##### Score Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<time></time>')
+                                %td Time the match lasts.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<limit></limit>')
+                                %td
+                                    Max score that can be reached before the match ends.
+                                    %br
+                                    %i Defaults to no limit.
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<deaths>1</deaths>')
+                                %td How many points a death subtracts from the score.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kills>1</kills>')
+                                %td Amount of points added to the score for every kill.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<king/>')
+                                %td Enable "King of the Hill" mode, sets deaths and kills to <code>0</code>.
+                                %td
+                :markdown
+                    Example
+
+                        <score>
+                            <!-- End the match when the score reaches 32 or eight minutes are up -->
+                            <time>8m</time>
+                            <limit>32</limit>
+                        </score>
+
+
+                    <br/>
+                    ### Score Boxes
+                    A score box will give points to a players team when they enter the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
+
+                    Specify `cooldown="X"` to limit player scoring, the player can only score again after a certain amount of time has passed. Cooldown defaults to one second.
+
+                    ##### Score Box Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr.danger.text-danger{:title => "Required"}
+                                %td
+                                    %code region=""
+                                %td
+                                    The location and size of the score box.
+                                    %br
+                                    %i 
+                                        Can be either an attribute or a 
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Region Name
+                            %tr
+                                %td
+                                    %code filter=""
+                                %td Filter who can use this score box.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
+                                    %code cooldown="1s"
+                                %td Limit the time before the score box can be used again after being scored. 
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+
+                    :markdown
+                        Example
+
+                            <score>
+                                <!-- Only allow red team to use this score box, and give them two points -->
+                                <box value="2" filter="only-red" cooldown="1">
+                                    <region><cylinder base="21,8,63" radius="1" height="2"/></region>
+                                </box>
+                            </score>
+
+                            <score>
+                                <box value="8" filter="cyan" cooldown="4" region="cyan-scorebox"/>
+                            </score>
+
