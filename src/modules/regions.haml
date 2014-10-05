@@ -309,38 +309,56 @@
                     A point provider is used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
                     Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
 
-                        <point yaw="90" pitch="50" angle="">X,Y,Z</point>
+                        <point yaw="90" pitch="50">X,Y,Z</point>
 
-                    <br/>
-                    Attributes of the `<point>` element.
+                    ##### Point Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Attribute
                                 %th Description
+                                %th Value 
                         %tbody
                             %tr
                                 %td
-                                    %code yaw=""
-                                %td specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
+                                    %code region=""
+                                %td 
+                                    The region the point provider modifies.
+                                    %br
+                                    %i 
+                                        Can also be defined in a 
+                                        %code= html_escape('<region>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
                             %tr
-                                %td{:colspan => "5"}
+                                %td
+                                    %code yaw=""
+                                %td
+                                    Specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
+                                    %br
                                     %i South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
+                                %td 
+                                    %span.label.label-primary -180 to 180
                             %tr
                                 %td
                                     %code pitch=""
-                                %td specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
-                            %tr
-                                %td{:colspan => "5"}
+                                %td
+                                    Specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
+                                    %br
                                     %i -90&deg; is straight up 90&deg; is straight down.
+                                %td 
+                                    %span.label.label-primary -90 to 90
                             %tr
                                 %td
-                                    %code angle="X,Y,Z"
-                                %td specifies the exact block coordinates that the player should look at.
+                                    %code angle=""
+                                %td Specify the exact block coordinates that the player should look at.
+                                %td 
+                                    %span.label.label-primary X,Y,Z
 
                 :markdown
 
-                    `NOTE:` The pitch and yaw arguments can also accept a X,Y,Z coordinate.  
+                    `NOTE:` The pitch and yaw arguments can also accept a `X,Y,Z` coordinate.  
                     `TIP:` Copy the yaw from the F3 screen in minecraft (labled as `f`).  
 
