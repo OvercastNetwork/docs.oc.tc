@@ -103,8 +103,7 @@ td pre {
     margin-bottom: 0;
     display: inline-block;
     border: none;
-    background: inherit;
-    padding: 0;
+    padding: 1px 4px;
 }
 
 .right-ref-link {
@@ -164,6 +163,13 @@ td pre {
     border-top: 1px solid #E1AEAD !important;
 }
 
+.table>thead>tr:last-child>td.danger, .table>tbody>tr:last-child>td.danger, .table>tfoot>tr:last-child>td.danger,
+.table>thead>tr:last-child>th.danger, .table>tbody>tr:last-child>th.danger, .table>tfoot>tr:last-child>th.danger,
+.table>thead>tr:last-child.danger>td, .table>tbody>tr:last-child.danger>td, .table>tfoot>tr:last-child.danger>td,
+.table>thead>tr:last-child.danger>th, .table>tbody>tr:last-child.danger>th, .table>tfoot>tr:last-child.danger>th {
+    border-bottom: none !important;
+}
+
 .table>thead>tr:first-child>td.danger, .table>tbody>tr:first-child>td.danger, .table>tfoot>tr:first-child>td.danger,
 .table>thead>tr:first-child>th.danger, .table>tbody>tr:first-child>th.danger, .table>tfoot>tr:first-child>th.danger,
 .table>thead>tr:first-child.danger>td, .table>tbody>tr:first-child.danger>td, .table>tfoot>tr:first-child.danger>td,
@@ -178,6 +184,11 @@ td pre {
 
 .table>thead>tr>th {
     border-bottom: none;
+}
+
+.table-striped>tbody>tr.danger:nth-child(odd)>td, .table-striped>tbody>tr.danger:nth-child(odd)>th,
+.table-striped>tbody>tr:nth-child(odd)>td.danger, .table-striped>tbody>tr:nth-child(odd)>th.danger {
+    background-color:#f0d5d5 !important;
 }
 
 
