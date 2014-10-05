@@ -1,0 +1,166 @@
+.container
+    .jumbotron.subhead
+        %h1 Modules
+        %p.lead Block Behavior
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1 Falling Blocks
+                :markdown
+                    The falling blocks module is used to specify what blocks are affected by gravity. Additional it also supports sticky blocks, if a falling block is stuck to a sticky block it will not fall.
+
+                    Falling blocks will not fall if they touch a sticky block. If you make a falling block stick to itself, then it will stick only if the neighbor block is also stuck to something. Entire structures can then be built from those blocks, and they will not collapse as long as some part of the structure is stuck to a non-falling block.
+
+                    ##### Rule Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %code filter=""
+                                %td
+                                    Filter what blocks get modified by this rule.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a 
+                                        %code= html_escape('<filter>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filter
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %code sticky=""
+                                %td
+                                    The blocks that are sticky.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a 
+                                        %code= html_escape('<sticky>')
+                                        sub-element.
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filter
+                            %tr
+                                %td
+                                    %code delay="2"
+                                %td
+                                    Tick delay till blocks start to fall after they have been disturbed.
+                                    %br
+                                    %i 
+                                        Can be either this attribute or a 
+                                        %code= html_escape('<delay>')
+                                        sub-element.
+                                %td
+                                    %span.label.label-primary Number
+                
+                %h5 Rule Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    Filter what blocks get modified by this rule.
+                                    %br
+                                    Also accepts a named region reference to limit the rule to a certain area.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code filter
+                                        attribute of the rule.
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filters
+                                    &
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr.danger.text-danger{:title => "Required, either the attribute or sub-element is required"}
+                                %td
+                                    %pre
+                                        %code= html_escape('<sticky>')
+                                %td
+                                    The blocks that are sticky.
+                                    %br
+                                    %i
+                                        Can also be specified in the
+                                        %code sticky
+                                        attribute of the rule.
+                                %td
+                                    %a{:href => "/modules/filters"} Block Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<delay> 2')
+                                %td
+                                    Tick delay till blocks start to fall after they have been disturbed.
+                                    %br
+                                    %i
+                                        Can also be specified in the rules
+                                        %code delay
+                                        attribute.
+                                %td
+                                    %span.label.label-primary Number
+
+                :markdown
+                    Example
+
+                        <falling-blocks>
+                            <!-- make glass fall if it is not attached to wood or glass -->
+                            <rule>
+                                <filter>
+                                    <block>glass</block>
+                                </filter>
+                                <sticky>
+                                    <any>
+                                        <block>wood</block>
+                                        <block>glass</block>
+                                    </any>
+                                </sticky>
+                            </rule>
+                        </falling-blocks>
+
+                %p
+                    %a.btn.btn-primary.btn-sm{:'data-target' => "#collapse-falling-example", :'data-toggle' => "collapse", :style => "cursor: pointer;"} More Examples
+                %div.collapse{:id => "collapse-falling-example"}
+                    :markdown
+                            <falling-blocks>
+                                <!-- make sandstone fall, just like sand or gravel -->
+                                <rule>
+                                    <filter>
+                                        <block>sandstone</block>
+                                    </filter>
+                                </rule>
+                            </falling-blocks>
+
+                            </falling-blocks>
+                                <!-- blocks that match the "building-blocks" filter, and are inside
+                                     the "box" region, collapse if they are not connected to something
+                                     made of quartz, either directly or through other building-blocks -->
+                                <rule>
+                                    <filter>
+                                        <all>
+                                            <region name="box"/>
+                                            <filter name="building-blocks"/>
+                                        </all>
+                                    </filter>
+                                    <sticky>
+                                        <any>
+                                            <filter name="building-blocks"/>
+                                            <block>quartz</block>
+                                            <block>quartz stairs</block>
+                                        </any>
+                                    </sticky>
+                                </rule>
+                            </falling-blocks>
+
