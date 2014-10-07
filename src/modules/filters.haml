@@ -106,7 +106,10 @@
                                 %td
                                     %pre
                                         %code= html_escape('<block>block name</block>')
-                                %td Matches blocks by their bukkit name.
+                                %td
+                                    Matches blocks by their
+                                    %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
+                                    name.
                             %tr
                                 %td
                                     %pre
@@ -224,7 +227,7 @@
                     <br/>
                     #### [Random Filter](id:randomFilter)
 
-                    This filter will randomly return either `ALLOW` or `DENY`, the chance for `ALLOW` being determined by its value. It accepts a decimal number between zero and one or a standard mathematical interval such as `[0, 1)`. Intervals are used to create mutual exclusive filters that return different results even if they are called at the same time.
+                    This filter will randomly return either `ALLOW` or `DENY`, the chance for `ALLOW` being determined by its value. It accepts a decimal number between zero and one or a standard mathematical interval such as `[0, 1)`. Intervals are used to create mutual exclusive filters that return different results even if they are called at the same time. This can be used for a one of multiple options behavior, e.g. apply one of multiple kits when a player enters a region or spawns.
 
                     Examples
 
@@ -235,7 +238,32 @@
                         <!-- Any number from 0.25 to 0.75 including 0.25 but excluding 0.75 -->
                         <random>[0.25, 0.75)</random>
 
+                %p
+                    %a.btn.btn-primary.btn-xs{:'data-target' => "#collapse-random-example", :'data-toggle' => "collapse"} More
+                %div.collapse{:id => "collapse-random-example"}
+                    :markdown
+                            <filters>
+                                <!-- Mutual exclusive random filters -->
+                                <filter name="erandom-1">
+                                    <random>[0,0.5)</random>
+                                </filter>
+                                <filter name="erandom-2">
+                                    <random>[0.5,1)</random>
+                                </filter>
+                            </filters>
 
+                            <regions>
+                                <!-- Apply mutual exclusive randomly filtered kits -->
+                                <!-- Players will get either kit-1 or kit-2 applied -->
+                                <apply kit="kit-1" filter="erandom-1">
+                                    <region name="kit-region"/>
+                                </apply>
+                                <apply kit="kit-2" filter="erandom-2">
+                                    <region name="kit-region"/>
+                                </apply>
+                            </regions>
+
+                :markdown
                     <br/>
                     #### [Objective Filter](id:objectiveFilter)
 
