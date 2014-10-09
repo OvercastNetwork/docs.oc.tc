@@ -18,6 +18,19 @@ h6,
     font-weight: bold;
 }
 
+/* Main page content headers */
+.page-header {
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
+    .page-header h1 {
+        margin-top: 0 !important;
+    }
+}
+
+/* Main navigation */
+/* - Position the OC.TC logo in relation to the navbar-brand text */
 .navbar-brand img {
     margin-top: -6px;
     margin-right: 8px;
@@ -25,11 +38,7 @@ h6,
     float: left;
 }
 
-.navbar a i.glyphicon {
-    font-size: 12px;
-    margin-bottom: 1px;
-}
-
+/* - Tweak navbar item hover and focus colors */
 .navbar .navbar-nav > li:not(.active) > a:hover,
 .navbar .navbar-nav > li:not(.active) > a:focus {
     color: #555555;
@@ -41,17 +50,18 @@ h6,
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
+/* Jumbotron */
+/* - Reduce overall size of jumbotron subheads
+   - Add a pattern background overlay to all sizes */
 .jumbotron {
     position: relative;
     color: #fff;
     background: #450f43;
     -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-     -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-    box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+       -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+            box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
 }
 
-/* Jumbotron pattern overlay
-------------------------- */
 .jumbotron .container {
     position: relative;
     z-index: 2;
@@ -95,6 +105,7 @@ h6,
 }
 
 
+/* Misc */
 code {
    padding: 1px 4px;
 }
@@ -115,20 +126,22 @@ td pre {
     margin-bottom: 20px;
 }
 
-.page-header {
-    margin-top: 0;
+.alert.alert-small {
+    padding: 5px 7px 4px 7px;
 }
 
+/* Sidebar navigation */
 .subnav-btn {
     float: none !important;
 }
 
 .docs-nav-pills > li > a {
-  position: relative;
-  display: block;
-  padding: 8px 14px;
+    position: relative;
+    display: block;
+    padding: 8px 14px;
 }
 
+/* - Navigation menu selection and active row colors */
 .dropdown-menu > .active > a{
     color: #333333;
     background-color: #e6e6e6;
@@ -151,10 +164,11 @@ td pre {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ffbcbcbc', GradientType=0);
 }
 
-.alert.alert-small {
-    padding: 5px 7px 4px 7px;
-}
 
+/* Danger table rows */
+/* - Change the rows border color to red instead of the default gray
+   - Remove the table head border and assign it to the top body row to allow customization of the color
+   - Add a slightly darker odd row color for striped tables */
 .table>thead>tr>td.danger, .table>tbody>tr>td.danger, .table>tfoot>tr>td.danger,
 .table>thead>tr>th.danger, .table>tbody>tr>th.danger, .table>tfoot>tr>th.danger,
 .table>thead>tr.danger>td, .table>tbody>tr.danger>td, .table>tfoot>tr.danger>td,
@@ -191,16 +205,13 @@ td pre {
     background-color:#f0d5d5 !important;
 }
 
-
+/* Custom dynamic button style */
+/* - Currently used for collapsible example buttons
+   - Title changes from "More Examples" to "Less Examples" and vs versa */
 a.btn-more.collapsed:before {
-content: "More ";}
+    content: "More ";
+}
 
 a.btn-more:before {
-content: "Less ";}
-
-
-@media (min-width: 768px) {
-    .page-header h1 {
-        margin-top: 0 !important;
-    }
+    content: "Less ";
 }
