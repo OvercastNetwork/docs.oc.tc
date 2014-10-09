@@ -192,6 +192,13 @@ td pre {
 }
 
 
+a.btn-more.collapsed:before {
+content: "More ";}
+
+a.btn-more:before {
+content: "Less ";}
+
+
 @media (min-width: 768px) {
     .page-header h1 {
         margin-top: 0 !important;
