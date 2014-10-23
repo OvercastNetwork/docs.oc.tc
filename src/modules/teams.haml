@@ -30,6 +30,18 @@
                         %tbody
                             %tr
                                 %td
+                                    %code name=""
+                                %td The teams name.
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code max-copies=""
+                                %td Max allowed copies for the team.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
                                     %code id=""
                                 %td Unique identifier used to reference teams from other places in the XML.
                                 %td
@@ -64,6 +76,10 @@
                         <teams>
                            <team id="red-team" color="dark red" max="50" max-overfill="70">Red Team</team>
                            <team id="blue-team" color="blue" max="50" max-overfill="70">Blue Team</team>
+                        </teams>
+
+                        <teams>
+                          <team color="red" id="dwellers" max-copies="50" max="1" name="Dwellers"/>
                         </teams>
 
                     The total maximum number of players in the example given above is 100, however, the max overfill will allow up to 140 players. Servers currently have a player limit of 150, so 100 players in total would allow 50 observers, or 10 observers if teams are at max overfill.
