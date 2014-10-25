@@ -9,25 +9,59 @@
                 .page-header
                     %h1 Spawns
                 :markdown
-                    The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element. Only one default spawn element should be defined per map XML.
+                    The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element should be defined per map.
 
-                    The main `<spawns>` element accepts a `bedspawn="on"` attribute to allow players to spawn at a saved bed spawn location. If a player has a bed spawn location set it overrides all other spawn regions for that player.
+                    To allow players to spawn at a bed set the main spawns bedspawn attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
                     
-                    `NOTE:` If a player uses a bedspawn, they will not spawn with their kit if one is specified.
+                    Multiple spawns from the same team can be grouped inside of a single `<spawns team="team name">` element. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
 
-                        <spawns>
-                            <spawn team="red" kit="red" yaw="90">
-                                <cuboid min="-2,13,71" max="-9,13,78"/>
-                            </spawn>
-                            <spawn team="blue" kit="blue" yaw="-90">
-                                <cuboid min="2,13,-71" max="9,13,-78"/>
-                            </spawn>
-                            <default yaw="0">
-                                <cuboid min="-1,16,-1" max="2,20,2"/>
-                            </default>
-                        </spawns>
+                    Spawn elements accept more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
 
-                    ##### Spawn Attributes
+
+                    ##### Spawns Element Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code bedspawn="false"
+                                %td Allow players to change their spawn point to a bed.
+                                %td
+                                    %span.label.label-primary true/false
+
+                %h5 Spawns Element Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<spawn>')
+                                %td The region or regions players with a team will spawn in.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<default>')
+                                %td
+                                    The region observers and teams without a spawn will spawn in.
+                                    %br
+                                    %i Only one default spawn element is allowed per map.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+
+                %h5 Spawn & Default Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -51,7 +85,10 @@
                             %tr
                                 %td
                                     %code sequential="false"
-                                %td Spawns players at the next region in a list if the one prior to it isn't safe.
+                                %td
+                                    Spawns players at the next region in a list if the one prior to it isn't safe.
+                                    %br
+                                    %i Requires the <code>safe</code> attribute set to true.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
@@ -66,65 +103,82 @@
                                 %td Filter when this spawn is used.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
+                                    %code angle=""
+                                %td
+                                    The exact block coordinates that the player looks at when spawned.
+                                    %br
+                                    %i This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.
+                                %td 
+                                    %span.label.label-primary X,Y,Z
+                            %tr
+                                %td
+                                    %code yaw=""
+                                %td
+                                    The horizontal angle the player looks to when spawned.
+                                    %br
+                                    %i South 0, East -90, North 180 and West 90.
+                                %td 
+                                    %span.label.label-primary -180 to 180
+                            %tr
+                                %td
+                                    %code pitch=""
+                                %td
+                                    The vertical angle the player looks to when spawned.
+                                    %br
+                                    %i -90 is straight up 90 is straight down.
+                                %td 
+                                    %span.label.label-primary -90 to 90
 
                 :markdown
-
-                    The default element specifies where observers and players without a team spawn. There should only be a single default spawn.
-                    `yaw=""` specifies what direction the player is looking horizontally from -180&deg; to 180&deg;. South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.
-
                     `TIP:` You can copy the yaw from the F3 screen in minecraft.
-
-                    Multiple spawns from the same team can be grouped inside of a single `<spawns team="team name">` element. Spawn positions are picked randomly inside of the defined regions. The plugin will not validate the spawn position by default. Regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
-
-                    Spawn elements accept more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
                     
-                    `NOTE:` Sequential spawns must be used in conjunction with safe spawns.
+                    Example
 
-                        <spawns team="blue">
-                            <!-- Blue Team Spawn A -->
-                            <spawn yaw="270">
-                                <cuboid min="-58,4,-56" max="-56,4,-54"/>
-                            </spawn>
-                            <spawn yaw="0">
-                                <cuboid min="-62,4,-50" max="-64,4,-48"/>
-                            </spawn>
-                            <!-- Blue Team Spawn B -->
-                            <spawn yaw="90">
-                                <cuboid min="59,4,-54" max="57,4,-56"/>
-                            </spawn>
-                            <spawn yaw="0">
-                                <cuboid min="65,4,-48" max="63,4,-50"/>
-                            </spawn>
-                        </spawns>
-
-                        <!-- Example spawns from Harb -->
                         <spawns>
-                            <spawns safe="true">
-                                <spawn team="blue" kit="blue" yaw="0">
-                                    <cuboid min="-15,32,-57" max="16,42,-32"/>
-                                    <point>0.5,33,-47.5</point>
-                                </spawn>
-                                <spawn team="red" kit="red" yaw="180">
-                                    <cuboid min="-15,32,33" max="16,42,58"/>
-                                    <point>0.5,33,48.5</point>
-                                </spawn>
-                            </spawns>
-                            <default yaw="90">
-                                <cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/>
+                            <spawn team="red" kit="red" yaw="90">
+                                <cuboid min="-2,13,71" max="-9,13,78"/>
+                            </spawn>
+                            <spawn team="blue" kit="blue" yaw="-90">
+                                <cuboid min="2,13,-71" max="9,13,-78"/>
+                            </spawn>
+                            <default yaw="0">
+                                <cuboid min="-1,16,-1" max="2,20,2"/>
                             </default>
                         </spawns>
-                        
-                        <!-- Spawn regions taken from Sand Wars -->
-                        
-                        <spawns safe="true" sequential="true">
-                            <spawn team="blue" kit="blue" yaw="180">
-                                <cuboid min="-10,71,5" max="12,126,27"/> <!-- Players will spawn here first -->
-                                <cuboid min="-10,6,5" max="12,6,27"/> <!-- Secondary spawn if the first isn't avalible -->
-                                <point>1,8,0</point> <!-- Tertiary spawn if all other team spawns aren't safe -->
-                            </spawn>
-                            <spawn team="red" kit="red" yaw="0">
-                                <cuboid min="-10,71,-27" max="12,126,-5"/>
-                                <cuboid min="-10,6,-27" max="12,6,-5"/>
-                                <point>1,8,0</point>
-                            </spawn>
-                        </spawns>
+
+                %p
+                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-spawn-examples", :'data-toggle' => "collapse"} Examples
+                %div.collapse{:id => "collapse-spawn-examples"}
+                    :markdown
+                            <!-- Example spawns from Harb -->
+                            <spawns>
+                                <spawns safe="true">
+                                    <spawn team="blue" kit="blue" yaw="0">
+                                        <cuboid min="-15,32,-57" max="16,42,-32"/>
+                                        <point>0.5,33,-47.5</point>
+                                    </spawn>
+                                    <spawn team="red" kit="red" yaw="180">
+                                        <cuboid min="-15,32,33" max="16,42,58"/>
+                                        <point>0.5,33,48.5</point>
+                                    </spawn>
+                                </spawns>
+                                <default yaw="90">
+                                    <cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/>
+                                </default>
+                            </spawns>
+                            
+                            <!-- Spawn regions taken from Sand Wars -->
+                            <spawns safe="true" sequential="true">
+                                <spawn team="blue" kit="blue" yaw="180">
+                                    <cuboid min="-10,71,5" max="12,126,27"/> <!-- Players will spawn here first -->
+                                    <cuboid min="-10,6,5" max="12,6,27"/> <!-- Secondary spawn if the first isn't avalible -->
+                                    <point>1,8,0</point> <!-- Tertiary spawn if all other team spawns aren't safe -->
+                                </spawn>
+                                <spawn team="red" kit="red" yaw="0">
+                                    <cuboid min="-10,71,-27" max="12,126,-5"/>
+                                    <cuboid min="-10,6,-27" max="12,6,-5"/>
+                                    <point>1,8,0</point>
+                                </spawn>
+                            </spawns>
