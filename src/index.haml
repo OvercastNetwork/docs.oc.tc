@@ -5,4 +5,51 @@
     %section
         .page-header
             %h1 Welcome
-        %p These docs provide valuable information to be used when coding XML files. XML files are needed in order for any map released on the Overcast Network to function. The XML defines aspects of the game such as spawn points, kits and more.
+        .row
+            .col-sm-6
+                :markdown
+                    ### What Do XML Files Do?
+                    XML files configure how the PGM plug-in manages the map during game-play. Any map released on the Overcast Network requires a XML file to function properly. The XML defines aspects of the game such as spawn points, teams, kits and more. Each file is unique to its map, however the individual components are generic and are used on many different maps. 
+
+
+                    ### Writing XML Files
+                    Almost every generic text editor can create and edit XML files, however editors designed for XML can automatically indent and syntax hi-light your code to help spot mistakes.
+
+                    We recommend that you use [Sublime Text](http://www.sublimetext.com) to create and edit XML files.
+
+                    To keep your XML file clean & readable you should properly indent them using 4 spaces and only specify elements or attributes you intend to use.
+
+            .col-sm-6
+                :markdown
+                    ### Using These Docs
+                    This documentation is intended to list all currently available XML modules, their attributes & sub-elements; and describe how the modules work and interact with the player. It is intended to be used as a reference when coding the XML files accompanying a map to ensure that the XML is valid and works like it is supposed to.
+
+                    All attributes or sub-elements for a element or module are listed in a table and required attributes or sub-elements are marked in red. In the following example the `color` attribute is required but `id` is not. The attribute or elements default value is also listed if there is one.
+
+                    ##### Table Example
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code id=""
+                                %td Unique identifier used to reference this element.
+                                %td
+                                    %span.label.label-primary String
+                            %tr.danger{:title => "Required"}
+                                %td
+                                    %code color=""
+                                %td This examples color.
+                                %td
+                                    %a{:href => "/reference/colors"} Dye Color Name
+                            %tr
+                                %td
+                                    %code cow="false"
+                                %td This example has a pet cow.
+                                %td
+                                    %span.label.label-primary true/false
