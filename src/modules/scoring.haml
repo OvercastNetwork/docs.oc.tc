@@ -18,60 +18,57 @@
                             %tr
                                 %th Element
                                 %th Description
-                                %th Value
+                                %th Type
+                                %th Default
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<time></time>')
-                                %td Time the match lasts.
-                                %td
-                                    %a{:href => "/reference/time_periods"} Time Period
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<limit></limit>')
+                                        %code= html_escape('<limit>')
                                 %td
                                     Max score that can be reached before the match ends.
-                                    %br
-                                    %i Defaults to no limit.
                                 %td
                                     %span.label.label-primary String
+                                %td
+                                    No limit
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<deaths>1</deaths>')
-                                %td How many points a death subtracts from the score.
+                                        %code= html_escape('<kills>')
+                                %td
+                                    Points to <strong>give</strong> to a team for killing an enemy player
                                 %td
                                     %span.label.label-primary Number
+                                %td
+                                    0
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<kills>1</kills>')
-                                %td Amount of points added to the score for every kill.
+                                        %code= html_escape('<deaths>')
+                                %td
+                                    Points to <strong>deduct</strong> from a team for the <strong>accidental</strong> death of a team member
                                 %td
                                     %span.label.label-primary Number
-                            %tr
                                 %td
-                                    %pre
-                                        %code= html_escape('<king/>')
-                                %td Enable "King of the Hill" mode, sets deaths and kills to <code>0</code>.
-                                %td
+                                    0
                 :markdown
-                    Example
+                    ##### Example
 
                         <score>
-                            <!-- End the match when the score reaches 32 or eight minutes are up -->
-                            <time>8m</time>
-                            <limit>32</limit>
+                            <!-- First team to 100 points wins the match -->
+                            <limit>100</limit>
+
+                            <!-- +3 points for a kill -->
+                            <kills>3</kills>
+
+                            <!-- -2 points for dying -->
+                            <deaths>2</deaths>
                         </score>
 
 
                     <br/>
                     ### Score Boxes
                     A score box will give points to a players team when they enter the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
-
-                    Specify `cooldown="X"` to limit player scoring, the player can only score again after a certain amount of time has passed. Cooldown defaults to one second.
 
                     ##### Score Box Attributes
                 .table-responsive
@@ -80,11 +77,12 @@
                             %tr
                                 %th Attribute
                                 %th Description
-                                %th Value
+                                %th Type
+                                %th Default
                         %tbody
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code region=""
+                                    %code region
                                 %td
                                     The location and size of the score box.
                                     %br
@@ -94,30 +92,52 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region Name
+                                %td
                             %tr
                                 %td
-                                    %code filter=""
-                                %td Filter who can use this score box.
+                                    %code points
+                                %td Points awarded for entering the box.
                                 %td
-                                    %a{:href => "/modules/filters"} Filter
+                                    %span.label.label-primary Number
+                                %td 0
                             %tr
                                 %td
-                                    %code cooldown="1s"
-                                %td Limit the time before the score box can be used again after being scored. 
+                                    %code filter
+                                %td Filter who can score in this box.
                                 %td
-                                    %a{:href => "/reference/time_periods"} Time Period
+                                    %a{:href => "/modules/filters"} Filter Name
+                                %td No filter
 
                     :markdown
-                        Example
+                        ##### Example
 
                             <score>
                                 <!-- Only allow red team to use this score box, and give them two points -->
-                                <box value="2" filter="only-red" cooldown="1">
+                                <box points="2" filter="only-red">
                                     <region><cylinder base="21,8,63" radius="1" height="2"/></region>
                                 </box>
                             </score>
 
                             <score>
-                                <box value="8" filter="cyan" cooldown="4" region="cyan-scorebox"/>
+                                <box value="8" filter="cyan" region="cyan-scorebox"/>
                             </score>
 
+                        <br/>
+                        #### Redeemables
+                        A score box can also award points in exchange for particular items carried by the player when they
+                        enter the box. The `<box>` element can have a `<redeemables>` sub-element containing any number of
+                        `<item>` elements. Each `<item>` contains a
+                        [material name](http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html)
+                        and an optional `points="..."` attribute specifying the number of points awarded for each item.
+
+                        ##### Example
+
+                            <score>
+                                <box filter="only-red" region="red-depot">
+                                    <redeemables>
+                                        <item points="5">diamond</item>
+                                        <item points="3">emerald</item>
+                                        <item points="1">gold nugget</item>
+                                    </redeemables>
+                                </box>
+                            </score>
