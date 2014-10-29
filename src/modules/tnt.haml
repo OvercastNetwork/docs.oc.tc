@@ -22,14 +22,16 @@
                                 %th Element & Default Value
                                 %th Description
                                 %th Value
+                                %th Defaults
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<instantignite> false')
+                                        %code= html_escape('<instantignite>')
                                 %td Instantly ignite TNT when placed.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
                                     %pre
@@ -37,6 +39,7 @@
                                 %td Specify if TNT destroys the terrain.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
                                     %pre
@@ -54,6 +57,7 @@
                                     Modify the explosions block radius.<br/>
                                 %td
                                     %span.label.label-primary 0 - 20.0
+
                             %tr
                                 %td
                                     %pre
@@ -71,6 +75,7 @@
                                     Max amount of TNT a dispenser ignites when exploded.
                                 %td
                                     %span.label.label-primary 0 - 64
+                                %td 16
                             %tr
                                 %td
                                     %pre
