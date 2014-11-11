@@ -24,28 +24,34 @@
                         %tbody
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td The kits name, used to reference it in spawns, etc.
                                 %td
                                     %span.label.label-primary String
                             %tr
                                 %td
-                                    %code parents=""
+                                    %code parents
                                 %td Comma separated list of all the kits parents.
                                 %td
                                     %span.label.label-primary String
                             %tr
                                 %td
-                                    %code force=""
+                                    %code force
                                 %td Force apply the kit.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
                                 %td
-                                    %code potion-particles=""
+                                    %code potion-particles
                                 %td Remove all potion particles.
                                 %td
                                     %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code reset-ender-pearls
+                                %td Reset any ender pearls the player might have thrown before the kit was applied.
+                                %td
+                                    %span.label.label-primary true
 
                 :markdown
                     The force attribute will act differently for the individual sub-elements. If force is true, conflicting items or armor will be replaced instead of smartly merged & repaired, health & hunger will be set instead of only increased, and potion effects will be replaced instead of only non-existent effects added.
@@ -66,9 +72,41 @@
 
                     In the example above players from blue team will get a blue helmet, players from red team will get a red helmet; both teams will get the items from the spawn kit. The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
 
+
+                    A player's inventory can be cleared before the kit is applied by using one of the inventory clear elements in the kit.
+
+                    ##### Inventory Clear Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<clear/>')
+                                %td
+                                    Clear the all of the player's inventory including armor slots.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<clear-items/>')
+                                %td
+                                    Clear only the player's item slots.
+
+                :markdown
+
+                        <kit name="ender" reset-ender-pearls="true">
+                            <item slot="0" amount="1">ender pearl</item>
+                            <clear/>
+                        </kit>
+
+
                     <br/>
                     ### Health & Hunger Kits
-                    A players health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
+                    A player's health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
 
                     By default health or hunger values are only increased, not decreased. For example, a player with 5 hearts (10 points) will not get a 5 health point kit applied, however a 20 point kit will be applied. This can be overwritten with a kits `force="true"` attribute.
 
@@ -94,7 +132,7 @@
                                     %pre
                                         %code= html_escape('<saturation></saturation>')
                                 %td
-                                    Food saturation, always equal to or less than the players food level.
+                                    Food saturation, always equal to or less than the player's food level.
                                 %td
                                     %span.label.label-primary Float
                             %tr
@@ -119,7 +157,7 @@
 
                     <br/>
                     ### Walk Speed Kit
-                    Increase or decrease a players walking speed. The specified value is a multiplier of the default walking speed of `0.2`.
+                    Increase or decrease a player's walking speed. The specified value is a multiplier of the default walking speed of `0.2`.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -134,7 +172,7 @@
                                     %pre
                                         %code= html_escape('<walk-speed></walk-speed>')
                                 %td
-                                    Increase or decrease a players walking speed.
+                                    Increase or decrease a player's walking speed.
                                 %td
                                     %span.label.label-primary 0 - 5.0
 
@@ -170,14 +208,16 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code enabled="true"
+                                    %code enabled
                                 %td
                                     Enable or disable double-jump.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                 :markdown
                         <kit name="jump">
                             <double-jump/>
