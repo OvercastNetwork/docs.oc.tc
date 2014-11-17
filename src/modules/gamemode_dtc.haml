@@ -19,22 +19,25 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code id=""
+                                    %code id
                                 %td Unique identifier used to reference cores from other places in the XML.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td The core's name, used in notification messages.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code region=""
+                                    %code region
                                 %td
                                     A region containing the core.
                                     %br
@@ -44,36 +47,41 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
                             %tr
                                 %td
-                                    %code leak="5"
-                                %td Distance below the bottom of the core region that the lava must leak.
+                                    %code leak
+                                %td Distance below the bottom of the core <strong>region</strong> that the lava must leak.
                                 %td
                                     %span.label.label-primary Number
+                                %td 5
                             %tr
                                 %td
-                                    %code material="obsidian"
+                                    %code material
                                 %td The core casing material, used to detect breaks, and for mode changes.
                                 %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
+                                %td obsidian
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code team=""
+                                    %code team
                                 %td Team the core belongs to, i.e. its owner.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                                %td
                             %tr
                                 %td
-                                    %code mode-changes=""
+                                    %code mode-changes
                                 %td
                                     Specify if this core uses
                                     = succeed "." do
                                         %a{:href => "/modules/monument_modes"} monument modes
                                 %td
                                     %span.label.label-primary true/false
+                                %td
                             %tr
                                 %td
-                                    %code show="true"
+                                    %code show
                                 %td
                                     Specify if the core should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
                                     %br
@@ -81,15 +89,18 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
-                                    %code proximity-metric="closest player"
+                                    %code proximity-metric
                                 %td
                                     Metric used to determine proximity to the core.
                                     %br
                                     Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
                                 %td
                                     %span.label.label-primary Proximity Metric
+                                %td
+                                    %code closest player
                             %tr
                                 %td
                                     %code proximity-horizontal="false"
@@ -97,6 +108,7 @@
                                     Only calculate horizontal distance for core proximity.
                                 %td
                                     %span.label.label-primary true/false
+                                %td
 
                 %h5 Core Sub-elements
                 .table-responsive
@@ -110,7 +122,7 @@
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
                                     %pre
-                                        %code region=""
+                                        %code= html_escape('<region>')
                                 %td 
                                     A region containing the core.
                                     %br

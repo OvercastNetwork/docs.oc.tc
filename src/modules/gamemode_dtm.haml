@@ -21,22 +21,25 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code id=""
+                                    %code id
                                 %td Unique identifier used to reference monuments from other places in the XML.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td The destroyables name.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code  region=""
+                                    %code region
                                 %td
                                     Region containing the destroyable.
                                     %br
@@ -46,59 +49,67 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
                             %tr
                                 %td
-                                    %code materials=""
+                                    %code materials
                                 %td
                                     The destroyables materials, multiple materials are separated with a semicolon
                                     %code ;
                                 %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
+                                %td
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code owner=""
+                                    %code owner
                                 %td The destroyables owner.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                                %td
                             %tr
                                 %td
-                                    %code completion="100%"
+                                    %code completion
                                 %td Percentage of the destroyable that needs to be destroyed for a win.
                                 %td
                                     %span.label.label-primary 0 - 100
+                                %td 100%
                             %tr
                                 %td
-                                    %code mode-changes="false"
+                                    %code mode-changes
                                 %td
                                     Specify if this destroyable uses custom
                                     = succeed "." do
                                         %a{:href => "/modules/monument_modes"} monument modes
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code show-progress="false"
+                                    %code show-progress
                                 %td
                                     Show this destroyables progress in the scoreboard.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code repairable="true"
+                                    %code repairable
                                 %td
                                     Specify if the destroyable can be repaired.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
-                                    %code sparks="false"
+                                    %code sparks
                                 %td
                                     Spawn fireworks particles for destroyed blocks & play the fireworks sound to all players.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code show="true"
+                                    %code show
                                 %td
                                     Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
                                     %br
@@ -106,22 +117,26 @@
                                     The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
-                                    %code proximity-metric="closest player"
+                                    %code proximity-metric
                                 %td
                                     Metric used to determine proximity to the destroyable.
                                     %br
                                     Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
                                 %td
                                     %span.label.label-primary Proximity Metric
+                                %td
+                                    %code closest player
                             %tr
                                 %td
-                                    %code proximity-horizontal="false"
+                                    %code proximity-horizontal
                                 %td
                                     Only calculate horizontal distance for destroyable proximity.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
 
                 %h5 Destroyable Sub-elements
                 .table-responsive
@@ -135,7 +150,7 @@
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
                                     %pre
-                                        %code region=""
+                                        %code= html_escape('<region>')
                                 %td 
                                     Region containing the destroyable.
                                     %br

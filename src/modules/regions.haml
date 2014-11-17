@@ -92,58 +92,81 @@
                         <apply><region name="region1"/>..</apply>
                         
                     
-                    Attributes of the `<apply>` element
+                    ##### Apply Element Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Attribute
                                 %th Description
+                                %th Value
                         %tbody
                             %tr
                                 %td
-                                    %code enter="filter name"
-                                %td Filter player enter events
+                                    %code enter
+                                %td Filter player enter events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code leave="filter name"
-                                %td Filter player leave events
+                                    %code leave
+                                %td Filter player leave events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code block="filter name"
-                                %td Filter block place and break events
+                                    %code block
+                                %td Filter block place and break events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code block-place="filter name"
-                                %td Filter block place events
+                                    %code block-place
+                                %td Filter block place events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code block-place-against="filter name"
-                                %td Filter block place against events
+                                    %code block-place-against
+                                %td Filter block place against events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code block-break="filter name"
-                                %td Filter block break events
+                                    %code block-break
+                                %td Filter block break events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code use="filter name"
-                                %td Filter right-click events
+                                    %code use
+                                %td Filter right-click events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code kit="filter name"
-                                %td Give a kit to players entering the region
+                                    %code kit
+                                %td Give a kit to players entering the region.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
                             %tr
                                 %td
-                                    %code message="region message"
-                                %td Send a message to the player if the filter modifies the event
+                                    %code message
+                                %td Send a message to the player if the filter modifies the event.
+                                %td
+                                    %span.label.label-primary String
                             %tr
                                 %td
-                                    %code velocity="velocity to add or set"
-                                %td Modify or set a players velocity when they enter the region
+                                    %code velocity
+                                %td Modify or set a players velocity when they enter the region.
+                                %td
+                                    %span.label.label-primary X,Y,Z
                             %tr
                                 %td
-                                    %code filter="filter name"
-                                %td Only applies kits and velocities depending on the filter output
+                                    %code filter
+                                %td Only applies kits and velocities depending on the filter output.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter Name
 
 
                 :markdown
@@ -327,7 +350,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %code region=""
+                                    %code region
                                 %td 
                                     The region the point provider modifies.
                                     %br
@@ -339,7 +362,7 @@
                                     %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
-                                    %code yaw=""
+                                    %code yaw
                                 %td
                                     Specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
                                     %br
@@ -348,7 +371,7 @@
                                     %span.label.label-primary -180 to 180
                             %tr
                                 %td
-                                    %code pitch=""
+                                    %code pitch
                                 %td
                                     Specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
                                     %br
@@ -357,7 +380,7 @@
                                     %span.label.label-primary -90 to 90
                             %tr
                                 %td
-                                    %code angle=""
+                                    %code angle
                                 %td
                                     Specify the exact block coordinates that the player should look at.
                                     %br

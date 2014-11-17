@@ -30,57 +30,81 @@
                             %tr
                                 %th Attribute
                                 %th Description
+                                %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td
                                     Name of the class.
+                                %td
+                                    %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code description=""
+                                    %code description
                                 %td
-                                    Description shown in
+                                    Description shown in the
                                     %code /classes
+                                    command.
+                                %td
+                                    %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code longdescription=""
+                                    %code longdescription
                                 %td
                                     Description shown in class picker menu.
+                                %td
+                                    %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code icon=""
+                                    %code icon
                                 %td
-                                    Icon (material) shown in the class picker menu.
+                                    Icon shown in the class picker menu.
+                                %td
+                                    %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
+                                %td
                             %tr
                                 %td
-                                    %code family="ghost"
+                                    %code family
                                 %td
                                     "group" of classes (ghost squadron is "ghost").
+                                %td
+                                    %a{:href => "/modules/classes"}  Class Family Name
+                                %td
                             %tr
                                 %td
-                                    %code sticky="false"
+                                    %code sticky
                                 %td
                                     If set to
                                     %code true
                                     players can't change the class mid game, instead they have to rejoin.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code default="false"
+                                    %code default
                                 %td
                                     Specify if the class is the default class for new players.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code restrict="true"
+                                    %code restrict
                                 %td
                                     If set to
                                     %code false
                                     only players with the proper permission can use the class.
-                            %tr
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
 
                 :markdown
-                    The `sticky=""` attribute defaults to `false`, which would allow players to change their class midgame.
-                    See [bukkit docs - Material](http://jd.bukkit.org/rb/doxygen/d6/d0e/enumorg_1_1bukkit_1_1Material.html#pub-attribs) for icon material names for the `icon=""` attribute.
 
                     <br/>
                     #### Class Submodules

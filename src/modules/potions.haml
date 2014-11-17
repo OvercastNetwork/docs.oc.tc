@@ -24,27 +24,32 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code duration=""
+                                    %code duration
                                 %td
                                     The time the potion effect last in seconds.
+                                    %br
                                     %i Infinite duration can be specified by using <code>oo</code> as the duration.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
-                                    %code amplifier="1"
+                                    %code amplifier
                                 %td The strength of the potion effect.
                                 %td
                                     %span.label.label-primary Number
+                                %td 1
                             %tr
                                 %td
-                                    %code ambient="false"
+                                    %code ambient
                                 %td Specify if the potion's particle effects are ambient.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
 
                 :markdown
                     <br/>

@@ -21,33 +21,39 @@
                                 %th Name
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
-                            %tr
+                            %tr.danger{:title => "Required"}
                                 %td
-                                    %code after=""
+                                    %code after
                                 %td Time from the start of the game till this mode takes effect.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
-                            %tr
                                 %td
-                                    %code material=""
+                            %tr.danger{:title => "Required"}
+                                %td
+                                    %code material
                                 %td Material the core/destroyable changes to.
                                 %td
                                     %a{:href => "http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html"} Bukkit Material
+                                %td
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td Custom mode name, used for the mode change notice.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code show-before="60"
+                                    %code show-before
                                 %td
                                     The time before a mode is over to show it in the BossBar.<br/>
                                     If show-before is set to 0 the mode is not shown in the BossBar at all.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
+                                %td
+                                    60 sec
                 :markdown
                     Example
 

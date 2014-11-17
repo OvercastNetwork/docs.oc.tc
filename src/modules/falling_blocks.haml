@@ -21,10 +21,11 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %td Default
                         %tbody
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
-                                    %code filter=""
+                                    %code filter
                                 %td
                                     Filter what blocks get modified by this rule.
                                     %br
@@ -34,9 +35,10 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
+                                %td
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
-                                    %code sticky=""
+                                    %code sticky
                                 %td
                                     The blocks that are sticky.
                                     %br
@@ -46,9 +48,10 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
+                                %td
                             %tr
                                 %td
-                                    %code delay="2"
+                                    %code delay
                                 %td
                                     Tick delay till blocks start to fall after they have been disturbed.
                                     %br
@@ -58,6 +61,7 @@
                                         sub-element.
                                 %td
                                     %span.label.label-primary Number
+                                %td 2
                 
                 %h5 Rule Sub-elements
                 .table-responsive
@@ -67,6 +71,7 @@
                                 %th Element
                                 %th Description
                                 %th Value/Children
+                                %th Default
                         %tbody
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
@@ -85,6 +90,7 @@
                                     %a{:href => "/modules/filters"} Block Filters
                                     &
                                     %a{:href => "/modules/regions"} Regions
+                                %td
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
                                     %pre
@@ -98,10 +104,11 @@
                                         attribute of the rule.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filters
+                                %td
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<delay> 2')
+                                        %code= html_escape('<delay>')
                                 %td
                                     Tick delay till blocks start to fall after they have been disturbed.
                                     %br
@@ -111,6 +118,7 @@
                                         attribute.
                                 %td
                                     %span.label.label-primary Number
+                                %td 2
 
                 :markdown
                     Example

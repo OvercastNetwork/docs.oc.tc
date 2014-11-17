@@ -20,12 +20,13 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th{:style => "min-width: 180px;"} Attribute & Default Value
+                                %th{:style => "min-width: 130px;"} Attribute
                                 %th Description
+                                %th Default
                         %tbody
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
-                                    %code region=""
+                                    %code region
                                 %td
                                     Region where this renewable is located.
                                     %br
@@ -37,29 +38,34 @@
                                     %a{:href => "/modules/regions"} Region
                             %tr
                                 %td
-                                    %code rate="1"
+                                    %code rate
                                 %td
                                     Approximate number of blocks that will be restored per second.
+                                %td 1
                             %tr
                                 %td
-                                    %code grow="false"
+                                    %code grow
                                 %td
                                     Only allow blocks to be restored adjacent to other blocks that are already restored. If set to false, blocks will be restored at completely random locations, even in mid-air.
+                                %td false
                             %tr
                                 %td
-                                    %code particles="true"
+                                    %code particles
                                 %td
                                     Show block restore particle effects.
+                                %td true
                             %tr
                                 %td
-                                    %code sound="true"
+                                    %code sound
                                 %td
                                     Play block restore sound effects.
+                                %td true
                             %tr
                                 %td
-                                    %code avoid-entities="true"
+                                    %code avoid-entities
                                 %td
                                     Prevent blocks from being restored within a few meters of a player.
+                                %td true
 
                 %h5 Renewable Sub-elements
                 .table-responsive

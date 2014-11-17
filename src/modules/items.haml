@@ -23,59 +23,68 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code slot=""
+                                    %code slot
                                 %td
                                     Slot where the item will be placed in the players inventory.
                                 %td
                                     %a{:href => "/reference/inventory"} Inventory Slots
+                                %td
                             %tr
                                 %td
-                                    %code amount="1"
+                                    %code amount
                                 %td The amount of items.
                                 %td
                                     %span.label.label-primary Number
+                                %td 1
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td The items name.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code enchantment=""
+                                    %code enchantment
                                 %td The item's enchantment(s).
                                 %td
                                     %a{:href => "/modules/items#enchantments"} Enchantment String
+                                %td
                             %tr
                                 %td
-                                    %code lore=""
+                                    %code lore
                                 %td Custom lore string.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code damage="0"
+                                    %code damage
                                 %td
                                     The items damage, used for items such as birch logs.
                                     %br
                                     %i Use a damage value of <code>-3000</code> to make an tool unbreakable.
                                 %td
                                     %span.label.label-primary Number
+                                %td 0
                             %tr
                                 %td
-                                    %code attributes=""
+                                    %code attributes
                                 %td Custom attributes, for example, increased health or faster movement speed.
                                 %td
                                     %a{:href => "/modules/items#attributes"} Attributes String
+                                %td
                             %tr
                                 %td
-                                    %code color=""
+                                    %code color
                                 %td Leather armor color as a hexadecimal color. <code>RRGGBB</code>
                                 %td
                                     %span.label.label-primary Hex Color
+                                %td
                 :markdown
 
                     Items can be give custom names and lore with the `name=""` and `lore=""` attributes. Colors and fancy text in item names or lore can be specified with the grave symbol `` ` and then the [formatting code](/reference/formatting). You can specify multiple lines of lore using a pipe symbol `|` for line breaks.
@@ -102,13 +111,15 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code locked="false"
+                                    %code locked
                                 %td Prevent this armor item from being removed from the armor slot in any way.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                 :markdown
 
                     Enchanting, naming or giving armor lore works the same way as with items.

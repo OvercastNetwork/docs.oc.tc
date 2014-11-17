@@ -35,25 +35,29 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Name
+                                %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code id=""
+                                    %code id
                                 %td Unique identifier used to reference this element.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr.danger{:title => "Required"}
                                 %td
-                                    %code color=""
+                                    %code color
                                 %td This examples color.
                                 %td
                                     %a{:href => "/reference/colors"} Dye Color Name
+                                %td
                             %tr
                                 %td
-                                    %code cow="false"
+                                    %code cow
                                 %td This example has a pet cow.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false

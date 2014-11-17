@@ -26,13 +26,15 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code bedspawn="false"
+                                    %code bedspawn
                                 %td Allow players to change their spawn point to a bed.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
 
                 %h5 Spawns Element Sub-elements
                 .table-responsive
@@ -61,7 +63,7 @@
                                 %td
                                     %a{:href => "/modules/regions"} Regions
 
-                %h5 Spawn & Default Attributes
+                %h5 Spawn & Default Element Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -69,67 +71,76 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code team=""
+                                    %code team
                                 %td The team this spawn applies to.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                                %td
                             %tr
                                 %td
-                                    %code safe="false"
+                                    %code safe
                                 %td Validate that the player spawns in a safe location.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code sequential="false"
+                                    %code sequential
                                 %td
                                     Spawns players at the next region in a list if the one prior to it isn't safe.
                                     %br
                                     %i Requires the <code>safe</code> attribute set to true.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code kit=""
+                                    %code kit
                                 %td The kit to apply to players when they are spawned in this spawn.
                                 %td
                                     %a{:href => "/modules/kits"} Kit Name
+                                %td
                             %tr
                                 %td
-                                    %code filter=""
+                                    %code filter
                                 %td Filter when this spawn is used.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
+                                %td
                             %tr
                                 %td
-                                    %code angle=""
+                                    %code angle
                                 %td
                                     The exact block coordinates that the player looks at when spawned.
                                     %br
                                     %i This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.
                                 %td 
                                     %span.label.label-primary X,Y,Z
+                                %td
                             %tr
                                 %td
-                                    %code yaw=""
+                                    %code yaw
                                 %td
                                     The horizontal angle the player looks to when spawned.
                                     %br
                                     %i South 0, East -90, North 180 and West 90.
                                 %td 
                                     %span.label.label-primary -180 to 180
+                                %td
                             %tr
                                 %td
-                                    %code pitch=""
+                                    %code pitch
                                 %td
                                     The vertical angle the player looks to when spawned.
                                     %br
                                     %i -90 is straight up 90 is straight down.
                                 %td 
                                     %span.label.label-primary -90 to 90
+                                %td
 
                 :markdown
                     `TIP:` You can copy the yaw from the F3 screen in minecraft.

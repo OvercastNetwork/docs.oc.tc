@@ -24,37 +24,37 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Attribute
+                                %th{:style => "min-width: 130px;"}  Attribute
                                 %th Description
-                                %th Value
+                                %th{:style => "min-width: 120px;"}  Value
                         %tbody
                             %tr
                                 %td
-                                    %code id=""
+                                    %code id
                                 %td Unique identifier used to reference teams from other places in the XML.
                                 %td
                                     %span.label.label-primary String
                             %tr
                                 %td
-                                    %code color=""
+                                    %code color
                                 %td The teams color.
                                 %td
                                     %a{:href => "/reference/formatting#chatColors"} Chat Color Name
                             %tr
                                 %td
-                                    %code max=""
+                                    %code max
                                 %td Maximum team size. (soft limit)<br/> <i>Players with certain privileges may join over this limit till <code>max-overfill</code> is reached.</i>
                                 %td
                                     %span.label.label-primary Number
                             %tr
                                 %td
-                                    %code max-overfill=""
+                                    %code max-overfill
                                 %td Maximum team size hard limit. Must be greater than the defined <code>max</code>.
                                 %td
                                     %span.label.label-primary Number
                             %tr
                                 %td
-                                    %code respawn-limit=""
+                                    %code respawn-limit
                                 %td The number of times a team may respawn before getting taken out of the match. Once met or exceeded, that team may not be joined, even by donors.
                                 %td
                                     %spawn.label.label-primary Number

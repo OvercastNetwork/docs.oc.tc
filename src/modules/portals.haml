@@ -23,18 +23,22 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code x=""
-                                    %code y=""
-                                    %code z=""
+                                    %code x
+                                    ,
+                                    %code y
+                                    ,
+                                    %code z
                                 %td Offset the players <code>X,Y,Z</code> position by the amount specified.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
-                                    %code region=""
+                                    %code region
                                 %td
                                     Region where this portals entrance is located.
                                     %br
@@ -44,42 +48,49 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
                             %tr
                                 %td
-                                    %code filter=""
+                                    %code filter
                                 %td Filter player access.
                                 %td
                                     %a{:href => "/modules/filters"} Filter Name
+                                %td
                             %tr
                                 %td
-                                    %code sound="true"
+                                    %code sound
                                 %td Play the portal sound
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
-                                    %code protect="false"
+                                    %code protect
                                 %td Protect the portal entrance and exit regions.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code bidirectional="false"
+                                    %code bidirectional
                                 %td Creates a dual-linked portal that goes both ways. This can only be used when all coordinates and directions are relative. 
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code yaw=""
+                                    %code yaw
                                 %td Specify the direction the player is looking horizontally from -180&deg; to 180&deg;.<br/><i>South 0, East -90, North 180 and West 90.</i>
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
-                                    %code pitch=""
+                                    %code pitch
                                 %td Specify the direction the player is looking vertically from -90&deg; to 90&deg;.<br/><i>-90 is straight up 90 is straight down.</i>
                                 %td
                                     %span.label.label-primary Number
+                                %td
 
                 %h5 Portal Sub-elements
                 .table-responsive

@@ -32,118 +32,134 @@
                                 %th{:style => "min-width: 215px;"} Attribute
                                 %th Description
                                 %th{:style => "min-width: 100px;"} Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code id=""
+                                    %code id
                                 %td Unique identifier used to reference hills from other places in the XML.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code name=""
+                                    %code name
                                 %td
                                     Name of the hill, displayed on the scoreboard.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
-                                    %code capture-time="30s"
+                                    %code capture-time
                                 %td
                                     Time to capture the hill.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
+                                %td 30 sec
                             %tr
                                 %td
-                                    %code points="1"
+                                    %code points
                                 %td
                                     Points to give per second to the owning team.
                                 %td
                                     %span.label.label-primary Number
+                                %td 1
 
                             %tr
                                 %td
-                                    %code points-growth="oo"
+                                    %code points-growth
                                 %td
                                     Number of seconds for the point rate to double.
                                     If given, the rate at which the hill gives points
                                     will gradually increase with time.
                                 %td
                                     %span.label.label-primary Number
+                                %td
 
                             %tr
                                 %td
-                                    %code capture-rule="exclusive"
+                                    %code capture-rule
                                 %td
                                     Rule used to decide who is in control of the point at any given moment.
                                 %td
                                     %a{:href => "#capture_rule"} Capture Rule
+                                %td
+                                    %code exclusive
                             %tr
                                 %td
-                                    %code time-multiplier="0"
+                                    %code time-multiplier
                                 %td
                                     Adjust capture time relative to the amount of team players on the hill.
                                     %br
                                     %i Defaults to 0.1 on KotH maps.
                                 %td
                                     %span.label.label-primary Float
+                                %td 0
                             %tr
                                 %td
-                                    %code show-progress="false"
+                                    %code show-progress
                                 %td
                                     Show capture percentage in the sidebar.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code neutral-state="false"
+                                    %code neutral-state
                                 %td
                                     Hill must be un-captured before it can be captured again.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code incremental="false"
+                                    %code incremental
                                 %td
                                     Capture progress is retained even if capturing is interrupted.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code permanent="false"
+                                    %code permanent
                                 %td
                                     Hill can only be captured once during the match.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
-                                    %code initial-owner=""
+                                    %code initial-owner
                                 %td
                                     The team owning the hill when the match starts.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
+                                %td
                             %tr
                                 %td
-                                    %code show="true"
+                                    %code show
                                 %td
                                     Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
                                     %br
                                     %code NOTE:
-                                    The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
+                                    The objective will also not be logged to the Database and the player will not receive any raindrops upon completion.
                                 %td
                                     %span.label.label-primary true/false
+                                %td true
                             %tr
                                 %td
-                                    %code visual-materials=""
+                                    %code visual-materials
                                 %td
                                     Filter the materials modified when updating the progress regions.
                                     %br
                                     %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
+                                %td
                             %tr.danger{:title => "Required, either the attribute or sub-element is required"}
                                 %td
-                                    %code capture=""
+                                    %code capture
                                 %td
                                     Region where this control point can be captured
                                     %br
@@ -153,9 +169,10 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
                             %tr
                                 %td
-                                    %code progress=""
+                                    %code progress
                                 %td
                                     Region where this control points progress is displayed
                                     %br
@@ -165,9 +182,10 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
                             %tr
                                 %td
-                                    %code captured=""
+                                    %code captured
                                 %td
                                     Region where this control points owner is displayed
                                     %br
@@ -177,6 +195,7 @@
                                         sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
 
                 :markdown
                     ##### [Capture Rule](id:capture_rule)
