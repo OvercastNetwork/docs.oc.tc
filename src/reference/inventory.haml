@@ -12,3 +12,1839 @@
                     ![Inv Slots .png](/img/inv_slots.png)
 
                     List of item names: [Bukkit documentation - Material List](http://jd.bukkit.org/dev/apidocs/org/bukkit/Material.html)
+
+                %br
+                %h4#material_finder
+                    Material Finder
+                    %i{:style => "display: block;"}
+                        %small Use <code>~armor</code>, <code>~block</code>, <code>~food</code>, <code>~flower</code>, <code>~redstone</code> etc. to filter by tags
+
+                #blocks
+                    %form{:role => "search"}
+                        .form-group.input-group
+                            %input#searchField.form-control{:type => "search", :placeholder => "No Search - JavaScript Disabled :(", :oninput => "doMaterialSearch('dataTable')", :disabled => "true"}
+                            %span.input-group-addon
+                                %i.fa.fa-search
+
+                    .table-responsive
+                        %table.table.table-striped.table-condensed
+                            %thead
+                                %tr
+                                    %th Name
+                                    %th{:style => "max-width: 128px;"}
+                                        UID
+                                        .span.label.label-danger{:style => "position: relative; top: -1px;"} (Obsolete)
+                                    %th Tags
+                            %tbody#dataTable
+                                %tr
+                                    %td.name
+                                        %code AIR
+                                    %td.uid 0
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STONE
+                                    %td.uid 1
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GRASS
+                                    %td.uid 2
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DIRT
+                                    %td.uid 3
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COBBLESTONE
+                                    %td.uid 4
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOD
+                                    %td.uid 5
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SAPLING
+                                    %td.uid 6
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BEDROCK
+                                    %td.uid 7
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WATER
+                                    %td.uid 8
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STATIONARY_WATER
+                                    %td.uid 9
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LAVA
+                                    %td.uid 10
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STATIONARY_LAVA
+                                    %td.uid 11
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SAND
+                                    %td.uid 12
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GRAVEL
+                                    %td.uid 13
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GOLD_ORE
+                                    %td.uid 14
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code IRON_ORE
+                                    %td.uid 15
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COAL_ORE
+                                    %td.uid 16
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LOG
+                                    %td.uid 17
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LEAVES
+                                    %td.uid 18
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SPONGE
+                                    %td.uid 19
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GLASS
+                                    %td.uid 20
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LAPIS_ORE
+                                    %td.uid 21
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LAPIS_BLOCK
+                                    %td.uid 22
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DISPENSER
+                                    %td.uid 23
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code SANDSTONE
+                                    %td.uid 24
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NOTE_BLOCK
+                                    %td.uid 25
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code BED_BLOCK
+                                    %td.uid 26
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code POWERED_RAIL
+                                    %td.uid 27
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DETECTOR_RAIL
+                                    %td.uid 28
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PISTON_STICKY_BASE
+                                    %td.uid 29
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WEB
+                                    %td.uid 30
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LONG_GRASS
+                                    %td.uid 31
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DEAD_BUSH
+                                    %td.uid 32
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PISTON_BASE
+                                    %td.uid 33
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PISTON_EXTENSION
+                                    %td.uid 34
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOL
+                                    %td.uid 35
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PISTON_MOVING_PIECE
+                                    %td.uid 36
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code YELLOW_FLOWER
+                                    %td.uid 37
+                                    %td.tags block, flower
+                                %tr
+                                    %td.name
+                                        %code RED_ROSE
+                                    %td.uid 38
+                                    %td.tags block, flower
+                                %tr
+                                    %td.name
+                                        %code BROWN_MUSHROOM
+                                    %td.uid 39
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code RED_MUSHROOM
+                                    %td.uid 40
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GOLD_BLOCK
+                                    %td.uid 41
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code IRON_BLOCK
+                                    %td.uid 42
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DOUBLE_STEP
+                                    %td.uid 43
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STEP
+                                    %td.uid 44
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BRICK
+                                    %td.uid 45
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code TNT
+                                    %td.uid 46
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BOOKSHELF
+                                    %td.uid 47
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MOSSY_COBBLESTONE
+                                    %td.uid 48
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code OBSIDIAN
+                                    %td.uid 49
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code TORCH
+                                    %td.uid 50
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code FIRE
+                                    %td.uid 51
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MOB_SPAWNER
+                                    %td.uid 52
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOD_STAIRS
+                                    %td.uid 53
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CHEST
+                                    %td.uid 54
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_WIRE
+                                    %td.uid 55
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_ORE
+                                    %td.uid 56
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_BLOCK
+                                    %td.uid 57
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WORKBENCH
+                                    %td.uid 58
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CROPS
+                                    %td.uid 59
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SOIL
+                                    %td.uid 60
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code FURNACE
+                                    %td.uid 61
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BURNING_FURNACE
+                                    %td.uid 62
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SIGN_POST
+                                    %td.uid 63
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOODEN_DOOR
+                                    %td.uid 64
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LADDER
+                                    %td.uid 65
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code RAILS
+                                    %td.uid 66
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COBBLESTONE_STAIRS
+                                    %td.uid 67
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WALL_SIGN
+                                    %td.uid 68
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LEVER
+                                    %td.uid 69
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code STONE_PLATE
+                                    %td.uid 70
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code IRON_DOOR_BLOCK
+                                    %td.uid 71
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOD_PLATE
+                                    %td.uid 72
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_ORE
+                                    %td.uid 73
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code GLOWING_REDSTONE_ORE
+                                    %td.uid 74
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_TORCH_OFF
+                                    %td.uid 75
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_TORCH_ON
+                                    %td.uid 76
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code STONE_BUTTON
+                                    %td.uid 77
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code SNOW
+                                    %td.uid 78
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ICE
+                                    %td.uid 79
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SNOW_BLOCK
+                                    %td.uid 80
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CACTUS
+                                    %td.uid 81
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CLAY
+                                    %td.uid 82
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SUGAR_CANE_BLOCK
+                                    %td.uid 83
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code JUKEBOX
+                                    %td.uid 84
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code FENCE
+                                    %td.uid 85
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PUMPKIN
+                                    %td.uid 86
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NETHERRACK
+                                    %td.uid 87
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SOUL_SAND
+                                    %td.uid 88
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code GLOWSTONE
+                                    %td.uid 89
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PORTAL
+                                    %td.uid 90
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code JACK_O_LANTERN
+                                    %td.uid 91
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CAKE_BLOCK
+                                    %td.uid 92
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DIODE_BLOCK_OFF
+                                    %td.uid 93
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code DIODE_BLOCK_ON
+                                    %td.uid 94
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code LOCKED_CHEST
+                                    %td.uid 95
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STAINED_GLASS
+                                    %td.uid 95
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code TRAP_DOOR
+                                    %td.uid 96
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MONSTER_EGGS
+                                    %td.uid 97
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SMOOTH_BRICK
+                                    %td.uid 98
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code HUGE_MUSHROOM_1
+                                    %td.uid 99
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code HUGE_MUSHROOM_2
+                                    %td.uid 100
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code IRON_FENCE
+                                    %td.uid 101
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code THIN_GLASS
+                                    %td.uid 102
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MELON_BLOCK
+                                    %td.uid 103
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PUMPKIN_STEM
+                                    %td.uid 104
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MELON_STEM
+                                    %td.uid 105
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code VINE
+                                    %td.uid 106
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code FENCE_GATE
+                                    %td.uid 107
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BRICK_STAIRS
+                                    %td.uid 108
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SMOOTH_STAIRS
+                                    %td.uid 109
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code MYCEL
+                                    %td.uid 110
+                                    %td.tags block, mycelium
+                                %tr
+                                    %td.name
+                                        %code WATER_LILY
+                                    %td.uid 111
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NETHER_BRICK
+                                    %td.uid 112
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NETHER_FENCE
+                                    %td.uid 113
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NETHER_BRICK_STAIRS
+                                    %td.uid 114
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code NETHER_WARTS
+                                    %td.uid 115
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ENCHANTMENT_TABLE
+                                    %td.uid 116
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BREWING_STAND
+                                    %td.uid 117
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CAULDRON
+                                    %td.uid 118
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ENDER_PORTAL
+                                    %td.uid 119
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ENDER_PORTAL_FRAME
+                                    %td.uid 120
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ENDER_STONE
+                                    %td.uid 121
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DRAGON_EGG
+                                    %td.uid 122
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_LAMP_OFF
+                                    %td.uid 123
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_LAMP_ON
+                                    %td.uid 124
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code WOOD_DOUBLE_STEP
+                                    %td.uid 125
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOD_STEP
+                                    %td.uid 126
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COCOA
+                                    %td.uid 127
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SANDSTONE_STAIRS
+                                    %td.uid 128
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code EMERALD_ORE
+                                    %td.uid 129
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ENDER_CHEST
+                                    %td.uid 130
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code TRIPWIRE_HOOK
+                                    %td.uid 131
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code TRIPWIRE
+                                    %td.uid 132
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code EMERALD_BLOCK
+                                    %td.uid 133
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code SPRUCE_WOOD_STAIRS
+                                    %td.uid 134
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BIRCH_WOOD_STAIRS
+                                    %td.uid 135
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code JUNGLE_WOOD_STAIRS
+                                    %td.uid 136
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COMMAND
+                                    %td.uid 137
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code BEACON
+                                    %td.uid 138
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COBBLE_WALL
+                                    %td.uid 139
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code FLOWER_POT
+                                    %td.uid 140
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CARROT
+                                    %td.uid 141
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code POTATO
+                                    %td.uid 142
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code WOOD_BUTTON
+                                    %td.uid 143
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code SKULL
+                                    %td.uid 144
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ANVIL
+                                    %td.uid 145
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code TRAPPED_CHEST
+                                    %td.uid 146
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code GOLD_PLATE
+                                    %td.uid 147
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code IRON_PLATE
+                                    %td.uid 148
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_COMPARATOR_OFF
+                                    %td.uid 149
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_COMPARATOR_ON
+                                    %td.uid 150
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code DAYLIGHT_DETECTOR
+                                    %td.uid 151
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_BLOCK
+                                    %td.uid 152
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code QUARTZ_ORE
+                                    %td.uid 153
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code HOPPER
+                                    %td.uid 154
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code QUARTZ_BLOCK
+                                    %td.uid 155
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code QUARTZ_STAIRS
+                                    %td.uid 156
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ACTIVATOR_RAIL
+                                    %td.uid 157
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DROPPER
+                                    %td.uid 158
+                                    %td.tags block, redstone
+                                %tr
+                                    %td.name
+                                        %code STAINED_CLAY
+                                    %td.uid 159
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code STAINED_GLASS_PANE
+                                    %td.uid 160
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LEAVES_2
+                                    %td.uid 161
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code LOG_2
+                                    %td.uid 162
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code ACACIA_STAIRS
+                                    %td.uid 163
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DARK_OAK_STAIRS
+                                    %td.uid 164
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code HAY_BLOCK
+                                    %td.uid 170
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code CARPET
+                                    %td.uid 171
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code HARD_CLAY
+                                    %td.uid 172
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code COAL_BLOCK
+                                    %td.uid 173
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code PACKED_ICE
+                                    %td.uid 174
+                                    %td.tags block
+                                %tr
+                                    %td.name
+                                        %code DOUBLE_PLANT
+                                    %td.uid 175
+                                    %td.tags block
+                                / ITEMS ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+                                %tr
+                                    %td.name
+                                        %code IRON_SPADE
+                                    %td.uid 256
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_PICKAXE
+                                    %td.uid 257
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_AXE
+                                    %td.uid 258
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FLINT_AND_STEEL
+                                    %td.uid 259
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code APPLE
+                                    %td.uid 260
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code BOW
+                                    %td.uid 261
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code ARROW
+                                    %td.uid 262
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code COAL
+                                    %td.uid 263
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND
+                                    %td.uid 264
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_INGOT
+                                    %td.uid 265
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_INGOT
+                                    %td.uid 266
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_SWORD
+                                    %td.uid 267
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_SWORD
+                                    %td.uid 268
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_SPADE
+                                    %td.uid 269
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_PICKAXE
+                                    %td.uid 270
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_AXE
+                                    %td.uid 271
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STONE_SWORD
+                                    %td.uid 272
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STONE_SPADE
+                                    %td.uid 273
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STONE_PICKAXE
+                                    %td.uid 274
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STONE_AXE
+                                    %td.uid 275
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_SWORD
+                                    %td.uid 276
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_SPADE
+                                    %td.uid 277
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_PICKAXE
+                                    %td.uid 278
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_AXE
+                                    %td.uid 279
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STICK
+                                    %td.uid 280
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BOWL
+                                    %td.uid 281
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MUSHROOM_SOUP
+                                    %td.uid 282
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code GOLD_SWORD
+                                    %td.uid 283
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_SPADE
+                                    %td.uid 284
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_PICKAXE
+                                    %td.uid 285
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_AXE
+                                    %td.uid 286
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STRING
+                                    %td.uid 287
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FEATHER
+                                    %td.uid 288
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SULPHUR
+                                    %td.uid 289
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_HOE
+                                    %td.uid 290
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STONE_HOE
+                                    %td.uid 291
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_HOE
+                                    %td.uid 292
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_HOE
+                                    %td.uid 293
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_HOE
+                                    %td.uid 294
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SEEDS
+                                    %td.uid 295
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WHEAT
+                                    %td.uid 296
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BREAD
+                                    %td.uid 297
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code LEATHER_HELMET
+                                    %td.uid 298
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code LEATHER_CHESTPLATE
+                                    %td.uid 299
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code LEATHER_LEGGINGS
+                                    %td.uid 300
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code LEATHER_BOOTS
+                                    %td.uid 301
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code CHAINMAIL_HELMET
+                                    %td.uid 302
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code CHAINMAIL_CHESTPLATE
+                                    %td.uid 303
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code CHAINMAIL_LEGGINGS
+                                    %td.uid 304
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code CHAINMAIL_BOOTS
+                                    %td.uid 305
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code IRON_HELMET
+                                    %td.uid 306
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code IRON_CHESTPLATE
+                                    %td.uid 307
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code IRON_LEGGINGS
+                                    %td.uid 308
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code IRON_BOOTS
+                                    %td.uid 309
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_HELMET
+                                    %td.uid 310
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_CHESTPLATE
+                                    %td.uid 311
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_LEGGINGS
+                                    %td.uid 312
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_BOOTS
+                                    %td.uid 313
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code GOLD_HELMET
+                                    %td.uid 31
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code GOLD_CHESTPLATE
+                                    %td.uid 315
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code GOLD_LEGGINGS
+                                    %td.uid 316
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code GOLD_BOOTS
+                                    %td.uid 317
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code FLINT
+                                    %td.uid 318
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code PORK
+                                    %td.uid 319
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code GRILLED_PORK
+                                    %td.uid 320
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code PAINTING
+                                    %td.uid 321
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLDEN_APPLE
+                                    %td.uid 322
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code SIGN
+                                    %td.uid 323
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WOOD_DOOR
+                                    %td.uid 324
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BUCKET
+                                    %td.uid 325
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WATER_BUCKET
+                                    %td.uid 326
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code LAVA_BUCKET
+                                    %td.uid 327
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MINECART
+                                    %td.uid 328
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SADDLE
+                                    %td.uid 329
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_DOOR
+                                    %td.uid 330
+                                    %td.tags item, redstone
+                                %tr
+                                    %td.name
+                                        %code REDSTONE
+                                    %td.uid 331
+                                    %td.tags item, redstone
+                                %tr
+                                    %td.name
+                                        %code SNOW_BALL
+                                    %td.uid 332
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BOAT
+                                    %td.uid 333
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code LEATHER
+                                    %td.uid 334
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MILK_BUCKET
+                                    %td.uid 335
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code CLAY_BRICK
+                                    %td.uid 336
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code CLAY_BALL
+                                    %td.uid 337
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SUGAR_CANE
+                                    %td.uid 338
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code PAPER
+                                    %td.uid 339
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BOOK
+                                    %td.uid 340
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SLIME_BALL
+                                    %td.uid 341
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code STORAGE_MINECART
+                                    %td.uid 342
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code POWERED_MINECART
+                                    %td.uid 343
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code EGG
+                                    %td.uid 344
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code COMPASS
+                                    %td.uid 345
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FISHING_ROD
+                                    %td.uid 346
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WATCH
+                                    %td.uid 347
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GLOWSTONE_DUST
+                                    %td.uid 348
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RAW_FISH
+                                    %td.uid 349
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code COOKED_FISH
+                                    %td.uid 350
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code INK_SACK
+                                    %td.uid 351
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BONE
+                                    %td.uid 352
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SUGAR
+                                    %td.uid 353
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code CAKE
+                                    %td.uid 354
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code BED
+                                    %td.uid 355
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code DIODE
+                                    %td.uid 356
+                                    %td.tags item, redstone
+                                %tr
+                                    %td.name
+                                        %code COOKIE
+                                    %td.uid 357
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code MAP
+                                    %td.uid 358
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SHEARS
+                                    %td.uid 359
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MELON
+                                    %td.uid 360
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code PUMPKIN_SEEDS
+                                    %td.uid 361
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MELON_SEEDS
+                                    %td.uid 362
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RAW_BEEF
+                                    %td.uid 363
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code COOKED_BEEF
+                                    %td.uid 364
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code RAW_CHICKEN
+                                    %td.uid 365
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code COOKED_CHICKEN
+                                    %td.uid 366
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code ROTTEN_FLESH
+                                    %td.uid 367
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code ENDER_PEARL
+                                    %td.uid 368
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BLAZE_ROD
+                                    %td.uid 369
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GHAST_TEAR
+                                    %td.uid 370
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_NUGGET
+                                    %td.uid 371
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code NETHER_STALK
+                                    %td.uid 372
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code POTION
+                                    %td.uid 373
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GLASS_BOTTLE
+                                    %td.uid 374
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SPIDER_EYE
+                                    %td.uid 375
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code FERMENTED_SPIDER_EYE
+                                    %td.uid 376
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BLAZE_POWDER
+                                    %td.uid 377
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MAGMA_CREAM
+                                    %td.uid 378
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BREWING_STAND_ITEM
+                                    %td.uid 379
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code CAULDRON_ITEM
+                                    %td.uid 380
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code EYE_OF_ENDER
+                                    %td.uid 381
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SPECKLED_MELON
+                                    %td.uid 382
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code MONSTER_EGG
+                                    %td.uid 383
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code EXP_BOTTLE
+                                    %td.uid 384
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FIREBALL
+                                    %td.uid 385
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code BOOK_AND_QUILL
+                                    %td.uid 386
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code WRITTEN_BOOK
+                                    %td.uid 387
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code EMERALD
+                                    %td.uid 388
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code ITEM_FRAME
+                                    %td.uid 389
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FLOWER_POT_ITEM
+                                    %td.uid 390
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code CARROT_ITEM
+                                    %td.uid 391
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code POTATO_ITEM
+                                    %td.uid 392
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code BAKED_POTATO
+                                    %td.uid 393
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code POISONOUS_POTATO
+                                    %td.uid 394
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code EMPTY_MAP
+                                    %td.uid 395
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLDEN_CARROT
+                                    %td.uid 396
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code SKULL_ITEM
+                                    %td.uid 397
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code CARROT_STICK
+                                    %td.uid 398
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code NETHER_STAR
+                                    %td.uid 399
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code PUMPKIN_PIE
+                                    %td.uid 400
+                                    %td.tags item, food
+                                %tr
+                                    %td.name
+                                        %code FIREWORK
+                                    %td.uid 401
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code FIREWORK_CHARGE
+                                    %td.uid 402
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code ENCHANTED_BOOK
+                                    %td.uid 403
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code REDSTONE_COMPARATOR
+                                    %td.uid 404
+                                    %td.tags item, redstone
+                                %tr
+                                    %td.name
+                                        %code NETHER_BRICK_ITEM
+                                    %td.uid 405
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code QUARTZ
+                                    %td.uid 406
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code EXPLOSIVE_MINECART
+                                    %td.uid 407
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code HOPPER_MINECART
+                                    %td.uid 408
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code IRON_BARDING
+                                    %td.uid 417
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code GOLD_BARDING
+                                    %td.uid 418
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code DIAMOND_BARDING
+                                    %td.uid 419
+                                    %td.tags item, armor
+                                %tr
+                                    %td.name
+                                        %code LEASH
+                                    %td.uid 420
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code NAME_TAG
+                                    %td.uid 421
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code COMMAND_MINECART
+                                    %td.uid 422
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GOLD_RECORD
+                                    %td.uid 2256
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code GREEN_RECORD
+                                    %td.uid 2257
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_3
+                                    %td.uid 2258
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_4
+                                    %td.uid 2259
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_5
+                                    %td.uid 2260
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_6
+                                    %td.uid 2261
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_7
+                                    %td.uid 2262
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_8
+                                    %td.uid 2263
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_9
+                                    %td.uid 2264
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_10
+                                    %td.uid 2265
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_11
+                                    %td.uid 2266
+                                    %td.tags item
+                                %tr
+                                    %td.name
+                                        %code RECORD_12
+                                    %td.uid 2267
+                                    %td.tags item
+
+:javascript
+    $(document).ready(function() {
+        // Remove the js missing error from the search field.
+        document.getElementById('searchField').disabled = false;
+        document.getElementById('searchField').placeholder = "Search";
+    });
+
+    // Search a specific table and hide all rows that do not match.
+    function doMaterialSearch(tableID) {
+        var targetTable = document.getElementById(tableID);
+        var searchText = document.getElementById('searchField').value.trim().toLocaleLowerCase();
+        // Find and remove all search terms that are indicated to be tags
+        var tagSearchTerms = searchText.match(/~\S*/gi);
+        searchText = searchText.replace(/~\S*/gi,"").trim();
+        if (tagSearchTerms) {
+            for (var i = 0; i < tagSearchTerms.length; i++) {
+                // Remove leading ~ from all tag search terms.
+                tagSearchTerms[i] = tagSearchTerms[i].slice(1);
+            }
+        }
+
+        var matching_rows = 0;
+        var rowData = targetTable.rows;
+        // Loop through the tables rows and check if they match the query.
+        for (var rowIndex = 0; rowIndex < rowData.length; rowIndex++) {
+            var tableRow = rowData.item(rowIndex)
+            // Not a data row, ignore.
+            if (tableRow.cells.length != 3)
+                continue;
+
+            // Get the search-able terms in the table.
+            // We add the text to an empty string so that we don't do indexOf against null later on in the code.
+            var materialName = '' + tableRow.cells.item(0).textContent.trim().toLocaleLowerCase();
+            var materialUID = '' + tableRow.cells.item(1).textContent.trim().toLocaleLowerCase();
+            var materialTags = '' + tableRow.cells.item(2).textContent.trim().toLocaleLowerCase().split(", ");
+
+            var matches = false;
+            // If the search term is a number only match the materials UID.
+            if ($.isNumeric(searchText)) {
+                // Only return true if the search result starts at the beginning of the UID
+                // This will prevent a search query of 8 from returning 18.
+                if (materialUID.search(searchText) == 0) {
+                    matches = true;
+                }
+            }
+            // Otherwise match the materials name
+            // If searchText is "" (nothing) returns 0 instead of -1?
+            // This isn't really a problem since we want the table to show everything if there is no search term.
+            // This also allows us to search just by tag without having to add another else if.
+            else if (materialName.indexOf(searchText) != -1) {
+                matches = true;
+                // If we have tags, mark any materials that don't match the tags as non-matching.
+                // This will result in us only having materials that match both the query and the tags.
+                if (tagSearchTerms) {
+                    for (var i = 0; i < tagSearchTerms.length; i++) {
+                        if (materialTags.indexOf(tagSearchTerms[i]) == -1) {
+                            matches = false;
+                        }
+                    }
+                }
+            }
+
+            // Set the current rows display attribute appropriately.
+            if (matches == false) {
+                tableRow.style.display = 'none';
+            } else {
+                matching_rows ++;
+                tableRow.style.display = 'table-row';
+            }
+        }
+
+        // It is easier to re-add the 'nothing found' row every time rather than tracking it during sorting.
+        // This is due to the fact that it has none of the attributes a normal row has.
+        var noChildElement = document.getElementById("no_items");
+        if (noChildElement) {
+            targetTable.removeChild(noChildElement)
+        }
+
+
+        // Check to see if there are no matching rows,
+        // if there are none add a row indicating this.
+        if (matching_rows <= 0) {
+            var row = document.createElement("tr");
+            var cell = document.createElement("td");
+            var cellText = document.createTextNode("No materials match the query.");
+
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            row.setAttribute("id", "no_items");
+            cell.setAttribute("colspan", "3");
+            // Insert it as the first child.
+            targetTable.insertBefore(row, targetTable.firstChild);
+        }
+        return true;
+    }
