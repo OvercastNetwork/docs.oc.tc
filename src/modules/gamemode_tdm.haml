@@ -9,7 +9,9 @@
                 .page-header
                     %h1 Team Deathmatch
                 :markdown
-                    Game will run for a specified amount of time and then the team with the highest score wins. Teams increase their score by killing players from the other team or capturing points from a [score box](/modules/score_boxes).
+                    This gamemode uses the [scoring](/modules/scoring) module to run the game for a specified amount of time, after which the team with the highest score wins. Teams increase their score by killing players from the other team or capturing points from a [score box](/modules/scoring#score_box).
+
+                    `NOTE:` To be able to score points for kills and deaths the `<kills>` and `<deaths>` elements are required.
 
                     The `<time>` elements duration will default to seconds unless it is formatted as a [time period](/reference/time_periods).
 
@@ -19,6 +21,11 @@
 
                             <!-- Game ends when a team reaches this score, defaults to -1 i.e. no limit. -->
                             <limit>-1</limit>
+
+                            <!-- +1 points for a kill -->
+                            <kills>1</kills>
+                            <!-- -1 points for dying -->
+                            <deaths>1</deaths>
                         </score>
 
                     Kill scoring works as follows. Killing a player adds 1 point to the killers team score, kills from environmental damage such as lava or the void subtract 1 point from the dying players team score.

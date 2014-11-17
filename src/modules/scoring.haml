@@ -24,6 +24,16 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<time>')
+                                %td
+                                    Length of the match, after this time period the team with the highest score wins.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td
+                                    No limit
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<limit>')
                                 %td
                                     Max score that can be reached before the match ends.
@@ -67,7 +77,7 @@
 
 
                     <br/>
-                    ### Score Boxes
+                    ### [Score Boxes](id:score_box)
                     A score box will give points to a players team when they enter the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
 
                     ##### Score Box Attributes
