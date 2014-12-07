@@ -25,6 +25,8 @@
 
                     Teleports are optional, if they are not defined just the message will be displayed for that stage. They can contain [regions](/modules/regions) or [point providers](/modules/regions#pointProviders), it is recommended that you use a point provider to control precisely where the player spawns. If a point is obstructed the player will not be teleported. However, the stage message will still be displayed.
 
+                    `NOTE:` You can use a region from the `<regions>` element for your teleports.
+
                     Stages are displayed in the order that they are defined as in the XML.
 
                         <tutorial>
@@ -34,7 +36,7 @@
                                     <line>The objective is to grab the wool on the other team's side and return it to your base.</line>
                                 </message>
                                 <teleport>
-                                    <point yaw="90" pitch="50">44,60,0</point>
+                                    <region name="ctw"/>
                                 </teleport>
                             </stage>
                             <!-- next stages -->
