@@ -12,10 +12,10 @@
                     The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element should be defined per map.
 
                     To allow players to spawn at a bed set the main spawns bedspawn attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
-                    
-                    Multiple spawns from the same team can be grouped inside of a single `<spawns team="team name">` element. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
 
-                    Spawn elements accept more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
+                    Multiple spawns from the same team can be grouped inside of a single `<regions>` element inside `<spawns team="team name">`. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
+
+                    Regions element accepts more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
 
 
                     ##### Spawns Element Attributes
@@ -49,17 +49,28 @@
                                 %td
                                     %pre
                                         %code= html_escape('<spawn>')
-                                %td The region or regions players with a team will spawn in.
+                                %td The spawn where a team will spawn
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
+                                    %code= html_escape('<regions>')
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<default>')
                                 %td
-                                    The region observers and teams without a spawn will spawn in.
+                                    The observers and teams without a spawn will spawn in.
                                     %br
                                     %i Only one default spawn element is allowed per map.
+                                %td
+                                    %code= html_escape('<regions>')
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<regions>')
+                                %td
+                                    The region or regions where players will spawn. Inside
+                                    %code= html_escape('<spawn>')
+                                    or
+                                    %code= html_escape('<default>')
                                 %td
                                     %a{:href => "/modules/regions"} Regions
 
@@ -111,6 +122,17 @@
                                 %td
                                     %a{:href => "/modules/filters"} Filter
                                 %td
+
+                %h5 Regions Element Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
                             %tr
                                 %td
                                     %code angle
@@ -118,7 +140,7 @@
                                     The exact block coordinates that the player looks at when spawned.
                                     %br
                                     %i This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.
-                                %td 
+                                %td
                                     %span.label.label-primary X,Y,Z
                                 %td
                             %tr
@@ -128,9 +150,10 @@
                                     The horizontal angle the player looks to when spawned.
                                     %br
                                     %i South 0, East -90, North 180 and West 90.
-                                %td 
+                                %td
                                     %span.label.label-primary -180 to 180
                                 %td
+                                    0
                             %tr
                                 %td
                                     %code pitch
@@ -138,24 +161,32 @@
                                     The vertical angle the player looks to when spawned.
                                     %br
                                     %i -90 is straight up 90 is straight down.
-                                %td 
+                                %td
                                     %span.label.label-primary -90 to 90
                                 %td
+                                    0
+
 
                 :markdown
                     `TIP:` You can copy the yaw from the F3 screen in minecraft.
-                    
+
                     Example
 
                         <spawns>
-                            <spawn team="red" kit="red" yaw="90">
-                                <cuboid min="-2,13,71" max="-9,13,78"/>
+                            <spawn team="red" kit="red">
+                                <regions yaw="90">
+                                    <cuboid min="-2,13,71" max="-9,13,78"/>
+                                </regions>
                             </spawn>
-                            <spawn team="blue" kit="blue" yaw="-90">
-                                <cuboid min="2,13,-71" max="9,13,-78"/>
+                            <spawn team="blue" kit="blue">
+                                <regions yaw="-90">
+                                    <cuboid min="2,13,-71" max="9,13,-78"/>
+                                </regions>
                             </spawn>
-                            <default yaw="0">
-                                <cuboid min="-1,16,-1" max="2,20,2"/>
+                            <default>
+                                <regions yaw="0">
+                                    <cuboid min="-1,16,-1" max="2,20,2"/>
+                                </regions>
                             </default>
                         </spawns>
 
@@ -163,23 +194,25 @@
                     %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-spawn-examples", :'data-toggle' => "collapse"} Examples
                 %div.collapse{:id => "collapse-spawn-examples"}
                     :markdown
-                            <!-- Example spawns from Harb -->
+                            <!-- Example spawns from Assualt -->
                             <spawns>
-                                <spawns safe="true">
-                                    <spawn team="blue" kit="blue" yaw="0">
-                                        <cuboid min="-15,32,-57" max="16,42,-32"/>
-                                        <point>0.5,33,-47.5</point>
-                                    </spawn>
-                                    <spawn team="red" kit="red" yaw="180">
-                                        <cuboid min="-15,32,33" max="16,42,58"/>
-                                        <point>0.5,33,48.5</point>
-                                    </spawn>
-                                </spawns>
-                                <default yaw="90">
-                                    <cuboid min="-75.5,42.5,-0.5" max="-73.5,42.5,1.5"/>
+                                <spawn team="blue" kit="blue">
+                                    <regions yaw="-90">
+                                        <region name="blue-spawn"/>
+                                    </regions>
+                                </spawn>
+                                <spawn team="red" region="red-spawn" kit="red">
+                                    <regions yaw="90">
+                                        <region name="red-spawn"/>
+                                    </regions>
+                                </spawn>
+                                <default kit="obs">
+                                    <regions yaw="-135">
+                                        <region name="obs-spawn"/>
+                                    </regions>
                                 </default>
                             </spawns>
-                            
+
                             <!-- Spawn regions taken from Sand Wars -->
                             <spawns safe="true" sequential="true">
                                 <spawn team="blue" kit="blue" yaw="180">
