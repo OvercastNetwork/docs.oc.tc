@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Kill Reward
+                    %h1= @page_sub_title = "Kill Reward"
                 :markdown
                     The `<killreward>` module allows players to get items or a kit when they kill someone. A kill reward can contain either individual items, kits or references to kits. Kits defined inside the module can contain any of the features that normal [kits](/modules/kits) have.
 

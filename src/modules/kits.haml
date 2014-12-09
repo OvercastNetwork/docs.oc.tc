@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Kits
+                    %h1= @page_sub_title = "Kits"
                 :markdown
                     Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. They are referenced by their `name=""` from [spawns](/modules/spawns) and [regions](/modules/regions).
 

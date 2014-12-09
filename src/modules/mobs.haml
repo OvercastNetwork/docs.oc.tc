@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Mob Spawning
+                    %h1= @page_sub_title = "Mob Spawning"
                 :markdown
                     By default PGM disables all mob spawning. The mobs module allows this behavior to be customized to allow spawning of specific mobs. It uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
 

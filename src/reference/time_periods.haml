@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Reference
+        %h1= @page_title = "Reference"
         /%p.lead Main map element
     %section
         .row
             = partial('reference_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Time Periods
+                    %h1= @page_sub_title = "Time Periods"
                 :markdown
                     Time periods are numbers suffixed with a time unit. Periods with no formatter suffix default to seconds.
                 .table-responsive

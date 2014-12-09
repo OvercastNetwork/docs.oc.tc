@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Modes
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Destroy the Core
+                    %h1= @page_sub_title = "Destroy the Core"
                 :markdown
                     Players have to locate and break the enemy team's core, usually an obsidian sphere filled with lava. The lava has to leak down a certain distance for the core to be destroyed. Lava should not be available anywhere else on the map, otherwise a core leak could be faked. This can also be avoided by keeping the lava far away enough from the core and not giving players buckets or the ability to craft them.
 
