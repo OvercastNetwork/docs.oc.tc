@@ -32,18 +32,25 @@
                             %tr
                                 %th Element
                                 %th Description
+                                %th Value
                         %tbody
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<tip>')
-                                %td This will display a [Tip] message
+                                %td
+                                    This will display a [Tip] message
+                                %td
+                                    %span.label.label-primary Formatted Text
                             %tr   
                                 %td
                                     %pre
                                         %code= html_escape('<alert>')
-                                %td This will display an [Alert] message
-
+                                %td
+                                    This will display an [Alert] message
+                                %td
+                                    %span.label.label-primary Formatted Text
+                                                        
                 %h5 Message Tag Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
