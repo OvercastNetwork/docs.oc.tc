@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Block Drops
+                    %h1= @page_sub_title = "Block Drops"
                 :markdown
                     This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with. All sub-elements are optional, if there are no elements blocks will simply drop nothing.
 

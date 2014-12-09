@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Filters & Regions
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Portals
+                    %h1= @page_sub_title = "Portals"
                 :markdown
                     Portals teleport a player that enters the specified region to an exact location, by a certain offset amount or to a random location inside a region.
 

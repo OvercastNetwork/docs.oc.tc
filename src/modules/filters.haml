@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Filters & Regions
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Filters
+                    %h1= @page_sub_title = "Filters"
                 :markdown
                     Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. The filter's name is used to reference it inside other filters and regions.
 

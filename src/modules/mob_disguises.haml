@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Mob Disguises
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Mob Disguises
+                    %h1= @page_sub_title = "Mob Disguises"
                 :markdown
                     PGM allows for a mob disguise to be applied to a team or class with the `<mob-disguises>` module. These mob disguises are applied when a player changes his/her team or class, and are updated when new players join the match.
 

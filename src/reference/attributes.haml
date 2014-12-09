@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Reference
+        %h1= @page_title = "Reference"
         /%p.lead Main map element
     %section
         .row
             = partial('reference_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Item Attributes
+                    %h1= @page_sub_title = "Item Attributes"
                 %h5 Attributes Available on All Living Entities
                 .table-responsive
                     %table.table.table-striped.table-condensed

@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Monument Modes
+                    %h1= @page_sub_title = "Monument Modes"
                 :markdown
                     This module can be used to customize the modes that cores and destroyables cycle through, and at what duration they do so.
 

@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Examples
+        %h1= @page_title = "Examples"
         %p.lead XML File Examples
     %section
         .row
             = partial('examples_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 GS: Eldritch
+                    %h1= @page_sub_title = "GS: Eldritch"
                 :markdown
                     [<i class="fa fa-share right-ref-link"></i>](/modules/main)
                     Specify the main map element. Name, version, objective, ect.

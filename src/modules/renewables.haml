@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Renewables
+                    %h1= @page_sub_title = "Renewables"
                 :markdown
                     This module can create regions in which destroyed or altered blocks will gradually be restored to their original state.
 

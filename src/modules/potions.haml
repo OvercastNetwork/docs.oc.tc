@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Potions
+                    %h1= @page_sub_title = "Potions"
                 :markdown
                     To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
 

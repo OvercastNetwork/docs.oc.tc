@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead General
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Map Tutorial
+                    %h1= @page_sub_title = "Map Tutorial"
                 :markdown
                     The tutorial module is used to create a tutorial for the map. Tutorials are split up into stages which have a message and a teleport position.
 
