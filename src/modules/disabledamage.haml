@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Disable Damage
+                    %h1= @page_sub_title = "Disable Damage"
                 :markdown
                     Use this module to disable damage from specific causes. While almost every form of damage can be disabled it is recommended that you do not disable `VOID` damage.
 

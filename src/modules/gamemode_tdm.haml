@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Modes
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Team Deathmatch
+                    %h1= @page_sub_title = "Team Deathmatch"
                 :markdown
                     This gamemode uses the [scoring](/modules/scoring) module to run the game for a specified amount of time, after which the team with the highest score wins. Teams increase their score by killing players from the other team or capturing points from a [score box](/modules/scoring#score_box).
 

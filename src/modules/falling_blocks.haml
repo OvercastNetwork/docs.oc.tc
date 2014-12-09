@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Falling Blocks
+                    %h1= @page_sub_title = "Falling Blocks"
                 :markdown
                     The falling blocks module is used to specify what blocks are affected by gravity. Additional it also supports sticky blocks, if a falling block is stuck to a sticky block it will not fall.
 

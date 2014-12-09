@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Items & Armor
+                    %h1= @page_sub_title = "Items & Armor"
                 :markdown
                     Item tags have many different attributes, and some may only apply to certain items. Such as the `color=""` attribute, it currently only applies to leather armor.
 

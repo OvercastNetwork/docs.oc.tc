@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Filters & Regions
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Proximity Alarms
+                    %h1= @page_sub_title = "Proximity Alarms"
                 :markdown
                     Proximity alarms can be used to alert players when an enemy enters a specified area. Flares will go off around the protected area, with the color of the detected player's team, and all allied players will receive an alert message with sound.
 

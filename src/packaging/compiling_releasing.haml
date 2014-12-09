@@ -1,12 +1,12 @@
 .container
     .jumbotron.subhead
-        %h1 Packaging Your Map
+        %h1= @page_title = "Packaging Your Map"
     %section
         .row
             = partial('packaging_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Compiling & Releasing
+                    %h1= @page_sub_title = "Compiling & Releasing"
                 %p
                     Once your world is cleaned up and pruned, it is ready to compile. To start, add in your
                     %code map.xml

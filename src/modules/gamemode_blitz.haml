@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Modes
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Blitz
+                    %h1= @page_sub_title = "Blitz"
                 :markdown
                     The game will run for a specified amount of time, players will have to find and kill enemy players. Each player has a limited amount of lives, and after they are used up the player is moved to the observer team. The match ends after the specified amount of time, or when one team is eliminated. If the match timer ends before a team is eliminated the team with the most players remaining wins.
 

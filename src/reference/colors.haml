@@ -1,12 +1,12 @@
 .container
     .jumbotron.subhead
-        %h1 Reference
+        %h1= @page_title = "Reference"
     %section
         .row
             = partial('reference_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Dye Colors
+                    %h1= @page_sub_title = "Dye Colors"
                 :markdown
                     Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw) maps and the dyes hex color can be used to color armor. Teams are created with the chat color names defined in [formatting](/reference/formatting#chatColors).
 

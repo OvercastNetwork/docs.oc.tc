@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead General
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Match Information
+                    %h1= @page_sub_title = "Match Information"
                 :markdown
                     ### Rules
                     You can use the rules module to add custom rules to your map that are not already included in the standard Overcast Network rules. Regions and filters should be used to enforce access and block rules.

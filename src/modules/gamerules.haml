@@ -1,13 +1,13 @@
 .container
     .jumbotron.subhead
-        %h1 Modules
+        %h1= @page_title = "Modules"
         %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1 Gamerules
+                    %h1= @page_sub_title = "Gamerules"
                 :markdown
                     Minecraft's game rules can be set via the `<gamerules>` element in the `map.xml`. Syntax is as follows:
 
