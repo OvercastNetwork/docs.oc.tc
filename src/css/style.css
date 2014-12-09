@@ -114,7 +114,11 @@ td pre {
     margin-bottom: 0;
     display: inline-block;
     border: none;
-    padding: 1px 4px;
+    padding: 1px 0;
+}
+
+td pre code {
+    margin: 0 4px;
 }
 
 .right-ref-link {
