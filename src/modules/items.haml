@@ -85,6 +85,37 @@
                                 %td
                                     %span.label.label-primary Hex Color
                                 %td
+                            %tr
+                                %td
+                                    %code grenade
+                                %td
+                                    Projectile explodes on impact. Works with ender pearls, snowballs, eggs, and arrows.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code grenade-power
+                                %td The power of the grenade explosion on impact.
+                                %td
+                                    %span.label.label-primary Float
+                                %td 1.0
+                            %tr
+                                %td
+                                    %code grenade-fire
+                                %td
+                                    Explosion creates fire.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code grenade-destroy
+                                %td
+                                    Explosion destroys blocks.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
                 :markdown
 
                     Items can be give custom names and lore with the `name=""` and `lore=""` attributes. Colors and fancy text in item names or lore can be specified with the grave symbol `` ` and then the [formatting code](/reference/formatting). You can specify multiple lines of lore using a pipe symbol `|` for line breaks.
@@ -169,3 +200,13 @@
                         <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings>
 
                     `NOTE:` Negative attribute values are allowed; however sometimes they don't work as expected.
+
+                    ### [Grenades](id:grenades)
+
+                    The `grenade="true"` attribute will make the item explode on impact, just like a grenade. This option only works on items that can turn into projectiles. For example, ender pearls, snowballs, eggs, and arrows all work.
+
+                    The `grenade-power="1.0"` attribute sets the explosion power. The default value of `1.0` will not destroy blocks, but it will damage players and set off TNT.
+
+                    The attributes `grenade-fire="true"` and `grenade-destroy="true"` determine if the explosion creates fire and/or destroys blocks.
+
+                    `NOTE:` If an ender pearl is used a grenade, the player will teleport to the location and the explosion will occur.

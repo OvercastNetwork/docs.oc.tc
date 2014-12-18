@@ -13,12 +13,11 @@
 
                         <classes family="ghost" sticky="true">
                             <class name="Demon" default="true" description="Smoke and Fire!" icon="fireball">
-                                <permission>grenades.use</permission>
                                 <kit>
                                     <potion duration="oo" amplifier="2" ambient="true">damage resistance</potion>
                                     <potion duration="oo" amplifier="1" ambient="true">speed</potion>
                                     <item slot="8" amount="16">cooked beef</item>
-                                    <item slot="1" amount="5" name="`3Grenade">fireball</item>
+                                    <item slot="1" amount="5" name="`3Grenade" grenade="true">ender pearl</item>
                                 </kit>
                             </class>
                         </classes>
@@ -99,75 +98,7 @@
                                 %td
                                     If set to
                                     %code false
-                                    only players with the proper permission can use the class.
+                                    only OPs can use the class.
                                 %td
                                     %span.label.label-primary true/false
                                 %td true
-
-                :markdown
-
-                    <br/>
-                    #### Class Submodules
-                    A class module can contain `<permission>` nodes and kits. Permission nodes give players with that class specific permissions. Players can be give any permission from any of the currently loaded plugins.
-
-                        <class name="Leprachaun" description="Sticky XP Orbs with double jump!" longdescription="XP bar is a double-jump cooldown, use Bottle O' Enchanting to track enemies with XP orbs!" icon="exp bottle">
-                            <!-- The classes permissions -->
-                            <permission>gs.ability.agility</permission>
-                            <!-- The classes kit -->
-                            <kit parents="potions">
-                                <item slot="0" amount="5" name="`a`lBottle o' Gold">exp bottle</item>
-                                <item slot="2" amount="16">cooked beef</item>
-                                <double-jump/>
-                            </kit>
-                        </class>
-
-                    <br/>
-                    #### Permission Nodes
-                    The following permission nodes can be added to a class to give the player special ghost squadron abilities. `Note:` This only works on `<ghostsquadron/>` maps!
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Permission
-                                %th Description
-                        %tbody
-                            %tr
-                                %td
-                                    %code gs.ability.webbreak
-                                %td
-                                    Gives the player the ability to instantly destroy webs.
-                            %tr
-                                %td
-                                    %code gs.ability.revealpunch
-                                %td
-                                    Gives the player the ability to reveal invisible enemies by punching them.
-                            %tr
-                                %td
-                                    %code gs.ability.track
-                                %td
-                                    Gives the player the ability to see footsteps behind enemies.
-                            %tr
-                                %td
-                                    %code gs.ability.placelandmine
-                                %td
-                                    Gives the player the ability to place TNT land mines.
-                            %tr
-                                %td
-                                    %code gs.ability.webbow
-                                %td
-                                    Gives the player the ability to shoot flying cobwebs from their bow.
-                            %tr
-                                %td
-                                    %code gs.ability.agility
-                                %td
-                                    Gives the player the ability to walk on water.
-                            %tr
-                                %td
-                                    %code gs.ability.spideysense
-                                %td
-                                    Gives the player the ability to detect enemies by getting a flashing night-vision effect and hearing a sound when an enemy is near.
-                            %tr
-                                %td
-                                    %code grenades.use
-                                %td
-                                    Gives the player the ability to throw fireball grenades.
