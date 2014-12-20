@@ -222,3 +222,47 @@
                         <kit name="jump">
                             <double-jump/>
                         </kit>
+
+                    <br/>
+                    ### Fly Kit
+                    The fly kit gives players which it is applied to the ability to fly. If no attributes are specified can-fly defaults to true.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code can-fly
+                                %td
+                                    Set if the player can fly.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code flying
+                                %td
+                                    Set if the player is currently flying.
+                                    %br
+                                    %i
+                                        To enable flying
+                                        %code can-fly
+                                        can not be set to false.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td
+
+                :markdown
+                        <kit name="fly">
+                            <fly/>                <!-- can-fly = true, flying = not set -->
+                        </kit>
+
+                        <fly flying="false"/>     <!-- can-fly = true,  flying = false -->
+                        <fly can-fly="false"/>    <!-- can-fly = false, flying = not set  -->
+                        <fly flying="true"/>      <!-- can-fly = true,  flying = true  -->
