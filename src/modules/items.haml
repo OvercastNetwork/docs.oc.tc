@@ -247,6 +247,96 @@
 
                         <item slot="1" damage="8227" potions="fire resistance:900:0:false">potion</item>
 
+                    <br/>
+                    ### [Books](id:books)
+                    Written books can be created using the book element, the tile, author and individual pages can be formatted with [formatting codes](/reference/formatting). All normal item attributes can also be applied to books.
+
+                    Each page in a book can contain a maximum of 13 lines, with approximately 19 characters per line. Preferably books should be written in-game to ensure proper formatting, and then translated into the books element.
+
+                %h5 Book Element
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<book>')
+                                %td
+                                    The element containing the books
+                                    %code= html_escape('<title>')
+                                    %code= html_escape('<author>')
+                                    &
+                                    %code= html_escape('<pages>')
+
+                                %td
+                                    %span.label.label-primary Formatted Text
+
+                %h5 Book Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr{:title => "Required"}
+                                %td
+                                    %pre
+                                        %code= html_escape('<title>')
+                                %td
+                                    The title of the book.
+                                %td
+                                    %span.label.label-primary Formatted Text
+                                    %span.label.label-danger Required
+                            %tr{:title => "Required"}
+                                %td
+                                    %pre
+                                        %code= html_escape('<author>')
+                                %td The author of the book.
+                                %td
+                                    %span.label.label-primary Formatted Text
+                                    %span.label.label-danger Required
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pages>')
+                                %td The pages in the book.
+                                %td
+                                    %code= html_escape('<page>')
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<page>')
+                                %td
+                                    A newline separated string. Used inside
+                                    %code= html_escape('<pages>')
+                                %td
+                                    %span.label.label-primary Formatted Text
+
+                :markdown
+                        <book slot="1">
+                            <title>`6Example`r</title>
+                            <author>`4BB-8`r</author>
+                            <pages>
+                                <page>
+                                    `lPage `1I`r
+                                    This is an example
+                                </page>
+                                <page>
+                                    `lPage `1II`r
+
+                                    Nothing to see here, move along...
+                                </page>
+                                <!-- More pages -->
+                            </pages>
+                        </book>
+
                 :markdown
                     <br/>
                     ### [Enchantments](id:enchantments)
