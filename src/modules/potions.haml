@@ -7,16 +7,32 @@
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Potions"
+                    %h1= @page_sub_title = "Potion Effects"
                 :markdown
                     To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
-
-                        <potion duration="10" amplifier="4">damage resistance</potion>
-                        <potion duration="900" amplifier="1" ambient="true">jump</potion>
-
                     Potions effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and amplifier what level / how strong the potion is. The potion type is specified using the [potion name](/reference/potion_effects).
 
-                    ##### Potion Attributes
+                    To give a custom potion item to the player use the [items](/modules/items#potions) element and its `potions` attribute.
+
+                %h5 Potion Element
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<potion>')
+                                %td
+                                    The potion effects name.
+                                %td
+                                    %a{:href => "/reference/potion_effects"} Potion Name
+
+                    %h5 Potion Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -26,7 +42,7 @@
                                 %th Value
                                 %th Default
                         %tbody
-                            %tr.danger{:title => "Required"}
+                            %tr{:title => "Required"}
                                 %td
                                     %code duration
                                 %td
@@ -35,6 +51,7 @@
                                     %i Infinite duration can be specified by using <code>oo</code> as the duration.
                                 %td
                                     %span.label.label-primary Number
+                                    %span.label.label-danger Required
                                 %td
                             %tr
                                 %td
@@ -52,49 +69,5 @@
                                 %td false
 
                 :markdown
-                    <br/>
-                    To give a potion as an item you have to use:
-
-                        <item slot="3" damage="8229">potion</item>
-
-                    The damage specifies the potion type. [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions).
-
-                    <br/>
-                    ### Custom Potion Item Effects
-                    Custom effects can be added to a potion item with the `potions=""` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion items damage value will define the potion color and if it's a splash or normal potion.
-
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Specifier
-                                %th Description
-                                %th Value
-                        %tbody
-                            %tr
-                                %td
-                                    %code potion_name
-                                %td Name of the potion effect.
-                                %td
-                                    %a{:href => "/reference/potion_effects"} Potion names
-                            %tr
-                                %td
-                                    %code duration
-                                %td Length of the potion effect in minecraft ticks.
-                                %td
-                                    %span.label.label-primary Number
-                            %tr
-                                %td
-                                    %code potency
-                                %td What level the potion effect is, 0 is equal to a lvl 1 potion.
-                                %td
-                                    %span.label.label-primary 0-2
-                            %tr
-                                %td
-                                    %code ambient
-                                %td Specify if the potion effect is ambient. (Decreased and translucent particle effects.)
-                                %td
-                                    %span.label.label-primary true/false
-                :markdown
-
-                        <item slot="1" damage="8227" potions="fire resistance:900:0:false">potion</item>
+                        <potion duration="10" amplifier="4">damage resistance</potion>
+                        <potion duration="900" amplifier="1" ambient="true">jump</potion>
