@@ -125,6 +125,11 @@ td pre code {
     float: right;
     margin-left: 8px;
 }
+.left-ref-link {
+    float: left;
+    margin-right: 8px;
+}
+
 
 .docs-footer {
     margin-bottom: 20px;
