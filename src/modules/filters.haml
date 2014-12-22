@@ -180,6 +180,24 @@
                                         %code= html_escape('<cause>cause</cause>')
                                 %td
                                     Filter event causes, currently only <code>PLAYER</code> and <code>EXPLOSION</code>.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<carrying>item</carrying>')
+                                %td
+                                    Match if the player is carrying an item.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<holding>item</holding>')
+                                %td
+                                    Match if the player is holding an item.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<wearing>item</wearing>')
+                                %td
+                                    Match if the player is wearing an item.
                 :markdown
 
                     <br/>
