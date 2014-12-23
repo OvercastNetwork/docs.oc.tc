@@ -145,7 +145,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<random>float or range</random>')
+                                        %code= html_escape('<random>decimal or range</random>')
                                 %td
                                     Random chance matcher.
                                     %a.left-ref-link{:href=>"#randomFilter"} <i class="fa fa-chevron-down"></i>
@@ -183,21 +183,24 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<carrying>item</carrying>')
+                                        %code= html_escape('<carrying><item>material_name</item></carrying>')
                                 %td
                                     Match if the player is carrying an item.
+                                    %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<holding>item</holding>')
+                                        %code= html_escape('<holding><item>material_name</item></holding>')
                                 %td
                                     Match if the player is holding an item.
+                                    %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<wearing>item</wearing>')
+                                        %code= html_escape('<wearing><item>material_name</item></wearing>')
                                 %td
                                     Match if the player is wearing an item.
+                                    %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                 :markdown
 
                     <br/>
@@ -348,6 +351,22 @@
 
                         <!-- allow any player actions by the team currently owning north-hill -->
                         <objective>north-hill</objective>
+
+
+                    <br/>
+                    #### [Item Filters](id:itemFilters)
+
+                    These filters can be used to filter for players with specific items in their inventory. They accept a single [item](/modules/items) element. Only the item's type, durability/damage and meta data are compared. A item's meta data includes the item's name, enchantments, etc.
+
+                        <!-- Player has a stick named 'Blue Door Key' in their inventory -->
+                        <carrying><item name="Blue Door Key">stick</item></carrying>
+
+                        <!-- Player is holding a clock-->
+                        <holding><item>clock</item></holding>
+
+                        <!-- Player is wearing a chainmail chestplate -->
+                        <wearing><item>chainmail chestplate</item></wearing>
+
 
 
                     <br/>
