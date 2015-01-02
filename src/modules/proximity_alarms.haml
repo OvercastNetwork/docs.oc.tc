@@ -11,7 +11,7 @@
                 :markdown
                     Proximity alarms can be used to alert players when an enemy enters a specified area. Flares will go off around the protected area, with the color of the detected player's team, and all allied players will receive an alert message with sound.
 
-                    The proximity-alarm message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If this attribute is missing no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
+                    If the `<notify>` subelement is not defined, the proximity-alarm message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If the `<detect>` attribute is missing no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
 
                     Flares will only be set off if a `flare-radius=""` is defined. If this attribute is missing a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
 
@@ -30,8 +30,8 @@
                                 %td
                                     The region this alarm applies to.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a 
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<region>')
                                         sub-element.
                                 %td
@@ -76,6 +76,13 @@
                                     %pre
                                         %code= html_escape('<detect>')
                                 %td Filter who gets detected by the proximity alarm.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<notify>')
+                                %td Filter who gets notified by the proximity alarm.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
 
