@@ -3,9 +3,10 @@
     color: #8e908c;
 }
 
-.tomorrow-aqua, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+.tomorrow-aqua, pre .variable, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
     color: #3e999f;
 }
+
 
 .tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
     color: #f5871f;
@@ -23,7 +24,8 @@
     color: #c82829;
 }
 
-.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title,
+pre .variable, pre .attribute {
     color: #4271ae;
 }
 

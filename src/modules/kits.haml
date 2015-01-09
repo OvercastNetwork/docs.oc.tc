@@ -218,10 +218,36 @@
                                 %td
                                     %span.label.label-primary true/false
                                 %td true
+                            %tr
+                                %td
+                                    %code power
+                                %td
+                                    Power of the double jump.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 3
+                            %tr
+                                %td
+                                    %code recharge-time
+                                %td
+                                    Recharge time till the player can double jump again.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td 2.5s
+                            %tr
+                                %td
+                                    %code recharge-before-landing
+                                %td
+                                    Player needs to land before double jump starts recharging.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
                 :markdown
                         <kit name="jump">
                             <double-jump/>
                         </kit>
+
+                        <double-jump recharge-before-landing="true"/>
 
                     <br/>
                     ### Fly Kit
