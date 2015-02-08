@@ -168,11 +168,10 @@
                                 %td
                                     %span.label.label-primary String
 
-                %br
-                A players UUID is a unique code to each player that is used to keep track of each player even if they change their name. You can check player UUID's on
-                = succeed "." do
-                    %a{:href => "http://mcuuid.net/"} mcuuid.net
-                %br
+                :markdown
+                A players UUID is a unique code to each player that is used to keep track of each player even if they change their name. You can check player UUID's [mcuuid.net](http://mcuuid.net)
+
+                A player that is not defined with a UUID will not get any mapmaker perks on their map.
 
                 :markdown
 
