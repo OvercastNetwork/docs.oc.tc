@@ -14,7 +14,7 @@
                     The `proto=""` attribute specifies what PGM version the XML file was created for. If this value is higher than the version of PGM that is running, the map won't load. If it's lower, the map will load but the XML may be interpreted in an outdated way. Mapmakers should always use the latest supported XML version, and this may be required of new maps that are to be added to the Overcast Network rotations.
 
                     The maps version should follow the versioning schema `major.minor.patch`.
-                
+
                 %h5 Map Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -130,7 +130,7 @@
                                     %pre
                                         %code= html_escape('<author>')
                                 %td
-                                    A major author of the map, used in 
+                                    A major author of the map, used in
                                     %code= html_escape('<authors>')
                                 %td
                                     %span.label.label-primary String
@@ -140,7 +140,7 @@
                                     %pre
                                         %code= html_escape('<contributor>')
                                 %td
-                                    A contributor to the map. used in 
+                                    A contributor to the map. used in
                                     %code= html_escape('<contributors>')
 
                                 %td
@@ -161,17 +161,28 @@
                                 %td The contribution this author or contributor made to the map.
                                 %td
                                     %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code uuid
+                                %td UUID used to define a player.
+                                %td
+                                    %span.label.label-primary String
+
+                :markdown
+                A players UUID is a unique code to each player that is used to keep track of each player even if they change their name. You can check player UUID's [mcuuid.net](http://mcuuid.net)
+
+                A player that is not defined with a UUID will not get any mapmaker perks on their map.
+
                 :markdown
 
                         <!-- Major map authors. -->
                         <authors>
                             <author>aPerson</author>
                             <author contribution="Clarification of element usage, etc.">Plastix</author>
+                            <author uuid="260004f0-996b-4539-ba21-df4ee6336b63"/> <!-- Elliott_ -->
                         </authors>
 
                         <!-- People that contributed in some way to the map. -->
                         <contributors>
                             <contributor contribution="A contribution">aHelper</contributor>
                         </contributors>
-
-                            
