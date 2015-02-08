@@ -14,7 +14,7 @@
                     The `proto=""` attribute specifies what PGM version the XML file was created for. If this value is higher than the version of PGM that is running, the map won't load. If it's lower, the map will load but the XML may be interpreted in an outdated way. Mapmakers should always use the latest supported XML version, and this may be required of new maps that are to be added to the Overcast Network rotations.
 
                     The maps version should follow the versioning schema `major.minor.patch`.
-                
+
                 %h5 Map Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -114,7 +114,10 @@
                 :markdown
                     <br/>
                     #### Authors & Contributors
-                    The authors and contributers elements provide information about who created and helped create the map. There can be multiple authors and contributors to a map. The contribution attribute should be used to specify what their contribution to the map was. It is recommended that you use the persons minecraft name to credit them.
+                    The authors and contributers elements provide information about who created and helped create the map. There can be multiple authors and contributors to a map. The contribution attribute should be used to specify what their contribution to the map was.
+
+                    A players name should **not** be used to credit them, instead their UUID should be used. A UUID is a unique user identifier that is used to keep track of players even if they change their name. You can check player UUID's at [mcuuid.net](http://mcuuid.net). If an author or contributor is defined without a UUID that player will not get any mapmaker perks on the map.
+
 
                 %h5 Author or Contributor Sub-elements
                 .table-responsive
@@ -130,7 +133,7 @@
                                     %pre
                                         %code= html_escape('<author>')
                                 %td
-                                    A major author of the map, used in 
+                                    A major author of the map, used in
                                     %code= html_escape('<authors>')
                                 %td
                                     %span.label.label-primary String
@@ -140,7 +143,7 @@
                                     %pre
                                         %code= html_escape('<contributor>')
                                 %td
-                                    A contributor to the map. used in 
+                                    A contributor to the map. used in
                                     %code= html_escape('<contributors>')
 
                                 %td
@@ -161,17 +164,23 @@
                                 %td The contribution this author or contributor made to the map.
                                 %td
                                     %span.label.label-primary String
+                            %tr
+                                %td
+                                    %code uuid
+                                %td UUID used to identify a player.
+                                %td
+                                    %span.label.label-primary String
+
                 :markdown
 
                         <!-- Major map authors. -->
                         <authors>
                             <author>aPerson</author>
-                            <author contribution="Clarification of element usage, etc.">Plastix</author>
+                            <author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8" contribution="Clarification of element usage, etc."/> <!-- Plastix -->
+                            <author uuid="260004f0-996b-4539-ba21-df4ee6336b63"/> <!-- Elliott_ -->
                         </authors>
 
                         <!-- People that contributed in some way to the map. -->
                         <contributors>
                             <contributor contribution="A contribution">aHelper</contributor>
                         </contributors>
-
-                            
