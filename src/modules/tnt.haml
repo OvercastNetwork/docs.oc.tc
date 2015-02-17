@@ -11,7 +11,9 @@
                 :markdown
                     You can modify TNT explosion & placing behavior with this module. Destruction of terrain can be easily disabled with the blockdamage element. If it is set to `false` the yield element will have no effect since there won't be any block drops. TNT damage can be further limited with the [disable damage module](/modules/disabledamage#block_explosion).
 
-                    By default dispensers containing TNT will ignite their TNT when exploded. This behavior can be customized with the `<dispenser-tnt-limit>` and `<dispenser-tnt-multiplier>` elements, setting either of these to 0 will disable it.  
+                    By default dispensers containing TNT will ignite their TNT when exploded. This behavior can be customized with the `<dispenser-tnt-limit>` and `<dispenser-tnt-multiplier>` elements, setting either of these to 0 will disable it.
+
+                    If licensing is enabled only players with a TNT license can use TNT. This license is revoked if a player kills too many of their teammates using TNT.
 
 
                 %h5 TNT Module Elements
@@ -88,6 +90,24 @@
                                 %td
                                     %span.label.label-primary 0 - 2.0
                                 %td 0.25
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<licensing>')
+                                %td
+                                    TNT usage is restricted to players who are licensed.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<friendly-defuse>')
+                                %td
+                                    Players may defuse TNT placed by their teammates.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
                 :markdown
                     Examples
 
