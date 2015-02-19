@@ -1,16 +1,18 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Packaging Your Map"
+        %h1= @page_title = "Guides"
+        %p.lead Packaging Maps for Release
     %section
         .row
-            = partial('packaging_sidebar')
+            = partial('guides_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Cleaning Files"
-                %p
+                    %h1= @page_sub_title = "Cleaning the World Folder"
+                :markdown
                     Minecraft will generate quite a few files in your world folder when you create a world. Most of these files are not needed and by deleting them you can reduce the file size when it comes to uploading your world.
-                %p
+
                     Below is a table which displays all the files that may be generated in your world folder, along with a description and whether or not the file is required.
+
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

@@ -15,6 +15,8 @@
 
                     Note that Y is the up/down axis in minecraft, instead of Z like most coordinate systems.
 
+                    See the [Properly Defining Regions](/guides/regions) guide for information on how to properly get the coordinates of a region.
+
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %tbody
@@ -62,12 +64,6 @@
                                     %br
                                     A zero size/position region
                 :markdown
-
-
-                    `TIP:` Use the worldedit wand to help in defining region coordinates. Select an area and do `/size`, it will display two 3D coordinates. To use these coordinates you will have to take whichever X value is higher and add one to it, and then do the same for Y and Z. This is because PGM checks from the centre of blocks and WE checks from the corners. You don't have to do this for elements with just one coordinate such as: `<block>` or `<sphere>`.
-
-                    For example: `min="49,13,-4" max="37,10,4"` would become `min="50,14,-4" max="37,10,5"`.
-                    <!--![Regions](./images/selections.png)-->
 
                     <br/>
                     #### Referencing a Named Region
@@ -311,8 +307,9 @@
                     ![Region Mirror .png](/img/region_mirror.png)
 
                     <br/>
-                    Example
+                    Examples
 
+                        <!-- Region Union-->
                         <regions>
                             <!-- Blue Team Base -->
                             <apply enter="only-blue" message="You may not enter the enemy team's base!">
@@ -323,6 +320,7 @@
                             </apply>
                         </regions>
 
+                        <!-- Region Mirror -->
                         <regions>
                             <apply block="deny-all" message="You may not under-bridge!">
                                 <cuboid name="red-underside" min="-oo,-oo,-oo" max="oo,41,40"/>
@@ -394,6 +392,6 @@
 
                 :markdown
 
-                    `NOTE:` The pitch and yaw arguments can also accept a `X,Y,Z` coordinate.
+                    `NOTE:` The pitch and yaw arguments can also accept a `X,Y,Z` coordinate. <br/>
                     `TIP:` Copy the yaw from the F3 screen in minecraft (labled as `f`).
 

@@ -52,14 +52,15 @@
                             %a{:href => "/reference/inventory"}
                                 %i.fa.fa-book
                                 Reference
+                        %li{:class => (current_page.include?("guides") ? "active" : "")}
+                            %a{:href => "/guides/packaging/cleaning_files"}
+                                %i.fa.fa-clipboard
+                                Guides
                         %li{:class => (current_page.include?("examples") ? "active" : "")}
                             %a{:href => "/examples"}
                                 %i.fa.fa-file-text
                                 Examples
-                        %li{:class => (current_page.include?("packaging") ? "active" : "")}
-                            %a{:href => "/packaging/cleaning_files"}
-                                %i.fa.fa-folder-open
-                                Packaging
+
         - @page_title = nil
         - @page_sub_title = nil
         = yield

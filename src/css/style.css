@@ -228,3 +228,8 @@ a.btn-more.collapsed:before {
 a.btn-more:before {
     content: "Less ";
 }
+
+/* Elements with this attribute will show a scrollbar if they overflow their parent */
+.scroll {
+    overflow: auto;
+}
