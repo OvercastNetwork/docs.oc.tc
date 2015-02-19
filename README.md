@@ -3,6 +3,12 @@
 Website source for docs.oc.tc. Uses the ruby on rails staticmatic gem to build a static documentation website.
 
 
+#### Editing
+
+1. Markdown should be used for content and haml for layout and data. [¹](http://chriseppstein.github.io/blog/2010/02/08/haml-sucks-for-content/)
+2. Care should be taken when removing trailing whitespace since markdown uses two spaces to create a newline.
+
+
 #### Pull Requests
 
 Pull requests should have the following things:
