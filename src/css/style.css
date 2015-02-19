@@ -214,6 +214,10 @@ td pre code {
     background-color:#f0d5d5 !important;
 }
 
+.table-striped>tbody {
+    border-bottom: 1px solid #ddd;
+}
+
 /* Custom dynamic button style */
 /* - Currently used for collapsible example buttons
    - Title changes from "More Examples" to "Less Examples" and vs versa */

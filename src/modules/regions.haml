@@ -289,6 +289,8 @@
 
                     Regions can be translated or mirrored with the following elements. When translating or mirroring a region the original is not modified instead a copy is created.
 
+                    When mirroring a region the origin is the central point around which the region is mirrored. This point can be inside or outside the region being mirrored. The normal specifies which direction the region is being mirrored, e.g., `1,0,0` would mirror along the +X axis.
+
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %tbody
@@ -303,9 +305,11 @@
                                     %pre
                                         %code= html_escape('<mirror normal="1,0,1" origin="100,50,0"><region name="region1"/></mirror>')
                                     %br
-                                    Copy and mirror region by a axis around a point.
+                                    Copy and mirror a region towards a normal around a point.
 
                 :markdown
+                    ![Region Mirror .png](/img/region_mirror.png)
+
                     <br/>
                     Example
 
