@@ -1,7 +1,8 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Modules"
-        %p.lead Game Modes
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Modes
     %section
         .row
             = partial('modules_sidebar')
@@ -41,8 +42,8 @@
                                 %td
                                     A region containing the core.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a  
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<region>')
                                         sub-element.
                                 %td
@@ -123,7 +124,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
-                                %td 
+                                %td
                                     A region containing the core.
                                     %br
                                     %i

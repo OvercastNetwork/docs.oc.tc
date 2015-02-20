@@ -79,6 +79,17 @@ h6,
     opacity: .8;
 }
 
+.jumbotron.subhead .lead {
+    margin-bottom: 10px;
+}
+.jumbotron.subhead h1 .lead {
+    display: inline-block;
+    margin-bottom: 0px !important;
+}
+.jumbotron.subhead h1 {
+    margin-top: 0;
+}
+
 @media (min-width: 768px) {
     .jumbotron.subhead {
         padding: 30px 40px;
@@ -90,18 +101,24 @@ h6,
     .jumbotron.subhead .lead {
         font-size: 20px;
     }
+
+    .jumbotron.subhead h1 .lead {
+        margin-left: 10px;
+    }
 }
 @media (max-width: 767px) {
     .jumbotron.subhead {
         padding: 24px 30px;
         padding-bottom: 14px;
     }
-}
-.jumbotron.subhead .lead {
-    margin-bottom: 10px;
-}
-.jumbotron.subhead h1 {
-    margin-top: 0;
+    .jumbotron.subhead .lead {
+        font-size: 18px;
+    }
+
+    .jumbotron.subhead h1 .lead {
+        display: block;
+        margin-left: none;
+    }
 }
 
 

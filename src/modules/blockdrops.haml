@@ -1,7 +1,8 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Modules"
-        %p.lead Block Behavior
+        %h1
+            = @page_title = "Modules"
+            %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
@@ -25,11 +26,11 @@
                             %tr
                                 %td
                                     %code region
-                                %td 
+                                %td
                                     The region this rule applies to.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a 
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<region>')
                                         sub-element.
                                 %td
@@ -143,7 +144,7 @@
                     <br/>
                     ### Explosion behavior
 
-                    The behavior for blocks that become airborne due to explosions can be modified in addition to all the other drop rules. 
+                    The behavior for blocks that become airborne due to explosions can be modified in addition to all the other drop rules.
 
                     ##### Rule Sub-elements
                 .table-responsive
@@ -165,7 +166,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<land-chance>')
-                                %td The percentage of falling blocks that will change back to real blocks when they land. 
+                                %td The percentage of falling blocks that will change back to real blocks when they land.
                                 %td
                                     %span.label.label-primary 0 - 1.0
                             %tr

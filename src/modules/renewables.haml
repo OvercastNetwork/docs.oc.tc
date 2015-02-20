@@ -1,7 +1,8 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Modules"
-        %p.lead Block Behavior
+        %h1
+            = @page_title = "Modules"
+            %p.lead Block Behavior
     %section
         .row
             = partial('modules_sidebar')
@@ -30,8 +31,8 @@
                                 %td
                                     Region where this renewable is located.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a  
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<region>')
                                         sub-element.
                                 %td
@@ -80,7 +81,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
-                                %td 
+                                %td
                                     The region the renewable applies to.
                                     %br
                                     %i
@@ -159,7 +160,7 @@
                                 <shuffle>iron ore</shuffle>
                             </renewable>
                         </renewables>
-   
+
                     Renewables can also accept filters. They can be referenced from the filters module or defined directly inside the `<renew-filter>`, `<replace-filter>` and `<shuffle-filter>` renewable sub-elements. These sub-elements filter the renew, replace and shuffle block definitions respectively.
 
                         <renewables>

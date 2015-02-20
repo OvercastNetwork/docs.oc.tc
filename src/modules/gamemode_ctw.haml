@@ -1,7 +1,8 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Modules"
-        %p.lead Game Modes
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Modes
     %section
         .row
             = partial('modules_sidebar')
@@ -59,8 +60,8 @@
                                 %td
                                     The monument where the wool has to be placed.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a  
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<monument>')
                                         sub-element.
                                 %td
@@ -143,7 +144,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<monument>')
-                                %td 
+                                %td
                                     The monument where the wool has to be placed.
                                     %br
                                     %i

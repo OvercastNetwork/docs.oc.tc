@@ -1,7 +1,8 @@
 .container
     .jumbotron.subhead
-        %h1= @page_title = "Modules"
-        %p.lead Game Settings
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
@@ -76,4 +77,4 @@
                     special values "tie" for no winner, or "objectives" for the team that has the most objectives completed. The [time period](/reference/time_periods) format can be used to specify the time in minutes, etc.
 
                         <time result="objectives">5m</time>
-                        
+
