@@ -7,7 +7,9 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Item Attributes"
-                %h5 Attributes Available on All Living Entities
+                :markdown
+                    Players or mobs carrying or wearing items with these attributes will have the effects specified applied to themselves.
+
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -16,16 +18,16 @@
                                 %th Description
                                 %th Default Base
                                 %th Min
-                                %th Max
+                                %th{:style => "min-width: 60px;"} Max
                         %tbody
                             %tr
                                 %td
                                     %code generic.maxHealth
-                                %td The maximum health of this mob; determines the highest Health they may be healed to.
+                                %td The maximum health of this mob, determines the highest health they may be healed to.
                                 %td 20.0
                                 %td 0.0
                                 %td
-                                    2147483647.0 (2<sup>31</sup> − 1)
+                                    2<sup>31</sup> − 1
                             %tr
                                 %td
                                     %code generic.followRange
@@ -36,7 +38,10 @@
                             %tr
                                 %td
                                     %code generic.knockbackResistance
-                                %td Resistance to knockback from attacks, explosions, and projectiles. 1.0 is full resistance.
+                                %td
+                                    Resistance to knockback from attacks, explosions, and projectiles.
+                                    %br
+                                    %i 1.0 is full knockback resistance.
                                 %td 0.0
                                 %td 0.0
                                 %td 1.0
@@ -54,25 +59,6 @@
                                 %td 1.0
                                 %td 0.0
                                 %td ∞
-                %h5 Attributes for Horses
-                %code NOTE:
-                This is useful if you want custom attributes for horse armor.
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Name
-                                %th Description
-                                %th Default Base
-                                %th Min
-                                %th Max
-                        %tbody
-                            %tr
-                                %td
-                                    %code horse.jumpStrength
-                                %td Horse jump strength in some unknown metric.
-                                %td 0.7
-                                %td 0.0
-                                %td 2
+
                 :markdown
                     Copied from: [Minecraft Wiki Attributes](http://minecraft.gamepedia.com/Attribute)
