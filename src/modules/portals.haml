@@ -42,8 +42,8 @@
                                 %td
                                     Region where this portals entrance is located.
                                     %br
-                                    %i 
-                                        Can be either this attribute or a  
+                                    %i
+                                        Can be either this attribute or a
                                         %code= html_escape('<region>')
                                         sub-element.
                                 %td
@@ -73,7 +73,7 @@
                             %tr
                                 %td
                                     %code bidirectional
-                                %td Creates a dual-linked portal that goes both ways. This can only be used when all coordinates and directions are relative. 
+                                %td Creates a dual-linked portal that goes both ways. This can only be used when all coordinates and directions are relative.
                                 %td
                                     %span.label.label-primary true/false
                                 %td false
@@ -105,7 +105,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
-                                %td 
+                                %td
                                     Region where this portals entrance is located.
                                     %br
                                     %i
@@ -118,7 +118,7 @@
                                 %td
                                     %pre
                                         %code= html_escape('<destination>')
-                                %td 
+                                %td
                                     Destination of the portal, teleports players to a random point inside the region.
                                     %br
                                     %i Region is automatically filtered against block place.
@@ -141,19 +141,23 @@
                             </portal>
                         </portals>
 
-                        <portals>
-                            <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged -->
-                            <portal x="@10" y="@8" z="@45">
-                                <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
-                            </portal>
+                %p
+                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-portal-examples", :'data-toggle' => "collapse"} Examples
+                %div.collapse{:id => "collapse-portal-examples"}
+                    :markdown
+                            <portals>
+                                <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged -->
+                                <portal x="@10" y="@8" z="@45">
+                                    <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+                                </portal>
 
-                            <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
-                            <portal z="12" pitch="@10" yaw="@-90">
-                                <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
-                            </portal>
+                                <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
+                                <portal z="12" pitch="@10" yaw="@-90">
+                                    <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+                                </portal>
 
-                            <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
-                            <portal region="portal-entrance">
-                                <destination><region name="portal-exit"/></destination>
-                            </portal>
-                        </portals>
+                                <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
+                                <portal region="portal-entrance">
+                                    <destination><region name="portal-exit"/></destination>
+                                </portal>
+                            </portals>

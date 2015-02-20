@@ -233,3 +233,8 @@ a.btn-more:before {
 .scroll {
     overflow: auto;
 }
+
+/* Remove the gradient background from wells introduced by the custom bootstrap stylesheet */
+.well {
+    background-image: none !important;
+}
