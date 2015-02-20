@@ -7,7 +7,7 @@
             = partial('reference_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Inventory Slots"
+                    %h1= @page_sub_title = "Inventory Slots & Materials"
                 :markdown
                     ![Inv Slots .png](/img/inv_slots.png)
 
@@ -31,7 +31,7 @@
                                     %th Name
                                     %th{:style => "max-width: 128px;"}
                                         UID
-                                        .span.label.label-danger{:style => "position: relative; top: -1px;"} (Obsolete)
+                                        .span.label.label-danger{:style => "position: relative; top: -1px;"} Obsolete
                                     %th Tags
                             %tbody#dataTable
                                 %tr

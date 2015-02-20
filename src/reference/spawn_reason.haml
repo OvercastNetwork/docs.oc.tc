@@ -1,0 +1,123 @@
+.container
+    .jumbotron.subhead
+        %h1= @page_title = "Reference"
+        /%p.lead Main map element
+    %section
+        .row
+            = partial('reference_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Entity Spawn Reason"
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Reason
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code NATURAL
+                                %td When something spawns from natural means.
+                            %tr
+                                %td
+                                    %code JOCKEY
+                                %td When an entity spawns as a jockey of another entity (mostly spider jockeys)
+                            %tr
+                                %td
+                                    %code CHUNK_GEN
+                                %td When a creature spawns due to chunk generation.
+                            %tr
+                                %td
+                                    %code SPAWNER
+                                %td When a creature spawns from a spawner.
+                            %tr
+                                %td
+                                    %code EGG
+                                %td When a creature spawns from an egg.
+                            %tr
+                                %td
+                                    %code SPAWNER_EGG
+                                %td When a creature spawns from a Spawner Egg.
+                            %tr
+                                %td
+                                    %code LIGHTNING
+                                %td When a creature spawns because of a lightning strike.
+                            / %tr
+                            /     %td
+                            /         %code BED
+                            /     %td
+                            /         When a creature is spawned by a player that is sleeping.
+                            /         %span.label.label-danger Deprecated
+                            %tr
+                                %td
+                                    %code BUILD_SNOWMAN
+                                %td When a snowman is spawned by being built.
+                            %tr
+                                %td
+                                    %code BUILD_IRONGOLEM
+                                %td When an iron golem is spawned by being built.
+                            %tr
+                                %td
+                                    %code BUILD_WITHER
+                                %td When a wither boss is spawned by being built.
+                            %tr
+                                %td
+                                    %code VILLAGE_DEFENSE
+                                %td When an iron golem is spawned to defend a village.
+                            %tr
+                                %td
+                                    %code VILLAGE_INVASION
+                                %td When a zombie is spawned to invade a village.
+                            %tr
+                                %td
+                                    %code BREEDING
+                                %td When an animal breeds to create a child.
+                            %tr
+                                %td
+                                    %code SLIME_SPLIT
+                                %td When a slime splits.
+                            %tr
+                                %td
+                                    %code REINFORCEMENTS
+                                %td When an entity calls for reinforcements.
+                            %tr
+                                %td
+                                    %code NETHER_PORTAL
+                                %td When a creature is spawned by nether portal.
+                            %tr
+                                %td
+                                    %code DISPENSE_EGG
+                                %td When a creature is spawned by a dispenser dispensing an egg.
+                            %tr
+                                %td
+                                    %code INFECTION
+                                %td When a zombie infects a villager.
+                            %tr
+                                %td
+                                    %code CURED
+                                %td When a villager is cured from infection.
+                            %tr
+                                %td
+                                    %code OCELOT_BABY
+                                %td When an ocelot has a baby spawned along with them.
+                            %tr
+                                %td
+                                    %code SILVERFISH_BLOCK
+                                %td When a silverfish spawns from a block.
+                            %tr
+                                %td
+                                    %code MOUNT
+                                %td When an entity spawns as a mount of another entity (mostly chicken jockeys)
+                            %tr
+                                %td
+                                    %code CUSTOM
+                                %td When a creature is spawned by plugins.
+                            %tr
+                                %td
+                                    %code DEFAULT
+                                %td When an entity is missing a SpawnReason.
+
+                :markdown
+
+                    Copied from: [bukkit docs - Spawn Reason](http://jd.bukkit.org/rb/doxygen/d6/d38/enumorg_1_1bukkit_1_1event_1_1entity_1_1CreatureSpawnEvent_1_1SpawnReason.html)
