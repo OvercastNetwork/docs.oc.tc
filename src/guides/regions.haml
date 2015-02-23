@@ -16,15 +16,15 @@
 
                     <p class="scroll"><img src="/img/regions/destroyable.png"/></p>
 
-                    First, we stand very close to one **corner** of the region and note the coordinates are (32, 60, -20):
+                    First, we stand very close to one **corner** of the region and note the coordinates are `(32, 60, -20)`:
 
                     <p class="scroll"><img src="/img/regions/destroyable_c1.png"/></p>
 
-                    Then we stand over the opposite corner and note the coordinates are (34, 60, -18). We know the monument is 3 blocks tall, so we'll just subtract 3 from the Y coordinate to get (34, 57, -18):
+                    Then we stand over the opposite corner and note the coordinates are `(34, 60, -18)`.<br/> We know the monument is three blocks tall, so we'll just subtract three from the Y coordinate to get `(34, 57, -18)`:
 
                     <p class="scroll"><img src="/img/regions/destroyable_c2.png"/></p>
 
-                    Notice that we are rounding to the  **nearest** integer, since those will obviously be the coordinates of the corner we are standing close to. We don't need to worry about positive vs negative coordinates, as they work the same way, and we never need to add or subtract 1.
+                    Notice that we are rounding to the  **nearest** integer, since those will obviously be the coordinates of the corner we are standing close to. We don't need to worry about positive vs negative coordinates, as they work the same way, and we never need to add or subtract one.
 
                     With these coordinates, we can make a cuboid region for the monument:
 
@@ -38,13 +38,13 @@
 
                     An easy way to check that cuboid regions are correct is to simply subtract the low coordinates from the high ones. The result should be the size of the region. If it isn't, you did something wrong.
 
-                    Let's try a more interesting region: a cylinder. A cylinder is defined by its base (center) point, radius, and height. Assuming one layer of diamond blocks, the cylinder in the image below is based at (53.5, 57, -11.5) and has a radius of 2.5 and a height of 1. Blocks with their center point inside the cylinder will be considered part of the region. I've highlighted the region boundary and the block centers so you can easily see how this works:
+                    Let's try a more interesting region: a cylinder. A cylinder is defined by its base (center) point, radius, and height. Assuming one layer of blocks, the cylinder in the image below is based at `(53.5, 57, -10.5)` and has a radius of `2.5` and a height of `1`. Blocks with their center point inside the cylinder will be considered part of the region. I've highlighted the region boundary and the block centers so you can easily see how this works:
 
                     <p class="scroll"><img src="/img/regions/cylinder.png"/></p>
 
                     So the region would be:
 
-                        <cylinder base="53.5, 57, -11.5" radius="2.5" height="1"/>
+                        <cylinder base="53.5, 57, -10.5" radius="2.5" height="1"/>
 
 
                     <br/>
