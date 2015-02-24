@@ -1,0 +1,644 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Modes
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Capture the Flag"
+                :markdown
+                    The flags module is very versatile and can be used for many different varieties of gamemodes. It is used to define carry-able flags, flag posts and nets where those flags can be captured. A map can have any number of flags, post and nets.
+
+                    Minecraft banners are used as flags. PGM will not generate a banner in the world for a flag, instead the map creator must place a standing-banner manually at the flag's specified post. This allows complete control of the banner's colors and patterns.
+
+                    Flags require a single default post, be it a sub-element or specified in the flag's post attribute. If is not specified as an attribute the post must be defined as sub-element inside that flag. A flag's `post` is the initial & default location of the banner. A net's `post` is the location the flag will return to after being captured. If a net does not have a post specified the flag's default post will be used.
+
+                    Posts, flags and nets can be defined in the main flags element and referenced. A single post can also be defined inside a flag, this will then be the flags default post. A single net or multiple nets can be defined inside a flag, only that flag can then be captured in those nets.
+
+                        <flags>
+                            <post id="lime-flag-post" pickup-filter="blue-only">2,5,11</post>
+                            <flag id="lime-flag" name="Lime Flag" color="lime" post="lime-flag-post"/>
+                            <net post="lime-flag-post" points="1" region="blue-net" capture-filter="blue-flag-filter"/>
+                        </flags>
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Flags Elements
+                                %th Description
+                                %th Sub-Type
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<flag>')
+                                %td
+                                    A flag representing a single standing-banner on the map.
+                                    %a.left-ref-link{:href=>"#flags"} <i class="fa fa-chevron-down"></i>
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<post>X,Y,Z</post>')
+                                %td
+                                    The default or return location of a flag's banner on the map.
+                                    %a.left-ref-link{:href=>"#posts"} <i class="fa fa-chevron-down"></i>
+                                %td
+                                    %a{:href => "/modules/regions#pointProviders"} Point Provider
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<net>')
+                                %td
+                                    A net region where flags can be captured in.
+                                    %a.left-ref-link{:href=>"#nets"} <i class="fa fa-chevron-down"></i>
+                                %td
+
+                :markdown
+                    <br/>
+                    #### [Flags](id:flags)
+
+                    A `<flag>` is a single physical banner that is always at exactly one location, and in one of three states: _carried_ by a player, _dropped_ on the ground, or _returned_. It's appearance is defined by an actual banner built into the map, and it has a name and color which you can override in XML. A flag can award points at a specified rate to players carrying it, or when it is captured. It can also come with a kit that is given to the carrier. Filters can be used to control who can pickup/capture the flag and when.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Flag Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td Unique identifier used to reference this flag from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code owner
+                                %td The team that receives points from this flag.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                                    / Team ID in future proto
+                                %td
+                            %tr
+                                %td
+                                    %code name
+                                %td Label that appears over the flag and on the scoreboard.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code show
+                                %td Show this flag on the scoreboard, chat, etc.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code color
+                                %td
+                                    Color of the flag, used for the label, particles, etc.
+                                    %br
+                                    If omitted, the base color of the banner is used.
+                                %td
+                                    %a{:href => "/reference/colors"} Dye Color Name
+                                %td
+                            %tr
+                                %td
+                                    %code carry-message
+                                %td
+                                    Custom message to display to players carrying the flag.
+                                    %br
+                                    e.g., "You are carrying something."
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code points
+                                %td
+                                    The amount of points the capturing player's team gets when the flag is captured.
+                                    %br
+                                    %i If the flag has a owner specified they will get/lose those points instead.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
+                                    %code points-rate
+                                %td
+                                    The amount of points per second a players team gets while they are carrying the flag.
+                                    %br
+                                    %i If the flag has a owner specified they will get/lose those points instead.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    %span.label.label-default Property
+                                    Set both <code>pickup-filter</code> & <code>capture-filter</code>.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code pickup-filter
+                                %td
+                                    %span.label.label-default Property
+                                    Filter who can pickup the flag for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code capture-filter
+                                %td
+                                    %span.label.label-default Property
+                                    Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+
+                            %tr
+                                %td
+                                    %code pickup-kit
+                                %td
+                                    %span.label.label-default Property
+                                    Players picking up this flag get the specified kit.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit
+                                %td
+                            %tr
+                                %td
+                                    %code drop-kit
+                                %td
+                                    %span.label.label-default Property
+                                    Players dropping this flag get the specified kit.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit
+                                %td
+                            %tr
+                                %td
+                                    %code post
+                                %td
+                                    %span.label.label-default Property
+                                    %span.label.label-danger Required
+                                    The default location of this flag's banner on the map.
+                                    %br
+                                    Required if the flag has no
+                                    %code= html_escape('<post>')
+                                    sub-element.
+                                %td
+                                    %a{:href => "/modules/flags"} Flag Post
+                                %td
+                            %tr
+                                %td
+                                    %code shared
+                                %td Change the flags scoreboard display color depending on who is carrying it.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Flag Sub-elements
+                                %th Description
+                                %th Type
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<net>')
+                                %td
+                                    A net where only this flag can be captured, flags accept multiple net sub-elements.
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<post>X,Y,Z</post>')
+                                %td
+                                    The default location of this flag's banner on the map.
+                                    %br
+                                    The flag
+                                    %i may
+                                    also be returned here after it is captured or <code>return-time</code> has elapsed.
+                                %td
+                                    %a{:href => "/modules/regions#pointProviders"} Point Provider
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default Property
+                                    Set both <code>pickup-filter</code> & <code>capture-filter</code>.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickup-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    Filter who can pickup the flag for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<capture-filter>')
+                                %td
+                                    %span.label.label-default Property
+                                    Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickup-kit>')
+                                %td
+                                    %span.label.label-default Property
+                                    Players picking up this flag get the specified kit.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<drop-kit>')
+                                %td
+                                    %span.label.label-default Property
+                                    Players dropping this flag get the specified kit.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit
+                                %td
+
+
+                :markdown
+                    <br/>
+                    #### [Posts](id:posts)
+
+                    A `<post>` is a location on the map that flags can be returned to. A flag remembers the last post it was at and may return there after being dropped. The time between being dropped and returned can be set for each post. Posts can be owned by a team, and award them points at a specified rate while a flag is there. A post can have a filter that controls flag pickup. Each flag has a default post where it is placed at match start.
+
+                    Posts can contain a region or multiple regions instead of just one point. This can be used to have multiple flags at the same post at the same time. If a region is used as a post the flag is returned to a random location inside that region. With multiple regions a random region and location in that region is used. The sequential attribute modifies this behavior, instead of a random point each region is sequential tested for a safe flag location and if one is found it is used.
+
+                    If `permanent` is set to true, a flag becomes permanently "completed" when it is captured in a net that sends it to this post.
+                    If a permanent post has an owner, they will be the only team allowed to complete it. The owner of the post should be the team that will complete/capture the flag, not the owner of the flag.
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Post Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td Unique identifier used to reference this post from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code owner
+                                %td The team that receives points from this post, also the team owning flags completed from this post.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                                    / Team ID in future proto
+                                %td
+                            %tr
+                                %td
+                                    %code permanent
+                                %td
+                                    Flag is removed from gameplay and is marked as completed once it is captured.
+                                    %br
+                                    The posts <code>owner</code> must be set if the flag is to have an completed owner.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code sequential
+                                %td
+                                    Sequentially try to find a safe flag location in this post.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code points-rate
+                                %td
+                                    The amount of points the post's owner gets when the flag is on the <code>post</code>.
+                                    %br
+                                    %i Requires the <code>owner</code> attribute to be set.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
+                                    %code pickup-filter
+                                    |
+                                    %code filter
+                                %td
+                                    %span.label.label-default Property
+                                    Filter who can pickup the flag for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code return-time
+                                %td Return a dropped flag to its <code>post</code> after this time. Use <code>oo</code> for no return timer.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td 30s
+                            %tr
+                                %td
+                                    %code respawn-time
+                                %td
+                                    Delay between the flag being captured/recovered and reappearing at this post.
+                                    %br
+                                    During this time, the flag is completely gone, giving defenders a chance to return to their base.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td 15s
+                            %tr
+                                %td
+                                    %code yaw
+                                %td The direction a banner faces after it is returned to this post.
+                                %td
+                                    %span.label.label-primary -180 to 180
+                                %td
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Post Sub-elements
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickup-filter>')
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter who can pickup the flag for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+
+
+                :markdown
+                    <br/>
+                    #### [Nets](id:nets)
+
+                    A `<net>` is a region that flags can be captured in. Each net has a optional list of flags that it will accept, as well as a capture filter. If a net is defined inside a flag only that flag can be captured in the net, the nets `flags` attribute is invalid in that case. A net can award a specified amount of points to the capturing player. It can optionally also specify which post the flag is returned to after capture (which is how flags move between posts).
+
+                    If the return attribute is specified flags can not be captured at the net while any of the return flags are being carried. PGM will also inform the flag carrier exactly why they can't capture, and tell them which flag has to be dropped before they can. A similar behavior can be accomplished by using a flag `capture-filter` except that no flags will be returned.
+
+                    When the above rule is in effect the sticky attribute alters the flag capture behavior. This option enables players to capture a flag by simply entering the net once, as long as they don't drop the flag it will be captured when all the capture conditions are valid.
+
+                    `NOTE:` If a net has no region no flags can be captured in that net.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Net Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td Unique identifier used to reference this net from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code owner
+                                %td The team that receives points from this net.
+                                %td
+                                    %a{:href => "/modules/teams"} Team Name
+                                    / Team ID in future proto
+                                %td
+                            %tr
+                                %td
+                                    %code sticky
+                                %td
+                                    Flag stays partially captured as long as the player doesn't drop it.
+                                    %br
+                                    %i Only useful when <code>return</code> flags are defined.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code deny-message
+                                %td
+                                    Custom message to display to players when their flag capture is denied.
+                                    %br
+                                    e.g., "Something will be captured when allowed."
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code flag
+                                    |
+                                    %code flags
+                                %td
+                                    A flag ID or space-delimited list of flag IDs that can be captured in this net.
+                                    %br
+                                    %i Attribute can not be specified on nets that are defined inside a flag.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                                    %span.label.label-default ALL Flags
+                            %tr
+                                %td
+                                    %code return
+                                %td
+                                    Flag(s) that will be forced to return if a flag is captured in this net.
+                                    %br
+                                    %i Flags can not be captured in this net while any of the return flags are being carried.
+                                    %br
+                                    Accepts a flag ID or space-delimited list of flag IDs.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code region
+                                %td
+                                    %span.label.label-default Property
+                                    The region where this net is located, defaults to none.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
+                                %td
+                            %tr
+                                %td
+                                    %code capture-filter
+                                    |
+                                    %code filter
+                                %td
+                                    %span.label.label-default Property
+                                    Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code points
+                                %td
+                                    The amount of points the capturing player's team gets when the flag is captured.
+                                    %br
+                                    %i If the net has a owner specified they will get/lose those points instead.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
+                                    %code post
+                                %td
+                                    The ID of the post a flag returns to after being captured in this net.
+                                %td
+                                    %a{:href => "/modules/flags"} Flag Post
+                                %td
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Net Sub-elements
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<region>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    The region where this net is located, defaults to none.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<capture-filter>')
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+
+                :markdown
+                    Examples
+
+                        <!-- Classic CTF -->
+                        <flags>
+                            <flag id="blue-flag" name="Blue Flag" owner="blue-team">
+                                <post filter="yellow-only">2,5,11</post>
+                            </flag>
+
+                            <flag id="yellow-flag" name="Yellow Flag" owner="yellow-team">
+                                <post filter="blue-only">24,5,11</post>
+                            </flag>
+
+                            <net points="1" region="yellow-net" flag="blue-flag"   return="yellow-flag"/>
+                            <net points="1" region="blue-net"   flag="yellow-flag" return="blue-flag"/>
+                        </flags>
+
+                %p
+                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-flag-examples", :'data-toggle' => "collapse"} Examples
+                %div.collapse{:id => "collapse-flag-examples"}
+                    :markdown
+                            <!-- Football -->
+                            <flags>
+                                <flag id="flag" name="Flag" color="white" shared="true">
+                                    <post id="post">
+                                        <cylinder base="13,1,11" radius="5" height="1"/>
+                                    </post>
+                                    <pickup-kit force="true">
+                                        <potion amplifier="2" duration="oo">speed</potion>
+                                    </pickup-kit>
+                                    <drop-kit force="true">
+                                        <potion duration="0">speed</potion>
+                                    </drop-kit>
+
+                                    <net points="1" region="yellow-net" filter="yellow-only"/>
+                                    <net points="1" region="blue-net"   filter="blue-only"/>
+                                </flag>
+                            </flags>
+
+                            <!-- King of the Flag -->
+                            <flags>
+                                <post id="center-post">13,1,11</post>
+                                <post id="yellow-post" owner="yellow-team" yaw="90"  points-rate="1" filter="blue-only">24,5,11</post>
+                                <post id="blue-post"   owner="blue-team"   yaw="-90" points-rate="1" filter="yellow-only">2,5,11</post>
+
+                                <flag name="Flag" color="white" shared="true" post="center-post" points-rate="0.5">
+                                    <net owner="yellow-team" region="yellow-net" post="yellow-post" filter="yellow-only"/>
+                                    <net owner="blue-team"   region="blue-net"   post="blue-post"   filter="blue-only"/>
+                                </flag>
+                            </flags>
+
+                            <!-- Fenland -->
+                            <flags>
+                                <flag id="blue-flag" name="Blue Flag" color="light blue">
+                                    <post yaw="130" filter="only-red">45,12,25</post>
+                                </flag>
+                                <flag id="red-flag" name="Red Flag">
+                                    <post yaw="-45" filter="only-blue">-45,12,-25</post>
+                                </flag>
+                                <net points="1" flag="blue-flag" return="red-flag">
+                                    <region>
+                                        <cuboid min="-46,12,-26" max="-43,14,-23"/>
+                                    </region>
+                                    <filter>
+                                        <not>
+                                            <flag-carried>red-flag</flag-carried>
+                                        </not>
+                                    </filter>
+                                </net>
+                                <net points="1" flag="red-flag" return="blue-flag">
+                                    <region>
+                                        <cuboid min="44,12,24" max="47,14,27"/>
+                                    </region>
+                                    <filter>
+                                        <not>
+                                            <flag-carried>blue-flag</flag-carried>
+                                        </not>
+                                    </filter>
+                                </net>
+                            </flags>

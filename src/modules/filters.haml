@@ -178,6 +178,33 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<flag-carried>flag_id</flag-carried>')
+                                %td
+                                    Match if the flag is being carried by anyone.
+                                    %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<flag-dropped>flag_id</flag-dropped>')
+                                %td
+                                    Match if the flag is dropped on the ground.
+                                    %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<flag-returned>flag_id</flag-returned>')
+                                %td
+                                    Match if the flag is at the return-point.
+                                    %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<carrying-flag>flag_id</carrying-flag>')
+                                %td
+                                    Match the player carrying the specified flag.
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<cause>cause</cause>')
                                 %td
                                     Filter event causes, currently only <code>PLAYER</code> and <code>EXPLOSION</code>.
@@ -355,6 +382,29 @@
 
 
                     <br/>
+                    #### [Flag Filters](id:flagFilter)
+
+                    The flag filters allow filtering of a specific flags current state or for the player that is carrying the flag. One important use of these filters is to implement the standard rule that a team can only capture an enemy flag when their own flag is returned. This can be implemented easily using a `<flag-returned>` as the capture-filter of a flag. This can also be done with the nets return attribute. However, using the return attribute will return dropped flags, while using a filter will not.
+
+                    The flag carried, dropped and returned filters have an optional `post` attribute to only match if the flag was last returned to that post.
+
+                        <!-- The blue flag is currently being carried by a player -->
+                        <flag-carried>blue-flag</flag-carried>
+
+                        <!-- The blue flag has been carried away & dropped from the red-post -->
+                        <flag-dropped post="red-post">blue-flag</flag-dropped>
+
+                        <!-- The yellow flag is standing at one of its posts -->
+                        <flag-returned>yellow-flag</flag-returned>
+
+                        <!-- The yellow flag is standing at the green-post -->
+                        <flag-returned post="green-post">yellow-flag</flag-returned>
+
+                        <!-- The player currently carrying the purple flag -->
+                        <carrying-flag>purple-flag</carrying-flag>
+
+
+                    <br/>
                     #### [Item Filters](id:itemFilters)
 
                     These filters can be used to filter for players with specific items in their inventory. They accept a single [item](/modules/items) element. Only the item's type, durability/damage and meta data are compared. A item's meta data includes the item's name, enchantments, etc.
@@ -362,7 +412,7 @@
                         <!-- Player has a stick named 'Blue Door Key' in their inventory -->
                         <carrying><item name="Blue Door Key">stick</item></carrying>
 
-                        <!-- Player is holding a clock-->
+                        <!-- Player is holding a clock -->
                         <holding><item>clock</item></holding>
 
                         <!-- Player is wearing a chainmail chestplate -->
