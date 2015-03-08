@@ -18,6 +18,8 @@
 
                     Optionally, you may include a `respawn-limit` attribute, being the maximum number of times members of a team can collectively respawn before the team becomes "locked". If a team becomes locked, that means that that team may not be joined, and is discounted in any checks for wins, regardless of how many cores they have leaked, wools they have captured, and etc. Donors are not exempt from these joining restrictions. If only one team has respawns left, then they will automatically win.  If multiple teams are left with respawns, the game will continue until either a single team completes all goals, or only one team is left with respawns.
 
+                    A teams `plural` attribute specifies if the team name is plural e.g. "Attackers"; PGM will use this to pick appropriate win messages, etc. The `show-name-tags` attribute specifies who can see player name tags, this only applies to players, observers will always see all name tags.
+
                     It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
 
                     ##### Team Attributes
@@ -38,9 +40,28 @@
                             %tr
                                 %td
                                     %code color
-                                %td The teams color.
+                                %td The teams display color.
                                 %td
                                     %a{:href => "/reference/formatting#chatColors"} Chat Color Name
+                            %tr
+                                %td
+                                    %code plural
+                                %td
+                                    Team name is plural, used in status messages.
+                                    %br
+                                    e.g.,  <code>Defenders win!</code> instead of <code>Defenders wins!</code>
+                                %td
+                                    %span.label.label-primary true/false
+                            %tr
+                                %td
+                                    %code show-name-tags
+                                %td
+                                    Specify who can see the name tags of players in this team.
+                                    %br
+                                    Accepts:
+                                    <code>true</code>, <code>false</code>, <code>allies</code> or <code>enemies</code>
+                                %td
+                                    %span.label.label-primary Enum
                             %tr
                                 %td
                                     %code max
