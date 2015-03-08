@@ -44,7 +44,10 @@
                             %tr
                                 %td
                                     %code potion-particles
-                                %td Remove all potion particles.
+                                %td
+                                    Enable or disable potion particles.
+                                    %br
+                                    %i Potion particles are disabled for all players by default.
                                 %td
                                     %span.label.label-primary true/false
                             %tr
@@ -252,7 +255,7 @@
 
                     <br/>
                     ### Fly Kit
-                    The fly kit gives players which it is applied to the ability to fly. If no attributes are specified can-fly defaults to true.
+                    The fly kit gives players which it is applied to the ability to fly. It also allows modification of the speed at which they fly. If no attributes are specified can-fly defaults to true.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -284,6 +287,14 @@
                                 %td
                                     %span.label.label-primary true/false
                                 %td
+                            %tr
+                                %td
+                                    %code fly-speed
+                                %td
+                                    Set the fly speed multiplier.
+                                %td
+                                    %span.label.label-primary 0 - 10
+                                %td 1
 
                 :markdown
                         <kit name="fly">
