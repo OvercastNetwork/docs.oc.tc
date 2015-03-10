@@ -26,13 +26,14 @@
                                 %th Value
                                 %th Default
                         %tbody
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %code proto
-                                %td The maps XML protocol version.
+                                %td
+                                    %span.label.label-danger Required
+                                    The maps XML protocol version.
                                 %td
                                     %code #{$map_proto}
-                                    %span.label.label-danger Required
                                 %td
                             %tr
                                 %td
@@ -51,45 +52,44 @@
                                 %th Description
                                 %th Value/Children
                         %tbody
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<name>')
                                 %td
+                                    %span.label.label-danger Required
                                     The name of the map.
                                 %td
                                     %span.label.label-primary String
-                                    %span.label.label-danger Required
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<version>')
                                 %td
+                                    %span.label.label-danger Required
                                     The map's
                                     %a{:href => "http://semver.org"} semantic version
                                     string.
-
                                 %td
                                     %span.label.label-primary 1.0.0
-                                    %span.label.label-danger Required
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<objective>')
                                 %td
+                                    %span.label.label-danger Required
                                     The map's objective, shown at the start of the match.
                                 %td
                                     %span.label.label-primary String
-                                    %span.label.label-danger Required
-                            %tr{:title => "Required, at least one map author is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<authors>')
                                 %td
+                                    %span.label.label-danger Required
                                     The authors of the map, at least one author is required.
                                 %td
                                     %code= html_escape('<author>')
-                                    %span.label.label-danger Required
                             %tr
                                 %td
                                     %pre
@@ -129,16 +129,18 @@
                                 %th Description
                                 %th Value/Children
                         %tbody
-                            %tr{:title => "Required, at least one map author is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<author>')
                                 %td
+                                    %span.label.label-danger Required
                                     A major author of the map, used in
                                     %code= html_escape('<authors>')
+                                    %br
+                                    %i At least one map author is required.
                                 %td
                                     %span.label.label-primary String
-                                    %span.label.label-danger Required
                             %tr
                                 %td
                                     %pre

@@ -21,10 +21,12 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code team
-                                %td The team the lane belongs to and in which they have to stay inside.
+                                %td
+                                    %span.label.label-danger Required
+                                    The team the lane belongs to and in which they have to stay inside.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
 

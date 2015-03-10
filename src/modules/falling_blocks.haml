@@ -24,29 +24,23 @@
                                 %th Value
                                 %td Default
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %code filter
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
                                     Filter what blocks get modified by this rule.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<filter>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
                                 %td
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %code sticky
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
                                     The blocks that are sticky.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<sticky>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
                                 %td
@@ -54,12 +48,8 @@
                                 %td
                                     %code delay
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     Tick delay till blocks start to fall after they have been disturbed.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<delay>')
-                                        sub-element.
                                 %td
                                     %span.label.label-primary Number
                                 %td 2
@@ -74,35 +64,29 @@
                                 %th Value/Children
                                 %th Default
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<filter>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     Filter what blocks get modified by this rule.
                                     %br
                                     Also accepts a named region reference to limit the rule to a certain area.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code filter
-                                        attribute of the rule.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filters
                                     &
                                     %a{:href => "/modules/regions"} Regions
                                 %td
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<sticky>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     The blocks that are sticky.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code sticky
-                                        attribute of the rule.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filters
                                 %td
@@ -111,12 +95,8 @@
                                     %pre
                                         %code= html_escape('<delay>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Tick delay till blocks start to fall after they have been disturbed.
-                                    %br
-                                    %i
-                                        Can also be specified in the rules
-                                        %code delay
-                                        attribute.
                                 %td
                                     %span.label.label-primary Number
                                 %td 2

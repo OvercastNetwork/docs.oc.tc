@@ -9,7 +9,7 @@
             .col-sm-6
                 :markdown
                     ### What Do XML Files Do?
-                    XML files configure how the PGM plug-in manages the map during game-play. Any map released on the Overcast Network requires a XML file to function properly. The XML defines aspects of the game such as spawn points, teams, kits and more. Each file is unique to its map, however the individual components are generic and are used on many different maps. 
+                    XML files configure how the PGM plug-in manages the map during game-play. Any map released on the Overcast Network requires a XML file to function properly. The XML defines aspects of the game such as spawn points, teams, kits and more. Each file is unique to its map, however the individual components are generic and are used on many different maps.
 
 
                     ### Writing XML Files
@@ -47,10 +47,12 @@
                                 %td
                                     %span.label.label-primary String
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code color
-                                %td This examples color.
+                                %td
+                                    %span.label.label-danger Required
+                                    This examples color.
                                 %td
                                     %a{:href => "/reference/colors"} Dye Color Name
                                 %td

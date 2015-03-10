@@ -31,23 +31,22 @@
                                 %td
                                     %span.label.label-primary String
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code name
-                                %td The destroyables name.
+                                %td
+                                    %span.label.label-danger Required
+                                    The destroyables name.
                                 %td
                                     %span.label.label-primary String
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code region
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
                                     Region containing the destroyable.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<region>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td
@@ -60,10 +59,12 @@
                                 %td
                                     %a{:href => "/reference/inventory#material_finder"} Bukkit Material
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code owner
-                                %td The destroyables owner.
+                                %td
+                                    %span.label.label-danger Required
+                                    The destroyables owner.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
                                 %td
@@ -148,17 +149,14 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     Region containing the destroyable.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code region
-                                        attribute of the destroyable.
                                 %td
                                     %a{:href => "/modules/regions"} Region
 

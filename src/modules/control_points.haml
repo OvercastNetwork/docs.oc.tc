@@ -162,20 +162,17 @@
                                 %td
                                     Filter the materials modified when updating the progress regions.
                                     %br
-                                    %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes
+                                    %i Defaults to wool, carpet, stained clay, stained glass & stained glass panes.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filter
                                 %td{:colspan => "2"}
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %code capture
                                 %td
-                                    Region where this control point can be captured
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<capture>')
-                                        sub-element.
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
+                                    Region where this control point can be captured.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td{:colspan => "2"}
@@ -183,12 +180,8 @@
                                 %td
                                     %code progress
                                 %td
-                                    Region where this control points progress is displayed
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<progress>')
-                                        sub-element.
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Region where this control points progress is displayed.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td{:colspan => "2"}
@@ -196,12 +189,8 @@
                                 %td
                                     %code captured
                                 %td
-                                    Region where this control points owner is displayed
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<captured>')
-                                        sub-element.
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Region where this control points owner is displayed.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td{:colspan => "2"}
@@ -215,17 +204,14 @@
                                 %th Description
                                 %th Value/Children
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<capture>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     The region players have to stand in to capture the control point.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code= html_escape('capture')
-                                        attribute of the control point.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr
@@ -233,12 +219,8 @@
                                     %pre
                                         %code= html_escape('<progress>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     The region to display capture progress.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code= html_escape('progress')
-                                        attribute of the control point.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr
@@ -246,12 +228,8 @@
                                     %pre
                                         %code= html_escape('<captured>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     The region to display if the control point is captured.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code= html_escape('captured')
-                                        attribute of the control point.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr

@@ -37,16 +37,13 @@
                                 %td
                                     %span.label.label-primary Number
                                 %td
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %code region
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
                                     Region where this portals entrance is located.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<region>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td
@@ -100,19 +97,16 @@
                             %tr
                                 %th Element
                                 %th Description
-                                %th Value
+                                %th Value/Children
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<region>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     Region where this portals entrance is located.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code region
-                                        attribute of the portal.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr

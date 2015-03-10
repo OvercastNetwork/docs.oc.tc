@@ -24,15 +24,15 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<item>')
                                 %td
+                                    %span.label.label-danger Required
                                     The item's material name.
                                 %td
                                     %a{:href => "/reference/inventory#material_finder"} Material Name
-                                    %span.label.label-danger Required
 
                     %h5 Item Attributes
                 .table-responsive
@@ -44,14 +44,16 @@
                                 %th Value
                                 %th Default
                         %tbody
-                            %tr{:title => "Required, when used in kits the slot attribute is required."}
+                            %tr
                                 %td
                                     %code slot
                                 %td
+                                    %span.label.label-danger Required
                                     Slot where the item will be placed in the players inventory.
+                                    %br
+                                    %i When used in kits the slot attribute is required.
                                 %td
                                     %a{:href => "/reference/inventory"} Inventory Slot
-                                    %span.label.label-danger Required
                                 %td
                             %tr
                                 %td
@@ -286,23 +288,24 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<title>')
                                 %td
+                                    %span.label.label-danger Required
                                     The title of the book.
                                 %td
                                     %span.label.label-primary Formatted Text
-                                    %span.label.label-danger Required
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<author>')
-                                %td The author of the book.
+                                %td
+                                    %span.label.label-danger Required
+                                    The author of the book.
                                 %td
                                     %span.label.label-primary Formatted Text
-                                    %span.label.label-danger Required
                             %tr
                                 %td
                                     %pre

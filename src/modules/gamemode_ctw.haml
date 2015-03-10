@@ -40,30 +40,31 @@
                                 %td
                                     %span.label.label-primary String
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code team
-                                %td The team which has to place the wool.
+                                %td
+                                    %span.label.label-danger Required
+                                    The team which has to place the wool.
                                 %td
                                     %a{:href => "/modules/teams"} Team Name
                                 %td
-                            %tr.danger{:title => "Required"}
+                            %tr
                                 %td
                                     %code color
-                                %td The wools color.
+                                %td
+                                    %span.label.label-danger Required
+                                    The wools color.
                                 %td
                                     %a{:href => "/reference/colors"} Dye Color Name
                                 %td
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %code monument
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
                                     The monument where the wool has to be placed.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<monument>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td
@@ -84,10 +85,12 @@
                                 %td
                                     %span.label.label-primary true/false
                                 %td true
-                            %tr.danger{:title => "Required after proto 1.3.4"}
+                            %tr
                                 %td
                                     %code location
-                                %td Location where the wool can be found at, used to determine proximity.
+                                %td
+                                    %span.label.label-danger{:title => "Required after proto 1.3.4"} Required
+                                    Location where the wool can be found at, used to determine proximity.
                                 %td
                                     %span.label.label-primary X,Y,Z
                                 %td
@@ -140,17 +143,14 @@
                                 %th Description
                                 %th Value
                         %tbody
-                            %tr.danger{:title => "Required, either the attribute or sub-element is required"}
+                            %tr
                                 %td
                                     %pre
                                         %code= html_escape('<monument>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     The monument where the wool has to be placed.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code monument
-                                        attribute of the wool.
                                 %td
                                     %a{:href => "/modules/regions"} Region
 
