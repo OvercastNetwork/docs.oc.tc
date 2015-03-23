@@ -35,44 +35,36 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team color="blue" max="50">Blue Team</team>
-                            <team color="dark red" max="50">Red Team</team>
+                            <team id="blue-team" color="blue" max="50">Blue Team</team>
+                            <team id="red-team" color="dark red" max="50">Red Team</team>
                         </teams>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
-                    Define a fancy redstone filter. Prevents pistons from pushing anything other than fence blocks. Also prevents pistons / fences from being broken using the `deny-all` filter.
+                    Define a fancy redstone filter. Prevents pistons from pushing anything other than fence blocks.
 
                         <filters>
-                            <filter name="allow-redstone">
-                                <any><!-- At least one below must return ALLOW -->
-                                    <all><!-- Returns ALLOW if matches world AND matches a block, denies otherwise -->
-                                        <any><!-- Allows if world, denies otherwise -->
-                                            <filter name="allow-world" /><!-- Abstain if not world, ALLOW otherwise. -->
-                                            <filter name="deny-all" /><!-- Always denies, turning the ABSTAIN into a DENY -->
-                                        </any>
-                                        <any><!-- Returns allow if it is a matching block -->
-                                            <block>PISTON_BASE</block>
-                                            <block>PISTON_EXTENSION</block>
-                                            <block>PISTON_MOVING_PIECE</block>
-                                            <block>PISTON_STICKY_BASE</block>
-                                            <block>AIR</block><!-- Allow the piston to extend -->
-                                            <block>FENCE</block><!-- Block being modified is a fence -->
-                                        </any>
-                                    </all>
-                                    <filter name="deny-all" /><!-- If nothing says allow, DENY this -->
+                            <all id="allow-redstone">
+                                <any>
+                                    <block>PISTON_BASE</block>
+                                    <block>PISTON_EXTENSION</block>
+                                    <block>PISTON_MOVING_PIECE</block>
+                                    <block>PISTON_STICKY_BASE</block>
                                 </any>
-                            </filter>
+                                <any>
+                                    <block>AIR</block><!-- Allow the piston to extend -->
+                                    <block>FENCE</block><!-- Block being modified is a fence -->
+                                </any>
+                            </all>
                         </filters>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                    Define a region named `playable` and apply the maps custom `allow-redstone` filter to it.
+                    Define a `playable` region and apply the maps custom `allow-redstone` filter to it.
 
                         <regions>
-                            <apply block="allow-redstone">
-                                <rectangle name="playable" min="-oo,-oo" max="oo,oo"/>
-                            </apply>
+                            <rectangle id="playable" min="-oo,-oo" max="oo,oo"/>
+                            <apply block="allow-redstone" region="playable"/>
                         </regions>
 
                     <br/>
@@ -109,14 +101,14 @@
 
                         <spawns>
                             <spawns kit="blue">
-                                <spawn team="blue" yaw="0">
+                                <spawn team="blue-team" yaw="0">
                                     <cuboid min="23,33,-60" max="29,33,-55"/>
                                     <cuboid min="24,33,-41" max="29,33,-46"/>
                                     <cuboid min="-32,33,-3" max="-28,33,2"/>
                                     <cuboid min="-23,79,-4" max="-18,79,2"/>
                                     <cuboid min="-18,87,-5" max="-12,87,-3"/>
                                 </spawn>
-                                <spawn team="blue" yaw="90">
+                                <spawn team="blue-team" yaw="90">
                                     <cuboid min="40,37,-55" max="45,37,-58"/>
                                     <cuboid min="41,64,-71" max="35,64,-77"/>
                                     <cuboid min="47,72,-39" max="42,72,-44"/>
@@ -124,7 +116,7 @@
                                     <cuboid min="13,60.5,13" max="14,60.5,16"/>
                                     <cuboid min="-17,33,13" max="-13,33,15"/>
                                 </spawn>
-                                <spawn team="blue" yaw="180">
+                                <spawn team="blue-team" yaw="180">
                                     <cuboid min="-20,62,-6" max="-10,62,-2"/>
                                     <cuboid min="-1,33,-4" max="3,33,3"/>
                                     <cuboid min="-1,71,6" max="2,71,9"/>
@@ -133,23 +125,23 @@
                             </spawns>
                             <spawns kit="red">
                                 <!-- red spawns -->
-                                <spawn team="red" yaw="0">
+                                <spawn team="red-team" yaw="0">
                                     <cuboid min="-107,90,-21" max="-110,90,-25"/>
                                     <cylinder base="-99,63,-73" radius="3" height="0"/>
                                     <cuboid min="-92,37,25" max="-88,37,30"/>
                                 </spawn>
-                                <spawn team="red" yaw="90">
+                                <spawn team="red-team" yaw="90">
                                     <cylinder base="-91,76,-72,5" radius="1" height="0"/>
                                     <cuboid min="-72,65,-27" max="-72,65,-23"/>
                                 </spawn>
-                                <spawn team="red" yaw="180">
+                                <spawn team="red-team" yaw="180">
                                     <cylinder base="-98.5,84,-72.5" radius="2" height="0"/>
                                     <cuboid min="-109,79,-15" max="-102,79,-29"/>
                                     <cuboid min="-86,80,-11" max="-91,80,-18"/>
                                     <cuboid min="-97,76,-61" max="-101,76,-48"/>
                                     <cuboid min="-88,37,48" max="-84,37,52"/>
                                 </spawn>
-                                <spawn team="red" yaw="270">
+                                <spawn team="red-team" yaw="270">
                                     <cuboid min="-142,83,-39" max="-121,83,-35"/>
                                     <cuboid min="-110,65,-15" max="-103,65,-29"/>
                                     <cuboid min="-98,65,-43" max="-114,65,-36"/>

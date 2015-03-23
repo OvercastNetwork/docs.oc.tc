@@ -10,84 +10,138 @@
                 .page-header
                     %h1= @page_sub_title = "Regions"
                 :markdown
-                    Regions are used to define, among other things, the area a filter applies to or where a portal links from.
+                    Regions are a type of filter that filters the coordinates of a query. They are used to define, among other things, the area a filter applies to or where a portal links from. There are two distinct types of regions; block bounded regions, which contain a finite amount of blocks and unbounded regions that contain a infinite amount. All regions and region modifiers can have a `id` attribute to reference them from kits, portals, etc.
 
-                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. All regions and region modifiers can have a `name=""` attribute to reference them from kits, portals, etc.
+                        <regions>
+                            <rectangle id="xyzzy-region" min="-50,-50" max="50,50"/>
+                        </regions>
 
-                    Note that Y is the up/down axis in minecraft, instead of Z like most coordinate systems.
+                        <!-- Region reference -->
+                        <region id="xyzzy-region"/>
 
-                    See the [Properly Defining Regions](/guides/regions) guide for information on how to properly get the coordinates of a region.
 
+                    The area a region applies to is specified with one or more of the following elements. Use `oo` and `-oo` to specify positive/negative infinity in coordinates. See the [Properly Defining Regions](/guides/regions) guide for information on how to properly get the coordinates of a region.
+
+                    ##### Region Types
                 .table-responsive
                     %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Block Bounded Regions
+                            %tr
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<rectangle name="abc" min="X1,Z1" max="X2,Z2"/>')
+                                        %code= html_escape('<cuboid id="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>')
                                     %br
-                                    A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>
+                                    A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>.
+                                %td.text-right
+                                    %span.label.label-primary Randomize-able
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<cuboid name="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>')
+                                        %code= html_escape('<cylinder id="abc" base="X,Y,Z" radius="R" height="H"/>')
                                     %br
-                                    A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>
+                                    A cylinder located at <code>X,Z,Y</code> with a radius of <code>R</code> and a height of <code>H</code>.
+                                %td.text-right
+                                    %span.label.label-primary Randomize-able
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<circle name="abc" center="X,Z" radius="R"/>')
+                                        %code= html_escape('<block id="abc">X,Y,Z</block>')
                                     %br
-                                    A circle located at <code>X,Z</code> with a radius of <code>R</code> </br>
-                                    %i The region goes from 0 to map height, i.e. PGM doesn't check the players Y position
+                                    A single block located at <code>X,Y,Z</code>.
+                                %td.text-right
+                                    %span.label.label-primary Randomize-able
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<cylinder name="abc" base="X,Y,Z" radius="R" height="H"/>')
+                                        %code= html_escape('<sphere id="abc" origin="X,Y,Z" radius="R"/>')
                                     %br
-                                    A cylinder located at <code>X,Z,Y</code> with a radius of <code>R</code> and a height of <code>H</code>
+                                    A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>.
+                                %td
+                            %tr
+                                %td{:colspan => "2"}
+                                    %b Unbounded Regions
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<sphere name="abc" origin="X,Y,Z" radius="R"/>')
+                                        %code= html_escape('<rectangle id="abc" min="X1,Z1" max="X2,Z2"/>')
                                     %br
-                                    A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>
+                                    A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>.
+                                %td
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<block name="abc">X,Y,Z</block>')
+                                        %code= html_escape('<circle id="abc" center="X,Z" radius="R"/>')
                                     %br
-                                    A single block located at <code>X,Y,Z</code>
+                                    A circle located at <code>X,Z</code> with a radius of <code>R</code>. </br>
+                                    %i The region goes from 0 to map height, i.e. PGM doesn't check the players Y position.
+                                %td
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<empty name="abc"/>')
+                                        %code= html_escape('<half normal="1,0,1" origin="100,50,0" id="abc"/>')
                                     %br
-                                    A zero size/position region
+                                    Half of the world split by a plane pointing towards a normal.
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<below x="" y="" z="" id="abc"/>')
+                                    |
+                                    %pre
+                                        %code= html_escape('<above x="" y="" z="" id="abc"/>')
+                                    %br
+                                    Half of the world split at the specified axis.
+                                    %br
+                                    If multiple axises are defined the specified parts of each axis are intersected and returned.
+                                %td
+                            %tr
+                                %td{:colspan => "2"}
+                                    %b Static Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<empty/>')
+                                    %br
+                                    A zero size/position region, contains nothing.
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<nowhere/>')
+                                    %br
+                                    A reference-able zero size/position region, contains nothing. Can be referenced with the ID: <code>nowhere</code>
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<everywhere/>')
+                                    %br
+                                    A reference-able infinite size region, contains everything. Can be referenced with the ID: <code>everywhere</code>
+                                %td
+
                 :markdown
+                    <br/>
+                    #### Half-space Regions
+
+                    A half-space region contains everything on one side of an arbitrary plane. The plane is defined by an origin point and a normal vector, and the region contains everything on the side of the plane that the normal is pointing towards. The example below defines a region with a diagonal boundary:
+
+                        <half origin="5,0,0" normal="1,1,0"/>
+
+                    The above and below regions can be used to conveniently define axis-aligned half-spaces:
+
+                        <above y="50"/>         <!-- Everything above Y=50 -->
+                        <below x="0" z="0"/>    <!-- Everything in the -X, -Z quadrant -->
 
                     <br/>
-                    #### Referencing a Named Region
+                    ### Applying Things to Regions
 
-                    Similar to kits regions are referenced by their `name=""`.
-                    To use regions in spawns, portals, etc., reference them by their name.
+                    Filters, kits, and velocity changes can be applied to regions by using an `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them. Applies can also be defined in the filters element.
 
-                        <regions>
-                            <rectangle name="named-region" min="-50,-50" max="50,50"/>
-                        </regions>
-
-                        <!-- Region reference -->
-                        <region name="named-region"/>
-
-                    <br/>
-                    #### Applying Filters, Kits, and Velocity to Regions
-
-                    Filters, kits, and velocity changes are applied to regions as attributes of the `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them.
-
-                    The order in which apply elements are specified determines which takes precedence when regions overlap. Applies specified first override those specified further down in the XML.
-
-                        <apply><region name="region1"/>..</apply>
-
+                    The order in which apply elements are specified determines which takes precedence when regions overlap. Applies specified first override those specified further down in the XML. The region an apply affects can be specified as an attribute or in a <region> sub-element.
 
                     ##### Apply Element Attributes
                 .table-responsive
@@ -97,148 +151,189 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
-                                    %code enter
-                                %td Filter player enter events.
+                                    %code region
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The region this apply affects.
+                                %td
+                                    %a{:href => "/modules/regions"} Region
+                                %td
+                            %tr
+                                %td
+                                    %code enter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter player enter events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code leave
-                                %td Filter player leave events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter player leave events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code block
-                                %td Filter block place and break events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter block place and break events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code block-place
-                                %td Filter block place events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter block place events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code block-place-against
-                                %td Filter block place against events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter block place against events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code block-break
-                                %td Filter block break events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter block break events.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code block-physics
-                                %td Filter block updates; water flowing, portals disappearing, etc.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter world block updates; water flowing, portals disappearing, etc.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
                             %tr
                                 %td
                                     %code use
-                                %td Filter right-click events.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
-                            %tr
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter right-click events.
                                 %td
-                                    %code kit
-                                %td Give a kit to players entering the region.
+                                    %a{:href => "/modules/filter"} Filter
                                 %td
-                                    %a{:href => "/modules/kits"} Kit Name
                             %tr
                                 %td
                                     %code message
                                 %td Send a message to the player if the filter denies the event.
                                 %td
                                     %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code early-warning
+                                %td Warn the player before they actually break a denied block.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td{:colspan => "3"}
+                                    %b Apply Effects
+                            %tr
+                                %td
+                                    %code kit
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Give a kit to players entering the region.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit
+                                %td
                             %tr
                                 %td
                                     %code velocity
                                 %td Change a players velocity when they enter the region.
                                 %td
                                     %span.label.label-primary X,Y,Z
+                                %td
                             %tr
                                 %td
                                     %code filter
-                                %td Only applies kits and velocities depending on the filter output.
                                 %td
-                                    %a{:href => "/modules/filter"} Filter Name
-
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter when/if kits and velocities are applied.
+                                %td
+                                    %a{:href => "/modules/filter"} Filter
+                                %td
 
                 :markdown
+                    Apply Examples
 
-                    <br/>
-                    #### [Example Regions](id:regionExamples)
+                        <!-- Apply a blue team usage filter and referenced the region in an attribute. -->
+                        <apply region="region1" use="blue-team-filter"/>
 
-                    Applying kits to a region:
-
-                        <!-- Give a kit to players entering the region -->
-                        <apply kit="knight">
-                            <region name="r-knight"/>
-                            <region name="b-knight"/>
+                        <apply kit="dark-tower-kit">
+                            <region>
+                                <!-- Multiple regions or region references in a regions sub-element. -->
+                                <region id="region1"/>
+                                <rectangle min="-5,-5" max="5,5"/>
+                            </region>
+                            <!-- Inline effect filter -->
+                            <filter>
+                                <team>blue</team>
+                            </filter>
                         </apply>
 
-                    Applying filters to a region:
-
-                        <filter name="only-blue">
-                            <team>blue</team>
-                        </filter>
-
-                        <regions>
-                            <!-- Blue Team Base -->
-                            <!-- This cuboid region has the filter named 'only-blue' applied to it. -->
-                            <apply enter="only-blue" message="You may not enter the enemy team's base!">
-                                <cuboid min="49,13,4" max="37,10,-4"/>
-                            </apply>
-                            <apply block="deny-all" message="You may not modify the base!">
-                                <cuboid min="50,14,-5" max="36,7,5"/>
+                %p
+                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-apply-example", :'data-toggle' => "collapse"} Examples
+                %div.collapse{:id => "collapse-apply-example"}
+                    :markdown
+                            <!-- Give a kit to players entering the region. -->
+                            <apply kit="knight">
+                                <region>
+                                    <region id="r-knight"/>
+                                    <region id="b-knight"/>
+                                </region>
                             </apply>
 
-                            <!-- Blue Team Tree -->
-                            <apply block="deny-all" message="This tree is protected, go figure.">
-                                <cylinder base="83.5,0,-47.5" radius="4" height="40"/>
+                            <!-- Only allow breaking of sandstone stairs and deny placing of all blocks. -->
+                            <apply block-break="only-sandstone-stairs" block-place="never" message="You may not modify this area">
+                                <region>
+                                    <rectangle min="-6,-58" max="7,-47"/>
+                                    <rectangle min="-6,48" max="7,59"/>
+                                </region>
                             </apply>
-                        </regions>
 
-                    Multiple filters can be applied to a region at the same time by using different apply attributes.
-                    Example from [Boom](https://maps.oc.tc/DTM/Standard/Boom/map.xml), it uses the `block-break` and `block-place` attributes on the same apply tag.
+                            <!-- Example regions from Harb using region modifiers. -->
+                            <regions>
+                                <rectangle id="main-area" min="-50,-32" max="51,33"/>
+                                <union id="bases">
+                                    <rectangle id="blue-base" min="-20,-62" max="21,-32"/>
+                                    <rectangle id="red-base" min="-20,33" max="21,63"/>
+                                </union>
+                                <complement id="portals-area">
+                                    <rectangle min="-56,-2" max="57,3"/>
+                                    <region id="main-area"/>
+                                </complement>
 
-                        <apply block-break="only-sandstone-stairs" block-place="deny-all" message="You may not modify the TNT spawning area">
-                            <rectangle min="-6,-58" max="7,-47"/>
-                            <rectangle min="-6,48" max="7,59"/>
-                        </apply>
-
-
-                    Example regions from Harb using [region modifier](#regionModifiers).
-
-                        <regions>
-                            <rectangle name="main-area" min="-50,-32" max="51,33"/>
-                            <union name="bases">
-                                <rectangle name="blue-base" min="-20,-62" max="21,-32"/>
-                                <rectangle name="red-base" min="-20,33" max="21,63"/>
-                            </union>
-                            <complement name="portals-area">
-                                <rectangle min="-56,-2" max="57,3"/>
-                                <region name="main-area"/>
-                            </complement>
-                            <apply block="deny-all">
                                 <!-- Protect portal areas -->
-                                <region name="portals-area"/>
-                            </apply>
-                            <apply block="no-tnt" message="You may not place TNT in the bases.">
-                                <region name="bases"/>
-                            </apply>
-                        </regions>
+                                <apply block="never" region="portals-area"/>
+                                <apply block="no-tnt" region="bases" message="You may not place TNT in the bases."/>
+                            </regions>
 
-                    <br/>
-                    The velocity attribute changes the players velocity when they enter the specified region. This velocity is specified as a `X,Y,Z` vector.
+                :markdown
+                    An applies velocity attribute changes the players velocity when they enter the specified region. This velocity is specified as a `X,Y,Z` vector.
                     On the mapdev servers velocity can be tested with the `/vel x y z` command.
 
                     Partial example from [SuperPRISM](https://maps.oc.tc/TDM/Standard/SuperPRISM/map.xml), using velocity for jump pads
@@ -246,12 +341,17 @@
                         <regions>
                             <!--  Yellow Pads  -->
                             <apply velocity="-0.4,1.1,0.0">
-                                <cuboid min="-1081,1,-2116" max="-1078,2,-2113"/>
+                                <region>
+                                    <cuboid min="-1081,1,-2116" max="-1078,2,-2113"/>
+                                </region>
                             </apply>
                             <apply velocity="0.0,1.4,-0.4">
-                                <cuboid min="-1062,1,-2123" max="-1059,2,-2120"/>
+                                <region>
+                                    <cuboid min="-1062,1,-2123" max="-1059,2,-2120"/>
+                                </region>
                             </apply>
                         </regions>
+
 
                     <br/>
                     ### [Region Modifiers](id:regionModifiers)
@@ -264,25 +364,25 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<negative><region name="region1"/></negative>')
+                                        %code= html_escape('<negative><region id="region1"/></negative>')
                                     %br
-                                    Inverse of a region.
+                                    Inverse of a region, the region or regions will no longer be considered block bounded.
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape(' <union><region name="region1"/><region name="region2"/>..</union>')
+                                        %code= html_escape(' <union><region id="region1"/><region id="region2"/>..</union>')
                                     %br
                                     Combination of multiple regions.
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<complement><region name="region1"/><region name="region2"/>..</complement>')
+                                        %code= html_escape('<complement><region id="region1"/><region id="region2"/>..</complement>')
                                     %br
                                     Subtracts successive regions from the first defined region.
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<intersect><region name="region1"/><region name="region2"/>..</intersect>')
+                                        %code= html_escape('<intersect><region id="region1"/><region id="region2"/>..</intersect>')
                                     %br
                                     Returns the area that multiple regions intersect with.
 
@@ -299,13 +399,13 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<translate offset="X,Y,Z"><region name="region1"/></translate>')
+                                        %code= html_escape('<translate offset="X,Y,Z"><region id="region1"/></translate>')
                                     %br
                                     Copy and translate a region by <code>X,Y,Z</code> blocks.
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<mirror normal="1,0,1" origin="100,50,0"><region name="region1"/></mirror>')
+                                        %code= html_escape('<mirror normal="1,0,1" origin="100,50,0"><region id="region1"/></mirror>')
                                     %br
                                     Copy and mirror a region towards a normal around a point.
 
@@ -319,30 +419,33 @@
                         <regions>
                             <!-- Blue Team Base -->
                             <apply enter="only-blue" message="You may not enter the enemy team's base!">
-                                <union>
-                                    <cuboid min="-20,8,-75" max="11,41,-79"/>
-                                    <cuboid min="8,8,-80" max="13,41,-75"/>
-                                </union>
+                                <region>
+                                    <union>
+                                        <cuboid min="-20,8,-75" max="11,41,-79"/>
+                                        <cuboid min="8,8,-80" max="13,41,-75"/>
+                                    </union>
+                                </region>
                             </apply>
                         </regions>
 
                         <!-- Region Mirror -->
                         <regions>
-                            <apply block="deny-all" message="You may not under-bridge!">
-                                <cuboid name="red-underside" min="-oo,-oo,-oo" max="oo,41,40"/>
-                                <mirror origin="116,44,93" normal="0,0,1">
-                                    <region name="red-underside"/>
-                                </mirror>
-                                <cuboid min="-oo,-oo,-oo" max="oo,37,oo"/>
+                            <apply block="never" message="You may not under-bridge!">
+                                <region>
+                                    <cuboid id="red-underside" min="-oo,-oo,-oo" max="oo,41,40"/>
+                                    <mirror origin="116,44,93" normal="0,0,1">
+                                        <region id="red-underside"/>
+                                    </mirror>
+                                    <cuboid min="-oo,-oo,-oo" max="oo,37,oo"/>
+                                </region>
                             </apply>
                         </regions>
-
 
 
                     <br/>
                     ### [Point Providers](id:pointProviders)
 
-                    A point provider is used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
+                    A point provider is used to return individual points inside a region. It can also be used to modify the position returned by a region to include the direction a player ends up facing when spawned, etc.
                     Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
 
                         <point yaw="90" pitch="50">X,Y,Z</point>
@@ -360,14 +463,10 @@
                                 %td
                                     %code region
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     The region the point provider modifies.
-                                    %br
-                                    %i
-                                        Can also be defined in a
-                                        %code= html_escape('<region>')
-                                        sub-element.
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
+                                    %a{:href => "/modules/regions"} Randomize-able Region
                             %tr
                                 %td
                                     %code yaw
@@ -396,6 +495,23 @@
                                 %td
                                     %span.label.label-primary X,Y,Z
 
+                %h5 Point Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<region>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The region or regions the point provider modifies.
+                                %td
+                                    %a{:href => "/modules/regions"} Randomize-able Regions
                 :markdown
 
                     `NOTE:` The pitch and yaw arguments can also accept a `X,Y,Z` coordinate. <br/>

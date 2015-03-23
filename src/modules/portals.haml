@@ -12,7 +12,7 @@
                 :markdown
                     Portals teleport a player that enters the specified region to an exact location, by a certain offset amount or to a random location inside a region.
 
-                    The position and direction attributes of a portal are relative to the players location and where they are looking. Prefix these values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their `filter=""` attribute.
+                    The position and direction attributes of a portal are relative to the players location and where they are looking. Prefix these values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their filter attribute.
 
                     `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).
 
@@ -49,10 +49,21 @@
                                 %td
                             %tr
                                 %td
-                                    %code filter
-                                %td Filter player access.
+                                    %code destination
                                 %td
-                                    %a{:href => "/modules/filters"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Destination of the portal, teleports players to a random point inside the region.
+                                %td
+                                    %a{:href => "/modules/regions"} Randomize-able Region
+                                %td
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter portal player access.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
                                 %td
                             %tr
                                 %td
@@ -127,11 +138,21 @@
                                     %pre
                                         %code= html_escape('<destination>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Destination of the portal, teleports players to a random point inside the region.
                                     %br
                                     %i Region is automatically filtered against block place.
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
+                                    %a{:href => "/modules/regions"} Randomize-able Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter portal player access.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
 
                 :markdown
                     <br/>
@@ -166,6 +187,6 @@
 
                                 <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
                                 <portal region="portal-entrance">
-                                    <destination><region name="portal-exit"/></destination>
+                                    <destination><region id="portal-exit"/></destination>
                                 </portal>
                             </portals>

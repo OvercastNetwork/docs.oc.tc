@@ -35,8 +35,8 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team color="blue" max="50">Blue Team</team>
-                            <team color="dark red" max="50">Red Team</team>
+                            <team id="blue-team" color="blue" max="50">Blue Team</team>
+                            <team id="red-team" color="dark red" max="50">Red Team</team>
                         </teams>
 
                     <br/>
@@ -44,32 +44,26 @@
                     Custom filter definition that denies TNT blocks. When applied to a region with `block=""` it denies placing and breaking. To only deny placing apply it with `block-place=""`.
 
                         <filters>
-                            <filter name="no-tnt" parents="allow-all">
-                                <deny><block>TNT</block></deny>
-                            </filter>
+                            <deny id="no-tnt"><block>TNT</block></deny>
                         </filters>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                    Define several named regions. Apply the `no-tnt` filter to the region named `bases` and `deny-all` block placing/breaking to the `portals-area` region.
+                    Define several regions with ID's. Apply the `no-tnt` filter to the region `bases` and never allow block placing/breaking in the `portals-area` region.
 
                         <regions>
-                            <rectangle name="main-area" min="-50,-32" max="51,33"/>
-                            <union name="bases">
-                                <rectangle name="blue-base" min="-20,-62" max="21,-32"/>
-                                <rectangle name="red-base" min="-20,33" max="21,63"/>
+                            <rectangle id="main-area" min="-50,-32" max="51,33"/>
+                            <union id="bases">
+                                <rectangle id="blue-base" min="-20,-62" max="21,-32"/>
+                                <rectangle id="red-base" min="-20,33" max="21,63"/>
                             </union>
-                            <complement name="portals-area">
+                            <complement id="portals-area">
                                 <rectangle min="-56,-2" max="57,3"/>
-                                <region name="main-area"/>
+                                <region id="main-area"/>
                             </complement>
 
-                            <apply block="deny-all"> <!-- protect portal areas -->
-                                <region name="portals-area"/>
-                            </apply>
-                            <apply block="no-tnt" message="You may not place TNT in the bases.">
-                                <region name="bases"/>
-                            </apply>
+                            <apply block="never" region="portals-area"/> <!-- protect portal areas -->
+                            <apply block="no-tnt" region="bases" message="You may not place TNT in the bases."/>
                         </regions>
 
                     <br/>
@@ -110,11 +104,11 @@
 
                         <spawns>
                             <spawns safe="true" sequential="true">
-                                <spawn team="blue" kit="blue" yaw="0">
+                                <spawn team="blue-team" kit="blue" yaw="0">
                                     <cuboid min="-15,32,-57" max="16,42,-32"/>
                                     <point>0.5,33,-47.5</point>
                                 </spawn>
-                                <spawn team="red" kit="red" yaw="180">
+                                <spawn team="red-team" kit="red" yaw="180">
                                     <cuboid min="-15,32,33" max="16,42,58"/>
                                     <point>0.5,33,48.5</point>
                                 </spawn>

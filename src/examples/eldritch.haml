@@ -39,8 +39,8 @@
                     Create two teams, specify their [color](/reference/formatting#chatColors) and max players.
 
                         <teams>
-                            <team color="blue" max="8">Blue Team</team>
-                            <team color="dark red" max="8">Red Team</team>
+                            <team id="blue-team" color="blue" max="8">Blue Team</team>
+                            <team id="red-team" color="dark red" max="8">Red Team</team>
                         </teams>
 
                     <br/>
@@ -48,19 +48,19 @@
                     Create the main area and deny all block interaction.
 
                         <regions>
-                            <rectangle name="main-area" min="-oo,-oo" max="oo,oo"/>
-                            <apply block="deny-players">
-                                <region name="main-area"/>
-                            </apply>
-                            <apply enter="deny-all" message="You may not leave the playing field">
-                                <negative>
-                                    <union>
-                                        <cuboid name="red-base" min="530,23,-265" max="522,29,-257"/>
-                                        <cuboid name="blue-base" min="583,23,-295" max="592,29,-304"/>
-                                        <rectangle min="530,-308" max="583,-250"/>
-                                    </union>
-                                </negative>
-                                <rectangle min="524,-307" max="533,-296"/>
+                            <rectangle id="main-area" min="-oo,-oo" max="oo,oo"/>
+                            <apply block="never" region="main-area"/>
+                            <apply enter="always" message="You may not leave the playing field">
+                                <region>
+                                    <negative>
+                                        <union>
+                                            <cuboid id="red-base" min="530,23,-265" max="522,29,-257"/>
+                                            <cuboid id="blue-base" min="583,23,-295" max="592,29,-304"/>
+                                            <rectangle min="530,-308" max="583,-250"/>
+                                        </union>
+                                    </negative>
+                                    <rectangle min="524,-307" max="533,-296"/>
+                                </region>
                             </apply>
                         </regions>
 
@@ -70,10 +70,10 @@
 
                         <spawns>
                             <spawns>
-                                <spawn team="blue" yaw="90">
+                                <spawn team="blue-team" yaw="90">
                                     <cuboid min="584,24,-303" max="591,24,-296"/>
                                 </spawn>
-                                <spawn team="red" yaw="-90">
+                                <spawn team="red-team" yaw="-90">
                                     <cuboid min="522,24,-264" max="529,24,-257"/>
                                 </spawn>
                             </spawns>

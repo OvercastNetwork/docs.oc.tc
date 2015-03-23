@@ -12,8 +12,6 @@
                 :markdown
                     Teams are a basic and important component of almost all gamemodes, this module allows you to setup their attributes.
 
-                    Teams are referenced in regions, spawns, etc., by their name. The name matcher is case insensitive and fuzzy. For example, the teams below can be referenced with either `"Red Team" / "Blue Team"` or simply `"red" / "blue"`. When referencing teams care should be taken to make it obvious which team is being specified.
-
                     The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
                     Optionally, you may include a `respawn-limit` attribute, being the maximum number of times members of a team can collectively respawn before the team becomes "locked". If a team becomes locked, that means that that team may not be joined, and is discounted in any checks for wins, regardless of how many cores they have leaked, wools they have captured, and etc. Donors are not exempt from these joining restrictions. If only one team has respawns left, then they will automatically win.  If multiple teams are left with respawns, the game will continue until either a single team completes all goals, or only one team is left with respawns.

@@ -25,14 +25,18 @@
                         %tbody
                             %tr
                                 %td
+                                    %code filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The blocks that get modified by this rule.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
                                     %code region
                                 %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     The region this rule applies to.
-                                    %br
-                                    %i
-                                        Can be either this attribute or a
-                                        %code= html_escape('<region>')
-                                        sub-element.
                                 %td
                                     %a{:href => "/modules/regions"} Region
 
@@ -49,7 +53,9 @@
                                 %td
                                     %pre
                                         %code= html_escape('<filter>')
-                                %td Filter what blocks get modified by this rule.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter what blocks get modified by this rule.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
                             %tr
@@ -57,12 +63,8 @@
                                     %pre
                                         %code= html_escape('<region>')
                                 %td
-                                    The region this rule applies to, treated as a region union.
-                                    %br
-                                    %i
-                                        Can also be specified in the
-                                        %code region
-                                        attribute of the rule.
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The region this rule applies to.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
                             %tr
@@ -113,8 +115,10 @@
                                 </region>
                                 <!-- Make iron blocks and ore drop iron ingots, and 1 XP -->
                                 <filter>
-                                    <block>iron ore</block>
-                                    <block>iron block</block>
+                                    <any>
+                                        <block>iron ore</block>
+                                        <block>iron block</block>
+                                    </any>
                                 </filter>
                                 <drops>
                                     <item>iron ingot</item>
@@ -190,7 +194,7 @@
 
                             <rule>
                                 <region>
-                                    <region name="central-region"/>
+                                    <region id="central-region"/>
                                 </region>
                                 <!-- Increase the speed of flying blocks by 50% in the central region -->
                                 <fall-speed>1.5</fall-speed>

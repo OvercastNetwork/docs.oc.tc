@@ -33,7 +33,31 @@
                                     %span.label.label-danger Required
                                     Region where this renewable is located.
                                 %td
-                                    %a{:href => "/modules/regions"} Region
+                                    %a{:href => "/modules/regions"} Bounded Region
+                            %tr
+                                %td
+                                    %code renew-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter which/when blocks are renewed.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
+                                    %code replace-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter which/when blocks are replaced.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %td
+                                    %code shuffle-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter which/when blocks are shuffled.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
                             %tr
                                 %td
                                     %code rate
@@ -83,57 +107,42 @@
                                     %span.label.label-danger Required
                                     The region the renewable applies to.
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<renew>')
-                                %td Blocks which are renewed in the defined region.
-                                %td
-                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Block Material
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<replace>')
-                                %td Blocks that can be replaced with renewing blocks.
-                                %td
-                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Block Material
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<shuffle>')
-                                %td Blocks that will be randomly shuffled when renewed.
-                                %td
-                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Block Material
+                                    %a{:href => "/modules/regions"} Bounded Regions
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<renew-filter>')
-                                %td Filter blocks which are renewed.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter which/when blocks are renewed.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<replace-filter>')
-                                %td Filter which blocks are replaced.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter which/when blocks are replaced.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<shuffle-filter>')
-                                %td Filter the shuffled blocks.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter which/when blocks are shuffled.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
 
                 :markdown
-                    By default, all blocks in the region are renewable. Multiple `<renew>` tags can be used inside the `<renewable>` to specify only particular blocks to renew.
+                    By default, all blocks in the region are renewable. The `<renew-filter>` sub-element can be used inside the `<renewable>` to specify only particular blocks to renew.
 
-                    The `<replace>` tags specify which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.
+                    The `<replace-filter>` element specifies which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.
 
                     Normally, blocks will be restored to their exact state when the map was loaded. If some block types are specified in
-                    `<shuffle>` tags, blocks of those types in the original region will be restored to a block type chosen at random from
+                    `<shuffle-filter>` element, blocks of those types in the original region will be restored to a block type chosen at random from
                     the shuffleable types. The approximate proportions of block types from the original region will be preserved.
 
                         <renewables>
@@ -142,16 +151,28 @@
                                     <cylinder base="0,117,0" radius="6" height="13"/>
                                 </region>
                                 <!-- These are the blocks that will renew -->
-                                <renew>iron ore</renew>
-                                <renew>glowstone</renew>
-                                <renew>stone</renew>
+                                <renew-filter>
+                                    <any>
+                                        <block>iron ore</block>
+                                        <block>glowstone</block>
+                                        <block>stone</block>
+                                    </any>
+                                </renew-filter>
                                 <!-- These blocks can be replaced by renewing blocks -->
-                                <replace>air</replace>
-                                <replace>lava</replace>
-                                <replace>stationary lava</replace>
+                                <replace-filter>
+                                    <any>
+                                        <block>air</block>
+                                        <block>lava</block>
+                                        <block>stationary lava</block>
+                                    </any>
+                                </replace-filter>
                                 <!-- These blocks will switch with each other when they renew -->
-                                <shuffle>stone</shuffle>
-                                <shuffle>iron ore</shuffle>
+                                <shuffle-filter>
+                                    <any>
+                                        <block>stone</block>
+                                        <block>iron ore</block>
+                                    </any>
+                                </shuffle-filter>
                             </renewable>
                         </renewables>
 
@@ -160,11 +181,11 @@
                         <renewables>
                             <renewable rate="1" grow="false" sound="true">
                                 <region>
-                                    <region name="quarry"/>
+                                    <region id="quarry"/>
                                 </region>
                                 <!-- Referenced from <filters> -->
                                 <renew-filter>
-                                    <filter name="quarry-renew"/>
+                                    <filter id="quarry-renew"/>
                                 </renew-filter>
                                 <!-- Defined directly -->
                                 <replace-filter>

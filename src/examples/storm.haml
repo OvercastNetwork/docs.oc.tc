@@ -79,8 +79,8 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team color="dark red" max="32">Red Team</team>
-                            <team color="blue" max="32">Blue Team</team>
+                            <team id="red-team" color="dark red" max="32">Red Team</team>
+                            <team id="blue-team" color="blue" max="32">Blue Team</team>
                         </teams>
 
                     <br/>
@@ -115,9 +115,9 @@
                     Create a "deny-beacon" filter for later use.
 
                         <filters>
-                            <filter name="deny-beacons" parents="allow-all">
-                                <deny><block>beacon</block></deny>
-                            </filter>
+                            <deny id="deny-beacons">
+                                <block>beacon</block>
+                            </deny>
                         </filters>
 
                     <br/>
@@ -125,10 +125,10 @@
                     Create the playable and team spawn regions, then apply the previously defined beacon filter to the playable region.
 
                         <regions>
-                            <rectangle name="playable" min="-oo,-oo" max="oo,oo"/>
-                            <cylinder name="red-spawn" base="49,4,66" radius="4" height="0"/>
-                            <cylinder name="blue-spawn" base="-48,4,-65" radius="4" height="0"/>
-                            <apply block="deny-all" use="deny-beacons"><region name="playable"/></apply>
+                            <rectangle id="playable" min="-oo,-oo" max="oo,oo"/>
+                            <cylinder id="red-spawn" base="49,4,66" radius="4" height="0"/>
+                            <cylinder id="blue-spawn" base="-48,4,-65" radius="4" height="0"/>
+                            <apply block="never" use="deny-beacons" region="playable"/>
                         </regions>
 
                     <br/>
@@ -162,10 +162,10 @@
 
                         <spawns>
                             <spawns yaw="90">
-                                <spawn team="red" kit="red"><region name="red-spawn"/></spawn>
+                                <spawn team="red-team" kit="red"><region id="red-spawn"/></spawn>
                             </spawns>
                             <spawns yaw="270">
-                                <spawn team="blue" kit="blue"><region name="blue-spawn"/></spawn>
+                                <spawn team="blue-team" kit="blue"><region id="blue-spawn"/></spawn>
                             </spawns>
                             <default yaw="90">
                                 <cylinder base="95,60,0" radius="3" height="0"/>

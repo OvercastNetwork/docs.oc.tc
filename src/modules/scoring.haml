@@ -111,9 +111,11 @@
                             %tr
                                 %td
                                     %code filter
-                                %td Filter who can score in this box.
                                 %td
-                                    %a{:href => "/modules/filters"} Filter Name
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter who can score in this box.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
                                 %td No filter
 
                 %h5 Score Box Sub-elements
@@ -135,6 +137,15 @@
                                     The region where this score box is located.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter who can score in this box.
+                                %td
+                                    %a{:href => "/modules/regions"} Filters
 
                     :markdown
                         ##### Example

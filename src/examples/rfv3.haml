@@ -95,8 +95,8 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team color="blue" max="50">Blue Team</team>
-                            <team color="dark red" max="50">Red Team</team>
+                            <team id="blue-team" color="blue" max="50">Blue Team</team>
+                            <team id="red-team" color="dark red" max="50">Red Team</team>
                         </teams>
 
                     <br/>
@@ -105,8 +105,8 @@
 
                         <spawns>
                             <spawns kit="spawn">
-                                <spawn team="blue" yaw="180"><cylinder base="0.5,2,91.5" radius="5" height="0"/></spawn>
-                                <spawn team="red" yaw="0"><cylinder base="0.5,2,-90.5" radius="5" height="0"/></spawn>
+                                <spawn team="blue-team" yaw="180"><cylinder base="0.5,2,91.5" radius="5" height="0"/></spawn>
+                                <spawn team="red-team" yaw="0"><cylinder base="0.5,2,-90.5" radius="5" height="0"/></spawn>
                             </spawns>
                             <default yaw="270"><cylinder base="44.5,8,0.5" radius="4" height="0"/></default>
                         </spawns>
@@ -132,44 +132,34 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
-                    Create several named filters including a no-void filter.
+                    Create several filters including a no-void filter.
 
                         <filters>
-                            <filter name="no-void">
-                                <deny><void/></deny>
-                            </filter>
+                            <deny id="no-void"><void/></deny>
 
-                            <filter name="only-red">
-                                <team>red</team>
-                            </filter>
-                            <filter name="only-blue">
-                                <team>blue</team>
-                            </filter>
+                            <team id="only-red">red-team</team>
+                            <team id="only-blue">blue-team</team>
 
-                            <filter name="only-red-usage">
-                                <not>
-                                    <all>
-                                        <any>
-                                            <block>chest</block>
-                                            <block>workbench</block>
-                                            <block>trap door</block>
-                                        </any>
-                                        <team>blue</team>
-                                    </all>
-                                </not>
-                            </filter>
-                            <filter name="only-blue-usage">
-                                <not>
-                                    <all>
-                                        <any>
-                                            <block>chest</block>
-                                            <block>workbench</block>
-                                            <block>trap door</block>
-                                        </any>
-                                        <team>red</team>
-                                    </all>
-                                </not>
-                            </filter>
+                            <not id="only-red-usage">
+                                <all>
+                                    <any>
+                                        <block>chest</block>
+                                        <block>workbench</block>
+                                        <block>trap door</block>
+                                    </any>
+                                    <team>blue</team>
+                                </all>
+                            </not>
+                            <not id="only-blue-usage">
+                                <all>
+                                    <any>
+                                        <block>chest</block>
+                                        <block>workbench</block>
+                                        <block>trap door</block>
+                                    </any>
+                                    <team>red</team>
+                                </all>
+                            </not>
                         </filters>
 
                     <br/>
@@ -177,7 +167,7 @@
                     Define all the regions, since the playing area of this map is pretty complex there are lots of regions and combinations of regions.
 
                         <regions>
-                            <union name="portals">
+                            <union id="portals">
                                 <circle center="-48.5,-90.5" radius="8"/>
                                 <circle center="49.5,-90.5" radius="8"/>
                                 <circle center="0.5,-139.5" radius="8"/>
@@ -188,99 +178,99 @@
 
                             <!-- void protection -->
                             <apply block="no-void" message="You may not edit the void area">
-                                <negative>
-                                    <rectangle min="-14,-12" max="15,13"/>
-                                    <region name="portals"/>
-                                </negative>
+                                <region>
+                                    <negative>
+                                        <rectangle min="-14,-12" max="15,13"/>
+                                        <region id="portals"/>
+                                    </negative>
+                                </region>
                             </apply>
 
                             <!-- portal protections -->
-                            <apply block="deny-all">
-                                <region name="portals"/>
-                            </apply>
-                            <apply block="deny-all" message="You may not modify your supply room">
-                                <complement name="blue-supplies">
-                                    <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
-                                    <cylinder base="0.5,7,91.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
-                                </complement>
-                                <complement name="red-supplies">
-                                    <circle center="0.5,-90.5" radius="22"/> <!-- circle encompassing the entire base -->
-                                    <cylinder base="0.5,7,-90.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
-                                </complement>
+                            <apply block="never" region="portals"/>
+                            <apply block="never" message="You may not modify your supply room">
+                                <region>
+                                    <complement id="blue-supplies">
+                                        <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                        <cylinder base="0.5,7,91.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
+                                    </complement>
+                                    <complement id="red-supplies">
+                                        <circle center="0.5,-90.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                        <cylinder base="0.5,7,-90.5" radius="19" height="8"/> <!-- defines the area where iron can be gotten -->
+                                    </complement>
+                                </region>
                             </apply>
 
                             <!-- the wools red has to get -->
-                            <union name="red-wool-rooms">
-                                <circle name="yellow-island" center="-83.5,91.5" radius="11"/>
-                                <circle name="purple-island" center="84.5,91.5" radius="11"/>
-                                <circle name="cyan-island" center="0.5,175.5" radius="11"/>
+                            <union id="red-wool-rooms">
+                                <circle id="yellow-island" center="-83.5,91.5" radius="11"/>
+                                <circle id="purple-island" center="84.5,91.5" radius="11"/>
+                                <circle id="cyan-island" center="0.5,175.5" radius="11"/>
                             </union>
 
                             <!-- the wools blue has to get -->
-                            <union name="blue-wool-rooms">
-                                <circle name="orange-island" center="84.5,-90.5" radius="11"/>
-                                <circle name="lime-island" center="-83.5,-90.5" radius="11"/>
-                                <circle name="pink-island" center="0.5,-174.5" radius="11"/>
+                            <union id="blue-wool-rooms">
+                                <circle id="orange-island" center="84.5,-90.5" radius="11"/>
+                                <circle id="lime-island" center="-83.5,-90.5" radius="11"/>
+                                <circle id="pink-island" center="0.5,-174.5" radius="11"/>
                             </union>
 
                             <!-- the blocks outside of blue's wool rooms -->
-                            <complement name="outside-yellow">
+                            <complement id="outside-yellow">
                                 <circle center="-83.5,91.5" radius="14.9"/>
-                                <region name="yellow-island"/>
+                                <region id="yellow-island"/>
                             </complement>
-                            <complement name="outside-purple">
+                            <complement id="outside-purple">
                                 <circle center="84.5,91.5" radius="14.9"/>
-                                <region name="purple-island"/>
+                                <region id="purple-island"/>
                             </complement>
-                            <complement name="outside-cyan">
+                            <complement id="outside-cyan">
                                 <circle center="0.5,175.5" radius="14.9"/>
-                                <region name="cyan-island"/>
+                                <region id="cyan-island"/>
                             </complement>
 
                             <!-- the blocks outside of red's wool rooms -->
-                            <complement name="outside-orange">
+                            <complement id="outside-orange">
                                 <circle center="84.5,-90.5" radius="14.9"/>
-                                <region name="orange-island"/>
+                                <region id="orange-island"/>
                             </complement>
-                            <complement name="outside-lime">
+                            <complement id="outside-lime">
                                 <circle center="-83.5,-90.5" radius="14.9"/>
-                                <region name="lime-island"/>
+                                <region id="lime-island"/>
                             </complement>
-                            <complement name="outside-pink">
+                            <complement id="outside-pink">
                                 <circle center="0.5,-174.5" radius="14.9"/>
-                                <region name="pink-island"/>
+                                <region id="pink-island"/>
                             </complement>
 
                             <!-- wool room rules -->
-                            <apply block="only-blue" use="only-blue-usage">
-                                <region name="blue-wool-rooms"/>
-                            </apply>
-                            <apply enter="only-blue" message="You may not enter your own wool room.">
-                                <region name="blue-wool-rooms"/>
-                            </apply>
-                            <apply block="only-red" use="only-red-usage">
-                                <region name="red-wool-rooms"/>
-                            </apply>
-                            <apply enter="only-red" message="You may not enter your own wool room.">
-                                <region name="red-wool-rooms"/>
-                            </apply>
+                            <apply block="only-blue" use="only-blue-usage" region="blue-wool-rooms"/>
+                            <apply enter="only-blue" region="blue-wool-rooms" message="You may not enter your own wool room."/>
+                            <apply block="only-red" region="red-wool-rooms" use="only-red-usage"/>
+                            <apply enter="only-red" region="red-wool-rooms" message="You may not enter your own wool room."/>
 
                             <!-- spawn rules -->
                             <apply enter="only-blue" message="You may not enter the enemy spawn.">
-                                <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                <region>
+                                    <circle center="0.5,91.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                </region>
                             </apply>
                             <apply enter="only-red" message="You may not enter the enemy spawn.">
-                                <circle center="0.5,-90.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                <region>
+                                    <circle center="0.5,-90.5" radius="22"/> <!-- circle encompassing the entire base -->
+                                </region>
                             </apply>
 
                             <!-- no block placement outside wool rooms -->
-                            <apply block="deny-all">
-                                <region name="outside-yellow"/>
-                                <region name="outside-purple"/>
-                                <region name="outside-cyan"/>
-                                <region name="outside-orange"/>
-                                <region name="outside-lime"/>
-                                <region name="outside-pink"/>
+                            <apply block="never">
+                                <region>
+                                    <region id="outside-yellow"/>
+                                    <region id="outside-purple"/>
+                                    <region id="outside-cyan"/>
+                                    <region id="outside-orange"/>
+                                    <region id="outside-lime"/>
+                                    <region id="outside-pink"/>
+                                </region>
                             </apply>
                         </regions>
 
@@ -356,22 +346,22 @@
                     Specify a Capture the Wool type game, and the locations where the wools have to be placed by each team.
 
                         <wools>
-                            <wool team="red" color="purple">
+                            <wool team="red-team" color="purple">
                                 <block location="-49,10,-91"/>
                             </wool>
-                            <wool team="red" color="yellow">
+                            <wool team="red-team" color="yellow">
                                 <block location="49,10,-91"/>
                             </wool>
-                            <wool team="red" color="cyan">
+                            <wool team="red-team" color="cyan">
                                 <block location="0,16,-140"/>
                             </wool>
-                            <wool team="blue" color="lime">
+                            <wool team="blue-team" color="lime">
                                 <block location="49,10,91"/>
                             </wool>
-                            <wool team="blue" color="orange">
+                            <wool team="blue-team" color="orange">
                                 <block location="-49,10,91"/>
                             </wool>
-                            <wool team="blue" color="pink">
+                            <wool team="blue-team" color="pink">
                                 <block location="0,16,140"/>
                             </wool>
                         </wools>

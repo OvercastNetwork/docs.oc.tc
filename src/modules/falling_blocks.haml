@@ -73,7 +73,7 @@
                                     %span.label.label-danger Required
                                     Filter what blocks get modified by this rule.
                                     %br
-                                    Also accepts a named region reference to limit the rule to a certain area.
+                                    Also accepts regions to limit the rule to a certain area.
                                 %td
                                     %a{:href => "/modules/filters"} Block Filters
                                     &
@@ -139,13 +139,13 @@
                                 <rule>
                                     <filter>
                                         <all>
-                                            <region name="box"/>
-                                            <filter name="building-blocks"/>
+                                            <region id="box"/>
+                                            <filter id="building-blocks"/>
                                         </all>
                                     </filter>
                                     <sticky>
                                         <any>
-                                            <filter name="building-blocks"/>
+                                            <filter id="building-blocks"/>
                                             <block>quartz</block>
                                             <block>quartz stairs</block>
                                         </any>

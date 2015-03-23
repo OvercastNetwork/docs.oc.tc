@@ -54,15 +54,12 @@
                             </filter>
                         </mobs>
 
-
-                    Example from [Cake Wars](http://maps.oc.tc/DTC/Standard/Cake%20Wars/map.xml).
-
+                        <!-- Only allow cave spiders spawned with spawn eggs -->
                         <mobs>
-                            <filter parents="deny-all">
-                                <allow>
-                                    <!-- Only allow cave spiders to be spawned with spawn eggs -->
+                            <filter>
+                                <all>
                                     <mob>cave spider</mob>
                                     <spawn>spawner egg</spawn>
-                                </allow>
+                                </all>
                             </filter>
                         </mobs>

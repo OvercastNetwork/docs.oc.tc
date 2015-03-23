@@ -33,8 +33,8 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team color="dark red" max="12">Red Team</team>
-                            <team color="blue" max="12">Blue Team</team>
+                            <team id="red-team" color="dark red" max="12">Red Team</team>
+                            <team id="blue-team" color="blue" max="12">Blue Team</team>
                         </teams>
 
                     <br/>
@@ -44,7 +44,7 @@
                     The direction a player faces when spawning in a region is defined by putting the region inside a `<spawn>` element and specifying the `yaw=""` attribute.
 
                         <spawns>
-                            <spawn team="red" kit="red">
+                            <spawn team="red-team" kit="red">
                                 <point yaw="-45">
                                     <cylinder base="-619.5,11,259.5" height="0" radius="2"/> <!-- West -->
                                 </point>
@@ -52,7 +52,7 @@
                                     <cylinder base="-571.5,11,259.5" height="0" radius="2"/> <!-- East -->
                                 </point>
                             </spawn>
-                            <spawn team="blue" kit="blue">
+                            <spawn team="blue-team" kit="blue">
                                 <point yaw="-135">
                                     <cylinder base="-619.5,11,349.5" height="0" radius="2"/> <!-- West -->
                                 </point>
@@ -78,48 +78,50 @@
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/filters)
-                    A slightly complex block filter that prevents ice from melting naturally. See [filter modifiers](/modules/filters#filterModifiers) for a more detailed explanation.
+                    Filter for ice blocks, applying this filter to a region with `block-physics` prevents ice from melting naturally.
 
                         <filters>
-                            <filter name="deny-icemelt">
-                                <not><all><!-- DENY if world and ice, ALLOW if not world, ABSTAIN if world and not ice-->
-                                    <any><!-- ALLOW if world, DENY else -->
-                                        <filter name="allow-world" />
-                                        <filter name="deny-all" />
-                                    </any>
-                                    <block>ice</block><!-- ALLOW if ice, ABSTAIN else -->
-                                </all></not>
-                            </filter>
+                            <deny id="deny-icemelt">
+                                <block>ice</block>
+                            </deny>
                         </filters>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/regions)
-                    The regions of the map. Here we specify a rectangle region named `playable` and apply the `deny-icemelt` filter. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base. Additionally we create a variable height build limit using a region combination.
+                    The regions of the map. Here we specify a rectangle region with `playable` as its ID and apply the `deny-icemelt` filter. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base. Additionally we create a variable height build limit using a region combination.
 
                         <regions>
-                            <apply block="deny-icemelt">
-                                <rectangle min="-635,232" max="-556,377" name="playable" />
+                            <rectangle min="-635,232" max="-556,377" id="playable" />
+                            <apply block-physics="deny-icemelt" region="playable"/>
+
+                            <apply block="never" message="Please don't edit the spawns!">
+                                <region>
+                                    <cylinder base="-619.5,10,259.5" height="6" radius="7"/> <!-- West Red -->
+                                    <cylinder base="-571.5,10,259.5" height="6" radius="7"/> <!-- East -->
+                                    <cylinder base="-619.5,10,349.5" height="6" radius="7"/> <!-- West Blue -->
+                                    <cylinder base="-571.5,10,349.5" height="6" radius="7"/> <!-- East -->
+                                </region>
                             </apply>
-                            <apply block="deny-all" message="Please don't edit the spawns!">
-                                <cylinder base="-619.5,10,259.5" height="6" radius="7"/> <!-- West Red -->
-                                <cylinder base="-571.5,10,259.5" height="6" radius="7"/> <!-- East -->
-                                <cylinder base="-619.5,10,349.5" height="6" radius="7"/> <!-- West Blue -->
-                                <cylinder base="-571.5,10,349.5" height="6" radius="7"/> <!-- East -->
+                            <apply block="never" message="You may not build outside of the playing field.">
+                                <region>
+                                    <negative>
+                                        <region id="playable"/>
+                                    </negative>
+                                </region>
                             </apply>
-                            <apply block="deny-players" message="You may not build outside of the playing field.">
-                                <negative>
-                                    <region name="playable"/>
-                                </negative>
+                            <apply enter="never" message="Don't enter the observers spawn area!">
+                                <region>
+                                    <cuboid min="-535,10,313" max="-549,oo,295"/>
+                                </region>
                             </apply>
-                            <apply enter="deny-all" message="Don't enter the observers spawn area!">
-                                <cuboid min="-535,10,313" max="-549,oo,295"/>
-                            </apply>
-                            <apply block="deny-all" message="You have reached the maximum build limit!">
-                                <complement>
-                                    <cuboid name="above-20" min="-oo,21,-oo" max="oo,oo,oo"/>
-                                    <cylinder name="tower-a" base="-621.5,20,304.5" radius="5" height="3"/>
-                                    <cylinder name="tower-b" base="-569.5,20,304.5" radius="5" height="3"/>
-                                </complement>
+                            <apply block="never" message="You have reached the maximum build limit!">
+                                <region>
+                                    <complement>
+                                        <cuboid id="above-20" min="-oo,21,-oo" max="oo,oo,oo"/>
+                                        <cylinder id="tower-a" base="-621.5,20,304.5" radius="5" height="3"/>
+                                        <cylinder id="tower-b" base="-569.5,20,304.5" radius="5" height="3"/>
+                                    </complement>
+                                </region>
                             </apply>
                         </regions>
 

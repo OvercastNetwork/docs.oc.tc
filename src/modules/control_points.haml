@@ -183,7 +183,7 @@
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     Region where this control points progress is displayed.
                                 %td
-                                    %a{:href => "/modules/regions"} Region
+                                    %a{:href => "/modules/regions"} Bounded Region
                                 %td{:colspan => "2"}
                             %tr
                                 %td
@@ -192,8 +192,27 @@
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     Region where this control points owner is displayed.
                                 %td
-                                    %a{:href => "/modules/regions"} Region
+                                    %a{:href => "/modules/regions"} Bounded Region
                                 %td{:colspan => "2"}
+                            %tr
+                                %td
+                                    %code capture-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter teams that can capture this control point, defaults to all teams. Teams that don't match this filter can still prevent other teams from capturing by standing on the control point. They can also uncapture the control point if neutral-state is enabled.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td{:colspan => "2"}
+                            %tr
+                                %td
+                                    %code player-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter players who can control this control point. Players who don't match this filter cannot affect the control point in any way.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td{:colspan => "2"}
+
 
                 %h5 Control Point Sub-elements
                 .table-responsive
@@ -222,7 +241,7 @@
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     The region to display capture progress.
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
+                                    %a{:href => "/modules/regions"} Bounded Regions
                             %tr
                                 %td
                                     %pre
@@ -231,12 +250,13 @@
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     The region to display if the control point is captured.
                                 %td
-                                    %a{:href => "/modules/regions"} Regions
+                                    %a{:href => "/modules/regions"} Bounded Regions
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<capture-filter>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Filter teams that can capture this control point, defaults to all teams. Teams that don't match this filter can still prevent other teams from capturing by standing on the control point. They can also uncapture the control point if neutral-state is enabled.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
@@ -245,6 +265,7 @@
                                     %pre
                                         %code= html_escape('<player-filter>')
                                 %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Filter players who can control this control point. Players who don't match this filter cannot affect the control point in any way.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
@@ -262,4 +283,4 @@
                     <br/>
                     #### Control Point Regions
 
-                    Capture progress is displayed inside the defined `<progress>` region using the dominating teams color. After a control point is captured the `<captured>` region is also filled with that color. The progress and captured regions must be finite regions, e.g. cylinders & cuboids will work, circles and squares will not. Only the default visual materials or materials defined in `visual-materials` will be modified in the progress regions when they are updated.
+                    Capture progress is displayed inside the defined `<progress>` region using the dominating teams color. After a control point is captured the `<captured>` region is also filled with that color. The progress and captured regions must be bounded regions, e.g. cylinders & cuboids will work, circles and squares will not. Only the default visual materials or materials defined in `visual-materials` will be modified in the progress regions when they are updated.
