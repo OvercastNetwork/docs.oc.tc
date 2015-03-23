@@ -10,13 +10,68 @@
                 .page-header
                     %h1= @page_sub_title = "Kill Reward"
                 :markdown
-                    The `<killreward>` module allows players to get items or a kit when they kill someone. A kill reward can contain either individual items, kits or references to kits. Kits defined inside the module can contain any of the features that normal [kits](/modules/kits) have.
+                    The `<killreward>` module allows players to get items or a kit when they kill a player. A kill reward can contain either individual items, kits or references to kits. The reward can optionally filter which players are eligible to receive the reward, or when/where the reward is active.
 
+                    This module can, for example, be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
 
-                    `e.g.` This module can be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
+                %h5 Kill Reward Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter who can claim this reward and when.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code kit
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The kit to apply to players when they are spawned in this spawn.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit Name
+                                %td
 
-                    You can optionally include a [filter](/modules/filters#killStreakFilter) that determines which players are eligible to receive the reward.
+                %h5 Kill Reward Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter who can claim this reward and when.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kit>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The kit to give as the reward.
+                                %td
+                                    %a{:href => "/modules/kits"} Kits
 
+                :markdown
                     <br/>
                     Examples
 
