@@ -60,52 +60,6 @@
                         <multitrade/>
 
                     <br/>
-                    ### [Auto Respawn](id:autoRespawn)
-                    The auto-respawn module allows the map creator to automatically respawn players after the designated duration. The respawn time must be greater than 1 second (20 ticks), if the respawn time is less it will automatically default to one second, allowing the death to fully complete and the player to be reset properly.
-
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Attribute
-                                %th Description
-                                %th Value
-                                %th Default
-                        %tbody
-                            %tr
-                                %td
-                                    %code delay
-                                %td
-                                    Delay a players respawn for this duration.
-                                %td
-                                    %a{:href => "/reference/time_periods"} Time Period
-                                %td 2s
-                            %tr
-                                %td
-                                    %code auto
-                                %td
-                                    Auto respawn the player after the delay time has elapsed.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true
-                            %tr
-                                %td
-                                    %code blackout
-                                %td
-                                    Blackout dead players.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td false
-
-                :markdown
-
-                        <!-- Default autorespawn of 2 seconds -->
-                        <autorespawn/>
-
-                        <!-- Autorespawn after 3 seconds, blackout player when they die -->
-                        <autorespawn delay="3s" blackout="true"/>
-
-                    <br/>
                     ### Time Limit
                     The result attribute determines which team wins when the time runs out. It can be the name of a team, or one of the
                     special values "tie" for no winner, or "objectives" for the team that has the most objectives completed. The [time period](/reference/time_periods) format can be used to specify the time in minutes, etc.

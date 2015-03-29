@@ -10,33 +10,13 @@
                 .page-header
                     %h1= @page_sub_title = "Spawns"
                 :markdown
-                    The spawns module is a required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element should be defined per map.
-
-                    To allow players to spawn at a bed set the main spawns bedspawn attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
+                    The spawns module is required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element may be defined per map.
 
                     Multiple spawns from the same team can be grouped inside of a single `<regions>` element inside `<spawns team="team name">`. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
 
                     The regions element accepts more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
 
-                    Auto respawn and respawn delays for all players can be specified with the [auto-respawn](/modules/other_settings#autoRespawn) module.
-
-                    ##### Spawns Element Attributes
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Attribute
-                                %th Description
-                                %th Value
-                                %th Default
-                        %tbody
-                            %tr
-                                %td
-                                    %code bedspawn
-                                %td Allow players to change their spawn point to a bed.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td false
+                    Respawn behavior such as delays, etc. can be customized with the [respawn](#respawn) module.
 
                 %h5 Spawns Element Sub-elements
                 .table-responsive
@@ -59,6 +39,7 @@
                                     %pre
                                         %code= html_escape('<default>')
                                 %td
+                                    %span.label.label-warning Unique
                                     The spawn for observers and teams without a spawn.
                                     %br
                                     %i Only one default spawn element is allowed per map.
@@ -127,6 +108,14 @@
                                     Filter when this spawn is used.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code deny-message
+                                %td
+                                    Message to send if the spawn is denied by the filter.
+                                %td
+                                    %span.label.label-primary String
                                 %td
 
                 %h5 Regions Element Attributes
@@ -235,3 +224,72 @@
                                     </regions>
                                 </spawn>
                             </spawns>
+
+                :markdown
+
+                    <br/>
+                    ### [Respawn Module](id:respawn)
+                    The respawn module allows the map creator to adjust the respawn time and if players are automatically respawned. The respawn time must be greater than 1 second (20 ticks), if the respawn time is less it will automatically default to one second, allowing the death to fully complete and the player to be reset properly.
+
+                    To allow players to spawn at a bed set the bed attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code delay
+                                %td
+                                    Delay a players respawn for this duration.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td 2s
+                            %tr
+                                %td
+                                    %code auto
+                                %td
+                                    Auto respawn the player after the delay time has elapsed.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code blackout
+                                %td
+                                    Dead players get a blindness effect applied.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code spectate
+                                %td
+                                    Allow dead players to fly around.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code bed
+                                %td
+                                    %span.label.label-danger N/A
+                                    Allow players to respawn from beds.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+
+                :markdown
+
+                        <!-- Default auto respawn of 2 seconds -->
+                        <respawn auto="true"/>
+
+                        <!-- Auto respawn after 3 seconds, blackout player when they die -->
+                        <respawn delay="3s" blackout="true"/>
+
