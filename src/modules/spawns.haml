@@ -12,7 +12,7 @@
                 :markdown
                     The spawns module is required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element may be defined per map.
 
-                    Multiple spawns from the same team can be grouped inside of a single `<regions>` element inside `<spawns team="team name">`. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
+                    Multiple spawns from the same team can be grouped inside of a single `<regions>` element inside `<spawns team="team-id">`. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the `safe="true"` attribute, PGM will then check that the player spawns on a solid object and not midair.
 
                     The regions element accepts more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
 
@@ -72,7 +72,7 @@
                                     %code team
                                 %td The team this spawn applies to.
                                 %td
-                                    %a{:href => "/modules/teams"} Team Name
+                                    %a{:href => "/modules/teams"} Team ID
                                 %td
                             %tr
                                 %td
@@ -98,7 +98,7 @@
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     The kit to apply to players when they are spawned in this spawn.
                                 %td
-                                    %a{:href => "/modules/kits"} Kit Name
+                                    %a{:href => "/modules/kits"} Kit ID
                                 %td
                             %tr
                                 %td

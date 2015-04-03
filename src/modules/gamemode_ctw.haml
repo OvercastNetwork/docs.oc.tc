@@ -47,7 +47,7 @@
                                     %span.label.label-danger Required
                                     The team which has to place the wool.
                                 %td
-                                    %a{:href => "/modules/teams"} Team Name
+                                    %a{:href => "/modules/teams"} Team ID
                                 %td
                             %tr
                                 %td
@@ -155,7 +155,7 @@
                                     %a{:href => "/modules/regions"} Region
 
                 :markdown
-                    You can group multiple victory monuments from the same team inside a single `<wools team="team name">` element; and then define that teams individual wool colors inside of a `<wool>` element.
+                    You can group multiple victory monuments from the same team inside a single `<wools team="team-id">` element; and then define that teams individual wool colors inside of a `<wool>` element.
 
                         <wools team="red">
                             <wool color="cyan" location="32.5,14,0.5">

@@ -10,7 +10,7 @@
                 .page-header
                     %h1= @page_sub_title = "Kits"
                 :markdown
-                    Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. They are referenced by their `name=""` from [spawns](/modules/spawns) and [regions](/modules/regions).
+                    Kits are used when spawning and in healing / special item zones. See [items](/modules/items) for information on how to give items or items with special properties, and [potion effects](/reference/potion_effects) for information on how to give potion effects. Kits can inherit items from other kits by using the `parents=""` attribute. They are referenced by their `id=""` from [spawns](/modules/spawns) and [regions](/modules/regions).
 
                     Note that by default a kit will not empty a inventory but rather overwrite specific slots. If you want to guarantee that a slot is empty use air with an amount of 0 as the material for that slot. A player's whole inventory or part of it can also be cleared by using one of the clear elements.
 
@@ -25,8 +25,8 @@
                         %tbody
                             %tr
                                 %td
-                                    %code name
-                                %td The kits name, used to reference it in spawns, etc.
+                                    %code id
+                                %td Unique identifier used to reference this kit from other places in the XML.
                                 %td
                                     %span.label.label-primary String
                             %tr
@@ -69,15 +69,15 @@
                     The force attribute will act differently for the individual sub-elements. If force is true, conflicting items or armor will be replaced instead of smartly merged & repaired, health & hunger will be set instead of only increased, and potion effects will be replaced instead of only non-existent effects added.
 
                         <kits>
-                            <kit name="spawn" force="true">
+                            <kit id="spawn" force="true">
                                 <item slot="0">iron sword</item>
                                 <item slot="8" amount="32">bread</item>
                                 <potion duration="5" amplifier="1">heal</potion>
                             </kit>
-                            <kit name="red" parents="spawn">
+                            <kit id="red" parents="spawn">
                                 <helmet color="cd0000">leather helmet</helmet>
                             </kit>
-                            <kit name="blue" parents="spawn">
+                            <kit id="blue" parents="spawn">
                                 <helmet color="0066cc">leather helmet</helmet>
                             </kit>
                         </kits>
@@ -110,7 +110,7 @@
 
                 :markdown
 
-                        <kit name="ender" reset-ender-pearls="true">
+                        <kit id="ender" reset-ender-pearls="true">
                             <item slot="0" amount="1">ender pearl</item>
                             <clear/>
                         </kit>
@@ -158,11 +158,11 @@
 
                 :markdown
 
-                        <kit name="health" force="true">
+                        <kit id="health" force="true">
                             <health>10</health>
                         </kit>
 
-                        <kit name="hunger">
+                        <kit id="hunger">
                             <saturation>20</saturation>
                             <foodlevel>20</foodlevel>
                         </kit>
@@ -190,12 +190,12 @@
 
                 :markdown
 
-                        <kit name="rabbit">
+                        <kit id="rabbit">
                             <!-- 1.8 times faster than a normal player -->
                             <walk-speed>1.8</walk-speed>
                         </kit>
 
-                        <kit name="tortoise">
+                        <kit id="tortoise">
                             <!-- half as fast as a normal player -->
                             <walk-speed>0.5</walk-speed>
                         </kit>
@@ -204,7 +204,7 @@
                     ### Knockback Reduction Kit
                     Reduce (or increase) the knockback players receive when they have this kit applied. The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased, and anything lower than zero pushes the player to the attacker instead of away from them.
 
-                        <kit name="knockback-re">
+                        <kit id="knockback-re">
                             <knockback-reduction>0.5</knockback-reduction>
                         </kit>
 
@@ -255,7 +255,7 @@
                                     %span.label.label-primary true/false
                                 %td false
                 :markdown
-                        <kit name="jump">
+                        <kit id="jump">
                             <double-jump/>
                         </kit>
 
@@ -305,7 +305,7 @@
                                 %td 1
 
                 :markdown
-                        <kit name="fly">
+                        <kit id="fly">
                             <fly/>                <!-- can-fly = true, flying = not set -->
                         </kit>
 
