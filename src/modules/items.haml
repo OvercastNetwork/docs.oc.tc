@@ -64,10 +64,30 @@
                                 %td 1
                             %tr
                                 %td
-                                    %code name
-                                %td The item's custom name.
+                                    %code damage
                                 %td
-                                    %span.label.label-primary String
+                                    The item's damage, used for items such as birch logs.
+                                    / %br
+                                    / %i Use a damage value of <code>-3000</code> to make an tool unbreakable.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
+                                    %code unbreakable
+                                %td
+                                    Specify if this item is unbreakable, hides the durability bar in minecraft.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code attributes
+                                %td
+                                    Custom attributes, e.g., increased health or faster movement speed.
+                                    %a.left-ref-link{:href=>"#attributes"} <i class="fa fa-chevron-down"></i>
+                                %td
+                                    %a{:href => "#attributes"} Attributes String
                                 %td
                             %tr
                                 %td
@@ -80,29 +100,17 @@
                                 %td
                             %tr
                                 %td
-                                    %code lore
-                                %td Custom lore string.
+                                    %code name
+                                %td The item's display name.
                                 %td
                                     %span.label.label-primary String
                                 %td
                             %tr
                                 %td
-                                    %code damage
+                                    %code lore
+                                %td Custom lore string.
                                 %td
-                                    The item's damage, used for items such as birch logs.
-                                    %br
-                                    %i Use a damage value of <code>-3000</code> to make an tool unbreakable.
-                                %td
-                                    %span.label.label-primary Number
-                                %td 0
-                            %tr
-                                %td
-                                    %code attributes
-                                %td
-                                    Custom attributes, e.g., increased health or faster movement speed.
-                                    %a.left-ref-link{:href=>"#attributes"} <i class="fa fa-chevron-down"></i>
-                                %td
-                                    %a{:href => "#attributes"} Attributes String
+                                    %span.label.label-primary String
                                 %td
                             %tr
                                 %td
@@ -345,7 +353,7 @@
                     <br/>
                     ### [Enchantments](id:enchantments)
 
-                    Items and armor can have custom enchantments by using the `enchantment` attribute. Enchantments are specified by their bukkit name and the enchantment level separated by a colon `:`. Multiple enchantments are separated by a semicolon `;`.
+                    Items and armor can have custom enchantments by using the `enchantment` attribute. Enchantments are specified by their [bukkit name](/reference/enchantments) and the enchantment level separated by a colon `:`. Multiple enchantments are separated by a semicolon `;`.
 
                     Examples
 
