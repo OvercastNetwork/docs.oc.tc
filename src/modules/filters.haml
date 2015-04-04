@@ -151,6 +151,13 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<flag-captured>flag_id</flag-captured>')
+                                %td
+                                    Match if the flag has been captured.
+                                    %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<carrying-flag>flag_id</carrying-flag>')
                                 %td
                                     Match the player carrying the specified flag.
@@ -335,7 +342,7 @@
 
                     The flag filters allow filtering of a specific flags current state or for the player that is carrying the flag. One important use of these filters is to implement the standard rule that a team can only capture an enemy flag when their own flag is returned. This can be implemented easily using a `<flag-returned>` as the capture-filter of a flag. This can also be done with the nets return attribute. However, using the return attribute will return dropped flags, while using a filter will not.
 
-                    The flag carried, dropped and returned filters have an optional `post` attribute to only match if the flag was last returned to that post.
+                    The flag carried, dropped, captured and returned filters have an optional `post` attribute to only match if the flag was last returned to that post.
 
                         <!-- The blue flag is currently being carried by a player -->
                         <flag-carried>blue-flag</flag-carried>
@@ -348,6 +355,9 @@
 
                         <!-- The yellow flag is standing at the green-post -->
                         <flag-returned post="green-post">yellow-flag</flag-returned>
+
+                        <!-- The cyan flag has been captured but not yet returned -->
+                        <flag-captured>cyan-flag</flag-captured>
 
                         <!-- The player currently carrying the purple flag -->
                         <carrying-flag>purple-flag</carrying-flag>

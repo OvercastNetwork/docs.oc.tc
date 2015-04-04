@@ -63,7 +63,7 @@
                     <br/>
                     #### [Flags](id:flags)
 
-                    A `<flag>` is a single physical banner that is always at exactly one location, and in one of three states: _carried_ by a player, _dropped_ on the ground, or _returned_. It's appearance is defined by an actual banner built into the map, and it has a name and color which you can override in XML. A flag can award points at a specified rate to players carrying it, or when it is captured. It can also come with a kit that is given to the carrier. Filters can be used to control who can pickup/capture the flag and when.
+                    A `<flag>` is a single physical banner that is always at exactly one location, and in one of four states: _carried_ by a player, _dropped_ on the ground, _captured_, or _returned_ to its post. It's appearance is defined by an actual banner built into the map, and it has a name and color which you can override in XML. A flag can award points at a specified rate to players carrying it, or when it is captured. It can also come with a kit that is given to the carrier. Filters can be used to control who can pickup/capture the flag and when.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -118,7 +118,7 @@
                                 %td
                                     Custom message to display to players carrying the flag.
                                     %br
-                                    e.g., "You are carrying something."
+                                    e.g., "You are carrying Flag X."
                                 %td
                                     %span.label.label-primary String
                                 %td
@@ -142,15 +142,6 @@
                                 %td
                                     %span.label.label-primary Number
                                 %td 0
-                            %tr
-                                %td
-                                    %code filter
-                                %td
-                                    %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
-                                    Set both <code>pickup-filter</code> & <code>capture-filter</code>.
-                                %td
-                                    %a{:href => "/modules/filters"} Filter
-                                %td
                             %tr
                                 %td
                                     %code pickup-filter
@@ -240,16 +231,6 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<filter>')
-                                %td
-                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
-                                    Set both <code>pickup-filter</code> & <code>capture-filter</code>.
-                                %td
-                                    %a{:href => "/modules/filters"} Filters
-                                %td
-                            %tr
-                                %td
-                                    %pre
                                         %code= html_escape('<pickup-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -306,7 +287,7 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Post Attributes
+                                %th{:style => "min-width: 130px;"} Post Attributes
                                 %th Description
                                 %th Value
                                 %th Default
@@ -347,7 +328,7 @@
                                 %td
                                     %code points-rate
                                 %td
-                                    The amount of points the post's owner gets when the flag is on the <code>post</code>.
+                                    The amount of points the post's owner gets when the flag is on the post.
                                     %br
                                     %i Requires the <code>owner</code> attribute to be set.
                                 %td
@@ -356,8 +337,6 @@
                             %tr
                                 %td
                                     %code pickup-filter
-                                    |
-                                    %code filter
                                 %td
                                     %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
                                     Filter who can pickup the flag for this net.
@@ -367,7 +346,7 @@
                             %tr
                                 %td
                                     %code return-time
-                                %td Return a dropped flag to its <code>post</code> after this time. Use <code>oo</code> for no return timer.
+                                %td Recover a dropped flag after this time. Use <code>oo</code> to never return the flag.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
                                 %td 30s
@@ -380,7 +359,17 @@
                                     During this time, the flag is completely gone, giving defenders a chance to return to their base.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
-                                %td 15s
+                                %td
+                            %tr
+                                %td
+                                    %code respawn-speed
+                                %td
+                                    Proportional respawn delay, calculate the time the flag would take to move between its despawn and respawn locations.
+                                    %br
+                                    %i Conflicts with <code>respawn-time</code> attribute.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 8
                             %tr
                                 %td
                                     %code yaw
@@ -401,8 +390,6 @@
                                 %td
                                     %pre
                                         %code= html_escape('<pickup-filter>')
-                                    %pre
-                                        %code= html_escape('<filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Filter who can pickup the flag for this net.
@@ -426,7 +413,7 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Net Attributes
+                                %th{:style => "min-width: 150px;"} Net Attributes
                                 %th Description
                                 %th Value
                                 %th Default
@@ -461,7 +448,7 @@
                                 %td
                                     Custom message to display to players when their flag capture is denied.
                                     %br
-                                    e.g., "Something will be captured when allowed."
+                                    e.g., "Flag X will be captured when allowed."
                                 %td
                                     %span.label.label-primary String
                                 %td
@@ -478,6 +465,24 @@
                                     %span.label.label-primary String
                                 %td
                                     %span.label.label-default ALL Flags
+                            %tr
+                                %td
+                                    %code respawn-together
+                                %td
+                                    Respawns for this net's flags are delayed until they can all respawn simultaneously.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code respawn-message
+                                %td
+                                    Message to display when the flags respawn is canceled by <code>respawn-together</code> or a filter.
+                                    %br
+                                    e.g., "Flag X will respawn when all flags are captured."
+                                %td
+                                    %span.label.label-primary String
+                                %td
                             %tr
                                 %td
                                     %code return
@@ -502,11 +507,18 @@
                             %tr
                                 %td
                                     %code capture-filter
-                                    |
-                                    %code filter
                                 %td
                                     %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
                                     Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code respawn-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
+                                    Filter when the flag is allowed to respawn.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
                                 %td
@@ -551,11 +563,18 @@
                                 %td
                                     %pre
                                         %code= html_escape('<capture-filter>')
-                                    %pre
-                                        %code= html_escape('<filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Filter the flag capture conditions for this net.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<respawn-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter when the flag is allowed to respawn.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
 
@@ -565,11 +584,11 @@
                         <!-- Classic CTF -->
                         <flags>
                             <flag id="blue-flag" name="Blue Flag" owner="blue-team">
-                                <post filter="yellow-only">2,5,11</post>
+                                <post pickup-filter="yellow-only">2,5,11</post>
                             </flag>
 
                             <flag id="yellow-flag" name="Yellow Flag" owner="yellow-team">
-                                <post filter="blue-only">24,5,11</post>
+                                <post pickup-filter="blue-only">24,5,11</post>
                             </flag>
 
                             <net points="1" region="yellow-net" flag="blue-flag"   return="yellow-flag"/>
@@ -593,49 +612,49 @@
                                         <potion duration="0">speed</potion>
                                     </drop-kit>
 
-                                    <net points="1" region="yellow-net" filter="yellow-only"/>
-                                    <net points="1" region="blue-net"   filter="blue-only"/>
+                                    <net points="1" region="yellow-net" capture-filter="yellow-only"/>
+                                    <net points="1" region="blue-net"   capture-filter="blue-only"/>
                                 </flag>
                             </flags>
 
                             <!-- King of the Flag -->
                             <flags>
                                 <post id="center-post">13,1,11</post>
-                                <post id="yellow-post" owner="yellow-team" yaw="90"  points-rate="1" filter="blue-only">24,5,11</post>
-                                <post id="blue-post"   owner="blue-team"   yaw="-90" points-rate="1" filter="yellow-only">2,5,11</post>
+                                <post id="yellow-post" owner="yellow-team" yaw="90"  points-rate="1" pickup-filter="blue-only">24,5,11</post>
+                                <post id="blue-post"   owner="blue-team"   yaw="-90" points-rate="1" pickup-filter="yellow-only">2,5,11</post>
 
                                 <flag name="Flag" color="white" shared="true" post="center-post" points-rate="0.5">
-                                    <net owner="yellow-team" region="yellow-net" post="yellow-post" filter="yellow-only"/>
-                                    <net owner="blue-team"   region="blue-net"   post="blue-post"   filter="blue-only"/>
+                                    <net owner="yellow-team" region="yellow-net" post="yellow-post" capture-filter="yellow-only"/>
+                                    <net owner="blue-team"   region="blue-net"   post="blue-post"   capture-filter="blue-only"/>
                                 </flag>
                             </flags>
 
                             <!-- Fenland -->
                             <flags>
                                 <flag id="blue-flag" name="Blue Flag" color="light blue">
-                                    <post yaw="130" filter="only-red">45,12,25</post>
+                                    <post yaw="130" pickup-filter="only-red">45,12,25</post>
                                 </flag>
                                 <flag id="red-flag" name="Red Flag">
-                                    <post yaw="-45" filter="only-blue">-45,12,-25</post>
+                                    <post yaw="-45" pickup-filter="only-blue">-45,12,-25</post>
                                 </flag>
                                 <net points="1" flag="blue-flag" return="red-flag">
                                     <region>
                                         <cuboid min="-46,12,-26" max="-43,14,-23"/>
                                     </region>
-                                    <filter>
+                                    <capture-filter>
                                         <not>
                                             <flag-carried>red-flag</flag-carried>
                                         </not>
-                                    </filter>
+                                    </capture-filter>
                                 </net>
                                 <net points="1" flag="red-flag" return="blue-flag">
                                     <region>
                                         <cuboid min="44,12,24" max="47,14,27"/>
                                     </region>
-                                    <filter>
+                                    <capture-filter>
                                         <not>
                                             <flag-carried>blue-flag</flag-carried>
                                         </not>
-                                    </filter>
+                                    </capture-filter>
                                 </net>
                             </flags>
