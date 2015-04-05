@@ -14,8 +14,6 @@
 
                     The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
-                    Optionally, you may include a `respawn-limit` attribute, being the maximum number of times members of a team can collectively respawn before the team becomes "locked". If a team becomes locked, that means that that team may not be joined, and is discounted in any checks for wins, regardless of how many cores they have leaked, wools they have captured, and etc. Donors are not exempt from these joining restrictions. If only one team has respawns left, then they will automatically win.  If multiple teams are left with respawns, the game will continue until either a single team completes all goals, or only one team is left with respawns.
-
                     A teams `plural` attribute specifies if the team name is plural e.g. "Attackers"; PGM will use this to pick appropriate win messages, etc. The `show-name-tags` attribute specifies who can see player name tags, this only applies to players, observers will always see all name tags.
 
                     It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
@@ -75,12 +73,6 @@
                                 %td Maximum team size hard limit. Must be greater than the defined <code>max</code>.
                                 %td
                                     %span.label.label-primary Number
-                            %tr
-                                %td
-                                    %code respawn-limit
-                                %td The number of times a team may respawn before getting taken out of the match. Once met or exceeded, that team may not be joined, even by donors.
-                                %td
-                                    %spawn.label.label-primary Number
 
                 :markdown
 
