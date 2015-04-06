@@ -8,8 +8,118 @@
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Projectiles"
+                    %h1= @page_sub_title = "Custom Projectiles"
                 :markdown
+                    Items that can shoot custom projectiles.
+
+                    ##### Projectile Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td Unique identifier used to reference this projectile from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code name
+                                %td The display name of this projectile, used in "shot by" messages, etc.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code damage
+                                %td The amount of damage this projectile deals.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0.0
+                            %tr
+                                %td
+                                    %code velocity
+                                %td The speed at which the projectile moves.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 1.0
+                            %tr
+                                %td
+                                    %code click
+                                %td
+                                    The click action that fires the projectile.
+                                    %br
+                                    Accepts <code>right</code>, <code>left</code> or <code>both</code>.
+                                %td
+                                    %span.label.label-primary Click Action
+                                %td
+                                    %code both
+                            %tr
+                                %td
+                                    %code projectile
+                                %td The entity this custom projectile is.
+                                %td
+                                    %a{:href=>"/reference/entity_types"} Entity Type
+                                %td
+                                    %span.label.label-default Arrow
+                            %tr
+                                %td
+                                    %code potion
+                                %td The potion effects to apply to players hit by this projectile.
+                                %td
+                                    %a{:href => "/modules/items#potions"} Potion Effect String
+                                %td
+                            %tr
+                                %td
+                                    %code destroy-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
+                                    Filter if/what blocks get destroyed when hit with this projectile.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
+                                    %code cooldown
+                                %td Cooldown for firing this projectile.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td
+                            %tr
+                                %td
+                                    %code throwable
+                                %td Specify if this projectile's item amount is reduced when fired.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+
+                :markdown
+                        <!-- Create the projectile "template" -->
+                        <projectiles>
+                            <projectile
+                                id="lazer"
+                                name="lazer"
+                                projectile="Snowball"
+                                velocity="3.5"
+                                damage="50"
+                                throwable="false"
+                                cooldown="5s"/>
+                        </projectiles>
+
+                        <!-- Apply the projectile to an item -->
+                        <item projectile="lazer" name="`alazer gun">stick</item>
+
+
+                    <br/>
+                    ### Modifying Bow Projectiles
+
                     Bows can be modified to shoot a different projectile at a custom speed. The PGM plugin will calculate the damage the projectile does using the same formula as minecraft does for arrows. This means that a flying fish with a velocity of 40 will almost certainly kill you. Projectiles can also have custom [potion effects](/modules/potions) which are applied to the target when it is hit.
 
                         <modifybowprojectile>
@@ -25,7 +135,7 @@
                         </modifybowprojectile>
 
 
-                    `NOTE:` You can currently only modify all projectiles, this means no normal and custom bow at the same time.
+                    `NOTE:` You can currently only modify all bow projectiles, this means no normal and custom bow at the same time.
 
                     All the following projectiles are guaranteed to work. See [mrapple/Bukkit Entity Spawning.md](https://gist.github.com/4617111) for a list of tested entities.
 
