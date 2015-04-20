@@ -10,17 +10,19 @@
                 .page-header
                     %h1= @page_sub_title = "Custom Projectiles"
                 :markdown
-                    Items that can shoot custom projectiles.
+                    Custom projectile types can be defined and applied to items in [kits](/modules/kits).
+                    These items effectively become either weapons that shoot the custom projectile,
+                    or the item form of the custom projectile itself.
 
                     ##### Projectile Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Attribute
+                                %th{style: "min-width: 150px;"} Attribute
                                 %th Description
-                                %th Value
-                                %th Default
+                                %th{style: "min-width: 100px;"} Value
+                                %th{style: "min-width: 100px;"} Default
                         %tbody
                             %tr
                                 %td
@@ -38,17 +40,34 @@
                                 %td
                             %tr
                                 %td
+                                    %code throwable
+                                %td
+                                    Items are consumed when using them to shoot this projectile
+                                    (making them more like grenades than guns).
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code projectile
+                                %td The entity this projectile is materialized as.
+                                %td
+                                    %a{:href=>"/reference/entity_types"} Entity Type
+                                %td
+                                    %span.label.label-default Arrow
+                            %tr
+                                %td
                                     %code damage
                                 %td The amount of damage this projectile deals.
                                 %td
-                                    %span.label.label-primary Number
+                                    %span.label.label-primary Half-hearts
                                 %td 0.0
                             %tr
                                 %td
                                     %code velocity
                                 %td The speed at which the projectile moves.
                                 %td
-                                    %span.label.label-primary Number
+                                    %span.label.label-primary Meters/tick
                                 %td 1.0
                             %tr
                                 %td
@@ -63,18 +82,10 @@
                                     %code both
                             %tr
                                 %td
-                                    %code projectile
-                                %td The entity this custom projectile is.
-                                %td
-                                    %a{:href=>"/reference/entity_types"} Entity Type
-                                %td
-                                    %span.label.label-default Arrow
-                            %tr
-                                %td
                                     %code potion
                                 %td The potion effects to apply to players hit by this projectile.
                                 %td
-                                    %a{:href => "/modules/items#potions"} Potion Effect String
+                                    %a{:href => "/modules/items#potions"} Potion Effect
                                 %td
                             %tr
                                 %td
@@ -85,20 +96,14 @@
                                 %td
                                     %a{:href => "/modules/filters"} Filter
                                 %td
+                                    %code deny-all
                             %tr
                                 %td
                                     %code cooldown
-                                %td Cooldown for firing this projectile.
+                                %td Minimum time between each firing of this projectile.
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
                                 %td
-                            %tr
-                                %td
-                                    %code throwable
-                                %td Specify if this projectile's item amount is reduced when fired.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true
 
                 :markdown
                         <!-- Create the projectile "template" -->
@@ -114,7 +119,11 @@
                         </projectiles>
 
                         <!-- Apply the projectile to an item -->
-                        <item projectile="lazer" name="`alazer gun">stick</item>
+                        <kits>
+                            <kit name="lazer-kit">
+                                <item projectile="lazer" name="`alazer gun">stick</item>
+                            </kit>
+                        </kits>
 
 
                     <br/>
