@@ -118,7 +118,7 @@
                                 %td
                                     %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
                                     %span.label.label-danger Required
-                                    The flag's initial post.
+                                    The flag's initial & default post.
                                 %td
                                     %a{:href => "/modules/gamemode_ctf#posts"} Flag Post
                                 %td
@@ -241,7 +241,9 @@
                                     %pre
                                         %code= html_escape('<post>X,Y,Z</post>')
                                 %td
-                                    The default location of this flag's banner on the map.
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    The flag's initial & default post.
                                 %td
                                     %a{:href => "/modules/regions#pointProviders"} Point Provider
                             %tr
@@ -294,10 +296,9 @@
                     A **post** is a point or region where flags can respawn after being captured or dropped.
                     It is essentially a [spawn](/modules/spawns) for flags instead of players,
                     and like spawns, they are defined with [point providers](/modules/regions#pointProviders), and can be randomized.
-                    Each flag must have a default post, where it will be at the start of the match.
 
                     A flag remembers the last post it was at and will respawn there after being dropped or captured.
-                    Each flag has a default post where it is placed at match start.
+                    Each flag must have a default post, where it will be placed at the start of the match.
 
                     If a post is defined with a region rather than a point, flags will respawn at a random point in the region.
                     If multiple points or regions are given, one will be chosen at random (unless the `sequential` option is used).
@@ -595,6 +596,7 @@
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
                                     The region flag carriers must enter to capture in this net.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
