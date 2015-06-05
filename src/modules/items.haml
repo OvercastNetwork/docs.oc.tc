@@ -10,9 +10,12 @@
                 .page-header
                     %h1= @page_sub_title = "Items & Armor"
                 :markdown
-                    The item elements are used to place items into a players inventory or armor slots. Items have many different attributes, and some may only apply to certain item types; such as the leather armor `color` attribute.
+                    The item elements are used to place items into a players inventory or armor slots.
+                    Items have many different attributes, and some may only apply to certain item types;
+                    such as the leather armor `color` attribute.
 
-                    Item names can be found with the [material finder](/reference/inventory#material_finder) or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html)
+                    Item names can be found with the [material finder](/reference/inventory#material_finder)
+                    or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html)
 
 
                 %h5 Item Element
@@ -22,17 +25,53 @@
                             %tr
                                 %th Element
                                 %th Description
-                                %th Value
                         %tbody
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<item>')
                                 %td
-                                    %span.label.label-danger Required
-                                    The item's material name.
+                                    An item stack.
+
+                %h5 Sub-Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %pre
+                                        %code= html_escape('<enchantment> </enchantment>')
+                                %td
+                                    %a{:href => "#enchantments"} Enchantment
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<potion> </potion>')
+                                %td
+                                    %a{:href => "#potions"} Potion Effect
+                                    (only works on potion items)
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<attribute> </attribute>')
+                                %td
+                                    %a{:href => "#attributes"} Attribute Modifier
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-destroy> </can-destroy>')
+                                %td
+                                    %a{:href => "#can-destroy"} Materials that can be mined with the item
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-place-on> </can-place-on>')
+                                %td
+                                    %a{:href => "#can-destroy"} Materials that the item can be placed on
 
                     %h5 Item Attributes
                 .table-responsive
@@ -44,6 +83,15 @@
                                 %th Value
                                 %th Default
                         %tbody
+                            %tr
+                                %td
+                                    %code material
+                                %td
+                                    %span.label.label-danger Required
+                                    The item's material name.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                %td
                             %tr
                                 %td
                                     %code slot
@@ -80,24 +128,6 @@
                                 %td false
                             %tr
                                 %td
-                                    %code attributes
-                                %td
-                                    Custom attributes, e.g., increased health or faster movement speed.
-                                    %a.left-ref-link{:href=>"#attributes"} <i class="fa fa-chevron-down"></i>
-                                %td
-                                    %a{:href => "#attributes"} Attributes String
-                                %td
-                            %tr
-                                %td
-                                    %code enchantment
-                                %td
-                                    The item's enchantment(s).
-                                    %a.left-ref-link{:href=>"#enchantments"} <i class="fa fa-chevron-down"></i>
-                                %td
-                                    %a{:href => "#enchantments"} Enchantment String
-                                %td
-                            %tr
-                                %td
                                     %code name
                                 %td The item's display name.
                                 %td
@@ -119,17 +149,6 @@
                                     %i Only applies to leather armor items.
                                 %td
                                     %span.label.label-primary Hex Color
-                                %td
-                            %tr
-                                %td
-                                    %code potions
-                                %td
-                                    A potion item's potion effects.
-                                    %a.left-ref-link{:href=>"#potions"} <i class="fa fa-chevron-down"></i>
-                                    %br
-                                    %i Only applies to potion items.
-                                %td
-                                    %a{:href => "#potions"} Potions String
                                 %td
                             %tr
                                 %td
@@ -181,23 +200,70 @@
                                 %td
                                     %a{:href => "/modules/projectiles"} Projectile ID
                                 %td
+                            %tr
+                                %td
+                                    %code show-enchantments
+                                %td
+                                    Show enchantments in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-attributes
+                                %td
+                                    Show attribute modifiers in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-unbreakable
+                                %td
+                                    Show the unbreakable property in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-can-destroy
+                                %td
+                                    Show the breakable block list in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-can-place-on
+                                %td
+                                    Show the blocks the item can be placed on in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-other
+                                %td
+                                    Show various other things in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
                 :markdown
 
                     Items can be give custom names and lore with the `name` and `lore` attributes. Colors and fancy text in item names or lore can be specified with the grave symbol `` ` and then the [formatting code](/reference/formatting). You can specify multiple lines of lore using a pipe symbol `|` for line breaks.
 
-                        <item lore="Magic Dust">331</item> <!-- Redstone dust with a fancy lore. -->
-                        <item name="`6Golden Sword">gold sword</item> <!-- Gold sword with a gold/yellow name. -->
-                        <item lore="`4The One and Only">stick</item> <!-- A stick with the lore colored red. -->
-                        <item lore="`eWarning!|`5Does damage!">iron sword</item> <!-- A sword with 2 lines of lore. -->
+                        <item name="`6Golden Sword" material="gold sword"/> <!-- Gold sword with a gold/yellow name. -->
+                        <item lore="`4The One and Only" material="stick"/> <!-- A stick with the lore colored red. -->
+                        <item lore="`eWarning!|`5Does damage!" material="iron sword"/> <!-- A sword with 2 lines of lore. -->
 
                     <br/>
                     ### Armor
                     Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.
 
-                        <helmet>iron helmet</helmet>
-                        <chestplate>diamond chestplate</chestplate>
-                        <leggings>gold leggings</leggings>
-                        <boots>leather boots</boots>
+                        <helmet material="iron helmet"/>
+                        <chestplate material="diamond chestplate"/>
+                        <leggings material="gold leggings"/>
+                        <boots material="leather boots"/>
 
                     ##### Armor Attributes
                 .table-responsive
@@ -220,7 +286,9 @@
 
                     Enchanting, naming or giving armor lore works the same way as with items.
 
-                        <boots enchantment="protection fall:1" lore="The Winged Boots of Hermes">iron boots</boots>
+                        <boots material="iron boots" lore="The Winged Boots of Hermes">
+                            <enchantment level="1">feather_falling</enchantment>
+                        </boots>
 
                     Items like leather armor are colored with the `color` attribute.
                     The color is represented in hexadecimal, see [dye colors](/reference/colors) for a list of hex colors for the different dyes.
@@ -231,46 +299,17 @@
 
                     <br/>
                     ### [Custom Potions](id:potions)
-                    Custom effects can be added to a potion item with the `potions` attribute. Multiple effects are separated with a semicolon `;`. The format for custom potion item effects is: `potion_name:duration:potency:ambient`. The potion item's damage value will define the potion color and if it's a splash or normal potion.
+                    Any number of custom potion effects can be added to an item in the same way they are added to kits.
+                    See [Potion Effects](/modules/potions) for details.
 
-                    The item's damage specifies the potion type. [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions).
+                    This only works on the "potion" item. The potion's damage value determines its color and whether or not it is a splash potion.
+                    See [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions) for details.
 
-
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Specifier
-                                %th Description
-                                %th Value
-                        %tbody
-                            %tr
-                                %td
-                                    %code potion_name
-                                %td The potion effects name.
-                                %td
-                                    %a{:href => "/reference/potion_effects"} Potion Name
-                            %tr
-                                %td
-                                    %code duration
-                                %td Length of the potion effect in minecraft ticks.
-                                %td
-                                    %span.label.label-primary Number
-                            %tr
-                                %td
-                                    %code potency
-                                %td What level the potion effect is, 0 is equal to a lvl 1 potion.
-                                %td
-                                    %span.label.label-primary 0-2
-                            %tr
-                                %td
-                                    %code ambient
-                                %td Specify if the potion effect is ambient. (Decreased and translucent particle effects.)
-                                %td
-                                    %span.label.label-primary true/false
                 :markdown
 
-                        <item slot="1" damage="8227" potions="fire resistance:900:0:false">potion</item>
+                        <item slot="1" material="potion" damage="8227">
+                            <potion duration="15m">fire resistance</potion>
+                        </item>
 
                     <br/>
                     ### [Books](id:books)
@@ -367,36 +406,78 @@
                     <br/>
                     ### [Enchantments](id:enchantments)
 
-                    Items and armor can have custom enchantments by using the `enchantment` attribute. Enchantments are specified by their [bukkit name](/reference/enchantments) and the enchantment level separated by a colon `:`. Multiple enchantments are separated by a semicolon `;`.
+                    Any enchantment can be applied to any item. The enchantment type can be specified by
+                    their [Minecraft name](http://minecraft.gamepedia.com/Data_values#Enchantment_IDs) or
+                    [Bukkit name](/reference/enchantments).
 
+                %h5 Enchantment Element
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<enchantment> </enchantment>')
+                                %td Enchant an item
+
+                                %td
+                                    %span.label.label-primary Enchantment Name
+                %h5 Enchantment Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code level
+                                %td Enchantment level
+                                %td
+                                    %span.label.label-primary Number
+                                %td 1
+                :markdown
                     Examples
 
-                        <item enchantment="damage all:2">iron sword</item> <!-- A sharpness II iron sword -->
-                        <item enchantment="knockback:4">280</item> <!-- A knockback IV stick -->
+                        <!-- A sharpness II iron sword -->
+                        <item material="iron sword">
+                            <enchantment level="2">sharpness</enchantment>
+                        </item>
 
-                        <boots enchantment="protection fall:2">gold boots</boots>
+                        <!-- A knockback IV stick -->
+                        <item material="stick">
+                            <enchantment level="4">knockback</enchantment>
+                        </item>
+
+                        <!-- Feather falling 2 boots -->
+                        <boots material="gold boots">
+                            <enchantment level="2">feather_falling</enchantment>
+                        </boots>
 
                     <br/>
-                    ### [Attributes](id:attributes)
 
-                    The `attributes` attribute will allow you to set the attribute('s) for a item or a piece of armor. Look at the [attributes reference](/reference/attributes) page for a list of the different attributes. The attribute definition is separated by colons `:`, and consists of the attributes name, operation and level. Multiple attributes are separated by a semicolon `;`.
+                    ### [Attribute Modifiers](id:attributes)
 
-                    **Attribute Operations:**
-
-                    * `ADD` Add level to original level value.
-                    * `BASE` Add level * base to original level value.
-                    * `MULTIPLY` Multiply original level value by level.
-
+                    Attribute modifiers can be applied to items in the same way they are applied to kits.
+                    See [Attribute Kits](/modules/kits#attributes) for details.
                     <br/>
                     Examples
 
-                        <chestplate attributes="generic.knockbackResistance:add:1">chainmail chestplate</chestplate>
+                        <chestplate material="chainmail chestplate">
+                            <attribute amount="1">generic.knockbackResistance</attribute>
+                        </chestplate>
 
-                        <item attributes="generic.knockbackResistance:add:1">diamond spade</item>
-                        <item attributes="generic.knockbackResistance:add:1;generic.movementSpeed:add:2">diamond spade</item>
-
-                        <!-- Unit of maxHealth is in half-hearts -->
-                        <leggings attributes="generic.maxHealth:add:-6">iron leggings</leggings>
+                        <item material="diamond spade">
+                            <attribute operation="multiply" amount="2">generic.movementSpeed</attribute>
+                        </item>
 
                     `NOTE:` Negative attribute values are allowed; however sometimes they don't work as expected.
 
@@ -412,5 +493,30 @@
                     `NOTE:` If an ender pearl is used as a grenade, the player will teleport to the location and the explosion will occur.
 
 
-                        <item slot="1" amount="12" name="`4Grenade" grenade="true" grenade-power="1.2">snow ball</item>
-                        <item name="`a`lRocket Ammo" amount="3" enchantment="thorns" grenade="true" grenade-power="4" grenade-fire="true">arrow</item>
+                        <item slot="1" amount="12" name="`4Grenade" grenade="true" grenade-power="1.2" material="snow ball"/>
+                        <item name="`a`lRocket Ammo" amount="3" enchantment="thorns" grenade="true" grenade-power="4" grenade-fire="true" material="arrow"/>
+
+                    ### [Can-Destroy / Can-Place-On](id:can-destroy)
+
+                    In adventure mode, no blocks can be placed or mined by default. The `<can-destroy>` element allows an item to mine a specified list of blocks.
+                    The `<can-place-on>` element allows a block item to be placed against a specified list of blocks. In each case, the blocks are listed inside
+                    the element, each wrapped in a `<material>` sub-element. These blocks **cannot** have damage/data values (this is a limitation of Minecraft
+                    that we are unable to work around).
+
+                    Instead of a list of blocks, you can use the `<all-blocks/>` element, which is equivalent to listing literally every block in the game.
+                    In this case, you will probably want to specify `show-can-place-on="false"` or `show-can-destroy="false"` on the item to prevent a
+                    massive tooltip being displayed to the player.
+
+                        <item material="iron shovel">
+                            <can-destroy>
+                                <material>dirt</material>
+                                <material>grass</material>
+                                <material>sand</material>
+                            </can-destroy>
+                        </item>
+
+                        <item material="lever">
+                            <can-place-on>
+                                <all-blocks/>
+                            </can-place-on>
+                        </item>

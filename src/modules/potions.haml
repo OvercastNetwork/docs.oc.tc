@@ -11,7 +11,10 @@
                     %h1= @page_sub_title = "Potion Effects"
                 :markdown
                     To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
-                    Potions effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and amplifier what level / how strong the potion is. The potion type is specified using the [potion name](/reference/potion_effects).
+                    Potion effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and
+                    amplifier determines what level / how strong the potion is. The potion type can be specified using either
+                    [Minecraft effect names](http://minecraft.gamepedia.com/Data_values#Status_effects) or
+                    [Bukkit potion names](/reference/potion_effects).
 
                     To give a custom potion item to the player use the [items](/modules/items#potions) element and its `potions` attribute.
 
@@ -27,13 +30,14 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<potion>')
+                                        %code= html_escape('<potion> </potion>')
                                 %td
-                                    The potion effects name.
+                                    :markdown
+                                        [Minecraft effect name](http://minecraft.gamepedia.com/Data_values#Status_effects) or
+                                        [Bukkit potion name](/reference/potion_effects)
                                 %td
-                                    %a{:href => "/reference/potion_effects"} Potion Name
-
-                    %h5 Potion Attributes
+                                    %a{:href => "/reference/potion_effects"} Effect
+                %h5 Potion Element
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -43,32 +47,26 @@
                                 %th Value
                                 %th Default
                         %tbody
-                            %tr{:title => "Required"}
+                            %tr
                                 %td
                                     %code duration
                                 %td
-                                    The time the potion effect last in seconds.
-                                    %br
-                                    %i Infinite duration can be specified by using <code>oo</code> as the duration.
+                                    Duration of the effect.
                                 %td
-                                    %span.label.label-primary Number
-                                    %span.label.label-danger Required
+                                    %a{:href => "/reference/time_periods"} Time Period
                                 %td
+                                    oo
+                                    (forever)
                             %tr
                                 %td
                                     %code amplifier
-                                %td The strength of the potion effect.
+                                %td
+                                    Strength of the effect. The value matches what is displayed to the player in-game,
+                                    so the first tier of potions have amplifier 1.
                                 %td
                                     %span.label.label-primary Number
                                 %td 1
-                            %tr
-                                %td
-                                    %code ambient
-                                %td Specify if the potion's particle effects are ambient.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td false
-
+                %h5 Example
                 :markdown
                         <potion duration="10" amplifier="4">damage resistance</potion>
-                        <potion duration="900" amplifier="1" ambient="true">jump</potion>
+                        <potion duration="900" amplifier="1">jump_boost</potion>
