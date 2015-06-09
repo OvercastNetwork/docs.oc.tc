@@ -161,6 +161,33 @@
 
 
                     <br/>
+                    ### Game-mode Kit
+
+                    A player's gamemode can be changed when they spawn or enter a region, etc. by using this kit.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<game-mode></game-mode>')
+                                %td
+                                    The gamemode to change the player to.
+                                    %br Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.
+                                %td
+                                    %span.label.label-default Game Mode String
+
+                :markdown
+                        <game-mode>adventure</game-mode>
+
+
+                    <br/>
                     ### Health & Hunger Kits
                     A player's health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
 
