@@ -63,6 +63,21 @@
                         <below x="0" z="0"/>    <!-- everything in the -X, -Z quadrant -->
                         ```
 
+                    * Blitz or Ghost Squadron titles are no longer a part of the blitz module, instead they are set as a attribute of the `<map>` element and can be used with any gamemode.
+                    * Match time limit is no longer part of the `<score>` or `<blitz>` module, instead it is defined directly in the root <map> element.
+
+                        ```
+                        <map proto="1.4.0">
+                        <time result="objectives">5m</time>
+
+                        <!-- Other modules. -->
+                        </map>
+                        ```
+
+                    * A team can have a minimum required size with the `min=""` attribute.
+                    * A players gamemode can be changed by using a the `<game-mode>adventure</game-mode>` kit.
+
+
                     <br/>
                     #### Changes in 1.3.6
 
