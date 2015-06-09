@@ -36,6 +36,8 @@
                                         %code= html_escape('<cuboid id="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>')
                                     %br
                                     A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>.
+                                    %br
+                                    %i Only block bounded when using finite coordinates.
                                 %td.text-right
                                     %span.label.label-primary Randomize-able
                             %tr
@@ -44,6 +46,8 @@
                                         %code= html_escape('<cylinder id="abc" base="X,Y,Z" radius="R" height="H"/>')
                                     %br
                                     A cylinder located at <code>X,Z,Y</code> with a radius of <code>R</code> and a height of <code>H</code>.
+                                    %br
+                                    %i Only block bounded when using a finite radius.
                                 %td.text-right
                                     %span.label.label-primary Randomize-able
                             %tr
@@ -60,6 +64,8 @@
                                         %code= html_escape('<sphere id="abc" origin="X,Y,Z" radius="R"/>')
                                     %br
                                     A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>.
+                                    %br
+                                    %i Only block bounded when using a finite radius.
                                 %td
                             %tr
                                 %td{:colspan => "2"}
