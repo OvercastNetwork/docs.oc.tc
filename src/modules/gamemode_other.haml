@@ -9,6 +9,16 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Other Game Modes"
+
+                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
+                    %li
+                        %a{:href => "#gs"} Ghost Squadron
+                    %li
+                        %a{:href => "#rage"} Rage
+                    %li
+                        %a{:href => "#tdm"} Team Deathmatch
+                %hr
+
                 :markdown
                     ### [Ghost Squadron](id:gs)
                     Enables the ghostsquadron gamemode and all its features.
@@ -41,3 +51,18 @@
                             <time>8m</time>
                             <limit>15</limit>
                         </score>
+
+
+                    <br/>
+                    ### [Team Death-match](id:tdm)
+                    This gamemode uses the [scoring](/modules/scoring) module to run the game for a specified amount of time, after which the team with the highest score wins. Teams increase their score by killing players from the other team or capturing points from a [score box](/modules/scoring#score_box).
+
+                    `NOTE:` To be able to score points for kills and deaths the `<kills>` and `<deaths>` elements are required.
+
+                        <score>
+                            <kills>1</kills>    <!-- +1 points for a kill -->
+                            <deaths>1</deaths>  <!-- -1 points for dying -->
+                        </score>
+
+                        <!-- Time till the match ends in seconds (10 minutes) -->
+                        <time>600</time>
