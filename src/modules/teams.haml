@@ -10,7 +10,7 @@
                 .page-header
                     %h1= @page_sub_title = "Teams"
                 :markdown
-                    Teams are a basic and important component of almost all gamemodes, this module allows you to setup their attributes.
+                    Teams are a basic and important component of almost all matches, this module allows you to setup their attributes.
 
                     The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
@@ -41,6 +41,12 @@
                                     %a{:href => "/reference/formatting#chatColors"} Chat Color Name
                             %tr
                                 %td
+                                    %code overhead-color
+                                %td The color of a player's name tag on this team.
+                                %td
+                                    %a{:href => "/reference/formatting#chatColors"} Chat Color Name
+                            %tr
+                                %td
                                     %code plural
                                 %td
                                     The team's name is plural, used in status messages.
@@ -58,6 +64,13 @@
                                     <code>true</code>, <code>false</code>, <code>allies</code> or <code>enemies</code>
                                 %td
                                     %span.label.label-primary Enum
+                            %tr
+                                %td
+                                    %code min
+                                %td
+                                    Required amount of players for this team.
+                                %td
+                                    %span.label.label-primary Number
                             %tr
                                 %td
                                     %code max

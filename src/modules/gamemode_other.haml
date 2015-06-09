@@ -13,17 +13,19 @@
                     ### [Ghost Squadron](id:gs)
                     Enables the ghostsquadron gamemode and all its features.
                     The default ghostsquadron classes can be found [here](https://maps.oc.tc/Blitz/GS/gs.xml).
+                    Ghost squadron maps set a custom gamemode title in the `gs.xml` with the `<map game="Ghost Squadron">` attribute.
+                    When not using the default GS XML include a custom title should be set.
 
                     `NOTE:` This module must be used in conjunction with another gamemode.
 
                         <ghostsquadron/>
                         <include src="gs.xml"/>
 
+                        <time>6m</time>
                         <blitz>
-                            <time>6m</time>
                             <broadcastLives>false</broadcastLives>
-                            <title>Ghost Squadron</title>
                         </blitz>
+
 
                     <br/>
                     ### [Rage](id:rage)

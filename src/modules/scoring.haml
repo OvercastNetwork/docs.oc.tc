@@ -10,7 +10,7 @@
                 .page-header
                     %h1= @page_sub_title = "Scoring"
                 :markdown
-                    The score module can be used to give matches a time or score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
+                    The score module can be used to give matches a score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
 
                     ##### Score Elements
                 .table-responsive
@@ -22,16 +22,6 @@
                                 %th Type
                                 %th Default
                         %tbody
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<time>')
-                                %td
-                                    Length of the match, after this time period the team with the highest score wins.
-                                %td
-                                    %a{:href => "/reference/time_periods"} Time Period
-                                %td
-                                    No limit
                             %tr
                                 %td
                                     %pre
@@ -63,17 +53,14 @@
                                 %td
                                     0
                 :markdown
-                    ##### Example
+                    Example
 
                         <score>
-                            <!-- First team to 100 points wins the match -->
+                            <!-- First team to reach 100 points wins the match -->
                             <limit>100</limit>
 
-                            <!-- +3 points for a kill -->
-                            <kills>3</kills>
-
-                            <!-- -2 points for dying -->
-                            <deaths>2</deaths>
+                            <kills>3</kills> <!-- +3 points for every kill -->
+                            <deaths>2</deaths> <!-- -2 points for accidentally dying -->
                         </score>
 
 
@@ -93,6 +80,13 @@
                         %tbody
                             %tr
                                 %td
+                                    %code points
+                                %td Points awarded for entering the box.
+                                %td
+                                    %span.label.label-primary Number
+                                %td 0
+                            %tr
+                                %td
                                     %code region
                                 %td
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
@@ -101,13 +95,6 @@
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td
-                            %tr
-                                %td
-                                    %code points
-                                %td Points awarded for entering the box.
-                                %td
-                                    %span.label.label-primary Number
-                                %td 0
                             %tr
                                 %td
                                     %code filter
@@ -130,6 +117,14 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<redeemables>')
+                                %td
+                                    Items that can be redeemed at this score box for points.
+                                %td
+                                    %code= html_escape('<item points="1">')
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -147,36 +142,76 @@
                                 %td
                                     %a{:href => "/modules/regions"} Filters
 
-                    :markdown
-                        ##### Example
+                :markdown
+                    Example
 
-                            <score>
-                                <!-- Only allow red team to use this score box, and give them two points -->
-                                <box points="2" filter="only-red">
-                                    <region><cylinder base="21,8,63" radius="1" height="2"/></region>
-                                </box>
-                            </score>
+                        <score>
+                            <!-- Only allow red team to use this score box, and give them two points -->
+                            <box points="2" filter="only-red">
+                                <region><cylinder base="21,8,63" radius="1" height="2"/></region>
+                            </box>
+                        </score>
 
-                            <score>
-                                <box value="8" filter="cyan" region="cyan-scorebox"/>
-                            </score>
+                        <score>
+                            <box value="8" filter="cyan" region="cyan-scorebox"/>
+                        </score>
 
-                        <br/>
-                        #### Redeemables
-                        A score box can also award points in exchange for particular items carried by the player when they
-                        enter the box. The `<box>` element can have a `<redeemables>` sub-element containing any number of
-                        `<item>` elements. Each `<item>` contains a
-                        [material name](/reference/inventory#material_finder)
-                        and an optional `points="..."` attribute specifying the number of points awarded for each item.
+                    <br/>
+                    #### Redeemables
+                    A score box can also award points in exchange for particular items carried by the player when they
+                    enter the box. These items are defined inside a `<redeemables>` score box sub-element as `<item>` tags.
+                    Each item contains a [material name](/reference/inventory#material_finder)
+                    and an optional `points="..."` attribute specifying the number of points awarded for each item.
 
-                        ##### Example
+                    Example
 
-                            <score>
-                                <box filter="only-red" region="red-depot">
-                                    <redeemables>
-                                        <item points="5">diamond</item>
-                                        <item points="3">emerald</item>
-                                        <item points="1">gold nugget</item>
-                                    </redeemables>
-                                </box>
-                            </score>
+                        <score>
+                            <box filter="only-red" region="red-depot">
+                                <redeemables>
+                                    <item points="5">diamond</item>
+                                    <item points="3">emerald</item>
+                                    <item points="1">gold nugget</item>
+                                </redeemables>
+                            </box>
+                        </score>
+
+
+                    <br/>
+                    ### [Time Limit](id:timeLimit)
+                    Give the match a time limit, the result attribute determines how the winning team or player is calculated when the time runs out.
+                    Result can be the name of a team, or one of the special values; "tie" for no winner, or "objectives" for the team that has the most objectives completed. The time limit can be specified in minutes, etc., by formatting it as a [time period](/reference/time_periods).
+
+                    `NOTE!` This tag is **not** placed inside the score module, instead it is located in the root `<map>` element.
+
+                        <time result="objectives">5m</time>
+
+                    ##### Time Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Type
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code result
+                                %td
+                                    Change how the winning team or player is calculated.
+                                    %br
+                                    Accepts <code>default</code>, <code>tie</code>, <code>objectives</code> or a Team ID.
+                                %td
+                                    %span.label.label-primary Victory Condition
+                                    |
+                                    %span.label.label-primary Team ID
+
+                                %td default
+                            %tr
+                                %td
+                                    %code show
+                                %td Show the remaining time in the chat and boss bar.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
