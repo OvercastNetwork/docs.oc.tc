@@ -108,12 +108,12 @@
                             <!-- make glass fall if it is not attached to wood or glass -->
                             <rule>
                                 <filter>
-                                    <block>glass</block>
+                                    <material>glass</material>
                                 </filter>
                                 <sticky>
                                     <any>
-                                        <block>wood</block>
-                                        <block>glass</block>
+                                        <material>wood</material>
+                                        <material>glass</material>
                                     </any>
                                 </sticky>
                             </rule>
@@ -127,7 +127,7 @@
                                 <!-- make sandstone fall, just like sand or gravel -->
                                 <rule>
                                     <filter>
-                                        <block>sandstone</block>
+                                        <material>sandstone</material>
                                     </filter>
                                 </rule>
                             </falling-blocks>
@@ -146,8 +146,8 @@
                                     <sticky>
                                         <any>
                                             <filter id="building-blocks"/>
-                                            <block>quartz</block>
-                                            <block>quartz stairs</block>
+                                            <material>quartz</material>
+                                            <material>quartz stairs</material>
                                         </any>
                                     </sticky>
                                 </rule>

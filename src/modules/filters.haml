@@ -467,8 +467,8 @@
 
                     ````
                     <filters>
-                        <deny id="no-tnt"><block>TNT</block></deny>
+                        <deny id="no-tnt"><material>TNT</material></deny>
                     </filters>
                     ````
 
-                    The player wants to place a TNT block, the filter gets asked; "Is this block place-able?". The filter checks the `<block>` matcher, it matches and returns `ALLOW`. The block matcher is contained in a `<deny>` modifier so the `ALLOW` gets turned into a `DENY`.
+                    The player wants to place a TNT block, the filter gets asked; "Is this block place-able?". The filter checks the `<material>` matcher, it matches and returns `ALLOW`. The material matcher is contained in a `<deny>` modifier so the `ALLOW` gets turned into a `DENY`.
