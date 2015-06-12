@@ -10,11 +10,38 @@
                 .page-header
                     %h1= @page_sub_title = "Block Drops"
                 :markdown
-                    This module can be used to customize what items drop when blocks are broken, and what the broken block is replaced with. All sub-elements are optional, if there are no elements blocks will simply drop nothing.
+                    This module can be used to customize what drops when blocks are broken, and what the broken block is replaced with. It can also be used to customize drops when a block is punched by a player in adventure mode, or to change a block's type when a player walks on it. All sub-elements are optional, if there are no elements all blocks will simply drop nothing.
 
                     Custom drops also apply to blocks broken by explosions. The custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
 
-                    ##### Rule Attributes
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<block-drops> </block-drops>')
+                                %td
+                                    Node containing all the defined block drop rules.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rule>')
+                                %td An individual block drop rule.
+                                %td
+                                    %span.label.label-default Rule Sub-elements
+
+                %h5 Rule Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -22,6 +49,7 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %td Default
                         %tbody
                             %tr
                                 %td
@@ -31,6 +59,7 @@
                                     The blocks that get modified by this rule.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
+                                %td
                             %tr
                                 %td
                                     %code region
@@ -39,15 +68,44 @@
                                     The region this rule applies to.
                                 %td
                                     %a{:href => "/modules/regions"} Region
+                                %td
+                            %tr
+                                %td
+                                    %code wrongtool
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Drop items regardless of what tool was used to mine the block.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code punch
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Check this rule when a block is punched.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code trample
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Check this rule when a block is walked on.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
 
                 %h5 Rule Sub-elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th{:style => "min-width: 125px;"} Element
                                 %th Description
                                 %th Value/Children
+                                %th Default
                         %tbody
                             %tr
                                 %td
@@ -58,6 +116,7 @@
                                     Filter what blocks get modified by this rule.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -67,6 +126,7 @@
                                     The region this rule applies to.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -74,6 +134,7 @@
                                 %td The items which get dropped when a matching block is mined.
                                 %td
                                     %a{:href => "/modules/items"} Items
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -81,35 +142,106 @@
                                 %td The amount of XP that gets dropped.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<replacement>')
-                                %td What to replace the mined block with. (Defaults to air)
+                                %td What to replace the mined block with.
                                 %td
                                     %a{:href => "/reference/inventory#material_finder"} Bukkit Material
+                                %td
+                                    %span.label.label-default Air
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<wrongtool>')
-                                %td Drop items regardless of what tool was used to mine the block.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Drop items regardless of what tool was used to mine the block.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<punch>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Check this rule when a player in adventure mode punches a block.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<trample>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Check this rule when a block is walked on.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<fall-chance>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The percentage of blocks that will change to falling blocks when exploded.
+                                %td
+                                    %span.label.label-primary 0 - 1.0
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<land-chance>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The percentage of falling blocks that will change back to real blocks when they land.
+                                %td
+                                    %span.label.label-primary 0 - 1.0
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<fall-speed>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    A multiplier for the velocity of the blocks flying out from a explosion.
+                                %td
+                                    %span.label.label-primary Number
+                                %td
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Block Drops Item Attributes
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %code chance
+                                %td
+                                    Chance that this item will actually be dropped.
+                                %td
+                                    %span.label.label-primary 0 - 1.0
 
                 :markdown
 
                     The `<filter>` element is used to limit the rule to particular blocks. If multiple filters are listed, the rule will apply when *any* of them match. This filter is usually used to only filter what blocks the rule applies to. If filters such as `<team>` are used then no items or XP will drop if the block is mined by a non-matching player, the rules `<replacement>` material will still take effect however.
 
-                    Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. XP orbs are dropped by specifying the amount in the `<experience>` tag.
+                    Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. They can also have a special `chance` attribute specifying the chance that they will actually be dropped. This value can range from 0 to 1, a chance of 0.5 would mean that the item will at average drop 50% of the time.
 
-                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g. stone mined with a shovel.
-                    If `<wrongtool>true</wrongtool>` is added, the custom drops will happen regardless of what tool was used.
+                    By default, custom drops won't appear if a block is mined with the "wrong" tool, e.g., stone mined with a shovel.
+                    If `wrongtool` is set to true, the custom drops will happen regardless of what tool was used.
 
                     Examples
 
-                        <blockdrops>
-                            <rule>
+                        <block-drops>
+                            <rule wrong-tool="false">
                                 <region>
                                     <cuboid min="1,2,3" max="4,5,6"/>
                                 </region>
@@ -126,27 +258,82 @@
                                 <experience>1</experience>
                                 <!-- Replace mined iron blocks and ore with stone -->
                                 <replacement>stone</replacement>
-                                <wrongtool>false</wrongtool>
                             </rule>
-                        </blockdrops>
+                        </block-drops>
 
-                    ````
-                    <blockdrops>
-                        <!-- Emerald ore blocks drop ore instead of emerald items -->
-                        <rule>
-                            <filter>
-                                <material>emerald ore</material>
-                            </filter>
-                            <drops>
-                                <item>emerald ore</item>
-                            </drops>
-                        </rule>
-                    </blockdrops>
-                    ````
+                %p
+                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-simple-example", :'data-toggle' => "collapse"} Examples
+                %div.collapse{:id => "collapse-simple-example"}
+                    :markdown
+                            <block-drops>
+                                <!-- Emerald ore blocks drop ore instead of emerald items,
+                                <!-- with a 50% chance of also dropping a stone block. -->
+                                <rule>
+                                    <filter>
+                                        <material>emerald ore</material>
+                                    </filter>
+                                    <drops>
+                                        <item>emerald ore</item>
+                                        <item chance="0.5">stone</item>
+                                    </drops>
+                                </rule>
+                            </block-drops>
 
+                :markdown
+                    <br>
+                    #### Block Punching
+                    The `punch` attribute or sub-element specifies if that rule is checked when players in adventure mode punch a block. A rule with the punch attribute set to true will still apply when a block is broken, to change this behavior the `<cause>punch<cause>` or `<cause>mine<cause>` filters can be used.
+
+                        <block-drops>
+                            <!-- 10% chance that a leaf block will drop a stick when it's punched or broken -->
+                            <rule punchable="true">
+                                <filter>
+                                    <material>leaves</material>
+                                </filter>
+                                <drops>
+                                    <item chance="0.1" material="stick"/>
+                                </drops>
+                            </rule>
+                        </block-drops>
+
+                    <br>
+                    #### Block Trampling
+
+                    Setting the `trample` attribute or sub-element to true allows customization of what happens to a block when a player walks over it.
+                    This can be used to turn grass into dirt where players walk, or to drop a specific item when a player walks over a block.
+
+                    A rule with trample set to true will still apply when a player breaks a specified block, a `<cause>trample</cause>` filter can be used to disable this behavior.
+
+                    Additionally the `<sprinting/>`, `<walking/>` & `<crouching/>` filters used in combination with a random filter can be used to modify the chance that a trample rule will apply.
+
+                        <block-drops>
+                            <rule trample="true">
+                                <filter>
+                                    <all>
+                                        <material>grass</material>
+                                        <cause>trample</cause>
+                                        <any>
+                                            <all>
+                                                <sprinting/>
+                                                <random>0.3</random>
+                                            </all>
+                                            <all>
+                                                <walking/>
+                                                <random>0.1</random>
+                                            </all>
+                                            <all>
+                                                <crouching/>
+                                                <random>0.05</random>
+                                            </all>
+                                        </any>
+                                    </all>
+                                </filter>
+                                <replacement>dirt</replacement>
+                            </rule>
+                        </block-drops>
 
                     <br/>
-                    ### Explosion behavior
+                    #### Explosion behavior
 
                     The behavior for blocks that become airborne due to explosions can be modified in addition to all the other drop rules.
 
@@ -163,28 +350,34 @@
                                 %td
                                     %pre
                                         %code= html_escape('<fall-chance>')
-                                %td The percentage of blocks that will change to falling blocks when exploded.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The percentage of blocks that will change to falling blocks when exploded.
                                 %td
                                     %span.label.label-primary 0 - 1.0
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<land-chance>')
-                                %td The percentage of falling blocks that will change back to real blocks when they land.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The percentage of falling blocks that will change back to real blocks when they land.
                                 %td
                                     %span.label.label-primary 0 - 1.0
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<fall-speed>')
-                                %td A multiplier for the velocity of the blocks flying out from a explosion.
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    A multiplier for the velocity of the blocks flying out from a explosion.
                                 %td
                                     %span.label.label-primary Number
                 :markdown
 
                     Examples
 
-                        <blockdrops>
+                        <block-drops>
                             <rule>
                                 <!-- 50% of blocks broken by an explosion get turned into falling/flying blocks -->
                                 <fall-chance>0.5</fall-chance>
@@ -192,12 +385,11 @@
                                 <land-chance>0.8</land-chance>
                            </rule>
 
-                            <rule>
+                            <!-- Increase the speed of flying blocks by 50% in the central region -->
+                            <rule fall-speed="1.5">
                                 <region>
                                     <region id="central-region"/>
                                 </region>
-                                <!-- Increase the speed of flying blocks by 50% in the central region -->
-                                <fall-speed>1.5</fall-speed>
                            </rule>
-                        </blockdrops>
+                        </block-drops>
 
