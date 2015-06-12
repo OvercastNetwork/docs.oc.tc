@@ -13,10 +13,39 @@
                     ### Rules
                     You can use the rules module to add custom rules to your map that are not already included in the standard Overcast Network rules. Regions and filters should be used to enforce access and block rules.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Rule Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rules> </rules>')
+                                %td Node containing all the defined custom rules.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rule> </rule>')
+                                %td
+                                    A custom map rule.
+                                %td
+                                    %span.label.label-primary Text
+
+                :markdown
+                    Example
+
                         <rules>
-                            <rule>A custom map rule</rule>
-                            <rule>Attempting to access the observer's platform is fine so long as you do not intend to prolong the match</rule>
+                            <rule>Do not intentional prolong the match by hiding or exiting the playing area.</rule>
                         </rules>
+
 
                     <br/>
                     ### Broadcasts
@@ -26,19 +55,27 @@
 
                     This module should only be used to to show important information that is specific to the map. It should not be used to for generic OCN related messages.
 
-                    ##### Broadcast Elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th Broadcasts Element
                                 %th Description
-                                %th Value
+                                %th
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<tip>')
+                                        %code= html_escape('<broadcasts> </broadcasts>')
+                                %td An element containing all the defined broadcast messages.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-Elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<tip> </tip>')
                                 %td
                                     This will display a [Tip] message
                                 %td
@@ -46,7 +83,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<alert>')
+                                        %code= html_escape('<alert> </alert>')
                                 %td
                                     This will display an [Alert] message
                                 %td
@@ -92,6 +129,28 @@
                                     Filter if the broadcast message is sent after the duration has passed, or if it's skipped.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
+
+                %h5 Message Tag Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    Filter if the broadcast message is sent after the duration has passed, or if it's skipped.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+
+
+
                 :markdown
                     Examples
 

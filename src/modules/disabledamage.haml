@@ -12,13 +12,97 @@
                 :markdown
                     Use this module to disable damage from specific causes. While almost every form of damage can be disabled it is recommended that you do not disable `VOID` damage.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Disable Damage Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<disabledamage> </disabledamage>')
+                                %td Node containing the disabled damage types.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<damage> </damage>')
+                                %td
+                                    The damage type that is disabled.
+                                %td
+                                    %a{:href => "#causes"} Damage Cause
+
+                :markdown
+                    Example
+
                         <disabledamage>
                             <!-- Disable fall damage -->
                             <damage>fall</damage>
                         </disabledamage>
 
-                %br
-                %h5 Damage Causes
+
+                    <br/>
+                    #### [Block Explosion Attributes](id:block_explosion)
+
+                    The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize who/what gets damaged. Only attributes with `false` as the value need to be explicitly defined since all attributes default to `true`.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code ally
+                                %td Damage to players on the same team as the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code self
+                                %td Damage to the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code enemy
+                                %td Damage to players not on the same team as the person that caused the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code other
+                                %td Any other damage caused by the explosion.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+
+                :markdown
+                    Example
+
+                        <disabledamage>
+                            <!-- TNT damages enemies and self, but not teammates -->
+                            <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
+                        </disabledamage>
+
+
+                    <br/>
+                    #### [Damage Causes](id:causes)
+                    The following damage causes can be used in the disable damage module.
+                    These causes do not need to be capitalized or contain underscores, i.e., `FIRE_TICK` and `fire tick` will both work.
+
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -139,51 +223,3 @@
 
                 :markdown
                     Copied from: [bukkit docs - Damage Cause](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)
-
-                    <br/>
-                    #### [Block Explosion Attributes](id:block_explosion)
-
-                    The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize who/what gets damaged. Only attributes with `false` as the value need to be explicitly defined since all attributes default to `true`.
-
-                        <disabledamage>
-                            <!-- TNT damages enemies and self, but not teammates -->
-                            <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
-                        </disabledamage>
-
-                .table-responsive
-                    %table.table.table-striped.table-condensed
-                        %thead
-                            %tr
-                                %th Attribute
-                                %th Description
-                                %th Value
-                                %th Default
-                        %tbody
-                            %tr
-                                %td
-                                    %code ally
-                                %td Damage to players on the same team as the person that caused the explosion.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true
-                            %tr
-                                %td
-                                    %code self
-                                %td Damage to the person that caused the explosion.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true
-                            %tr
-                                %td
-                                    %code enemy
-                                %td Damage to players not on the same team as the person that caused the explosion.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true
-                            %tr
-                                %td
-                                    %code other
-                                %td Any other damage caused by the explosion.
-                                %td
-                                    %span.label.label-primary true/false
-                                %td true

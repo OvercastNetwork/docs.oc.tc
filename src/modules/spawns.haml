@@ -18,20 +18,27 @@
 
                     Respawn behavior such as delays, etc. can be customized with the [respawn](#respawn) module.
 
-                %h5 Spawns Element Sub-elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Element
                                 %th Description
-                                %th Value/Children
+                                %th
                         %tbody
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<spawns> </spawns>')
+                                %td{:colspan => "2"} A node containing the spawns for this map.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<spawn>')
-                                %td The spawn where a team will spawn
+                                %td An individual spawn where a team will spawn
                                 %td
                                     %code= html_escape('<regions>')
                             %tr
@@ -45,17 +52,6 @@
                                     %i Only one default spawn element is allowed per map.
                                 %td
                                     %code= html_escape('<regions>')
-                            %tr
-                                %td
-                                    %pre
-                                        %code= html_escape('<regions>')
-                                %td
-                                    The region or regions where players will spawn. Used inside
-                                    %code= html_escape('<spawn>')
-                                    or
-                                    %code= html_escape('<default>')
-                                %td
-                                    %a{:href => "/modules/regions"} Regions
 
                 %h5 Spawn & Default Element Attributes
                 .table-responsive
@@ -117,6 +113,24 @@
                                 %td
                                     %span.label.label-primary String
                                 %td
+
+                %h5 Spawn & Default Element Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<regions>')
+                                %td
+                                    The region or regions where players will spawn.
+                                %td
+                                    %a{:href => "/modules/regions"} Regions
 
                 %h5 Regions Element Attributes
                 .table-responsive
@@ -233,7 +247,20 @@
 
                     To allow players to spawn at a bed set the bed attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<respawn/>')
+                                %td Node specifying the respawn settings for this map.
 
+                %h5 Respawn Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

@@ -20,6 +20,31 @@
                             </control-point>
                         </control-points>
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{:style => "min-width: 300px;"} Control Points Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<control-points> </control-points>')
+                                %td{:colspan => "2"}  Node containing a single control point or a group of control points.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<control-point> </control-point>')
+                                %td
+                                    A single control point.
+                                %td
+                                    %span.label.label-default Control Point Sub-elements
+
                 %h5 Control Point Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -282,7 +307,7 @@
                                     %a{:href => "/modules/filters"} Filters
 
                 :markdown
-                    ##### [Capture Rule](id:capture_rule)
+                    #### [Capture Rule](id:capture_rule)
                     The capture rule defines the logic used to decide which team is in control of the point. Values for `capture-rule` can be one of the following:
 
                     * `exclusive` The team must be the only team with players on the control point. (default)

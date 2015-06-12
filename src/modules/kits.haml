@@ -31,8 +31,8 @@
                                     %pre
                                         %code= html_escape('<kit> </kit>')
                                 %td A kit node, containing specific kit types and/or other kit nodes.
-                :markdown
-                    ##### Kit Attributes
+
+                %h5 Kit Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -176,7 +176,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<game-mode></game-mode>')
+                                        %code= html_escape('<game-mode> </game-mode>')
                                 %td
                                     The gamemode to change the player to.
                                     %br Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.
@@ -278,8 +278,8 @@
                                         %code= html_escape('<attribute> </attribute>')
                                 %td
                                     %a{:href => "/reference/attributes"} Attribute name
-                :markdown
-                    ##### Attribute Kit Attributes
+
+                %h5 Attribute Kit Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -387,8 +387,8 @@
                                     %pre
                                         %code= html_escape('<double-jump/>')
                                 %td Give player the double-jump ability.
-                :markdown
-                    ##### Double-Jump Attributes
+
+                %h5 Double-Jump Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -452,6 +452,8 @@
                                     %pre
                                         %code= html_escape('<fly/>')
                                 %td Control the player's flying ability
+
+                %h5 Fly Kit Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

@@ -31,7 +31,7 @@
                                     %pre
                                         %code= html_escape('<item>')
                                 %td
-                                    An item stack.
+                                    A single item stack.
 
                 %h5 Sub-Elements
                 .table-responsive
@@ -340,7 +340,7 @@
                                 %td
                                     %span.label.label-primary Formatted Text
 
-                %h5 Book Elements
+                %h5 Book Sub-elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -496,6 +496,7 @@
                         <item slot="1" amount="12" name="`4Grenade" grenade="true" grenade-power="1.2" material="snow ball"/>
                         <item name="`a`lRocket Ammo" amount="3" enchantment="thorns" grenade="true" grenade-power="4" grenade-fire="true" material="arrow"/>
 
+                    <br/>
                     ### [Can-Destroy / Can-Place-On](id:can-destroy)
 
                     In adventure mode, no blocks can be placed or mined by default. The `<can-destroy>` element allows an item to mine a specified list of blocks.

@@ -18,7 +18,35 @@
 
                     It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
 
-                    ##### Team Attributes
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Teams Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<teams> </teams>')
+                                %td The teams node, containing all the individual teams.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<team> </team>')
+                                %td
+                                    A single team node containing the teams name.
+                                %td
+                                    %span.label.label-primary String
+
+
+                %h5 Team Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

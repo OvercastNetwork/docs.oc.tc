@@ -23,7 +23,33 @@
                             </wool>
                         </wools>
 
-                    ##### Wool Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Wools Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<wools> </wools>')
+                                %td Node containing all the wools for this map.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<wool> </wool>')
+                                %td
+                                    A wool victory monument.
+                                %td
+                                    %span.label.label-default Wool Sub-elements
+
+                %h5 Wool Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

@@ -9,20 +9,92 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Repair, Remove & Keep"
+
+                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
+                    %li
+                        %a{:href => "#repair"} Tool Repair
+                    %li
+                        %a{:href => "#remove"} Item Remove
+                    %li
+                        %a{:href => "#item_keep"} Item Keep
+                    %li
+                        %a{:href => "#armor_keep"} Armor Keep
+                %hr
+
                 :markdown
-                    ### Tool Repair
+                    ### [Tool Repair](id:repair)
                     Defines tools that will be automatically repaired when dropped and picked up again. This will also merge items that are picked up, i.e., picking up an iron sword would result in it merging with your sword and repairing it. Repaired items will keep their enchantment, unlike vanilla minecraft where they will not.
 
                     This also works with non-tool items such as arrows. When people pick up item in the `<toolrepair>` module and they already have one of the same kind it gets merged into the existing item, if they don't have it they get it like normal. Repairing arrows instead of removing them has the advantage of the player being able to accidental drop one and not lose it.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<toolrepair> </toolrepair>')
+                                %td
+                                    A node containing all the tools that will be repaired when picked up.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<tool> </tool>')
+                                %td
+                                    A single tool that will be repaired, can be anything with durability.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Material
+
+                :markdown
+                    Example
 
                         <toolrepair>
                             <tool>iron sword</tool>
                             <tool>bow</tool>
                         </toolrepair>
 
+
                     <br/>
-                    ### Item Remove
+                    ### [Item Remove](id:remove)
                     Defines items that will be deleted when dropped on the map. Also works when items are destroyed, such as seeds from tall grass, etc.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<itemremove> </itemremove>')
+                                %td
+                                    A node containing all the items that will be removed when dropped.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<item> </item>')
+                                %td The item that will be removed when dropped.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Material
+
+                :markdown
+                    Example
 
                         <itemremove>
                             <item>arrow</item>
@@ -31,18 +103,80 @@
                             <item>iron chestplate</item>
                         </itemremove>
 
+
                     <br/>
-                    ### Item Keep
+                    ### [Item Keep](id:item_keep)
                     Defines items that will be kept on death. If there is a spawn kit, kept items will be given back *after* the kit is applied, except for equipped armor, which will replace any armor in the kit.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<itemkeep> </itemkeep>')
+                                %td
+                                    A node containing all the items kept when respawning.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<item> </item>')
+                                %td The item that will remain in a player's inventory when they die and respawn.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Material
+
+                :markdown
+                    Example
 
                         <itemkeep>
                             <item>diamond sword</item>
                             <item>tnt</item>
                         </itemkeep>
 
+
                     <br/>
-                    ### Armor Keep
+                    ### [Armor Keep](id:armor_keep)
                     Similar to `<itemkeep>` except that the specified items are only kept if they are equipped in an armor slot.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{:style => "min-width: 210px;"} Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<armorkeep> </armorkeep>')
+                                %td
+                                    A node containing all the
+                                    %b equipped
+                                    armor kept when respawning.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<item> </item>')
+                                %td A equipped armor item that will remain in a player's inventory when they die and respawn.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Bukkit Material
+
+                :markdown
+                    Example
 
                         <armorkeep>
                             <item>iron helmet</item>

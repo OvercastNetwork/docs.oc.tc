@@ -14,7 +14,32 @@
 
                     Falling blocks will not fall if they touch a sticky block. If you make a falling block stick to itself, then it will stick only if the neighbor block is also stuck to something. Entire structures can then be built from those blocks, and they will not collapse as long as some part of the structure is stuck to a non-falling block.
 
-                    ##### Rule Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<falling-blocks> </falling-blocks>')
+                                %td Node containing this map's falling block rules.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rule>')
+                                %td An individual falling block rule.
+                                %td
+                                    %span.label.label-default Rule Sub-elements
+
+                %h5 Rule Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

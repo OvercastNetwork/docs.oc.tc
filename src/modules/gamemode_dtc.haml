@@ -12,7 +12,33 @@
                 :markdown
                     Players have to locate and break the enemy team's core, usually an obsidian sphere filled with lava. The lava has to leak down a certain distance for the core to be destroyed. Lava should not be available anywhere else on the map, otherwise a core leak could be faked. This can also be avoided by keeping the lava far away enough from the core and not giving players buckets or the ability to craft them.
 
-                    ##### Core Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Cores Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<cores> </cores>')
+                                %td Node containing all the defined cores.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<core> </core>')
+                                %td
+                                    A single core.
+                                %td
+                                    %span.label.label-default Core Sub-elements
+
+                %h5 Core Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

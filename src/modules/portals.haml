@@ -16,7 +16,31 @@
 
                     `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).
 
-                    ##### Portal Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<portals> </portals>')
+                                %td{:colspan => "2"} Node containing the portals on this map.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<portal>')
+                                %td An individual portal node.
+                                %td
+                                    %span.label.label-default Portal Sub-elements
+
+                %h5 Portal Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

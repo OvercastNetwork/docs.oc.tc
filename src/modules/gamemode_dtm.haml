@@ -14,7 +14,33 @@
 
                     Completion specifies how much of the material(s) inside of the monument region must be removed for it to count as destroyed. For example, if the monument is obsidian and completion is set to 100% then all the obsidian must be removed in order for the monument to count as destroyed.
 
-                    ##### Destroyable Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Destroyables Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<destroyables> </destroyables>')
+                                %td Node containing all the defined destroyables.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<destroyable> </destroyable>')
+                                %td
+                                    A single destroyable.
+                                %td
+                                    %span.label.label-default Destroyable Sub-elements
+
+                %h5 Destroyable Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

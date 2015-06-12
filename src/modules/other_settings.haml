@@ -10,8 +10,8 @@
                 .page-header
                     %h1= @page_sub_title = "Other Settings"
                 :markdown
-                    ### Time Lock
-                    Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through. This can also be accomplished with the [gamerules](/modules/gamerules) `doDaylightCycle` rule.
+                    ### [Time Lock](id:timelock)
+                    Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through. This can also be accomplished with the `doDaylightCycle` [gamerule](/modules/gamerules).
 
                         <timelock>on</timelock>  <!-- Defaults to off -->
 
@@ -47,7 +47,8 @@
 
                     <br/>
                     ### Hunger
-                    Specify if a player can starve to death, usually used with the difficulty setting.
+                    Specify if a player can starve to death, usually used with the difficulty setting.<br/>
+                    This can also be accomplished with the `naturalRegeneration` [gamerule](/modules/gamerules).
 
                         <hunger>
                             <depletion>off</depletion>

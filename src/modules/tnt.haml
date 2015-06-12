@@ -16,17 +16,24 @@
 
                     If licensing is enabled only players with a TNT license can use TNT. This license is revoked if a player kills too many of their teammates using TNT.
 
-
-                %h5 TNT Module Elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
                                 %th Element
                                 %th Description
+                                %th
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<tnt> </tnt>')
+                                %td{:colspan => "3"} Node containing the custom TNT settings.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
                                 %th Value
                                 %th Default
-                        %tbody
                             %tr
                                 %td
                                     %pre

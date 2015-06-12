@@ -12,16 +12,24 @@
                 :markdown
                     The score module can be used to give matches a score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
 
-                    ##### Score Elements
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th Score Element
                                 %th Description
-                                %th Type
-                                %th Default
+                                %th
+                                %th
                         %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<score> </score>')
+                                %td{:colspan => "3"} Node containing the score settings and score boxes.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                                %th Default
                             %tr
                                 %td
                                     %pre
@@ -52,6 +60,16 @@
                                     %span.label.label-primary Number
                                 %td
                                     0
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<box>')
+                                %td
+                                    A single score box.
+                                %td
+                                    %a{:href => "#score_box"} Score Box
+                                %td
+
                 :markdown
                     Example
 
@@ -65,10 +83,27 @@
 
 
                     <br/>
-                    ### [Score Boxes](id:score_box)
-                    A score box will give points to a players team when they enter the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
+                    #### [Score Boxes](id:score_box)
+                    A score box will give points to a players team when they enter or bring a redeemable item to the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
 
-                    ##### Score Box Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Score Box Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<box>')
+                                %td
+                                    A single score box.
+                                %td
+                                    %span.label.label-default Score Box Sub-elements
+
+                %h5 Score Box Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -103,7 +138,8 @@
                                     Filter who can score in this box.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
-                                %td No filter
+                                %td
+                                    %span.label.label-default No Filter
 
                 %h5 Score Box Sub-elements
                 .table-responsive

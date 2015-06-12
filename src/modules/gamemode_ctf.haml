@@ -25,15 +25,23 @@
                             <net post="red-flag-post" points="1" region="blue-net" capture-filter="blue-only"/>
                         </flags>
 
-
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Flags Elements
+                                %th Flags Element
                                 %th Description
-                                %th Sub-Type
+                                %th
                         %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<flags> </flags>')
+                                %td Node containing a group of flags, nets and posts for this match.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
                             %tr
                                 %td
                                     %pre
@@ -42,6 +50,7 @@
                                     A single physical flag (banner) in the map.
                                     %a.left-ref-link{:href=>"#flags"} <i class="fa fa-chevron-down"></i>
                                 %td
+                                    %span.label.label-default Flag Sub-elements
                             %tr
                                 %td
                                     %pre
@@ -59,6 +68,7 @@
                                     A region that flags can be captured in.
                                     %a.left-ref-link{:href=>"#nets"} <i class="fa fa-chevron-down"></i>
                                 %td
+                                    %span.label.label-default Net Sub-elements
 
                 :markdown
                     <br/>
@@ -71,6 +81,23 @@
                     A flag can award points for being captured, or at a specified rate while it is carried.
                     It can also come with a [kit](/modules/kits) that is given to the carrier.
                     Filters can be used to control who can pickup/capture the flag and when.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Flag Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<flag>')
+                                %td
+                                    A single physical flag (banner) in the map.
+                                %td
+                                    %span.label.label-default Flag Sub-elements
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -276,7 +303,6 @@
                                     Filter who can pickup the flag.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
-                                %td
                             %tr
                                 %td
                                     %pre
@@ -286,8 +312,6 @@
                                     Filter who can capture the flag.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
-                                %td
-
                             %tr
                                 %td
                                     %pre
@@ -297,7 +321,6 @@
                                     Given to players when they pick up the flag.
                                 %td
                                     %a{:href => "/modules/kits"} Kit
-                                %td
                             %tr
                                 %td
                                     %pre
@@ -307,7 +330,6 @@
                                     Given to flag carriers when they lose the flag, for whatever reason.
                                 %td
                                     %a{:href => "/modules/kits"} Kit
-                                %td
 
 
                 :markdown
@@ -330,6 +352,22 @@
                     Posts can be owned by a team, and award them points at a specified rate while a flag is there.
                     The `permanent` option can be used to make a post into something like a [monument](/modules/gamemode_ctw), where the flag is mounted after being captured once.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Post Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<post>X,Y,Z</post>')
+                                %td
+                                    A point or region(s) for flags to spawn at.
+                                %td
+                                    %a{:href => "/modules/regions#pointProviders"} Point Provider
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -459,6 +497,24 @@
 
                     A net can be owned by a team, who will receive points for the flags captured in it.
                     If the net has no owner, then the player carrying the flag will receive the points.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Net Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<net>')
+                                %td
+                                    A region that flags can be captured in.
+                                %td
+                                    %span.label.label-default Net Sub-elements.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed

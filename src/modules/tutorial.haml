@@ -28,8 +28,33 @@
 
                     Stages are displayed in the order that they are defined as in the XML.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Tutorial Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<tutorial> </tutorial>')
+                                %td Node containing all the defined tutorial stages.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<stage> </stage>')
+                                %td
+                                    A single tutorial stage.
+                                %td
+                                    %span.label.label-default Stage Sub-elements
 
-                    ##### Tutorial Stage Attributes
+                %h5 Tutorial Stage Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead

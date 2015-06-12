@@ -16,6 +16,23 @@
 
                     The maps version should follow the versioning schema `major.minor.patch`.
 
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Map Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<map> </map>')
+                                %td
+                                    The main map node containing all the modules used in this match.
+                                %td
+                                    %span.label.label-default XML Modules
+
                 %h5 Map Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed

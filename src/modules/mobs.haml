@@ -10,9 +10,52 @@
                 .page-header
                     %h1= @page_sub_title = "Mob Spawning"
                 :markdown
-                    By default PGM disables all mob spawning. The mobs module allows this behavior to be customized to allow spawning of specific mobs. It uses special [filters](/modules/filters) to deny / allow specific mobs and spawn methods.
+                    By default PGM disables all mob spawning.
+                    The mobs module allows this behavior to be customized to allow spawning of specific mobs.
+                    This module makes use of the `<spawn>`, `<mob>` and `<entity>` [filters](/modules/filters) to only allow specific mobs to spawn.
+                    Mob spawns can also be filtered against any other filter type including regions.
 
-                    #####  Mob Spawning Filter Matchers
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<mobs> </mobs>')
+                                %td{:colspan => "3"} Node containing the custom mob spawning filters.
+                            %tr
+                                %th{:colspan => "2"} Attributes
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
+                                    Filter what mobs can spawn when and where.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<filter> </filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    Filter what mobs can spawn when and where.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+
+                %h5 Mob Spawning Filter Matchers
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -24,22 +67,22 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<spawn>spawn_reason</spawn>')
-                                %td Spawn event reason.
+                                        %code= html_escape('<spawn> </spawn>')
+                                %td Filter the reason a mob is being spawned.
                                 %td
                                     %a{:href=>"/reference/spawn_reason"} Spawn Reason
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<mob>mob_name</mob>')
-                                %td The mob to filter.
+                                        %code= html_escape('<mob> </mob>')
+                                %td The mob to filter for.
                                 %td
                                     %a{:href=>"/reference/entity_types#creatures"} Creature Type
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<entity>entity_name</entity>')
-                                %td The entity to filter.
+                                        %code= html_escape('<entity> </entity>')
+                                %td The entity to filter for.
                                 %td
                                     %a{:href=>"/reference/entity_types"} Entity Type
 

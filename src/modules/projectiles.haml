@@ -14,7 +14,33 @@
                     These items effectively become either weapons that shoot the custom projectile,
                     or the item form of the custom projectile itself.
 
-                    ##### Projectile Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Projectiles Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<projectiles> </projectiles>')
+                                %td Node containing the custom projectile definitions.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<projectile> </projectile>')
+                                %td
+                                    A custom projectile definition.
+                                %td
+                                    %span.label.label-default Projectile Sub-elements
+
+
+                %h5 Projectile Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -85,7 +111,7 @@
                                     %code potion
                                 %td The potion effects to apply to players hit by this projectile.
                                 %td
-                                    %a{:href => "/modules/items#potions"} Potion Effect
+                                    %a{:href => "/modules/potions"} Potion Effect
                                 %td
                             %tr
                                 %td
@@ -104,6 +130,25 @@
                                 %td
                                     %a{:href => "/reference/time_periods"} Time Period
                                 %td
+
+                %h5 Projectile Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<destroy-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    Filter if/what blocks get destroyed when hit with this projectile.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
 
                 :markdown
                         <!-- Create the projectile "template" -->
@@ -131,6 +176,54 @@
 
                     Bows can be modified to shoot a different projectile at a custom speed. The PGM plugin will calculate the damage the projectile does using the same formula as minecraft does for arrows. This means that a flying fish with a velocity of 40 will almost certainly kill you. Projectiles can also have custom [potion effects](/modules/potions) which are applied to the target when it is hit.
 
+                    `NOTE:` You can currently only modify all bow projectiles, this means no normal and custom bow at the same time.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Projectiles Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<modifybowprojectile> </...>')
+                                %td Node containing the modify bow projectile settings.
+                                %td
+                                    %span.label.label-default Bow Projectile Sub-elements
+                            %tr
+                                %td{:colspan => "3"}
+                                    %b Sub-elements
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<projectile> </projectile>')
+                                %td
+                                    The entity to use as the bows projectile.
+                                %td
+                                    %a{:href=>"/reference/entity_types"} Entity Type
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<velocityMod> </velocityMod>')
+                                %td
+                                    The velocity modifier of the bows projectile.
+                                %td
+                                    %span.label.label-primary Number
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<potion> </potion>')
+                                %td
+                                    The potion effects to apply to players hit by the bow projectile.
+                                %td
+                                    %a{:href => "/modules/potions"} Potion Effect
+
+                :markdown
+                    Examples
+
                         <modifybowprojectile>
                             <projectile>EnderPearl</projectile>
                             <velocityMod>2.5</velocityMod>
@@ -143,8 +236,6 @@
                             <potion duration="8" amplifier="1">wither</potion>
                         </modifybowprojectile>
 
-
-                    `NOTE:` You can currently only modify all bow projectiles, this means no normal and custom bow at the same time.
 
                     All the following projectiles are guaranteed to work. See [mrapple/Bukkit Entity Spawning.md](https://gist.github.com/4617111) for a list of tested entities.
 

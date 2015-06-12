@@ -16,7 +16,31 @@
 
                     Flares will only be set off if a `flare-radius=""` is defined. If this attribute is missing a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
 
-                    ##### Proximity-alarm Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<proximity-alarms> </proximity-alarms>')
+                                %td{:colspan => "2"} Node containing this maps proximity-alarms.
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<proximity-alarm>')
+                                %td An individual proximity-alarm node.
+                                %td
+                                    %span.label.label-default Proximity-alarm Sub-elements
+
+                %h5 Proximity-alarm Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
