@@ -89,6 +89,16 @@
                                 %td false
                             %tr
                                 %td
+                                    %code spread
+                                %td
+                                    Spawn players as far away as possible from enemy players.
+                                    %br
+                                    %i Not compatible with the <code>safe</code> attribute
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
                                     %code kit
                                 %td
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
@@ -104,14 +114,6 @@
                                     Filter when this spawn is used.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
-                                %td
-                            %tr
-                                %td
-                                    %code deny-message
-                                %td
-                                    Message to send if the spawn is denied by the filter.
-                                %td
-                                    %span.label.label-primary String
                                 %td
 
                 %h5 Spawn & Default Element Sub-elements
@@ -311,12 +313,44 @@
                                 %td
                                     %span.label.label-primary true/false
                                 %td false
+                            %tr
+                                %td
+                                    %code message
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Message to display on the respawn screen to respawning players.
+                                %td
+                                    %span.label.label-primary Formatted Text
+                                %td
+
+                %h5 Respawn Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{:style => "min-width: 125px;"} Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<message>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Message to display on the respawn screen to respawning players.
+                                %td
+                                    %span.label.label-primary Formatted Text
 
                 :markdown
 
                         <!-- Default auto respawn of 2 seconds -->
                         <respawn auto="true"/>
 
-                        <!-- Auto respawn after 3 seconds, blackout player when they die -->
+                        <!-- Allow players to respawn after 3 seconds, blackout the player when they die -->
                         <respawn delay="3s" blackout="true"/>
 
+                        <!-- Allow respawning after 5s, display translatable waiting on flag drop respawn message -->
+                        <respawn delay="5s" spectate="true">
+                            <message>{translate: "death.respawn.confirmed.waiting.flagDropped"}</message>
+                        </respawn>
