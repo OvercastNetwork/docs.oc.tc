@@ -1,0 +1,265 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Settings
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Item Mods"
+                :markdown
+                    The item mods module allows modification of all items present on a map or created during the match. This can be used, for example, to make all gold swords unbreakable or give all items of a specify type a custom name.
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<item-mods> </item-mods>')
+                                %td The item mods node, containing all the individual modification rules.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rule> </rule>')
+                                %td
+                                    A single item modification rule.
+                                %td
+                                    %span.label.label-default Rule Sub-Elements
+
+                %h5 Rule Sub-Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<match> </match>')
+                                %td
+                                    %span.label.label-danger Required
+                                    %span.label.label-warning Unique
+                                    The material or materials to modify.
+                                %td
+                                    %span.label.label-default Match Sub-Elements
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<modify> </modify>')
+                                %td
+                                    %span.label.label-danger Required
+                                    %span.label.label-warning Unique
+                                    The attributes to modify on the specified material(s).
+                                %td
+                                    %a{:href => "#itemmeta"} Item Meta
+
+                %h5 Match Sub-Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<material> </material>')
+                                %td An individual material to match.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<all-materials/>')
+                                %td Match all materials.
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<all-blocks/>')
+                                %td Match all block type materials.
+                                %td
+
+                :markdown
+                    Examples
+
+                        <item-mods>
+                            <rule>
+                                <match>
+                                    <item>Iron Sword</item>
+                                </match>
+                                <modify unbreakable="true">
+                                    <enchantment level="1">Knockback</enchantment>
+                                </modify>
+                            </rule>
+                        </item-mods>
+
+                        <item-mods>
+                            <rule>
+                                <match>
+                                    <item>Bow</item>
+                                </match>
+                                <modify show-enchantments="false" unbreakable="true">
+                                    <enchantment level="2">Infinity</enchantment>
+                                </modify>
+                            </rule>
+                        </item-mods>
+
+                    <br/>
+                    ### [Item Meta](id:itemmeta)
+                    The following attributes and sub-elements can be used with the `<modify>` element to modify an item or block.
+                    While these are the same attributes as used in item kits
+                    the modify element does not currently support the projectile or grenade attributes.
+
+
+                %h5 Modify Sub-Elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<enchantment> </enchantment>')
+                                %td This item's enchantments.
+                                %td
+                                    %a{:href => "/modules/items#enchantments"} Enchantments
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<potion> </potion>')
+                                %td A potion item's potion effects, only applies for potion items.
+                                %td
+                                    %a{:href => "/modules/items#potions"} Potion Effects
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<attribute> </attribute>')
+                                %td Custom attributes for this item.
+                                %td
+                                    %a{:href => "/modules/items#attributes"} Attribute Modifiers
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-destroy> </can-destroy>')
+                                %td The materials that can be mined with the item.
+                                %td
+                                    %a{:href => "/modules/items#can-destroy"} Can Destroy
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-place-on> </can-place-on>')
+                                %td Materials that the item can be placed on.
+                                %td
+                                    %a{:href => "/modules/items#can-destroy"} Can Place On
+
+                %h5 Modify Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code name
+                                %td The item's display name.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code lore
+                                %td Custom lore string.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code unbreakable
+                                %td
+                                    Specify if this item is unbreakable, hides the durability bar in minecraft.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code color
+                                %td
+                                    Leather armor color as a hexadecimal color. <code>RRGGBB</code>
+                                    %br
+                                    %i Only applies to leather armor items.
+                                %td
+                                    %span.label.label-primary Hex Color
+                                %td
+                            %tr
+                                %td
+                                    %code show-enchantments
+                                %td
+                                    Show enchantments in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-attributes
+                                %td
+                                    Show attribute modifiers in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-unbreakable
+                                %td
+                                    Show the unbreakable property in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-can-destroy
+                                %td
+                                    Show the breakable block list in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-can-place-on
+                                %td
+                                    Show the blocks the item can be placed on in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code show-other
+                                %td
+                                    Show various other things in the item tooltip.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true

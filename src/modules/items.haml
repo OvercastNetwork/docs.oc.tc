@@ -406,8 +406,9 @@
                     <br/>
                     ### [Enchantments](id:enchantments)
 
-                    Any enchantment can be applied to any item. The enchantment type can be specified by
-                    their [Minecraft name](http://minecraft.gamepedia.com/Data_values#Enchantment_IDs) or
+                    Any enchantment can be applied to any item and an item can have one or multiple enchantments.
+                    The enchantment type can be specified by its
+                    [Minecraft name](http://minecraft.gamepedia.com/Data_values#Enchantment_IDs) or
                     [Bukkit name](/reference/enchantments).
 
                 %h5 Enchantment Element
@@ -423,10 +424,12 @@
                                 %td
                                     %pre
                                         %code= html_escape('<enchantment> </enchantment>')
-                                %td Enchant an item
+                                %td An item enchantment.
 
                                 %td
-                                    %span.label.label-primary Enchantment Name
+                                    %a{:href => "/reference/enchantments"} Enchantment Name
+                                %td
+
                 %h5 Enchantment Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -440,7 +443,7 @@
                             %tr
                                 %td
                                     %code level
-                                %td Enchantment level
+                                %td The specified enchantment's level.
                                 %td
                                     %span.label.label-primary Number
                                 %td 1
@@ -468,7 +471,7 @@
 
                     Attribute modifiers can be applied to items in the same way they are applied to kits.
                     See [Attribute Kits](/modules/kits#attributes) for details.
-                    <br/>
+
                     Examples
 
                         <chestplate material="chainmail chestplate">
@@ -507,6 +510,48 @@
                     Instead of a list of blocks, you can use the `<all-blocks/>` element, which is equivalent to listing literally every block in the game.
                     In this case, you will probably want to specify `show-can-place-on="false"` or `show-can-destroy="false"` on the item to prevent a
                     massive tooltip being displayed to the player.
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Elements
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-destroy> </can-destroy>')
+                                %td A node containing the materials this item can destroy.
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<can-place-on> </can-place-on>')
+                                %td A node containing materials this item can be placed on.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<material> </material>')
+                                %td
+                                    An individual material to match.
+                                    %br
+                                    %i Does not accept a damage/data value.
+                                %td
+                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<all-blocks/>')
+                                %td Match all block type materials.
+                                %td
+                :markdown
 
                         <item material="iron shovel">
                             <can-destroy>
