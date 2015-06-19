@@ -10,7 +10,8 @@
                 .page-header
                     %h1= @page_sub_title = "Teams"
                 :markdown
-                    Teams are a basic and important component of almost all matches, this module allows you to setup their attributes.
+                    This module is used to specify the teams used in the match and what their attributes are.
+                    Matches without teams can be setup with the [players](/modules/players) module.
 
                     The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
@@ -103,15 +104,18 @@
                                 %td
                                     %code max
                                 %td
-                                    Maximum team size. (soft limit)
+                                    Maximum team size, normal players cannot join this team once it reaches this size.
                                     %br
-                                    %i Players with certain privileges may join over this limit till <code>max-overfill</code> is reached.
+                                    %i Premium players may join over this limit until <code>max-overfill</code> is reached.
                                 %td
                                     %span.label.label-primary Number
                             %tr
                                 %td
                                     %code max-overfill
-                                %td Maximum team size hard limit. Must be greater than the defined <code>max</code>.
+                                %td
+                                    Maximum team size hard limit, nobody can join this team once this limit is reached.
+                                    %br
+                                    %i Must be greater than the defined <code>max</code>.
                                 %td
                                     %span.label.label-primary Number
 
