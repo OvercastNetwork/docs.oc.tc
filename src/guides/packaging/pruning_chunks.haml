@@ -34,16 +34,18 @@
                         %img.media-object{:src => "/img/mcedit/chunks_preview.png", :width => "120px", :height => "120px", :title => "Click to enlarge", :data => {:toggle => "tooltip"}}
                     .media-body
                         %h4.media-heading 2. Select the region around your map
-                        Select the region around your map by clicking and dragging. You can select and deselect single chunks to make tighter selections and get rid of useless chunks. On the left is an image of what you should be selecting.
+                        Select a region that is just large enough to contain your entire map.
+                        Include at least a few blocks of empty space around the map.
+                        You can click "Select Chunks" to see exactly what will be included in the pruned map.
                         %p
                         %code Note:
-                        Your selections don't have to be rectangular, allowing for tighter selections.
+                        Do not prune chunks inside the rectangle, as this will make the map difficult to work with. A few empty chunks will make no significant difference in map size.
                 .media
                     %a.pull-left
                         %img.media-object{:src => "/img/mcedit/chunk_control.png", :width => "120px", :height => "120px"}
                     .media-body
-                        %h4.media-heading 3. Refine selection
-                        Notice how we are tightly selecting the map. The checkers represent the chunks loaded. Since we don’t need these, we are just selecting the map. Now that the map is tightly selected, it can be ready to be pruned. To do this, click the
+                        %h4.media-heading 3. Click "Chunk Control"
+                        Click the
                         %code Chunk Control
                         button on the bottom right.
                         %p
