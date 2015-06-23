@@ -145,7 +145,7 @@
                     <br/>
                     ### Applying Things to Regions
 
-                    Filters, kits, and velocity changes can be applied to regions by using an `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings applied to all of them. Applies can also be defined in the filters element.
+                    Filters, kits, and velocity changes can be applied to regions by using an `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings are applied to all of them. Applies with no region default to `<everywhere/>`. Applies can also be defined in the filters element.
 
                     The order in which apply elements are specified determines which takes precedence when regions overlap. Applies specified first override those specified further down in the XML. The region an apply affects can be specified as an attribute or in a <region> sub-element.
 

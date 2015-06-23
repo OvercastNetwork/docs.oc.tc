@@ -106,15 +106,15 @@
 
                         <kits>
                             <kit id="spawn" force="true">
-                                <item slot="0">iron sword</item>
-                                <item slot="8" amount="32">bread</item>
+                                <item slot="0" material ="iron sword"/>
+                                <item slot="8" amount="32" material="bread"/>
                                 <potion duration="5" amplifier="1">heal</potion>
                             </kit>
                             <kit id="red" parents="spawn">
-                                <helmet color="cd0000">leather helmet</helmet>
+                                <helmet color="cd0000" material="leather helmet"/>
                             </kit>
                             <kit id="blue" parents="spawn">
-                                <helmet color="0066cc">leather helmet</helmet>
+                                <helmet color="0066cc" material="leather helmet"/>
                             </kit>
                         </kits>
 
@@ -155,7 +155,7 @@
                 :markdown
 
                         <kit id="ender" reset-ender-pearls="true">
-                            <item slot="0" amount="1">ender pearl</item>
+                            <item slot="0" amount="1" material="ender pearl"/>
                             <clear/>
                         </kit>
 

@@ -72,29 +72,29 @@
 
                         <kits>
                             <kit id="spawn">
-                                <item slot="0">stone sword</item>
-                                <item slot="1" enchantment="arrow infinite:1">bow</item>
-                                <item slot="28" amount="1">arrow</item>
-                                <item slot="3" amount="64">cooked chicken</item>
-                                <item slot="2" amount="2">TNT</item>
-                                <item slot="5" amount="32">ladder</item>
-                                <item slot="4" amount="3">golden apple</item>
-                                <item slot="6" name="TNT Defuser" lore="`7Right click to defuse teammate's TNT">shears</item>
-                                <item slot="7" damage="8194">potion</item> <!-- potion of swiftness 1 -->
+                                <item slot="0" material="stone sword"/>
+                                <item slot="1" enchantment="arrow infinite:1" material="bow"/>
+                                <item slot="28" amount="1" material="arrow"/>
+                                <item slot="3" amount="64" material="cooked chicken"/>
+                                <item slot="2" amount="2" material="TNT"/>
+                                <item slot="5" amount="32" material="ladder"/>
+                                <item slot="4" amount="3" material="golden apple"/>
+                                <item slot="6" name="TNT Defuser" lore="`7Right click to defuse teammate's TNT" material="shears"/>
+                                <item slot="7" damage="8194" material="potion"/> <!-- potion of swiftness 1 -->
                                 <potion duration="5">heal</potion>
                                 <potion duration="10">damage resistance</potion>
                             </kit>
                             <kit id="red" parents="spawn">
-                                <helmet color="cd0000" unbreakable="true">leather helmet</helmet>
-                                <chestplate color="cd0000" enchantment="protection explosions:3" unbreakable="true">leather chestplate</chestplate>
-                                <leggings color="cd0000" unbreakable="true">leather leggings</leggings>
-                                <boots color="cd0000" unbreakable="true">leather boots</boots>
+                                <helmet color="cd0000" unbreakable="true" material="leather helmet"/>
+                                <chestplate color="cd0000" enchantment="protection explosions:3" unbreakable="true" material="leather chestplate"/>
+                                <leggings color="cd0000" unbreakable="true" material="leather leggings"/>
+                                <boots color="cd0000" unbreakable="true" material="leather boots"/>
                             </kit>
                             <kit id="blue" parents="spawn">
-                                <helmet color="0066cc" unbreakable="true">leather helmet</helmet>
-                                <chestplate color="0066cc" enchantment="protection explosions:3" unbreakable="true">leather chestplate</chestplate>
-                                <leggings color="0066cc" unbreakable="true">leather leggings</leggings>
-                                <boots color="0066cc" unbreakable="true">leather boots</boots>
+                                <helmet color="0066cc" unbreakable="true" material="leather helmet"/>
+                                <chestplate color="0066cc" enchantment="protection explosions:3" unbreakable="true" material="leather chestplate"/>
+                                <leggings color="0066cc" unbreakable="true" material="leather leggings"/>
+                                <boots color="0066cc" unbreakable="true" material="leather boots"/>
                             </kit>
                         </kits>
 
@@ -172,7 +172,7 @@
                     Give players a golden apple every time they kill an enemy.
 
                         <killreward>
-                            <item>golden apple</item>
+                            <item material="golden apple"/>
                         </killreward>
 
                     <br/>
