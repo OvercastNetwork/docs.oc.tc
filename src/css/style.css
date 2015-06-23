@@ -255,3 +255,19 @@ a.btn-more:before {
 .well {
     background-image: none !important;
 }
+
+/* Changelog list styling */
+ul.changelog {
+    list-style: none;
+    padding-left: 80px;
+}
+
+ul.changelog li {
+    margin-bottom: 10px;
+}
+
+ul.changelog .label {
+    margin-left: -80px;
+    margin-top: 3px;
+    float: left;
+}
