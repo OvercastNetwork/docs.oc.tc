@@ -64,7 +64,7 @@
                                         %code= html_escape('<disable>')
                                 %td Disable all vanilla recipes for this item.
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
 
                 %h5 Recipe Attributes
                 .table-responsive
@@ -101,7 +101,7 @@
                             %tr
                                 %th Element
                                 %th Description
-                                %th Value/Children
+                                %th Type
                         %tbody
                             %tr
                                 %td
@@ -111,8 +111,10 @@
                                     %span.label.label-danger Required
                                     %span.label.label-warning Unique
                                     The result of this recipe, only one result is allowed per recipe.
+                                    %br
+                                    Accepts all attributes and sub-elements of a normal kit item.
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %a{:href => "/modules/items"} Item
 
 
                 :markdown
@@ -172,7 +174,7 @@
                                     %br
                                     A shaped recipe requires at least one ingredient.
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
 
                 %h5 Shape Sub-elements
                 .table-responsive
@@ -218,7 +220,9 @@
                         <crafting>
                             <!-- Add custom shaped recipe and disable vanilla recipes for the same item. -->
                             <shaped override="true">
-                                <result>stone pickaxe</result>
+                                <result material="stone pickaxe">
+                                    <enchantment level="2">durability</enchantment>
+                                </result>
                                 <shape>
                                     <row>FFF</row>
                                     <row>.S.</row>
@@ -230,7 +234,7 @@
 
                             <!-- 3x1 recipe, cheaper gold ingots -->
                             <shaped override="true">
-                                <result>gold ingot</result>
+                                <result material="gold ingot"/>
                                 <shape>
                                     <row>GGG</row>
                                 </shape>
@@ -274,7 +278,7 @@
                                     %br
                                     A shapeless recipe requires at least one ingredient.
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
 
                 %h5 Shapeless Ingredient Attributes
                 .table-responsive
@@ -301,7 +305,7 @@
 
                         <crafting>
                             <shapeless>
-                                <result>redstone</result>
+                                <result material="redstone"/>
                                 <ingredient>sugar</ingredient>
                                 <ingredient amount="3">ink sack:1</ingredient>
                             </shapeless>
@@ -343,13 +347,13 @@
                                     %br
                                     A smelt recipe only accepts one ingredient.
                                 %td
-                                    %a{:href => "/reference/inventory#material_finder"} Material Name
+                                    %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
                 :markdown
                     Example
 
                         <crafting>
                             <smelt>
-                                <result amount="16">torch</result>
+                                <result amount="16" material="torch"/>
                                 <ingredient>stick</ingredient>
                             </smelt>
                         </crafting>

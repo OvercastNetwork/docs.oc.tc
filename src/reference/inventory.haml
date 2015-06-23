@@ -10,8 +10,48 @@
                 :markdown
                     ![Inv Slots .png](/img/inv_slots.png)
 
+
                 %br
-                %h4#material_finder
+                %h3#material_matchers Material Matchers
+                Depending on the material/item element used a material or multiple materials can be specified with or without data values.
+
+                %h5 Material Values
+                .table-responsive
+                %table.table.table-striped.table-condensed
+                    %thead
+                        %tr
+                            %th Value Type
+                            %th Description
+                    %tbody
+                        %tr
+                            %td
+                                .span.label.label-default Single Material Pattern
+                            %td
+                                A single material pattern consisting of a
+                                %code material_name:data_value
+                                string.
+                        %tr
+                            %td
+                                .span.label.label-default Material Pattern
+                            %td
+                                A pattern that supports multiple materials with a optional data value.
+                                %br
+                                Multiple materials can be listed by separating them with a semicolon
+                                %code> ;
+                                \.
+                                %br
+                                %code material_name:data_value;material_name:data_value
+                        %tr
+                            %td
+                                .span.label.label-default Material Name
+                            %td
+                                A single material.
+                                %br
+                                %i Does not accept a damage/data value.
+
+
+                %br
+                %h3#material_finder
                     Material Finder
                     %i{:style => "display: block;"}
                         %small Use <code>~armor</code>, <code>~block</code>, <code>~food</code>, <code>~flower</code>, <code>~redstone</code> etc. to filter by tags
