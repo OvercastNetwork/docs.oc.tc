@@ -136,6 +136,7 @@ td pre {
 
 td pre code {
     margin: 0 4px;
+    white-space: nowrap;
 }
 
 .right-ref-link {
@@ -270,4 +271,24 @@ ul.changelog .label {
     margin-left: -80px;
     margin-top: 3px;
     float: left;
+}
+
+/* Make code boxes automatically scroll instead of wrapping when the screen is under this width */
+@media screen and (max-width:767px) {
+    pre {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    pre code {
+        width: 100%;
+        max-width: 100%;
+        overflow: auto;
+        overflow-wrap: normal;
+        white-space: pre;
+    }
 }

@@ -200,6 +200,36 @@
                                     %a{:href => "/reference/time_periods"} time period
                                     has elapsed since the match started.
                             %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<same-team> </same-team>')
+                                %td
+                                    Filter if the queried player has the same team as the filter input.
+                                    %br
+                                    Commonly used with the
+                                    %a{:href => "/modules/gamemode_ctf"} ctf
+                                    gamemode.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<victim> </victim>')
+                                %td
+                                    Filter if the attacked player matches the query.
+                                    %br
+                                    Commonly used with the
+                                    %a{:href => "/modules/damage"} damage
+                                    module.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<attacker> </attacker>')
+                                %td
+                                    Filter if the attacking player matches the query.
+                                    %br
+                                    Commonly used in the
+                                    %a{:href => "/modules/damage"} damage
+                                    module.
+                            %tr
                                 %td{:colspan => "2"}
                                     %b Static Filters
                             %tr
