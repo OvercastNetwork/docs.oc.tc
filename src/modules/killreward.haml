@@ -8,30 +8,42 @@
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Kill Reward"
+                    %h1= @page_sub_title = "Kill Rewards"
                 :markdown
-                    The `<killreward>` module allows players to get items or a kit when they kill a player. A kill reward can contain either individual items, kits or references to kits. The reward can optionally filter which players are eligible to receive the reward, or when/where the reward is active.
+                    The `<kill-rewards>` module allows players to get items or a kit when they kill a player.
+                    A kill reward can contain either individual items, kits or references to kits.
+                    The reward can optionally filter which players are eligible to receive the reward, or when/where the reward is active.
 
-                    This module can, for example, be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
-
-                    Multiple `<killreward>` nodes can be specified in the XML each with its own attributes and sub-elements.
+                    This module can, for example, be used to give upgrades to players by giving them gold ingots.
+                    Then once they have collected enough ingots they can craft armor, etc.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th Kill Rewards Element
                                 %th Description
                                 %th
                         %tbody
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<killreward> </killreward>')
-                                %td Node containing a single kill reward.
+                                        %code= html_escape('<kill-rewards> </kill-rewards>')
+                                %td Node containing all kill reward definitions.
                                 %td
                             %tr
-                                %th{:colspan => "2"} Attributes
+                                %th{:colspan => "2"} Kill Rewards Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kill-reward> </kill-reward>')
+                                %td
+                                    A single kill reward.
+                                %td
+                                    %span.label.label-default Kill Reward Sub-elements
+                            %tr
+                                %th{:colspan => "2"} Kill Reward Attributes
                                 %th Value/Children
                             %tr
                                 %td
@@ -41,7 +53,6 @@
                                     Filter who can claim this reward and when.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
-                                %td
                             %tr
                                 %td
                                     %code kit
@@ -50,9 +61,8 @@
                                     The kit to give players as the kill reward.
                                 %td
                                     %a{:href => "/modules/kits"} Kit ID
-                                %td
                             %tr
-                                %th{:colspan => "2"} Sub-elements
+                                %th{:colspan => "2"} Kill Reward Sub-elements
                                 %th Value/Children
                             %tr
                                 %td
@@ -85,36 +95,40 @@
                     <br/>
                     Examples
 
-                        <!-- Give two emeralds for all kills -->
-                        <killreward>
-                            <item amount="2" material="emerald"/>
-                        </killreward>
+                        <kill-rewards>
+                            <!-- Give two emeralds for all kills -->
+                            <kill-reward>
+                                <item amount="2" material="emerald"/>
+                            </kill-reward>
 
-                        <!-- Give a cactus to players on the red team for their third kill -->
-                        <killreward>
-                            <filter>
-                                <all>
-                                    <team>red</team>
-                                    <kill-streak count="3"/>
-                                </all>
-                            </filter>
-                            <item material="cactus"/>
-                        </killreward>
+                            <!-- Give a cactus to players on the red team for their third kill -->
+                            <kill-reward>
+                                <filter>
+                                    <all>
+                                        <team>red</team>
+                                        <kill-streak count="3"/>
+                                    </all>
+                                </filter>
+                                <item material="cactus"/>
+                            </kill-reward>
+                        </kill-rewards>
 
                     Kill rewards with kits
 
-                        <killreward>
-                            <kit>
-                                <item slot="0" material="iron sword"/>
-                                <helmet material="iron helmet"/>
-                                <potion amplifier="2">speed</potion>
-                            </kit>
-                        </killreward>
+                        <kill-rewards>
+                            <kill-reward>
+                                <kit>
+                                    <item slot="0" material="iron sword"/>
+                                    <helmet material="iron helmet"/>
+                                    <potion amplifier="2">speed</potion>
+                                </kit>
+                            </kill-reward>
 
-                        <!-- Give the "reward-kit" to the player for every 8th kill -->
-                        <killreward>
-                            <filter>
-                                <kill-streak count="8" repeat="true"/>
-                            </filter>
-                            <kit id="reward-kit"/>
-                        </killreward>
+                            <!-- Give the "reward-kit" to the player for every 8th kill -->
+                            <kill-reward>
+                                <filter>
+                                    <kill-streak count="8" repeat="true"/>
+                                </filter>
+                                <kit id="reward-kit"/>
+                            </kill-reward>
+                        </kill-rewards>
