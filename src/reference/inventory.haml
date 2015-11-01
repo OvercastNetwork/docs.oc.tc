@@ -7,8 +7,25 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Inventory Slots & Materials"
-                :markdown
-                    ![Inv Slots .png](/img/inv_slots.png)
+
+                .row
+                    .col-lg-6
+                        %p
+                            %img{:src => "/img/inv_slots.png", :alt => "Inv Slots .png"}
+
+                    .col-lg-6
+                        :markdown
+                            The `slot` attribute of items accepts both the slot number and Mojang slot names, e.g. `slot.hotbar.8`, `armor.head`, `35`, and `hotbar.8` will all work.
+
+                            ##### Mojang Slot Names
+
+                            * `slot.armor.chest`
+                            * `slot.armor.feet`
+                            * `slot.armor.head`
+                            * `slot.armor.legs`
+                            * `slot.weapon`
+                            * `slot.hotbar.[0 to 8]`
+                            * `slot.inventory.[0 to 26]`
 
 
                 %br
