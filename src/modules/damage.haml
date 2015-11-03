@@ -8,9 +8,37 @@
             = partial('modules_sidebar')
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Disable Damage"
+                    %h1= @page_sub_title = "Damage & Disable Damage"
                 :markdown
-                    Use this module to disable damage from specific causes. While almost every form of damage can be disabled it is recommended that you do not disable `VOID` damage.
+                    ### [Damage Filtering](id:filter)
+
+                    This module is used to filter when or if damage is applied to entities.
+                    Its contents can be a filter or combination of filters.
+                    It doesn't have to be `<allow>` and `<deny>` at the top level but that's usually what you want.
+                    Regions can also be used since they are filters that filter for a location.
+
+                    Examples
+
+                        <damage>
+                            <deny>
+                                <cause>explosion</cause>
+                            </deny>
+                        </damage>
+
+                        <!-- Deny damage events where the attacker is on the red team -->
+                        <damage>
+                            <deny>
+                                <attacker>
+                                    <team>red</team>
+                                </attacker>
+                            </deny>
+                        </damage>
+
+                    <br/>
+                    ### [Disable Damage](id:disable)
+                    Use this module to disable damage from specific causes.
+
+                    While almost every form of damage can be disabled safely it is recommended that you do **not** disable `VOID` damage.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed

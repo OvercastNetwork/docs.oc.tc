@@ -10,7 +10,7 @@
                 .page-header
                     %h1= @page_sub_title = "Items & Armor"
                 :markdown
-                    The item elements are used to place items into a players inventory or armor slots.
+                    The item elements are used to place items into a player's inventory or armor slots.
                     Items have many different attributes, and some may only apply to certain item types;
                     such as the leather armor `color` attribute.
 
@@ -96,10 +96,9 @@
                                 %td
                                     %code slot
                                 %td
-                                    %span.label.label-danger Required
-                                    Slot where the item will be placed in the players inventory.
+                                    Slot where the item will be placed in the player's inventory.
                                     %br
-                                    %i When used in kits the slot attribute is required.
+                                    %i If no slot is specified the item will be merged into the player's inventory.
                                 %td
                                     %a{:href => "/reference/inventory"} Inventory Slot
                                 %td
@@ -188,7 +187,7 @@
                                 %td
                                     %code prevent-sharing
                                 %td
-                                    Prevent this item from being moved from the players inventory.
+                                    Prevent this item from being moved from the player's inventory.
                                 %td
                                     %span.label.label-primary true/false
                                 %td false
@@ -256,6 +255,101 @@
                         <item lore="`4The One and Only" material="stick"/> <!-- A stick with the lore colored red. -->
                         <item lore="`eWarning!|`5Does damage!" material="iron sword"/> <!-- A sword with 2 lines of lore. -->
 
+
+                    <br/>
+                    ### [Custom Heads](id:heads)
+                    Player heads can be given to players by using the heads element.
+
+                    A player's skin data can be found by using `https://sessionserver.mojang.com/session/minecraft/profile/(UUID)`
+                    There is a limit of one request a minute for each UUID so be sure to copy the data the first time.
+
+                        <head name="Cubist" uuid="3fbec7dd0a5f40bf9d11885a54507112">
+                            <skin>eyJ0aW1lc3RhbXAiOjE0NDY0MDgwOTExNzQsInByb2ZpbGVJZCI6IjNmYmVjN2RkMGE1ZjQwYmY5ZDExODg1YTU0NTA3MTEyIiwicHJvZmlsZU5hbWUiOiJDdWJpc3QiLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTRlZGExMjg4NWIzYmE2ZGY2ODMyZGZkMTIzNGEyNjc5MmQwNDI2ZDkyMDM2ZWVlYzc1M2ZiZmM2NmRiIn19fQ==</skin>
+                        </head>
+
+                %h5
+                    Skin Data Lookup
+                %i#lookupInfo
+                    Opens a separate page with the JSON data for the specified UUID. You can find a player's UUID with
+                    %a{:href => "http://mcuuid.net"} mcuuid.net
+
+                %form#queryUUIDForm{:role => "search"}
+                    .form-group.input-group
+                        %input#queryField.form-control{:type => "search", :placeholder => "No Skin Lookup - JavaScript Disabled :(", :disabled => "true"}
+                        %span.input-group-btn
+                            %button.btn.btn-default{:type => "submit"}
+                                %i.fa.fa-search
+
+                %h5 Head Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code name
+                                %td The heads display name.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code uuid
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
+                                    UUID used to identify the player this head belongs to.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code skin
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
+                                    The skin data used for this head.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+
+                %h5 Head Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<uuid>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    UUID used to identify the player this head belongs to.
+                                %td
+                                    %span.label.label-primary String
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<skin>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    The skin data used for this head.
+                                %td
+                                    %span.label.label-primary String
+
+
+                :markdown
                     <br/>
                     ### Armor
                     Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.
@@ -566,3 +660,29 @@
                                 <all-blocks/>
                             </can-place-on>
                         </item>
+
+
+:javascript
+    $(document).ready(function() {
+        // Remove the js missing error from the search field.
+        document.getElementById('queryField').disabled = false;
+        document.getElementById('queryField').placeholder = "Player UUID";
+    });
+
+    $('#queryUUIDForm').submit(function () {
+     doUUIDLookup();
+     return false;
+    });
+
+    function doUUIDLookup() {
+        var UUID = document.getElementById('queryField').value.trim();
+        UUID = UUID.replace(/-/g, '');
+
+        var element = document.getElementById("queryError");
+        if (element) element.remove();
+        if (!UUID.match(/^[a-f0-9]{32}$/i)) {
+            document.getElementById('lookupInfo').innerHTML += '<span id="queryError" class="text-danger"><br/>Invalid UUID!</span>';
+            return;
+        }
+        window.open("https://sessionserver.mojang.com/session/minecraft/profile/" + UUID);
+    }
