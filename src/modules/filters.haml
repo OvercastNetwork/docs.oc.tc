@@ -9,6 +9,12 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Filters"
+
+                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
+                    %li
+                        %a{:href => "#filterModifiers"} Filter Modifiers
+                %hr
+
                 :markdown
                     Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions or used in other modules to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. All filters can have a `id` attribute to reference them in other parts of the XML. Groups of filters are combined with each other using [filter modifiers](#filterModifiers) to narrow the filters query.
 
@@ -112,6 +118,18 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<walking/>')
+                                %td
+                                    Match if the player is walking.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<sprinting/>')
+                                %td
+                                    Match if the player is sprinting.
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<flying/>')
                                 %td
                                     Match if the player is flying.
@@ -194,7 +212,14 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<time>')
+                                        %code= html_escape('<structural-load>2</structural-load>')
+                                %td
+                                    Test the number of other gravity blocks that the queried block is supporting.
+                                    %a.left-ref-link{:href=>"#structuralLoadFilters"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<time> </time>')
                                 %td
                                     Filter if the specified
                                     %a{:href => "/reference/time_periods"} time period
@@ -235,12 +260,12 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<always>')
+                                        %code= html_escape('<always/>')
                                 %td Always return <code>ALLOW</code>. Can be referenced with the ID: <code>always</code>
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<never>')
+                                        %code= html_escape('<never/>')
                                 %td Always return <code>DENY</code>. Can be referenced with the ID: <code>never</code>
                 :markdown
 
@@ -420,6 +445,28 @@
 
 
 
+                    <br/>
+                    #### [Structural Load Filters](id:structuralLoadFilters)
+                    The structural load filter checks the number of gravity blocks that are attached to the queried block.
+                    It returns allow as long as the structural load is greater than or equal to the specified value and deny otherwise.
+
+                    <span class="label label-warning">Warning</span> This filter is very computationally expensive to apply, XML authors should ensure that it is only run when absolutely necessary, e.g. by placing other filters above it. They should also not apply it to events that modify large amounts of blocks, such as explosions.
+
+                    This filter requires the falling blocks module to be loaded otherwise it will default to abstain.
+
+                    Example
+
+                        <!--  Deny breaking structures longer than 3 blocks  -->
+                        <not>
+                            <all>
+                                <cause>player</cause>
+                                <filter name="structure-blocks"/>
+                                <structural-load>3</structural-load>
+                            </all>
+                        </not>
+
+
+                :markdown
                     <br/>
                     #### [Void Filter](id:voidFilter)
 
