@@ -18,7 +18,7 @@
                     %li
                         %span.label.label-danger Breaking
                         :markdown
-                            Team have a `id` attribute and are always referenced by it everywhere in the XML, **never** by name.
+                            Teams have a `id` attribute and are always referenced by it everywhere in the XML, **never** by name.
                     %li
                         %span.label.label-danger Breaking
                         :markdown
@@ -30,7 +30,7 @@
                     %li
                         %span.label.label-danger Breaking
                         :markdown
-                            The region for an `<apply>` must be either a `region` attribute or a `<region>` sub-element.
+                            The region for an `<apply>` **must** be either a `region` attribute or a `<region>` sub-element.
                             It cannot appear directly inside the `<apply>` tag.
                     %li
                         %span.label.label-danger Breaking
@@ -171,6 +171,23 @@
                         %span.label.label-success New
                         :markdown
                             Heads can be given to players in kits with the `<head>` element.
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            The world generator can be modified with the terrain module.
+                            This module allows the seed, void/vanilla generator, and world folder location to be specified.
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            XML files can now contain conditional `<if>` and `<unless>` statements.
+                            These statements allow modules to be loaded on specific servers or during holiday events.
+
+                    %li
+                        %hr
+                    %li
+                        %span.label.label-info Removed
+                        :markdown
+                            The `<multitrade/>` tag has been removed, it is now always enabled.
 
 
                 %br

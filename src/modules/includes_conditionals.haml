@@ -1,0 +1,214 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+            %p.lead General
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Includes & Conditionals"
+
+                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
+                    %li
+                        %a{:href => "#includes"} XML File Includes
+                    %li
+                        %a{:href => "#conditionals"} Conditionals
+
+
+                :markdown
+                    ### [XML File Includes](id:includes)
+                    A XML file can be split into multiple files and then included into the main one by using the include element. This allows you to keep the main file more organized by including sections such as kits or classes.
+
+                        <include src="classes.xml"/>
+
+                    The PGM plugin will look through it's plugin-wide include path for includes, and it will also look for them relative to from where they are imported. You can set up a chain of includes that respects those same semantics.
+
+                    Included XML files should have the XML header and the main map container.
+
+                    Example
+
+                        <?xml version="1.0"?>
+                        <map proto="#{$map_proto}">
+
+                        <!-- Add kits, classes etc., here -->
+
+                        </map>
+
+                    The master map repository contains the following pre-made XML files for you to use
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th File
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/tutorial.xml"} tutorial.xml
+                                %td Contains the starting and ending stages of a tutorial
+
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/continuity-tnt.xml"} continuity-tnt.xml
+                                %td Contains a pre-designed TNT inventory, used on maps such as BoomBox
+
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/blasternauts.xml"} blasternauts.xml
+                                %td Contains the base XML for an arcade gamemode called 'blasternauts'
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/Blitz/blitz-global.xml"} blitz-global.xml
+                                %td Contains the autorespawn mechanism for blitz maps
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/Blitz/GS/gs.xml"} gs.xml
+                                %td Contains pre-made classes for the Ghost Squadron gamemode
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/Blitz/GS/gs-ffa.xml"} gs-ffa.xml
+                                %td Contains pre-made teams for the Ghost Squadron FFA gamemode
+
+                <br/>
+                :markdown
+                    ### [Conditionals](id:conditionals)
+
+                    XML files can contain simple `<if>` and `<unless>` [conditional][1] statements, these conditionals can be used to reduce duplicated map files and simplify managing multiple variations of a map.
+                    For example, instead of having multiple map variants in different folders they can condensed into one neat location.
+                    This also allows map variants to be automatically loaded on a specific servers or during holiday events.
+
+                    Conditionals can be used anywhere in the XML and can contain anything.
+                    When PGM parses the XML, it will skip over any conditional blocks which are false.
+
+                    There are two limitations to conditionals right now:
+                    attributes can only equate to true/false and conditions are defined in the PGM server configuration.
+
+
+                    [1]: https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<if a="true"> </if>')
+                                %td
+                                    If a is true, use the contents of this element.
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<if a="true" b="true"> </if>')
+                                %td
+                                    If a AND b are both true, use the contents of this element.
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<unless a="true"> </unless>')
+                                %td
+                                    If a is NOT true, use the contents of this element.
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<unless a="false" b="false"> </unless>')
+                                %td
+                                    If (a OR b) is NOT false, use the contents of this element.
+
+                %h5 Conditionals
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Name
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code ranked=""
+                                %td
+                                    The map is running on a ranked server.
+                            %tr
+                                %td
+                                    %code halloween=""
+                                %td
+                                    Halloween Oct 1st 00:00 to Nov 1st 06:00
+                            %tr
+                                %td
+                                    %code christmas=""
+                                %td
+                                    Christmas Dec 1st 00:00 to Dec 26th 06:00
+
+
+                :markdown
+                    Examples
+
+                        <!-- this section is only parsed when on a ranked server. -->
+                        <if ranked="true">
+                            <time>30m</time>
+                            <broadcasts>
+                                <tip after="1m">You guys are pros, keep up the good teamwork!</tip>
+                            </broadcasts>
+                        </if>
+
+                        <!-- Conditional kit inventory -->
+                        <kits>
+                            <kit id="red-inventory">
+                                <if ranked="false">
+                                    <item slot="0" material="iron sword"/>
+                                </if>
+                                <if ranked="true">
+                                    <item slot="0" material="diamond sword"/>
+                                </if>
+                            </kit>
+                        </kits>
+
+                    <br/>
+                    #### Conditional Terrain
+                    If the individual map variants have a different physical world file they can still be neatly organized in the same folder.
+                    The [terrain](/modules/world#terrain) tag can be used to specify a sub-folder that contains the map's terrain data.
+                    This will require any regions, etc. that are different between the worlds to be defined in separate conditionals.
+
+                        <if ranked="true">
+                            <terrain world="ranked"/>
+                            <time result="objectives">30m</time>
+                        </if>
+                        <unless ranked="true">
+                            <terrain world="normal"/>
+                            <time result="objectives">45m</time>
+                            <respawn delay="5s" auto="true"/>
+                        </unless>
+
+                    <br/>
+                    #### Things Not to Do
+
+                    There are some pitfalls you should avoid when using conditionals.
+                    Defining elements outside and inside a conditional is discouraged, instead those elements should be defined inside their own conditionals.
+                    For example, elements with ID's will throw an error if they are defined in both places at the same time.
+                    However, some elements will not, and instead the first or last defined instance of that element will be used.
+
+                        <!-- Don't do this! PGM will throw an error because the id 'zombies' is used twice. -->
+                        <teams>
+                            <team id="zombies" color="red" max="30"/>
+                            <if ranked="true">
+                                <team id="zombies" color="dark red" max="10"/>
+                            </if>
+                        </teams>
+
+                        <!-- This is the correct way to do the above. -->
+                        <teams>
+                            <if ranked="false">
+                                <team id="zombies" color="red" max="30"/>
+                            </if>
+                            <if ranked="true">
+                                <team id="zombies" color="dark red" max="10"/>
+                            </if>
+                        </teams>
