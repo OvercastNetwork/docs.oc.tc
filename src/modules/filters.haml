@@ -185,9 +185,15 @@
                                     %pre
                                         %code= html_escape('<cause>cause</cause>')
                                 %td
-                                    Filter event causes
-                                    %br
-                                    Accepts <code>PLAYER</code>, <code>EXPLOSION</code>, <code>COMBUSTION</code>, <code>PUNCH</code>, <code>TRAMPLE</code> & <code>MINE</code>.
+                                    Filter an event's cause.
+                                    %a.left-ref-link{:href=>"#causeFilters"} <i class="fa fa-chevron-down"></i>
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<relation>relation</relation>')
+                                %td
+                                    Filter an event's relation to the player.
+                                    %a.left-ref-link{:href=>"#relationFilters"} <i class="fa fa-chevron-down"></i>
                             %tr
                                 %td
                                     %pre
@@ -445,6 +451,139 @@
 
 
 
+                    <br/>
+                    #### [Event Cause Filters](id:causeFilters)
+
+                    Cause filters are used to filter an event or action according to its cause.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<cause> </cause>')
+                                %td Filter an event's cause.
+                            %tr
+                                %th{:colspan => "2"} Cause: Actor Type
+                            %tr
+                                %td
+                                    %code WORLD
+                                %td World events such as ice melting, etc.
+                            %tr
+                                %td
+                                    %code LIVING
+                                %td Events caused by a living entity.
+                            %tr
+                                %td
+                                    %code MOB
+                                %td Events caused by a mob.
+                            %tr
+                                %td
+                                    %code PLAYER
+                                %td Events caused by a player.
+                            %tr
+                                %th{:colspan => "2"} Cause: Block Action
+                            %tr
+                                %td
+                                    %code PUNCH
+                                %td Events where a block is punched.
+                            %tr
+                                %td
+                                    %code TRAMPLE
+                                %td Events where a block is trampled.
+                            %tr
+                                %td
+                                    %code MINE
+                                %td Events where a block is mined.
+                            %tr
+                                %th{:colspan => "2"} Cause: Damage Type
+                            %tr
+                                %td
+                                    %code MELEE
+                                %td
+                                    %code PROJECTILE
+                            %tr
+                                %td
+                                    %code POTION
+                                %td
+                                    %code EXPLOSION
+                            %tr
+                                %td
+                                    %code COMBUSTION
+                                %td
+                                    %code FALL
+                            %tr
+                                %td
+                                    %code GRAVITY
+                                    Fall and void damage.
+                                %td
+                                    %code VOID
+                            %tr
+                                %td
+                                    %code SQUASH
+                                %td
+                                    %code SUFFOCATION
+                            %tr
+                                %td
+                                    %code DROWNING
+                                %td
+                                    %code STARVATION
+                            %tr
+                                %td
+                                    %code LIGHTNING
+                                %td
+                                    %code CACTUS
+                            %tr
+                                %td
+                                    %code THORNS
+                                %td
+
+
+                :markdown
+                    <br/>
+                    #### [Event Relation Filters](id:relationFilters)
+
+                    The relation filter is used when a player is damaged to check the relation between them and the damage cause.
+                    This filter is only used in damage related contexts i.e., [damage filters](/modules/damage), and [kill rewards](/modules/killreward)
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<relation> </relation>')
+                                %td The relation between the player and their damage cause.
+                            %tr
+                                %th{:colspan => "2"} Values
+                            %tr
+                                %td
+                                    %code NEUTRAL
+                                %td Event has no attacker, e.g. world damage.
+                            %tr
+                                %td
+                                    %code SELF
+                                %td Events caused by the player. (Same player same team)
+                            %tr
+                                %td
+                                    %code ALLY
+                                %td Events caused by a player on the same team. (Different player same team)
+                            %tr
+                                %td
+                                    %code ENEMY
+                                %td Events caused by an enemy player. (Different team)
+
+
+                :markdown
                     <br/>
                     #### [Structural Load Filters](id:structuralLoadFilters)
                     The structural load filter checks the number of gravity blocks that are attached to the queried block.
