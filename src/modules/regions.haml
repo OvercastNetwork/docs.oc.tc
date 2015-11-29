@@ -9,6 +9,16 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Regions"
+
+                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
+                    %li
+                        %a{:href => "#applying"} Applying Things to Regions
+                    %li
+                        %a{:href => "#regionModifiers"} Region Modifiers
+                    %li
+                        %a{:href => "#pointProviders"} Point Providers
+                %hr
+
                 :markdown
                     Regions are a type of filter that filters the coordinates of a query. They are used to define, among other things, the area a filter applies to or where a portal links from. There are two distinct types of regions; block bounded regions, which contain a finite amount of blocks and unbounded regions that contain a infinite amount. All regions and region modifiers can have a `id` attribute to reference them from kits, portals, etc.
 
@@ -143,7 +153,7 @@
                         <below x="0" z="0"/>    <!-- Everything in the -X, -Z quadrant -->
 
                     <br/>
-                    ### Applying Things to Regions
+                    ### [Applying Things to Regions](id:applying)
 
                     Filters, kits, and velocity changes can be applied to regions by using an `<apply>` element. The apply element can contain more than one region. If the apply element contains more than one region the same settings are applied to all of them. Applies with no region default to `<everywhere/>`. Applies can also be defined in the filters element.
 
