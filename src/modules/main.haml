@@ -72,9 +72,10 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th Element
+                                %th{:style => "min-width: 150px;"} Element
                                 %th Description
                                 %th Value/Children
+                                %th Default
                         %tbody
                             %tr
                                 %td
@@ -85,6 +86,7 @@
                                     The name of the map.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -96,6 +98,7 @@
                                     string.
                                 %td
                                     %span.label.label-primary 1.0.0
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -105,6 +108,7 @@
                                     The map's objective, shown at the start of the match.
                                 %td
                                     %span.label.label-primary String
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -114,6 +118,7 @@
                                     The authors of the map, at least one author is required.
                                 %td
                                     %code= html_escape('<author>')
+                                %td
                             %tr
                                 %td
                                     %pre
@@ -122,6 +127,43 @@
                                     Contributors to the map.
                                 %td
                                     %code= html_escape('<contributor>')
+                                %td
+
+
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<phase>')
+                                %td
+                                    :markdown
+                                        Phase of this map. Only maps with phase:`production` and edition:`standard` show up on the website.
+                                %td
+                                    %code development
+                                    %code production
+                                %td
+                                    %code production
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<edition>')
+                                %td Edition of this map, describes which servers it is run on.
+                                %td
+                                    %code standard
+                                    %code ranked
+                                    %code tournament
+                                %td
+                                    %code standard
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<gamemode>')
+                                %td
+                                    The gamemode(s) of this map, if this is not specified the map will set the gamemode(s) to whatever modules are used.
+                                    %a.left-ref-link{:href=>"#gamemode"} <i class="fa fa-chevron-down"></i>
+                                %td
+                                    %span.label.label-primary Gamemode ID
+                                %td
+
                 :markdown
 
                         <?xml version="1.0"?>
@@ -170,7 +212,7 @@
                                     %pre
                                         %code= html_escape('<contributor>')
                                 %td
-                                    A contributor to the map. used in
+                                    A contributor to the map, used in
                                     %code= html_escape('<contributors>')
 
                                 %td
@@ -213,3 +255,97 @@
                             <contributor contribution="A contribution">aHelper</contributor>
                             <contributor uuid="3fbec7dd-0a5f-40bf-9d11-885a54507112" contribution="Some Help"/> <!-- Cubist -->
                         </contributors>
+
+
+                    <br/>
+                    #### [Map Gamemode](id:gamemode)
+
+                    The gamemode element is used to specify the gamemode(s) of the map.
+                    This mainly affects how the map is categorized and displayed.
+                    If no `<gamemode>` tags are specified the map will set the gamemode(s) to whatever modules are used.
+                    This means that a map that uses destroyables and flags would be listed as a "DTM & CTF" unless specified otherwise.
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<gamemode> </gamemode>')
+                                %td
+                                    The gamemode(s) of this map.
+                                %td
+                                    %span.label.label-primary Gamemode ID
+
+                %h5 Gamemode ID's
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th ID
+                                %th Description
+                                %th ID
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %code tdm
+                                %td Team Deathmatch
+                                %td
+                                    %code ctw
+                                %td Capture the Wool
+                            %tr
+                                %td
+                                    %code ctf
+                                %td Capture the Flag
+                                %td
+                                    %code dtc
+                                %td Destroy the Core
+                            %tr
+                                %td
+                                    %code dtm
+                                %td Destroy the Monument
+                                %td
+                                    %code ad
+                                %td Attack/Defend
+                            %tr
+                                %td
+                                    %code koth
+                                %td King of the Hill
+                                %td
+                                    %code blitz
+                                %td Blitz
+                            %tr
+                                %td
+                                    %code rage
+                                %td Rage
+                                %td
+                                    %code scorebox
+                                %td Scorebox
+                            %tr
+                                %td
+                                    %code arcade
+                                %td Arcade
+                                %td
+                                    %code gs
+                                %td Ghost Squadron
+                            %tr
+                                %td
+                                    %code ffa
+                                %td Free-for-All
+                                %td
+                                    %code mixed
+                                %td Mixed Gamemodes
+
+                :markdown
+                    Example
+
+                        <!-- A FFA map with scoreboxes -->
+                        <gamemode>ffa</gamemode>
+                        <gamemode>scorebox</gamemode>
