@@ -46,21 +46,29 @@
                         <spawns>
                             <spawn team="red-team" kit="red">
                                 <point yaw="-45">
-                                    <cylinder base="-619.5,11,259.5" height="0" radius="2"/> <!-- West -->
+                                    <region>
+                                        <cylinder base="-619.5,11,259.5" height="0" radius="2"/> <!-- West -->
+                                    </region>
                                 </point>
                                 <point yaw="45">
-                                    <cylinder base="-571.5,11,259.5" height="0" radius="2"/> <!-- East -->
+                                    <region>
+                                        <cylinder base="-571.5,11,259.5" height="0" radius="2"/> <!-- East -->
+                                    </region>
                                 </point>
                             </spawn>
                             <spawn team="blue-team" kit="blue">
                                 <point yaw="-135">
-                                    <cylinder base="-619.5,11,349.5" height="0" radius="2"/> <!-- West -->
+                                    <region>
+                                        <cylinder base="-619.5,11,349.5" height="0" radius="2"/> <!-- West -->
+                                    </region>
                                 </point>
                                 <point yaw="135">
-                                    <cylinder base="-571.5,11,349.5" height="0" radius="2"/> <!-- East -->
+                                    <region>
+                                        <cylinder base="-571.5,11,349.5" height="0" radius="2"/> <!-- East -->
+                                    </region>
                                 </point>
                             </spawn>
-                            <default yaw="-90"><cuboid min="-544,13,302" max="-540,13,306"/></default>
+                            <default yaw="-90"><region><cuboid min="-544,13,302" max="-540,13,306"/></region></default>
                         </spawns>
 
                     <br/>
@@ -69,10 +77,14 @@
 
                         <destroyables name="Monument" completion="100%" materials="obsidian">
                             <destroyable owner="blue">
-                                <cuboid min="-596,10,361" max="-595,12,362"/>
+                                <region>
+                                    <cuboid min="-596,10,361" max="-595,12,362"/>
+                                </region>
                             </destroyable>
                             <destroyable owner="red">
-                                <cuboid min="-596,10,247" max="-595,12,248"/>
+                                <region>
+                                    <cuboid min="-596,10,247" max="-595,12,248"/>
+                                </region>
                             </destroyable>
                         </destroyables>
 
