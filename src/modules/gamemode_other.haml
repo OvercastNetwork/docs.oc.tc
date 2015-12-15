@@ -17,6 +17,8 @@
                         %a{:href => "#rage"} Rage
                     %li
                         %a{:href => "#tdm"} Team Deathmatch
+                    %li
+                        %a{:href => "#ffa"} Free-For-All
                 %hr
 
                 :markdown
@@ -66,3 +68,19 @@
 
                         <!-- Time till the match ends in seconds (10 minutes) -->
                         <time>600</time>
+
+
+                    <br/>
+                    ### [Free-For-All](id:ffa)
+                    The FFA gamemode uses the [players](/modules/players) instead of the [teams](/modules/teams) module to create a team-less match.
+                    Depending on the modules used, players can increase their score by killing other players until a score or time limit is reached or by capturing objectives, etc.
+
+                    `NOTE:` To be able to score points for kills and deaths the `<kills>` and `<deaths>` elements are required.
+
+                        <players max="16" max-overfill="20"/>
+                        <time>8m</time>
+
+                        <score>
+                            <kills>1</kills>
+                            <deaths>1</deaths>
+                        </score>
