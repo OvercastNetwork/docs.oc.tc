@@ -371,6 +371,58 @@
 
 
                     <br/>
+                    ### Shield Kit (removable)
+                    The shield kit gives the player a shield consisting of absorption hearts that recharge after a set period of time.
+                    Recharging of the shield is based on when damage was taken last, every time a player is damaged it resets the recharge timer.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<shield health="4" delay="4s"/>')
+                                %td
+                                    Give the player a recharging shield of absorption hearts.
+
+                %h5 Shield Kit Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code health
+                                %td
+                                    Amount of extra absorption hearts to give to the player.
+                                %td
+                                    %span.label.label-primary Decimal
+                                %td 4
+                            %tr
+                                %td
+                                    %code delay
+                                %td
+                                    Time to wait after a player is last damaged to recharge the shield.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td 4s
+                :markdown
+
+                        <kit>
+                            <shield health="4" delay="8s"/>
+                        </kit>
+
+
+                    <br/>
                     ### Double Jump Kit (removable)
                     Give players with this kit the ability to double-jump.
                     This element's enabled attribute can be used to disable double-jump inside regions, etc.
