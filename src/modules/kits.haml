@@ -5,10 +5,25 @@
             %p.lead Game Settings
     %section
         .row
+            - @page_nav_content = [\
+            - {"path" => "#itemArmor", "name" => "Item & Armor"},\
+            - {"path" => "#game-mode", "name" => "Game-mode"},\
+            - {"path" => "#healthHunger", "name" => "Health & Hunger"},\
+            - {"path" => "#potionEffect", "name" => "Potions"},\
+            - {"path" => "#attributes", "name" => "Attribute Modifiers"},\
+            - {"path" => "#walkSpeed", "name" => "Walk Speed"},\
+            - {"path" => "#knockback", "name" => "Knockback Reduction"},\
+            - {"path" => "#shield", "name" => "Shield"},\
+            - {"path" => "#jump", "name" => "Double Jump"},\
+            - {"path" => "#fly", "name" => "Fly"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Kits"
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Kits"
+
                 :markdown
                     Kits are groups of items and effects that can be given to players in various ways. There are many types of kits, and they can be
                     packaged together in any combination.
@@ -123,7 +138,7 @@
                     The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
 
                     <br/>
-                    ### Item & Armor Kits
+                    ### [Item & Armor Kits](id:itemArmor)
 
                     Kits can place items in specific slots of a player's inventory, and equip them with armor. See [Items & Armor](/modules/items) for details.
 
@@ -161,7 +176,7 @@
 
 
                     <br/>
-                    ### Game-mode Kit
+                    ### [Game-mode Kit](id:game-mode)
 
                     A player's gamemode can be changed when they spawn or enter a region, etc. by using this kit.
 
@@ -188,7 +203,7 @@
 
 
                     <br/>
-                    ### Health & Hunger Kits
+                    ### [Health & Hunger Kits](id:healthHunger)
                     A player's health and hunger can be modified with kits, this can be useful on maps with the `naturalRegeneration` [gamerule](/modules/gamerules) set to false.
 
                     By default health or hunger values are only increased, not decreased. For example, a player with 5 hearts (10 points) will not get a 5 health point kit applied, however a 20 point kit will be applied. This can be overwritten with a kits `force="true"` attribute.
@@ -240,7 +255,8 @@
 
                     <br/>
 
-                    ### Potion Kits (removable)
+
+                    ### [Potion Kits (removable)](id:potionEffect)
 
                     Potion effects can be applied and removed with a kit. See [Potion Effects](/modules/potions) for details.
 
@@ -248,8 +264,9 @@
                             <potion duration="10" amplifier="4">damage resistance</potion>
                         </kit>
 
+
                     <br/>
-                    ### [Attribute Modifier Kits](id:attributes) (removable)
+                    ### [Attribute Modifier Kits (removable)](id:attributes)
 
                     Attribute modifiers can be applied directly to players through a kit. Modifying attributes in this way,
                     instead of through an item, is a simple way to ensure that the player cannot avoid the effect of
@@ -310,7 +327,7 @@
                         </kit>
 
                     <br/>
-                    ### Walk Speed Kit (removable)
+                    ### [Walk Speed Kit (removable)](id:walkSpeed)
                     Increase or decrease a player's walking speed. The value is a multiplier of the normal walking speed.
 
                 .table-responsive
@@ -342,8 +359,9 @@
                             <walk-speed>0.5</walk-speed>
                         </kit>
 
+
                     <br/>
-                    ### Knockback Reduction Kit (removable)
+                    ### [Knockback Reduction Kit (removable)](id:knockback)
                     Reduce (or increase) the knockback players receive when they have this kit applied.
                     The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased,
                     and anything lower than zero pushes the player to the attacker instead of away from them.
@@ -371,7 +389,7 @@
 
 
                     <br/>
-                    ### Shield Kit (removable)
+                    ### [Shield Kit (removable)](id:shield)
                     The shield kit gives the player a shield consisting of absorption hearts that recharge after a set period of time.
                     Recharging of the shield is based on when damage was taken last, every time a player is damaged it resets the recharge timer.
 
@@ -423,7 +441,7 @@
 
 
                     <br/>
-                    ### Double Jump Kit (removable)
+                    ### [Double Jump Kit (removable)](id:jump)
                     Give players with this kit the ability to double-jump.
                     This element's enabled attribute can be used to disable double-jump inside regions, etc.
 
@@ -487,7 +505,7 @@
                         </kit>
 
                     <br/>
-                    ### Fly Kit (removable)
+                    ### [Fly Kit (removable)](id:fly)
                     The fly kit gives players which it is applied to the ability to fly.
                     It also allows modification of the speed at which they fly.
                     If no attributes are specified can-fly defaults to true.

@@ -5,21 +5,18 @@
             %p.lead Game Modes
     %section
         .row
+            - @page_nav_content = [\
+            - {"path" => "#gs", "name" => "Ghost Squadron"},\
+            - {"path" => "#rage", "name" => "Rage"},\
+            - {"path" => "#tdm", "name" => "Team Deathmatch"},\
+            - {"path" => "#ffa", "name" => "Free-For-All"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Other Game Modes"
-
-                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
-                    %li
-                        %a{:href => "#gs"} Ghost Squadron
-                    %li
-                        %a{:href => "#rage"} Rage
-                    %li
-                        %a{:href => "#tdm"} Team Deathmatch
-                    %li
-                        %a{:href => "#ffa"} Free-For-All
-                %hr
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Other Game Modes"
 
                 :markdown
                     ### [Ghost Squadron](id:gs)

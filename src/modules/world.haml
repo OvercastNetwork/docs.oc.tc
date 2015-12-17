@@ -5,19 +5,17 @@
             %p.lead General
     %section
         .row
+            - @page_nav_content = [
+            - {"path" => "#terrain", "name" => "Terrain Module"},\
+            - {"path" => "#dimension", "name" => "World Dimension"},\
+            - {"path" => "#border", "name" => "World Border"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "World & Terrain"
-
-                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
-                    %li
-                        %a{:href => "#terrain"} Terrain Module
-                    %li
-                        %a{:href => "#dimension"} World Dimension
-                    %li
-                        %a{:href => "#border"} World Border
-                %hr
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "World & Terrain"
 
                 :markdown
                     ### [Terrain](id:terrain)

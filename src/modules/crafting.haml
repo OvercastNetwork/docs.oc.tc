@@ -5,10 +5,18 @@
             %p.lead Game Settings
     %section
         .row
+            - @page_nav_content = [\
+            - {"path" => "#shaped", "name" => "Shaped"},\
+            - {"path" => "#shapeless", "name" => "Shapeless"},\
+            - {"path" => "#smelt", "name" => "Smelt"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Crafting Recipes"
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Crafting Recipes"
+
                 :markdown
                     The crafting module allows custom shaped and shapeless crafting recipes and smelting products. Vanilla recipes for a specific material can also be disabled to prevent crafting of that material except with the new recipe.
 

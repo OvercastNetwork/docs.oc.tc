@@ -5,17 +5,16 @@
             %p.lead General
     %section
         .row
+            - @page_nav_content = [
+            - {"path" => "#includes", "name" => "XML File Includes"},\
+            - {"path" => "#conditionals", "name" => "Conditionals"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Includes & Conditionals"
-
-                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
-                    %li
-                        %a{:href => "#includes"} XML File Includes
-                    %li
-                        %a{:href => "#conditionals"} Conditionals
-
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Includes & Conditionals"
 
                 :markdown
                     ### [XML File Includes](id:includes)
@@ -70,6 +69,10 @@
                                 %td
                                     %a{:href => "https://maps.oc.tc/Blitz/GS/gs-ffa.xml"} gs-ffa.xml
                                 %td Contains pre-made teams for the Ghost Squadron FFA gamemode
+                            %tr
+                                %td
+                                    %a{:href => "https://maps.oc.tc/stamina.xml"} stamina.xml
+                                %td Contains the default settings for the stamina module
 
                 <br/>
                 :markdown

@@ -5,10 +5,23 @@
             %p.lead Game Settings
     %section
         .row
+            - @page_nav_content = [\
+            - {"path" => "#heads", "name" => "Player Heads"},\
+            - {"path" => "#armor", "name" => "Armor"},\
+            - {"path" => "#potions", "name" => "Potions"},\
+            - {"path" => "#books", "name" => "Books"},\
+            - {"path" => "#enchantments", "name" => "Enchantments"},\
+            - {"path" => "#attributes", "name" => "Attribute Modifiers"},\
+            - {"path" => "#grenades", "name" => "Grenades"},\
+            - {"path" => "#can-destroy", "name" => "Can-Destroy / Can-Place-On"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Items & Armor"
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Items & Armor"
+
                 :markdown
                     The item elements are used to place items into a player's inventory or armor slots.
                     Items have many different attributes, and some may only apply to certain item types;
@@ -65,13 +78,15 @@
                                     %pre
                                         %code= html_escape('<can-destroy> </can-destroy>')
                                 %td
-                                    %a{:href => "#can-destroy"} Materials that can be mined with the item
+                                    %a.left-ref-link{:href=>"#can-destroy"} <i class="fa fa-chevron-down"></i>
+                                    Materials that can be mined with the item
                             %tr
                                 %td
                                     %pre
                                         %code= html_escape('<can-place-on> </can-place-on>')
                                 %td
-                                    %a{:href => "#can-destroy"} Materials that the item can be placed on
+                                    %a.left-ref-link{:href=>"#can-destroy"} <i class="fa fa-chevron-down"></i>
+                                    Materials that the item can be placed on
 
                     %h5 Item Attributes
                 .table-responsive
@@ -351,7 +366,7 @@
 
                 :markdown
                     <br/>
-                    ### Armor
+                    ### [Armor](id:armor)
                     Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.
 
                         <helmet material="iron helmet"/>

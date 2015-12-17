@@ -1,53 +1,67 @@
-- @nav_title = "XML Modules"
-- @subnav_content = [\
-- "General",\
-- {"path" => "modules/main", "name" => "Main Map Element"},\
-- {"path" => "modules/includes_conditionals", "name" => "Includes & Conditionals"},\
-- {"path" => "modules/tutorial", "name" => "Map Tutorial"},\
-- {"path" => "modules/match_information", "name" => "Match Information"},\
-- {"path" => "modules/world", "name" => "World & Terrain"},\
-- "Game Modes",\
-- {"path" => "modules/gamemode_ctw", "name" => "Capture the Wool"},\
-- {"path" => "modules/gamemode_ctf", "name" => "Capture the Flag"},\
-- {"path" => "modules/gamemode_dtm", "name" => "Destroy the Monument"},\
-- {"path" => "modules/gamemode_dtc", "name" => "Destroy the Core"},\
-- {"path" => "modules/gamemode_koth", "name" => "King of the Hill"},\
-- {"path" => "modules/control_points", "name" => "Control Points"},\
-- {"path" => "modules/gamemode_blitz", "name" => "Blitz"},\
-- {"path" => "modules/scoring", "name" => "Scoring"},\
-- {"path" => "modules/gamemode_other", "name" => "Other Game Modes"},\
-- "Game Settings",\
-- {"path" => "modules/teams", "name" => "Teams"},\
-- {"path" => "modules/players", "name" => "Players (free-for-all)"},\
-- {"path" => "modules/classes", "name" => "Classes"},\
-- {"path" => "modules/kits", "name" => "Kits"},\
-- {"path" => "modules/items", "name" => "Items & Armor"},\
-- {"path" => "modules/potions", "name" => "Potion Effects"},\
-- {"path" => "modules/item_mods", "name" => "Item Mods"},\
-- {"path" => "modules/crafting", "name" => "Crafting Recipes"},\
-- {"path" => "modules/repair_remove_keep", "name" => "Repair, Remove & Keep"},\
-- {"path" => "modules/damage", "name" => "Damage Filtering"},\
-- {"path" => "modules/projectiles", "name" => "Projectiles"},\
-- {"path" => "modules/tnt", "name" => "TNT"},\
-- {"path" => "modules/mobs", "name" => "Mob Spawning"},\
-- {"path" => "modules/killreward", "name" => "Kill Rewards"},\
-- {"path" => "modules/gamerules", "name" => "Gamerules"},\
-- {"path" => "modules/other_settings", "name" => "Other Settings"},\
-- "Filters & Regions",\
-- {"path" => "modules/filters", "name" => "Filters"},\
-- {"path" => "modules/regions", "name" => "Regions"},\
-- {"path" => "modules/spawns", "name" => "Spawns"},\
-- {"path" => "modules/structures", "name" => "Structures"},\
-- {"path" => "modules/portals", "name" => "Portals"},\
-- {"path" => "modules/proximity_alarms", "name" => "Proximity Alarms"},\
-- {"path" => "modules/lanes", "name" => "Lanes"},\
-- "Block Behavior",\
-- {"path" => "modules/falling_blocks", "name" => "Falling Blocks"},\
-- {"path" => "modules/renewables", "name" => "Renewables"},\
-- {"path" => "modules/blockdrops", "name" => "Block Drops"},\
-- {"path" => "modules/monument_modes", "name" => "Monument Modes"}]
-
 .col-sm-3
+    - if !@page_nav_content.nil? and !@page_nav_content.empty?
+        .sidebar.hidden-xs{:style => "margin-bottom: 20px;"}
+            %ul.nav.nav-pills.nav-stacked.docs-nav-pills
+                - if !@page_sub_title.nil?
+                    %li
+                        %h4 #{@page_sub_title}
+                - @page_nav_content.each do |item|
+                    - if item.kind_of?(Hash)
+                        %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
+                            %a{:href => "#{item['path']}"} #{item['name']}
+                    - elsif item.kind_of?(String)
+                        %li
+                            %h4 #{item}
+
+    - @sidebar_nav_title = "XML Modules"
+    - @sidebar_nav_content = [\
+    - "General",\
+    - {"path" => "/modules/main", "name" => "Main Map Element"},\
+    - {"path" => "/modules/includes_conditionals", "name" => "Includes & Conditionals"},\
+    - {"path" => "/modules/tutorial", "name" => "Map Tutorial"},\
+    - {"path" => "/modules/match_information", "name" => "Match Information"},\
+    - {"path" => "/modules/world", "name" => "World & Terrain"},\
+    - "Game Modes",\
+    - {"path" => "/modules/gamemode_ctw", "name" => "Capture the Wool"},\
+    - {"path" => "/modules/gamemode_ctf", "name" => "Capture the Flag"},\
+    - {"path" => "/modules/gamemode_dtm", "name" => "Destroy the Monument"},\
+    - {"path" => "/modules/gamemode_dtc", "name" => "Destroy the Core"},\
+    - {"path" => "/modules/gamemode_koth", "name" => "King of the Hill"},\
+    - {"path" => "/modules/control_points", "name" => "Control Points"},\
+    - {"path" => "/modules/gamemode_blitz", "name" => "Blitz"},\
+    - {"path" => "/modules/scoring", "name" => "Scoring"},\
+    - {"path" => "/modules/gamemode_other", "name" => "Other Game Modes"},\
+    - "Game Settings",\
+    - {"path" => "/modules/teams", "name" => "Teams"},\
+    - {"path" => "/modules/players", "name" => "Players (free-for-all)"},\
+    - {"path" => "/modules/classes", "name" => "Classes"},\
+    - {"path" => "/modules/kits", "name" => "Kits"},\
+    - {"path" => "/modules/items", "name" => "Items & Armor"},\
+    - {"path" => "/modules/potions", "name" => "Potion Effects"},\
+    - {"path" => "/modules/item_mods", "name" => "Item Mods"},\
+    - {"path" => "/modules/crafting", "name" => "Crafting Recipes"},\
+    - {"path" => "/modules/repair_remove_keep", "name" => "Repair, Remove & Keep"},\
+    - {"path" => "/modules/damage", "name" => "Damage Filtering"},\
+    - {"path" => "/modules/projectiles", "name" => "Projectiles"},\
+    - {"path" => "/modules/tnt", "name" => "TNT"},\
+    - {"path" => "/modules/mobs", "name" => "Mob Spawning"},\
+    - {"path" => "/modules/killreward", "name" => "Kill Rewards"},\
+    - {"path" => "/modules/gamerules", "name" => "Gamerules"},\
+    - {"path" => "/modules/other_settings", "name" => "Other Settings"},\
+    - "Filters & Regions",\
+    - {"path" => "/modules/filters", "name" => "Filters"},\
+    - {"path" => "/modules/regions", "name" => "Regions"},\
+    - {"path" => "/modules/spawns", "name" => "Spawns"},\
+    - {"path" => "/modules/structures", "name" => "Structures"},\
+    - {"path" => "/modules/portals", "name" => "Portals"},\
+    - {"path" => "/modules/proximity_alarms", "name" => "Proximity Alarms"},\
+    - {"path" => "/modules/lanes", "name" => "Lanes"},\
+    - "Block Behavior",\
+    - {"path" => "/modules/falling_blocks", "name" => "Falling Blocks"},\
+    - {"path" => "/modules/renewables", "name" => "Renewables"},\
+    - {"path" => "/modules/blockdrops", "name" => "Block Drops"},\
+    - {"path" => "/modules/monument_modes", "name" => "Monument Modes"}]
+
     .well.well-sm
         Current map proto is
         %a{:href => "/modules/proto"} #{$map_proto}

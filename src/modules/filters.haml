@@ -5,15 +5,25 @@
             %p.lead Filters & Regions
     %section
         .row
+            - @page_nav_content = [
+            - {"path" => "#list", "name" => "Filters List"},\
+            - {"path" => "#killStreakFilter", "name" => "Kill-Streak Filter"},\
+            - {"path" => "#randomFilter", "name" => "Random Filter"},\
+            - {"path" => "#objectiveFilter", "name" => "Objective Filter"},\
+            - {"path" => "#flagFilter", "name" => "Flag Filters"},\
+            - {"path" => "#causeFilters", "name" => "Event Cause Filter"},\
+            - {"path" => "#relationFilters", "name" => "Player Relation Filter"},\
+            - {"path" => "#itemFilters", "name" => "Item Filters"},\
+            - {"path" => "#structuralLoadFilters", "name" => "Structural Load Filter"},\
+            - {"path" => "#voidFilter", "name" => "Void Filter"},\
+            - {"path" => "#filterModifiers", "name" => "Filter Modifiers"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Filters"
-
-                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
-                    %li
-                        %a{:href => "#filterModifiers"} Filter Modifiers
-                %hr
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Filters"
 
                 :markdown
                     Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions or used in other modules to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. All filters can have a `id` attribute to reference them in other parts of the XML. Groups of filters are combined with each other using [filter modifiers](#filterModifiers) to narrow the filters query.
@@ -39,7 +49,7 @@
 
                 :markdown
                     <br/>
-                    ### Filter Matcher Elements
+                    ### [Filter Matcher Elements](id:list)
                     Filters use matcher elements to do things such as blocking all player access and then allowing a certain team access.
 
                 .table-responsive
@@ -179,6 +189,7 @@
                                     %pre
                                         %code= html_escape('<carrying-flag>flag_id</carrying-flag>')
                                 %td
+                                    %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
                                     Match the player carrying the specified flag.
                             %tr
                                 %td
@@ -546,7 +557,7 @@
 
                 :markdown
                     <br/>
-                    #### [Event Relation Filters](id:relationFilters)
+                    #### [Player Relation Filters](id:relationFilters)
 
                     The relation filter is used when a player is damaged to check the relation between them and the damage cause.
                     This filter is only used in damage related contexts i.e., [damage filters](/modules/damage), and [kill rewards](/modules/killreward)

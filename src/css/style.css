@@ -162,33 +162,17 @@ td pre code {
     float: none !important;
 }
 
+.docs-nav-pills > ul > li > a,
 .docs-nav-pills > li > a {
     position: relative;
     display: block;
-    padding: 8px 14px;
+    padding: 3px 15px;
 }
 
-/* - Navigation menu selection and active row colors */
-.dropdown-menu > .active > a{
-    color: #333333;
-    background-color: #e6e6e6;
-    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#eaeaea), to(#e6e6e6));
-    background-image: -webkit-linear-gradient(top, #eaeaea, 0%, #e6e6e6, 100%);
-    background-image: -moz-linear-gradient(top, #eaeaea 0%, #e6e6e6 100%);
-    background-image: linear-gradient(to bottom, #eaeaea 0%, #e6e6e6 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffefefef', endColorstr='#ffe6e6e6', GradientType=0);
-}
-
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-    background-color: #bcbcbc;
-    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#cccccc), to(#bcbcbc));
-    background-image: -webkit-linear-gradient(top, #cccccc, 0%, #bcbcbc, 100%);
-    background-image: -moz-linear-gradient(top, #cccccc 0%, #bcbcbc 100%);
-    background-image: linear-gradient(to bottom, #cccccc 0%, #bcbcbc 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ffbcbcbc', GradientType=0);
+.docs-nav-pills h4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 8px 0px;
 }
 
 

@@ -5,21 +5,18 @@
             %p.lead Game Settings
     %section
         .row
+            - @page_nav_content = [
+            - {"path" => "#repair", "name" => "Tool Repair"},\
+            - {"path" => "#remove", "name" => "Item Remove"},\
+            - {"path" => "#item_keep", "name" => "Item Keep"},\
+            - {"path" => "#armor_keep", "name" => "Armor Keep"}]
             = partial('modules_sidebar')
+
             .col-sm-9
                 .page-header
-                    %h1= @page_sub_title = "Repair, Remove & Keep"
-
-                %ul.nav.nav-pills.hidden-xs{:style => "margin-top: -10px; margin-bottom: -10px;"}
-                    %li
-                        %a{:href => "#repair"} Tool Repair
-                    %li
-                        %a{:href => "#remove"} Item Remove
-                    %li
-                        %a{:href => "#item_keep"} Item Keep
-                    %li
-                        %a{:href => "#armor_keep"} Armor Keep
-                %hr
+                    %h1
+                        = partial('page_nav_dropdown')
+                        = @page_sub_title = "Repair, Remove & Keep"
 
                 :markdown
                     ### [Tool Repair](id:repair)
