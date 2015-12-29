@@ -90,6 +90,19 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<slug>')
+                                %td
+                                    The map's slug, usually auto generated from the maps name.
+                                    This should only be used when a map is renamed to retain the map's ratings, etc.
+                                    %br
+                                    Valid slugs are lowercase and only contain the characters: <code>a-z 0-9 _</code>
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                                    %span.label.label-default Auto Generated
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<version>')
                                 %td
                                     %span.label.label-danger Required
@@ -97,7 +110,7 @@
                                     %a{:href => "http://semver.org"} semantic version
                                     string.
                                 %td
-                                    %span.label.label-primary 1.0.0
+                                    %code 1.0.0
                                 %td
                             %tr
                                 %td
