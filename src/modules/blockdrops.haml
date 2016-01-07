@@ -71,6 +71,25 @@
                                 %td
                             %tr
                                 %td
+                                    %code experience
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The amount of XP that gets dropped.
+                                %td
+                                    %span.label.label-primary Number
+                                %td
+                            %tr
+                                %td
+                                    %code replacement
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    What to replace the mined block with.
+                                %td
+                                    %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
+                                %td
+                                    %span.label.label-default Air
+                            %tr
+                                %td
                                     %code wrongtool
                                 %td
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
@@ -139,7 +158,9 @@
                                 %td
                                     %pre
                                         %code= html_escape('<experience>')
-                                %td The amount of XP that gets dropped.
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    The amount of XP that gets dropped.
                                 %td
                                     %span.label.label-primary Number
                                 %td
@@ -147,7 +168,9 @@
                                 %td
                                     %pre
                                         %code= html_escape('<replacement>')
-                                %td What to replace the mined block with.
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    What to replace the mined block with.
                                 %td
                                     %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
                                 %td
