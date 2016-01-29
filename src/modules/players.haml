@@ -40,6 +40,7 @@
                                 %th{:style => "min-width: 130px;"}  Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
@@ -48,6 +49,7 @@
                                     Minimum amount of players required.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code max
@@ -57,6 +59,7 @@
                                     %i Premium players may join over this limit until <code>max-overfill</code> is reached.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code max-overfill
@@ -66,6 +69,7 @@
                                     %i Must be greater than the defined <code>max</code>.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code show-name-tags
@@ -76,6 +80,15 @@
                                     <code>true</code>, <code>false</code>, <code>allies</code> or <code>enemies</code>
                                 %td
                                     %span.label.label-primary Enum
+                                %td true
+                            %tr
+                                %td
+                                    %code colors
+                                %td
+                                    Auto assign a unique color to each player, works for up to 10 players and then colors repeat.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
 
                 :markdown
                     Example
