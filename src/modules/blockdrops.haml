@@ -71,6 +71,15 @@
                                 %td
                             %tr
                                 %td
+                                    %code kit
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The kit to give players when this rule applies.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit ID
+                                %td
+                            %tr
+                                %td
                                     %code experience
                                 %td
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
@@ -145,6 +154,16 @@
                                     The region this rule applies to.
                                 %td
                                     %a{:href => "/modules/regions"} Regions
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kit>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The kit to give players when this rule applies.
+                                %td
+                                    %a{:href => "/modules/kits"} Kits
                                 %td
                             %tr
                                 %td
@@ -289,7 +308,7 @@
                 %div.collapse{:id => "collapse-simple-example"}
                     :markdown
                             <block-drops>
-                                <!-- Emerald ore blocks drop ore instead of emerald items,
+                                <!-- Emerald ore blocks drop ore instead of emerald items, -->
                                 <!-- with a 50% chance of also dropping a stone block. -->
                                 <rule>
                                     <filter>
@@ -299,6 +318,15 @@
                                         <item material="emerald ore"/>
                                         <item chance="0.5" material="stone"/>
                                     </drops>
+                                </rule>
+                            </block-drops>
+
+                            <block-drops>
+                                <!-- When a chest is broken give the player the 'chest-kit'. -->
+                                <rule kit="chest-kit">
+                                    <filter>
+                                        <material>chest</material>
+                                    </filter>
                                 </rule>
                             </block-drops>
 
