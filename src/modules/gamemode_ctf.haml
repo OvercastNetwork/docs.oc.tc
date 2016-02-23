@@ -225,6 +225,15 @@
                                 %td
                             %tr
                                 %td
+                                    %code drop-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
+                                    Filter if the flag can be dropped at the current location.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                            %tr
+                                %td
                                     %code capture-filter
                                 %td
                                     %span.label.label-default{:title => "Can be this attribute or a sub-element."} Property
@@ -349,6 +358,16 @@
                                     Filter who can pickup the flag.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<drop-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
+                                    Filter if the flag can be dropped at the current location.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
                             %tr
                                 %td
                                     %pre
