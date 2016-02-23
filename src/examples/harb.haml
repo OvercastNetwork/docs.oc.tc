@@ -26,8 +26,9 @@
                     This map has 2 major authors specified and no contributors.
 
                         <authors>
-                            <author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8"/> <!--  Plastix  -->
                             <author uuid="1379cb6e-f291-4498-9807-e636f9674ac0"/> <!--  SH4D0W_HAWK  -->
+                            <author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8"/> <!--  Plastix  -->
+                            
                         </authors>
 
                     <br/>
@@ -35,8 +36,8 @@
                     Define two teams, their [colors](/reference/formatting#chatColors) and names.
 
                         <teams>
-                            <team id="blue-team" color="blue" max="50">Blue Team</team>
-                            <team id="red-team" color="dark red" max="50">Red Team</team>
+                            <team id="blue-team" color="blue" max="40">Blue Team</team>
+                            <team id="red-team" color="dark red" max="40">Red Team</team>
                         </teams>
 
                     <br/>
@@ -177,7 +178,7 @@
                     Give players a golden apple every time they kill an enemy.
 
                         <killreward>
-                            <item material="golden apple"/>
+                            <item>golden apple</item>
                         </killreward>
 
                     <br/>
@@ -186,16 +187,19 @@
 
                         <tnt>
                             <instantignite>on</instantignite>
+                            <licensing>off</licensing>
+                            <friendly-defuse>off</friendly-defuse>
                             <blockdamage>off</blockdamage>
                         </tnt>
+                    <maxbuildheight>69</maxbuildheight>
 
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/disabledamage)
                     Disable damage from TNT placed by teammates.
 
                         <disabledamage>
-                            <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
-                        </disabledamage>
+                           <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
+            </disabledamage>
 
                     <br/>
                     Close the main `<map>` module.
