@@ -44,7 +44,11 @@
                     Custom filter definition that denies TNT blocks. When applied to a region with `block=""` it denies placing and breaking. To only deny placing apply it with `block-place=""`.
 
                         <filters>
-                            <deny id="no-tnt"><material>TNT</material></deny>
+                                <filter name="no-tnt">
+                        <deny>
+                              <block>tnt</block>
+                        </deny>
+                              </filter>
                         </filters>
 
                     <br/>
@@ -72,17 +76,18 @@
 
                         <kits>
                             <kit id="spawn">
-                                <item slot="0" material="stone sword"/>
-                                <item slot="1" enchantment="arrow infinite:1" material="bow"/>
-                                <item slot="28" amount="1" material="arrow"/>
-                                <item slot="3" amount="64" material="cooked chicken"/>
-                                <item slot="2" amount="2" material="TNT"/>
-                                <item slot="5" amount="32" material="ladder"/>
-                                <item slot="4" amount="3" material="golden apple"/>
-                                <item slot="6" name="TNT Defuser" lore="`7Right click to defuse teammate's TNT" material="shears"/>
-                                <item slot="7" damage="8194" material="potion"/> <!-- potion of swiftness 1 -->
-                                <potion duration="5">heal</potion>
-                                <potion duration="10">damage resistance</potion>
+                                <item slot="0">stone sword</item>
+                                 <item slot="1" enchantment="arrow infinite:1">bow</item>
+                                 <item slot="28" amount="1">arrow</item>
+                                 <item slot="3" amount="64">cooked chicken</item>
+                                 <item slot="2" amount="2">TNT</item>
+                                 <item slot="5" amount="32">ladder</item>
+                                 <item slot="4" amount="3">golden apple</item>
+                                 <item slot="6" name="TNT Defuser" lore="`7Right click to defuse teammate's TNT">shears</item>
+                                 <item slot="7" damage="8194">potion</item>
+                                 <!--  potion of swiftness 1  -->
+                                 <potion duration="5">heal</potion>
+                                 <potion duration="10">damage resistance</potion>
                             </kit>
                             <kit id="red" parents="spawn">
                                 <helmet color="cd0000" unbreakable="true" material="leather helmet"/>
