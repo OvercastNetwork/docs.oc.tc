@@ -1,6 +1,6 @@
 ### PGM XML Documentation
 
-Website source for docs.oc.tc. Uses the ruby on rails staticmatic gem to build a static documentation website.
+Website source for docs.oc.tc. Uses the ruby staticmatic gem to build a static documentation website.
 
 
 #### Editing
@@ -23,7 +23,8 @@ Pull requests should have the following things:
 
 #### Previewing your changes
 
-1. Install ruby, ruby on rails and bundler
+1. Install ruby ([Mac](https://gorails.com/setup/osx/10.11-el-capitan), Windows, [Ubuntu](https://gorails.com/setup/ubuntu/15.10)) (we don't need rails, so just install ruby)
+2. Install the [bundler](http://bundler.io) gem.
 2. Run `bundle install` from the source root.
 3. Run `staticmatic preview` or `bundle exec staticmatic preview`
 4. Load `localhost:4000` in your browser.
