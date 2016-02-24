@@ -15,7 +15,8 @@
 
                     The soft player limit for each team is set with the `max=""` attribute and the hard limit with `max-overfill`. If max overfill is not explicitly defined the default will be set to 25% over the maximum team size. Players will not be able to join teams once the max overfill team size is reached.
 
-                    A teams `plural` attribute specifies if the team name is plural e.g. "Attackers"; PGM will use this to pick appropriate win messages, etc. The `show-name-tags` attribute specifies who can see player name tags, this only applies to players, observers will always see all name tags.
+                    The team's name is specified inside the `<team>` element. The name should be kept as short as possible and not contain "Team", for example, "Azure" and not "Azure Team".
+                    A team's `plural` attribute specifies if the team name is plural, e.g. "Attackers"; PGM will use this to pick appropriate win messages, etc. The `show-name-tags` attribute specifies who can see player name tags, this only applies to players, observers will always see all name tags.
 
                     It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
 
@@ -65,7 +66,7 @@
                             %tr
                                 %td
                                     %code color
-                                %td The teams display color.
+                                %td The team's display color.
                                 %td
                                     %a{:href => "/reference/formatting#chatColors"} Chat Color Name
                             %tr
@@ -122,8 +123,8 @@
                 :markdown
 
                         <teams>
-                           <team id="red-team" color="dark red" max="50" max-overfill="70">Red Team</team>
-                           <team id="blue-team" color="blue" max="50" max-overfill="70">Blue Team</team>
+                           <team id="red-team" color="dark red" max="50" max-overfill="70">Red</team>
+                           <team id="blue-team" color="blue" max="50" max-overfill="70">Blue</team>
                         </teams>
 
                     The total maximum number of players in the example given above is 100, however, the max overfill will allow up to 140 players. Servers currently have a player limit of 150, so 100 players in total would allow 50 observers, or 10 observers if teams are at max overfill.

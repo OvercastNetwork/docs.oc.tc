@@ -40,23 +40,23 @@
                         %span.icon-bar
                 %nav.collapse.navbar-collapse.navbar-main-collapse
                     %ul.nav.navbar-nav.navbar-right
-                        %li{:class => (current_page.include?("index") ? "active" : "")}
+                        %li{:class => (current_page.include?("src/index.haml") ? "active" : "")}
                             %a{:href => "/"}
                                 %i.fa.fa-home
                                 Home
-                        %li{:class => (current_page.include?("modules") ? "active" : "")}
+                        %li{:class => (current_page.include?("src/modules") ? "active" : "")}
                             %a{:href => "/modules/main"}
                                 %i.fa.fa-th-large
                                 Modules
-                        %li{:class => (current_page.include?("reference") ? "active" : "")}
+                        %li{:class => (current_page.include?("src/reference") ? "active" : "")}
                             %a{:href => "/reference/inventory"}
                                 %i.fa.fa-book
                                 Reference
-                        %li{:class => (current_page.include?("guides") ? "active" : "")}
+                        %li{:class => (current_page.include?("src/guides") ? "active" : "")}
                             %a{:href => "/guides/packaging/cleaning_files"}
                                 %i.fa.fa-clipboard
                                 Guides
-                        %li{:class => (current_page.include?("examples") ? "active" : "")}
+                        %li{:class => (current_page.include?("src/examples") ? "active" : "")}
                             %a{:href => "/examples"}
                                 %i.fa.fa-file-text
                                 Examples
