@@ -6,7 +6,10 @@
         - @sidebar_nav_content.each_with_index do |item, index|
             - if item.kind_of?(Hash)
                 %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                    %a{:href => "#{item['path']}"} #{item['name']}
+                    %a{:href => "#{item['path']}"}
+                        - if item['icon']
+                            %i.fa.fa-fw{:class => "#{item['icon']}"}
+                        = item['name']
             - elsif item.kind_of?(String)
                 - if index != 0
                     %li.divider
@@ -17,7 +20,10 @@
         - @sidebar_nav_content.each do |item|
             - if item.kind_of?(Hash)
                 %li{:class => (current_page.include?("#{item['path']}") ? "active" : "")}
-                    %a{:href => "#{item['path']}"} #{item['name']}
+                    %a{:href => "#{item['path']}"}
+                        - if item['icon']
+                            %i.fa.fa-fw{:class => "#{item['icon']}"}
+                        = item['name']
             - elsif item.kind_of?(String)
                 %li
                     %h4 #{item}
