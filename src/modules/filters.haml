@@ -28,15 +28,6 @@
                 :markdown
                     Filters are used to filter player, block, spawn and world events in regions. On their own filters do nothing, they have to be applied to regions or used in other modules to do something. Filters return one of three possible states for query and these results can be modified with filter matchers. All filters can have a `id` attribute to reference them in other parts of the XML. Groups of filters are combined with each other using [filter modifiers](#filterModifiers) to narrow the filters query.
 
-                    ##### Filter States
-
-                    * `ALLOW` The filter specifically allows the query.
-                    * `DENY` The filter specifically denies the query.
-                    * `ABSTAIN` None of the filters queried have any opinion on the subject.
-
-                    Abstain is usually interpreted as allow, this means that if the filter doesn't explicitly deny the query it will be allowed.
-
-
                         <filters>
                             <any id="filter-name">
                                 <!-- Filter elements -->
@@ -47,7 +38,39 @@
                             <!-- More filters-->
                         </filters>
 
+
+                    When a filter gets queried it returns one of three states depending on if the action or event should be denied, allowed, or the filter doesn't care.
+                    This is important when checking multiple filters, such as when using [filter apply rules](/modules/regions#applying).
+                    If allow or deny is returned no further `<apply>`'s will be checked and the event/action will be allowed/denied.
+                    However, if abstain is returned subsequent filters will also be checked until one of them allows/denies or there are no more filters to check.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Filter States
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %code ALLOW
+                                %td
+                                    The filter specifically allows the action or event.
+                            %tr
+                                %td
+                                    %code DENY
+                                %td
+                                    The filter specifically denies the action or event.
+                            %tr
+                                %td
+                                    %code ABSTAIN
+                                %td
+                                    The filter doesn't care if the action or event is denied or allowed.
+
                 :markdown
+                    Abstain is usually interpreted as allow, this means that if the filter doesn't explicitly deny the query it will be allowed.
+
+
                     <br/>
                     ### [Filter Matcher Elements](id:list)
                     Filters use matcher elements to do things such as blocking all player access and then allowing a certain team access.
@@ -598,7 +621,7 @@
                     <br/>
                     #### [Structural Load Filters](id:structuralLoadFilters)
                     The structural load filter checks the number of gravity blocks that are attached to the queried block.
-                    It returns allow as long as the structural load is greater than or equal to the specified value and deny otherwise.
+                    It returns `ALLOW` as long as the structural load is greater than or equal to the specified value and `DENY` otherwise.
 
                     <span class="label label-warning">Warning</span> This filter is very computationally expensive to apply, XML authors should ensure that it is only run when absolutely necessary, e.g. by placing other filters above it. They should also not apply it to events that modify large amounts of blocks, such as explosions.
 
