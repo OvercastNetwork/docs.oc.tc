@@ -108,7 +108,7 @@
                                     %code both
                             %tr
                                 %td
-                                    %code potion
+                                    %code effects
                                 %td The potion effects to apply to players hit by this projectile.
                                 %td
                                     %a{:href => "/modules/potions"} Potion Effect
@@ -149,6 +149,13 @@
                                     Filter if/what blocks get destroyed when hit with this projectile.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<effect>')
+                                %td A potion effect to apply to players hit by this projectile.
+                                %td
+                                    %a{:href => "/modules/potions"} Potion Effect
 
                 :markdown
                         <!-- Create the projectile "template" -->
@@ -215,9 +222,9 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<potion> </potion>')
+                                        %code= html_escape('<effect> </effect>')
                                 %td
-                                    The potion effects to apply to players hit by the bow projectile.
+                                    A potion effect to apply to players hit by the bow projectile.
                                 %td
                                     %a{:href => "/modules/potions"} Potion Effect
 
@@ -229,11 +236,11 @@
                             <velocityMod>2.5</velocityMod>
 
                             <!-- Projectile potion effect -->
-                            <potion duration="5" amplifier="1">poison</potion>
+                            <effect duration="5" amplifier="1">poison</effect>
                         </modifybowprojectile>
 
                         <modifybowprojectile>
-                            <potion duration="8" amplifier="1">wither</potion>
+                            <effect duration="8" amplifier="1">wither</effect>
                         </modifybowprojectile>
 
 

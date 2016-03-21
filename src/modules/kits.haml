@@ -9,7 +9,7 @@
             - {"path" => "#itemArmor", "name" => "Item & Armor"},\
             - {"path" => "#game-mode", "name" => "Game-mode"},\
             - {"path" => "#healthHunger", "name" => "Health & Hunger"},\
-            - {"path" => "#potionEffect", "name" => "Potions"},\
+            - {"path" => "#potionEffect", "name" => "Potion Effects"},\
             - {"path" => "#attributes", "name" => "Attribute Modifiers"},\
             - {"path" => "#walkSpeed", "name" => "Walk Speed"},\
             - {"path" => "#knockback", "name" => "Knockback Reduction"},\
@@ -123,7 +123,7 @@
                             <kit id="spawn" force="true">
                                 <item slot="0" material ="iron sword"/>
                                 <item slot="8" amount="32" material="bread"/>
-                                <potion duration="5" amplifier="1">heal</potion>
+                                <effect duration="5" amplifier="1">instant_health</effect>
                             </kit>
                             <kit id="red" parents="spawn">
                                 <helmet color="cd0000" material="leather helmet"/>
@@ -135,7 +135,7 @@
 
                     In the example above players from blue team will get a blue helmet,
                     players from red team will get a red helmet; both teams will get the items from the spawn kit.
-                    The spawn kit contains a 5 second healing [potion effect](/reference/potion_effects) to help prevent spawn killing.
+                    The spawn kit contains a 5 second healing potion to help prevent spawn killing.
 
                     <br/>
                     ### [Item & Armor Kits](id:itemArmor)
@@ -256,12 +256,12 @@
                     <br/>
 
 
-                    ### [Potion Kits (removable)](id:potionEffect)
+                    ### [Potion Effect Kits (removable)](id:potionEffect)
 
                     Potion effects can be applied and removed with a kit. See [Potion Effects](/modules/potions) for details.
 
                         <kit>
-                            <potion duration="10" amplifier="4">damage resistance</potion>
+                            <effect duration="10" amplifier="4">resistance</effect>
                         </kit>
 
 

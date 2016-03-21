@@ -10,15 +10,14 @@
                 .page-header
                     %h1= @page_sub_title = "Potion Effects"
                 :markdown
-                    To give players potion effects use the `<potion>` module in a kit and apply it to players when they spawn or enter a region.
-                    Potion effects will be applied directly to the player. Duration specifies how long the potion will last in seconds and
-                    amplifier determines what level / how strong the potion is. The potion type can be specified using either
-                    [Minecraft effect names](http://minecraft.gamepedia.com/Data_values#Status_effects) or
-                    [Bukkit potion names](/reference/potion_effects).
+                    To give players potion effects use the `<effect>` element in a kit and apply it to players when they spawn or enter a region.
+                    Potion effects will be applied directly to the player. Duration specifies how long the potion will last,
+                    and amplifier determines what level / how strong the potion is.
+                    The effect type can is specified by its [Minecraft ID](http://minecraft.gamepedia.com/Data_values#Status_effects).
 
-                    To give a custom potion item to the player use the [items](/modules/items#potions) element and its `<potions>` sub-element.
+                    To give a custom potion item to the player use the [item](/modules/items#potions) element and its `<effect>` sub-element.
 
-                %h5 Potion Element
+                %h5 Effect Element
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -30,14 +29,12 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<potion> </potion>')
+                                        %code= html_escape('<effect> </effect>')
                                 %td
-                                    :markdown
-                                        [Minecraft effect name](http://minecraft.gamepedia.com/Data_values#Status_effects) or
-                                        [Bukkit potion name](/reference/potion_effects)
+                                    A potion effect
                                 %td
-                                    %a{:href => "/reference/potion_effects"} Effect
-                %h5 Potion Attributes
+                                    %a{:href => "http://minecraft.gamepedia.com/Data_values#Status_effects"} Status Effect ID
+                %h5 Effect Attributes
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -68,5 +65,5 @@
                                 %td 1
                 %h5 Example
                 :markdown
-                        <potion duration="10" amplifier="4">damage resistance</potion>
-                        <potion duration="900" amplifier="1">jump_boost</potion>
+                        <effect duration="10" amplifier="4">resistance</effect>
+                        <effect duration="900" amplifier="1">jump_boost</effect>

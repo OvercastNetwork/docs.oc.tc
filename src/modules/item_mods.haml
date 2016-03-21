@@ -147,10 +147,10 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<potion> </potion>')
-                                %td A potion item's potion effects, only applies for potion items.
+                                        %code= html_escape('<effect> </effect>')
+                                %td A custom potion effect, only applies for potion items.
                                 %td
-                                    %a{:href => "/modules/items#potions"} Potion Effects
+                                    %a{:href => "/modules/potions"} Potion Effect
                             %tr
                                 %td
                                     %pre
@@ -214,6 +214,16 @@
                                     %i Only applies to leather armor items.
                                 %td
                                     %span.label.label-primary Hex Color
+                                %td
+                            %tr
+                                %td
+                                    %code potion
+                                %td
+                                    Potion type
+                                    %br
+                                    %i Only applies to potion items.
+                                %td
+                                    %a{href: "http://minecraft.gamepedia.com/Potion#Data_values"} Potion ID
                                 %td
                             %tr
                                 %td

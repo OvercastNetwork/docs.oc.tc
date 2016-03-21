@@ -63,7 +63,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<potion> </potion>')
+                                        %code= html_escape('<effect> </effect>')
                                 %td
                                     %a{:href => "#potions"} Potion Effect
                                     (only works on potion items)
@@ -407,17 +407,61 @@
                         <helmet color="cd0000" material="leather helmet"/>
 
                     <br/>
-                    ### [Custom Potions](id:potions)
-                    Any number of custom potion effects can be added to an item in the same way they are added to kits.
+                    ### [Potions](id:potions)
+
+                    Potion items (including lingering and splash potions) can specify their potion type, and any number of custom effects.
+                    The potion type determines the name and color of the item.
+                    It also determines the default effects of the potion.
+                    However, if any custom effects are present, they will completely replace the default effects.
+
                     See [Potion Effects](/modules/potions) for details.
 
-                    This only works on the "potion" item. The potion's damage value determines its color and whether or not it is a splash potion.
-                    See [Minecraft wiki - Potions](http://www.minecraftwiki.net/wiki/Potions) for details.
+                    Also see [Minecraft wiki - Potion](http://www.minecraftwiki.net/wiki/Potions)
+                    and [Minecraft wiki - Status Effect](http://minecraft.gamepedia.com/Status_effect)
+
+                %h5 Potion Item Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code potion
+                                %td
+                                    Potion type
+                                %td
+                                    %a{href: "http://minecraft.gamepedia.com/Potion#Data_values"} Potion ID
+                                %td
+                                    %code minecraft:empty
+
+                %h5 Potion Item Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<effect>')
+                                %td
+                                    Custom effect
+                                %td
+                                    %a{:href => "/modules/potions"} Potion Effect
 
                 :markdown
 
-                        <item slot="1" material="potion" damage="8227">
-                            <potion duration="15m">fire resistance</potion>
+                        <item slot="0" material="lingering potion" potion="strong_harming"/>
+                        <item slot="1" material="potion" potion="fire_resistance">
+                            <effect duration="15m">fire_resistance</potion>
                         </item>
 
                     <br/>
