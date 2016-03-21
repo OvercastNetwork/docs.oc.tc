@@ -625,6 +625,9 @@
                     Attribute modifiers can be applied to items in the same way they are applied to kits.
                     See [Attribute Kits](/modules/kits#attributes) for details.
 
+                    Additionally, a `slot` can be specified, in which case the modifier will only be applied
+                    when the item is in that slot. This must be an [armor or hand slot](/reference/inventory).
+
                     Examples
 
                         <chestplate material="chainmail chestplate">
@@ -632,7 +635,7 @@
                         </chestplate>
 
                         <item material="diamond spade">
-                            <attribute operation="multiply" amount="2">generic.movementSpeed</attribute>
+                            <attribute slot="weapon.mainhand" operation="multiply" amount="2">generic.movementSpeed</attribute>
                         </item>
 
                     `NOTE:` Negative attribute values are allowed; however sometimes they don't work as expected.
