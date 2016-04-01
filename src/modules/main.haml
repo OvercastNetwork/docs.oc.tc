@@ -50,7 +50,7 @@
                                     %span.label.label-danger Required
                                     The maps XML protocol version.
                                 %td
-                                    %code #{$map_proto}
+                                    %code #{MapProto()}
                                 %td
                             %tr
                                 %td
@@ -180,7 +180,7 @@
                 :markdown
 
                         <?xml version="1.0"?>
-                        <map proto="#{$map_proto}">
+                        <map proto="#{MapProto()}">
                         <name>Map Name</name>
                         <version>1.0.0</version>
                         <objective>Short description about the maps objective.</objective>

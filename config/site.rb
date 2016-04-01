@@ -3,6 +3,7 @@
 # require 'slim'
 # require 'coffee-script'
 require 'securerandom'
+require File.expand_path '../src/_haml_helpers.rb', __FILE__
 
 configuration.preview_server_port = 4000
 configuration.default_template_engine = :haml
