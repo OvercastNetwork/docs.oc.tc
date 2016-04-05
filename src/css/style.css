@@ -276,3 +276,9 @@ ul.changelog .label {
         white-space: pre;
     }
 }
+
+
+/* Material table styling */
+#blocks #dataTable tr td.data {
+    text-align: right;
+}
