@@ -8,7 +8,7 @@
                 .page-header
                     %h1= @page_sub_title = "Formatting Codes"
                 :markdown
-                    Text formatting codes are used to create fancy colorized text, they are prefixed with a grave symbol <code>\`</code>. After using a formatting code such as ``o` (italic) it has to be reset, otherwise it will continue until the end of the text.
+                    Text formatting codes are used to create fancy colorized text, they are prefixed with a grave symbol <code>\`</code>. After using a formatting code such as <code>`o</code> (italic) it has to be reset, otherwise it will continue until the end of the text.
 
                     <div class="alert alert-info alert-small">Some older maps may use the depreciated § section symbol to specify formatting codes. This symbol should not be used in new map files.</div>
 
@@ -27,70 +27,64 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th ID
+                                %th{:style => "width: 40px;"} ID
+                                %th Color Name
+                                %th{:style => "width: 40px;"} ID
                                 %th Color Name
                         %tbody
                             %tr
                                 %td
                                     %code 0
                                 %td BLACK
-                            %tr
-                                %td
-                                    %code 1
-                                %td DARK_BLUE
-                            %tr
-                                %td
-                                    %code 2
-                                %td DARK_GREEN
-                            %tr
-                                %td
-                                    %code 3
-                                %td DARK_AQUA
-                            %tr
-                                %td
-                                    %code 4
-                                %td DARK_RED
-                            %tr
-                                %td
-                                    %code 5
-                                %td DARK_PURPLE
-                            %tr
-                                %td
-                                    %code 6
-                                %td GOLD
-                            %tr
-                                %td
-                                    %code 7
-                                %td GRAY
-                            %tr
                                 %td
                                     %code 8
                                 %td DARK_GRAY
                             %tr
                                 %td
+                                    %code 1
+                                %td DARK_BLUE
+                                %td
                                     %code 9
                                 %td BLUE
                             %tr
+                                %td
+                                    %code 2
+                                %td DARK_GREEN
                                 %td
                                     %code a
                                 %td GREEN
                             %tr
                                 %td
+                                    %code 3
+                                %td DARK_AQUA
+                                %td
                                     %code b
                                 %td AQUA
                             %tr
+                                %td
+                                    %code 4
+                                %td DARK_RED
                                 %td
                                     %code c
                                 %td RED
                             %tr
                                 %td
+                                    %code 5
+                                %td DARK_PURPLE
+                                %td
                                     %code d
                                 %td LIGHT_PURPLE
                             %tr
                                 %td
+                                    %code 6
+                                %td GOLD
+                                %td
                                     %code e
                                 %td YELLOW
                             %tr
+                                %td
+                                    %code 7
+                                %td GRAY
                                 %td
                                     %code f
                                 %td WHITE
@@ -101,7 +95,7 @@
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th ID
+                                %th{:style => "width: 40px;"} ID
                                 %th Function
                         %tbody
                             %tr

@@ -15,7 +15,6 @@
                     `NOTE:`  PGM allows enchantments to be applied to any item regardless if the enchant was intended for it or not.
 
                 %br
-                %h5 Armor Enchantments
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
@@ -25,6 +24,8 @@
                                 %th Minecraft Name
                                 %th Description
                         %tbody
+                            %tr
+                                %th{:colspan => "4"} Armor Enchantments
                             %tr
                                 %td
                                     0
@@ -97,6 +98,14 @@
                                 %td
                                     %code depth_strider
                                 %td Increases the speed at which a player may move underwater.
+                            %tr
+                                %td
+                                    9
+                                %td
+                                    %code FROST_WALKER
+                                %td
+                                    %code frost_walker
+                                %td Create frost blocks when walking over water.
                             %tr
                                 %th{:colspan => "4"} Tool Enchantments
                             %tr
@@ -249,6 +258,16 @@
                                 %td
                                     %code lure
                                 %td Increases rate of fish biting your hook.
+                            %tr
+                                %th{:colspan => "4"} Item Enchantments
+                            %tr
+                                %td
+                                    70
+                                %td
+                                    %code MENDING
+                                %td
+                                    %code mending
+                                %td Repair the item using experience orbs.
 
                 :markdown
                     Copied from: [bukkit docs - Enchantments](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html)
