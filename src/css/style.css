@@ -41,13 +41,7 @@ h6,
 /* - Tweak navbar item hover and focus colors */
 .navbar .navbar-nav > li:not(.active) > a:hover,
 .navbar .navbar-nav > li:not(.active) > a:focus {
-    color: #555555;
-    background-color: #f2f2f2;
-    background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #ebebeb 100%);
-    background-image: linear-gradient(to bottom, #f2f2f2 0%, #ebebeb 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffebebeb', GradientType=0);
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-color: #E5E5E5
 }
 
 /* Jumbotron */
@@ -192,7 +186,7 @@ td pre code {
 .docs-nav-pills > li > a {
     position: relative;
     display: block;
-    padding: 3px 15px;
+    padding: 3px 10px;
 }
 
 .docs-nav-pills h4 {
@@ -201,47 +195,7 @@ td pre code {
     padding: 8px 0px;
 }
 
-
-/* Danger table rows */
-/* - Change the rows border color to red instead of the default gray
-   - Remove the table head border and assign it to the top body row to allow customization of the color
-   - Add a slightly darker odd row color for striped tables */
-.table>thead>tr>td.danger, .table>tbody>tr>td.danger, .table>tfoot>tr>td.danger,
-.table>thead>tr>th.danger, .table>tbody>tr>th.danger, .table>tfoot>tr>th.danger,
-.table>thead>tr.danger>td, .table>tbody>tr.danger>td, .table>tfoot>tr.danger>td,
-.table>thead>tr.danger>th, .table>tbody>tr.danger>th, .table>tfoot>tr.danger>th {
-    border-bottom: 1px solid #E1AEAD !important;
-    border-top: 1px solid #E1AEAD !important;
-}
-
-.table>thead>tr:last-child>td.danger, .table>tbody>tr:last-child>td.danger, .table>tfoot>tr:last-child>td.danger,
-.table>thead>tr:last-child>th.danger, .table>tbody>tr:last-child>th.danger, .table>tfoot>tr:last-child>th.danger,
-.table>thead>tr:last-child.danger>td, .table>tbody>tr:last-child.danger>td, .table>tfoot>tr:last-child.danger>td,
-.table>thead>tr:last-child.danger>th, .table>tbody>tr:last-child.danger>th, .table>tfoot>tr:last-child.danger>th {
-    border-bottom: none !important;
-}
-
-.table>thead>tr:first-child>td.danger, .table>tbody>tr:first-child>td.danger, .table>tfoot>tr:first-child>td.danger,
-.table>thead>tr:first-child>th.danger, .table>tbody>tr:first-child>th.danger, .table>tfoot>tr:first-child>th.danger,
-.table>thead>tr:first-child.danger>td, .table>tbody>tr:first-child.danger>td, .table>tfoot>tr:first-child.danger>td,
-.table>thead>tr:first-child.danger>th, .table>tbody>tr:first-child.danger>th, .table>tfoot>tr:first-child.danger>th {
-    border-top: 2px solid #E1AEAD !important;
-}
-
-.table>thead>tr:first-child>th, .table>tbody>tr:first-child>th, .table>tfoot>tr:first-child>th, .table>thead>tr:first-child>td,
-.table>tbody>tr:first-child>td, .table>tfoot>tr:first-child>td {
-    border-top: 2px solid #ddd;
-}
-
-.table>thead>tr>th {
-    border-bottom: none;
-}
-
-.table-striped>tbody>tr.danger:nth-child(odd)>td, .table-striped>tbody>tr.danger:nth-child(odd)>th,
-.table-striped>tbody>tr:nth-child(odd)>td.danger, .table-striped>tbody>tr:nth-child(odd)>th.danger {
-    background-color:#f0d5d5 !important;
-}
-
+/* Bottom border on tables */
 .table-striped>tbody {
     border-bottom: 1px solid #ddd;
 }
@@ -260,11 +214,6 @@ a.btn-more:before {
 /* Elements with this attribute will show a scrollbar if they overflow their parent */
 .scroll {
     overflow: auto;
-}
-
-/* Remove the gradient background from wells introduced by the custom bootstrap stylesheet */
-.well {
-    background-image: none !important;
 }
 
 /* Changelog list styling */
