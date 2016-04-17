@@ -153,9 +153,35 @@ td pre code {
     margin-bottom: 20px;
 }
 
+
+/* Custom alert styles */
 .alert.alert-small {
     padding: 5px 7px 4px 7px;
 }
+
+.alert .fa.fa-2x {
+    margin: 5px;
+    float: left;
+}
+
+.alert .alert-content {
+    margin: 0px;
+    padding-left: 48px;
+}
+
+.alert-success p a {
+    color: #2b542c
+}
+.alert-info p a {
+    color: #245269
+}
+.alert-warning p a {
+    color: #66512c
+}
+.alert-danger p a {
+    color: #843534
+}
+
 
 /* Sidebar navigation */
 .subnav-btn {

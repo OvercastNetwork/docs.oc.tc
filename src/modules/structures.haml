@@ -9,31 +9,37 @@
             .col-sm-9
                 .page-header
                     %h1= @page_sub_title = "Structures"
-                    %p
-                        Structures are sets of blocks that can be dynamically copied into the world in response to match events.
-                        The original structure is built into the map by the mapmaker, and defined in XML with regions.
-                        When the match loads, the original structures are cleared from the world and saved.
-                    %p
-                        Structures are brought to life by something called a
-                        %em dynamic.
-                        This is an XML construct that causes a structure to appear at a specified location in reaction to a given
-                        %a{:href => "/modules/filters"} filter.
-                        Whenever the filter is in a passing state (when it has a value of
-                        %code ALLOW
-                        or
-                        %code ABSTAIN
-                        ), the structure will appear.
-                        When the filter is not passing, (when its value is
-                        %code DENY
-                        ), the structure will disappear.
-                    %p
-                        Structures are a very powerful feature that can be used to implement an endless variety of custom game mechanics.
-                    %p
-                        %strong
+                %p
+                    Structures are sets of blocks that can be dynamically copied into the world in response to match events.
+                    The original structure is built into the map by the mapmaker, and defined in XML with regions.
+                    When the match loads, the original structures are cleared from the world and saved.
+                %p
+                    Structures are brought to life by something called a
+                    %em dynamic.
+                    This is an XML construct that causes a structure to appear at a specified location in reaction to a given
+                    %a{:href => "/modules/filters"} filter.
+                    Whenever the filter is in a passing state (when it has a value of
+                    %code ALLOW
+                    or
+                    %code ABSTAIN
+                    ), the structure will appear.
+                    When the filter is not passing, (when its value is
+                    %code DENY
+                    ), the structure will disappear.
+                %p
+                    Structures are a very powerful feature that can be used to implement an endless variety of custom game mechanics.
+
+                .alert.alert-warning.alert-small
+                    .clearfix
+                        %i.fa.fa-2x.fa-exclamation-triangle
+                        %p.alert-content
                             Currently, only
                             %a{:href => "/modules/filters#objectiveFilter"} objective filters
-                            , time filters, and flag filters can be used with dynamic structures, as well as
+                            , time filters, and
+                            %a{:href => "/modules/filters#flagFilter"} flag filters
+                            can be used with dynamic structures, as well as
                             %a{:href => "/modules/filters#filterModifiers"} filter modifiers.
+                            %br
                             Other filter types may be supported in the future.
 
                 .table-responsive
@@ -84,9 +90,9 @@
                                     %code region
                                 %td
                                     %span.label.label-default{:title => "Can be an attribute or sub-element."} Property
-                                    The region containing the structure.
+                                    A single region containing the structure.
                                 %td
-                                    %a{:href => "/modules/regions"} Region
+                                    %a{:href => "/modules/regions"} Cuboid Region
                                 %td
                             %tr
                                 %td
@@ -207,11 +213,11 @@
                                 </region>
                             </structure>
 
-                            <!-- Define a cylindrical structure called tower, with origin at the cylinder's center -->
+                            <!-- Define a cylindrical structure called tower, using a close fitting cuboid -->
                             <!-- The original structure is built in an area outside the map, around 400,400 -->
                             <structure id="tower" origin="400,64,400">
                                 <region>
-                                    <cylinder base="400,64,400" radius="3" height="12"/>
+                                    <cuboid min="397,64,397" size="6,12,6"/>
                                 </region>
                             </structure>
 
