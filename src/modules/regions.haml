@@ -36,6 +36,7 @@
                         %thead
                             %tr
                                 %th Block Bounded Regions
+                                %th
                             %tr
                         %tbody
                             %tr
@@ -75,6 +76,15 @@
                                     %br
                                     %i Only block bounded when using a finite radius.
                                 %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<point id="abc">X,Y,Z</point>')
+                                    %br
+                                    A single point region located at <code>X,Y,Z</code>.<br/>
+                                    %i This region will always return the same location even when used in a randomized context, e.g., spawns.
+                                %td.text-right
+                                    %span.label.label-primary Randomize-able
                             %tr
                                 %td{:colspan => "2"}
                                     %b Unbounded Regions

@@ -1,0 +1,231 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+            %p.lead Game Settings
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Pickups"
+                :markdown
+                    Pickups are used to create a pickup-able kit at a specific location.
+                    While somewhat similar to a kit applied using a region, pickups are represented by a physical object and have a refresh time.
+
+                    By default an ender crystal entity is used to show the pickup location.
+                    When a player walks into the crystal it gives them a kit and then de-spawns.
+                    The crystal will respawn again at a _random_ location inside the specified region after the set respawn time.
+                    This means that the pickup's region must be randomize-able, e.g. a `<cuboid>`, `<cylinder>`, `<block>` or `<point>`.
+                    A `<point>` region does not return a randomized position but can still be used to specify an exact location for a pickup.
+
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Pickups Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickups> </pickups>')
+                                %td Node containing all the pickups.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickup/>')
+                                %td
+                                    A single pickup.
+                                %td
+                                    %span.label.label-default Pickup Sub-elements
+
+                %h5 Pickup Attributes
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Type
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td
+                                    Unique identifier used to reference this pickup from other places in the XML.
+                                %td
+                                    %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code name
+                                %td The display name of this pickup, shown above the pickup entity if present.
+                                %td
+                                    %span.label.label-primary  Formatted Text
+                                %td
+                            %tr
+                                %td
+                                    %code appearance
+                                %td
+                                    Entity used to show this pickup's location.<br/>
+                                    Currently only accepts <code>ENDER CRYSTAL</code>
+                                %td
+                                    %a{:href=>"/reference/entity_types"} Entity Type
+                                %td
+                                    %span.label.label-default Ender Crystal
+                            %tr
+                                %td
+                                    %code spawn-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter if this pickup is and can be spawned.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                                    %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %code pickup-filter
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter who can pick up the pickup's kit.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                                    %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %code region
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    %span.label.label-danger Required
+                                    Region where the pickup entity is placed into.
+                                %td
+                                    %a{:href => "/modules/regions"} Randomize-able Region
+                                %td
+                            %tr
+                                %td
+                                    %code kit
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    The kit to give to players who pick up this pickup.
+                                %td
+                                    %a{:href => "/modules/kits"} Kit ID
+                                %td
+                            %tr
+                                %td
+                                    %code respawn-time
+                                %td
+                                    Time until the pickup entity is re-spawned after being picked up.
+                                    %br
+                                    If set to zero the entity will not despawn and will simply be refreshed.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td
+                                    3 sec
+                            %tr
+                                %td
+                                    %code pickup-time
+                                %td
+                                    Time until the pickup is refreshed and can be picked up again.
+                                %td
+                                    %a{:href => "/reference/time_periods"} Time Period
+                                %td
+                                    3 sec
+                            %tr
+                                %td
+                                    %code effects
+                                %td
+                                    Show the pickup's particle effects.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code sounds
+                                %td
+                                    Play the pickup's sound effects.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+
+
+                %h5 Pickup Sub-elements
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Element
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<spawn-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter if this pickup is and can be spawned.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
+                                    %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<pickup-filter>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter who can pick up the pickup's kit.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                                %td
+                                    %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<region>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    %span.label.label-danger Required
+                                    Region where this pickup is placed into.
+                                %td
+                                    %a{:href => "/modules/regions"} Randomize-able Regions
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<kit>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    The kit to give to players who pick up this pickup.
+                                %td
+                                    %a{:href => "/modules/kits"} Kits
+                                %td
+
+                :markdown
+                    Examples
+
+                        <pickups>
+                            <pickup id="archer-pickup" name="`3Archery" region="archery-tower" kit="archery-kit" refresh="5m"/>
+                            <pickup id="healing-pickup" name="`4Healing Station" region="heal-station" refresh="1m">
+                                <kit>
+                                    <effect duration="10" amplifier="4">instant_health</effect>
+                                </kit>
+                            </pickup>
+                        </pickups>
+
+                        <pickups>
+                            <pickup id="speed-powerup" region="powerups" kit="speed-kit" refresh="10s"/>
+                            <!-- ... -->
+                            <pickup id="poison-powerdown" region="powerups" kit="poison-kit" refresh="10s"/>
+                        </pickups>
