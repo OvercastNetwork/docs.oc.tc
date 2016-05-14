@@ -10,13 +10,12 @@
                 .page-header
                     %h1= @page_sub_title = "Potion Effects"
                 :markdown
-                    To give players potion effects use the `<effect>` element in a kit and apply it to players when they spawn or enter a region.
-                    Potion effects will be applied directly to the player. Duration specifies how long the potion will last,
-                    and amplifier determines what level / how strong the potion is.
+                    The potion `<effect>` element can be used in a kit to apply potion effects directly to a player,
+                    or used to give a custom effect to a [potion bottle item](/modules/items#potions).
+
+                    Duration specifies how long the potion will last, and amplifier determines what level / how strong the potion is.
                     The effect type is specified by its [Minecraft ID](http://minecraft.gamepedia.com/Data_values#Status_effects).
                     Effect ID's should be specified without their `minecraft:` prefix.
-
-                    To give a custom potion item to the player use the [item](/modules/items#potions) element and its `<effect>` sub-element.
 
                 %h5 Effect Element
                 .table-responsive
