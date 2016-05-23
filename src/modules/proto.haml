@@ -8,6 +8,16 @@
                 .page-header
                     %h1= @page_sub_title = "Protocol Versions"
 
+                %h4 Changes in 1.4.1
+                %ul.changelog
+                    %li
+                        %span.label.label-danger Breaking
+                        :markdown
+                            `<random>` filters now only respond to instantaneous events, and abstain when used in any persistent context.
+                            This breaks some uses that relied on undefined behavior, but these would likely break anyway as filters gain more dynamic functionality.
+
+
+                %br
                 %h4 Changes in 1.4.0
                 %ul.changelog
                     %li

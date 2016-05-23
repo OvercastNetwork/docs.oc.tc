@@ -364,7 +364,24 @@
                     <br/>
                     #### [Random Filter](id:randomFilter)
 
-                    This filter will randomly return either `ALLOW` or `DENY`, the chance for `ALLOW` being determined by its value. It accepts a decimal number between zero and one or a standard mathematical interval such as `[0, 1)`. Intervals are used to create mutual exclusive filters that return different results even if they are called at the same time. This can be used for a one of multiple options behavior, e.g. apply one of multiple kits when a player enters a region or spawns.
+                    This filter will randomly `ALLOW` or `DENY` when evaluated in the context of an event.
+                    Its value is a decimal number between 0 and 1, representing the probability of `ALLOW`.
+
+                    The value can also be an interval, in the form `[0, 1)`.
+                    When the filter is evaluated, a random number is chosen, and the filter passes if the number falls within the filter's interval.
+                    Multiple filters applied to the same object at the same instant will use the same random number.
+                    So, if their intervals do not overlap, the filters will never both pass at the same time.
+                    Using intervals in this way, any number of filters can be made mutually exclusive, or their relationships can be controlled in more complex ways.
+
+                    A random filter can only be applied to instantaneous events, and not to conditions that persist over some span of time.
+                    Specifically, they can be used in the following contexts:
+
+                    * Regional block change rules
+                    * Block drop rules
+                    * Damage rules
+                    * Mob spawning rules
+
+                    In other contexts, random filters will `ABSTAIN`.
 
                     Examples
 
@@ -374,23 +391,6 @@
                         <!-- Also a 50% chance -->
                         <!-- Any number from 0.25 to 0.75 including 0.25 but excluding 0.75 -->
                         <random>[0.25, 0.75)</random>
-
-                %p
-                    %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-random-example", :'data-toggle' => "collapse"} Examples
-                %div.collapse{:id => "collapse-random-example"}
-                    :markdown
-                            <filters>
-                                <!-- Mutual exclusive random filters -->
-                                <random id="erandom-1">[0,0.5)</random>
-                                <random id="erandom-2">[0.5,1)</random>
-                            </filters>
-
-                            <regions>
-                                <!-- Apply mutual exclusive randomly filtered kits -->
-                                <!-- Players will get either kit-1 or kit-2 applied -->
-                                <apply kit="kit-1" filter="erandom-1" region="kit-region"/>
-                                <apply kit="kit-2" filter="erandom-2" region="kit-region"/>
-                            </regions>
 
                 :markdown
                     <br/>
