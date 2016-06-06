@@ -312,7 +312,9 @@
                     <br/>
                     #### [Kill-Streak Filter](id:killStreakFilter)
 
-                    The kill-streak filter is a matcher that matches players who have a specified number of kills since their last re-spawn. This filter is commonly used in [kill rewards](/modules/killreward) but can also be used to restrict access to certain locations, etc.
+                    The kill-streak filter is a matcher that matches players who have a specified number of kills.
+                    The kill counter can be set to count from the start of the match or from the last time the player died.
+                    This filter is commonly used in [kill rewards](/modules/killreward) but can also be used to restrict access to certain locations, etc.
 
                     #####  Kill-Streak Filter Attributes
 
@@ -323,6 +325,7 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
@@ -330,12 +333,14 @@
                                 %td Match players with at-least this many kills.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code max
                                 %td Match players with a maximum of this many kills.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code count
@@ -345,12 +350,21 @@
                                     %i Can not be mixed with the <code>min</code> & <code>max</code> attributes.
                                 %td
                                     %span.label.label-primary Number
+                                %td
                             %tr
                                 %td
                                     %code repeat
                                 %td Repeat the filter range
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
+                            %tr
+                                %td
+                                    %code persistent
+                                %td Do not reset a players kill count when they die.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
                 :markdown
                     Examples
 
