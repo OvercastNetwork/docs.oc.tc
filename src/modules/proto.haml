@@ -15,11 +15,20 @@
                         :markdown
                             `<random>` filters now only respond to instantaneous events, and abstain when used in any persistent context.
                             This breaks some uses that relied on undefined behavior, but these would likely break anyway as filters gain more dynamic functionality.
+
+                    %li
+                        %hr
                     %li
                         %span.label.label-primary Change
                         :markdown
                             As of minecraft 1.9 TNT fuse time is no longer limited to 4 seconds.
 
+                    %li
+                        %hr
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            Added `<observing>` and `<participant>` filters. Also added an `observers` filter property to portals to restrict observer access.
 
                 %br
                 %h4 Changes in 1.4.0

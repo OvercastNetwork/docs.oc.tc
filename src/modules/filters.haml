@@ -175,6 +175,18 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<participating/>')
+                                %td
+                                    Filter if the player is participating in the match.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<observing/>')
+                                %td
+                                    Filter if the player is observing the match.
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<objective>objective_id</objective>')
                                 %td
                                     %a.left-ref-link{:href=>"#objectiveFilter"} <i class="fa fa-chevron-down"></i>

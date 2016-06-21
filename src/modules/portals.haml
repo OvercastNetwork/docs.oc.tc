@@ -89,6 +89,17 @@
                                 %td
                                     %a{:href => "/modules/filters"} Filter
                                 %td
+                                    %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %code observers
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Filter portal observer access.
+                                %td
+                                    %a{:href => "/modules/filters"} Filter
+                                %td
+                                    %code= html_escape('<always/>')
                             %tr
                                 %td
                                     %code sound
@@ -175,6 +186,15 @@
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
                                     Filter portal player access.
+                                %td
+                                    %a{:href => "/modules/filters"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<observers>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Filter portal observer access.
                                 %td
                                     %a{:href => "/modules/filters"} Filters
 
