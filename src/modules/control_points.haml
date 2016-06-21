@@ -156,13 +156,44 @@
                                 %td
                                     %code incremental
                                 %td
+                                    %span.label.label-warning{:title => "This attribute should no longer be used."} Deprecated
                                     Capture progress is retained even if capturing is interrupted.
+                                    %br
+                                    %i Has been replaced with the recovery & decay attributes which allow much more control over progress.
                                 %td
                                     %span.label.label-primary true/false
                                 %td
                                     false
                                 %td
                                     true
+
+                            %tr
+                                %td
+                                    %code recovery
+                                %td
+                                    Capture progress recovery, rate at which progress reverts from players dominating the point.
+                                    %br
+                                    Can not be combined with the <code>incremental</code> attribute.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td
+                                    oo
+                                %td
+                                    1
+                            %tr
+                                %td
+                                    %code decay
+                                %td
+                                    Capture progress decay, rate at which progress reverts while nobody is dominating the point.
+                                    %br
+                                    Can not be combined with the <code>incremental</code> attribute.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td
+                                    oo
+                                %td
+                                    0
+
                             %tr
                                 %td
                                     %code permanent
