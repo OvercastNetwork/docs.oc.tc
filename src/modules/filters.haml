@@ -175,6 +175,26 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<gliding/>')
+                                %td
+                                    Match if the player is gliding with an elytra.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<rank> </rank>')
+                                %td
+                                    %a.left-ref-link{:href=>"#rank_score"} <i class="fa fa-chevron-down"></i>
+                                    Match if the player or team's rank is within the specified range.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<score> </score>')
+                                %td
+                                    %a.left-ref-link{:href=>"#rank_score"} <i class="fa fa-chevron-down"></i>
+                                    Match if the player or team's score is within the specified range.
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<participating/>')
                                 %td
                                     Filter if the player is participating in the match.
@@ -391,7 +411,7 @@
                     #### [Random Filter](id:randomFilter)
 
                     This filter will randomly `ALLOW` or `DENY` when evaluated in the context of an event.
-                    Its value is a decimal number between 0 and 1, representing the probability of `ALLOW`.
+                    Its value is a decimal fraction between 0 and 1, representing the probability of `ALLOW`.
 
                     The value can also be an interval, in the form `[0, 1)`.
                     When the filter is evaluated, a random number is chosen, and the filter passes if the number falls within the filter's interval.
@@ -417,6 +437,23 @@
                         <!-- Also a 50% chance -->
                         <!-- Any number from 0.25 to 0.75 including 0.25 but excluding 0.75 -->
                         <random>[0.25, 0.75)</random>
+
+
+                :markdown
+                    <br/>
+                    #### [Rank & Score Filters](id:rank_score)
+
+                    The rank and score filters match if the team's or player's rank or score is a equal to a single value or within a range of values.<br/>
+                    The value can be an exact amount or a interval specifying a range. Only whole numbers are valid.
+
+                    Examples
+
+                        <!-- Match if the team (or player in ffa) rank is 3 -->
+                        <rank>3</rank>
+
+                        <!-- Match if team (or player in ffa) has a score from 5 to 10. -->
+                        <score>[5-10]</score>
+
 
                 :markdown
                     <br/>
