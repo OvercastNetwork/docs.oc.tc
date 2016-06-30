@@ -117,7 +117,7 @@
                                         %code= html_escape('<result>')
                                 %td
                                     %span.label.label-danger Required
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     The result of this recipe, only one result is allowed per recipe.
                                     %br
                                     Accepts all attributes and sub-elements of a normal kit item.
@@ -162,7 +162,7 @@
                                         %code= html_escape('<shape>')
                                 %td
                                     %span.label.label-danger Required
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     An ingredient used in this recipe.
                                     %br
                                     %i Only one shape per recipe is allowed.
@@ -350,7 +350,7 @@
                                         %code= html_escape('<i>')
                                 %td
                                     %span.label.label-danger Required
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     An ingredient used in this recipe.
                                     %br
                                     A smelt recipe only accepts one ingredient.

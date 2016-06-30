@@ -46,7 +46,7 @@
                                     %pre
                                         %code= html_escape('<default>')
                                 %td
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     The spawn for observers and teams without a spawn.
                                     %br
                                     %i Only one default spawn element is allowed per map.

@@ -52,7 +52,7 @@
                                         %code= html_escape('<match> </match>')
                                 %td
                                     %span.label.label-danger Required
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     The material or materials to modify.
                                 %td
                                     %span.label.label-default Match Sub-Elements
@@ -62,7 +62,7 @@
                                         %code= html_escape('<modify> </modify>')
                                 %td
                                     %span.label.label-danger Required
-                                    %span.label.label-warning Unique
+                                    %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
                                     The attributes to modify on the specified material(s).
                                 %td
                                     %a{:href => "#itemmeta"} Item Meta
