@@ -1,0 +1,32 @@
+Section Kill Reward should be edited to:
+
+Kill Reward
+The kill reward module allows a player to get an item when they kill someone. The parameters are wrapped in a <killreward> block. So far, the only reward available is an <item>.
+
+e.g. This module can be used to give upgrades to players by giving them gold ingots. Then once they have collected enough ingots they can craft armor, etc.
+
+
+Example
+
+<!-- Kill Reward from Rift XML -->
+<killreward>
+    <item amount="2">emerald</item>
+</killreward>
+
+Kill rewards can be filtered by adding a filter tag inside the <killreward> module.
+
+e.g. This option can be used to reward attackers and defenders with different team specific items, which only each team can use.
+
+<!-- Kill Reward from BoomBox XML -->
+<killreward>
+    <filter>
+        <team>defenders</team>
+    </filter>
+    <item amount="8">arrow</item>
+</killreward>
+<killreward>
+    <filter>
+        <team>attackers</team>
+    </filter>
+    <item amount="32">snow ball</item>
+</killreward>
