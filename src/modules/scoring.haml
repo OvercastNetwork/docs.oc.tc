@@ -147,6 +147,15 @@
                                     %a{:href => "/modules/filters"} Filter
                                 %td
                                     %span.label.label-default No Filter
+                            %tr
+                                %td
+                                    %code trigger
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Dynamic conditions under which this score box is applied.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
 
                 %h5 Score Box Sub-elements
                 .table-responsive
@@ -184,6 +193,16 @@
                                     Filter who can score in this box.
                                 %td
                                     %a{:href => "/modules/regions"} Filters
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<trigger>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Dynamic conditions under which this score box is applied.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filters
+                                %td
 
                 :markdown
                     Example
