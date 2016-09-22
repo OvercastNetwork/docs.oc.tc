@@ -75,6 +75,35 @@
                                 %td
                             %tr
                                 %td
+                                    %code give
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Dynamic filter used to apply the kit.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
+                            %tr
+                                %td
+                                    %code take
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Dynamic filter used to remove the kit.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
+                            %tr
+                                %td
+                                    %code lend
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Kit is applied when the dynamic filter returns allow and removed when it is deny.
+                                    %br
+                                    %i Cannot combine <code>lend</code> property with <code>give</code> or <code>take</code>
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
+                            %tr
+                                %td
                                     %code parents
                                 %td The kit's parent or a comma separated list of parent kits.
                                 %td
