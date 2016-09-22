@@ -14,6 +14,8 @@
 
                     The position and direction attributes of a portal are relative to the players location and where they are looking. Prefix these values with an at symbol `@` to specify absolute values. Portals can be restricted to certain teams by defining their filter attribute.
 
+                    Portals respond to any player move event, this allows almost instant teleportation as soon as the player matches the portals filter.
+
                     `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).
 
                 .table-responsive
@@ -68,6 +70,8 @@
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     %span.label.label-danger Required
                                     Region where this portals entrance is located.
+                                    %br
+                                    %i Cannot combine an entrance region with <code>forward</code> or <code>transit</code> properties.
                                 %td
                                     %a{:href => "/modules/regions"} Region
                                 %td
@@ -77,6 +81,8 @@
                                 %td
                                     %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
                                     Destination of the portal, teleports players to a random point inside the region.
+                                    %br
+                                    %i Cannot combine an exit region with <code>reverse</code> or <code>transit</code> properties.
                                 %td
                                     %a{:href => "/modules/regions"} Randomize-able Region
                                 %td
@@ -90,6 +96,35 @@
                                     %a{:href => "/modules/filters"} Filter
                                 %td
                                     %code= html_escape('<always/>')
+                            %tr
+                                %td
+                                    %code forward
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Apply forward transform on rising edge
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
+                            %tr
+                                %td
+                                    %code reverse
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Apply reverse transform on rising edge
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
+                            %tr
+                                %td
+                                    %code transit
+                                %td
+                                    %span.label.label-default{:title => "Can be either this attribute or a sub-element."} Property
+                                    Apply forward transform on rising edge and reverse transform on falling edge
+                                    %br
+                                    %i Cannot combine <code>transit</code> property with <code>forward</code> or <code>reverse</code> properties.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filter
+                                %td
                             %tr
                                 %td
                                     %code observers
@@ -191,6 +226,38 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<forward>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Apply forward transform on rising edge
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filters
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<reverse>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Apply reverse transform on rising edge
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filters
+                                %td
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<transit>')
+                                %td
+                                    %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
+                                    Apply forward transform on rising edge and reverse transform on falling edge
+                                    %br
+                                    %i Cannot combine <code>transit</code> property with <code>forward</code> or <code>reverse</code> properties.
+                                %td
+                                    %a{:href => "/modules/filters"} Dynamic Filters
+                                %td
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<observers>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -213,6 +280,18 @@
                                 <region><cuboid min="56,33,-1" max="57,35,2"/></region>
                             </portal>
                         </portals>
+
+                        <portal yaw="@0" sound="false">
+                            <forward>
+                                <all>
+                                    <filter id="portal-filter"/>
+                                    <region id="portal-region"/>
+                                </all>
+                            </forward >
+                            <destination>
+                                <region id="portal-destination"/>
+                            </destination>
+                        </portal>
 
                 %p
                     %a.btn.btn-primary.btn-xs.btn-more.collapsed{:'data-target' => "#collapse-portal-examples", :'data-toggle' => "collapse"} Examples
