@@ -91,6 +91,7 @@
                                 %td Reference a filter by its ID.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<team>team</team>')
                                 %td Matches a team by its ID.
@@ -146,24 +147,28 @@
                                     Random chance matcher.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<crouching/>')
                                 %td
                                     Match if the player is crouching.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<walking/>')
                                 %td
                                     Match if the player is walking.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<sprinting/>')
                                 %td
                                     Match if the player is sprinting.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<flying/>')
                                 %td
@@ -176,18 +181,21 @@
                                     Match if the player can fly.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<gliding/>')
                                 %td
                                     Match if the player is gliding with an elytra.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<grounded/>')
                                 %td
                                     Match if the player is on the ground.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<rank> </rank>')
                                 %td
@@ -195,6 +203,7 @@
                                     Match if the player or team's rank is within the specified range.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<score> </score>')
                                 %td
@@ -202,18 +211,21 @@
                                     Match if the player or team's score is within the specified range.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<participating/>')
                                 %td
                                     Filter if the player is participating in the match.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<observing/>')
                                 %td
                                     Filter if the player is observing the match.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<players>decimal or range</players>')
                                 %td
@@ -221,18 +233,21 @@
                                     Filter by player count.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<match-started/>')
                                 %td
                                     Filter if the match has started.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<match-running/>')
                                 %td
                                     Filter if the match is running.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<match-finished/>')
                                 %td
@@ -240,6 +255,7 @@
 
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<objective>objective_id</objective>')
                                 %td
@@ -247,6 +263,7 @@
                                     Match completed objectives.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<flag-carried>flag_id</flag-carried>')
                                 %td
@@ -254,6 +271,7 @@
                                     Match if the flag is being carried by anyone.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<flag-dropped>flag_id</flag-dropped>')
                                 %td
@@ -261,6 +279,7 @@
                                     Match if the flag is dropped on the ground.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<flag-returned>flag_id</flag-returned>')
                                 %td
@@ -268,6 +287,7 @@
                                     Match if the flag is at the return-point.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<flag-captured>flag_id</flag-captured>')
                                 %td
@@ -275,6 +295,7 @@
                                     Match if the flag has been captured.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<carrying-flag>flag_id</carrying-flag>')
                                 %td
@@ -324,6 +345,7 @@
                                     Test the number of other gravity blocks that the queried block is supporting.
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<time> </time>')
                                 %td
@@ -365,11 +387,13 @@
                                     %b Static Filters
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<always/>')
                                 %td Always return <code>ALLOW</code>. Can be referenced with the ID: <code>always</code>
                             %tr
                                 %td
+                                    %span.label.label-primary Dynamic
                                     %pre
                                         %code= html_escape('<never/>')
                                 %td Always return <code>DENY</code>. Can be referenced with the ID: <code>never</code>
