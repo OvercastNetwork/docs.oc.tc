@@ -9,6 +9,8 @@
             - {"path" => "#list", "name" => "Filters List"},\
             - {"path" => "#killStreakFilter", "name" => "Kill-Streak Filter"},\
             - {"path" => "#randomFilter", "name" => "Random Filter"},\
+            - {"path" => "#rank_score", "name" => "Rank & Score Filters"},\
+            - {"path" => "#players", "name" => "Players Filter"},\
             - {"path" => "#objectiveFilter", "name" => "Objective Filter"},\
             - {"path" => "#flagFilter", "name" => "Flag Filters"},\
             - {"path" => "#causeFilters", "name" => "Event Cause Filter"},\
@@ -125,7 +127,7 @@
                             %tr
                                 %td
                                     %pre
-                                        %code= html_escape('<kill-streak count="1"/>')
+                                        %code= html_escape('<kill-streak/>')
                                 %td
                                     %a.left-ref-link{:href=>"#killStreakFilter"} <i class="fa fa-chevron-down"></i>
                                     Match players with a certain range or amount of kills.
@@ -181,6 +183,12 @@
                             %tr
                                 %td
                                     %pre
+                                        %code= html_escape('<grounded/>')
+                                %td
+                                    Match if the player is on the ground.
+                            %tr
+                                %td
+                                    %pre
                                         %code= html_escape('<rank> </rank>')
                                 %td
                                     %a.left-ref-link{:href=>"#rank_score"} <i class="fa fa-chevron-down"></i>
@@ -204,6 +212,32 @@
                                         %code= html_escape('<observing/>')
                                 %td
                                     Filter if the player is observing the match.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<players>decimal or range</players>')
+                                %td
+                                    %a.left-ref-link{:href=>"#players"} <i class="fa fa-chevron-down"></i>
+                                    Filter by player count.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<match-started/>')
+                                %td
+                                    Filter if the match has started.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<match-running/>')
+                                %td
+                                    Filter if the match is running.
+                            %tr
+                                %td
+                                    %pre
+                                        %code= html_escape('<match-finished/>')
+                                %td
+                                    Filter if the match is over.
+
                             %tr
                                 %td
                                     %pre
@@ -454,6 +488,48 @@
                         <!-- Match if team (or player in ffa) has a score from 5 to 10. -->
                         <score>[5-10]</score>
 
+
+                :markdown
+                    <br/>
+                    #### [Players Filter](id:players)
+
+                    The players filters matches if the amount of players is a equal to a single value or within a range of values.<br/>
+                    The value can be an exact amount or a interval specifying a range. Only whole numbers are valid.
+
+
+                    #####  Players Filter Attributes
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Attribute
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code participants
+                                %td Include participants (players actually playing) in the count.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td true
+                            %tr
+                                %td
+                                    %code observers
+                                %td Include observers in the count.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
+                :markdown
+                    Examples
+
+                        <!-- Match if there are exactly 4 players -->
+                        <players>4</players>
+
+                        <!-- Match if there are 4 to 8 players currently playing -->
+                        <players>[4-8]</players>
 
                 :markdown
                     <br/>
