@@ -8,6 +8,40 @@
                 .page-header
                     %h1= @page_sub_title = "Protocol Versions"
 
+                %h4 Changes in 1.4.2
+                %ul.changelog
+                    %li
+                        %span.label.label-danger Breaking
+                        :markdown
+                            The objectives filter will now always automatically derive team ownership for the objective from context.
+                            To match an objective without any specific team, the `any="true"` attribute needs to be specified.
+
+                    %li
+                        %hr
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            Portals, kits, score boxes & structures can now be dynamically applied using dynamic filters.
+                            All region types are dynamic, however, only some filter types are dynamic.
+
+                            * Kits now have `give`, `take` & `lend` properties.
+                            * Portals have `forward`, `reverse` & `transit` properties.
+                            * Structures & score boxes have a `trigger` property.
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            Added a player count filter.
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            Added a `<grounded/>` filter to check if the player is standing on the ground.
+                    %li
+                        %span.label.label-success New
+                        :markdown
+                            Added `<match-started/>`, `<match-running/>` & `<match-finished/>` filters that are used to check the state of the current match.
+
+
+                %br
                 %h4 Changes in 1.4.1
                 %ul.changelog
                     %li
