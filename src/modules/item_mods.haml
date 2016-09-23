@@ -21,7 +21,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<item-mods> </item-mods>')
                                 %td The item mods node, containing all the individual modification rules.
                                 %td
@@ -30,7 +30,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<rule> </rule>')
                                 %td
                                     A single item modification rule.
@@ -48,7 +48,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<match> </match>')
                                 %td
                                     %span.label.label-danger Required
@@ -58,7 +58,7 @@
                                     %span.label.label-default Match Sub-Elements
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<modify> </modify>')
                                 %td
                                     %span.label.label-danger Required
@@ -78,20 +78,20 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<material> </material>')
                                 %td An individual material to match.
                                 %td
                                     %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<all-materials/>')
                                 %td Match all materials.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<all-blocks/>')
                                 %td Match all block type materials.
                                 %td
@@ -139,35 +139,35 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<enchantment> </enchantment>')
                                 %td This item's enchantments.
                                 %td
                                     %a{:href => "/modules/items#enchantments"} Enchantments
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<effect> </effect>')
                                 %td A custom potion effect, only applies for potion items.
                                 %td
                                     %a{:href => "/modules/potions"} Potion Effect
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<attribute> </attribute>')
                                 %td Custom attributes for this item.
                                 %td
                                     %a{:href => "/modules/items#attributes"} Attribute Modifiers
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-destroy> </can-destroy>')
                                 %td The materials that can be mined with the item.
                                 %td
                                     %a{:href => "/modules/items#can-destroy"} Can Destroy
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-place-on> </can-place-on>')
                                 %td Materials that the item can be placed on.
                                 %td

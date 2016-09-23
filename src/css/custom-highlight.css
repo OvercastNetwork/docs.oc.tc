@@ -1,35 +1,44 @@
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-.tomorrow-comment, pre .comment, pre .title {
+.tomorrow-comment, pre .comment, pre .title,
+span.highlight .comment, span.highlight .title {
     color: #8e908c;
 }
 
-.tomorrow-aqua, pre .variable, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
+.tomorrow-aqua, pre .variable, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo,
+span.highlight .variable, span.highlight .tag, span.highlight .regexp, span.highlight .ruby .constant, span.highlight .xml .tag .title, span.highlight .xml .doctype, span.highlight .html .doctype, span.highlight .css .id, span.highlight .css .class, span.highlight .css .pseudo {
+
     color: #3e999f;
 }
 
 
-.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant,
+span.highlight .number, span.highlight .span.highlightprocessor, span.highlight .built_in, span.highlight .literal, span.highlight .params, span.highlight .constant {
     color: #f5871f;
 }
 
-.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
+.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute,
+span.highlight .class, span.highlight .ruby .class .title, span.highlight .css .rules .attribute {
+
     color: #eab700;
 }
 
-.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata,
+span.highlight .string, span.highlight .value, span.highlight .inheritance, span.highlight .header, span.highlight .ruby .symbol, span.highlight .xml .cdata {
     color: #718c00;
 }
 
-.tomorrow-red, pre .css .hexcolor {
+.tomorrow-red, pre .css .hexcolor,
+span.highlight .css .hexcolor {
     color: #c82829;
 }
 
-.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title,
-pre .variable, pre .attribute {
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title, pre .variable, pre .attribute,
+span.highlight .function, span.highlight .python .decorator, span.highlight .python .title, span.highlight .ruby .function .title, span.highlight .ruby .title .keyword, span.highlight .perl .sub, span.highlight .javascript .title, span.highlight .coffeescript .title, span.highlight .variable, span.highlight .attribute {
     color: #4271ae;
 }
 
-.tomorrow-purple, pre .keyword, pre .javascript .function, pre .xml .pi {
+.tomorrow-purple, pre .keyword, pre .javascript .function, pre .xml .pi,
+span.highlight .keyword, span.highlight .javascript .function, span.highlight .xml .pi {
     color: #8959a8;
 }
 
@@ -49,3 +58,10 @@ pre .xml .css,
 pre .xml .cdata {
     opacity: 0.5;
 }
+
+span.highlight code {
+    background-color: inherit;
+    color: inherit;
+    white-space: nowrap;
+}
+

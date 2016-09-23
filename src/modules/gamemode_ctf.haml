@@ -35,7 +35,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flags> </flags>')
                                 %td Node containing a group of flags, nets and posts for this match.
                                 %td
@@ -44,7 +44,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag>')
                                 %td
                                     %a.left-ref-link{:href=>"#flags"} <i class="fa fa-chevron-down"></i>
@@ -53,7 +53,7 @@
                                     %span.label.label-default Flag Sub-elements
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<post>X,Y,Z</post>')
                                 %td
                                     %a.left-ref-link{:href=>"#posts"} <i class="fa fa-chevron-down"></i>
@@ -62,7 +62,7 @@
                                     %a{:href => "/modules/regions#pointProviders"} Point Provider
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<net>')
                                 %td
                                     %a.left-ref-link{:href=>"#nets"} <i class="fa fa-chevron-down"></i>
@@ -92,7 +92,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag>')
                                 %td
                                     A single physical flag (banner) in the map.
@@ -334,14 +334,14 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<net>')
                                 %td
                                     A net where only this flag can be captured, flags accept multiple net sub-elements.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<post>X,Y,Z</post>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -351,7 +351,7 @@
                                     %a{:href => "/modules/regions#pointProviders"} Point Provider
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<pickup-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -360,7 +360,7 @@
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<drop-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -370,7 +370,7 @@
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<capture-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -379,7 +379,7 @@
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<pickup-kit>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -388,7 +388,7 @@
                                     %a{:href => "/modules/kits"} Kit
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<drop-kit>')
                                 %td
                                     %span.label.label-default{:title => "Can be this sub-element or an attribute."} Property
@@ -427,7 +427,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<post>X,Y,Z</post>')
                                 %td
                                     A point or region(s) for flags to spawn at.
@@ -539,7 +539,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<pickup-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -574,7 +574,7 @@
 
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<net>')
                                 %td
                                     A region that flags can be captured in.
@@ -743,7 +743,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -753,7 +753,7 @@
                                     %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<capture-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -762,7 +762,7 @@
                                     %a{:href => "/modules/filters"} Filters
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<respawn-filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property

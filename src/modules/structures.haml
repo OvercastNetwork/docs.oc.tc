@@ -51,7 +51,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<structures> </structures>')
                                 %td
                                     Element containing all structures and dynamics
@@ -59,12 +59,12 @@
                                 %th{:colspan => "2"} Sub-elements
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<structure>')
                                 %td Defines a block structure that is part of the map
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<dynamic>')
                                 %td Causes a structure to be placed/removed at some location in reaction to a filter
 

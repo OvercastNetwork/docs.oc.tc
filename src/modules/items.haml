@@ -41,7 +41,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<item>')
                                 %td
                                     A single item stack.
@@ -56,33 +56,33 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<enchantment> </enchantment>')
                                 %td
                                     %a{:href => "#enchantments"} Enchantment
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<effect> </effect>')
                                 %td
                                     %a{:href => "#potions"} Potion Effect
                                     (only works on potion items)
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<attribute> </attribute>')
                                 %td
                                     %a{:href => "#attributes"} Attribute Modifier
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-destroy> </can-destroy>')
                                 %td
                                     %a.left-ref-link{:href=>"#can-destroy"} <i class="fa fa-chevron-down"></i>
                                     Materials that can be mined with the item
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-place-on> </can-place-on>')
                                 %td
                                     %a.left-ref-link{:href=>"#can-destroy"} <i class="fa fa-chevron-down"></i>
@@ -344,7 +344,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<uuid>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -354,7 +354,7 @@
                                     %span.label.label-primary String
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<skin>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -453,7 +453,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<effect>')
                                 %td
                                     Custom effect
@@ -484,7 +484,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<book>')
                                 %td
                                     The element containing the books
@@ -507,7 +507,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<title>')
                                 %td
                                     %span.label.label-danger Required
@@ -516,7 +516,7 @@
                                     %span.label.label-primary Formatted Text
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<author>')
                                 %td
                                     %span.label.label-danger Required
@@ -525,14 +525,14 @@
                                     %span.label.label-primary Formatted Text
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<pages>')
                                 %td The pages in the book.
                                 %td
                                     %code= html_escape('<page>')
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<page>')
                                 %td
                                     A newline separated string. Used inside
@@ -578,7 +578,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<enchantment> </enchantment>')
                                 %td An item enchantment.
 
@@ -681,13 +681,13 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-destroy> </can-destroy>')
                                 %td A node containing the materials this item can destroy.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-place-on> </can-place-on>')
                                 %td A node containing materials this item can be placed on.
                                 %td
@@ -696,7 +696,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<material> </material>')
                                 %td
                                     An individual material to match.
@@ -706,7 +706,7 @@
                                     %a{:href => "/reference/inventory#material_matchers"} Material Name
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<all-blocks/>')
                                 %td Match all block type materials.
                                 %td

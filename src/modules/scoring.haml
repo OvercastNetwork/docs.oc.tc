@@ -23,7 +23,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<score> </score>')
                                 %td{:colspan => "3"} Node containing the score settings and score boxes.
                             %tr
@@ -32,7 +32,7 @@
                                 %th Default
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<limit>')
                                 %td
                                     Max score that can be reached before the match ends.
@@ -42,7 +42,7 @@
                                     No limit
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<kills>')
                                 %td
                                     Points to <strong>give</strong> to a team for killing an enemy player
@@ -52,7 +52,7 @@
                                     0
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<deaths>')
                                 %td
                                     Points to <strong>deduct</strong> from a team for the <strong>accidental</strong> death of a team member
@@ -62,7 +62,7 @@
                                     0
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<box>')
                                 %td
                                     A single score box.
@@ -96,7 +96,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<box>')
                                 %td
                                     A single score box.
@@ -168,7 +168,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<redeemables>')
                                 %td
                                     Items that can be redeemed at this score box for points.
@@ -176,7 +176,7 @@
                                     %code= html_escape('<item points="1">')
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -186,7 +186,7 @@
                                     %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -195,7 +195,7 @@
                                     %a{:href => "/modules/regions"} Filters
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<trigger>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property

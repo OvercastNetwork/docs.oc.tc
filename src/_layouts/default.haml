@@ -24,6 +24,7 @@
         %script{:src => "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"}
         %script hljs.initHighlightingOnLoad();
         %script $(function () { $("[data-toggle='tooltip']").tooltip(); });
+        %script $(document).ready(function() { $('span.highlight > code').each(function(i, block) {hljs.highlightBlock(block);}); });
     %body
         %header.navbar.navbar-default.navbar-static-top{:role => "navigation"}
             .container

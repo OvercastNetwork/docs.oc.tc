@@ -26,7 +26,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<mobs> </mobs>')
                                 %td{:colspan => "3"} Node containing the custom mob spawning filters.
                             %tr
@@ -46,7 +46,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<filter> </filter>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -66,21 +66,21 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<spawn> </spawn>')
                                 %td Filter the reason a mob is being spawned.
                                 %td
                                     %a{:href=>"/reference/spawn_reason"} Spawn Reason
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<mob> </mob>')
                                 %td The mob to filter for.
                                 %td
                                     %a{:href=>"/reference/entity_types#creatures"} Creature Type
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<entity> </entity>')
                                 %td The entity to filter for.
                                 %td

@@ -86,18 +86,18 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<filter id="filter1"/>')
                                 %td Reference a filter by its ID.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<team>team</team>')
                                 %td Matches a team by its ID.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<material>block</material>')
                                 %td
                                     Matches blocks by their
@@ -108,39 +108,39 @@
                                     %a{:href => "/reference/inventory#material_matchers"} Single Material Pattern
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<spawn>spawn reason</spawn>')
                                 %td
                                     Matches spawn event reasons, see
                                     %a{:href=>"/modules/mobs"} mob spawning
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<mob>mob name</mob>')
                                 %td
                                     Matches mobs by their name, see
                                     %a{:href=>"/modules/mobs"} mob spawning
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<entity>entity name</entity>')
                                 %td Match entities, e.g. projectiles, boats, dropped items, etc.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<kill-streak/>')
                                 %td
                                     %a.left-ref-link{:href=>"#killStreakFilter"} <i class="fa fa-chevron-down"></i>
                                     Match players with a certain range or amount of kills.
                             %tr
                                 %td
-                                    %pre.xml
+                                    %span.highlight.xml
                                         %code= html_escape('<class>class name</class>')
                                 %td
                                     Match players with the specified class.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<random>decimal or range</random>')
                                 %td
                                     %a.left-ref-link{:href=>"#randomFilter"} <i class="fa fa-chevron-down"></i>
@@ -148,55 +148,55 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<crouching/>')
                                 %td
                                     Match if the player is crouching.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<walking/>')
                                 %td
                                     Match if the player is walking.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<sprinting/>')
                                 %td
                                     Match if the player is sprinting.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flying/>')
                                 %td
                                     Match if the player is flying.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<can-fly/>')
                                 %td
                                     Match if the player can fly.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<gliding/>')
                                 %td
                                     Match if the player is gliding with an elytra.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<grounded/>')
                                 %td
                                     Match if the player is on the ground.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<rank> </rank>')
                                 %td
                                     %a.left-ref-link{:href=>"#rank_score"} <i class="fa fa-chevron-down"></i>
@@ -204,7 +204,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<score> </score>')
                                 %td
                                     %a.left-ref-link{:href=>"#rank_score"} <i class="fa fa-chevron-down"></i>
@@ -212,21 +212,21 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<participating/>')
                                 %td
                                     Filter if the player is participating in the match.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<observing/>')
                                 %td
                                     Filter if the player is observing the match.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<players>decimal or range</players>')
                                 %td
                                     %a.left-ref-link{:href=>"#players"} <i class="fa fa-chevron-down"></i>
@@ -234,21 +234,21 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<match-started/>')
                                 %td
                                     Filter if the match has started.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<match-running/>')
                                 %td
                                     Filter if the match is running.
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<match-finished/>')
                                 %td
                                     Filter if the match is over.
@@ -256,7 +256,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<objective>objective_id</objective>')
                                 %td
                                     %a.left-ref-link{:href=>"#objectiveFilter"} <i class="fa fa-chevron-down"></i>
@@ -264,7 +264,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag-carried>flag_id</flag-carried>')
                                 %td
                                     %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
@@ -272,7 +272,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag-dropped>flag_id</flag-dropped>')
                                 %td
                                     %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
@@ -280,7 +280,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag-returned>flag_id</flag-returned>')
                                 %td
                                     %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
@@ -288,7 +288,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<flag-captured>flag_id</flag-captured>')
                                 %td
                                     %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
@@ -296,49 +296,49 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<carrying-flag>flag_id</carrying-flag>')
                                 %td
                                     %a.left-ref-link{:href=>"#flagFilter"} <i class="fa fa-chevron-down"></i>
                                     Match the player carrying the specified flag.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<cause>cause</cause>')
                                 %td
                                     %a.left-ref-link{:href=>"#causeFilters"} <i class="fa fa-chevron-down"></i>
                                     Filter an event's cause.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<relation>relation</relation>')
                                 %td
                                     %a.left-ref-link{:href=>"#relationFilters"} <i class="fa fa-chevron-down"></i>
                                     Filter an event's relation to the player.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<carrying><item material=""/></carrying>')
                                 %td
                                     %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                                     Match if the player is carrying an item.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<holding><item material=""/></holding>')
                                 %td
                                     %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                                     Match if the player is holding an item.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<wearing><item material=""/></wearing>')
                                 %td
                                     %a.left-ref-link{:href=>"#itemFilters"} <i class="fa fa-chevron-down"></i>
                                     Match if the player is wearing an item.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<structural-load>2</structural-load>')
                                 %td
                                     %a.left-ref-link{:href=>"#structuralLoadFilters"} <i class="fa fa-chevron-down"></i>
@@ -346,7 +346,7 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<time> </time>')
                                 %td
                                     Filter if the specified
@@ -354,7 +354,7 @@
                                     has elapsed since the match started.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<same-team> </same-team>')
                                 %td
                                     Filter if the queried player has the same team as the filter input.
@@ -364,7 +364,7 @@
                                     gamemode.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<victim> </victim>')
                                 %td
                                     Filter if the attacked player matches the query.
@@ -374,7 +374,7 @@
                                     module.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<attacker> </attacker>')
                                 %td
                                     Filter if the attacking player matches the query.
@@ -388,13 +388,13 @@
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<always/>')
                                 %td Always return <code>ALLOW</code>. Can be referenced with the ID: <code>always</code>
                             %tr
                                 %td
                                     %span.label.label-primary Dynamic
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<never/>')
                                 %td Always return <code>DENY</code>. Can be referenced with the ID: <code>never</code>
                 :markdown
@@ -662,7 +662,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<cause> </cause>')
                                 %td Filter an event's cause.
                             %tr
@@ -757,7 +757,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<relation> </relation>')
                                 %td The relation between the player and their damage cause.
                             %tr
@@ -839,32 +839,32 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<not>')
                                 %td Invert the filters result; allow if the child filter denies, deny if it allows, abstain otherwise.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<one>')
                                 %td Allow if <i>only one</i> of the child filters allows, deny if <i>one or more allow</i> or <i>none allow and at least one denies</i>, otherwise abstain.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<all>')
                                 %td Allow if <i>all</i> of the child filters allow, deny if <i>one or more deny</i>, otherwise abstain.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<any>')
                                 %td Allow if <i>one</i> of the child filters allows, deny if <i>none allow and at least one denies</i>, otherwise abstain.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<allow>')
                                 %td Allow if the child filter allows, otherwise abstain (transform deny to abstain).
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<deny>')
                                 %td Deny if the child filter allows, otherwise abstain.
 

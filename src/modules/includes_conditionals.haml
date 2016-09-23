@@ -100,28 +100,28 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<if a="true"> </if>')
                                 %td
                                     If a is true, use the contents of this element.
 
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<if a="true" b="true"> </if>')
                                 %td
                                     If a AND b are both true, use the contents of this element.
 
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<unless a="true"> </unless>')
                                 %td
                                     If a is NOT true, use the contents of this element.
 
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<unless a="false" b="false"> </unless>')
                                 %td
                                     If (a OR b) is NOT false, use the contents of this element.

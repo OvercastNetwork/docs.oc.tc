@@ -28,7 +28,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<spawns> </spawns>')
                                 %td{:colspan => "2"} A node containing the spawns for this map.
                             %tr
@@ -36,14 +36,14 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<spawn>')
                                 %td An individual spawn where a team will spawn
                                 %td
                                     %code= html_escape('<regions>')
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<default>')
                                 %td
                                     %span.label.label-warning{:title => "Only one of this child permitted per parent"} Unique
@@ -141,7 +141,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<regions>')
                                 %td
                                     The region or regions where players will spawn.
@@ -272,7 +272,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<respawn/>')
                                 %td Node specifying the respawn settings for this map.
 
@@ -348,7 +348,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<message>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property

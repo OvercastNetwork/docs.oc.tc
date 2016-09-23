@@ -26,7 +26,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<proximity-alarms> </proximity-alarms>')
                                 %td{:colspan => "2"} Node containing this maps proximity-alarms.
                             %tr
@@ -34,7 +34,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<proximity-alarm>')
                                 %td An individual proximity-alarm node.
                                 %td
@@ -82,7 +82,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
@@ -92,14 +92,14 @@
                                     %a{:href => "/modules/regions"} Regions
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<detect>')
                                 %td Filter who gets detected by the proximity alarm.
                                 %td
                                     %a{:href => "/modules/filters"} Filter
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<notify>')
                                 %td Filter who gets notified by the proximity alarm.
                                 %td

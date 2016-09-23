@@ -41,7 +41,7 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<cuboid id="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>')
                                     %br
                                     A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>.
@@ -51,7 +51,7 @@
                                     %span.label.label-primary Randomize-able
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<cylinder id="abc" base="X,Y,Z" radius="R" height="H"/>')
                                     %br
                                     A cylinder located at <code>X,Y,Z</code> with a radius of <code>R</code> and a height of <code>H</code>.
@@ -61,7 +61,7 @@
                                     %span.label.label-primary Randomize-able
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<block id="abc">X,Y,Z</block>')
                                     %br
                                     A single block located at <code>X,Y,Z</code>.
@@ -69,7 +69,7 @@
                                     %span.label.label-primary Randomize-able
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<sphere id="abc" origin="X,Y,Z" radius="R"/>')
                                     %br
                                     A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>.
@@ -78,7 +78,7 @@
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<point id="abc">X,Y,Z</point>')
                                     %br
                                     A single point region located at <code>X,Y,Z</code>.<br/>
@@ -90,14 +90,14 @@
                                     %b Unbounded Regions
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<rectangle id="abc" min="X1,Z1" max="X2,Z2"/>')
                                     %br
                                     A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<circle id="abc" center="X,Z" radius="R"/>')
                                     %br
                                     A circle located at <code>X,Z</code> with a radius of <code>R</code>. <br/>
@@ -105,17 +105,17 @@
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<half normal="1,0,1" origin="100,50,0" id="abc"/>')
                                     %br
                                     Half of the world split by a plane pointing towards a normal.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<below x="" y="" z="" id="abc"/>')
                                     |
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<above x="" y="" z="" id="abc"/>')
                                     %br
                                     Half of the world split at the specified axis.
@@ -127,21 +127,21 @@
                                     %b Static Regions
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<empty/>')
                                     %br
                                     A zero size/position region, contains nothing.
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<nowhere/>')
                                     %br
                                     A reference-able zero size/position region, contains nothing. Can be referenced with the ID: <code>nowhere</code>
                                 %td
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<everywhere/>')
                                     %br
                                     A reference-able infinite size region, contains everything. Can be referenced with the ID: <code>everywhere</code>
@@ -398,25 +398,25 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<negative><region id="region1"/></negative>')
                                     %br
                                     Inverse of a region, the region or regions will no longer be considered block bounded.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape(' <union><region id="region1"/><region id="region2"/>..</union>')
                                     %br
                                     Combination of multiple regions.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<complement><region id="region1"/><region id="region2"/>..</complement>')
                                     %br
                                     Subtracts successive regions from the first defined region.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<intersect><region id="region1"/><region id="region2"/>..</intersect>')
                                     %br
                                     Returns the area that multiple regions intersect with.
@@ -433,13 +433,13 @@
                         %tbody
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<translate offset="X,Y,Z"><region id="region1"/></translate>')
                                     %br
                                     Copy and translate a region by <code>X,Y,Z</code> blocks.
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<mirror normal="1,0,1" origin="100,50,0"><region id="region1"/></mirror>')
                                     %br
                                     Copy and mirror a region towards a normal around a point.
@@ -540,7 +540,7 @@
                                 %th Value/Children
                             %tr
                                 %td
-                                    %pre
+                                    %span.highlight
                                         %code= html_escape('<region>')
                                 %td
                                     %span.label.label-default{:title => "Can be either this sub-element or an attribute."} Property
