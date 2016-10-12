@@ -2,7 +2,6 @@
     .jumbotron.subhead
         %h1
             = @page_title = "Modules"
-            %p.lead Game Settings
     %section
         .row
             - @page_nav_content = [\
@@ -466,6 +465,13 @@
                         <item slot="1" material="potion" potion="fire_resistance">
                             <effect duration="15m">fire_resistance</effect>
                         </item>
+
+                    <br/>
+                    ### Auto Potion Bottle Remover
+                    Empty potion bottles are removed automatically when a player drinks a potion.<br/>
+                    This feature is enabled by default, but can be disabled with this tag.
+
+                        <keep-potion-bottles/>
 
                     <br/>
                     ### [Books](id:books)

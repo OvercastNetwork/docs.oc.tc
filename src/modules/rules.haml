@@ -1,0 +1,45 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+    %section
+        .row
+            = partial('modules_sidebar')
+            .col-sm-9
+                .page-header
+                    %h1= @page_sub_title = "Rules"
+                :markdown
+                    You can use the rules module to add custom rules to your map that are not already included in the standard Lifeboat Network rules. Regions and filters should be used to enforce access and block rules.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Rule Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<rules> </rules>')
+                                %td Node containing all the defined custom rules.
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<rule> </rule>')
+                                %td
+                                    A custom map rule.
+                                %td
+                                    %span.label.label-primary Text
+
+                :markdown
+                    Example
+
+                        <rules>
+                            <rule>Do not intentional prolong the match by hiding or exiting the playing area.</rule>
+                        </rules>

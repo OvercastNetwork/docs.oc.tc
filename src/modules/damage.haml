@@ -2,7 +2,6 @@
     .jumbotron.subhead
         %h1
             = @page_title = "Modules"
-            %p.lead Game Settings
     %section
         .row
             = partial('modules_sidebar')
@@ -10,6 +9,31 @@
                 .page-header
                     %h1= @page_sub_title = "Damage & Disable Damage"
                 :markdown
+                    ### Friendly Fire
+                    Allows teammates to kill each other. Arrows will be absorbed if they hit a teammate.
+
+                        <friendlyfire>on</friendlyfire> <!-- Defaults to off -->
+
+                    Refunds arrows blocked by teammates from non-infinity bows.
+
+                        <friendlyfirerefund>off</friendlyfirerefund> <!-- Defaults to on -->
+
+                    <br/>
+                    ### Difficulty
+                    The difficulty level can be set to `peaceful`, `easy`, `normal`, or `hard`. The default is `hard`.
+
+                        <difficulty>easy</difficulty> <!-- Defaults to hard -->
+
+                    <br/>
+                    ### Hunger
+                    Specify if a player can starve to death, usually used with the difficulty setting.<br/>
+                    This can also be accomplished with the `naturalRegeneration` [gamerule](/modules/gamerules).
+
+                        <hunger>
+                            <depletion>off</depletion>
+                        </hunger>
+
+                    <br/>
                     ### [Damage Filtering](id:filter)
 
                     This module is used to filter when or if damage is applied to entities.
