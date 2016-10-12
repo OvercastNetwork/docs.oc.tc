@@ -1,0 +1,364 @@
+.container
+    .jumbotron.subhead
+        %h1
+            = @page_title = "Modules"
+    %section
+        .row
+            = partial('modules_sidebar')
+
+            .col-sm-9
+                .page-header
+                    %h1
+                        = @page_sub_title = "Lootables"
+
+                :markdown
+                    Lootables are chests or other containers that generate their contents based on custom rules and probabilities.
+                    They can optionally refill themselves on a schedule, or in response to dynamic filters.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Lootables Element
+                                %th Description
+                                %th
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<lootables> </lootables>')
+                                %td
+                                %td
+                            %tr
+                                %th{:colspan => "2"} Sub-elements
+                                %th Value/Children
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<loot>')
+                                %td
+                                    %a.left-ref-link{:href=>"#loot"} <i class="fa fa-chevron-down"></i>
+                                    A generated set of items
+                                %td
+                                    %span.label.label-default Loot Sub-elements
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<fill>')
+                                %td
+                                    %a.left-ref-link{:href=>"#posts"} <i class="fa fa-chevron-down"></i>
+                                    Configuration for filling containers with loot
+                                %td
+                                    %span.label.label-default Fill Sub-elements
+
+                :markdown
+                    ### [Loot](id:loot)
+
+                    The `<loot>` element defines a generated set of items, using literal `<item>` elements,
+                    and operations for choosing them.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Loot Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<loot>')
+                                %td
+                                    A generated set of items
+                                %td
+                                    %span.label.label-default Loot Sub-elements
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Loot Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code id
+                                %td
+                                    Unique identifier used to reference this loot elsewhere
+                                %td
+                                    %span.label.label-primary String
+                                %td
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Loot Sub-elements
+                                %th Description
+                                %th Type
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<item>')
+                                %td
+                                    An item to include in the loot.
+                                    This can be any type of item element, and can have any item attributes.
+                                %td
+                                    %a{href: "/modules/items"} Item
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<any>')
+                                %td
+                                    %a.left-ref-link{:href=>"#any"} <i class="fa fa-chevron-down"></i>
+                                    Random selection of children
+                                %td
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<if>')
+                                %td
+                                    %a.left-ref-link{:href=>"#if"} <i class="fa fa-chevron-down"></i>
+                                    Include child conditionally based on a filter
+                                %td
+
+                :markdown
+                    #### [Random Selection](id:any)
+
+                    The `<any>` element makes a random selection from any number of child elements.
+                    Its children can be `<option>` elements, or any other `<loot>` sub-element.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{style: "min-width: 150px;"} Any Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code count
+                                %td Number of child elements to choose
+                                %td
+                                    %span.label.label-primary Numeric Range
+                                %td
+                            %tr
+                                %td
+                                    %code unique
+                                %td
+                                    <code>true</code> if each child can only be chosen once.<br/>
+                                    <code>false</code> to allow a child to be chosen multiple times.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td
+                                    true
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Any Sub-elements
+                                %th Description
+                                %th Type
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<option>')
+                                %td
+                                    A single option for the random selection
+                                %td
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{style: "min-width: 150px;"} Option Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code weight
+                                %td Weight of this option relative to all others
+                                %td
+                                    %span.label.label-primary Number
+                                %td 1
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    Filter used to decide the eligibility of this option.
+                                %td
+                                    %span.label.label-primary Filter
+                                %td
+                                    %code always
+
+                :markdown
+                    #### [Conditional Inclusion](id:if)
+
+                    The `<if>` element includes its child elements only if the specified filter matches.
+                    The filter is matched against the first player to access the loot.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th{style: "min-width: 150px;"} If Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code filter
+                                %td Filter used to decide inclusion of children
+                                %td
+                                    %a{href: "/modules/filters"} Filter
+                                %td
+
+                :markdown
+                    <br/>
+                    ### [Fill](id:fill)
+
+                    The `<fill>` element fills containers with generated loot.
+                    It will fill **anything** that has an inventory, and matches its `filter` property.
+                    This can include chests, dispensers, storage minecarts, or any other container block or entity.
+                    It will fill containers regardless of where they came from, so if you don't want player-placed
+                    chests to be filled, then you will have to prevent that somehow.
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Fill Element
+                                %th Description
+                                %th Value/Children
+                        %tbody
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<fill>')
+                                %td
+                                    Automatically fills containers with loot
+                                %td
+
+                .table-responsive
+                    %table.table.table-striped.table-condensed
+                        %thead
+                            %tr
+                                %th Fill Attributes
+                                %th Description
+                                %th Value
+                                %th Default
+                        %tbody
+                            %tr
+                                %td
+                                    %code loot
+                                %td
+                                    Loot to fill containers with
+                                %td
+                                    %span.label.label-primary Loot
+                                %td
+                            %tr
+                                %td
+                                    %code filter
+                                %td
+                                    Selects which blocks/entities to fill
+                                %td
+                                    %span.label.label-primary Filter
+                                %td
+                                    %code always
+                            %tr
+                                %td
+                                    %code refill-trigger
+                                %td
+                                    Optional dynamic filter that causes containers to be refilled
+                                %td
+                                    %span.label.label-primary Dynamic Filter
+                                %td
+                            %tr
+                                %td
+                                    %code refill-interval
+                                %td
+                                    Time to refill containers after they are first accessed
+                                %td
+                                    %span.label.label-primary Time Period
+                                %td
+                                    oo (never)
+                            %tr
+                                %td
+                                    %code refill-clear
+                                %td
+                                    Whether to clear containers before refilling them
+                                %td
+                                    %span.label.label-primary true/false
+                                %td
+                                    true
+
+                :markdown
+                    ### Examples
+
+                        <lootables>
+                            <!-- Define a procedural list of loot -->
+                            <!-- Can be different every time it is used -->
+                            <!-- All operators can be composed within each other -->
+                            <loot id="stuff">
+                                <!-- Always include these items -->
+                                <item material="stone sword"/>
+                                <item material="bow"/>
+
+                                <!-- Include if filter matches opener of the container -->
+                                <if filter="red-team">
+                                    <item material="stained clay" damage="14" amount="64"/>
+                                    <item material="leather helmet" color="#f00"/>
+                                </if>
+
+                                <!-- Choose one element at random -->
+                                <any>
+                                    <item material="stone" damage="1"/>
+                                    <item material="stone" damage="2"/>
+                                    <item material="stone" damage="3"/>
+                                </any>
+
+                                <!-- Weighted choice -->
+                                <any>
+                                    <option weight="5">
+                                        <item material="cookie"/>
+                                    </option>
+                                    <option weight="3">
+                                        <item material="bread"/>
+                                    </option>
+                                    <option weight="1">
+                                        <item material="golden apple"/>
+                                    </option>
+                                </any>
+
+                                <!-- Choose any two unique elements (unique="false" to allow duplicates) -->
+                                <any count="2">
+                                    ...
+                                </any>
+
+                                <!-- Choose between 3 and 5 unique elements -->
+                                <any count="3..5">
+                                    ...
+                                </any>
+                            </loot>
+
+                            <!-- Define inventories to refill -->
+                            <!-- Filling always happens when a player opens the inventory -->
+                            <!-- Any block or entity that has an inventory (and matches the filter) will be filled -->
+                            <fill loot="stuff"          <!-- Loot to fill inventory with -->
+                                  filter="chests"       <!-- Inventories to fill (blocks or entities) -->
+                                  refill-interval="3s"  <!-- Minimum interval between refills (default +inf) -->
+                                  refill-trigger="..."  <!-- Dynamic filter to trigger refill (default none) -->
+                                  refill-clear="true"   <!-- Clear inventory before refilling (default true) -->
+                            />
+                        </lootables>
