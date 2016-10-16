@@ -53,6 +53,7 @@
                                 %th Attribute
                                 %th Description
                                 %th Value
+                                %th Default
                         %tbody
                             %tr
                                 %td
@@ -61,6 +62,7 @@
                                     The level data sub-folder to be used with this map.
                                 %td
                                     %span.label.label-primary Sub-folder Name
+                                %td
                             %tr
                                 %td
                                     %code vanilla
@@ -68,6 +70,7 @@
                                     Specify if this world is uses the vanilla or null chunk generator.
                                 %td
                                     %span.label.label-primary true/false
+                                %td false
                             %tr
                                 %td
                                     %code seed
@@ -75,6 +78,15 @@
                                     This worlds generation seed.
                                 %td
                                     %span.label.label-primary String
+                                %td
+                            %tr
+                                %td
+                                    %code pre-match-physics
+                                %td
+                                    Allow physics events, such as water flowing, before the match starts.
+                                %td
+                                    %span.label.label-primary true/false
+                                %td false
 
                 :markdown
 
