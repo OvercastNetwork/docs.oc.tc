@@ -120,9 +120,9 @@
                             %tr
                                 %td
                                     %span.highlight
-                                        %code= html_escape('<if>')
+                                        %code= html_escape('<maybe>')
                                 %td
-                                    %a.left-ref-link{:href=>"#if"} <i class="fa fa-chevron-down"></i>
+                                    %a.left-ref-link{:href=>"#maybe"} <i class="fa fa-chevron-down"></i>
                                     Include child conditionally based on a filter
                                 %td
 
@@ -202,16 +202,16 @@
                                     %code always
 
                 :markdown
-                    #### [Conditional Inclusion](id:if)
+                    #### [Conditional Inclusion](id:maybe)
 
-                    The `<if>` element includes its child elements only if the specified filter matches.
+                    The `<maybe>` element includes its child elements only if the specified filter matches.
                     The filter is matched against the first player to access the loot.
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
                         %thead
                             %tr
-                                %th{style: "min-width: 150px;"} If Attributes
+                                %th{style: "min-width: 150px;"} Maybe Attributes
                                 %th Description
                                 %th Value
                                 %th Default
@@ -316,10 +316,10 @@
                                 <item material="bow"/>
 
                                 <!-- Include if filter matches opener of the container -->
-                                <if filter="red-team">
+                                <maybe filter="red-team">
                                     <item material="stained clay" damage="14" amount="64"/>
                                     <item material="leather helmet" color="#f00"/>
-                                </if>
+                                </maybe>
 
                                 <!-- Choose one element at random -->
                                 <any>
