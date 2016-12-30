@@ -11,7 +11,7 @@
             - {"path" => "#randomFilter", "name" => "Random Filter"},\
             - {"path" => "#rank_score", "name" => "Rank & Score Filters"},\
             - {"path" => "#players", "name" => "Player Count Filter"},\
-            - {"path" => "#objectiveFilter", "name" => "Objective Filter"},\
+            - {"path" => "#objectiveFilter", "name" => "Objective Filters"},\
             - {"path" => "#flagFilter", "name" => "Flag Filters"},\
             - {"path" => "#causeFilters", "name" => "Event Cause Filter"},\
             - {"path" => "#relationFilters", "name" => "Player Relation Filter"},\
@@ -167,10 +167,19 @@
                             %tr
                                 %td
                                     %span.highlight
-                                        %code= html_escape('<objective>objective_id</objective>')
+                                        %code= html_escape('<completed>objective_id</completed>')
                                 %td
                                     %a.left-ref-link{:href=>"#objectiveFilter"} <i class="fa fa-chevron-down"></i>
-                                    Match completed objectives.
+                                    Match if the objective is completed.
+                                %td
+                                    %span.label.label-primary Dynamic
+                            %tr
+                                %td
+                                    %span.highlight
+                                        %code= html_escape('<captured>objective_id</captured>')
+                                %td
+                                    %a.left-ref-link{:href=>"#objectiveFilter"} <i class="fa fa-chevron-down"></i>
+                                    Match players or teams who currently control the objective.
                                 %td
                                     %span.label.label-primary Dynamic
                             %tr
@@ -805,22 +814,25 @@
 
                 :markdown
                     <br/>
-                    #### [Objective Filter](id:objectiveFilter)
+                    #### [Objective Filters](id:objectiveFilter)
 
-                    The objective filter tests if an objective is completed/captured by the player or team being filtered.
-                    There are two distinctly different ways the filter can be used:
+                    There are two filter types that test the state of an objective: `<completed>` and `<captured>`.
+                    Both types require the ID of an objective as the content of the tag.
 
-                    By default, objective filters are only applicable to players/teams, and will **abstain in any context that does not involve a specific player or team.**
-                    For "capturable" objectives, such as [hills](/modules/control_points) or [flags](/modules/gamemode_ctf),
-                    the filter will only match the player/team who currently owns the objective.
-                    For "completable" objectives, such as [destroyables](/modules/gamemode_dtm) or [wools](/modules/gamemode_ctw),
-                    the filter will only match players/teams who are *allowed* to complete the objective, and only if the objective is actually completed.
+                    The `<completed>` filter matches when the specified objective is completed or captured by anybody e.g.
+                    when a [destroyable](/modules/gamemode_dtm) is destroyed, a [core](/modules/gamemode_dtc) is leaked, or a [hill](/modules/control_points) is captured by anyone.
+                    This filter is not affected by the context in which it is applied, and never abstains.
 
-                    If the `team` attribute is given, then the filter will always test if the objective is completed by that specific team.
-                    Alternately, `any="true"` can be used to make the filter ignore teams entirely, and just test if the objective is completed by *anyone*.
-                    In either of these cases, the filter will never abstain, and is unaffected by the context in which it is used.
+                    The `<captured>` filter matches players or teams who currently control the specified objective.
+                    This filter is useful for objectives that can change ownership, such as [hills](/modules/control_points) and [flags](/modules/gamemode_ctf).
+                    For other objective types, it will match players/teams who are *allowed* to complete the objective, if the objective is completed, which is generally not useful.
+                    This filter will abstain if used in a context that does not involve a specific player or team.
 
-                    #####  Objective Filter Attributes
+                    Alternately, `<captured>` can have a team specified with the `team` attribute.
+                    Then it will always test that team's control of the objective, regardless of the filtering context, and will never abstain.
+
+
+                    #####  Capture Filter Attributes
 
                 .table-responsive
                     %table.table.table-striped.table-condensed
@@ -836,30 +848,21 @@
                                 %td Match only if the objective is captured/completed by this team.
                                 %td
                                     %a{:href => "/modules/teams"} Team ID
-                            %tr
-                                %td
-                                    %code any
-                                %td
-                                    Match if the objective is captured/completed by *any* team or player.
-                                    %br
-                                    %i Not compatible with the <code>team</code> attribute
-                                %td
-                                    %span.label.label-primary true/false
 
                 :markdown
                     Examples
 
                         <!-- Match if red-core has been leaked -->
-                        <objective any="true">red-core</objective>
-
-                        <!-- Match if blue-team owns central-hill -->
-                        <objective team="blue-team">central-hill</objective>
+                        <completed>red-core</completed>
 
                         <!-- Match if south-hill is owned by anyone -->
-                        <objective any="true">south-hill</objective>
+                        <completed>south-hill</completed>
 
                         <!-- Match players/teams who own north-hill -->
-                        <objective>north-hill</objective>
+                        <captured>north-hill</captured>
+
+                        <!-- Match if blue-team owns central-hill -->
+                        <captured team="blue-team">central-hill</captured>
 
                     <br/>
                     #### [Flag Filters](id:flagFilter)
