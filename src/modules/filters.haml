@@ -807,9 +807,18 @@
                     <br/>
                     #### [Objective Filter](id:objectiveFilter)
 
-                    The objective filter allows filtering of completed objectives and additionally, for hills, the team owning the objective. The filter works with cores, destroyables, wools and hills/control-points. With cores, destroyables and wools the filter will return `ALLOW` if the objective is completed and `DENY` if it is not. Its behavior for hills/control-points is slightly different from other objectives, by default it will match the player's team instead of the objectives completion.
+                    The objective filter tests if an objective is completed/captured by the player or team being filtered.
+                    There are two distinctly different ways the filter can be used:
 
-                    Hills or control point filters will return `ALLOW` if the player's team matches the owning team, `DENY` if it doesn't, and ignore everything non-player related. However, if the filter has a team attribute the filter will not care what is being filtered and will simply return `ALLOW` if the team specified currently owns the hill. Optional the any attribute can be used to return `ALLOW` if any team owns the hill and `DENY` otherwise.
+                    By default, objective filters are only applicable to players/teams, and will **abstain in any context that does not involve a specific player or team.**
+                    For "capturable" objectives, such as [hills](/modules/control_points) or [flags](/modules/gamemode_ctf),
+                    the filter will only match the player/team who currently owns the objective.
+                    For "completable" objectives, such as [destroyables](/modules/gamemode_dtm) or [wools](/modules/gamemode_ctw),
+                    the filter will only match players/teams who are *allowed* to complete the objective, and only if the objective is actually completed.
+
+                    If the `team` attribute is given, then the filter will always test if the objective is completed by that specific team.
+                    Alternately, `any="true"` can be used to make the filter ignore teams entirely, and just test if the objective is completed by *anyone*.
+                    In either of these cases, the filter will never abstain, and is unaffected by the context in which it is used.
 
                     #####  Objective Filter Attributes
 
@@ -824,14 +833,14 @@
                             %tr
                                 %td
                                     %code team
-                                %td If the objective has ownership, e.g. hills, match objectives belonging to this team.
+                                %td Match only if the objective is captured/completed by this team.
                                 %td
                                     %a{:href => "/modules/teams"} Team ID
                             %tr
                                 %td
                                     %code any
                                 %td
-                                    If the objective has ownership, e.g. hills, match objectives completed by any team.
+                                    Match if the objective is captured/completed by *any* team or player.
                                     %br
                                     %i Not compatible with the <code>team</code> attribute
                                 %td
@@ -840,19 +849,17 @@
                 :markdown
                     Examples
 
-                        <!-- deny everything before red-core leaks and allow everything after it leaks -->
-                        <objective id="rc-leaked-filter">red-core</objective>
+                        <!-- Match if red-core has been leaked -->
+                        <objective any="true">red-core</objective>
 
-
-                        <!-- allow everything if blue-team owns central-hill, and deny everything if they don't -->
+                        <!-- Match if blue-team owns central-hill -->
                         <objective team="blue-team">central-hill</objective>
 
-                        <!-- allow everything if the south-hill is owned and deny if it isn't -->
+                        <!-- Match if south-hill is owned by anyone -->
                         <objective any="true">south-hill</objective>
 
-                        <!-- allow any player actions by the team currently owning north-hill -->
+                        <!-- Match players/teams who own north-hill -->
                         <objective>north-hill</objective>
-
 
                     <br/>
                     #### [Flag Filters](id:flagFilter)
