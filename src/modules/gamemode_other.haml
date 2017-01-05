@@ -8,7 +8,8 @@
             - {"path" => "#gs", "name" => "Ghost Squadron"},\
             - {"path" => "#rage", "name" => "Rage"},\
             - {"path" => "#tdm", "name" => "Team Deathmatch"},\
-            - {"path" => "#ffa", "name" => "Free-For-All"}]
+            - {"path" => "#ffa", "name" => "Free-For-All"},\
+            - {"path" => "#sw", "name" => "Skywars"}]
             = partial('modules_sidebar')
 
             .col-sm-9
@@ -80,3 +81,10 @@
                             <kills>1</kills>
                             <deaths>1</deaths>
                         </score>
+
+
+                    <br/>
+                    ### [Skywars](id:sw)
+                    This gamemode uses the [players](/modules/players) module to create a team-less match. It uses the [lootables](/modules/lootables) module to randomly generate items in chests. The match ends once there is only one player left or the time limit is reached.
+
+                    `NOTE:` All maps are required to use the [include file](https://maps.oc.tc/Include/skywars.xml).
