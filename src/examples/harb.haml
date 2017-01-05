@@ -19,7 +19,7 @@
 
                         <map proto="#{MapProto()}">
                         <name>Harb</name>
-                        <version>1.3.5</version>
+                        <version>1.3.7</version>
                         <objective>Be the team with the least amount of deaths after 10 minutes.</objective>
 
                     <br/>
@@ -70,7 +70,7 @@
                     [<i class="fa fa-share right-ref-link"></i>](/modules/kits)
                     Each team kit has leather armor colored in their team color and they inherit the main spawn kit.
 
-                        <kits>
+                     <kits>
                             <kit id="spawn">
                                 <item slot="0" material="stone sword"/>
                                 <item slot="1" enchantment="arrow infinite:1" material="bow"/>
@@ -171,7 +171,7 @@
                     [<i class="fa fa-share right-ref-link"></i>](/modules/killreward)
                     Give players a golden apple every time they kill an enemy.
 
-                        <killreward>
+                      <killreward>
                             <item material="golden apple"/>
                         </killreward>
 
@@ -181,18 +181,27 @@
 
                         <tnt>
                             <instantignite>on</instantignite>
+                            <licensing>off</licensing>
+                            <friendly-defuse>off</friendly-defuse>
                             <blockdamage>off</blockdamage>
                         </tnt>
 
+                   <br/>
+                    [<i class="fa fa-share right-ref-link"></i>](/modules/maxbuildheight)
+                    This specifies how high players can build however it doesn't stop them from going over this limit.
+                    
+                    <maxbuildheight>69</maxbuildheight>
+                    
                     <br/>
                     [<i class="fa fa-share right-ref-link"></i>](/modules/disabledamage)
                     Disable damage from TNT placed by teammates.
 
-                        <disabledamage>
+             <disabledamage>
                             <damage ally="true" self="false" enemy="false" other="false">block explosion</damage>
                         </disabledamage>
-
                     <br/>
+                     
+                    
                     Close the main `<map>` module.
 
                         </map>
