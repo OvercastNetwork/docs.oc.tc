@@ -1,0 +1,36 @@
+---
+layout: page
+
+category: "Guides"
+category_lead:  "XML Pointers"
+title:  "Properly Defining Regions"
+
+---
+
+
+
+<p>First of all, region coordinates in PGM are <em>real numbers</em>. That means they can be fractional values, like 2.3, 4.5, 6.789, and so on. A coordinate represents a <em>point</em> on one of the three axes (X, Y, or Z), and a set of three coordinates represents a <em>point</em> in 3D space. Coordinates do <strong>not</strong> represent blocks, at least not <em>directly</em>. When PGM needs to decide if a block is inside a region, it checks if the point at the <strong>center</strong> of the block is inside the region. The center point of a block will always have coordinates that end in <code>.5</code>. When making regions, you have to make sure that all the block centers are <em>inside</em> the region.</p>
+<p>Here is an example. Let's say we want to make region for a destroyable that looks like this:</p>
+<p class="scroll"><img src="/img/regions/destroyable.png"/></p>
+<p>First, we stand very close to one <strong>corner</strong> of the region and note the coordinates are <code>(32, 60, -20)</code>:</p>
+<p class="scroll"><img src="/img/regions/destroyable_c1.png"/></p>
+<p>Then we stand over the opposite corner and note the coordinates are <code>(34, 60, -18)</code>.<br/> We know the monument is three blocks tall, so we'll just subtract three from the Y coordinate to get <code>(34, 57, -18)</code>:</p>
+<p class="scroll"><img src="/img/regions/destroyable_c2.png"/></p>
+<p>Notice that we are rounding to the  <strong>nearest</strong> integer, since those will obviously be the coordinates of the corner we are standing close to. We don't need to worry about positive vs negative coordinates, as they work the same way, and we never need to add or subtract one.</p>
+<p>With these coordinates, we can make a cuboid region for the monument:</p>
+<pre><code>&lt;cuboid min="32, 60, -20" max="34, 57, -18"/&gt;
+</code></pre>
+<p>For style points, we can make sure all the low coordinates are in min and the high ones in max:</p>
+<pre><code>&lt;cuboid min="32, 57, -20" max="34, 60, -18"/&gt;
+</code></pre>
+<p>This is not necessary, as PGM will fix it for you, but it might make the XML easier for a human to read and edit.</p>
+<p>An easy way to check that cuboid regions are correct is to simply subtract the low coordinates from the high ones. The result should be the size of the region. If it isn't, you did something wrong.</p>
+<p>Let's try a more interesting region: a cylinder. A cylinder is defined by its base (center) point, radius, and height. Assuming one layer of blocks, the cylinder in the image below is based at <code>(53.5, 57, -10.5)</code> and has a radius of <code>2.5</code> and a height of <code>1</code>. Blocks with their center point inside the cylinder will be considered part of the region. I've highlighted the region boundary and the block centers so you can easily see how this works:</p>
+<p class="scroll"><img src="/img/regions/cylinder.png"/></p>
+<p>So the region would be:</p>
+<pre><code>&lt;cylinder base="53.5, 57, -10.5" radius="2.5" height="1"/&gt;
+</code></pre>
+<p><br/></p>
+<h3>Regions: The Wrong Way</h3>
+<p>I know that many of you are using WorldEdit to get region coordinates, and my advice to you is <strong>DON'T</strong> . WorldEdit uses a dumb coordinate system that will not give you correct regions, and while it's possible to convert the coordinates, it's going to confuse you and cause mistakes, and it's just not worth the trouble. I suspect that WorldEdit is the reason we have so many region errors in our map collection right now.</p>
+

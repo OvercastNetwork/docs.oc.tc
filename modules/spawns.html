@@ -1,0 +1,479 @@
+---
+layout: page
+
+category: "Modules"
+title:  "Spawns"
+
+---
+
+
+
+<p>The spawns module is required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the <code>&lt;default&gt;</code> element and all other spawns in <code>&lt;spawn&gt;</code> elements. Only one default spawn element may be defined per map.</p>
+<p>Multiple spawns from the same team can be grouped inside of a single <code>&lt;regions&gt;</code> element inside <code>&lt;spawns team="team-id"&gt;</code>. Spawn positions are picked randomly inside of the defined regions. Since the plugin will not validate the spawn position by default, regions should be checked to make sure that they don't intersect with solid objects or are midair. Spawns can also be defined with the <code>safe="true"</code> attribute, PGM will then check that the player spawns on a solid object and not midair.</p>
+<p>The regions element accepts more than one region or region area. If they are not inside a <code>&lt;union&gt;</code> element one region will be picked at random for each spawn event.</p>
+<p>Respawn behavior such as delays, etc. can be customized with the <a href="#respawn">respawn</a> module.</p>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;spawns&gt; &lt;/spawns&gt;</code>
+</span>
+</td>
+<td colspan="2">A node containing the spawns for this map.</td>
+</tr>
+<tr>
+<th colspan="2">Sub-elements</th>
+<th>Value/Children</th>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;spawn&gt;</code>
+</span>
+</td>
+<td>An individual spawn where a team will spawn</td>
+<td>
+<code>&lt;regions&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;default&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-warning" title="Only one of this child permitted per parent">Unique</span>
+                  The spawn for observers and teams without a spawn.
+                  <br/>
+<i>Only one default spawn element is allowed per map.</i>
+</td>
+<td>
+<code>&lt;regions&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Spawn &amp; Default Element Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>team</code>
+</td>
+<td>The team this spawn applies to.</td>
+<td>
+<a href="/modules/teams">Team ID</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>safe</code>
+</td>
+<td>Validate that the player spawns in a safe location.</td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>sequential</code>
+</td>
+<td>
+                  Spawns players at the next region in a list if the one prior to it isn't safe.
+                  <br/>
+<i>Requires the <code>safe</code> attribute set to true.</i>
+</td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>spread</code>
+</td>
+<td>
+                  Spawn players as far away as possible from enemy players.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>exclusive</code>
+</td>
+<td>
+                  Spawn regions are assigned exclusively to one player or team and only they will spawn there.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>persistent</code>
+</td>
+<td>
+                  Once a player has been assigned a spawn they will spawn there even if they leave and rejoin the game.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>kit</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+                  The kit to apply to players when they are spawned in this spawn.
+                </td>
+<td>
+<a href="/modules/kits">Kit ID</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>filter</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+                  Filter when this spawn is used.
+                </td>
+<td>
+<a href="/modules/filters">Filter</a>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Spawn &amp; Default Element Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value/Children</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;regions&gt;</code>
+</span>
+</td>
+<td>
+                  The region or regions where players will spawn.
+                </td>
+<td>
+<a href="/modules/regions">Regions</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Regions Element Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>angle</code>
+</td>
+<td>
+                  The exact block coordinates that the player looks at when spawned.
+                  <br/>
+<i>This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.</i>
+</td>
+<td>
+<span class="label label-primary">X,Y,Z</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>yaw</code>
+</td>
+<td>
+                  The horizontal angle the player looks to when spawned.
+                  <br/>
+<i>South 0, East -90, North 180 and West 90.</i>
+</td>
+<td>
+<span class="label label-primary">-180 to 180</span>
+</td>
+<td>
+                  0
+                </td>
+</tr>
+<tr>
+<td>
+<code>pitch</code>
+</td>
+<td>
+                  The vertical angle the player looks to when spawned.
+                  <br/>
+<i>-90 is straight up 90 is straight down.</i>
+</td>
+<td>
+<span class="label label-primary">-90 to 90</span>
+</td>
+<td>
+                  0
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code>TIP:</code> Copy the yaw and pitch from the F3 screen in minecraft (the <code>Facing: Direction (Axis) (Yaw/Pitch)</code> line).</p>
+<p>Example</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawn team="red" kit="red"&gt;
+        &lt;regions yaw="90"&gt;
+            &lt;cuboid min="-2,13,71" max="-9,13,78"/&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+    &lt;spawn team="blue" kit="blue"&gt;
+        &lt;regions yaw="-90"&gt;
+            &lt;cuboid min="2,13,-71" max="9,13,-78"/&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+    &lt;default&gt;
+        &lt;regions yaw="0"&gt;
+            &lt;cuboid min="-1,16,-1" max="2,20,2"/&gt;
+        &lt;/regions&gt;
+    &lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p>
+<a class="btn btn-primary btn-xs btn-more collapsed" data-target="#collapse-spawn-examples" data-toggle="collapse">Examples</a>
+</p>
+<div class="collapse" id="collapse-spawn-examples">
+<pre><code>&lt;!-- Example spawns from Assualt --&gt;
+&lt;spawns&gt;
+    &lt;spawn team="blue" kit="blue"&gt;
+        &lt;regions yaw="-90"&gt;
+            &lt;region id="blue-spawn"/&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+    &lt;spawn team="red" region="red-spawn" kit="red"&gt;
+        &lt;regions yaw="90"&gt;
+            &lt;region id="red-spawn"/&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+    &lt;default kit="obs"&gt;
+        &lt;regions yaw="-135"&gt;
+            &lt;region id="obs-spawn"/&gt;
+        &lt;/regions&gt;
+    &lt;/default&gt;
+&lt;/spawns&gt;
+
+&lt;spawns safe="true" sequential="true"&gt;
+    &lt;spawn team="blue" kit="blue" yaw="180"&gt;
+        &lt;regions&gt;
+            &lt;cuboid min="-10,71,5" max="12,126,27"/&gt; &lt;!-- Players will spawn here first --&gt;
+            &lt;cuboid min="-10,6,5" max="12,6,27"/&gt; &lt;!-- Secondary spawn if the first isn't available --&gt;
+            &lt;point&gt;1,8,0&lt;/point&gt; &lt;!-- Tertiary spawn if all other team spawns aren't safe --&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+    &lt;spawn team="red" kit="red" yaw="0"&gt;
+        &lt;regions&gt;
+            &lt;cuboid min="-10,71,-27" max="12,126,-5"/&gt;
+            &lt;cuboid min="-10,6,-27" max="12,6,-5"/&gt;
+            &lt;point&gt;1,8,0&lt;/point&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+&lt;/spawns&gt;
+</code></pre>
+</div>
+<p><br/></p>
+<h3><span id="respawn">Respawn Module</span></h3>
+<p>The respawn module allows the map creator to adjust the respawn time and if players are automatically respawned. The respawn time must be greater than 1 second (20 ticks), if the respawn time is less it will automatically default to one second, allowing the death to fully complete and the player to be reset properly.</p>
+<p>To allow players to spawn at a bed set the bed attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.</p>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;respawn/&gt;</code>
+</span>
+</td>
+<td>Node specifying the respawn settings for this map.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Respawn Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>delay</code>
+</td>
+<td>
+                  Delay a players respawn for this duration.
+                </td>
+<td>
+<a href="/reference/time_periods">Time Period</a>
+</td>
+<td>2s</td>
+</tr>
+<tr>
+<td>
+<code>auto</code>
+</td>
+<td>
+                  Auto respawn the player after the delay time has elapsed.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>blackout</code>
+</td>
+<td>
+                  Dead players get a blindness effect applied.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>spectate</code>
+</td>
+<td>
+                  Allow dead players to fly around.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>bed</code>
+</td>
+<td>
+<span class="label label-danger">N/A</span>
+                  Allow players to respawn from beds.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>message</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+                  Message to display on the respawn screen to respawning players.
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Respawn Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th style="min-width: 125px;">Element</th>
+<th>Description</th>
+<th>Value/Children</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;message&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-default" title="Can be either this sub-element or an attribute.">Property</span>
+                  Message to display on the respawn screen to respawning players.
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>&lt;!-- Default auto respawn of 2 seconds --&gt;
+&lt;respawn auto="true"/&gt;
+
+&lt;!-- Allow players to respawn after 3 seconds, blackout the player when they die --&gt;
+&lt;respawn delay="3s" blackout="true"/&gt;
+
+&lt;!-- Allow respawning after 5s, display translatable waiting on flag drop respawn message --&gt;
+&lt;respawn delay="5s" spectate="true"&gt;
+    &lt;message&gt;{translate: "death.respawn.confirmed.waiting.flagDropped"}&lt;/message&gt;
+&lt;/respawn&gt;
+</code></pre>
+

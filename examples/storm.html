@@ -1,0 +1,201 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "Storm"
+
+---
+
+
+
+<p><a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Specify the XML file version and then open the main map module and specify the map's name, version and objective.</p>
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;map proto="1.4.2"&gt;
+&lt;name&gt;Storm&lt;/name&gt;
+&lt;version&gt;0.1.4&lt;/version&gt;
+&lt;objective&gt;Take control of all three hills!&lt;/objective&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Specify map authors.</p>
+<pre><code>&lt;authors&gt;
+    &lt;author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8"/&gt; &lt;!--  Plastix  --&gt;
+    &lt;author uuid="5986da63-a546-49c5-812d-d5c41a42510a"/&gt; &lt;!--  Lyzak  --&gt;
+    &lt;author uuid="90e029a3-6873-46a7-8430-0ec3dbc42aba"/&gt; &lt;!--  SajinZero  --&gt;
+&lt;/authors&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/tutorial"><i class="fa fa-share right-ref-link"></i></a>
+Define the tutorial and its points of interest.</p>
+<pre><code>&lt;include src="tutorial.xml"/&gt;
+&lt;tutorial&gt;
+    &lt;stage title="King of the Hill"&gt;
+        &lt;message&gt;
+            &lt;line&gt;`rThis map is a `a`lKing of the Hill `r(KotH) map&lt;/line&gt;
+            &lt;line&gt;First team to hold all `a3 hills `rwins. You can also win by having the most hills `bcontrolled `rat the end of the time limit.&lt;/line&gt;
+        &lt;/message&gt;
+        &lt;teleport&gt;
+            &lt;point yaw="135" pitch="30"&gt;30.5,38,30.5&lt;/point&gt;
+        &lt;/teleport&gt;
+    &lt;/stage&gt;
+    &lt;stage title="Spawn"&gt;
+        &lt;message&gt;
+            &lt;line&gt;This is the `cRed Team `rspawn. The `9Blue Team `rspawn is identical.&lt;/line&gt;
+            &lt;line&gt;You spawn with gear ready to go into battle!&lt;/line&gt;
+        &lt;/message&gt;
+        &lt;teleport&gt;
+            &lt;point yaw="125" pitch="10"&gt;59.5,7,73.5&lt;/point&gt;
+        &lt;/teleport&gt;
+    &lt;/stage&gt;
+    &lt;stage title="Hills"&gt;
+        &lt;message&gt;
+            &lt;line&gt;There is a `bhill `rin the `acenter`r, to the left is `aHill B`r, and to the right is `aHill A`r.&lt;/line&gt;
+            &lt;line&gt;Hills are indicated with a `bbeacon.&lt;/line&gt;
+            &lt;line&gt;The center hill will mostly be the most active.&lt;/line&gt;
+        &lt;/message&gt;
+        &lt;teleport&gt;
+            &lt;point yaw="135" pitch="30"&gt;30.5,38,30.5&lt;/point&gt;
+        &lt;/teleport&gt;
+    &lt;/stage&gt;
+    &lt;stage title="Health Potions"&gt;
+        &lt;message&gt;
+            &lt;line&gt;There are chests like this scattered about the map.&lt;/line&gt;
+            &lt;line&gt;They contain `bInstant Health 2 `rPotions.&lt;/line&gt;
+        &lt;/message&gt;
+        &lt;teleport&gt;
+            &lt;point yaw="0" pitch="15"&gt;-28.5,6,16.5&lt;/point&gt;
+        &lt;/teleport&gt;
+    &lt;/stage&gt;
+&lt;/tutorial&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/teams"><i class="fa fa-share right-ref-link"></i></a>
+Define two teams, their <a href="/reference/formatting#chatColors">colors</a> and names.</p>
+<pre><code>&lt;teams&gt;
+    &lt;team id="red-team" color="dark red" max="32"&gt;Red Team&lt;/team&gt;
+    &lt;team id="blue-team" color="blue" max="32"&gt;Blue Team&lt;/team&gt;
+&lt;/teams&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/kits"><i class="fa fa-share right-ref-link"></i></a>
+Define the team spawn kits. Both teams inherit the base spawn kit and add leather armor with that team's color to it.</p>
+<pre><code>&lt;kits&gt;
+    &lt;kit id="spawn"&gt;
+        &lt;item slot="0" material="stone sword"/&gt;
+        &lt;item slot="1" enchantment="arrow infinite:1" material="bow"/&gt;
+        &lt;item slot="28" amount="1" material="arrow"/&gt;
+        &lt;item slot="3" amount="1" material="golden apple"/&gt;
+        &lt;item slot="2" amount="64" material="baked potato"/&gt;
+        &lt;chestplate enchantment="protection projectile:1" unbreakable="true" material="iron chestplate"/&gt;
+        &lt;potion duration="5"&gt;heal&lt;/potion&gt;
+        &lt;potion duration="10" amplifier="4"&gt;damage resistance&lt;/potion&gt;
+    &lt;/kit&gt;
+    &lt;kit id="red" parents="spawn"&gt;
+        &lt;helmet color="cd0000" unbreakable="true" material="leather helmet"/&gt;
+        &lt;leggings color="cd0000" unbreakable="true" material="leather leggings"/&gt;
+        &lt;boots color="cd0000" unbreakable="true" material="leather boots"/&gt;
+    &lt;/kit&gt;
+    &lt;kit id="blue" parents="spawn"&gt;
+        &lt;helmet color="0066cc" unbreakable="true" material="leather helmet"/&gt;
+        &lt;leggings color="0066cc" unbreakable="true" material="leather leggings"/&gt;
+        &lt;boots color="0066cc" unbreakable="true" material="leather boots"/&gt;
+    &lt;/kit&gt;
+&lt;/kits&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/filters"><i class="fa fa-share right-ref-link"></i></a>
+Create a "deny-beacon" filter for later use.</p>
+<pre><code>&lt;filters&gt;
+    &lt;deny id="deny-beacons"&gt;
+        &lt;material&gt;beacon&lt;/material&gt;
+    &lt;/deny&gt;
+&lt;/filters&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/regions"><i class="fa fa-share right-ref-link"></i></a>
+Create the playable and team spawn regions, then apply the previously defined beacon filter to the playable region.</p>
+<pre><code>&lt;regions&gt;
+    &lt;rectangle id="playable" min="-oo,-oo" max="oo,oo"/&gt;
+    &lt;cylinder id="red-spawn" base="49,4,66" radius="4" height="0"/&gt;
+    &lt;cylinder id="blue-spawn" base="-48,4,-65" radius="4" height="0"/&gt;
+    &lt;apply block="never" use="deny-beacons" region="playable"/&gt;
+&lt;/regions&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Add auto repair to stone swords and bows.</p>
+<pre><code>&lt;toolrepair&gt;
+    &lt;tool&gt;stone sword&lt;/tool&gt;
+    &lt;tool&gt;bow&lt;/tool&gt;
+&lt;/toolrepair&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Auto remove some tools and items to prevent the playing field from being cluttered up.</p>
+<pre><code>&lt;itemremove&gt;
+    &lt;item&gt;leather helmet&lt;/item&gt;
+    &lt;item&gt;iron chestplate&lt;/item&gt;
+    &lt;item&gt;leather leggings&lt;/item&gt;
+    &lt;item&gt;leather boots&lt;/item&gt;
+    &lt;item&gt;arrow&lt;/item&gt;
+    &lt;item&gt;ladder&lt;/item&gt;
+    &lt;item&gt;baked potato&lt;/item&gt;
+    &lt;item&gt;golden apple&lt;/item&gt;
+    &lt;item&gt;glass bottle&lt;/item&gt;
+&lt;/itemremove&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/spawns"><i class="fa fa-share right-ref-link"></i></a>
+Specify team spawns and use the previously defined spawn regions.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawns yaw="90"&gt;
+        &lt;spawn team="red-team" kit="red"&gt;&lt;region id="red-spawn"/&gt;&lt;/spawn&gt;
+    &lt;/spawns&gt;
+    &lt;spawns yaw="270"&gt;
+        &lt;spawn team="blue-team" kit="blue"&gt;&lt;region id="blue-spawn"/&gt;&lt;/spawn&gt;
+    &lt;/spawns&gt;
+    &lt;default yaw="90"&gt;
+        &lt;cylinder base="95,60,0" radius="3" height="0"/&gt;
+    &lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_koth"><i class="fa fa-share right-ref-link"></i></a>
+Designate the KotH hills and their <code>&lt;capture&gt;</code>, <code>&lt;progress&gt;</code> and <code>&lt;captured&gt;</code> regions.</p>
+<pre><code>&lt;king&gt;
+    &lt;hills&gt;
+        &lt;hill name="Point A" capture-time="10s" ratio="1"&gt;
+            &lt;capture&gt;&lt;cuboid min="37,12,-38" max="46,15,-29"/&gt;&lt;/capture&gt;
+            &lt;progress&gt;&lt;cuboid min="37,11,-38" max="45,11,-30"/&gt;&lt;/progress&gt;
+            &lt;captured&gt;&lt;cuboid min="36,11,-39" max="48,16,-27"/&gt;&lt;/captured&gt;
+        &lt;/hill&gt;
+        &lt;hill name="Middle" capture-time="15s" ratio="1"&gt;
+            &lt;capture&gt;&lt;cuboid min="-4,4,-4" max="5,7,5"/&gt;&lt;/capture&gt;
+            &lt;progress&gt;&lt;cuboid min="-4,3,-4" max="4,3,4"/&gt;&lt;/progress&gt;
+            &lt;captured&gt;&lt;cuboid min="-5,3,-5" max="5,8,5"/&gt;&lt;/captured&gt;
+        &lt;/hill&gt;
+        &lt;hill name="Point B" capture-time="10s" ratio="1"&gt;
+            &lt;capture&gt;&lt;cuboid min="-45,12,30" max="-36,15,39"/&gt;&lt;/capture&gt;
+            &lt;progress&gt;&lt;cuboid min="-45,11,30" max="-37,11,38"/&gt;&lt;/progress&gt;
+            &lt;captured&gt;&lt;cuboid min="-46,11,29" max="-34,16,41"/&gt;&lt;/captured&gt;
+        &lt;/hill&gt;
+    &lt;/hills&gt;
+&lt;/king&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_koth#scoring"><i class="fa fa-share right-ref-link"></i></a>
+The game ends when a team reaches 750 points.</p>
+<pre><code>&lt;score&gt;
+    &lt;limit&gt;750&lt;/limit&gt;
+
+    &lt;!-- No points are gained from kills --&gt;
+&lt;/score&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Close the main map module.</p>
+<pre><code>&lt;/map&gt;
+</code></pre>
+

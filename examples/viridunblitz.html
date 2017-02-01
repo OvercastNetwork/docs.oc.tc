@@ -1,0 +1,185 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "Viridun Blitz"
+
+---
+
+
+
+<p><a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Specify the XML file version and then open the main map module and specify the maps name, version and objective.</p>
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;map proto="1.4.2"&gt;
+&lt;name&gt;Viridun Blitz&lt;/name&gt;
+&lt;version&gt;1.4.4&lt;/version&gt;
+&lt;objective&gt;Eliminate the other team before 10 minutes is up&lt;/objective&gt;
+</code></pre>
+<p><br/>
+Specify the maps authors and contributors. Each author and contributors <code>contribution=""</code> attribute is set to their specific contribution to the map.</p>
+<pre><code>&lt;authors&gt;
+    &lt;author uuid="27cf0cdd-c294-4163-a536-18e11360cc7b" contribution="Map design and layout"/&gt; &lt;!-- OurLoneHero --&gt;
+&lt;/authors&gt;
+&lt;contributors&gt;
+    &lt;contributor uuid="82c796a5-c033-43be-af30-fa06496995f9" contribution="Map design, aesthetic changes, and XML"/&gt; &lt;!-- IM_A_H0B0 --&gt;
+    &lt;contributor uuid="97abb45c-e545-473d-9b93-e1b9b94a43ee" contribution="Design concepts and map design"/&gt; &lt;!-- ander301 --&gt;
+&lt;/contributors&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/teams"><i class="fa fa-share right-ref-link"></i></a>
+Define two teams, their <a href="/reference/formatting#chatColors">colors</a> and names.</p>
+<pre><code>&lt;teams&gt;
+    &lt;team id="blue-team" color="blue" max="50"&gt;Blue Team&lt;/team&gt;
+    &lt;team id="red-team" color="dark red" max="50"&gt;Red Team&lt;/team&gt;
+&lt;/teams&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/filters"><i class="fa fa-share right-ref-link"></i></a>
+Define a fancy redstone filter. Prevents pistons from pushing anything other than fence blocks.</p>
+<pre><code>&lt;filters&gt;
+    &lt;all id="allow-redstone"&gt;
+        &lt;any&gt;
+            &lt;material&gt;PISTON_BASE&lt;/material&gt;
+            &lt;material&gt;PISTON_EXTENSION&lt;/material&gt;
+            &lt;material&gt;PISTON_MOVING_PIECE&lt;/material&gt;
+            &lt;material&gt;PISTON_STICKY_BASE&lt;/material&gt;
+        &lt;/any&gt;
+        &lt;any&gt;
+            &lt;material&gt;AIR&lt;/material&gt;&lt;!-- Allow the piston to extend --&gt;
+            &lt;material&gt;FENCE&lt;/material&gt;&lt;!-- Block being modified is a fence --&gt;
+        &lt;/any&gt;
+    &lt;/all&gt;
+&lt;/filters&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/regions"><i class="fa fa-share right-ref-link"></i></a>
+Define a <code>playable</code> region and apply the maps custom <code>allow-redstone</code> filter to it.</p>
+<pre><code>&lt;regions&gt;
+    &lt;rectangle id="playable" min="-oo,-oo" max="oo,oo"/&gt;
+    &lt;apply block="allow-redstone" region="playable"/&gt;
+&lt;/regions&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/kits"><i class="fa fa-share right-ref-link"></i></a>
+Each team kit has leather armor colored in their team color and they inherit the main spawn kit.</p>
+<pre><code>&lt;kits&gt;
+    &lt;kit id="spawn"&gt;
+        &lt;item slot="0" material="stone sword"/&gt;
+        &lt;item slot="1" enchantment="arrow infinite:1" material="bow"/&gt;
+        &lt;item slot="28" amount="1" material="arrow"/&gt;
+        &lt;item slot="2" amount="16" material="cooked chicken"/&gt;
+        &lt;item slot="3" damage="8229" material="potion"/&gt; &lt;!-- potion of instant health 2 --&gt;
+        &lt;potion duration="10" amplifier="1"&gt;heal&lt;/potion&gt;
+        &lt;potion duration="20"&gt;damage resistance&lt;/potion&gt;
+    &lt;/kit&gt;
+    &lt;kit id="red" parents="spawn"&gt;
+        &lt;helmet color="cd0000" material="leather helmet"/&gt;
+        &lt;chestplate color="cd0000" material="leather chestplate"/&gt;
+        &lt;leggings color="cd0000" material="leather leggings"/&gt;
+        &lt;boots color="cd0000" enchantment="protection fall:2" material="leather boots"/&gt;
+    &lt;/kit&gt;
+    &lt;kit id="blue" parents="spawn"&gt;
+        &lt;helmet color="0066cc" material="leather helmet"/&gt;
+        &lt;chestplate color="0066cc" material="leather chestplate"/&gt;
+        &lt;leggings color="0066cc" material="leather leggings"/&gt;
+        &lt;boots color="0066cc" enchantment="protection fall:2" material="leather boots"/&gt;
+    &lt;/kit&gt;
+&lt;/kits&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/spawns"><i class="fa fa-share right-ref-link"></i></a>
+Define where the player spawns. Because the bases are complex multiple regions are defined for each team spawn. Each spawn also specifies the direction the player should face when spawning.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawns kit="blue"&gt;
+        &lt;spawn team="blue-team" yaw="0"&gt;
+            &lt;cuboid min="23,33,-60" max="29,33,-55"/&gt;
+            &lt;cuboid min="24,33,-41" max="29,33,-46"/&gt;
+            &lt;cuboid min="-32,33,-3" max="-28,33,2"/&gt;
+            &lt;cuboid min="-23,79,-4" max="-18,79,2"/&gt;
+            &lt;cuboid min="-18,87,-5" max="-12,87,-3"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="blue-team" yaw="90"&gt;
+            &lt;cuboid min="40,37,-55" max="45,37,-58"/&gt;
+            &lt;cuboid min="41,64,-71" max="35,64,-77"/&gt;
+            &lt;cuboid min="47,72,-39" max="42,72,-44"/&gt;
+            &lt;cuboid min="40,52,-15" max="32,52,-27"/&gt;
+            &lt;cuboid min="13,60.5,13" max="14,60.5,16"/&gt;
+            &lt;cuboid min="-17,33,13" max="-13,33,15"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="blue-team" yaw="180"&gt;
+            &lt;cuboid min="-20,62,-6" max="-10,62,-2"/&gt;
+            &lt;cuboid min="-1,33,-4" max="3,33,3"/&gt;
+            &lt;cuboid min="-1,71,6" max="2,71,9"/&gt;
+            &lt;cuboid min="-17,87,2" max="-12,87,4"/&gt;
+        &lt;/spawn&gt;
+    &lt;/spawns&gt;
+    &lt;spawns kit="red"&gt;
+        &lt;!-- red spawns --&gt;
+        &lt;spawn team="red-team" yaw="0"&gt;
+            &lt;cuboid min="-107,90,-21" max="-110,90,-25"/&gt;
+            &lt;cylinder base="-99,63,-73" radius="3" height="0"/&gt;
+            &lt;cuboid min="-92,37,25" max="-88,37,30"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="red-team" yaw="90"&gt;
+            &lt;cylinder base="-91,76,-72,5" radius="1" height="0"/&gt;
+            &lt;cuboid min="-72,65,-27" max="-72,65,-23"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="red-team" yaw="180"&gt;
+            &lt;cylinder base="-98.5,84,-72.5" radius="2" height="0"/&gt;
+            &lt;cuboid min="-109,79,-15" max="-102,79,-29"/&gt;
+            &lt;cuboid min="-86,80,-11" max="-91,80,-18"/&gt;
+            &lt;cuboid min="-97,76,-61" max="-101,76,-48"/&gt;
+            &lt;cuboid min="-88,37,48" max="-84,37,52"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="red-team" yaw="270"&gt;
+            &lt;cuboid min="-142,83,-39" max="-121,83,-35"/&gt;
+            &lt;cuboid min="-110,65,-15" max="-103,65,-29"/&gt;
+            &lt;cuboid min="-98,65,-43" max="-114,65,-36"/&gt;
+        &lt;/spawn&gt;
+    &lt;/spawns&gt;
+    &lt;default yaw="90"&gt;&lt;cylinder base="51,27,-7.5" radius="10" height="0"/&gt;&lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_blitz"><i class="fa fa-share right-ref-link"></i></a>
+Set the game type to blitz and specify a max run time of 10 minutes.</p>
+<pre><code>&lt;time&gt;10m&lt;/time&gt;
+&lt;blitz&gt;
+    &lt;lives&gt;1&lt;/lives&gt;
+&lt;/blitz&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Specify that stone swords and bows get repaired when dropped or when the player picks one up.</p>
+<pre><code>&lt;toolrepair&gt;
+    &lt;tool&gt;stone sword&lt;/tool&gt;
+    &lt;tool&gt;bow&lt;/tool&gt;
+&lt;/toolrepair&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Remove specific items such as armor when they get dropped to prevent the map from getting cluttered.</p>
+<pre><code>&lt;itemremove&gt;
+    &lt;item&gt;leather helmet&lt;/item&gt;
+    &lt;item&gt;leather chestplate&lt;/item&gt;
+    &lt;item&gt;leather leggings&lt;/item&gt;
+    &lt;item&gt;leather boots&lt;/item&gt;
+    &lt;item&gt;arrow&lt;/item&gt;
+    &lt;item&gt;ladder&lt;/item&gt;
+    &lt;item&gt;cooked chicken&lt;/item&gt;
+    &lt;item&gt;glass bottle&lt;/item&gt;
+    &lt;item&gt;potion:0&lt;/item&gt;&lt;!-- Remove water bottles --&gt;
+&lt;/itemremove&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_blitz"><i class="fa fa-share right-ref-link"></i></a>
+Include the global blitz XML.</p>
+<pre><code>&lt;include src="blitz-global.xml"/&gt;
+</code></pre>
+<p><br/>
+Close the main <code>&lt;map&gt;</code> module.</p>
+<pre><code>&lt;/map&gt;
+</code></pre>
+

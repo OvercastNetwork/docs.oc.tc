@@ -1,0 +1,26 @@
+---
+layout: page
+
+category: "Modules"
+title:  "Time & Dimension"
+nav_content:
+  - path: "#time"
+    name: "Time"
+  - path: "#dimension"
+    name: "Dimension"
+
+---
+
+
+
+<h3><span id="time">Time</span></h3>
+<p>Lock the time to what the map was saved with. Change the maps time to midnight and then save it. The time will then remain locked to midnight the whole game through. This can also be accomplished with the <code>doDaylightCycle</code> <a href="/modules/gamerules">gamerule</a>.</p>
+<pre><code>&lt;timelock&gt;on&lt;/timelock&gt;  &lt;!-- Defaults to off --&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="dimension">Dimension</span></h3>
+<p>Change the dimension the map is played in to <code>nether</code>, <code>normal</code> or <code>the end</code>. The default is <code>normal</code>.
+        This mainly affects the color of the sky and natural mob spawning if it's enabled.</p>
+<pre><code>&lt;dimension&gt;nether&lt;/dimension&gt;
+</code></pre>
+

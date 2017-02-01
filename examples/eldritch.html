@@ -1,0 +1,83 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "GS: Eldritch"
+
+---
+
+
+
+<p><a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Specify the main map element. Name, version, objective, ect.</p>
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;map proto="1.4.2"&gt;
+&lt;name&gt;GS: Eldritch&lt;/name&gt;
+&lt;version&gt;v02.1&lt;/version&gt;
+&lt;objective&gt;Kill the enemy's squadron!&lt;/objective&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/includes"><i class="fa fa-share right-ref-link"></i></a>
+Include the default <a href="https://maps.oc.tc/Blitz/GS/gs.xml">ghostsquadron classes</a>.
+The included XML specifies that this is a <a href="/modules/gamemode_other#gs">ghostsquadron</a> map and sets up all the relevant classes &amp; kits.</p>
+<pre><code>&lt;include src="gs.xml"/&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Specify the map author, there are no contributors.</p>
+<pre><code>&lt;authors&gt;
+    &lt;author uuid="1ac2b1d3-d623-4dab-99e5-08f3cfe1c1a0"/&gt; &lt;!-- Vechs1 --&gt;
+&lt;/authors&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/teams"><i class="fa fa-share right-ref-link"></i></a>
+Create two teams, specify their <a href="/reference/formatting#chatColors">color</a> and max players.</p>
+<pre><code>&lt;teams&gt;
+    &lt;team id="blue-team" color="blue" max="8"&gt;Blue Team&lt;/team&gt;
+    &lt;team id="red-team" color="dark red" max="8"&gt;Red Team&lt;/team&gt;
+&lt;/teams&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/regions"><i class="fa fa-share right-ref-link"></i></a>
+Create the main area and deny all block interaction.</p>
+<pre><code>&lt;regions&gt;
+    &lt;rectangle id="main-area" min="-oo,-oo" max="oo,oo"/&gt;
+    &lt;apply block="never" region="main-area"/&gt;
+    &lt;apply enter="always" message="You may not leave the playing field"&gt;
+        &lt;region&gt;
+            &lt;negative&gt;
+                &lt;union&gt;
+                    &lt;cuboid id="red-base" min="530,23,-265" max="522,29,-257"/&gt;
+                    &lt;cuboid id="blue-base" min="583,23,-295" max="592,29,-304"/&gt;
+                    &lt;rectangle min="530,-308" max="583,-250"/&gt;
+                &lt;/union&gt;
+            &lt;/negative&gt;
+            &lt;rectangle min="524,-307" max="533,-296"/&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+&lt;/regions&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/spawns"><i class="fa fa-share right-ref-link"></i></a>
+Specify the two team's spawn points, as well as the observer spawn point.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawns&gt;
+        &lt;spawn team="blue-team" yaw="90"&gt;
+            &lt;cuboid min="584,24,-303" max="591,24,-296"/&gt;
+        &lt;/spawn&gt;
+        &lt;spawn team="red-team" yaw="-90"&gt;
+            &lt;cuboid min="522,24,-264" max="529,24,-257"/&gt;
+        &lt;/spawn&gt;
+    &lt;/spawns&gt;
+    &lt;default&gt;
+        &lt;point yaw="145"&gt;580.5,32,-248.5&lt;/point&gt;
+    &lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Close the main <code>&lt;map&gt;</code> element.</p>
+<pre><code>&lt;/map&gt;
+</code></pre>
+

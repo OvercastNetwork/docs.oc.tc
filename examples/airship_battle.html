@@ -1,0 +1,143 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "Airship Battle"
+
+---
+
+
+
+<p><a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Every map XML file starts with the XML header and then the base <code>&lt;map&gt;</code> module.</p>
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;map proto="1.4.2"&gt;
+&lt;!-- Specifies what the map is called --&gt;
+&lt;name&gt;Airship Battle&lt;/name&gt;
+&lt;!-- States what version the map is --&gt;
+&lt;version&gt;1.0.4&lt;/version&gt;
+&lt;!-- Tells the teams what the objective is in order to win the game --&gt;
+&lt;objective&gt;Leak lava from the enemy's obsidian core into the void.&lt;/objective&gt;
+&lt;!-- States who made the map --&gt;
+&lt;authors&gt;
+    &lt;author uuid="30e27366-0b14-4076-8f55-0819ece49ce3"/&gt; &lt;!--  Dewtroid  --&gt;
+&lt;/authors&gt;
+&lt;!-- Shows any map rules that are not in normal OCN rules --&gt;
+&lt;rules&gt;
+    &lt;rule&gt;Dispensers are disabled&lt;/rule&gt;
+&lt;/rules&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/filters"><i class="fa fa-share right-ref-link"></i></a>
+These filters is used to prevent people from placing dispensers or obsidian in the regions they are applied to.</p>
+<pre><code>&lt;filters&gt;
+    &lt;not id="deny-dispenser"&gt;
+        &lt;material&gt;dispenser&lt;/material&gt;
+    &lt;/not&gt;
+    &lt;not id="deny-obsidian"&gt;
+        &lt;material&gt;obsidian&lt;/material&gt;
+    &lt;/not&gt;
+&lt;/filters&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/teams"><i class="fa fa-share right-ref-link"></i></a>
+Defines the teams <a href="/reference/formatting#chatColors">colors</a>, names and how many people can be on the teams.</p>
+<pre><code>&lt;teams&gt;
+    &lt;team id="blue-team" color="blue" max="24"&gt;Blue Team&lt;/team&gt;
+    &lt;team id="red-team" color="dark red" max="24"&gt;Red Team&lt;/team&gt;
+&lt;/teams&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/regions"><i class="fa fa-share right-ref-link"></i></a>
+These regions reference the dispenser and obsidian filters defined above and states where they will work.</p>
+<pre><code>&lt;regions&gt;
+    &lt;!-- Apply the deny-dispenser filter to a infinite region --&gt;
+    &lt;apply block-place="deny-dispenser" message="Dispensers are disabled on this map!"&gt;
+        &lt;region&gt;
+            &lt;rectangle min="-oo,-oo" max="oo,oo"/&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply leave="always" message="Don't exit the playing field!"&gt;
+        &lt;region&gt;
+            &lt;rectangle min="-102,-4" max="102,125"/&gt; &lt;!-- Main area --&gt;
+            &lt;rectangle min="-36,-16" max="13,-2"/&gt; &lt;!-- Area between spawn tunnels --&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply block="always" message="Don't edit blocks outside the playing field!"&gt;
+        &lt;region&gt;
+            &lt;negative&gt;
+                &lt;union id="map"&gt;
+                    &lt;rectangle min="-100,-2" max="100,123"/&gt; &lt;!-- Main area --&gt;
+                    &lt;rectangle min="-36,-14" max="13,-2"/&gt; &lt;!-- Area between spawn tunnels --&gt;
+                &lt;/union&gt;
+            &lt;/negative&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply block-break="deny-obsidian" message="You may not break obsidian outside the core area!"&gt;
+        &lt;region&gt;
+            &lt;complement&gt;
+                &lt;region id="map"/&gt;
+                &lt;cuboid min="13,85,23" max="18,92,30"/&gt;
+                &lt;cuboid min="-41,85,23" max="-36,92,30"/&gt;
+            &lt;/complement&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+&lt;/regions&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/kits"><i class="fa fa-share right-ref-link"></i></a>
+Define a kit with special TNT defuser shears.</p>
+<pre><code>&lt;kits&gt;
+    &lt;kit id="shears"&gt;
+        &lt;item slot="8" name="`6TNT Defuser" lore="`7Right click to defuse teammate's TNT|`7Does not work in `9water`7!" material="shears"/&gt;
+    &lt;/kit&gt;
+&lt;/kits&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Remove shears, obsidian and gold block items from the playing field when they are dropped.</p>
+<pre><code>&lt;itemremove&gt;
+    &lt;item&gt;shears&lt;/item&gt;
+    &lt;item&gt;obsidian&lt;/item&gt;
+    &lt;item&gt;gold block&lt;/item&gt;
+&lt;/itemremove&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/spawns"><i class="fa fa-share right-ref-link"></i></a>
+Specify where the previously defined teams will spawn, the kit they will spawn with and what direction they face.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawn team="blue-team" yaw="270" kit="shears"&gt;
+        &lt;cuboid min="4.5,91,-34" max="7.5,91,-31"/&gt;
+    &lt;/spawn&gt;
+    &lt;spawn team="red-team" yaw="90" kit="shears"&gt;
+        &lt;cuboid min="-30.5,91,-34" max="-27.5,91,-31"/&gt;
+    &lt;/spawn&gt;
+    &lt;default yaw="180"&gt;
+        &lt;cylinder base="-11.5,90,-33" radius="3" height="0"/&gt;
+    &lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_dtc"><i class="fa fa-share right-ref-link"></i></a>
+This specifies what material the core is made of, who each core belongs to and how far the lava needs to leak.</p>
+<pre><code>&lt;cores material="obsidian" leak="10"&gt;
+    &lt;core team="blue-team"&gt;
+        &lt;cuboid min="13,85,23" max="18,92,30"/&gt;
+    &lt;/core&gt;
+    &lt;core team="red-team"&gt;
+        &lt;cuboid min="-41,85,23" max="-36,92,30"/&gt;
+    &lt;/core&gt;
+&lt;/cores&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/other_settings"><i class="fa fa-share right-ref-link"></i></a>
+This specifies how high players can build however it doesn't stop them from going over this limit.</p>
+<pre><code>&lt;maxbuildheight&gt;125&lt;/maxbuildheight&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Close the main <code>&lt;map&gt;</code> module.</p>
+<pre><code>&lt;/map&gt;
+</code></pre>
+

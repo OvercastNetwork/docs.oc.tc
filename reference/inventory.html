@@ -1,0 +1,5522 @@
+---
+layout: page
+
+category: "Reference"
+title:  "Inventory Slots & Materials"
+
+---
+
+
+
+<div class="row">
+<div class="col-lg-6">
+<p>
+<img alt="Inv Slots .png" src="/img/inv_slots.png"/>
+</p>
+</div>
+<div class="col-lg-6">
+<p>The <code>slot</code> attribute of items accepts both the slot number and Mojang slot names, e.g. <code>slot.hotbar.8</code>, <code>armor.head</code>, <code>35</code>, and <code>hotbar.8</code> will all work.</p>
+<p><code>slot.weapon.mainhand</code> is an automatic slot, that means that when inserting an item using this slot it will be handled as if no slot is specified.</p>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Mojang Slot Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slot.armor.chest</code></td>
+<td>Armor</td>
+</tr>
+<tr>
+<td><code>slot.armor.feet</code></td>
+<td>Armor</td>
+</tr>
+<tr>
+<td><code>slot.armor.head</code></td>
+<td>Armor</td>
+</tr>
+<tr>
+<td><code>slot.armor.legs</code></td>
+<td>Armor</td>
+</tr>
+<tr>
+<td><code>slot.weapon.mainhand</code></td>
+<td>
+                      Hand
+                      <div class="span label label-warning">Auto</div>
+</td>
+</tr>
+<tr>
+<td><code>slot.weapon.offhand</code></td>
+<td>Hand</td>
+</tr>
+<tr>
+<td><code>slot.hotbar.[0 to 8]</code></td>
+<td>Inventory</td>
+</tr>
+<tr>
+<td><code>slot.inventory.[0 to 26]</code></td>
+<td>Inventory</td>
+</tr>
+<tr></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<br/>
+<h3 id="material_matchers">Material Matchers</h3>
+        Depending on the material/item element used a material or multiple materials can be specified with or without data values.
+        <h5>Material Values</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="span label label-default">Single Material Pattern</div>
+</td>
+<td>
+                  A single material pattern consisting of a
+                  <code>material_name:data_value</code>
+                  string.
+                </td>
+</tr>
+<tr>
+<td>
+<div class="span label label-default">Material Pattern</div>
+</td>
+<td>
+                  A pattern that supports multiple materials with a optional data value.
+                  <br/>
+                  Multiple materials can be listed by separating them with a semicolon<code>;</code>.
+                  <br/>
+<code>material_name:data_value;material_name:data_value</code>
+</td>
+</tr>
+<tr>
+<td>
+<div class="span label label-default">Material Name</div>
+</td>
+<td>
+                  A single material.
+                  <br/>
+<i>Does not accept a damage/data value.</i>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br/>
+<h3 id="material_finder">
+          Material Finder
+        </h3>
+<p>
+<i style="display: block;">
+            Use <code>~armor</code>, <code>~block</code>, <code>~food</code>, <code>~flower</code>, <code>~redstone</code> etc. to filter by tags
+          </i>
+</p>
+<div id="blocks">
+<form role="search">
+<div class="form-group input-group">
+<input class="form-control" disabled="true" id="searchField" oninput="doMaterialSearch('dataTable')" placeholder="No Search - JavaScript Disabled :(" type="search"/>
+<span class="input-group-addon">
+<i class="fa fa-search"></i>
+<span id="resultCount"></span>
+</span>
+</div>
+</form>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th style="width: 110px;">
+                    UID
+                    <div class="span label label-danger" style="position: relative; top: -1px;">Obsolete</div>
+</th>
+<th style="width: 50px; text-align: right;">
+                    Data
+                  </th>
+<th>Name</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody id="dataTable">
+<tr>
+<td class="uid text-muted">0</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>AIR</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>STONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">1</td>
+<td class="name">
+<code>STONE</code>
+                    Granite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">2</td>
+<td class="name">
+<code>STONE</code>
+                    Polished Granite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">3</td>
+<td class="name">
+<code>STONE</code>
+                    Diorite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">4</td>
+<td class="name">
+<code>STONE</code>
+                    Polished Diorite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">5</td>
+<td class="name">
+<code>STONE</code>
+                    Andesite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">1</td>
+<td class="data">6</td>
+<td class="name">
+<code>STONE</code>
+                    Polished Andesite
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">2</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GRASS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">3</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>DIRT</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">3</td>
+<td class="data">1</td>
+<td class="name">
+<code>DIRT</code>
+                    Coarse Dirt
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">3</td>
+<td class="data">2</td>
+<td class="name">
+<code>DIRT</code>
+                    Podzol
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">4</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COBBLESTONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>WOOD</code>
+                    Oak Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data">1</td>
+<td class="name">
+<code>WOOD</code>
+                    Spruce Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data">2</td>
+<td class="name">
+<code>WOOD</code>
+                    Birch Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data">3</td>
+<td class="name">
+<code>WOOD</code>
+                    Jungle Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data">4</td>
+<td class="name">
+<code>WOOD</code>
+                    Acacia Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">5</td>
+<td class="data">5</td>
+<td class="name">
+<code>WOOD</code>
+                    Dark Oak Planks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SAPLING</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data">1</td>
+<td class="name">
+<code>SAPLING</code>
+                    Spruce
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data">2</td>
+<td class="name">
+<code>SAPLING</code>
+                    Birch
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data">3</td>
+<td class="name">
+<code>SAPLING</code>
+                    Jungle
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data">4</td>
+<td class="name">
+<code>SAPLING</code>
+                    Acacia
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">6</td>
+<td class="data">5</td>
+<td class="name">
+<code>SAPLING</code>
+                    Dark Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">7</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEDROCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">8</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WATER</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">9</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STATIONARY_WATER</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">10</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LAVA</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">11</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STATIONARY_LAVA</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">12</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SAND</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">12</td>
+<td class="data">1</td>
+<td class="name">
+<code>SAND</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">13</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GRAVEL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">14</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">15</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">16</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COAL_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">17</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>LOG</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">17</td>
+<td class="data">1</td>
+<td class="name">
+<code>LOG</code>
+                    Spruce
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">17</td>
+<td class="data">2</td>
+<td class="name">
+<code>LOG</code>
+                    Birch
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">17</td>
+<td class="data">3</td>
+<td class="name">
+<code>LOG</code>
+                    Jungle
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">18</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>LEAVES</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">18</td>
+<td class="data">1</td>
+<td class="name">
+<code>LEAVES</code>
+                    Spruce
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">18</td>
+<td class="data">2</td>
+<td class="name">
+<code>LEAVES</code>
+                    Birch
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">18</td>
+<td class="data">3</td>
+<td class="name">
+<code>LEAVES</code>
+                    Jungle
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">19</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SPONGE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">19</td>
+<td class="data">1</td>
+<td class="name">
+<code>SPONGE</code>
+                    Wet
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">20</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GLASS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">21</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LAPIS_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">22</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LAPIS_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">23</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DISPENSER</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">24</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SANDSTONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">24</td>
+<td class="data">1</td>
+<td class="name">
+<code>SANDSTONE</code>
+                    Chiseled
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">24</td>
+<td class="data">2</td>
+<td class="name">
+<code>SANDSTONE</code>
+                    Smooth
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">25</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NOTE_BLOCK</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">26</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BED_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">27</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POWERED_RAIL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">28</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DETECTOR_RAIL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">29</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PISTON_STICKY_BASE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">30</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WEB</code>
+                    Spider Web
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">31</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>LONG_GRASS</code>
+                    Dead Shrub
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">31</td>
+<td class="data">1</td>
+<td class="name">
+<code>LONG_GRASS</code>
+                    Tall Grass
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">31</td>
+<td class="data">2</td>
+<td class="name">
+<code>LONG_GRASS</code>
+                    Fern
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">32</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DEAD_BUSH</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">33</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PISTON_BASE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">34</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PISTON_EXTENSION</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>WOOL</code>
+                    White
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">1</td>
+<td class="name">
+<code>WOOL</code>
+                    Orange
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">2</td>
+<td class="name">
+<code>WOOL</code>
+                    Magenta
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">3</td>
+<td class="name">
+<code>WOOL</code>
+                    Light Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">4</td>
+<td class="name">
+<code>WOOL</code>
+                    Yellow
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">5</td>
+<td class="name">
+<code>WOOL</code>
+                    Lime
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">6</td>
+<td class="name">
+<code>WOOL</code>
+                    Pink
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">7</td>
+<td class="name">
+<code>WOOL</code>
+                    Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">8</td>
+<td class="name">
+<code>WOOL</code>
+                    Light Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">9</td>
+<td class="name">
+<code>WOOL</code>
+                    Cyan
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">10</td>
+<td class="name">
+<code>WOOL</code>
+                    Purple
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">11</td>
+<td class="name">
+<code>WOOL</code>
+                    Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">12</td>
+<td class="name">
+<code>WOOL</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">13</td>
+<td class="name">
+<code>WOOL</code>
+                    Green
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">14</td>
+<td class="name">
+<code>WOOL</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">35</td>
+<td class="data">15</td>
+<td class="name">
+<code>WOOL</code>
+                    Black
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">36</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PISTON_MOVING_PIECE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">37</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>YELLOW_FLOWER</code>
+</td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Poppy
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">1</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Blue Orchid
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">2</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Allium
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">3</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Azure Bluet
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">4</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Red Tulip
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">5</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Orange Tulip
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">6</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    White Tulip
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">7</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Pink Tulip
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">38</td>
+<td class="data">8</td>
+<td class="name">
+<code>RED_ROSE</code>
+                    Oxeye Daisy
+                  </td>
+<td class="tags">block, flower</td>
+</tr>
+<tr>
+<td class="uid text-muted">39</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BROWN_MUSHROOM</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">40</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RED_MUSHROOM</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">41</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">42</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Stone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">1</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Sandstone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">2</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Wooden Stone
+                    <div class="span label label-danger">Obsolete</div>
+                    Replaced by
+                    <code>WOOD_DOUBLE_STEP</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">3</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Cobblestone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">4</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">5</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">6</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Nether Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">7</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Quartz
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">8</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Smooth Stone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">43</td>
+<td class="data">9</td>
+<td class="name">
+<code>DOUBLE_STEP</code>
+                    Smooth Sandstone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>STEP</code>
+                    Stone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">1</td>
+<td class="name">
+<code>STEP</code>
+                    Sandstone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">2</td>
+<td class="name">
+<code>STEP</code>
+                    Wooden Stone
+                    <div class="span label label-danger">Obsolete</div>
+                    Replaced by
+                    <code>WOOD_STEP</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">3</td>
+<td class="name">
+<code>STEP</code>
+                    Cobblestone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">4</td>
+<td class="name">
+<code>STEP</code>
+                    Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">5</td>
+<td class="name">
+<code>STEP</code>
+                    Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">6</td>
+<td class="name">
+<code>STEP</code>
+                    Nether Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">44</td>
+<td class="data">7</td>
+<td class="name">
+<code>STEP</code>
+                    Quartz
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">45</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BRICK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">46</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TNT</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">47</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOOKSHELF</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">48</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MOSSY_COBBLESTONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">49</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>OBSIDIAN</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">50</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TORCH</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">51</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FIRE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">52</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MOB_SPAWNER</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">53</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_STAIRS</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">54</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHEST</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">55</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_WIRE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">56</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">57</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">58</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WORKBENCH</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">59</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CROPS</code>
+                    Wheat
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">60</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SOIL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">61</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FURNACE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">62</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BURNING_FURNACE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">63</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SIGN_POST</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">64</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOODEN_DOOR</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">65</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LADDER</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">66</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RAILS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">67</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COBBLESTONE_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">68</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WALL_SIGN</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">69</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEVER</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">70</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_PLATE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">71</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_DOOR_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">72</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_PLATE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">73</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_ORE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">74</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GLOWING_REDSTONE_ORE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">75</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_TORCH_OFF</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">76</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_TORCH_ON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">77</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_BUTTON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">78</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SNOW</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">79</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ICE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">80</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SNOW_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">81</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CACTUS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">82</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CLAY</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">83</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SUGAR_CANE_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">84</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUKEBOX</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">85</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FENCE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">86</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PUMPKIN</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">87</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHERRACK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">88</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SOUL_SAND</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">89</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GLOWSTONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">90</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PORTAL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">91</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JACK_O_LANTERN</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">92</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CAKE_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">93</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIODE_BLOCK_OFF</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">94</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIODE_BLOCK_ON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    White
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">1</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Orange
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">2</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Magenta
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">3</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Light Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">4</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Yellow
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">5</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Lime
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">6</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Pink
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">7</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">8</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Light Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">9</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Cyan
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">10</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Purple
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">11</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">12</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">13</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Green
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">14</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">95</td>
+<td class="data">15</td>
+<td class="name">
+<code>STAINED_GLASS</code>
+                    Black
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">96</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TRAP_DOOR</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Stone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data">1</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Cobblestone
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data">2</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data">3</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Mossy Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data">4</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Cracked Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">97</td>
+<td class="data">5</td>
+<td class="name">
+<code>MONSTER_EGGS</code>
+                    Chiseled Stone Brick
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">98</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SMOOTH_BRICK</code>
+                    Stone Bricks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">98</td>
+<td class="data">1</td>
+<td class="name">
+<code>SMOOTH_BRICK</code>
+                    Mossy Stone Bricks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">98</td>
+<td class="data">2</td>
+<td class="name">
+<code>SMOOTH_BRICK</code>
+                    Cracked Stone Bricks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">98</td>
+<td class="data">3</td>
+<td class="name">
+<code>SMOOTH_BRICK</code>
+                    Chiseled Stone Bricks
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">99</td>
+<td class="data text-muted">
+<a href="http://minecraft.gamepedia.com/Mushroom_(block)#Block_data">
+<i class="fa fa-fw fa-external-link-square"></i>
+</a>
+</td>
+<td class="name">
+<code>HUGE_MUSHROOM_1</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">100</td>
+<td class="data text-muted">
+<a href="http://minecraft.gamepedia.com/Mushroom_(block)#Block_data">
+<i class="fa fa-fw fa-external-link-square"></i>
+</a>
+</td>
+<td class="name">
+<code>HUGE_MUSHROOM_2</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">101</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_FENCE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">102</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>THIN_GLASS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">103</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MELON_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">104</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PUMPKIN_STEM</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">105</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MELON_STEM</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">106</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>VINE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">107</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FENCE_GATE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">108</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BRICK_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">109</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SMOOTH_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">110</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MYCEL</code>
+                    Mycelium
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">111</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WATER_LILY</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">112</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_BRICK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">113</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_FENCE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">114</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_BRICK_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">115</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_WARTS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">116</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENCHANTMENT_TABLE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">117</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BREWING_STAND</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">118</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CAULDRON</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">119</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENDER_PORTAL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">120</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENDER_PORTAL_FRAME</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">121</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENDER_STONE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">122</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DRAGON_EGG</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">123</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_LAMP_OFF</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">124</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_LAMP_ON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data">1</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Spruce
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data">2</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Birch
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data">3</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Jungle
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data">4</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Acacia
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">125</td>
+<td class="data">5</td>
+<td class="name">
+<code>WOOD_DOUBLE_STEP</code>
+                    Dark Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data">1</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Spruce
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data">2</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Birch
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data">3</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Jungle
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data">4</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Acacia
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">126</td>
+<td class="data">5</td>
+<td class="name">
+<code>WOOD_STEP</code>
+                    Dark Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">127</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COCOA</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">128</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SANDSTONE_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">129</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EMERALD_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">130</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENDER_CHEST</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">131</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TRIPWIRE_HOOK</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">132</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TRIPWIRE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">133</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EMERALD_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">134</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPRUCE_WOOD_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">135</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BIRCH_WOOD_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">136</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUNGLE_WOOD_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">137</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COMMAND</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">138</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEACON</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">139</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>COBBLE_WALL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">139</td>
+<td class="data">1</td>
+<td class="name">
+<code>COBBLE_WALL</code>
+                    Mossy
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">140</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FLOWER_POT</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">141</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CARROT</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">142</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POTATO</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">143</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_BUTTON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SKULL</code>
+                    Skeleton
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data">1</td>
+<td class="name">
+<code>SKULL</code>
+                    Wither
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data">2</td>
+<td class="name">
+<code>SKULL</code>
+                    Zombie
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data">3</td>
+<td class="name">
+<code>SKULL</code>
+                    Steve
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data">4</td>
+<td class="name">
+<code>SKULL</code>
+                    Creeper
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">144</td>
+<td class="data">5</td>
+<td class="name">
+<code>SKULL</code>
+                    Dragon
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">145</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>ANVIL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">145</td>
+<td class="data">1</td>
+<td class="name">
+<code>ANVIL</code>
+                    Damaged
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">145</td>
+<td class="data">2</td>
+<td class="name">
+<code>ANVIL</code>
+                    Very Damaged
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">146</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TRAPPED_CHEST</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">147</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_PLATE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">148</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_PLATE</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">149</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_COMPARATOR_OFF</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">150</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_COMPARATOR_ON</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">151</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DAYLIGHT_DETECTOR</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">152</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_BLOCK</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">153</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>QUARTZ_ORE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">154</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>HOPPER</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">155</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>QUARTZ_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">155</td>
+<td class="data">1</td>
+<td class="name">
+<code>QUARTZ_BLOCK</code>
+                    Chiseled
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">155</td>
+<td class="data">2</td>
+<td class="name">
+<code>QUARTZ_BLOCK</code>
+                    Pillar
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">156</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>QUARTZ_STAIRS</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">157</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACTIVATOR_RAIL</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">158</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DROPPER</code>
+</td>
+<td class="tags">block, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    White
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">1</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Orange
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">2</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Magenta
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">3</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Light Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">4</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Yellow
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">5</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Lime
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">6</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Pink
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">7</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">8</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Light Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">9</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Cyan
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">10</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Purple
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">11</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">12</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">13</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Green
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">14</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">159</td>
+<td class="data">15</td>
+<td class="name">
+<code>STAINED_CLAY</code>
+                    Black
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    White
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">1</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Orange
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">2</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Magenta
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">3</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Light Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">4</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Yellow
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">5</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Lime
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">6</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Pink
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">7</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">8</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Light Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">9</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Cyan
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">10</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Purple
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">11</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">12</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">13</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Green
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">14</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">160</td>
+<td class="data">15</td>
+<td class="name">
+<code>STAINED_GLASS_PANE</code>
+                    Black
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">161</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>LEAVES_2</code>
+                    Acacia
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">161</td>
+<td class="data">1</td>
+<td class="name">
+<code>LEAVES_2</code>
+                    Dark Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">162</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>LOG_2</code>
+                    Acacia
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">162</td>
+<td class="data">1</td>
+<td class="name">
+<code>LOG_2</code>
+                    Dark Oak
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">163</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACACIA_STAIRS</code>
+                    Wood
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">164</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DARK_OAK_STAIRS</code>
+                    Wood
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">165</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SLIME_BLOCK</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">166</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BARRIER</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">167</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_TRAPDOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">168</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>PRISMARINE</code>
+                    Block
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">168</td>
+<td class="data">1</td>
+<td class="name">
+<code>PRISMARINE</code>
+                    Bricks
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">168</td>
+<td class="data">2</td>
+<td class="name">
+<code>PRISMARINE</code>
+                    Dark Prismarine
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">169</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SEA_LANTERN</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">170</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>HAY_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>CARPET</code>
+                    White
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">1</td>
+<td class="name">
+<code>CARPET</code>
+                    Orange
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">2</td>
+<td class="name">
+<code>CARPET</code>
+                    Magenta
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">3</td>
+<td class="name">
+<code>CARPET</code>
+                    Light Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">4</td>
+<td class="name">
+<code>CARPET</code>
+                    Yellow
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">5</td>
+<td class="name">
+<code>CARPET</code>
+                    Lime
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">6</td>
+<td class="name">
+<code>CARPET</code>
+                    Pink
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">7</td>
+<td class="name">
+<code>CARPET</code>
+                    Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">8</td>
+<td class="name">
+<code>CARPET</code>
+                    Light Gray
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">9</td>
+<td class="name">
+<code>CARPET</code>
+                    Cyan
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">10</td>
+<td class="name">
+<code>CARPET</code>
+                    Purple
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">11</td>
+<td class="name">
+<code>CARPET</code>
+                    Blue
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">12</td>
+<td class="name">
+<code>CARPET</code>
+                    Brown
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">13</td>
+<td class="name">
+<code>CARPET</code>
+                    Green
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">14</td>
+<td class="name">
+<code>CARPET</code>
+                    Red
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">171</td>
+<td class="data">15</td>
+<td class="name">
+<code>CARPET</code>
+                    Black
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">172</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>HARD_CLAY</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">173</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COAL_BLOCK</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">174</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PACKED_ICE</code>
+</td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Sunflower
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data">1</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Lilac
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data">2</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Double Tallgrass
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data">3</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Large Fern
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data">4</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Rose Bush
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">175</td>
+<td class="data">5</td>
+<td class="name">
+<code>DOUBLE_PLANT</code>
+                    Peony
+                  </td>
+<td class="tags">block</td>
+</tr>
+<tr>
+<td class="uid text-muted">176</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STANDING_BANNER</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">177</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WALL_BANNER</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">178</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DAYLIGHT_DETECTOR_INVERTED</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">179</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>RED_SANDSTONE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">179</td>
+<td class="data">1</td>
+<td class="name">
+<code>RED_SANDSTONE</code>
+                    Chiseled
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">179</td>
+<td class="data">2</td>
+<td class="name">
+<code>RED_SANDSTONE</code>
+                    Smooth
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">180</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RED_SANDSTONE_STAIRS</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">181</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>DOUBLE_STONE_SLAB2</code>
+                    Red Sandstone
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">181</td>
+<td class="data">8</td>
+<td class="name">
+<code>DOUBLE_STONE_SLAB2</code>
+                    Smooth Red Sandstone
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">182</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_SLAB2</code>
+                    Red Sandstone
+                  </td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">183</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPRUCE_FENCE_GATE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">184</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BIRCH_FENCE_GATE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">185</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUNGLE_FENCE_GATE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">186</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DARK_OAK_FENCE_GATE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">187</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACACIA_FENCE_GATE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">188</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPRUCE_FENCE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">189</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BIRCH_FENCE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">190</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUNGLE_FENCE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">191</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DARK_OAK_FENCE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">192</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACACIA_FENCE</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">193</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPRUCE_DOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">194</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BIRCH_DOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">195</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUNGLE_DOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">196</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACACIA_DOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">197</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DARK_OAK_DOOR</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">198</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>END_ROD</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">199</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHORUS_PLANT</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">200</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHORUS_FLOWER</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">201</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PURPUR_BLOCK</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">202</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PURPUR_PILLAR</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">203</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PURPUR_STAIRS</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">204</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PURPUR_DOUBLE_SLAB</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">205</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PURPUR_SLAB</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">206</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>END_BRICKS</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">207</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEETROOT_BLOCK</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">208</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GRASS_PATH</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">209</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>END_GATEWAY</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">210</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COMMAND_REPEATING</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">211</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COMMAND_CHAIN</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">212</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FROSTED_ICE</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">213</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MAGMA</code>
+</td>
+<td class="tags">block, 1.10</td>
+</tr>
+<tr>
+<td class="uid text-muted">214</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_WART_BLOCK</code>
+</td>
+<td class="tags">block, 1.10</td>
+</tr>
+<tr>
+<td class="uid text-muted">215</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RED_NETHER_BRICK</code>
+</td>
+<td class="tags">block, 1.10</td>
+</tr>
+<tr>
+<td class="uid text-muted">216</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BONE_BLOCK</code>
+</td>
+<td class="tags">block, 1.10</td>
+</tr>
+<tr>
+<td class="uid text-muted">217</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STRUCTURE_VOID</code>
+</td>
+<td class="tags">block, 1.10</td>
+</tr>
+<tr>
+<td class="uid text-muted">255</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STRUCTURE_BLOCK</code>
+</td>
+<td class="tags">block, 1.9</td>
+</tr>
+<!-- ITEMS ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+<tr>
+<td class="uid text-muted">256</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_SPADE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">257</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_PICKAXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">258</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_AXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">259</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FLINT_AND_STEEL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">260</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>APPLE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">261</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOW</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">262</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ARROW</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">263</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>COAL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">263</td>
+<td class="data">1</td>
+<td class="name">
+<code>COAL</code>
+                    Charcoal
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">264</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">265</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_INGOT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">266</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_INGOT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">267</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_SWORD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">268</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_SWORD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">269</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_SPADE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">270</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_PICKAXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">271</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_AXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">272</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_SWORD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">273</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_SPADE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">274</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_PICKAXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">275</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_AXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">276</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_SWORD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">277</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_SPADE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">278</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_PICKAXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">279</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_AXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">280</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STICK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">281</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOWL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">282</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MUSHROOM_SOUP</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">283</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_SWORD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">284</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_SPADE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">285</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_PICKAXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">286</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_AXE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">287</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STRING</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">288</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FEATHER</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">289</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SULPHUR</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">290</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_HOE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">291</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STONE_HOE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">292</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_HOE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">293</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_HOE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">294</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_HOE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">295</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SEEDS</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">296</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WHEAT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">297</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BREAD</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">298</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEATHER_HELMET</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">299</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEATHER_CHESTPLATE</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">300</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEATHER_LEGGINGS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">301</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEATHER_BOOTS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">302</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHAINMAIL_HELMET</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">303</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHAINMAIL_CHESTPLATE</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">304</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHAINMAIL_LEGGINGS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">305</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHAINMAIL_BOOTS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">306</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_HELMET</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">307</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_CHESTPLATE</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">308</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_LEGGINGS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">309</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_BOOTS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">310</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_HELMET</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">311</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_CHESTPLATE</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">312</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_LEGGINGS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">313</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_BOOTS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">314</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_HELMET</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">315</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_CHESTPLATE</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">316</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_LEGGINGS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">317</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_BOOTS</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">318</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FLINT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">319</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PORK</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">320</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GRILLED_PORK</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">321</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PAINTING</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">322</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>GOLDEN_APPLE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">322</td>
+<td class="data">1</td>
+<td class="name">
+<code>GOLDEN_APPLE</code>
+                    Enchanted
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">323</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SIGN</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">324</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WOOD_DOOR</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">325</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BUCKET</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">326</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WATER_BUCKET</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">327</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LAVA_BUCKET</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">328</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">329</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SADDLE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">330</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_DOOR</code>
+</td>
+<td class="tags">item, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">331</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE</code>
+</td>
+<td class="tags">item, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">332</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SNOW_BALL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">333</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">334</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEATHER</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">335</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MILK_BUCKET</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">336</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CLAY_BRICK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">337</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CLAY_BALL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">338</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SUGAR_CANE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">339</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PAPER</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">340</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOOK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">341</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SLIME_BALL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">342</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>STORAGE_MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">343</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POWERED_MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">344</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EGG</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">345</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COMPASS</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">346</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FISHING_ROD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">347</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WATCH</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">348</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GLOWSTONE_DUST</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">349</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>RAW_FISH</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">349</td>
+<td class="data">1</td>
+<td class="name">
+<code>RAW_FISH</code>
+                    Salmon
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">349</td>
+<td class="data">2</td>
+<td class="name">
+<code>RAW_FISH</code>
+                    Clownfish
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">349</td>
+<td class="data">3</td>
+<td class="name">
+<code>RAW_FISH</code>
+                    Pufferfish
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">350</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>COOKED_FISH</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">350</td>
+<td class="data">1</td>
+<td class="name">
+<code>COOKED_FISH</code>
+                    Salmon
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">350</td>
+<td class="data">2</td>
+<td class="name">
+<code>COOKED_FISH</code>
+                    Clownfish
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">350</td>
+<td class="data">3</td>
+<td class="name">
+<code>COOKED_FISH</code>
+                    Pufferfish
+                  </td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>INK_SACK</code>
+                    Black Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data text-muted">1</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Red Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">2</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Green Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">3</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Cocoa Bean
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">4</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Lapis Lazuli
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">5</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Purple Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">6</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Cyan Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">7</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Light Gray Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">8</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Gray Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">9</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Pink Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">10</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Lime Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">11</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Yellow Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">12</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Light Blue Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">13</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Magenta Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">14</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Orange Dye
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">351</td>
+<td class="data">15</td>
+<td class="name">
+<code>INK_SACK</code>
+                    Bone Meal
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">352</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BONE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">353</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SUGAR</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">354</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CAKE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">355</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BED</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">356</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIODE</code>
+</td>
+<td class="tags">item, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">357</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COOKIE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">358</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MAP</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">359</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SHEARS</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">360</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MELON</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">361</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PUMPKIN_SEEDS</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">362</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MELON_SEEDS</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">363</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RAW_BEEF</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">364</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COOKED_BEEF</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">365</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RAW_CHICKEN</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">366</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COOKED_CHICKEN</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">367</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ROTTEN_FLESH</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">368</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENDER_PEARL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">369</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BLAZE_ROD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">370</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GHAST_TEAR</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">371</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_NUGGET</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">372</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_STALK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">373</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POTION</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">374</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GLASS_BOTTLE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">375</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPIDER_EYE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">376</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FERMENTED_SPIDER_EYE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">377</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BLAZE_POWDER</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">378</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MAGMA_CREAM</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">379</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BREWING_STAND_ITEM</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">380</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CAULDRON_ITEM</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">381</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EYE_OF_ENDER</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">382</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPECKLED_MELON</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">383</td>
+<td class="data">50</td>
+<td class="name">
+<code>MONSTER_EGG</code>
+                    NBT data is used to specify the mob:
+                    <a href="http://minecraft.gamepedia.com/Spawn_Egg#Data_values">Spawn egg, Data Values</a>
+</td>
+<td class="tags">item, spawn egg</td>
+</tr>
+<tr>
+<td class="uid text-muted">384</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EXP_BOTTLE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">385</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FIREBALL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">386</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOOK_AND_QUILL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">387</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>WRITTEN_BOOK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">388</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EMERALD</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">389</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ITEM_FRAME</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">390</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FLOWER_POT_ITEM</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">391</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CARROT_ITEM</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">392</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POTATO_ITEM</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">393</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BAKED_POTATO</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">394</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>POISONOUS_POTATO</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">395</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EMPTY_MAP</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">396</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLDEN_CARROT</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data text-muted">0</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Skeleton
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data">1</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Wither
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data">2</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Zombie
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data">3</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Steve
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data">4</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Creeper
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">397</td>
+<td class="data">5</td>
+<td class="name">
+<code>SKULL_ITEM</code>
+                    Dragon
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">398</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CARROT_STICK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">399</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_STAR</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">400</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PUMPKIN_PIE</code>
+</td>
+<td class="tags">item, food</td>
+</tr>
+<tr>
+<td class="uid text-muted">401</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FIREWORK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">402</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>FIREWORK_CHARGE</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">403</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ENCHANTED_BOOK</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">404</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>REDSTONE_COMPARATOR</code>
+</td>
+<td class="tags">item, redstone</td>
+</tr>
+<tr>
+<td class="uid text-muted">405</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NETHER_BRICK_ITEM</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">406</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>QUARTZ</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">407</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>EXPLOSIVE_MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">408</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>HOPPER_MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">409</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PRISMARINE_SHARD</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">410</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>PRISMARINE_CRYSTALS</code>
+</td>
+<td class="tags">block, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">411</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RABBIT</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">412</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COOKED_RABBIT</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">413</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RABBIT_STEW</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">414</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RABBIT_FOOT</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">415</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RABBIT_HIDE</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">416</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ARMOR_STAND</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">417</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>IRON_BARDING</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">418</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_BARDING</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">419</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DIAMOND_BARDING</code>
+</td>
+<td class="tags">item, armor</td>
+</tr>
+<tr>
+<td class="uid text-muted">420</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LEASH</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">421</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>NAME_TAG</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">422</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COMMAND_MINECART</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">423</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>MUTTON</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">424</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>COOKED_MUTTON</code>
+</td>
+<td class="tags">item, food, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">425</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BANNER</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">426</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>END_CRYSTAL</code>
+</td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">427</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPRUCE_DOOR_ITEM</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">428</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BIRCH_DOOR_ITEM</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">429</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>JUNGLE_DOOR_ITEM</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">430</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ACACIA_DOOR_ITEM</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">431</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DARK_OAK_DOOR_ITEM</code>
+</td>
+<td class="tags">item, 1.8</td>
+</tr>
+<tr>
+<td class="uid text-muted">432</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHORUS_FRUIT</code>
+</td>
+<td class="tags">item, food, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">433</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>CHORUS_FRUIT_POPPED</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">434</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEETROOT</code>
+</td>
+<td class="tags">item, food, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">435</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEETROOT_SEEDS</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">436</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BEETROOT_SOUP</code>
+</td>
+<td class="tags">item, food, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">437</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>DRAGONS_BREATH</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">438</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPLASH_POTION</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">439</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SPECTRAL_ARROW</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">440</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>TIPPED_ARROW</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">441</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>LINGERING_POTION</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">442</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>SHIELD</code>
+</td>
+<td class="tags">item, armor, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">443</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>ELYTRA</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">444</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT_SPRUCE</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">445</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT_BIRCH</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">446</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT_JUNGLE</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">447</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT_ACACIA</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<tr>
+<td class="uid text-muted">448</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>BOAT_DARK_OAK</code>
+</td>
+<td class="tags">item, 1.9</td>
+</tr>
+<!-- Records ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+<tr>
+<td class="uid text-muted">2256</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GOLD_RECORD</code>
+                    13
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2257</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>GREEN_RECORD</code>
+                    Cat
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2258</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_3</code>
+                    Blocks
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2259</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_4</code>
+                    Chirp
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2260</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_5</code>
+                    Far
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2261</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_6</code>
+                    Mall
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2262</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_7</code>
+                    Mellohi
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2263</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_8</code>
+                    Stal
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2264</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_9</code>
+                    Strad
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2265</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_10</code>
+                    Ward
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2266</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_11</code>
+                    11
+                  </td>
+<td class="tags">item</td>
+</tr>
+<tr>
+<td class="uid text-muted">2267</td>
+<td class="data text-muted"></td>
+<td class="name">
+<code>RECORD_12</code>
+                    Wait
+                  </td>
+<td class="tags">item</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      // Remove the js missing error from the search field.
+      document.getElementById('searchField').disabled = false;
+      document.getElementById('searchField').placeholder = "Search";
+
+      // Call this so that the table gets indexed.
+      doMaterialSearch('dataTable');
+  });
+
+  // Search a specific table and remove all rows that do not match.
+  var parsedRowData = null;
+  function doMaterialSearch(tableID) {
+      var targetTable = document.getElementById(tableID);
+
+      // Index the table.
+      if (!parsedRowData) {
+          var rowData = targetTable.rows;
+          parsedRowData = new Array();
+          for (var rowIndex = 0; rowIndex < rowData.length; rowIndex++) {
+              var tableRow = rowData.item(rowIndex);
+              // Not a data row, ignore.
+              if (tableRow.cells.length != 4) {
+                  continue;
+              }
+
+              // Get and nicely format the search-able terms in the table.
+              // We add the text to an empty string so that we don't do indexOf against null later on in the code.
+              var materialUID = '' + tableRow.cells.item(0).textContent.trim().replace(/\s\s+/g, ' ').toLocaleLowerCase();
+              var materialName = '' + tableRow.cells.item(2).textContent.trim().replace(/\s\s+/g, ' ').replace(/(_)/gm, " ").toLocaleLowerCase();
+              var materialTags = '' + tableRow.cells.item(3).textContent.trim().replace(/\s\s+/g, ' ').toLocaleLowerCase().split(", ");
+
+              parsedRowData.push([tableRow, materialUID, materialName, materialTags]);
+          }
+      }
+
+      // Format the search query
+      var searchText = document.getElementById('searchField').value.trim().toLocaleLowerCase();
+      // Find and remove all search terms that are indicated to be tags
+      var tagSearchTerms = searchText.match(/~\S*/gi);
+      searchText = searchText.replace(/~\S*/gi,"").trim();
+      if (tagSearchTerms) {
+          for (var i = 0; i < tagSearchTerms.length; i++) {
+              // Remove leading ~ from all tag search terms.
+              tagSearchTerms[i] = tagSearchTerms[i].slice(1);
+          }
+      }
+
+      // Create the query regex pattern
+      var searchKeys = searchText.split(' ');
+      var searchRegexS = "^";
+      for (var i = 0; i < searchKeys.length; i++) {
+          searchRegexS += "(?=.*\\b" + searchKeys[i] + ")";
+      }
+      searchRegexS += ".+";
+      searchRegex = new RegExp(searchRegexS, 'i');
+
+
+      var matchingRows = new Array();
+      // Loop through the tables rows and check if they match the query.
+      for (var rowIndex = 0; rowIndex < parsedRowData.length; rowIndex++) {
+          var rowData = parsedRowData[rowIndex];
+
+          var materialUID = rowData[1];
+          var materialName = rowData[2];
+          var materialTags = rowData[3];
+
+          var matches = false;
+          // If the search term is a number only match the materials UID.
+          if ($.isNumeric(searchText)) {
+              // Only return true if the search result starts at the beginning of the UID
+              // This will prevent a search query of 8 from returning 18.
+              if (materialUID.search(searchText) == 0) {
+                  matches = true;
+              }
+          }
+
+          // Otherwise match the materials name
+          // If searchText is "" (nothing) returns 0 instead of -1?
+          // This isn't really a problem since we want the table to show everything if there is no search term.
+          // This also allows us to search just by tag without having to add another else if.
+          else if (materialName.search(searchRegex) != -1) {
+              matches = true;
+              // If we have tags, mark any materials that don't match the tags as non-matching.
+              // This will result in us only having materials that match both the query and the tags.
+              if (tagSearchTerms) {
+                  for (var i = 0; i < tagSearchTerms.length; i++) {
+                      if (materialTags.indexOf(tagSearchTerms[i]) == -1) {
+                          matches = false;
+                      }
+                  }
+              }
+          }
+
+          // Add matching row
+          if (matches == true) {
+              matchingRows.push(rowData)
+          }
+      }
+
+
+      // Update the result counter.
+      var count = matchingRows.length.toString();
+      document.getElementById("resultCount").textContent = count;
+
+      // Create a new table body and replace the old one.
+      var newTableBody = document.createElement('tbody');
+      newTableBody.setAttribute("id", "dataTable");
+      populateWithRows(matchingRows, newTableBody);
+      targetTable.parentNode.replaceChild(newTableBody, targetTable)
+      return true;
+  }
+
+  function populateWithRows(matchingRows, newTableBody) {
+      // If there are no matching rows add one indicating this.
+      if (matchingRows.length <= 0) {
+          var row = document.createElement("tr");
+          var cell = document.createElement("td");
+          var cellText = document.createTextNode("No materials match the query.");
+
+          cell.appendChild(cellText);
+          row.appendChild(cell);
+          row.setAttribute("id", "no_items");
+          cell.setAttribute("colspan", "4");
+          // Insert it as the first child.
+          newTableBody.insertBefore(row, newTableBody.firstChild);
+      }
+      else {
+          for (var rowIndex = 0; rowIndex < matchingRows.length; rowIndex++) {
+              matchingRow = matchingRows[rowIndex];
+              row = matchingRow[0];
+              newTableBody.appendChild(row);
+          }
+      }
+  }
+</script>

@@ -1,0 +1,168 @@
+---
+layout: page
+
+category: "Modules"
+title:  "Broadcasts"
+
+---
+
+
+
+<p>The broadcast module allows you to broadcast a message to all players at any given point in the match.
+        Inside the broadcast tag you may specify either a <code>&lt;alert&gt;</code> or a <code>&lt;tip&gt;</code> message tag with an <code>after=""</code> attribute. This attribute is required and specifies how long after the match is started the broadcast is shown. <br/>
+        The text in broadcasts can be formatted by using <a href="/reference/formatting">formatting codes</a>.</p>
+<p><span class="label label-warning">Note!</span>
+        This module should <strong>only</strong> be used to to show important information that is <strong>specific</strong> and <strong>unique</strong> to the map.
+        It should not be used to for generic OCN related messages.</p>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Broadcasts Element</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;broadcasts&gt; &lt;/broadcasts&gt;</code>
+</span>
+</td>
+<td>An element containing all the defined broadcast messages.</td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2">Sub-Elements</th>
+<th>Value/Children</th>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;tip&gt; &lt;/tip&gt;</code>
+</span>
+</td>
+<td>
+                  This will display a [Tip] message
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;alert&gt; &lt;/alert&gt;</code>
+</span>
+</td>
+<td>
+                  This will display an [Alert] message
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Message Tag Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>after</code>
+</td>
+<td>
+<span class="label label-danger">Required</span>
+                  Duration to wait after the match starts to show the message.
+                </td>
+<td>
+<a href="/reference/time_periods">Time Period</a>
+</td>
+</tr>
+<tr>
+<td>
+<code>every</code>
+</td>
+<td>
+                  After the message is shown repeat it with this duration between messages.
+                </td>
+<td>
+<a href="/reference/time_periods">Time Period</a>
+</td>
+</tr>
+<tr>
+<td>
+<code>count</code>
+</td>
+<td>
+                  Amount of times the message is repeated.<br/>
+<i>Infinite repetition can be specified by using <code>oo</code> as the duration.</i>
+</td>
+<td>
+<span class="label label-primary">Number</span>
+</td>
+</tr>
+<tr>
+<td>
+<code>filter</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+                  Filter if the broadcast message is sent after the duration has passed, or if it's skipped.
+                </td>
+<td>
+<a href="/modules/filters">Filter</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Message Tag Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;filter&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-default" title="Can be this sub-element or an attribute.">Property</span>
+                  Filter if the broadcast message is sent after the duration has passed, or if it's skipped.
+                </td>
+<td>
+<a href="/modules/filters">Filters</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Examples</p>
+<pre><code>&lt;broadcasts&gt;
+    &lt;tip after="30s"&gt;A [Tip] displayed 30 seconds into the match&lt;/tip&gt;
+    &lt;alert after="5m"&gt;An [Alert] displayed after 5 minutes&lt;/alert&gt;
+    &lt;tip after="10m" count="3"&gt;Repeated [Tip] at 10m, 20m, and 30m&lt;/tip&gt;
+    &lt;tip after="99s" count="oo"&gt;Repeated every 99 seconds, forever&lt;/tip&gt;
+    &lt;tip after="20m" every="1m"&gt;Displayed at 20m and every minute after that&lt;/tip&gt;
+    &lt;tip after="30m" every="10m" count="3"&gt;At 30m, 40m, and 50m&lt;/tip&gt;
+&lt;/broadcasts&gt;
+</code></pre>
+

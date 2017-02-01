@@ -1,7 +1,10 @@
-*html
 .DS_Store
 
 /vendor/bundle
 .ruby-version
 .bundle/config
 /build/
+
+_site/
+.sass-cache/
+.jekyll-metadata

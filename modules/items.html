@@ -1,0 +1,939 @@
+---
+layout: page
+
+category: "Modules"
+title:  "Items & Armor"
+nav_content:
+  - path: "#heads"
+    name: "Player Heads"
+  - path: "#armor"
+    name: "Armor"
+  - path: "#potions"
+    name: "Potions"
+  - path: "#books"
+    name: "Books"
+  - path: "#enchantments"
+    name: "Enchantments"
+  - path: "#attributes"
+    name: "Attribute Modifiers"
+  - path: "#grenades"
+    name: "Grenades"
+  - path: "#can-destroy"
+    name: "Can-Destroy / Can-Place-On"
+
+---
+
+
+
+<p>The item elements are used to place items into a player's inventory or armor slots.
+        Items have many different attributes, and some may only apply to certain item types;
+        such as the leather armor <code>color</code> attribute.</p>
+<p>Item names can be found with the <a href="/reference/inventory#material_finder">material finder</a>
+        or on the <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html">bukkit docs - Material</a></p>
+<h5>Item Element</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;item&gt;</code>
+</span>
+</td>
+<td>
+                  A single item stack.
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Sub-Elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;enchantment&gt; &lt;/enchantment&gt;</code>
+</span>
+</td>
+<td>
+<a href="#enchantments">Enchantment</a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;stored-enchantment&gt; &lt;/stored-enchantment&gt;</code>
+</span>
+</td>
+<td>
+<a href="#enchantments">Stored Enchantment (for enchanted books)</a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;effect&gt; &lt;/effect&gt;</code>
+</span>
+</td>
+<td>
+<a href="#potions">Potion Effect</a>
+                  (only works on potion items)
+                </td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;attribute&gt; &lt;/attribute&gt;</code>
+</span>
+</td>
+<td>
+<a href="#attributes">Attribute Modifier</a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;can-destroy&gt; &lt;/can-destroy&gt;</code>
+</span>
+</td>
+<td>
+<a class="left-ref-link" href="#can-destroy"><i class="fa fa-chevron-down"></i></a>
+                  Materials that can be mined with the item
+                </td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;can-place-on&gt; &lt;/can-place-on&gt;</code>
+</span>
+</td>
+<td>
+<a class="left-ref-link" href="#can-destroy"><i class="fa fa-chevron-down"></i></a>
+                  Materials that the item can be placed on
+                </td>
+</tr>
+</tbody>
+</table>
+<h5>Item Attributes</h5>
+</div>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>material</code>
+</td>
+<td>
+<span class="label label-danger">Required</span>
+                  The item's material name.
+                </td>
+<td>
+<a href="/reference/inventory#material_matchers">Material Name</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>slot</code>
+</td>
+<td>
+                  Slot where the item will be placed in the player's inventory.
+                  <br/>
+<i>If no slot is specified the item will be merged into the player's inventory.</i>
+</td>
+<td>
+<a href="/reference/inventory">Inventory Slot</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>amount</code>
+</td>
+<td>The amount of items.</td>
+<td>
+<span class="label label-primary">Number</span>
+</td>
+<td>1</td>
+</tr>
+<tr>
+<td>
+<code>damage</code>
+</td>
+<td>
+                  The item's damage, used for items such as birch logs.
+                </td>
+<td>
+<span class="label label-primary">Number</span>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>
+<code>unbreakable</code>
+</td>
+<td>
+                  Specify if this item is unbreakable, hides the durability bar in minecraft.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>locked</code>
+</td>
+<td>Prevent the item from being removed from its inventory slot in any way.</td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>name</code>
+</td>
+<td>The item's display name.</td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>lore</code>
+</td>
+<td>Custom lore string.</td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>color</code>
+</td>
+<td>
+                  Leather armor color as a hexadecimal color. <code>RRGGBB</code>
+<br/>
+<i>Only applies to leather armor items.</i>
+</td>
+<td>
+<span class="label label-primary">Hex Color</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>grenade</code>
+</td>
+<td>
+<a class="left-ref-link" href="#grenades"><i class="fa fa-chevron-down"></i></a>
+                  Projectile explodes on impact.
+                  <br/>
+<i>Works with ender pearls, snowballs, eggs, and arrows.</i>
+</td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>grenade-power</code>
+</td>
+<td>The power of the grenade explosion on impact.</td>
+<td>
+<span class="label label-primary">Decimal</span>
+</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>
+<code>grenade-fire</code>
+</td>
+<td>
+                  Explosion creates fire.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>grenade-destroy</code>
+</td>
+<td>
+                  Explosion destroys blocks.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>prevent-sharing</code>
+</td>
+<td>
+                  Prevent this item from being moved from the player's inventory.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>false</td>
+</tr>
+<tr>
+<td>
+<code>projectile</code>
+</td>
+<td>
+                  Make this item shoot a custom projectile.
+                </td>
+<td>
+<a href="/modules/projectiles">Projectile ID</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>show-enchantments</code>
+</td>
+<td>
+                  Show enchantments in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>show-attributes</code>
+</td>
+<td>
+                  Show attribute modifiers in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>show-unbreakable</code>
+</td>
+<td>
+                  Show the unbreakable property in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>show-can-destroy</code>
+</td>
+<td>
+                  Show the breakable block list in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>show-can-place-on</code>
+</td>
+<td>
+                  Show the blocks the item can be placed on in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+<tr>
+<td>
+<code>show-other</code>
+</td>
+<td>
+                  Show various other things in the item tooltip.
+                </td>
+<td>
+<span class="label label-primary">true/false</span>
+</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Items can be give custom names and lore with the <code>name</code> and <code>lore</code> attributes. Colors and fancy text in item names or lore can be specified with the grave symbol <code>`</code> and then the <a href="/reference/formatting">formatting code</a>. You can specify multiple lines of lore using a pipe symbol <code>|</code> for line breaks.</p>
+<pre><code>&lt;item name="`6Golden Sword" material="gold sword"/&gt; &lt;!-- Gold sword with a gold/yellow name. --&gt;
+&lt;item lore="`4The One and Only" material="stick"/&gt; &lt;!-- A stick with the lore colored red. --&gt;
+&lt;item lore="`eWarning!|`5Does damage!" material="iron sword"/&gt; &lt;!-- A sword with 2 lines of lore. --&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="heads">Custom Heads</span></h3>
+<p>Player heads can be given to players by using the heads element.</p>
+<p>A player's skin data can be found by using <code>https://sessionserver.mojang.com/session/minecraft/profile/(UUID)</code>
+        There is a limit of one request a minute for each UUID so be sure to copy the data the first time.</p>
+<pre><code>&lt;head name="Cubist" uuid="3fbec7dd0a5f40bf9d11885a54507112"&gt;
+    &lt;skin&gt;eyJ0aW1lc3RhbXAiOjE0NDY0MDgwOTExNzQsInByb2ZpbGVJZCI6IjNmYmVjN2RkMGE1ZjQwYmY5ZDExODg1YTU0NTA3MTEyIiwicHJvZmlsZU5hbWUiOiJDdWJpc3QiLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTRlZGExMjg4NWIzYmE2ZGY2ODMyZGZkMTIzNGEyNjc5MmQwNDI2ZDkyMDM2ZWVlYzc1M2ZiZmM2NmRiIn19fQ==&lt;/skin&gt;
+&lt;/head&gt;
+</code></pre>
+<h5>
+          Skin Data Lookup
+        </h5>
+<i id="lookupInfo">
+          Opens a separate page with the JSON data for the specified UUID. You can find a player's UUID with
+          <a href="http://mcuuid.net">mcuuid.net</a>
+</i>
+<form id="queryUUIDForm" role="search">
+<div class="form-group input-group">
+<input class="form-control" disabled="true" id="queryField" placeholder="No Skin Lookup - JavaScript Disabled :(" type="search"/>
+<span class="input-group-btn">
+<button class="btn btn-default" type="submit">
+<i class="fa fa-search"></i>
+</button>
+</span>
+</div>
+</form>
+<h5>Head Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>username</code>
+</td>
+<td>The heads display name.???</td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>uuid</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+<span class="label label-danger">Required</span>
+                  UUID used to identify the player this head belongs to.
+                </td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<code>skin</code>
+</td>
+<td>
+<span class="label label-default" title="Can be either this attribute or a sub-element.">Property</span>
+<span class="label label-danger">Required</span>
+                  The skin data used for this head.
+                </td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Head Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;uuid&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-default" title="Can be either this sub-element or an attribute.">Property</span>
+<span class="label label-danger">Required</span>
+                  UUID used to identify the player this head belongs to.
+                </td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;skin&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-default" title="Can be either this sub-element or an attribute.">Property</span>
+<span class="label label-danger">Required</span>
+                  The skin data used for this head.
+                </td>
+<td>
+<span class="label label-primary">String</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br/></p>
+<h3><span id="armor">Armor</span></h3>
+<p>Armor slots have predefined tags to make it easier to give them to a player. They accept all of the properties of normal items, and may have their own special attributes.</p>
+<pre><code>&lt;helmet material="iron helmet"/&gt;
+&lt;chestplate material="diamond chestplate"/&gt;
+&lt;leggings material="gold leggings"/&gt;
+&lt;boots material="leather boots"/&gt;
+</code></pre>
+<p>Enchanting, naming or giving armor lore works the same way as with items.</p>
+<pre><code>&lt;boots material="iron boots" lore="The Winged Boots of Hermes"&gt;
+    &lt;enchantment level="1"&gt;feather_falling&lt;/enchantment&gt;
+&lt;/boots&gt;
+</code></pre>
+<p>Items like leather armor are colored with the <code>color</code> attribute.
+        The color is represented in hexadecimal, see <a href="/reference/colors">dye colors</a> for a list of hex colors for the different dyes.</p>
+<p><code>NOTE:</code> The hex color value is specified without the hash <code>#</code> symbol.</p>
+<pre><code>&lt;helmet color="cd0000" material="leather helmet"/&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="potions">Potions</span></h3>
+<p>Potion items (including lingering and splash potions) can specify their potion type, and any number of custom effects.
+        The potion type determines the name and color of the item.
+        It also determines the default effects of the potion.
+        However, if any custom effects are present, they will completely replace the default effects.</p>
+<p>By default when a player drinks a potion bottle the empty bottle is automatically removed from the players inventory.
+        This behavior can be disabled with the <code>&lt;keep-potion-bottles/&gt;</code> tag.</p>
+<p>See <a href="/modules/potions">Potion Effects</a> for details on the effects element.</p>
+<p>Also see <a href="http://www.minecraftwiki.net/wiki/Potions">Minecraft wiki - Potion</a>
+        and <a href="http://minecraft.gamepedia.com/Status_effect">Minecraft wiki - Status Effect</a></p>
+<h5>Potion Item Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>potion</code>
+</td>
+<td>
+                  Potion type
+                </td>
+<td>
+<a href="http://minecraft.gamepedia.com/Potion#Data_values">Potion ID</a>
+</td>
+<td>
+<code>minecraft:empty</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Potion Item Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;effect&gt;</code>
+</span>
+</td>
+<td>
+                  Custom effect
+                </td>
+<td>
+<a href="/modules/potions">Potion Effect</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>&lt;item slot="0" material="lingering potion" potion="strong_harming"/&gt;
+&lt;item slot="1" material="potion" potion="fire_resistance"&gt;
+    &lt;effect duration="15m"&gt;fire_resistance&lt;/effect&gt;
+&lt;/item&gt;
+</code></pre>
+<p><br/></p>
+<h3>Auto Potion Bottle Remover</h3>
+<p>Empty potion bottles are removed automatically when a player drinks a potion.<br/>
+        This feature is enabled by default, but can be disabled with this tag.</p>
+<pre><code>&lt;keep-potion-bottles/&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="books">Books</span></h3>
+<p>Written books can be created using the book element, the tile, author and individual pages can be formatted with <a href="/reference/formatting">formatting codes</a>. All normal item attributes can also be applied to books.</p>
+<p>Each page in a book can contain a maximum of 13 lines, with approximately 19 characters per line. Preferably books should be written in-game to ensure proper formatting, and then translated into the books element.</p>
+<h5>Book Element</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;book&gt;</code>
+</span>
+</td>
+<td>
+                  The element containing the books
+                  <code>&lt;title&gt;</code>
+<code>&lt;author&gt;</code>
+                  &amp;
+                  <code>&lt;pages&gt;</code>
+</td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Book Sub-elements</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;title&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-danger">Required</span>
+                  The title of the book.
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;author&gt;</code>
+</span>
+</td>
+<td>
+<span class="label label-danger">Required</span>
+                  The author of the book.
+                </td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;pages&gt;</code>
+</span>
+</td>
+<td>The pages in the book.</td>
+<td>
+<code>&lt;page&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;page&gt;</code>
+</span>
+</td>
+<td>
+                  A newline separated string. Used inside
+                  <code>&lt;pages&gt;</code>
+</td>
+<td>
+<span class="label label-primary">Formatted Text</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>&lt;book slot="1"&gt;
+    &lt;title&gt;`6Example`r&lt;/title&gt;
+    &lt;author&gt;`4BB-8`r&lt;/author&gt;
+    &lt;pages&gt;
+        &lt;page&gt;
+            `lPage `1I`r
+            This is an example
+        &lt;/page&gt;
+        &lt;page&gt;
+            `lPage `1II`r
+
+            Nothing to see here, move along...
+        &lt;/page&gt;
+        &lt;!-- More pages --&gt;
+    &lt;/pages&gt;
+&lt;/book&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="enchantments">Enchantments</span></h3>
+<p>Any enchantment can be applied to any item and an item can have one or multiple enchantments.
+        The enchantment type can be specified by its
+        <a href="http://minecraft.gamepedia.com/Data_values#Enchantment_IDs">Minecraft name</a> or
+        <a href="/reference/enchantments">Bukkit name</a>.</p>
+<p>To store an enchantment in an enchanted book (instead of enchanting the book itself),
+        simply replace the tag <code>enchantment</code> with <code>stored-enchantment</code>.</p>
+<h5>Enchantment Element</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;enchantment&gt; &lt;/enchantment&gt;</code>
+</span>
+</td>
+<td>An item enchantment.</td>
+<td>
+<a href="/reference/enchantments">Enchantment Name</a>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;stored-enchantment&gt; &lt;/stored-enchantment&gt;</code>
+</span>
+</td>
+<td>An enchantment stored in an enchanted book.</td>
+<td>
+<a href="/reference/enchantments">Enchantment Name</a>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5>Enchantment Attributes</h5>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Value</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>level</code>
+</td>
+<td>The specified enchantment's level.</td>
+<td>
+<span class="label label-primary">Number</span>
+</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Examples</p>
+<pre><code>&lt;!-- A sharpness II iron sword --&gt;
+&lt;item material="iron sword"&gt;
+    &lt;enchantment level="2"&gt;sharpness&lt;/enchantment&gt;
+&lt;/item&gt;
+
+&lt;!-- A knockback IV stick --&gt;
+&lt;item material="stick"&gt;
+    &lt;enchantment level="4"&gt;knockback&lt;/enchantment&gt;
+&lt;/item&gt;
+
+&lt;!-- Feather falling 2 boots --&gt;
+&lt;boots material="gold boots"&gt;
+    &lt;enchantment level="2"&gt;feather_falling&lt;/enchantment&gt;
+&lt;/boots&gt;
+
+&lt;!-- Enchanted book of Luck --&gt;
+&lt;item material="enchanted_book"&gt;
+    &lt;stored-enchantment level="1"&gt;luck&lt;/stored-enchantment&gt;
+&lt;/item&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="attributes">Attribute Modifiers</span></h3>
+<p>Attribute modifiers can be applied to items in the same way they are applied to kits.
+        See <a href="/modules/kits#attributes">Attribute Kits</a> for details.</p>
+<p>Additionally, a <code>slot</code> can be specified, in which case the modifier will only be applied
+        when the item is in that slot. This must be an <a href="/reference/inventory">armor or hand slot</a>.</p>
+<p>Examples</p>
+<pre><code>&lt;chestplate material="chainmail chestplate"&gt;
+    &lt;attribute amount="1"&gt;generic.knockbackResistance&lt;/attribute&gt;
+&lt;/chestplate&gt;
+
+&lt;item material="diamond spade"&gt;
+    &lt;attribute slot="weapon.mainhand" operation="multiply" amount="2"&gt;generic.movementSpeed&lt;/attribute&gt;
+&lt;/item&gt;
+</code></pre>
+<p><code>NOTE:</code> Negative attribute values are allowed; however sometimes they don't work as expected.</p>
+<p><br/></p>
+<h3><span id="grenades">Grenades</span></h3>
+<p>The <code>grenade="true"</code> attribute will make the item explode on impact, just like a grenade. This option only works on items that can turn into projectiles. For example, ender pearls, snowballs, eggs, and arrows all work.</p>
+<p>The <code>grenade-power="1.0"</code> attribute sets the explosion power. The default value of <code>1.0</code> will not destroy blocks, but it will damage players and set off TNT.</p>
+<p>The attributes <code>grenade-fire="true"</code> and <code>grenade-destroy="true"</code> determine if the explosion creates fire and/or destroys blocks.</p>
+<p><code>NOTE:</code> If an ender pearl is used as a grenade, the player will teleport to the location and the explosion will occur.</p>
+<pre><code>&lt;item slot="1" amount="12" name="`4Grenade" grenade="true" grenade-power="1.2" material="snow ball"/&gt;
+&lt;item name="`a`lRocket Ammo" amount="3" enchantment="thorns" grenade="true" grenade-power="4" grenade-fire="true" material="arrow"/&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="can-destroy">Can-Destroy / Can-Place-On</span></h3>
+<p>In adventure mode, no blocks can be placed or mined by default. The <code>&lt;can-destroy&gt;</code> element allows an item to mine a specified list of blocks.
+        The <code>&lt;can-place-on&gt;</code> element allows a block item to be placed against a specified list of blocks. In each case, the blocks are listed inside
+        the element, each wrapped in a <code>&lt;material&gt;</code> sub-element. These blocks <strong>cannot</strong> have damage/data values (this is a limitation of Minecraft
+        that we are unable to work around).</p>
+<p>Instead of a list of blocks, you can use the <code>&lt;all-blocks/&gt;</code> element, which is equivalent to listing literally every block in the game.
+        In this case, you will probably want to specify <code>show-can-place-on="false"</code> or <code>show-can-destroy="false"</code> on the item to prevent a
+        massive tooltip being displayed to the player.</p>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;can-destroy&gt; &lt;/can-destroy&gt;</code>
+</span>
+</td>
+<td>A node containing the materials this item can destroy.</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;can-place-on&gt; &lt;/can-place-on&gt;</code>
+</span>
+</td>
+<td>A node containing materials this item can be placed on.</td>
+<td></td>
+</tr>
+<tr>
+<th colspan="2">Sub-elements</th>
+<th>Value/Children</th>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;material&gt; &lt;/material&gt;</code>
+</span>
+</td>
+<td>
+                  An individual material to match.
+                  <br/>
+<i>Does not accept a damage/data value.</i>
+</td>
+<td>
+<a href="/reference/inventory#material_matchers">Material Name</a>
+</td>
+</tr>
+<tr>
+<td>
+<span class="highlight">
+<code>&lt;all-blocks/&gt;</code>
+</span>
+</td>
+<td>Match all block type materials.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>&lt;item material="iron shovel"&gt;
+    &lt;can-destroy&gt;
+        &lt;material&gt;dirt&lt;/material&gt;
+        &lt;material&gt;grass&lt;/material&gt;
+        &lt;material&gt;sand&lt;/material&gt;
+    &lt;/can-destroy&gt;
+&lt;/item&gt;
+
+&lt;item material="lever"&gt;
+    &lt;can-place-on&gt;
+        &lt;all-blocks/&gt;
+    &lt;/can-place-on&gt;
+&lt;/item&gt;
+</code></pre>
+

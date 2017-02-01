@@ -1,0 +1,405 @@
+---
+layout: page
+
+category: "Information"
+title:  "Protocol Versions"
+
+---
+
+
+
+<h4>Changes in 1.4.2</h4>
+<ul class="changelog">
+<li>
+<span class="label label-danger">Breaking</span>
+<p>The objectives filter will now always automatically derive team ownership for the objective from context.
+            To match an objective without any specific team, the <code>any="true"</code> attribute needs to be specified.</p>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Portals, kits, score boxes &amp; structures can now be dynamically applied using dynamic filters.
+            All region types are dynamic, however, only some filter types are dynamic.</p>
+<ul>
+<li>Kits now have <code>give</code>, <code>take</code> &amp; <code>lend</code> properties.</li>
+<li>Portals have <code>forward</code>, <code>reverse</code> &amp; <code>transit</code> properties.</li>
+<li>Structures &amp; score boxes have a <code>trigger</code> property.</li>
+</ul>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added a player count filter.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added a <code>&lt;grounded/&gt;</code> filter to check if the player is standing on the ground.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added <code>&lt;match-started/&gt;</code>, <code>&lt;match-running/&gt;</code> &amp; <code>&lt;match-finished/&gt;</code> filters that are used to check the state of the current match.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>New <code>pre-match-physics</code> attribute for the terrain module to enable physics events before the match starts.</p>
+</li>
+</ul>
+<br/>
+<h4>Changes in 1.4.1</h4>
+<ul class="changelog">
+<li>
+<span class="label label-danger">Breaking</span>
+<p><code>&lt;random&gt;</code> filters now only respond to instantaneous events, and abstain when used in any persistent context.
+            This breaks some uses that relied on undefined behavior, but these would likely break anyway as filters gain more dynamic functionality.</p>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>As of minecraft 1.9 TNT fuse time is no longer limited to 4 seconds.</p>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>Portals react to player move events allowing almost instant teleportation as soon as the filter matches.</p>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added <code>&lt;observing&gt;</code> and <code>&lt;participant&gt;</code> filters. Also added an <code>observers</code> filter property to portals to restrict observer access.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added player rank and score filters. Filters return if the player's rank or score is within the specified range.<br/>
+            Added a gliding filter, returns if the player is gliding with an elytra.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Control points have new <code>recovery</code> and <code>decay</code> attributes that replace the <code>incremental</code> attribute and allow more control of the progress.</p>
+</li>
+</ul>
+<br/>
+<h4>Changes in 1.4.0</h4>
+<ul class="changelog">
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Filters, regions, and kits now use <code>id</code> instead of <code>name</code>. <br/>
+            Keep in mind that IDs are all in the same namespace, so you can <strong>not</strong> use the same ID for two different types of thing.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Teams have a <code>id</code> attribute and are always referenced by it everywhere in the XML, <strong>never</strong> by name.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Standalone filter definitions are no longer wrapped in a <code>&lt;filter&gt;</code> tag, they start with an actual filter, just like regions, e.g.</p>
+<pre><code>&lt;filters&gt;
+    &lt;team id="only-red"&gt;red-team&lt;/team&gt;
+&lt;/filters&gt;
+</code></pre>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>The region for an <code>&lt;apply&gt;</code> <strong>must</strong> be either a <code>region</code> attribute or a <code>&lt;region&gt;</code> sub-element.
+            It cannot appear directly inside the <code>&lt;apply&gt;</code> tag.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Inline filters must always be a single tag, multiple tags are not accepted anywhere.
+            To combine multiple filters, always use a compound filter like <code>&lt;all&gt;</code> or <code>&lt;any&gt;</code>.
+            This change is retroactive, and affects <em>all</em> proto versions.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>There is no longer a filter type called <code>&lt;block&gt;</code>, use <code>&lt;material&gt;</code> instead. <code>&lt;block&gt;</code> is always interpreted as a region.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>The old built-in filters are gone, and there are only two new ones: <code>always</code> which is equivalent to <code>allow-all</code>, and <code>never</code> which is equivalent to <code>deny-all</code>. <br/>
+            All of the new built-ins have equivalent tags of the same name i.e. <code>&lt;always/&gt;</code> &amp; <code>&lt;never/&gt;</code>.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Filters can no longer have parents.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p><code>&lt;allow&gt;</code> and <code>&lt;deny&gt;</code> can now be used anywhere a filter is expected, and actually function how they were supposed to i.e. they cause the filter to be ignored (skipped over) if it does not match.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Blitz or Ghost Squadron titles are no longer a part of the blitz module, instead they are set as a attribute of the <code>&lt;map&gt;</code> element and can be used with any gamemode.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Match time limit is no longer part of the <code>&lt;score&gt;</code> or <code>&lt;blitz&gt;</code> module, instead it is defined directly in the root <map> element.</map></p>
+<pre><code>&lt;map proto="1.4.0"&gt;
+&lt;time result="objectives"&gt;5m&lt;/time&gt;
+
+&lt;!-- Other modules. --&gt;
+&lt;/map&gt;
+</code></pre>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>The top-level tags <code>&lt;filters&gt;</code> and <code>&lt;regions&gt;</code> are now the same thing.
+            You can define filters, regions, and <code>&lt;apply&gt;</code>s in either one (remember that regions are a type of filter, have been for a while now).</p>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>Any filter tag anywhere can have an <code>id</code> attribute.</p>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>The <code>&lt;apply&gt;</code> tag accepts both references and inline definitions for its <code>region</code>, <code>kit</code>, and all of its filter properties, e.g. the two tags below are equivalent:</p>
+<pre><code>&lt;apply region="effect-pad" kit="effect-kit" filter="only-red" block="only-leaves" /&gt;
+
+&lt;apply&gt;
+    &lt;region&gt;
+        &lt;cuboid min="1,2,3" max="4,5,6"/&gt; &lt;!-- effect-pad --&gt;
+    &lt;/region&gt;
+    &lt;kit&gt;
+        &lt;potion&gt;...&lt;/potion&gt; &lt;!-- effect-kit --&gt;
+    &lt;/kit&gt;
+    &lt;filter&gt;
+        &lt;team&gt;red-team&lt;/team&gt;
+    &lt;/filter&gt;
+    &lt;block&gt;
+        &lt;material&gt;leaves&lt;/material&gt;
+    &lt;/block&gt;
+&lt;/apply&gt;
+</code></pre>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>The <code>safe</code> and <code>spread</code> attributes of spawns can now be combined.</p>
+</li>
+<li>
+<span class="label label-primary">Change</span>
+<p>A items slot attribute is no longer required in kits.
+            This attribute now also accepts Mojang slot names e.g. <code>slot.hotbar.8</code> or <code>armor.head</code>.</p>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>There is a new half-space region type that contains everything on one side of an arbitrary plane.
+            The plane is defined by an origin point and a normal vector, and the region contains everything on the side of the plane that the normal is pointing towards.
+            The example below defines a region with a diagonal boundary:</p>
+<pre><code>&lt;half origin="5,0,0" normal="1,1,0"/&gt;
+</code></pre>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Two new region types <code>&lt;above&gt;</code> and <code>&lt;below&gt;</code> can be used to conveniently define axis-aligned half-spaces:</p>
+<pre><code>&lt;above y="50"/&gt;         &lt;!-- everything above Y=50 --&gt;
+&lt;below x="0" z="0"/&gt;    &lt;!-- everything in the -X, -Z quadrant --&gt;
+</code></pre>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>There are two built-in regions called <code>everywhere</code> and <code>nowhere</code> that contain all points and no points, respectively. <br/>
+            All of the new built-ins have equivalent tags of the same name i.e. <code>&lt;everywhere/&gt;</code> &amp; <code>&lt;nowhere/&gt;</code>.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>A team can have a minimum required size with the <code>min=""</code> attribute.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Objectives have a <code>required</code> attribute that specifies if they are required to complete the match.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>A players gamemode can be changed by using the new <code>&lt;game-mode&gt; &lt;/game-mode&gt;</code> kit.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>New world border module that can be used to create a shifting and/or auto resizing world border.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Support added for block punch and trample <code>&lt;block-drops&gt;</code>.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Custom item crafting recipe module.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>All items of a specific type can be modified for the whole match using the <code>&lt;item-mods&gt;</code> module.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Teamless gamemodes with the <code>&lt;players/&gt;</code> module.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Heads can be given to players in kits with the <code>&lt;head&gt;</code> element.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Cause filters have several new possible values they can filter for.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added the <code>&lt;relation&gt;</code> filter to check the relation between two players.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>The world generator can be modified with the terrain module.
+            This module allows the seed, void/vanilla generator, and world folder location to be specified.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>XML files can now contain conditional <code>&lt;if&gt;</code> and <code>&lt;unless&gt;</code> statements.
+            These statements allow modules to be loaded on specific servers or during holiday events.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>The maps display gamemode can be specified with the <code>&lt;gamemode&gt;</code> element.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p>Added a shield kit module that gives a player an absorption hearts recharging shield.</p>
+</li>
+<li>
+<span class="label label-success">New</span>
+<p><a href="/modules/pickups">Pickups module</a> for location specific kit pickups.</p>
+</li>
+<li>
+<hr/>
+</li>
+<li>
+<span class="label label-info">Removed</span>
+<p>The <code>&lt;multitrade/&gt;</code> tag has been removed, it is now always enabled.</p>
+</li>
+</ul>
+<br/>
+<h4>Changes in 1.3.6</h4>
+<ul class="changelog">
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Regions for cores, destroyables, wools, portals &amp; score boxes <strong>must</strong> be defined in a <code>&lt;region&gt;</code> sub-element or referenced in a <code>region</code> attribute.</p>
+<pre><code>&lt;core&gt;
+    &lt;region&gt;
+        &lt;cuboid min="..." max="..."/&gt;
+    &lt;/region&gt;
+&lt;/core&gt;
+
+&lt;core region="my-region"/&gt;
+</code></pre>
+<p>Similarly spawn regions <strong>must</strong> be defined in a <code>&lt;regions&gt;</code> sub-element or referenced in a <code>regions</code> attribute.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawn team="red"&gt;
+        &lt;regions yaw="90"&gt;
+            &lt;cuboid min="1,0,2" max="3,0,4"/&gt;
+            &lt;cylinder base="7,8,9" radius="5" height="0"/&gt;
+        &lt;/regions&gt;
+    &lt;/spawn&gt;
+&lt;/spawns&gt;
+</code></pre>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>Everything scores 0 points by default, this means you have to explicitly define <code>&lt;kills&gt;</code> and <code>&lt;deaths&gt;</code> in the score module if you want players to get points for killing players.</p>
+</li>
+<li>
+<span class="label label-danger">Breaking</span>
+<p>The <code>&lt;playable&gt;</code> region module has been removed, this should now be handled using filters.</p>
+</li>
+</ul>
+<br/>
+<hr/>
+<h4>Versions</h4>
+<div class="table-responsive">
+<table class="table table-striped table-condensed">
+<thead>
+<tr>
+<th style="width: 80px;">Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>1.4.0</code>
+</td>
+<td>
+                  Filters/regions/teams are always referenced by ID
+                  <br/>
+                  Disallow
+                  <code>&lt;time&gt;</code>
+                  inside
+                  <code>&lt;score&gt;</code>
+                  or
+                  <code>&lt;blitz&gt;</code>
+                  &amp; disallow
+                  <code>&lt;title&gt;</code>
+                  inside
+                  <code>&lt;blitz&gt;</code>
+<br/>
+                  Required objectives
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.6</code>
+</td>
+<td>
+                  Move all defining elements out of module xml root
+                  <br/>
+                  Everything scores zero points by default
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.5</code>
+</td>
+<td>
+                  Filters know who owns TNT
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.4</code>
+</td>
+<td>
+                  Wools have a location property
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.3</code>
+</td>
+<td>
+                  Define how overlapping regions behave
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.2</code>
+</td>
+<td>
+                  Monument modes
+                </td>
+</tr>
+<tr>
+<td>
+<code>1.3.1</code>
+</td>
+<td>
+                  Off-by-one region bug fixed.
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+

@@ -1,0 +1,8 @@
+# Site settings
+baseurl: "" # the subpath of your site, e.g. /blog
+
+current_proto: "1.4.2"
+
+
+# Build settings
+markdown: kramdown

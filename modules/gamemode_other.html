@@ -1,0 +1,71 @@
+---
+layout: page
+
+category: "Modules"
+title:  "Other Game Modes"
+nav_content:
+  - path: "#gs"
+    name: "Ghost Squadron"
+  - path: "#rage"
+    name: "Rage
+  - path: "#tdm"
+    name: "Team Deathmatch"
+  - path: "#ffa"
+    name: "Free-For-All"
+
+---
+
+
+
+<h3><span id="gs">Ghost Squadron</span></h3>
+<p>Enables the ghostsquadron gamemode and all its features.
+        The default ghostsquadron classes can be found <a href="https://maps.oc.tc/Blitz/GS/gs.xml">here</a>.
+        Ghost squadron maps set a custom gamemode title in the <code>gs.xml</code> with the <code>&lt;map game="Ghost Squadron"&gt;</code> attribute.
+        When not using the default GS XML include a custom title should be set.</p>
+<p><code>NOTE:</code> This module must be used in conjunction with another gamemode.</p>
+<pre><code>&lt;ghostsquadron/&gt;
+&lt;include src="gs.xml"/&gt;
+
+&lt;time&gt;6m&lt;/time&gt;
+&lt;blitz&gt;
+    &lt;broadcastLives&gt;false&lt;/broadcastLives&gt;
+&lt;/blitz&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="rage">Rage</span></h3>
+<p>Enable the one hit kill, rage style gamemode.</p>
+<p>One hit kills will only be applied to items that have a sharpness enchantment greater than level 1. One shot arrow kills will only be applied to bows that have a power enchantment greater than level 1.</p>
+<p><code>NOTE:</code> This module must be used in conjunction with another gamemode.</p>
+<pre><code>&lt;rage/&gt;
+
+&lt;time&gt;8m&lt;/time&gt;
+&lt;score&gt;
+    &lt;limit&gt;15&lt;/limit&gt;
+&lt;/score&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="tdm">Team Death-match</span></h3>
+<p>This gamemode uses the <a href="/modules/scoring">scoring</a> module to run the game for a specified amount of time, after which the team with the highest score wins. Teams increase their score by killing players from the other team or capturing points from a <a href="/modules/scoring#score_box">score box</a>.</p>
+<p><code>NOTE:</code> To be able to score points for kills and deaths the <code>&lt;kills&gt;</code> and <code>&lt;deaths&gt;</code> elements are required.</p>
+<pre><code>&lt;score&gt;
+    &lt;kills&gt;1&lt;/kills&gt;    &lt;!-- +1 points for a kill --&gt;
+    &lt;deaths&gt;1&lt;/deaths&gt;  &lt;!-- -1 points for dying --&gt;
+&lt;/score&gt;
+
+&lt;!-- Time till the match ends in seconds (10 minutes) --&gt;
+&lt;time&gt;600&lt;/time&gt;
+</code></pre>
+<p><br/></p>
+<h3><span id="ffa">Free-For-All</span></h3>
+<p>The FFA gamemode uses the <a href="/modules/players">players</a> instead of the <a href="/modules/teams">teams</a> module to create a team-less match.
+        Depending on the modules used, players can increase their score by killing other players until a score or time limit is reached or by capturing objectives, etc.</p>
+<p><code>NOTE:</code> To be able to score points for kills and deaths the <code>&lt;kills&gt;</code> and <code>&lt;deaths&gt;</code> elements are required.</p>
+<pre><code>&lt;players max="16" max-overfill="20"/&gt;
+&lt;time&gt;8m&lt;/time&gt;
+
+&lt;score&gt;
+    &lt;kills&gt;1&lt;/kills&gt;
+    &lt;deaths&gt;1&lt;/deaths&gt;
+&lt;/score&gt;
+</code></pre>
+

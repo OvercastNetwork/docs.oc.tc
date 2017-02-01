@@ -1,7 +1,7 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'staticmatic2'
-gem 'haml'
-gem 'rdiscount'
-gem 'capistrano', '2.15.5'
-gem 'rvm-capistrano'
+require 'json'
+require 'open-uri'
+versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+
+gem 'github-pages', versions['github-pages']

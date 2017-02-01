@@ -1,12 +1,11 @@
 ### PGM XML Documentation
 
-Website source for docs.oc.tc. Uses the ruby staticmatic gem to build a static documentation website.
-
+Documentation for the XML format [PGM](https://github.com/OvercastNetwork/ProjectAres/) uses to define map specific features.
+Pages are hosted using github pages.
 
 #### Editing
 
-1. Markdown should be used for content and haml for layout and data. [¹](http://chriseppstein.github.io/blog/2010/02/08/haml-sucks-for-content/)
-2. Care should be taken when removing trailing whitespace since markdown uses two spaces to create a newline.
+1. Care should be taken when removing trailing whitespace since markdown uses two spaces to create a newline.
 
 
 #### Pull Requests
@@ -26,5 +25,5 @@ Pull requests should have the following things:
 1. Install ruby ([Mac](https://gorails.com/setup/osx/10.11-el-capitan), Windows, [Ubuntu](https://gorails.com/setup/ubuntu/15.10)) (we don't need rails, so just install ruby)
 2. Install the [bundler](http://bundler.io) gem.
 2. Run `bundle install` from the source root.
-3. Run `staticmatic preview` or `bundle exec staticmatic preview`
+3. Run `bundle exec jekyll serve` or `jekyll serve`
 4. Load `localhost:4000` in your browser.

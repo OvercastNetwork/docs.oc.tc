@@ -1,0 +1,186 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "Snowy Wars"
+
+---
+
+
+
+<p><a href="/modules/main"><i class="fa fa-share right-ref-link"></i></a>
+Every map XML file starts with the XML header and then the base <code>&lt;map&gt;</code> module.</p>
+<pre><code>&lt;?xml version="1.0"?&gt;
+
+&lt;!-- Open the main map module and specify the PGM protocol version it was created for. --&gt;
+&lt;map proto="1.4.2"&gt;
+
+&lt;!-- Set the maps name and version. --&gt;
+&lt;name&gt;Snowy Wars&lt;/name&gt;
+&lt;version&gt;1.3.4&lt;/version&gt;
+
+&lt;!-- Specify the game objective and credit the creator of the map. --&gt;
+&lt;objective&gt;Break the obsidian from the enemy team's monument.&lt;/objective&gt;
+&lt;authors&gt;
+    &lt;author uuid="c14862ba-058a-44a2-a1c3-bfb0b462e198"/&gt; &lt;!--  roro28gutier  --&gt;
+&lt;/authors&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/teams"><i class="fa fa-share right-ref-link"></i></a>
+Define two teams, their <a href="/reference/formatting#chatColors">colors</a> and names.</p>
+<pre><code>&lt;teams&gt;
+    &lt;team id="red-team" color="dark red" max="12"&gt;Red Team&lt;/team&gt;
+    &lt;team id="blue-team" color="blue" max="12"&gt;Blue Team&lt;/team&gt;
+&lt;/teams&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/spawns"><i class="fa fa-share right-ref-link"></i></a>
+Specify where the previously defined teams will spawn. Both teams have two spawn cylinders, players will spawn in one at random at a random location inside the cylinder. We also specify what kit the players will get when spawning. The kits are defined further down in the maps XML file and are referenced here by name.</p>
+<p>The direction a player faces when spawning in a region is defined by putting the region inside a <code>&lt;spawn&gt;</code> element and specifying the <code>yaw=""</code> attribute.</p>
+<pre><code>&lt;spawns&gt;
+    &lt;spawn team="red-team" kit="red"&gt;
+        &lt;point yaw="-45"&gt;
+            &lt;cylinder base="-619.5,11,259.5" height="0" radius="2"/&gt; &lt;!-- West --&gt;
+        &lt;/point&gt;
+        &lt;point yaw="45"&gt;
+            &lt;cylinder base="-571.5,11,259.5" height="0" radius="2"/&gt; &lt;!-- East --&gt;
+        &lt;/point&gt;
+    &lt;/spawn&gt;
+    &lt;spawn team="blue-team" kit="blue"&gt;
+        &lt;point yaw="-135"&gt;
+            &lt;cylinder base="-619.5,11,349.5" height="0" radius="2"/&gt; &lt;!-- West --&gt;
+        &lt;/point&gt;
+        &lt;point yaw="135"&gt;
+            &lt;cylinder base="-571.5,11,349.5" height="0" radius="2"/&gt; &lt;!-- East --&gt;
+        &lt;/point&gt;
+    &lt;/spawn&gt;
+    &lt;default yaw="-90"&gt;&lt;cuboid min="-544,13,302" max="-540,13,306"/&gt;&lt;/default&gt;
+&lt;/spawns&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/gamemode_dtm"><i class="fa fa-share right-ref-link"></i></a>
+The objective of the map, in this case a monument made out of obsidian. Both monuments get assigned a <code>owner=""</code> which specifies who's team it belongs to. The team who destroys the enemies monument first wins.</p>
+<pre><code>&lt;destroyables name="Monument" completion="100%" materials="obsidian"&gt;
+    &lt;destroyable owner="blue"&gt;
+        &lt;cuboid min="-596,10,361" max="-595,12,362"/&gt;
+    &lt;/destroyable&gt;
+    &lt;destroyable owner="red"&gt;
+        &lt;cuboid min="-596,10,247" max="-595,12,248"/&gt;
+    &lt;/destroyable&gt;
+&lt;/destroyables&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/filters"><i class="fa fa-share right-ref-link"></i></a>
+Filter for ice blocks, applying this filter to a region with <code>block-physics</code> prevents ice from melting naturally.</p>
+<pre><code>&lt;filters&gt;
+    &lt;deny id="deny-icemelt"&gt;
+        &lt;material&gt;ice&lt;/material&gt;
+    &lt;/deny&gt;
+&lt;/filters&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/regions"><i class="fa fa-share right-ref-link"></i></a>
+The regions of the map. Here we specify a rectangle region with <code>playable</code> as its ID and apply the <code>deny-icemelt</code> filter. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base. Additionally we create a variable height build limit using a region combination.</p>
+<pre><code>&lt;regions&gt;
+    &lt;rectangle min="-635,232" max="-556,377" id="playable" /&gt;
+    &lt;apply block-physics="deny-icemelt" region="playable"/&gt;
+
+    &lt;apply block="never" message="Please don't edit the spawns!"&gt;
+        &lt;region&gt;
+            &lt;cylinder base="-619.5,10,259.5" height="6" radius="7"/&gt; &lt;!-- West Red --&gt;
+            &lt;cylinder base="-571.5,10,259.5" height="6" radius="7"/&gt; &lt;!-- East --&gt;
+            &lt;cylinder base="-619.5,10,349.5" height="6" radius="7"/&gt; &lt;!-- West Blue --&gt;
+            &lt;cylinder base="-571.5,10,349.5" height="6" radius="7"/&gt; &lt;!-- East --&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply block="never" message="You may not build outside of the playing field."&gt;
+        &lt;region&gt;
+            &lt;negative&gt;
+                &lt;region id="playable"/&gt;
+            &lt;/negative&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply enter="never" message="Don't enter the observers spawn area!"&gt;
+        &lt;region&gt;
+            &lt;cuboid min="-535,10,313" max="-549,oo,295"/&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+    &lt;apply block="never" message="You have reached the maximum build limit!"&gt;
+        &lt;region&gt;
+            &lt;complement&gt;
+                &lt;cuboid id="above-20" min="-oo,21,-oo" max="oo,oo,oo"/&gt;
+                &lt;cylinder id="tower-a" base="-621.5,20,304.5" radius="5" height="3"/&gt;
+                &lt;cylinder id="tower-b" base="-569.5,20,304.5" radius="5" height="3"/&gt;
+            &lt;/complement&gt;
+        &lt;/region&gt;
+    &lt;/apply&gt;
+&lt;/regions&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/kits"><i class="fa fa-share right-ref-link"></i></a>
+Each team kit has leather armor colored in their team color and they inherit the main spawn kit.</p>
+<pre><code>&lt;kits&gt;
+    &lt;kit id="spawn"&gt;
+        &lt;item slot="0" material="stone sword"/&gt;
+        &lt;item slot="1" enchantment="arrow infinite:1" material="bow"/&gt;
+        &lt;item slot="28" material="arrow"/&gt;
+        &lt;item slot="2" material="iron axe"/&gt;
+        &lt;item slot="3" enchantment="dig speed:1" material="diamond pickaxe"/&gt;
+        &lt;item slot="4" amount="64" damage="2" material="wood"/&gt;
+        &lt;item slot="5" amount="32" material="apple"/&gt;
+        &lt;item slot="6" amount="7" material="gold nugget"/&gt;
+        &lt;potion duration="2" amplifier="1"&gt;heal&lt;/potion&gt;
+        &lt;potion duration="5"&gt;damage resistance&lt;/potion&gt;
+    &lt;/kit&gt;
+    &lt;kit id="red" parents="spawn"&gt;
+        &lt;helmet color="cd0000" material="leather helmet"/&gt;
+        &lt;chestplate color="cd0000" enchantment="protection environmental:1" material="leather chestplate"/&gt;
+        &lt;leggings color="cd0000" material="leather leggings"/&gt;
+        &lt;boots color="cd0000" material="leather boots"/&gt;
+    &lt;/kit&gt;
+    &lt;kit id="blue" parents="spawn"&gt;
+        &lt;helmet color="0066cc" material="leather helmet"/&gt;
+        &lt;chestplate color="0066cc" enchantment="protection environmental:1" material="leather chestplate"/&gt;
+        &lt;leggings color="0066cc" material="leather leggings"/&gt;
+        &lt;boots color="0066cc" material="leather boots"/&gt;
+    &lt;/kit&gt;
+&lt;/kits&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Specify that stone swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up.</p>
+<pre><code>&lt;toolrepair&gt;
+    &lt;tool&gt;stone sword&lt;/tool&gt;
+    &lt;tool&gt;diamond pickaxe&lt;/tool&gt;
+    &lt;tool&gt;iron axe&lt;/tool&gt;
+    &lt;tool&gt;bow&lt;/tool&gt;
+&lt;/toolrepair&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/repair_remove_keep"><i class="fa fa-share right-ref-link"></i></a>
+Remove arrows, leather armor, wood, apples and obsidian when it is dropped. Items that get dropped from block–break actions also get removed.</p>
+<pre><code>&lt;itemremove&gt;
+    &lt;item&gt;arrow&lt;/item&gt;
+    &lt;item&gt;leather helmet&lt;/item&gt;
+    &lt;item&gt;leather chestplate&lt;/item&gt;
+    &lt;item&gt;leather leggings&lt;/item&gt;
+    &lt;item&gt;leather boots&lt;/item&gt;
+    &lt;item&gt;wood&lt;/item&gt;
+    &lt;item&gt;apple&lt;/item&gt;
+    &lt;item&gt;obsidian&lt;/item&gt;
+&lt;/itemremove&gt;
+</code></pre>
+<p><br/>
+<a href="/modules/tnt"><i class="fa fa-share right-ref-link"></i></a>
+Specify that TNT ignites instantly when placed and does not destroy blocks.</p>
+<pre><code>&lt;tnt&gt;
+    &lt;instantignite&gt;on&lt;/instantignite&gt;
+    &lt;blockdamage&gt;off&lt;/blockdamage&gt;
+&lt;/tnt&gt;
+</code></pre>
+<p><br/>
+Close the main <code>&lt;map&gt;</code> module.</p>
+<pre><code>&lt;/map&gt;
+</code></pre>
+
