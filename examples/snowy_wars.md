@@ -1,0 +1,194 @@
+---
+layout: page
+
+category: "Examples"
+category_lead:  "XML File Examples"
+title:  "Snowy Wars"
+
+---
+
+[<i class="fa fa-share right-ref-link"></i>](/modules/main)
+Every map XML file starts with the XML header and then the base `<map>` module.
+
+    <?xml version="1.0"?>
+
+    <!-- Open the main map module and specify the PGM protocol version it was created for. -->
+    <map proto="{{site.current_proto}}">
+
+    <!-- Set the maps name and version. -->
+    <name>Snowy Wars</name>
+    <version>1.3.4</version>
+
+    <!-- Specify the game objective and credit the creator of the map. -->
+    <objective>Break the obsidian from the enemy team's monument.</objective>
+    <authors>
+        <author uuid="c14862ba-058a-44a2-a1c3-bfb0b462e198"/> <!--  roro28gutier  -->
+    </authors>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/teams)
+Define two teams, their [colors](/reference/formatting#chatColors) and names.
+
+    <teams>
+        <team id="red-team" color="dark red" max="12">Red Team</team>
+        <team id="blue-team" color="blue" max="12">Blue Team</team>
+    </teams>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/spawns)
+Specify where the previously defined teams will spawn. Both teams have two spawn cylinders, players will spawn in one at random at a random location inside the cylinder. We also specify what kit the players will get when spawning. The kits are defined further down in the maps XML file and are referenced here by name.
+
+The direction a player faces when spawning in a region is defined by putting the region inside a `<spawn>` element and specifying the `yaw=""` attribute.
+
+    <spawns>
+        <spawn team="red-team" kit="red">
+            <point yaw="-45">
+                <cylinder base="-619.5,11,259.5" height="0" radius="2"/> <!-- West -->
+            </point>
+            <point yaw="45">
+                <cylinder base="-571.5,11,259.5" height="0" radius="2"/> <!-- East -->
+            </point>
+        </spawn>
+        <spawn team="blue-team" kit="blue">
+            <point yaw="-135">
+                <cylinder base="-619.5,11,349.5" height="0" radius="2"/> <!-- West -->
+            </point>
+            <point yaw="135">
+                <cylinder base="-571.5,11,349.5" height="0" radius="2"/> <!-- East -->
+            </point>
+        </spawn>
+        <default yaw="-90"><cuboid min="-544,13,302" max="-540,13,306"/></default>
+    </spawns>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/gamemode_dtm)
+The objective of the map, in this case a monument made out of obsidian. Both monuments get assigned a `owner=""` which specifies who's team it belongs to. The team who destroys the enemies monument first wins.
+
+    <destroyables name="Monument" completion="100%" materials="obsidian">
+        <destroyable owner="blue">
+            <cuboid min="-596,10,361" max="-595,12,362"/>
+        </destroyable>
+        <destroyable owner="red">
+            <cuboid min="-596,10,247" max="-595,12,248"/>
+        </destroyable>
+    </destroyables>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/filters)
+Filter for ice blocks, applying this filter to a region with `block-physics` prevents ice from melting naturally.
+
+    <filters>
+        <deny id="deny-icemelt">
+            <material>ice</material>
+        </deny>
+    </filters>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/regions)
+The regions of the map. Here we specify a rectangle region with `playable` as its ID and apply the `deny-icemelt` filter. We also specify the team base regions and apply a filter to prevent all players from breaking blocks inside the base. Additionally we create a variable height build limit using a region combination.
+
+    <regions>
+        <rectangle min="-635,232" max="-556,377" id="playable" />
+        <apply block-physics="deny-icemelt" region="playable"/>
+
+        <apply block="never" message="Please don't edit the spawns!">
+            <region>
+                <cylinder base="-619.5,10,259.5" height="6" radius="7"/> <!-- West Red -->
+                <cylinder base="-571.5,10,259.5" height="6" radius="7"/> <!-- East -->
+                <cylinder base="-619.5,10,349.5" height="6" radius="7"/> <!-- West Blue -->
+                <cylinder base="-571.5,10,349.5" height="6" radius="7"/> <!-- East -->
+            </region>
+        </apply>
+        <apply block="never" message="You may not build outside of the playing field.">
+            <region>
+                <negative>
+                    <region id="playable"/>
+                </negative>
+            </region>
+        </apply>
+        <apply enter="never" message="Don't enter the observers spawn area!">
+            <region>
+                <cuboid min="-535,10,313" max="-549,oo,295"/>
+            </region>
+        </apply>
+        <apply block="never" message="You have reached the maximum build limit!">
+            <region>
+                <complement>
+                    <cuboid id="above-20" min="-oo,21,-oo" max="oo,oo,oo"/>
+                    <cylinder id="tower-a" base="-621.5,20,304.5" radius="5" height="3"/>
+                    <cylinder id="tower-b" base="-569.5,20,304.5" radius="5" height="3"/>
+                </complement>
+            </region>
+        </apply>
+    </regions>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/kits)
+Each team kit has leather armor colored in their team color and they inherit the main spawn kit.
+
+    <kits>
+        <kit id="spawn">
+            <item slot="0" material="stone sword"/>
+            <item slot="1" enchantment="arrow infinite:1" material="bow"/>
+            <item slot="28" material="arrow"/>
+            <item slot="2" material="iron axe"/>
+            <item slot="3" enchantment="dig speed:1" material="diamond pickaxe"/>
+            <item slot="4" amount="64" damage="2" material="wood"/>
+            <item slot="5" amount="32" material="apple"/>
+            <item slot="6" amount="7" material="gold nugget"/>
+            <potion duration="2" amplifier="1">heal</potion>
+            <potion duration="5">damage resistance</potion>
+        </kit>
+        <kit id="red" parents="spawn">
+            <helmet color="cd0000" material="leather helmet"/>
+            <chestplate color="cd0000" enchantment="protection environmental:1" material="leather chestplate"/>
+            <leggings color="cd0000" material="leather leggings"/>
+            <boots color="cd0000" material="leather boots"/>
+        </kit>
+        <kit id="blue" parents="spawn">
+            <helmet color="0066cc" material="leather helmet"/>
+            <chestplate color="0066cc" enchantment="protection environmental:1" material="leather chestplate"/>
+            <leggings color="0066cc" material="leather leggings"/>
+            <boots color="0066cc" material="leather boots"/>
+        </kit>
+    </kits>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+Specify that stone swords, diamond pickaxes, iron axes, and bows get repaired when dropped or when the player picks one up.
+
+    <toolrepair>
+        <tool>stone sword</tool>
+        <tool>diamond pickaxe</tool>
+        <tool>iron axe</tool>
+        <tool>bow</tool>
+    </toolrepair>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/repair_remove_keep)
+Remove arrows, leather armor, wood, apples and obsidian when it is dropped. Items that get dropped from block–break actions also get removed.
+
+    <itemremove>
+        <item>arrow</item>
+        <item>leather helmet</item>
+        <item>leather chestplate</item>
+        <item>leather leggings</item>
+        <item>leather boots</item>
+        <item>wood</item>
+        <item>apple</item>
+        <item>obsidian</item>
+    </itemremove>
+
+<br/>
+[<i class="fa fa-share right-ref-link"></i>](/modules/tnt)
+Specify that TNT ignites instantly when placed and does not destroy blocks.
+
+    <tnt>
+        <instantignite>on</instantignite>
+        <blockdamage>off</blockdamage>
+    </tnt>
+
+<br/>
+Close the main `<map>` module.
+
+    </map>
