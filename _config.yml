@@ -1,5 +1,5 @@
 # Site settings
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/docs.oc.tc" # the subpath of your site, e.g. /blog
 
 current_proto: "1.4.2"
 

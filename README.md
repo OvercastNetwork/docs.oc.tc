@@ -26,4 +26,4 @@ Pull requests should have the following things:
 2. Install the [bundler](http://bundler.io) gem.
 2. Run `bundle install` from the source root.
 3. Run `bundle exec jekyll serve` or `jekyll serve`
-4. Load `localhost:4000` in your browser.
+4. Load `localhost:4000/docs.oc.tc/` in your browser.

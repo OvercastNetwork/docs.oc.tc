@@ -1,5 +1,5 @@
 <div class='sidebar hidden-xs'>
   <ul class='nav nav-pills nav-stacked docs-nav-pills'>
-    {% for item in sidebar.content %}{% if item.first %}<li class="{% if page.url contains item.path %}active{% endif %}"><a href="{{item.path}}">{% if item.icon %}<i class="fa fa-fw {{item.icon}}"></i>{% endif %}{{ item.name }}</a></li>{% else %}<li><h4>{{item}}</h4></li>{% endif %}{% endfor %}
+    {% for item in sidebar.content %}{% if item.first %}<li class="{% if page.url contains item.path %}active{% endif %}"><a href="{{site.baseurl}}{{item.path}}">{% if item.icon %}<i class="fa fa-fw {{item.icon}}"></i>{% endif %}{{ item.name }}</a></li>{% else %}<li><h4>{{item}}</h4></li>{% endif %}{% endfor %}
   </ul>
 </div>

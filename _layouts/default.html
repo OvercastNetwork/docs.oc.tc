@@ -5,8 +5,8 @@
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
     <meta content='width=device-width, initial-scale=1.0' name='viewport' />
     <link href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' />
-    <link href='/docs.oc.tc/css/style.css' rel='stylesheet' />
-    <link href='/docs.oc.tc/css/custom-highlight.css' rel='stylesheet' />
+    <link href='{{site.baseurl}}/css/style.css' rel='stylesheet' />
+    <link href='{{site.baseurl}}/css/custom-highlight.css' rel='stylesheet' />
     <link href='//oc.tc/favicon.ico' rel='shortcut icon' type='image/x-icon' />
     <link href='//oc.tc/favicon.ico' rel='apple-touch-icon' type='image/x-icon' />
     <link href='//fonts.googleapis.com/css?family=Lato:700,400,300' rel='stylesheet' />
@@ -35,32 +35,32 @@
         </div>
         <nav class='collapse navbar-collapse navbar-main-collapse'>
           <ul class='nav navbar-nav navbar-right'>
-            <li class='{% if page.url == "/docs.oc.tc" %}active{% endif %}'>
-              <a href='/docs.oc.tc/'>
+            <li class='{% if page.url == "/" %}active{% endif %}'>
+              <a href='{{site.baseurl}}/'>
                 <i class='fa fa-home'></i>
                 Home
               </a>
             </li>
             <li class='{% if page.url contains "/modules/" %}active{% endif %}'>
-              <a href='/docs.oc.tc/modules/main'>
+              <a href='{{site.baseurl}}/modules/main'>
                 <i class='fa fa-th-large'></i>
                 Modules
               </a>
             </li>
             <li class='{% if page.url contains "/reference/" %}active{% endif %}'>
-              <a href='/docs.oc.tc/reference/inventory'>
+              <a href='{{site.baseurl}}/reference/inventory'>
                 <i class='fa fa-book'></i>
                 Reference
               </a>
             </li>
             <li class='{% if page.url contains "/guides/" %}active{% endif %}'>
-              <a href='/docs.oc.tc/guides/packaging/cleaning_files'>
+              <a href='{{site.baseurl}}/guides/packaging/cleaning_files'>
                 <i class='fa fa-clipboard'></i>
                 Guides
               </a>
             </li>
             <li class='{% if page.url contains "/examples/" %}active{% endif %}'>
-              <a href='/docs.oc.tc/examples'>
+              <a href='{{site.baseurl}}/examples'>
                 <i class='fa fa-file-text'></i>
                 Examples
               </a>
@@ -77,8 +77,17 @@
           <li class='pull-left'>
             <a>&copy; 2012-2016 Overcast Network</a>
           </li>
-          <li class='pull-right'>
-            <a href='https://github.com/OvercastNetwork/docs.oc.tc/'>Source</a>
+          <li class="pull-right">
+            <a href="https://github.com/OvercastNetwork" target="_blank">GitHub</a>
+          </li>
+          <li class="pull-right">
+            <a href="https://twitter.com/OvercastPGM" target="_blank">Twitter</a>
+          </li>
+          <li class="pull-right">
+            <a href="https://discord.gg/PGM" target="_blank">Discord</a>
+          </li>
+          <li class="pull-right">
+            <a href="https://www.reddit.com/r/overcast/" target="_blank">Reddit</a>
           </li>
         </ul>
       </footer>
