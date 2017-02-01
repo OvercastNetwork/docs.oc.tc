@@ -4,9 +4,9 @@ layout: page
 category: "Modules"
 title:  "Includes & Conditionals"
 nav_content:
-  - path: #includes"
+  - path: "#includes"
     name: "XML File Includes"
-  - path: #conditionals"
+  - path: "#conditionals"
     name: "Conditionals"
 
 ---
