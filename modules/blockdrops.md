@@ -420,28 +420,30 @@ Examples
   <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-simple-example' data-toggle='collapse'>Examples</a>
 </p>
 <div class='collapse' id='collapse-simple-example' markdown='1'>
-      <block-drops>
-          <!-- Emerald ore blocks drop ore instead of emerald items, -->
-          <!-- with a 50% chance of also dropping a stone block. -->
-          <rule>
-              <filter>
-                  <material>emerald ore</material>
-              </filter>
-              <drops>
-                  <item material="emerald ore"/>
-                  <item chance="0.5" material="stone"/>
-              </drops>
-          </rule>
-      </block-drops>
-  
-      <block-drops>
-          <!-- When a chest is broken give the player the 'chest-kit'. -->
-          <rule kit="chest-kit">
-              <filter>
-                  <material>chest</material>
-              </filter>
-          </rule>
-      </block-drops>
+
+    <block-drops>
+        <!-- Emerald ore blocks drop ore instead of emerald items, -->
+        <!-- with a 50% chance of also dropping a stone block. -->
+        <rule>
+            <filter>
+                <material>emerald ore</material>
+            </filter>
+            <drops>
+                <item material="emerald ore"/>
+                <item chance="0.5" material="stone"/>
+            </drops>
+        </rule>
+    </block-drops>
+
+    <block-drops>
+        <!-- When a chest is broken give the player the 'chest-kit'. -->
+        <rule kit="chest-kit">
+            <filter>
+                <material>chest</material>
+            </filter>
+        </rule>
+    </block-drops>
+
 </div>
 <br>
 

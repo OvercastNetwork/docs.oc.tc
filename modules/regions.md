@@ -440,39 +440,41 @@ Apply Examples
 <p>
   <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-apply-example' data-toggle='collapse'>Examples</a>
 </p>
-<div class='collapse' id='collapse-apply-example'>
-      <!-- Give a kit to players entering the region. -->
-      <apply kit="knight">
-          <region>
-              <region id="r-knight"/>
-              <region id="b-knight"/>
-          </region>
-      </apply>
-  
-      <!-- Only allow breaking of sandstone stairs and deny placing of all blocks. -->
-      <apply block-break="only-sandstone-stairs" block-place="never" message="You may not modify this area">
-          <region>
-              <rectangle min="-6,-58" max="7,-47"/>
-              <rectangle min="-6,48" max="7,59"/>
-          </region>
-      </apply>
-  
-      <!-- Example regions from Harb using region modifiers. -->
-      <regions>
-          <rectangle id="main-area" min="-50,-32" max="51,33"/>
-          <union id="bases">
-              <rectangle id="blue-base" min="-20,-62" max="21,-32"/>
-              <rectangle id="red-base" min="-20,33" max="21,63"/>
-          </union>
-          <complement id="portals-area">
-              <rectangle min="-56,-2" max="57,3"/>
-              <region id="main-area"/>
-          </complement>
-  
-          <!-- Protect portal areas -->
-          <apply block="never" region="portals-area"/>
-          <apply block="no-tnt" region="bases" message="You may not place TNT in the bases."/>
-      </regions>
+<div class='collapse' id='collapse-apply-example' markdown='1'>
+
+    <!-- Give a kit to players entering the region. -->
+    <apply kit="knight">
+        <region>
+            <region id="r-knight"/>
+            <region id="b-knight"/>
+        </region>
+    </apply>
+
+    <!-- Only allow breaking of sandstone stairs and deny placing of all blocks. -->
+    <apply block-break="only-sandstone-stairs" block-place="never" message="You may not modify this area">
+        <region>
+            <rectangle min="-6,-58" max="7,-47"/>
+            <rectangle min="-6,48" max="7,59"/>
+        </region>
+    </apply>
+
+    <!-- Example regions from Harb using region modifiers. -->
+    <regions>
+        <rectangle id="main-area" min="-50,-32" max="51,33"/>
+        <union id="bases">
+            <rectangle id="blue-base" min="-20,-62" max="21,-32"/>
+            <rectangle id="red-base" min="-20,33" max="21,63"/>
+        </union>
+        <complement id="portals-area">
+            <rectangle min="-56,-2" max="57,3"/>
+            <region id="main-area"/>
+        </complement>
+
+        <!-- Protect portal areas -->
+        <apply block="never" region="portals-area"/>
+        <apply block="no-tnt" region="bases" message="You may not place TNT in the bases."/>
+    </regions>
+
 </div>
 An applies velocity attribute changes the players velocity when they enter the specified region. This velocity is specified as a `X,Y,Z` vector.
 On the mapdev servers velocity can be tested with the `/vel x y z` command.

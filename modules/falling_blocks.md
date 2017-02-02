@@ -187,34 +187,36 @@ Example
 <p>
   <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-falling-example' data-toggle='collapse'>Examples</a>
 </p>
-<div class='collapse' id='collapse-falling-example'>
-      <falling-blocks>
-          <!-- make sandstone fall, just like sand or gravel -->
-          <rule>
-              <filter>
-                  <material>sandstone</material>
-              </filter>
-          </rule>
-      </falling-blocks>
-  
-      </falling-blocks>
-          <!-- blocks that match the "building-blocks" filter, and are inside
-               the "box" region, collapse if they are not connected to something
-               made of quartz, either directly or through other building-blocks -->
-          <rule>
-              <filter>
-                  <all>
-                      <region id="box"/>
-                      <filter id="building-blocks"/>
-                  </all>
-              </filter>
-              <sticky>
-                  <any>
-                      <filter id="building-blocks"/>
-                      <material>quartz</material>
-                      <material>quartz stairs</material>
-                  </any>
-              </sticky>
-          </rule>
-      </falling-blocks>
+<div class='collapse' id='collapse-falling-example' markdown='1'>
+
+    <falling-blocks>
+        <!-- make sandstone fall, just like sand or gravel -->
+        <rule>
+            <filter>
+                <material>sandstone</material>
+            </filter>
+        </rule>
+    </falling-blocks>
+
+    </falling-blocks>
+        <!-- blocks that match the "building-blocks" filter, and are inside
+             the "box" region, collapse if they are not connected to something
+             made of quartz, either directly or through other building-blocks -->
+        <rule>
+            <filter>
+                <all>
+                    <region id="box"/>
+                    <filter id="building-blocks"/>
+                </all>
+            </filter>
+            <sticky>
+                <any>
+                    <filter id="building-blocks"/>
+                    <material>quartz</material>
+                    <material>quartz stairs</material>
+                </any>
+            </sticky>
+        </rule>
+    </falling-blocks>
+
 </div>

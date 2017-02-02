@@ -395,23 +395,25 @@ Examples
         </destination>
     </portal>
 <p>
-  <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-portal-examples' data-toggle='collapse'>Examples</a>
+  <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-portal-example' data-toggle='collapse'>Examples</a>
 </p>
-<div class='collapse' id='collapse-portal-examples'>
-      <portals>
-          <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged -->
-          <portal x="@10" y="@8" z="@45">
-              <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
-          </portal>
-  
-          <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
-          <portal z="12" pitch="@10" yaw="@-90">
-              <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
-          </portal>
-  
-          <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
-          <portal region="portal-entrance">
-              <destination><region id="portal-exit"/></destination>
-          </portal>
-      </portals>
+<div class='collapse' id='collapse-portal-example' markdown='1'>
+
+    <portals>
+        <!-- Moves the player to exactly X:10 Y:8 Z:45, pitch & yaw remain unchanged -->
+        <portal x="@10" y="@8" z="@45">
+            <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+        </portal>
+
+        <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
+        <portal z="12" pitch="@10" yaw="@-90">
+            <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
+        </portal>
+
+        <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
+        <portal region="portal-entrance">
+            <destination><region id="portal-exit"/></destination>
+        </portal>
+    </portals>
+
 </div>

@@ -286,44 +286,46 @@ Example
         </default>
     </spawns>
 <p>
-  <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-spawn-examples' data-toggle='collapse'>Examples</a>
+  <a class='btn btn-primary btn-xs btn-more collapsed' data-target='#collapse-spawn-example' data-toggle='collapse'>Examples</a>
 </p>
-<div class='collapse' id='collapse-spawn-examples'>
-      <!-- Example spawns from Assualt -->
-      <spawns>
-          <spawn team="blue" kit="blue">
-              <regions yaw="-90">
-                  <region id="blue-spawn"/>
-              </regions>
-          </spawn>
-          <spawn team="red" region="red-spawn" kit="red">
-              <regions yaw="90">
-                  <region id="red-spawn"/>
-              </regions>
-          </spawn>
-          <default kit="obs">
-              <regions yaw="-135">
-                  <region id="obs-spawn"/>
-              </regions>
-          </default>
-      </spawns>
-  
-      <spawns safe="true" sequential="true">
-          <spawn team="blue" kit="blue" yaw="180">
-              <regions>
-                  <cuboid min="-10,71,5" max="12,126,27"/> <!-- Players will spawn here first -->
-                  <cuboid min="-10,6,5" max="12,6,27"/> <!-- Secondary spawn if the first isn't available -->
-                  <point>1,8,0</point> <!-- Tertiary spawn if all other team spawns aren't safe -->
-              </regions>
-          </spawn>
-          <spawn team="red" kit="red" yaw="0">
-              <regions>
-                  <cuboid min="-10,71,-27" max="12,126,-5"/>
-                  <cuboid min="-10,6,-27" max="12,6,-5"/>
-                  <point>1,8,0</point>
-              </regions>
-          </spawn>
-      </spawns>
+<div class='collapse' id='collapse-spawn-example' markdown='1'>
+
+    <!-- Example spawns from Assualt -->
+    <spawns>
+        <spawn team="blue" kit="blue">
+            <regions yaw="-90">
+                <region id="blue-spawn"/>
+            </regions>
+        </spawn>
+        <spawn team="red" region="red-spawn" kit="red">
+            <regions yaw="90">
+                <region id="red-spawn"/>
+            </regions>
+        </spawn>
+        <default kit="obs">
+            <regions yaw="-135">
+                <region id="obs-spawn"/>
+            </regions>
+        </default>
+    </spawns>
+
+    <spawns safe="true" sequential="true">
+        <spawn team="blue" kit="blue" yaw="180">
+            <regions>
+                <cuboid min="-10,71,5" max="12,126,27"/> <!-- Players will spawn here first -->
+                <cuboid min="-10,6,5" max="12,6,27"/> <!-- Secondary spawn if the first isn't available -->
+                <point>1,8,0</point> <!-- Tertiary spawn if all other team spawns aren't safe -->
+            </regions>
+        </spawn>
+        <spawn team="red" kit="red" yaw="0">
+            <regions>
+                <cuboid min="-10,71,-27" max="12,126,-5"/>
+                <cuboid min="-10,6,-27" max="12,6,-5"/>
+                <point>1,8,0</point>
+            </regions>
+        </spawn>
+    </spawns>
+
 </div>
 <br/>
 
