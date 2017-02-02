@@ -13,6 +13,7 @@ Multiple spawns from the same team can be grouped inside of a single `<regions>`
 The regions element accepts more than one region or region area. If they are not inside a `<union>` element one region will be picked at random for each spawn event.
 
 Respawn behavior such as delays, etc. can be customized with the [respawn](#respawn) module.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -264,6 +265,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
     </tbody>
   </table>
 </div>
+
 `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).
 
 Example
@@ -308,7 +310,7 @@ Example
             </regions>
         </default>
     </spawns>
-
+  
     <spawns safe="true" sequential="true">
         <spawn team="blue" kit="blue" yaw="180">
             <regions>
@@ -333,6 +335,7 @@ Example
 The respawn module allows the map creator to adjust the respawn time and if players are automatically respawned. The respawn time must be greater than 1 second (20 ticks), if the respawn time is less it will automatically default to one second, allowing the death to fully complete and the player to be reset properly.
 
 To allow players to spawn at a bed set the bed attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

@@ -174,4 +174,5 @@ title:  "Entity Spawn Reason"
     </tbody>
   </table>
 </div>
+
 Copied from: [bukkit docs - Spawn Reason](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/CreatureSpawnEvent.SpawnReason.html)

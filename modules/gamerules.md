@@ -9,6 +9,7 @@ title:  "Gamerules"
 Minecraft's built in game rules can be set via the `<gamerules>` module. Not all gamerules are supported, the table below lists which are supported.
 
 When stopping the daylight cycle, you should either use the `<doDaylightCycle>` gamerule, or the [timelock](/modules/other_settings#timelock) element.  One will overwrite the other, so be consistent.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -109,6 +110,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
     </tbody>
   </table>
 </div>
+
 Example
 
     <gamerules>
@@ -120,6 +122,7 @@ Example
 <br/>
 
 #### Unsupported Gamerules
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

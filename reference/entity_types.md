@@ -747,4 +747,5 @@ title:  "Entity Types"
     </tbody>
   </table>
 </div>
+
 Copied from: [bukkit docs - Entity Types](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html)

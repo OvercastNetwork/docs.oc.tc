@@ -7,6 +7,7 @@ title:  "Item Mods"
 ---
 
 The item mods module allows modification of all items present on a map or created during the match. This can be used, for example, to make all gold swords unbreakable or give all items of a specific type a custom name.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -133,6 +134,7 @@ The item mods module allows modification of all items present on a map or create
     </tbody>
   </table>
 </div>
+
 Examples
 
     <item-mods>

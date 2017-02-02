@@ -14,6 +14,7 @@ nav_content:
 ---
 
 The crafting module allows custom shaped and shapeless crafting recipes and smelting products. Vanilla recipes for a specific material can also be disabled to prevent crafting of that material except with the new recipe.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -178,6 +179,7 @@ An ingredients symbol is defined in the `<ingredient symbol="">` attribute.
 A shaped recipe does not need to specify all 3 rows of a crafting grid, only one row is required.
 All columns in a shaped recipe need to be the same width.
 Blank ingredient spots are specifed with a dot `.`.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -299,6 +301,7 @@ Blank ingredient spots are specifed with a dot `.`.
     </tbody>
   </table>
 </div>
+
 Example
 
     <crafting>
@@ -331,6 +334,7 @@ Example
 
 #### Shapeless Recipes {#shapeless}
 Unlike a shaped recipe, shapeless recipes do not require that their items are arranged in any specific way in the crafting grid.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -407,6 +411,7 @@ Unlike a shaped recipe, shapeless recipes do not require that their items are ar
     </tbody>
   </table>
 </div>
+
 Example
 
     <crafting>
@@ -421,6 +426,7 @@ Example
 
 #### Smelt Recipes {#smelt}
 Smelt recipes specify what a material gets smelted into in a furnace.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -470,6 +476,7 @@ Smelt recipes specify what a material gets smelted into in a furnace.
     </tbody>
   </table>
 </div>
+
 Example
 
     <crafting>

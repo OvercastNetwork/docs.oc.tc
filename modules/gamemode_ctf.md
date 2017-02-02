@@ -99,6 +99,7 @@ It can serve as a one-time objective, similar to wools, or it can award or deduc
 A flag can award points for being captured, or at a specified rate while it is carried.
 It can also come with a [kit](/modules/kits) that is given to the carrier.
 Filters can be used to control who can pickup/capture the flag and when.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -575,6 +576,7 @@ The time required for a flag to respawn is configurable, as well as the time it 
 
 Posts can be owned by a team, and award them points at a specified rate while a flag is there.
 The `permanent` option can be used to make a post into something like a [monument](/modules/gamemode_ctw), where the flag is mounted after being captured once.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -777,6 +779,7 @@ A net can also force other flags to be returned when any flag is captured.
 
 A net can be owned by a team, who will receive points for the flags captured in it.
 If the net has no owner, then the player carrying the flag will receive the points.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

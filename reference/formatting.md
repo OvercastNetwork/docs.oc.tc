@@ -22,6 +22,7 @@ Examples
 
 ##### Chat Colors {#chatColors}
 ![Minecraft Colors .png](/img/colors.png)
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -165,6 +166,7 @@ Examples
     </tbody>
   </table>
 </div>
+
 The magic formatter will convert all the text after it into a scrambled, constantly changing mess of letters.
 
 `NOTE:` Reset resets all color and text styles.

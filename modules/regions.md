@@ -26,6 +26,7 @@ The area a region applies to is specified with one or more of the following elem
 
 
 ##### Region Types
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -214,6 +215,7 @@ The order in which apply elements are specified determines which takes precedenc
 
 
 ##### Apply Element Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -421,6 +423,7 @@ The order in which apply elements are specified determines which takes precedenc
     </tbody>
   </table>
 </div>
+
 Apply Examples
 
     <!-- Apply a blue team usage filter and referenced the region in an attribute. -->
@@ -449,7 +452,7 @@ Apply Examples
             <region id="b-knight"/>
         </region>
     </apply>
-
+  
     <!-- Only allow breaking of sandstone stairs and deny placing of all blocks. -->
     <apply block-break="only-sandstone-stairs" block-place="never" message="You may not modify this area">
         <region>
@@ -457,7 +460,7 @@ Apply Examples
             <rectangle min="-6,48" max="7,59"/>
         </region>
     </apply>
-
+  
     <!-- Example regions from Harb using region modifiers. -->
     <regions>
         <rectangle id="main-area" min="-50,-32" max="51,33"/>
@@ -469,13 +472,14 @@ Apply Examples
             <rectangle min="-56,-2" max="57,3"/>
             <region id="main-area"/>
         </complement>
-
+  
         <!-- Protect portal areas -->
         <apply block="never" region="portals-area"/>
         <apply block="no-tnt" region="bases" message="You may not place TNT in the bases."/>
     </regions>
 
 </div>
+
 An applies velocity attribute changes the players velocity when they enter the specified region. This velocity is specified as a `X,Y,Z` vector.
 On the mapdev servers velocity can be tested with the `/vel x y z` command.
 
@@ -501,6 +505,7 @@ Example using velocity for jump pads
 ### Region Modifiers {#regionModifiers}
 
 Regions can be inverted, combined, subtracted, or intersected by putting them inside of the following elements.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <tbody>
@@ -543,11 +548,13 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
     </tbody>
   </table>
 </div>
+
 ![Region Combinations .png](/img/regions.png)
 
 Regions can be translated or mirrored with the following elements. When translating or mirroring a region the original is not modified instead a copy is created.
 
 When mirroring a region the origin is the central point around which the region is mirrored. This point can be inside or outside the region being mirrored. The normal specifies which direction the region is being mirrored, e.g., `1,0,0` would mirror along the +X axis.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <tbody>
@@ -572,6 +579,7 @@ When mirroring a region the origin is the central point around which the region 
     </tbody>
   </table>
 </div>
+
 ![Region Mirror .png](/img/region_mirror.png)
 
 <br/>
@@ -615,6 +623,7 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
 
 
 ##### Point Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -705,5 +714,6 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
     </thead>
   </table>
 </div>
+
 `NOTE:` The pitch and yaw arguments can also accept a `X,Y,Z` coordinate. <br/>
 `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).

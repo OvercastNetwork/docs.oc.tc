@@ -10,6 +10,7 @@ This module can create regions in which destroyed or altered blocks will gradual
 
 The `<renewables>` tag can contain any number of `<renewable>` tags. Each `<renewable>` can use a region and a filter to
 specify blocks to renew. If neither are specified, the renewable affects all blocks in the world.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -263,6 +264,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
     </tbody>
   </table>
 </div>
+
 By default, all blocks in the region are renewable. The `<renew-filter>` sub-element can be used inside the `<renewable>` to specify only particular blocks to renew.
 
 The `<replace-filter>` element specifies which block types are allowed to be replaced by renewing blocks. Any other type of block in the renewable region will obstruct the renewal process. By default, any block can be replaced.

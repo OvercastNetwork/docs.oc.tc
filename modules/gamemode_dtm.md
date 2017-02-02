@@ -9,6 +9,7 @@ title:  "Destroy the Monument"
 Players have to locate and destroy certain objects from the enemy team, such as an obsidian pillar, etc. Teams win after a specified percentage of the enemy teams destroyables are destroyed. Teams can have multiple destroyables and they can be made out of multiple materials.
 
 Completion specifies how much of the material(s) inside of the monument region must be removed for it to count as destroyed. For example, if the monument is obsidian and completion is set to 100% then all the obsidian must be removed in order for the monument to count as destroyed.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

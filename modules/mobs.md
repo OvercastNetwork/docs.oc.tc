@@ -10,6 +10,7 @@ By default PGM disables all mob spawning.
 The mobs module allows this behavior to be customized to allow spawning of specific mobs.
 This module makes use of the `<spawn>`, `<mob>` and `<entity>` [filters](/modules/filters) to only allow specific mobs to spawn.
 Mob spawns can also be filtered against any other filter type including regions.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -114,6 +115,7 @@ Mob spawns can also be filtered against any other filter type including regions.
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- Only allow mobs to spawn from monster spawners. -->

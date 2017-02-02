@@ -9,6 +9,7 @@ title:  "Time Periods"
 Time periods are numbers suffixed with a time unit. Periods with no formatter suffix default to seconds.
 
 In some contexts, `oo` can be used to indicate an infinite time period.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -45,6 +46,7 @@ In some contexts, `oo` can be used to indicate an infinite time period.
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- 5 minutes -->

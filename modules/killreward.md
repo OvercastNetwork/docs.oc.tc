@@ -12,6 +12,7 @@ The reward can optionally filter which players are eligible to receive the rewar
 
 This module can, for example, be used to give upgrades to players by giving them gold ingots.
 Then once they have collected enough ingots they can craft armor, etc.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

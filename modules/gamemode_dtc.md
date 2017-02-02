@@ -7,6 +7,7 @@ title:  "Destroy the Core"
 ---
 
 Players have to locate and break the enemy team's core, usually an obsidian sphere filled with lava. The lava has to leak down a certain distance for the core to be destroyed. Lava should not be available anywhere else on the map, otherwise a core leak could be faked. This can also be avoided by keeping the lava far away enough from the core and not giving players buckets or the ability to craft them.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

@@ -10,6 +10,7 @@ title:  "Cleaning the World Folder"
 Minecraft will generate quite a few files in your world folder when you create a world. Most of these files are not needed and by deleting them you can reduce the file size when it comes to uploading your world.
 
 Below is a table which displays all the files that may be generated in your world folder, along with a description and whether or not the file is required.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

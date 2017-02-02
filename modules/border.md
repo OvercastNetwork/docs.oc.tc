@@ -9,6 +9,7 @@ title:  "World Border"
 The world border module uses the default minecraft world border and allows customization of its size, position and behavior. Only one world border definition can be active at a time.
 
 Attributes for multiple world borders can be applied for all borders by specifying them in the root `<world-borders>` element.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -208,6 +209,7 @@ Attributes for multiple world borders can be applied for all borders by specifyi
     </tbody>
   </table>
 </div>
+
 Examples
 
     <world-borders center="6.5, -36.5">

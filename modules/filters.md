@@ -104,6 +104,7 @@ and assigned an `id` used to reference them elsewhere.
 
 ### Matcher Elements {#list}
 Filter matchers test for specific conditions or properties of things.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -669,6 +670,7 @@ Filter matchers test for specific conditions or properties of things.
 
 Filter modifiers are used to alter the meaning of other filters, and combine them into more complex conditions.
 These elements must contain either a single filter, or a list of filters, as their child elements.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -828,6 +830,7 @@ These elements must contain either a single filter, or a list of filters, as the
     </tbody>
   </table>
 </div>
+
 Examples
 
     <filters>
@@ -857,6 +860,7 @@ This filter is commonly used in [kill rewards](/modules/killreward) but can also
 
 
 #####  Kill-Streak Filter Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -925,6 +929,7 @@ This filter is commonly used in [kill rewards](/modules/killreward) but can also
     </tbody>
   </table>
 </div>
+
 Examples
 
     <kill-streak min="3"/>      <!-- matches players with at least 3 kills -->
@@ -996,6 +1001,7 @@ The child filter can be omitted, in which case all players in the match will be 
 
 
 #####  Player Count Filter Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -1050,6 +1056,7 @@ The child filter can be omitted, in which case all players in the match will be 
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- Match if there are at least 4 players participating -->
@@ -1072,6 +1079,7 @@ It never matches when the child filter doesn't match.
 
 
 #####  Countdown Filter Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -1110,6 +1118,7 @@ It never matches when the child filter doesn't match.
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- Countdown 30s from the moment any player picks up the flag -->
@@ -1142,6 +1151,7 @@ Then it will always test that team's control of the objective, regardless of the
 
 
 #####  Capture Filter Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -1164,6 +1174,7 @@ Then it will always test that team's control of the objective, regardless of the
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- Match if red-core has been leaked -->
@@ -1230,6 +1241,7 @@ These filters can be used to filter for players with specific items in their inv
 #### Event Cause Filters {#causeFilters}
 
 Cause filters are used to filter an event or action according to its cause.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -1370,6 +1382,7 @@ Cause filters are used to filter an event or action according to its cause.
 
 The relation filter is used when a player is damaged to check the relation between them and the damage cause.
 This filter is only used in damage related contexts i.e., [damage filters](/modules/damage), and [kill rewards](/modules/killreward)
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

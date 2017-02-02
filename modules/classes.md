@@ -7,6 +7,7 @@ title:  "Classes"
 ---
 
 Classes allow the player to pick a specific class at the beginning of the game which gives them special abilities. Classes can be used on any map type, however care must be taken to balance them properly. Players can then change their class ingame with the `/class` command.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -194,6 +195,7 @@ Classes allow the player to pick a specific class at the beginning of the game w
     </tbody>
   </table>
 </div>
+
 Example
 
     <classes family="ghost" sticky="true">

@@ -18,6 +18,7 @@ nav_content:
 Defines tools that will be automatically repaired when dropped and picked up again. This will also merge items that are picked up, i.e., picking up an iron sword would result in it merging with your sword and repairing it. Repaired items will keep their enchantment, unlike vanilla minecraft where they will not.
 
 This also works with non-tool items such as arrows. When people pick up item in the `<toolrepair>` module and they already have one of the same kind it gets merged into the existing item, if they don't have it they get it like normal. Repairing arrows instead of removing them has the advantage of the player being able to accidental drop one and not lose it.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -59,6 +60,7 @@ This also works with non-tool items such as arrows. When people pick up item in 
     </tbody>
   </table>
 </div>
+
 Example
 
     <toolrepair>
@@ -71,6 +73,7 @@ Example
 
 ### Item Remove {#remove}
 Defines items that will be deleted when dropped on the map. Also works when items are destroyed, such as seeds from tall grass, etc.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -110,6 +113,7 @@ Defines items that will be deleted when dropped on the map. Also works when item
     </tbody>
   </table>
 </div>
+
 Example
 
     <itemremove>
@@ -124,6 +128,7 @@ Example
 
 ### Item Keep {#item_keep}
 Defines items that will be kept on death. If there is a spawn kit, kept items will be given back *after* the kit is applied, except for equipped armor, which will replace any armor in the kit.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -163,6 +168,7 @@ Defines items that will be kept on death. If there is a spawn kit, kept items wi
     </tbody>
   </table>
 </div>
+
 Example
 
     <itemkeep>
@@ -175,6 +181,7 @@ Example
 
 ### Armor Keep {#armor_keep}
 Similar to `<itemkeep>` except that the specified items are only kept if they are equipped in an armor slot.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -216,6 +223,7 @@ Similar to `<itemkeep>` except that the specified items are only kept if they ar
     </tbody>
   </table>
 </div>
+
 Example
 
     <armorkeep>

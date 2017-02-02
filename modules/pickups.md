@@ -14,6 +14,7 @@ When a player walks into the crystal it gives them a kit and then de-spawns.
 The crystal will respawn again at a _random_ location inside the specified region after the set respawn time.
 This means that the pickup's region must be randomize-able, e.g. a `<cuboid>`, `<cylinder>`, `<block>` or `<point>`.
 A `<point>` region does not return a randomized position but can still be used to specify an exact location for a pickup.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -296,6 +297,7 @@ A `<point>` region does not return a randomized position but can still be used t
     </tbody>
   </table>
 </div>
+
 Examples
 
     <pickups>

@@ -11,6 +11,7 @@ Proximity alarms can be used to alert players when an enemy enters a specified a
 If the `<notify>` subelement is not defined, the proximity-alarm message is sent only to players who _cannot_ be detected, i.e. those who do not match the detection filter. If the `<detect>` attribute is missing no message will be sent, which means that only players who can see or hear the flares will know when the alarm is tripped.
 
 Flares will only be set off if a `flare-radius=""` is defined. If this attribute is missing a message must be specified to alert players. This is how the alarm can be made "silent", so that enemies may not realize that they have been detected.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -143,6 +144,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
     </tbody>
   </table>
 </div>
+
 Example
 
     <proximity-alarms>

@@ -383,6 +383,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
     </tbody>
   </table>
 </div>
+
 Items can be give custom names and lore with the `name` and `lore` attributes. Colors and fancy text in item names or lore can be specified with the grave symbol `` ` and then the [formatting code](/reference/formatting). You can specify multiple lines of lore using a pipe symbol `|` for line breaks.
 
     <item name="`6Golden Sword" material="gold sword"/> <!-- Gold sword with a gold/yellow name. -->
@@ -527,6 +528,7 @@ Armor slots have predefined tags to make it easier to give them to a player. The
 
 
 ##### Armor Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -551,6 +553,7 @@ Armor slots have predefined tags to make it easier to give them to a player. The
     </tbody>
   </table>
 </div>
+
 Enchanting, naming or giving armor lore works the same way as with items.
 
     <boots material="iron boots" lore="The Winged Boots of Hermes">
@@ -846,6 +849,7 @@ simply replace the tag `enchantment` with `stored-enchantment`.
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- A sharpness II iron sword -->
@@ -919,6 +923,7 @@ that we are unable to work around).
 Instead of a list of blocks, you can use the `<all-blocks/>` element, which is equivalent to listing literally every block in the game.
 In this case, you will probably want to specify `show-can-place-on="false"` or `show-can-destroy="false"` on the item to prevent a
 massive tooltip being displayed to the player.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

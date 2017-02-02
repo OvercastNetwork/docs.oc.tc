@@ -64,6 +64,7 @@ Examples
 Use this module to disable damage from specific causes.
 
 While almost every form of damage can be disabled safely it is recommended that you do **not** disable `VOID` damage.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -102,6 +103,7 @@ While almost every form of damage can be disabled safely it is recommended that 
     </tbody>
   </table>
 </div>
+
 Example
 
     <disabledamage>
@@ -115,6 +117,7 @@ Example
 #### Block Explosion Attributes {#block_explosion}
 
 The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize who/what gets damaged. Only attributes with `false` as the value need to be explicitly defined since all attributes default to `true`.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -169,6 +172,7 @@ The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize 
     </tbody>
   </table>
 </div>
+
 Example
 
     <disabledamage>
@@ -182,6 +186,7 @@ Example
 #### Damage Causes {#causes}
 The following damage causes can be used in the disable damage module.
 These causes do not need to be capitalized or contain underscores, i.e., `FIRE_TICK` and `fire tick` will both work.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -370,4 +375,5 @@ These causes do not need to be capitalized or contain underscores, i.e., `FIRE_T
     </tbody>
   </table>
 </div>
+
 Copied from: [bukkit docs - Damage Cause](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)

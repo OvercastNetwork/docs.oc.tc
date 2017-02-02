@@ -9,6 +9,7 @@ title:  "Custom Projectiles"
 Custom projectile types can be defined and applied to items in [kits](/modules/kits).
 These items effectively become either weapons that shoot the custom projectile,
 or the item form of the custom projectile itself.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -244,6 +245,7 @@ or the item form of the custom projectile itself.
 Bows can be modified to shoot a different projectile at a custom speed. The PGM plugin will calculate the damage the projectile does using the same formula as minecraft does for arrows. This means that a flying fish with a velocity of 40 will almost certainly kill you. Projectiles can also have custom [potion effects](/modules/potions) which are applied to the target when it is hit.
 
 `NOTE:` You can currently only modify all bow projectiles, this means no normal and custom bow at the same time.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -312,6 +314,7 @@ Bows can be modified to shoot a different projectile at a custom speed. The PGM 
     </tbody>
   </table>
 </div>
+
 Examples
 
     <modifybowprojectile>
@@ -328,6 +331,7 @@ Examples
 
 
 All the following projectiles are guaranteed to work. See [mrapple/Bukkit Entity Spawning.md](https://gist.github.com/4617111) for a list of tested entities.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

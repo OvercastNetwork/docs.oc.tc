@@ -12,6 +12,7 @@ it can also be used in combat-less game modes where players have to collect spec
 Win conditions are set by using the score and time limit modules.
 
 `NOTE:` This gamemode is not compatible with the teams module!
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -116,6 +117,7 @@ Win conditions are set by using the score and time limit modules.
     </tbody>
   </table>
 </div>
+
 Example
 
     <players max="16" max-overfill="20"/>

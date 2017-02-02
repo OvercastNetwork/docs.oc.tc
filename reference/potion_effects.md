@@ -241,6 +241,7 @@ title:  "Potion Effects"
     </tbody>
   </table>
 </div>
+
 `*` May not work as expected with PGM
 
 Copied from: [bukkit docs - Potion Effect Types](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html) <br/>

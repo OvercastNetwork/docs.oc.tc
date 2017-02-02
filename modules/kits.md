@@ -35,6 +35,7 @@ Kits can contain other kits directly, and can also inherit items from other kits
 
 Some types of kits are *removable*, meaning that the kit can be automatically taken from the player as well as given. When used in certain contexts,
 these kits will be automatically removed from the player at an appropriate time. This will be noted in the documentation where applicable.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -178,6 +179,7 @@ these kits will be automatically removed from the player at an appropriate time.
     </tbody>
   </table>
 </div>
+
 The effect of the `force` attribute depends on the type of kit it is used with:
 conflicting items or armor will be replaced instead of smartly merged & repaired,
 health & hunger will be set instead of only increased,
@@ -213,6 +215,7 @@ before applying the kit by using one of the elements below.
 
 
 ##### Inventory Clear Elements
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -256,6 +259,7 @@ before applying the kit by using one of the elements below.
 ### Game-mode Kit {#game-mode}
 
 A player's gamemode can be changed when they spawn or enter a region, etc. by using this kit.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -295,6 +299,7 @@ By default health or hunger values are only increased, not decreased. For exampl
 
 
 ##### Health & Hunger Elements
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -388,6 +393,7 @@ affect a modifier applied by a different kit.
 
 
 ##### Attribute Kit Elements
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -455,6 +461,7 @@ affect a modifier applied by a different kit.
 
 ### Walk Speed Kit (removable) {#walkSpeed}
 Increase or decrease a player's walking speed. The value is a multiplier of the normal walking speed.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -498,6 +505,7 @@ Increase or decrease a player's walking speed. The value is a multiplier of the 
 Reduce (or increase) the knockback players receive when they have this kit applied.
 The normal input range is `0 - 1.0`. If the value is greater than one the knockback will be increased,
 and anything lower than zero pushes the player to the attacker instead of away from them.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -534,6 +542,7 @@ and anything lower than zero pushes the player to the attacker instead of away f
 ### Shield Kit (removable) {#shield}
 The shield kit gives the player a shield consisting of absorption hearts that recharge after a set period of time.
 Recharging of the shield is based on when damage was taken last, every time a player is damaged it resets the recharge timer.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -605,6 +614,7 @@ Recharging of the shield is based on when damage was taken last, every time a pl
 ### Double Jump Kit (removable) {#jump}
 Give players with this kit the ability to double-jump.
 This element's enabled attribute can be used to disable double-jump inside regions, etc.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -697,6 +707,7 @@ This element's enabled attribute can be used to disable double-jump inside regio
 The fly kit gives players which it is applied to the ability to fly.
 It also allows modification of the speed at which they fly.
 If no attributes are specified can-fly defaults to true.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

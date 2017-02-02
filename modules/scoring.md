@@ -7,6 +7,7 @@ title:  "Scoring"
 ---
 
 The score module can be used to give matches a score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -96,6 +97,7 @@ The score module can be used to give matches a score limit and modify how many p
     </tbody>
   </table>
 </div>
+
 Example
 
     <score>
@@ -111,6 +113,7 @@ Example
 
 #### Score Boxes {#score_box}
 A score box will give points to a players team when they enter or bring a redeemable item to the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -285,6 +288,7 @@ A score box will give points to a players team when they enter or bring a redeem
     </tbody>
   </table>
 </div>
+
 Example
 
     <score>
@@ -331,6 +335,7 @@ Result can be the name of a team, or one of the special values; "tie" for no win
 
 
 ##### Time Attributes
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

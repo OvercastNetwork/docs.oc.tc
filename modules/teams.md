@@ -15,6 +15,7 @@ The team's name is specified inside the `<team>` element. The name should be kep
 A team's `plural` attribute specifies if the team name is plural, e.g. "Attackers"; PGM will use this to pick appropriate win messages, etc. The `show-name-tags` attribute specifies who can see player name tags, this only applies to players, observers will always see all name tags.
 
 It is common for maps to only have 2 teams, although more are possible it usually just causes confusion.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

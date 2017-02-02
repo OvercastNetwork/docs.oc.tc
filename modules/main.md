@@ -11,6 +11,7 @@ Every map XML file must contain the base `<map>` module. It contains modules tha
 The `proto=""` attribute specifies what PGM version the XML file was created for. If this value is higher than the version of PGM that is running, the map won't load. If it's lower, the map will load but the XML may be interpreted in an outdated way. Mapmakers should always use the latest supported XML version, and this may be required of new maps that are to be added to the Lifeboat Network rotations.
 
 The maps version should follow the versioning schema `major.minor.patch`.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -361,6 +362,7 @@ The gamemode element is used to specify the gamemode(s) of the map.
 This mainly affects how the map is categorized and displayed.
 If no `<gamemode>` tags are specified the map will set the gamemode(s) to whatever modules are used.
 This means that a map that uses destroyables and flags would be listed as a "DTM & CTF" unless specified otherwise.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -472,6 +474,7 @@ This means that a map that uses destroyables and flags would be listed as a "DTM
     </tbody>
   </table>
 </div>
+
 Example
 
     <!-- A FFA map with scoreboxes -->

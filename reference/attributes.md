@@ -7,6 +7,7 @@ title:  "Item Attributes"
 ---
 
 Players or mobs carrying or wearing items with these attributes will have the effects specified applied to themselves.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -108,4 +109,5 @@ Players or mobs carrying or wearing items with these attributes will have the ef
     </tbody>
   </table>
 </div>
+
 Incomplete list, copied from: [Minecraft Wiki Attributes](http://minecraft.gamepedia.com/Attribute)

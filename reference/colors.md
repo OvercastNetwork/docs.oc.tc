@@ -7,6 +7,7 @@ title:  "Dye Colors"
 ---
 
 Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw) maps and the dyes hex color can be used to color armor. Teams are created with the chat color names defined in [formatting](/reference/formatting#chatColors).
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -164,4 +165,5 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
     </tbody>
   </table>
 </div>
+
 Copied from: [bukkit docs - Dye Color](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/DyeColor.html)

@@ -11,6 +11,7 @@ You can modify TNT explosion & placing behavior with this module. Destruction of
 By default dispensers containing TNT will ignite their TNT when exploded. This behavior can be customized with the `<dispenser-tnt-limit>` and `<dispenser-tnt-multiplier>` elements, setting either of these to 0 will disable it.
 
 If licensing is enabled only players with a TNT license can use TNT. This license is revoked if a player kills too many of their teammates using TNT.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -161,6 +162,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
     </tbody>
   </table>
 </div>
+
 Examples
 
     <tnt>

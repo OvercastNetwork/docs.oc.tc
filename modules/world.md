@@ -22,6 +22,7 @@ Any chunks not in the world's `region/` folder will be generated according to th
 
 The `world=""` attribute is used to specify the sub-folder that contains the map's `region/` and `level.dat` files.
 This is used with [conditionals](/modules/includes_conditionals#conditionals) to automatically load the holiday versions of the map, etc.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

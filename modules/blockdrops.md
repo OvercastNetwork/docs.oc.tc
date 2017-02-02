@@ -9,6 +9,7 @@ title:  "Block Drops"
 This module can be used to customize what drops when blocks are broken, and what the broken block is replaced with. It can also be used to customize drops when a block is punched by a player in adventure mode, or to change a block's type when a player walks on it. All sub-elements are optional, if there are no elements all blocks will simply drop nothing.
 
 Custom drops also apply to blocks broken by explosions. The custom drops are reduced by 70% just like default explosion drops, though this can be customized through the [TNT module](/modules/tnt). Blocks broken by means other than mining or explosions currently do not cause custom drops.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -387,6 +388,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
     </tbody>
   </table>
 </div>
+
 The `<filter>` element is used to limit the rule to particular blocks. If multiple filters are listed, the rule will apply when *any* of them match. This filter is usually used to only filter what blocks the rule applies to. If filters such as `<team>` are used then no items or XP will drop if the block is mined by a non-matching player, the rules `<replacement>` material will still take effect however.
 
 Items specified in the `<drops>` element can have any of the item attributes such as custom names, enchantments, attributes, etc. They can also have a special `chance` attribute specifying the chance that they will actually be dropped. This value can range from 0 to 1, a chance of 0.5 would mean that the item will at average drop 50% of the time.
@@ -434,7 +436,7 @@ Examples
             </drops>
         </rule>
     </block-drops>
-
+  
     <block-drops>
         <!-- When a chest is broken give the player the 'chest-kit'. -->
         <rule kit="chest-kit">
@@ -507,6 +509,7 @@ The behavior for blocks that become airborne due to explosions can be modified i
 
 
 ##### Rule Sub-elements
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -562,6 +565,7 @@ The behavior for blocks that become airborne due to explosions can be modified i
     </tbody>
   </table>
 </div>
+
 Examples
 
     <block-drops>

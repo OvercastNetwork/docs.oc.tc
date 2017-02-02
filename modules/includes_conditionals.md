@@ -30,6 +30,7 @@ Example
     </map>
 
 The master map repository contains the following pre-made XML files for you to use
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -118,6 +119,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
 
 
 [1]: https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -215,6 +217,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
     </tbody>
   </table>
 </div>
+
 Examples
 
     <!-- this section is only parsed when on a ranked server. -->

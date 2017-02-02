@@ -386,4 +386,5 @@ Bukkit enchantment names are not case sensitive and a space can be used instead 
     </tbody>
   </table>
 </div>
+
 Copied from: [bukkit docs - Enchantments](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html)

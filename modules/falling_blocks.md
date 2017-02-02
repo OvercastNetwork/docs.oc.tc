@@ -9,6 +9,7 @@ title:  "Falling Blocks"
 The falling blocks module is used to specify what blocks are affected by gravity. Additional it also supports sticky blocks, if a falling block is stuck to a sticky block it will not fall.
 
 Falling blocks will not fall if they touch a sticky block. If you make a falling block stick to itself, then it will stick only if the neighbor block is also stuck to something. Entire structures can then be built from those blocks, and they will not collapse as long as some part of the structure is stuck to a non-falling block.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -168,6 +169,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
     </tbody>
   </table>
 </div>
+
 Example
 
     <falling-blocks>
@@ -197,7 +199,7 @@ Example
             </filter>
         </rule>
     </falling-blocks>
-
+  
     </falling-blocks>
         <!-- blocks that match the "building-blocks" filter, and are inside
              the "box" region, collapse if they are not connected to something

@@ -23,6 +23,7 @@ The message element can contain multiple lines, color and [formatting codes](/re
 Teleports are optional, if they are not defined just the message will be displayed for that stage. They can contain [regions](/modules/regions) or [point providers](/modules/regions#pointProviders), it is recommended that you use a point provider to control precisely where the player spawns. If a point is obstructed the player will not be teleported. However, the stage message will still be displayed.
 
 Stages are displayed in the order that they are defined as in the XML.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

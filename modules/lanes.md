@@ -7,6 +7,7 @@ title:  "Lanes"
 ---
 
 Lanes are used in RFW style maps with two parallel lanes for the teams. They prevent players from leaving their teams lane and entering the enemies.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -72,6 +73,7 @@ Lanes are used in RFW style maps with two parallel lanes for the teams. They pre
     </tbody>
   </table>
 </div>
+
 Example
 
     <lanes>

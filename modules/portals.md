@@ -13,6 +13,7 @@ The position and direction attributes of a portal are relative to the players lo
 Portals respond to any player move event, this allows almost instant teleportation as soon as the player matches the portals filter.
 
 `TIP:` Copy the yaw and pitch from the F3 screen in minecraft (the `Facing: Direction (Axis) (Yaw/Pitch)` line).
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -404,12 +405,12 @@ Examples
         <portal x="@10" y="@8" z="@45">
             <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
         </portal>
-
+  
         <!-- Adds 12 to the players Z position, turning them to face east and 10° up -->
         <portal z="12" pitch="@10" yaw="@-90">
             <region><cuboid min="-56,33,-1" max="-55,35,2"/></region>
         </portal>
-
+  
         <!-- Teleport the player from portal-entrance to a random point inside portal-exit -->
         <portal region="portal-entrance">
             <destination><region id="portal-exit"/></destination>

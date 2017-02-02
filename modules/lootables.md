@@ -8,6 +8,7 @@ title:  "Lootables"
 
 Lootables are chests or other containers that generate their contents based on custom rules and probabilities.
 They can optionally refill themselves on a schedule, or in response to dynamic filters.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -67,6 +68,7 @@ They can optionally refill themselves on a schedule, or in response to dynamic f
 
 The `<loot>` element defines a generated set of items, using literal `<item>` elements,
 and operations for choosing them.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -175,6 +177,7 @@ and operations for choosing them.
 
 The `<any>` element makes a random selection from any number of child elements.
 Its children can be `<option>` elements, or any other `<loot>` sub-element.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -281,6 +284,7 @@ Its children can be `<option>` elements, or any other `<loot>` sub-element.
 
 The `<maybe>` element includes its child elements only if the specified filter matches.
 The filter is matched against the first player to access the loot.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -314,6 +318,7 @@ It will fill **anything** that has an inventory, and matches its `filter` proper
 This can include chests, dispensers, storage minecarts, or any other container block or entity.
 It will fill containers regardless of where they came from, so if you don't want player-placed
 chests to be filled, then you will have to prevent that somehow.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>

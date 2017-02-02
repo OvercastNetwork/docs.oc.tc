@@ -260,6 +260,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
     </tbody>
   </table>
 </div>
+
 You can group multiple victory monuments from the same team inside a single `<wools team="team-id">` element; and then define that teams individual wool colors inside of a `<wool>` element.
 
     <wools team="red">

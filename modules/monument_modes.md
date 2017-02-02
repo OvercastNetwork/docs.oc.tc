@@ -9,6 +9,7 @@ title:  "Monument Modes"
 This module can be used to customize the modes that cores and destroyables cycle through, and at what duration they do so. When a monuments mode changes its material is usually changed from a hard to a soft block.
 
 The `<modes>` tag can contain any number of `<mode>` tags with different durations. Each `<mode>` has configurable characteristics that define it.
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -112,6 +113,7 @@ The `<modes>` tag can contain any number of `<mode>` tags with different duratio
     </tbody>
   </table>
 </div>
+
 Example
 
     <modes>
