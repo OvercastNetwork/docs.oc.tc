@@ -7,7 +7,7 @@ title:  "Harb"
 
 ---
 
->If you're interested in the backstory of harb read: [The Story of Harb](https://oc.tc/forums/topics/50eba925f344228923000196) - By SH4D0W_HAWK
+>If you're interested in the backstory of harb read: [The Story of Harb](/misc/harb) - By SH4D0W_HAWK
 
 [<i class="fa fa-share right-ref-link"></i>](/modules/main)
 Specify the XML file version and then open the main map module and specify the maps name, version and objective.

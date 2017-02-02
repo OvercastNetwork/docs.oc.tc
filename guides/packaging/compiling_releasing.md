@@ -31,9 +31,16 @@ Also, take note of the following coding guidelines when creating your `map.xml` 
 
 The `map.png` file displays the image of your map on the website. The standard resolution for these pictures is `290x246`. This image should contain a general overview of the map's playing area.
 
-Image Example
+Image Examples
 
-<img class="img-thumbnail" src="https://maps.oc.tc/TDM/Standard/BlockRage/map.png"/>
+<div class="row">
+    <div class="col-md-6">
+        <img class="thumbnail center-block" src="/img/BlockRage_map.png"/>
+    </div>
+    <div class="col-md-6">
+        <img class="thumbnail center-block" src="/img/Rage Quit_map.png"/>
+    </div>
+</div>
 
 <br/>
 
