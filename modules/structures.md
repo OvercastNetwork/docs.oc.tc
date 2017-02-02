@@ -39,7 +39,7 @@ title:  "Structures"
       <a href='/modules/filters#flagFilter'>flag filters</a>
       can be used with dynamic structures, as well as
       <a href='/modules/filters#filterModifiers'>filter modifiers.</a>
-      <br>
+      <br/>
       Other filter types may be supported in the future.
     </p>
   </div>
@@ -210,7 +210,7 @@ title:  "Structures"
         <td>
           <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
           Conditions under which the structure is placed.
-          <br>
+          <br/>
           <em>
             Only
             <code>{{'<objective>' | escape_once}}</code>
@@ -224,7 +224,7 @@ title:  "Structures"
         </td>
         <td>
           <code>{{'<always/>' | escape_once}}</code>
-          <br>
+          <br/>
           (structure is permanently placed)
         </td>
       </tr>
@@ -249,7 +249,7 @@ title:  "Structures"
           Location to place the structure at. The structure's
           <code>origin</code>
           will be at this point.
-          <br>
+          <br/>
           <em>
             This is an alternative to
             <code>offset</code>
@@ -267,7 +267,7 @@ title:  "Structures"
         <td>
           Relative position to place the structure at.
           The structure will be translated by this amount from it's original location.
-          <br>
+          <br/>
           <em>
             This is an alternative to
             <code>location</code>
@@ -278,7 +278,7 @@ title:  "Structures"
         </td>
         <td>
           0,0,0
-          <br>
+          <br/>
           (structure placed at its original location)
         </td>
       </tr>

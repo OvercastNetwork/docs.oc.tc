@@ -107,7 +107,7 @@ Attributes for multiple world borders can be applied for all borders by specifyi
         </td>
         <td>
           Time after which this border takes effect.
-          <br>
+          <br/>
           <i>Not compatible with the <code>when</code> property.</i>
         </td>
         <td>

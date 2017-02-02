@@ -445,7 +445,7 @@ Examples
     </block-drops>
 
 </div>
-<br>
+<br/>
 
 #### Block Punching
 The `punch` attribute or sub-element specifies if that rule is checked when players in adventure mode punch a block. A rule with the punch attribute set to true will still apply when a block is broken, to change this behavior the `<cause>punch<cause>` or `<cause>mine<cause>` filters can be used.
@@ -462,7 +462,7 @@ The `punch` attribute or sub-element specifies if that rule is checked when play
         </rule>
     </block-drops>
 
-<br>
+<br/>
 
 #### Block Trampling
 

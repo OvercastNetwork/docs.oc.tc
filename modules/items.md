@@ -159,7 +159,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
         </td>
         <td>
           Slot where the item will be placed in the player's inventory.
-          <br>
+          <br/>
           <i>If no slot is specified the item will be merged into the player's inventory.</i>
         </td>
         <td>
@@ -227,7 +227,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
         </td>
         <td>
           Leather armor color as a hexadecimal color. <code>RRGGBB</code>
-          <br>
+          <br/>
           <i>Only applies to leather armor items.</i>
         </td>
         <td>
@@ -242,7 +242,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
         <td>
           <a class='left-ref-link' href='#grenades'><i class="fa fa-chevron-down"></i></a>
           Projectile explodes on impact.
-          <br>
+          <br/>
           <i>Works with ender pearls, snowballs, eggs, and arrows.</i>
         </td>
         <td>
@@ -959,7 +959,7 @@ massive tooltip being displayed to the player.
         </td>
         <td>
           An individual material to match.
-          <br>
+          <br/>
           <i>Does not accept a damage/data value.</i>
         </td>
         <td>

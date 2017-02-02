@@ -15,9 +15,9 @@ title:  "Pruning Chunks"
     <h4 class='media-heading'>1. Download MCEdit</h4>
     Start by downloading MCEdit from
     <a href='http://mcedit.net' target='_blank'>the MCEdit website</a>.
-    <br>
+    <br/>
     MCEdit is available for Windows, Mac, and Linux.
-    <br>
+    <br/>
     If you're having trouble running MCEdit you can
     <a href='https://github.com/mcedit/mcedit/wiki/Reporting-Issues' target='_blank'>report an issue</a>.
     <p></p>
@@ -78,7 +78,7 @@ title:  "Pruning Chunks"
     </div>
   </div>
 </div>
-<br>
+<br/>
 <i>
   Thanks to
   <a href='https://oc.tc/Plastix' target='_blank'>Plastix</a>

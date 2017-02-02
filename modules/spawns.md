@@ -55,7 +55,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
         <td>
           <span class='label label-warning' title='Only one of this child permitted per parent'>Unique</span>
           The spawn for observers and teams without a spawn.
-          <br>
+          <br/>
           <i>Only one default spawn element is allowed per map.</i>
         </td>
         <td>
@@ -103,7 +103,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
         </td>
         <td>
           Spawns players at the next region in a list if the one prior to it isn't safe.
-          <br>
+          <br/>
           <i>Requires the <code>safe</code> attribute set to true.</i>
         </td>
         <td>
@@ -221,7 +221,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
         </td>
         <td>
           The exact block coordinates that the player looks at when spawned.
-          <br>
+          <br/>
           <i>This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.</i>
         </td>
         <td>
@@ -235,7 +235,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
         </td>
         <td>
           The horizontal angle the player looks to when spawned.
-          <br>
+          <br/>
           <i>South 0, East -90, North 180 and West 90.</i>
         </td>
         <td>
@@ -251,7 +251,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
         </td>
         <td>
           The vertical angle the player looks to when spawned.
-          <br>
+          <br/>
           <i>-90 is straight up 90 is straight down.</i>
         </td>
         <td>

@@ -348,7 +348,7 @@ Result can be the name of a team, or one of the special values; "tie" for no win
         </td>
         <td>
           Change how the winning team or player is calculated.
-          <br>
+          <br/>
           Accepts <code>default</code>, <code>tie</code>, <code>objectives</code> or a Team ID.
         </td>
         <td>

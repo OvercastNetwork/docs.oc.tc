@@ -83,7 +83,7 @@ Portals respond to any player move event, this allows almost instant teleportati
           <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
           <span class='label label-danger'>Required</span>
           Region where this portals entrance is located.
-          <br>
+          <br/>
           <i>Cannot combine an entrance region with <code>forward</code> or <code>transit</code> properties.</i>
         </td>
         <td>
@@ -98,7 +98,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         <td>
           <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
           Destination of the portal, teleports players to a random point inside the region.
-          <br>
+          <br/>
           <i>Cannot combine an exit region with <code>reverse</code> or <code>transit</code> properties.</i>
         </td>
         <td>
@@ -154,7 +154,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         <td>
           <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
           Apply forward transform on rising edge and reverse transform on falling edge
-          <br>
+          <br/>
           <i>Cannot combine <code>transit</code> property with <code>forward</code> or <code>reverse</code> properties.</i>
         </td>
         <td>
@@ -213,7 +213,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         </td>
         <td>
           Specify the direction the player is looking horizontally from -180&deg; to 180&deg;.
-          <br>
+          <br/>
           <i>South 0, East -90, North 180 and West 90.</i>
         </td>
         <td>
@@ -237,7 +237,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         </td>
         <td>
           Specify the direction the player is looking vertically from -90&deg; to 90&deg;.
-          <br>
+          <br/>
           <i>-90 is straight up 90 is straight down.</i>
         </td>
         <td>
@@ -283,7 +283,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         <td>
           <span class='label label-default' title='Can be either this sub-element or an attribute.'>Property</span>
           Destination of the portal, teleports players to a random point inside the region.
-          <br>
+          <br/>
           <i>Region is automatically filtered against block place.</i>
         </td>
         <td>
@@ -343,7 +343,7 @@ Portals respond to any player move event, this allows almost instant teleportati
         <td>
           <span class='label label-default' title='Can be either this sub-element or an attribute.'>Property</span>
           Apply forward transform on rising edge and reverse transform on falling edge
-          <br>
+          <br/>
           <i>Cannot combine <code>transit</code> property with <code>forward</code> or <code>reverse</code> properties.</i>
         </td>
         <td>

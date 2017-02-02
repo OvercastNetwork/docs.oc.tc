@@ -152,7 +152,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           Specify if this objective is required to win the match.
-          <br>
+          <br/>
           Teams completing all of their required objectives will win regardless of score or blitz configuration.
         </td>
         <td>
@@ -178,7 +178,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           Color of the flag, used for the label, particles, etc.
-          <br>
+          <br/>
           If omitted, the base color of the banner is used.
         </td>
         <td>
@@ -216,7 +216,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           The team that is defending this flag i.e. trying to prevent it from being picked up or captured.
-          <br>
+          <br/>
           Players on this team will hear special sound effects to alert them when the flag is picked up or dropped.
         </td>
         <td>
@@ -230,7 +230,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           This flag can be carried by multiple teams.
-          <br>
+          <br/>
           Causes the flag's scoreboard icon to have the color of the team carrying it, rather than the color of the flag itself.
         </td>
         <td>
@@ -244,7 +244,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           Custom message to display to players carrying this flag.
-          <br>
+          <br/>
           Can be used to give special instructions, if necessary e.g., "You are carrying the flag, return it to your base!"
         </td>
         <td>
@@ -258,9 +258,9 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           The amount of points awarded for capturing this flag.
-          <br>
+          <br/>
           If the flag has an <code>owner</code>, that team receives the points. Otherwise, the carrier's team receives them.
-          <br>
+          <br/>
           <i>A negative number can be used to take away points rather than give them.</i>
         </td>
         <td>
@@ -274,9 +274,9 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           The amount of points awarded per second while this flag is being carried.
-          <br>
+          <br/>
           If the flag has an <code>owner</code>, that team receives the points. Otherwise, the carrier's team receives them.
-          <br>
+          <br/>
           <i>A negative number can be used to take away points rather than give them.</i>
         </td>
         <td>
@@ -393,7 +393,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           Metric used to determine proximity to the flag.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>
@@ -421,7 +421,7 @@ Filters can be used to control who can pickup/capture the flag and when.
         </td>
         <td>
           Metric used to determine proximity to the net.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>
@@ -638,7 +638,7 @@ The `permanent` option can be used to make a post into something like a [monumen
         </td>
         <td>
           When a flag is captured and returned to this post, remove the flag from the game and consider it a completed objective.
-          <br>
+          <br/>
           <i>The objective is credited to the <code>owner</code> of the post, which is required in this case.</i>
         </td>
         <td>
@@ -664,7 +664,7 @@ The `permanent` option can be used to make a post into something like a [monumen
         </td>
         <td>
           Points awarded per second to this post's owner while any flag is at the post.
-          <br>
+          <br/>
           <i>Requires the <code>owner</code> attribute to be set.</i>
         </td>
         <td>
@@ -701,7 +701,7 @@ The `permanent` option can be used to make a post into something like a [monumen
         </td>
         <td>
           Time between a flag being captured/recovered and respawning at this post.
-          <br>
+          <br/>
           <i>During this time, the flag is completely gone, giving defenders a chance to return to their base.</i>
         </td>
         <td>
@@ -715,7 +715,7 @@ The `permanent` option can be used to make a post into something like a [monumen
         </td>
         <td>
           Speed that a flag "moves" to respawn at this post, after being captured/recovered.
-          <br>
+          <br/>
           <i>This is an alternative to <code>respawn-time</code> that calculates the time based on the distance the flag must travel.</i>
         </td>
         <td>
@@ -854,9 +854,9 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           The amount of points awarded for capturing a flag in this net.
-          <br>
+          <br/>
           If the net has an <code>owner</code>, that team receives the points. Otherwise, the carrier's team receives them.
-          <br>
+          <br/>
           <i>A negative number can be used to take away points rather than give them.</i>
         </td>
         <td>
@@ -884,9 +884,9 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           Flag(s) that can be captured in this net.
-          <br>
+          <br/>
           This is a list of flag IDs, separated with spaces.
-          <br>
+          <br/>
           <i>Attribute can not be specified on nets that are defined inside a flag.</i>
         </td>
         <td>
@@ -902,9 +902,9 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           Flag(s) that are "rescued" by this net.
-          <br>
+          <br/>
           This is a list of flag IDs, separated with spaces.
-          <br>
+          <br/>
           Nothing can be captured in the net while any of these flags are being carried.
           However, if none of them are being carried, but some of them are dropped on the ground,
           capturing any flag in this net will instantly return the dropped flags.
@@ -920,7 +920,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           A flag carrier stays "in" the net, even after they leave.
-          <br>
+          <br/>
           If a player enters the net at a time when the flag can't be captured
           (e.g. because of <code>rescue</code> or <code>capture-filter</code>)
           they can then leave the net and the flag will still be captured the moment it is allowed to be.
@@ -951,7 +951,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           Custom message to display to flag carriers while capture is being prevented by a special rule or filter.
-          <br>
+          <br/>
           This can be used to explain an unusual <code>capture-filter</code> to a confused player.
         </td>
         <td>
@@ -990,7 +990,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
         </td>
         <td>
           Custom message to broadcast in chat when flag respawn is prevented by a special rule or filter.
-          <br>
+          <br/>
           This can be used to explain an unusual <code>respawn-filter</code> to confused players.
         </td>
         <td>

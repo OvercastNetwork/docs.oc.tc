@@ -165,7 +165,7 @@ A `<point>` region does not return a randomized position but can still be used t
         </td>
         <td>
           Time until the pickup entity is re-spawned after being picked up.
-          <br>
+          <br/>
           If set to zero the entity will not despawn and will simply be refreshed.
         </td>
         <td>

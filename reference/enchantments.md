@@ -10,7 +10,7 @@ Enchantments can be referenced by their Bukkit or [Minecraft](http://minecraft.g
 Bukkit enchantment names are not case sensitive and a space can be used instead of an underscore.
 
 `NOTE:`  PGM allows enchantments to be applied to any item regardless if the enchant was intended for it or not.
-<br>
+<br/>
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -250,7 +250,7 @@ Bukkit enchantment names are not case sensitive and a space can be used instead 
         </td>
         <td>
           Allows blocks to drop themselves instead of fragments.
-          <br>
+          <br/>
           (For example, stone instead of cobblestone)
         </td>
       </tr>

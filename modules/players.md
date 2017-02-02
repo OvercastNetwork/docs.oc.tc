@@ -64,7 +64,7 @@ Win conditions are set by using the score and time limit modules.
         </td>
         <td>
           Player limit -- normal players cannot join the match once it reaches this size.
-          <br>
+          <br/>
           <i>Premium players may join over this limit until <code>max-overfill</code> is reached.</i>
         </td>
         <td>
@@ -78,7 +78,7 @@ Win conditions are set by using the score and time limit modules.
         </td>
         <td>
           Player overfill -- premium players cannot join the match once it reaches this size.
-          <br>
+          <br/>
           <i>Must be greater than the defined <code>max</code>.</i>
         </td>
         <td>
@@ -92,7 +92,7 @@ Win conditions are set by using the score and time limit modules.
         </td>
         <td>
           Specify who can see the name tags of players.
-          <br>
+          <br/>
           Accepts:
           <code>true</code>, <code>false</code>, <code>allies</code> or <code>enemies</code>
         </td>

@@ -124,7 +124,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
           <span class='label label-default' title='Can be either this sub-element or an attribute.'>Property</span>
           <span class='label label-danger'>Required</span>
           Filter what blocks get modified by this rule.
-          <br>
+          <br/>
           Also accepts regions to limit the rule to a certain area.
         </td>
         <td>

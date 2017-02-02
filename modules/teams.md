@@ -98,7 +98,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
         </td>
         <td>
           The team's name is plural, used in status messages.
-          <br>
+          <br/>
           e.g.,  <code>Defenders win!</code> instead of <code>Defenders wins!</code>
         </td>
         <td>
@@ -111,7 +111,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
         </td>
         <td>
           Specify who can see the name tags of players in this team.
-          <br>
+          <br/>
           Accepts:
           <code>true</code>, <code>false</code>, <code>allies</code> or <code>enemies</code>
         </td>
@@ -136,7 +136,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
         </td>
         <td>
           Maximum players for this team, normal players cannot join the team once it reaches this size.
-          <br>
+          <br/>
           <i>Premium players may join over this limit until <code>max-overfill</code> is reached.</i>
         </td>
         <td>
@@ -149,7 +149,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
         </td>
         <td>
           Maximum players hard limit for this team, nobody can join the team once this limit is reached.
-          <br>
+          <br/>
           <i>Must be greater than the defined <code>max</code>.</i>
         </td>
         <td>

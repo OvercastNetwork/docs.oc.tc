@@ -121,7 +121,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
         <td>
           The map's slug, usually auto generated from the maps name.
           This should only be used when a map is renamed to retain the map's ratings, etc.
-          <br>
+          <br/>
           Valid slugs are lowercase and only contain the characters: <code>a-z 0-9 _</code>
         </td>
         <td>
@@ -283,7 +283,7 @@ A players name should **not** be used to credit them, instead their UUID should 
         <td>
           A major author of the map, used in
           <code>{{'<authors>' | escape_once}}</code>
-          <br>
+          <br/>
         </td>
         <td>
           <span class='label label-primary'>String</span>

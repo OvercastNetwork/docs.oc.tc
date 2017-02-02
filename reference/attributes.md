@@ -41,7 +41,7 @@ Players or mobs carrying or wearing items with these attributes will have the ef
         </td>
         <td>
           Resistance to knockback from attacks, explosions, and projectiles.
-          <br>
+          <br/>
           <i>1.0 is full knockback resistance.</i>
         </td>
         <td>0.0</td>

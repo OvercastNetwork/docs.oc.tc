@@ -130,7 +130,7 @@ or the item form of the custom projectile itself.
         </td>
         <td>
           The click action that fires the projectile.
-          <br>
+          <br/>
           Accepts <code>right</code>, <code>left</code> or <code>both</code>.
         </td>
         <td>

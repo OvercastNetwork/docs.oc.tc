@@ -282,7 +282,7 @@ the modify element does not currently support the projectile or grenade attribut
         </td>
         <td>
           Leather armor color as a hexadecimal color. <code>RRGGBB</code>
-          <br>
+          <br/>
           <i>Only applies to leather armor items.</i>
         </td>
         <td>
@@ -296,7 +296,7 @@ the modify element does not currently support the projectile or grenade attribut
         </td>
         <td>
           Potion type
-          <br>
+          <br/>
           <i>Only applies to potion items.</i>
         </td>
         <td>

@@ -94,7 +94,7 @@ Control point give a certain amount of point to the team currently holding it. O
         </td>
         <td>
           Specify if this objective is required to win the match.
-          <br>
+          <br/>
           Teams completing all of their required objectives will win regardless of score or blitz configuration.
         </td>
         <td>
@@ -214,7 +214,7 @@ Control point give a certain amount of point to the team currently holding it. O
         <td>
           <span class='label label-warning' title='This attribute should no longer be used.'>Deprecated</span>
           Capture progress is retained even if capturing is interrupted.
-          <br>
+          <br/>
           <i>Has been replaced with the recovery & decay attributes which allow much more control over progress.</i>
         </td>
         <td>
@@ -233,7 +233,7 @@ Control point give a certain amount of point to the team currently holding it. O
         </td>
         <td>
           Capture progress recovery, rate at which progress reverts from players dominating the point.
-          <br>
+          <br/>
           Can not be combined with the <code>incremental</code> attribute.
         </td>
         <td>
@@ -252,7 +252,7 @@ Control point give a certain amount of point to the team currently holding it. O
         </td>
         <td>
           Capture progress decay, rate at which progress reverts while nobody is dominating the point.
-          <br>
+          <br/>
           Can not be combined with the <code>incremental</code> attribute.
         </td>
         <td>
@@ -300,7 +300,7 @@ Control point give a certain amount of point to the team currently holding it. O
         </td>
         <td>
           Show the objective in the interface and fire fireworks on completion.
-          <br>
+          <br/>
           <i>Hidden goals do not count towards a players completed objectives & do not give raindrops.</i>
         </td>
         <td>
@@ -314,7 +314,7 @@ Control point give a certain amount of point to the team currently holding it. O
         </td>
         <td>
           Filter the materials modified when updating the progress regions.
-          <br>
+          <br/>
           <i>Defaults to wool, carpet, stained clay, stained glass & stained glass panes.</i>
         </td>
         <td>

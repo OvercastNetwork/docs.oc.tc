@@ -84,7 +84,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
         </td>
         <td>
           Specify if this objective is required to win the match.
-          <br>
+          <br/>
           Teams completing all of their required objectives will win regardless of score or blitz configuration.
         </td>
         <td>
@@ -160,7 +160,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
         </td>
         <td>
           Specify if the core should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
-          <br>
+          <br/>
           <code>NOTE:</code>
           The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
         </td>
@@ -175,7 +175,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
         </td>
         <td>
           Metric used to determine proximity to the core.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>

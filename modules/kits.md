@@ -123,7 +123,7 @@ these kits will be automatically removed from the player at an appropriate time.
         <td>
           <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
           Kit is applied when the dynamic filter returns allow and removed when it is deny.
-          <br>
+          <br/>
           <i>Cannot combine <code>lend</code> property with <code>give</code> or <code>take</code></i>
         </td>
         <td>
@@ -157,7 +157,7 @@ these kits will be automatically removed from the player at an appropriate time.
         </td>
         <td>
           Enable or disable potion particles.
-          <br>
+          <br/>
           <i>Potion particles are disabled for all players by default.</i>
         </td>
         <td>
@@ -274,7 +274,7 @@ A player's gamemode can be changed when they spawn or enter a region, etc. by us
         </td>
         <td>
           The gamemode to change the player to.
-          <br>Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.</br>
+          <br/>Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.</br>
         </td>
         <td>
           <span class='label label-default'>Game Mode String</span>
@@ -746,7 +746,7 @@ If no attributes are specified can-fly defaults to true.
         </td>
         <td>
           Set if the player is currently flying.
-          <br>
+          <br/>
           <i>
             To enable flying
             <code>can-fly</code>

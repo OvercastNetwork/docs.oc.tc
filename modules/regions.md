@@ -41,9 +41,9 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<cuboid id="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>.
-          <br>
+          <br/>
           <i>Only block bounded when using finite coordinates.</i>
         </td>
         <td class='text-right'>
@@ -55,9 +55,9 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<cylinder id="abc" base="X,Y,Z" radius="R" height="H"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A cylinder located at <code>X,Y,Z</code> with a radius of <code>R</code> and a height of <code>H</code>.
-          <br>
+          <br/>
           <i>Only block bounded when using a finite radius.</i>
         </td>
         <td class='text-right'>
@@ -69,7 +69,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<block id="abc">X,Y,Z</block>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A single block located at <code>X,Y,Z</code>.
         </td>
         <td class='text-right'>
@@ -81,9 +81,9 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<sphere id="abc" origin="X,Y,Z" radius="R"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>.
-          <br>
+          <br/>
           <i>Only block bounded when using a finite radius.</i>
         </td>
         <td></td>
@@ -93,7 +93,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<point id="abc">X,Y,Z</point>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A single point region located at <code>X,Y,Z</code>.<br/>
           <i>This region will always return the same location even when used in a randomized context, e.g., spawns.</i>
         </td>
@@ -111,7 +111,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<rectangle id="abc" min="X1,Z1" max="X2,Z2"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>.
         </td>
         <td></td>
@@ -121,7 +121,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<circle id="abc" center="X,Z" radius="R"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A circle located at <code>X,Z</code> with a radius of <code>R</code>. <br/>
           <i>The region goes from 0 to map height, i.e. PGM doesn't check the players Y position.</i>
         </td>
@@ -132,7 +132,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<half normal="1,0,1" origin="100,50,0" id="abc"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Half of the world split by a plane pointing towards a normal.
         </td>
         <td></td>
@@ -146,9 +146,9 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<above x="" y="" z="" id="abc"/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Half of the world split at the specified axis.
-          <br>
+          <br/>
           If multiple axises are defined the specified parts of each axis are intersected and returned.
         </td>
         <td></td>
@@ -163,7 +163,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<empty/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A zero size/position region, contains nothing.
         </td>
         <td></td>
@@ -173,7 +173,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<nowhere/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A reference-able zero size/position region, contains nothing. Can be referenced with the ID: <code>nowhere</code>
         </td>
         <td></td>
@@ -183,7 +183,7 @@ The area a region applies to is specified with one or more of the following elem
           <span class='highlight'>
             <code>{{'<everywhere/>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           A reference-able infinite size region, contains everything. Can be referenced with the ID: <code>everywhere</code>
         </td>
         <td></td>
@@ -509,7 +509,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
           <span class='highlight'>
             <code>{{'<negative><region id="region1"/></negative>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Inverse of a region, the region or regions will no longer be considered block bounded.
         </td>
       </tr>
@@ -518,7 +518,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
           <span class='highlight'>
             <code>{{' <union><region id="region1"/><region id="region2"/>..</union>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Combination of multiple regions.
         </td>
       </tr>
@@ -527,7 +527,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
           <span class='highlight'>
             <code>{{'<complement><region id="region1"/><region id="region2"/>..</complement>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Subtracts successive regions from the first defined region.
         </td>
       </tr>
@@ -536,7 +536,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
           <span class='highlight'>
             <code>{{'<intersect><region id="region1"/><region id="region2"/>..</intersect>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Returns the area that multiple regions intersect with.
         </td>
       </tr>
@@ -556,7 +556,7 @@ When mirroring a region the origin is the central point around which the region 
           <span class='highlight'>
             <code>{{'<translate offset="X,Y,Z"><region id="region1"/></translate>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Copy and translate a region by <code>X,Y,Z</code> blocks.
         </td>
       </tr>
@@ -565,7 +565,7 @@ When mirroring a region the origin is the central point around which the region 
           <span class='highlight'>
             <code>{{'<mirror normal="1,0,1" origin="100,50,0"><region id="region1"/></mirror>' | escape_once}}</code>
           </span>
-          <br>
+          <br/>
           Copy and mirror a region towards a normal around a point.
         </td>
       </tr>
@@ -643,7 +643,7 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
         </td>
         <td>
           Specifies what direction the player is looking horizontally from -180&deg; to 180&deg;.
-          <br>
+          <br/>
           <i>South 0&deg;, East -90&deg;, North 180&deg; and West 90&deg;.</i>
         </td>
         <td>
@@ -656,7 +656,7 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
         </td>
         <td>
           Specifies what direction the player is looking vertically from -90&deg; to 90&deg;.
-          <br>
+          <br/>
           <i>-90&deg; is straight up 90&deg; is straight down.</i>
         </td>
         <td>
@@ -669,7 +669,7 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
         </td>
         <td>
           Specify the exact block coordinates that the player should look at.
-          <br>
+          <br/>
           <i>This attribute will negate any angles set by the <code>yaw</code> and <code>pitch</code> attributes.</i>
         </td>
         <td>

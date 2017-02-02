@@ -89,7 +89,7 @@ Completion specifies how much of the material(s) inside of the monument region m
         </td>
         <td>
           Specify if this objective is required to win the match.
-          <br>
+          <br/>
           Teams completing all of their required objectives will win regardless of score or blitz configuration.
         </td>
         <td>
@@ -204,7 +204,7 @@ Completion specifies how much of the material(s) inside of the monument region m
         </td>
         <td>
           Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
-          <br>
+          <br/>
           <code>NOTE:</code>
           The objective will also not be logged to the Database and the player will not recieve any raindrops upon completion.
         </td>
@@ -219,7 +219,7 @@ Completion specifies how much of the material(s) inside of the monument region m
         </td>
         <td>
           Metric used to determine proximity to the destroyable.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>

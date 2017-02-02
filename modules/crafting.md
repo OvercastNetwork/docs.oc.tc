@@ -156,7 +156,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
           <span class='label label-danger'>Required</span>
           <span class='label label-warning' title='Only one of this child permitted per parent'>Unique</span>
           The result of this recipe, only one result is allowed per recipe.
-          <br>
+          <br/>
           Accepts all attributes and sub-elements of a normal kit item.
         </td>
         <td>
@@ -213,7 +213,7 @@ Blank ingredient spots are specifed with a dot `.`.
           <span class='label label-danger'>Required</span>
           <span class='label label-warning' title='Only one of this child permitted per parent'>Unique</span>
           An ingredient used in this recipe.
-          <br>
+          <br/>
           <i>Only one shape per recipe is allowed.</i>
         </td>
         <td>
@@ -235,7 +235,7 @@ Blank ingredient spots are specifed with a dot `.`.
         <td>
           <span class='label label-danger'>Required</span>
           An ingredient used in this recipe.
-          <br>
+          <br/>
           A shaped recipe requires at least one ingredient.
         </td>
         <td>
@@ -369,7 +369,7 @@ Unlike a shaped recipe, shapeless recipes do not require that their items are ar
         <td>
           <span class='label label-danger'>Required</span>
           An ingredient used in this recipe.
-          <br>
+          <br/>
           A shapeless recipe requires at least one ingredient.
         </td>
         <td>
@@ -396,7 +396,7 @@ Unlike a shaped recipe, shapeless recipes do not require that their items are ar
         </td>
         <td>
           Amount of items of this type required for this recipe.
-          <br>
+          <br/>
           <i>Items must be in separate slots, not stacked, for this recipe to work.</i>
         </td>
         <td>
@@ -460,7 +460,7 @@ Smelt recipes specify what a material gets smelted into in a furnace.
           <span class='label label-danger'>Required</span>
           <span class='label label-warning' title='Only one of this child permitted per parent'>Unique</span>
           An ingredient used in this recipe.
-          <br>
+          <br/>
           A smelt recipe only accepts one ingredient.
         </td>
         <td>

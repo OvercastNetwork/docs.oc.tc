@@ -331,7 +331,7 @@ Filter matchers test for specific conditions or properties of things.
           Matches blocks by their
           <a href='/reference/inventory#material_finder'>Material</a>
           name.
-          <br>
+          <br/>
           Accepts a
           <a href='/reference/inventory#material_matchers'>Single Material Pattern</a>
         </td>
@@ -771,7 +771,7 @@ These elements must contain either a single filter, or a list of filters, as the
         <td>
           Make a damage question specifically about the victim.<br/>
           For example, "do they have the flag?" becomes "does the victim have the flag?"
-          <br>
+          <br/>
           Commonly used with the
           <a href='/modules/damage'>damage</a>
           module.
@@ -787,7 +787,7 @@ These elements must contain either a single filter, or a list of filters, as the
         <td>
           Make a damage question specifically about the attacker.<br/>
           For example, "do they have the flag?" becomes "does the attacker have the flag?"
-          <br>
+          <br/>
           Commonly used in the
           <a href='/modules/damage'>damage</a>
           module.
@@ -894,7 +894,7 @@ This filter is commonly used in [kill rewards](/modules/killreward) but can also
         </td>
         <td>
           Match players with exactly this many kills.
-          <br>
+          <br/>
           <i>Can not be mixed with the <code>min</code> & <code>max</code> attributes.</i>
         </td>
         <td>

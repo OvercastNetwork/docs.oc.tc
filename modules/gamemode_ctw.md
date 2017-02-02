@@ -85,7 +85,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
         </td>
         <td>
           Specify if this objective is required to win the match.
-          <br>
+          <br/>
           Teams completing all of their required objectives will win regardless of score or blitz configuration.
         </td>
         <td>
@@ -151,7 +151,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
         </td>
         <td>
           Specify if the objective should be hidden from all visible locations to the player. These locations include chat, the boss bar, and the scoreboard.
-          <br>
+          <br/>
           <i>If set to false, the objective will not be logged to the database and the player will not receive any raindrops upon completion.</i>
         </td>
         <td>
@@ -178,7 +178,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
         </td>
         <td>
           Metric used to determine proximity to the wool.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>
@@ -206,7 +206,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
         </td>
         <td>
           Metric used to determine proximity to the monument.
-          <br>
+          <br/>
           Accepts <code>closest player</code>, <code>closest block</code> or <code>closest kill</code>
         </td>
         <td>

@@ -142,7 +142,7 @@ Classes allow the player to pick a specific class at the beginning of the game w
         </td>
         <td>
           Specify if the class is the default class for new players.
-          <br>
+          <br/>
           <i>One class must be set as the default.</i>
         </td>
         <td>
