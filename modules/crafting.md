@@ -312,8 +312,8 @@ Example
                 <row>.S.</row>
                 <row>.S.</row>
             </shape>
-            <ingredient symbol="F">flint</ingredient >
-            <ingredient symbol="S">stick</i>
+            <ingredient symbol="F">flint</ingredient>
+            <ingredient symbol="S">stick</ingredient>
         </shaped>
 
         <!-- 3x1 recipe, cheaper gold ingots -->
@@ -322,7 +322,7 @@ Example
             <shape>
                 <row>GGG</row>
             </shape>
-            <ingredient symbol="G">gold nugget</ingredient >
+            <ingredient symbol="G">gold nugget</ingredient>
         </shaped>
     </crafting>
 
