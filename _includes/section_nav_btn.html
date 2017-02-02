@@ -4,6 +4,6 @@
     <i class='fa fa-fw fa-caret-down'></i>
   </button>
   <ul class='dropdown-menu subnav-dropdown' role='menu' style='width: 100%;'>
-    {% for item in sidebar.content %}{% if item.first %}<li class="{% if page.url contains item.path %}active{% endif %}"><a href="{{site.baseurl}}{{item.path}}">{% if item.icon %}<i class="fa fa-fw {{item.icon}}"></i>{% endif %}{{ item.name }}</a></li>{% else %}{% if forloop.first != true %}<li class="divider"></li>{% endif %}<li class="dropdown-header">{{item}}</li>{% endif %}{% endfor %}
+    {% for item in sidebar.content %}{% if item.first %}<li class="{% if page.url contains item.path %}active{% endif %}"><a href="{{item.path}}">{% if item.icon %}<i class="fa fa-fw {{item.icon}}"></i>{% endif %}{{ item.name }}</a></li>{% else %}{% if forloop.first != true %}<li class="divider"></li>{% endif %}<li class="dropdown-header">{{item}}</li>{% endif %}{% endfor %}
   </ul>
 </div>
