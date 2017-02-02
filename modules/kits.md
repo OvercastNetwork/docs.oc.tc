@@ -47,7 +47,7 @@ these kits will be automatically removed from the player at an appropriate time.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kit&gt; &lt;/kit&gt;</code>
+            <code>{{'<kit> </kit>' | escape_once}}</code>
           </span>
         </td>
         <td>A kit node, containing specific kit types and/or other kit nodes.</td>
@@ -225,7 +225,7 @@ before applying the kit by using one of the elements below.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;clear/&gt;</code>
+            <code>{{'<clear/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -235,7 +235,7 @@ before applying the kit by using one of the elements below.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;clear-items/&gt;</code>
+            <code>{{'<clear-items/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -269,7 +269,7 @@ A player's gamemode can be changed when they spawn or enter a region, etc. by us
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;game-mode&gt; &lt;/game-mode&gt;</code>
+            <code>{{'<game-mode> </game-mode>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -308,7 +308,7 @@ By default health or hunger values are only increased, not decreased. For exampl
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;health&gt; &lt;/health&gt;</code>
+            <code>{{'<health> </health>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -321,7 +321,7 @@ By default health or hunger values are only increased, not decreased. For exampl
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;saturation&gt; &lt;/saturation&gt;</code>
+            <code>{{'<saturation> </saturation>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -334,7 +334,7 @@ By default health or hunger values are only increased, not decreased. For exampl
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;foodlevel&gt; &lt;/foodlevel&gt;</code>
+            <code>{{'<foodlevel> </foodlevel>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -400,7 +400,7 @@ affect a modifier applied by a different kit.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;attribute&gt; &lt;/attribute&gt;</code>
+            <code>{{'<attribute> </attribute>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -468,7 +468,7 @@ Increase or decrease a player's walking speed. The value is a multiplier of the 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;walk-speed&gt; &lt;/walk-speed&gt;</code>
+            <code>{{'<walk-speed> </walk-speed>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -511,7 +511,7 @@ and anything lower than zero pushes the player to the attacker instead of away f
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;knockback-reduction&gt; &lt;/knockback-reduction&gt;</code>
+            <code>{{'<knockback-reduction> </knockback-reduction>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -546,7 +546,7 @@ Recharging of the shield is based on when damage was taken last, every time a pl
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shield health=&quot;4&quot; delay=&quot;4s&quot;/&gt;</code>
+            <code>{{'<shield health="4" delay="4s"/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -617,7 +617,7 @@ This element's enabled attribute can be used to disable double-jump inside regio
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;double-jump/&gt;</code>
+            <code>{{'<double-jump/>' | escape_once}}</code>
           </span>
         </td>
         <td>Give player the double-jump ability.</td>
@@ -709,7 +709,7 @@ If no attributes are specified can-fly defaults to true.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fly/&gt;</code>
+            <code>{{'<fly/>' | escape_once}}</code>
           </span>
         </td>
         <td>Control the player's flying ability</td>

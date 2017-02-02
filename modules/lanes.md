@@ -20,7 +20,7 @@ Lanes are used in RFW style maps with two parallel lanes for the teams. They pre
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;lanes&gt; &lt;/lanes&gt;</code>
+            <code>{{'<lanes> </lanes>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing this world's lanes.</td>
@@ -33,7 +33,7 @@ Lanes are used in RFW style maps with two parallel lanes for the teams. They pre
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;lane&gt; &lt;/lane&gt;</code>
+            <code>{{'<lane> </lane>' | escape_once}}</code>
           </span>
         </td>
         <td>

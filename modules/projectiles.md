@@ -21,7 +21,7 @@ or the item form of the custom projectile itself.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;projectiles&gt; &lt;/projectiles&gt;</code>
+            <code>{{'<projectiles> </projectiles>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing the custom projectile definitions.</td>
@@ -34,7 +34,7 @@ or the item form of the custom projectile itself.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;projectile&gt; &lt;/projectile&gt;</code>
+            <code>{{'<projectile> </projectile>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -192,7 +192,7 @@ or the item form of the custom projectile itself.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;destroy-filter&gt;</code>
+            <code>{{'<destroy-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -206,7 +206,7 @@ or the item form of the custom projectile itself.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt;</code>
+            <code>{{'<effect>' | escape_once}}</code>
           </span>
         </td>
         <td>A potion effect to apply to players hit by this projectile.</td>
@@ -257,7 +257,7 @@ Bows can be modified to shoot a different projectile at a custom speed. The PGM 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;modifybowprojectile&gt; &lt;/...&gt;</code>
+            <code>{{'<modifybowprojectile> </...>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing the modify bow projectile settings.</td>
@@ -273,7 +273,7 @@ Bows can be modified to shoot a different projectile at a custom speed. The PGM 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;projectile&gt; &lt;/projectile&gt;</code>
+            <code>{{'<projectile> </projectile>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -286,7 +286,7 @@ Bows can be modified to shoot a different projectile at a custom speed. The PGM 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;velocityMod&gt; &lt;/velocityMod&gt;</code>
+            <code>{{'<velocityMod> </velocityMod>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -299,7 +299,7 @@ Bows can be modified to shoot a different projectile at a custom speed. The PGM 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt; &lt;/effect&gt;</code>
+            <code>{{'<effect> </effect>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -20,7 +20,7 @@ You can use the rules module to add custom rules to your map that are not alread
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rules&gt; &lt;/rules&gt;</code>
+            <code>{{'<rules> </rules>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the defined custom rules.</td>
@@ -33,7 +33,7 @@ You can use the rules module to add custom rules to your map that are not alread
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rule&gt; &lt;/rule&gt;</code>
+            <code>{{'<rule> </rule>' | escape_once}}</code>
           </span>
         </td>
         <td>

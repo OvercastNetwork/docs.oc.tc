@@ -20,7 +20,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item-mods&gt; &lt;/item-mods&gt;</code>
+            <code>{{'<item-mods> </item-mods>' | escape_once}}</code>
           </span>
         </td>
         <td>The item mods node, containing all the individual modification rules.</td>
@@ -33,7 +33,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rule&gt; &lt;/rule&gt;</code>
+            <code>{{'<rule> </rule>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -60,7 +60,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;match&gt; &lt;/match&gt;</code>
+            <code>{{'<match> </match>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -75,7 +75,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;modify&gt; &lt;/modify&gt;</code>
+            <code>{{'<modify> </modify>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -104,7 +104,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;material&gt; &lt;/material&gt;</code>
+            <code>{{'<material> </material>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual material to match.</td>
@@ -115,7 +115,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;all-materials/&gt;</code>
+            <code>{{'<all-materials/>' | escape_once}}</code>
           </span>
         </td>
         <td>Match all materials.</td>
@@ -124,7 +124,7 @@ The item mods module allows modification of all items present on a map or create
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;all-blocks/&gt;</code>
+            <code>{{'<all-blocks/>' | escape_once}}</code>
           </span>
         </td>
         <td>Match all block type materials.</td>
@@ -177,7 +177,7 @@ the modify element does not currently support the projectile or grenade attribut
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;enchantment&gt; &lt;/enchantment&gt;</code>
+            <code>{{'<enchantment> </enchantment>' | escape_once}}</code>
           </span>
         </td>
         <td>This item's enchantments.</td>
@@ -188,7 +188,7 @@ the modify element does not currently support the projectile or grenade attribut
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt; &lt;/effect&gt;</code>
+            <code>{{'<effect> </effect>' | escape_once}}</code>
           </span>
         </td>
         <td>A custom potion effect, only applies for potion items.</td>
@@ -199,7 +199,7 @@ the modify element does not currently support the projectile or grenade attribut
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;attribute&gt; &lt;/attribute&gt;</code>
+            <code>{{'<attribute> </attribute>' | escape_once}}</code>
           </span>
         </td>
         <td>Custom attributes for this item.</td>
@@ -210,7 +210,7 @@ the modify element does not currently support the projectile or grenade attribut
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-destroy&gt; &lt;/can-destroy&gt;</code>
+            <code>{{'<can-destroy> </can-destroy>' | escape_once}}</code>
           </span>
         </td>
         <td>The materials that can be mined with the item.</td>
@@ -221,7 +221,7 @@ the modify element does not currently support the projectile or grenade attribut
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-place-on&gt; &lt;/can-place-on&gt;</code>
+            <code>{{'<can-place-on> </can-place-on>' | escape_once}}</code>
           </span>
         </td>
         <td>Materials that the item can be placed on.</td>

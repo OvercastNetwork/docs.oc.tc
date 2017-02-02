@@ -27,7 +27,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;crafting&gt; &lt;/crafting&gt;</code>
+            <code>{{'<crafting> </crafting>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -42,7 +42,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shaped&gt;</code>
+            <code>{{'<shaped>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -56,7 +56,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shapeless&gt;</code>
+            <code>{{'<shapeless>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -70,7 +70,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;smelt&gt;</code>
+            <code>{{'<smelt>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -84,7 +84,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;disable&gt;</code>
+            <code>{{'<disable>' | escape_once}}</code>
           </span>
         </td>
         <td>Disable all vanilla recipes for this item.</td>
@@ -112,7 +112,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
         </td>
         <td>
           Disable all vanilla recipes for the same item. This is just a convenient alternative to the
-          <code>&lt;disable&gt;</code>
+          <code>{{'<disable>' | escape_once}}</code>
           element.
         </td>
         <td>
@@ -149,7 +149,7 @@ The crafting module allows custom shaped and shapeless crafting recipes and smel
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;result&gt;</code>
+            <code>{{'<result>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -191,7 +191,7 @@ Blank ingredient spots are specifed with a dot `.`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shaped&gt; &lt;/shaped&gt;</code>
+            <code>{{'<shaped> </shaped>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -206,7 +206,7 @@ Blank ingredient spots are specifed with a dot `.`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shape&gt;</code>
+            <code>{{'<shape>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -218,18 +218,18 @@ Blank ingredient spots are specifed with a dot `.`.
         </td>
         <td>
           <span class='highlight'>
-            <code>&lt;row&gt;</code>
+            <code>{{'<row>' | escape_once}}</code>
           </span>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;ingredient&gt;</code>
+            <code>{{'<ingredient>' | escape_once}}</code>
           </span>
           |
           <span class='highlight'>
-            <code>&lt;i&gt;</code>
+            <code>{{'<i>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -344,7 +344,7 @@ Unlike a shaped recipe, shapeless recipes do not require that their items are ar
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shapeless&gt; &lt;/shapeless&gt;</code>
+            <code>{{'<shapeless> </shapeless>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -359,11 +359,11 @@ Unlike a shaped recipe, shapeless recipes do not require that their items are ar
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;ingredient&gt;</code>
+            <code>{{'<ingredient>' | escape_once}}</code>
           </span>
           |
           <span class='highlight'>
-            <code>&lt;i&gt;</code>
+            <code>{{'<i>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -434,7 +434,7 @@ Smelt recipes specify what a material gets smelted into in a furnace.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;smelt&gt; &lt;/smelt&gt;</code>
+            <code>{{'<smelt> </smelt>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -449,11 +449,11 @@ Smelt recipes specify what a material gets smelted into in a furnace.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;ingredient&gt;</code>
+            <code>{{'<ingredient>' | escape_once}}</code>
           </span>
           |
           <span class='highlight'>
-            <code>&lt;i&gt;</code>
+            <code>{{'<i>' | escape_once}}</code>
           </span>
         </td>
         <td>

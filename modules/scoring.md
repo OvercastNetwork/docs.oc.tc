@@ -21,7 +21,7 @@ The score module can be used to give matches a score limit and modify how many p
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;score&gt; &lt;/score&gt;</code>
+            <code>{{'<score> </score>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='3'>Node containing the score settings and score boxes.</td>
@@ -34,7 +34,7 @@ The score module can be used to give matches a score limit and modify how many p
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;limit&gt;</code>
+            <code>{{'<limit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -50,7 +50,7 @@ The score module can be used to give matches a score limit and modify how many p
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kills&gt;</code>
+            <code>{{'<kills>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -66,7 +66,7 @@ The score module can be used to give matches a score limit and modify how many p
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;deaths&gt;</code>
+            <code>{{'<deaths>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -82,7 +82,7 @@ The score module can be used to give matches a score limit and modify how many p
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;box&gt;</code>
+            <code>{{'<box>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -124,7 +124,7 @@ A score box will give points to a players team when they enter or bring a redeem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;box&gt;</code>
+            <code>{{'<box>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -228,20 +228,20 @@ A score box will give points to a players team when they enter or bring a redeem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;redeemables&gt;</code>
+            <code>{{'<redeemables>' | escape_once}}</code>
           </span>
         </td>
         <td>
           Items that can be redeemed at this score box for points.
         </td>
         <td>
-          <code>&lt;item points=&quot;1&quot;&gt;</code>
+          <code>{{'<item points="1">' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -256,7 +256,7 @@ A score box will give points to a players team when they enter or bring a redeem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -270,7 +270,7 @@ A score box will give points to a players team when they enter or bring a redeem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;trigger&gt;</code>
+            <code>{{'<trigger>' | escape_once}}</code>
           </span>
         </td>
         <td>

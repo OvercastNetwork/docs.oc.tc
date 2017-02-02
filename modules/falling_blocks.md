@@ -22,7 +22,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;falling-blocks&gt; &lt;/falling-blocks&gt;</code>
+            <code>{{'<falling-blocks> </falling-blocks>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing this map's falling block rules.</td>
@@ -35,7 +35,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rule&gt;</code>
+            <code>{{'<rule>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual falling block rule.</td>
@@ -117,7 +117,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -137,7 +137,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;sticky&gt;</code>
+            <code>{{'<sticky>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -153,7 +153,7 @@ Falling blocks will not fall if they touch a sticky block. If you make a falling
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;delay&gt;</code>
+            <code>{{'<delay>' | escape_once}}</code>
           </span>
         </td>
         <td>

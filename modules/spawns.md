@@ -26,7 +26,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;spawns&gt; &lt;/spawns&gt;</code>
+            <code>{{'<spawns> </spawns>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='2'>A node containing the spawns for this map.</td>
@@ -38,18 +38,18 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;spawn&gt;</code>
+            <code>{{'<spawn>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual spawn where a team will spawn</td>
         <td>
-          <code>&lt;regions&gt;</code>
+          <code>{{'<regions>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;default&gt;</code>
+            <code>{{'<default>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -59,7 +59,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
           <i>Only one default spawn element is allowed per map.</i>
         </td>
         <td>
-          <code>&lt;regions&gt;</code>
+          <code>{{'<regions>' | escape_once}}</code>
         </td>
       </tr>
     </tbody>
@@ -190,7 +190,7 @@ Respawn behavior such as delays, etc. can be customized with the [respawn](#resp
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;regions&gt;</code>
+            <code>{{'<regions>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -345,7 +345,7 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;respawn/&gt;</code>
+            <code>{{'<respawn/>' | escape_once}}</code>
           </span>
         </td>
         <td>Node specifying the respawn settings for this map.</td>
@@ -456,7 +456,7 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;message&gt;</code>
+            <code>{{'<message>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -39,7 +39,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;cuboid id=&quot;abc&quot; min=&quot;X1,Y1,Z1&quot; max=&quot;X2,Y2,Z2&quot;/&gt;</code>
+            <code>{{'<cuboid id="abc" min="X1,Y1,Z1" max="X2,Y2,Z2"/>' | escape_once}}</code>
           </span>
           <br>
           A rectangular solid from <code>X1,Y1,Z1</code> to <code>X2,Y2,Z2</code>.
@@ -53,7 +53,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;cylinder id=&quot;abc&quot; base=&quot;X,Y,Z&quot; radius=&quot;R&quot; height=&quot;H&quot;/&gt;</code>
+            <code>{{'<cylinder id="abc" base="X,Y,Z" radius="R" height="H"/>' | escape_once}}</code>
           </span>
           <br>
           A cylinder located at <code>X,Y,Z</code> with a radius of <code>R</code> and a height of <code>H</code>.
@@ -67,7 +67,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;block id=&quot;abc&quot;&gt;X,Y,Z&lt;/block&gt;</code>
+            <code>{{'<block id="abc">X,Y,Z</block>' | escape_once}}</code>
           </span>
           <br>
           A single block located at <code>X,Y,Z</code>.
@@ -79,7 +79,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;sphere id=&quot;abc&quot; origin=&quot;X,Y,Z&quot; radius=&quot;R&quot;/&gt;</code>
+            <code>{{'<sphere id="abc" origin="X,Y,Z" radius="R"/>' | escape_once}}</code>
           </span>
           <br>
           A sphere located at <code>X,Y,Z</code> with a radius of <code>R</code>.
@@ -91,7 +91,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;point id=&quot;abc&quot;&gt;X,Y,Z&lt;/point&gt;</code>
+            <code>{{'<point id="abc">X,Y,Z</point>' | escape_once}}</code>
           </span>
           <br>
           A single point region located at <code>X,Y,Z</code>.<br/>
@@ -109,7 +109,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rectangle id=&quot;abc&quot; min=&quot;X1,Z1&quot; max=&quot;X2,Z2&quot;/&gt;</code>
+            <code>{{'<rectangle id="abc" min="X1,Z1" max="X2,Z2"/>' | escape_once}}</code>
           </span>
           <br>
           A rectangle from <code>X1,Z1</code> to <code>X2,Z2</code>.
@@ -119,7 +119,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;circle id=&quot;abc&quot; center=&quot;X,Z&quot; radius=&quot;R&quot;/&gt;</code>
+            <code>{{'<circle id="abc" center="X,Z" radius="R"/>' | escape_once}}</code>
           </span>
           <br>
           A circle located at <code>X,Z</code> with a radius of <code>R</code>. <br/>
@@ -130,7 +130,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;half normal=&quot;1,0,1&quot; origin=&quot;100,50,0&quot; id=&quot;abc&quot;/&gt;</code>
+            <code>{{'<half normal="1,0,1" origin="100,50,0" id="abc"/>' | escape_once}}</code>
           </span>
           <br>
           Half of the world split by a plane pointing towards a normal.
@@ -140,11 +140,11 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;below x=&quot;&quot; y=&quot;&quot; z=&quot;&quot; id=&quot;abc&quot;/&gt;</code>
+            <code>{{'<below x="" y="" z="" id="abc"/>' | escape_once}}</code>
           </span>
           |
           <span class='highlight'>
-            <code>&lt;above x=&quot;&quot; y=&quot;&quot; z=&quot;&quot; id=&quot;abc&quot;/&gt;</code>
+            <code>{{'<above x="" y="" z="" id="abc"/>' | escape_once}}</code>
           </span>
           <br>
           Half of the world split at the specified axis.
@@ -161,7 +161,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;empty/&gt;</code>
+            <code>{{'<empty/>' | escape_once}}</code>
           </span>
           <br>
           A zero size/position region, contains nothing.
@@ -171,7 +171,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;nowhere/&gt;</code>
+            <code>{{'<nowhere/>' | escape_once}}</code>
           </span>
           <br>
           A reference-able zero size/position region, contains nothing. Can be referenced with the ID: <code>nowhere</code>
@@ -181,7 +181,7 @@ The area a region applies to is specified with one or more of the following elem
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;everywhere/&gt;</code>
+            <code>{{'<everywhere/>' | escape_once}}</code>
           </span>
           <br>
           A reference-able infinite size region, contains everything. Can be referenced with the ID: <code>everywhere</code>
@@ -507,7 +507,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;negative&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;/negative&gt;</code>
+            <code>{{'<negative><region id="region1"/></negative>' | escape_once}}</code>
           </span>
           <br>
           Inverse of a region, the region or regions will no longer be considered block bounded.
@@ -516,7 +516,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;union&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;region id=&quot;region2&quot;/&gt;..&lt;/union&gt;</code>
+            <code>{{' <union><region id="region1"/><region id="region2"/>..</union>' | escape_once}}</code>
           </span>
           <br>
           Combination of multiple regions.
@@ -525,7 +525,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;complement&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;region id=&quot;region2&quot;/&gt;..&lt;/complement&gt;</code>
+            <code>{{'<complement><region id="region1"/><region id="region2"/>..</complement>' | escape_once}}</code>
           </span>
           <br>
           Subtracts successive regions from the first defined region.
@@ -534,7 +534,7 @@ Regions can be inverted, combined, subtracted, or intersected by putting them in
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;intersect&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;region id=&quot;region2&quot;/&gt;..&lt;/intersect&gt;</code>
+            <code>{{'<intersect><region id="region1"/><region id="region2"/>..</intersect>' | escape_once}}</code>
           </span>
           <br>
           Returns the area that multiple regions intersect with.
@@ -554,7 +554,7 @@ When mirroring a region the origin is the central point around which the region 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;translate offset=&quot;X,Y,Z&quot;&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;/translate&gt;</code>
+            <code>{{'<translate offset="X,Y,Z"><region id="region1"/></translate>' | escape_once}}</code>
           </span>
           <br>
           Copy and translate a region by <code>X,Y,Z</code> blocks.
@@ -563,7 +563,7 @@ When mirroring a region the origin is the central point around which the region 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mirror normal=&quot;1,0,1&quot; origin=&quot;100,50,0&quot;&gt;&lt;region id=&quot;region1&quot;/&gt;&lt;/mirror&gt;</code>
+            <code>{{'<mirror normal="1,0,1" origin="100,50,0"><region id="region1"/></mirror>' | escape_once}}</code>
           </span>
           <br>
           Copy and mirror a region towards a normal around a point.
@@ -691,7 +691,7 @@ Input can be a region, a region modifier or simply an exact `X,Y,Z` coordinate.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>

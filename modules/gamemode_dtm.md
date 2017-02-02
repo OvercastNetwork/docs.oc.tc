@@ -22,7 +22,7 @@ Completion specifies how much of the material(s) inside of the monument region m
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;destroyables&gt; &lt;/destroyables&gt;</code>
+            <code>{{'<destroyables> </destroyables>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the defined destroyables.</td>
@@ -35,7 +35,7 @@ Completion specifies how much of the material(s) inside of the monument region m
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;destroyable&gt; &lt;/destroyable&gt;</code>
+            <code>{{'<destroyable> </destroyable>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -258,7 +258,7 @@ Completion specifies how much of the material(s) inside of the monument region m
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>

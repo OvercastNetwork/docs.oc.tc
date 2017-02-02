@@ -28,7 +28,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;control-points&gt; &lt;/control-points&gt;</code>
+            <code>{{'<control-points> </control-points>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='2'>Node containing a single control point or a group of control points.</td>
@@ -40,7 +40,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;control-point&gt; &lt;/control-point&gt;</code>
+            <code>{{'<control-point> </control-point>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -405,7 +405,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;capture&gt;</code>
+            <code>{{'<capture>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -420,7 +420,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;progress&gt;</code>
+            <code>{{'<progress>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -434,7 +434,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;captured&gt;</code>
+            <code>{{'<captured>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -448,7 +448,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;capture-filter&gt;</code>
+            <code>{{'<capture-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -462,7 +462,7 @@ Control point give a certain amount of point to the team currently holding it. O
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;player-filter&gt;</code>
+            <code>{{'<player-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>

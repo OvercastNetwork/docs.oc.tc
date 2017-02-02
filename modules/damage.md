@@ -76,7 +76,7 @@ While almost every form of damage can be disabled safely it is recommended that 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;disabledamage&gt; &lt;/disabledamage&gt;</code>
+            <code>{{'<disabledamage> </disabledamage>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing the disabled damage types.</td>
@@ -89,7 +89,7 @@ While almost every form of damage can be disabled safely it is recommended that 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;damage&gt; &lt;/damage&gt;</code>
+            <code>{{'<damage> </damage>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -26,7 +26,7 @@ Effect ID's should be specified without their `minecraft:` prefix.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt; &lt;/effect&gt;</code>
+            <code>{{'<effect> </effect>' | escape_once}}</code>
           </span>
         </td>
         <td>

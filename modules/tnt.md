@@ -25,7 +25,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;tnt&gt; &lt;/tnt&gt;</code>
+            <code>{{'<tnt> </tnt>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='3'>Node containing the custom TNT settings.</td>
@@ -38,7 +38,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;instantignite&gt;</code>
+            <code>{{'<instantignite>' | escape_once}}</code>
           </span>
         </td>
         <td>Instantly ignite TNT when placed.</td>
@@ -50,7 +50,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;blockdamage&gt;</code>
+            <code>{{'<blockdamage>' | escape_once}}</code>
           </span>
         </td>
         <td>Specify if TNT destroys the terrain.</td>
@@ -62,7 +62,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;yield&gt;</code>
+            <code>{{'<yield>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -77,7 +77,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;power&gt;</code>
+            <code>{{'<power>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -91,7 +91,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fuse&gt;</code>
+            <code>{{'<fuse>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -105,7 +105,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;dispenser-tnt-limit&gt;</code>
+            <code>{{'<dispenser-tnt-limit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -119,7 +119,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;dispenser-tnt-multiplier&gt;</code>
+            <code>{{'<dispenser-tnt-multiplier>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -133,7 +133,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;licensing&gt;</code>
+            <code>{{'<licensing>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -147,7 +147,7 @@ If licensing is enabled only players with a TNT license can use TNT. This licens
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;friendly-defuse&gt;</code>
+            <code>{{'<friendly-defuse>' | escape_once}}</code>
           </span>
         </td>
         <td>

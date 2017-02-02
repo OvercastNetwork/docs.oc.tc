@@ -28,7 +28,7 @@ Blitz maps should include the [global blitz XML](https://maps.oc.tc/Blitz/blitz-
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;blitz&gt; &lt;/blitz&gt;</code>
+            <code>{{'<blitz> </blitz>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='3'>A node containing the blitz gamemode settings.</td>
@@ -41,7 +41,7 @@ Blitz maps should include the [global blitz XML](https://maps.oc.tc/Blitz/blitz-
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;lives&gt;</code>
+            <code>{{'<lives>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -55,7 +55,7 @@ Blitz maps should include the [global blitz XML](https://maps.oc.tc/Blitz/blitz-
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;broadcastLives&gt;</code>
+            <code>{{'<broadcastLives>' | escape_once}}</code>
           </span>
         </td>
         <td>

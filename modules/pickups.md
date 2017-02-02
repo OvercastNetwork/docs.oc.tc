@@ -27,7 +27,7 @@ A `<point>` region does not return a randomized position but can still be used t
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickups&gt; &lt;/pickups&gt;</code>
+            <code>{{'<pickups> </pickups>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the pickups.</td>
@@ -40,7 +40,7 @@ A `<point>` region does not return a randomized position but can still be used t
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickup/&gt;</code>
+            <code>{{'<pickup/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -114,7 +114,7 @@ A `<point>` region does not return a randomized position but can still be used t
           <a href='/modules/filters'>Filter</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
@@ -129,7 +129,7 @@ A `<point>` region does not return a randomized position but can still be used t
           <a href='/modules/filters'>Filter</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
@@ -231,7 +231,7 @@ A `<point>` region does not return a randomized position but can still be used t
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;spawn-filter&gt;</code>
+            <code>{{'<spawn-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -242,13 +242,13 @@ A `<point>` region does not return a randomized position but can still be used t
           <a href='/modules/filters'>Filters</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickup-filter&gt;</code>
+            <code>{{'<pickup-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -259,13 +259,13 @@ A `<point>` region does not return a randomized position but can still be used t
           <a href='/modules/filters'>Filters</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -281,7 +281,7 @@ A `<point>` region does not return a randomized position but can still be used t
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kit&gt;</code>
+            <code>{{'<kit>' | escape_once}}</code>
           </span>
         </td>
         <td>

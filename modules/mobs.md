@@ -23,7 +23,7 @@ Mob spawns can also be filtered against any other filter type including regions.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mobs&gt; &lt;/mobs&gt;</code>
+            <code>{{'<mobs> </mobs>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='3'>Node containing the custom mob spawning filters.</td>
@@ -52,7 +52,7 @@ Mob spawns can also be filtered against any other filter type including regions.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt; &lt;/filter&gt;</code>
+            <code>{{'<filter> </filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -81,7 +81,7 @@ Mob spawns can also be filtered against any other filter type including regions.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;spawn&gt; &lt;/spawn&gt;</code>
+            <code>{{'<spawn> </spawn>' | escape_once}}</code>
           </span>
         </td>
         <td>Filter the reason a mob is being spawned.</td>
@@ -92,7 +92,7 @@ Mob spawns can also be filtered against any other filter type including regions.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mob&gt; &lt;/mob&gt;</code>
+            <code>{{'<mob> </mob>' | escape_once}}</code>
           </span>
         </td>
         <td>The mob to filter for.</td>
@@ -103,7 +103,7 @@ Mob spawns can also be filtered against any other filter type including regions.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;entity&gt; &lt;/entity&gt;</code>
+            <code>{{'<entity> </entity>' | escape_once}}</code>
           </span>
         </td>
         <td>The entity to filter for.</td>

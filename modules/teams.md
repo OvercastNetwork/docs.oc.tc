@@ -28,7 +28,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;teams&gt; &lt;/teams&gt;</code>
+            <code>{{'<teams> </teams>' | escape_once}}</code>
           </span>
         </td>
         <td>The teams node, containing all the individual teams.</td>
@@ -41,7 +41,7 @@ It is common for maps to only have 2 teams, although more are possible it usuall
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;team&gt; &lt;/team&gt;</code>
+            <code>{{'<team> </team>' | escape_once}}</code>
           </span>
         </td>
         <td>

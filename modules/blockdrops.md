@@ -22,7 +22,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;block-drops&gt; &lt;/block-drops&gt;</code>
+            <code>{{'<block-drops> </block-drops>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -37,7 +37,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rule&gt;</code>
+            <code>{{'<rule>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual block drop rule.</td>
@@ -184,7 +184,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -199,7 +199,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -214,7 +214,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kit&gt;</code>
+            <code>{{'<kit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -229,7 +229,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;drops&gt;</code>
+            <code>{{'<drops>' | escape_once}}</code>
           </span>
         </td>
         <td>The items which get dropped when a matching block is mined.</td>
@@ -241,7 +241,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;experience&gt;</code>
+            <code>{{'<experience>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -256,7 +256,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;replacement&gt;</code>
+            <code>{{'<replacement>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -273,7 +273,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;wrongtool&gt;</code>
+            <code>{{'<wrongtool>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -288,7 +288,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;punch&gt;</code>
+            <code>{{'<punch>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -303,7 +303,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;trample&gt;</code>
+            <code>{{'<trample>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -318,7 +318,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fall-chance&gt;</code>
+            <code>{{'<fall-chance>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -333,7 +333,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;land-chance&gt;</code>
+            <code>{{'<land-chance>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -348,7 +348,7 @@ Custom drops also apply to blocks broken by explosions. The custom drops are red
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fall-speed&gt;</code>
+            <code>{{'<fall-speed>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -520,7 +520,7 @@ The behavior for blocks that become airborne due to explosions can be modified i
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fall-chance&gt;</code>
+            <code>{{'<fall-chance>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -534,7 +534,7 @@ The behavior for blocks that become airborne due to explosions can be modified i
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;land-chance&gt;</code>
+            <code>{{'<land-chance>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -548,7 +548,7 @@ The behavior for blocks that become airborne due to explosions can be modified i
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fall-speed&gt;</code>
+            <code>{{'<fall-speed>' | escape_once}}</code>
           </span>
         </td>
         <td>

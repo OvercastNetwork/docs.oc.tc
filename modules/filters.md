@@ -120,7 +120,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter id=&quot;filter1&quot;/&gt;</code>
+            <code>{{'<filter id="filter1"/>' | escape_once}}</code>
           </span>
         </td>
         <td>Reference a filter by its ID.</td>
@@ -131,7 +131,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;always/&gt;</code>
+            <code>{{'<always/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -145,7 +145,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;never/&gt;</code>
+            <code>{{'<never/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -159,7 +159,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;match-started/&gt;</code>
+            <code>{{'<match-started/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -172,7 +172,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;match-running/&gt;</code>
+            <code>{{'<match-running/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -185,7 +185,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;match-finished/&gt;</code>
+            <code>{{'<match-finished/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -198,7 +198,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;time&gt;duration&lt;/time&gt;</code>
+            <code>{{'<time>duration</time>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -213,7 +213,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;completed&gt;objective_id&lt;/completed&gt;</code>
+            <code>{{'<completed>objective_id</completed>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -227,7 +227,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;captured&gt;objective_id&lt;/captured&gt;</code>
+            <code>{{'<captured>objective_id</captured>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -241,7 +241,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag-carried&gt;flag_id&lt;/flag-carried&gt;</code>
+            <code>{{'<flag-carried>flag_id</flag-carried>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -255,7 +255,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag-dropped&gt;flag_id&lt;/flag-dropped&gt;</code>
+            <code>{{'<flag-dropped>flag_id</flag-dropped>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -269,7 +269,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag-returned&gt;flag_id&lt;/flag-returned&gt;</code>
+            <code>{{'<flag-returned>flag_id</flag-returned>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -283,7 +283,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag-captured&gt;flag_id&lt;/flag-captured&gt;</code>
+            <code>{{'<flag-captured>flag_id</flag-captured>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -300,7 +300,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;void/&gt;</code>
+            <code>{{'<void/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -324,7 +324,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;material&gt;block&lt;/material&gt;</code>
+            <code>{{'<material>block</material>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -340,7 +340,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;structural-load&gt;2&lt;/structural-load&gt;</code>
+            <code>{{'<structural-load>2</structural-load>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -355,7 +355,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;spawn&gt;spawn reason&lt;/spawn&gt;</code>
+            <code>{{'<spawn>spawn reason</spawn>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -367,7 +367,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mob&gt;mob name&lt;/mob&gt;</code>
+            <code>{{'<mob>mob name</mob>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -379,7 +379,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;entity&gt;entity name&lt;/entity&gt;</code>
+            <code>{{'<entity>entity name</entity>' | escape_once}}</code>
           </span>
         </td>
         <td>Match entities, e.g. projectiles, boats, dropped items, etc.</td>
@@ -391,7 +391,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;rank&gt; &lt;/rank&gt;</code>
+            <code>{{'<rank> </rank>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -405,7 +405,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;score&gt; &lt;/score&gt;</code>
+            <code>{{'<score> </score>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -419,7 +419,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;carrying-flag&gt;flag_id&lt;/carrying-flag&gt;</code>
+            <code>{{'<carrying-flag>flag_id</carrying-flag>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -436,7 +436,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;participating/&gt;</code>
+            <code>{{'<participating/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -449,7 +449,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;observing/&gt;</code>
+            <code>{{'<observing/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -462,7 +462,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;team&gt;team&lt;/team&gt;</code>
+            <code>{{'<team>team</team>' | escape_once}}</code>
           </span>
         </td>
         <td>Matches a team by its ID.</td>
@@ -473,7 +473,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight xml'>
-            <code>&lt;class&gt;class name&lt;/class&gt;</code>
+            <code>{{'<class>class name</class>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -484,7 +484,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kill-streak/&gt;</code>
+            <code>{{'<kill-streak/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -496,7 +496,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;crouching/&gt;</code>
+            <code>{{'<crouching/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -509,7 +509,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;walking/&gt;</code>
+            <code>{{'<walking/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -522,7 +522,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;sprinting/&gt;</code>
+            <code>{{'<sprinting/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -535,7 +535,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flying/&gt;</code>
+            <code>{{'<flying/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -548,7 +548,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-fly/&gt;</code>
+            <code>{{'<can-fly/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -559,7 +559,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;gliding/&gt;</code>
+            <code>{{'<gliding/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -572,7 +572,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;grounded/&gt;</code>
+            <code>{{'<grounded/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -585,7 +585,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;carrying&gt;&lt;item material=&quot;&quot;/&gt;&lt;/carrying&gt;</code>
+            <code>{{'<carrying><item material=""/></carrying>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -597,7 +597,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;holding&gt;&lt;item material=&quot;&quot;/&gt;&lt;/holding&gt;</code>
+            <code>{{'<holding><item material=""/></holding>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -609,7 +609,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;wearing&gt;&lt;item material=&quot;&quot;/&gt;&lt;/wearing&gt;</code>
+            <code>{{'<wearing><item material=""/></wearing>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -624,7 +624,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;cause&gt;cause&lt;/cause&gt;</code>
+            <code>{{'<cause>cause</cause>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -636,7 +636,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;random&gt;decimal or range&lt;/random&gt;</code>
+            <code>{{'<random>decimal or range</random>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -651,7 +651,7 @@ Filter matchers test for specific conditions or properties of things.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;relation&gt;relation&lt;/relation&gt;</code>
+            <code>{{'<relation>relation</relation>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -685,7 +685,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;not&gt;</code>
+            <code>{{'<not>' | escape_once}}</code>
           </span>
         </td>
         <td>Invert the filters result; allow if the child filter denies, deny if it allows, abstain otherwise.</td>
@@ -696,7 +696,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;one&gt;</code>
+            <code>{{'<one>' | escape_once}}</code>
           </span>
         </td>
         <td>Allow if <i>only one</i> of the child filters allows, deny if <i>one or more allow</i> or <i>none allow and at least one denies</i>, otherwise abstain.</td>
@@ -707,7 +707,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;all&gt;</code>
+            <code>{{'<all>' | escape_once}}</code>
           </span>
         </td>
         <td>Allow if <i>all</i> of the child filters allow, deny if <i>one or more deny</i>, otherwise abstain.</td>
@@ -718,7 +718,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;any&gt;</code>
+            <code>{{'<any>' | escape_once}}</code>
           </span>
         </td>
         <td>Allow if <i>one</i> of the child filters allows, deny if <i>none allow and at least one denies</i>, otherwise abstain.</td>
@@ -732,7 +732,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;allow&gt;</code>
+            <code>{{'<allow>' | escape_once}}</code>
           </span>
         </td>
         <td>Allow if the child filter allows, otherwise abstain (transform deny to abstain).</td>
@@ -741,7 +741,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;deny&gt;</code>
+            <code>{{'<deny>' | escape_once}}</code>
           </span>
         </td>
         <td>Deny if the child filter allows, otherwise abstain.</td>
@@ -753,7 +753,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;same-team&gt;</code>
+            <code>{{'<same-team>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -765,7 +765,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;victim&gt;</code>
+            <code>{{'<victim>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -781,7 +781,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;attacker&gt;</code>
+            <code>{{'<attacker>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -800,7 +800,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;players&gt;</code>
+            <code>{{'<players>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -814,7 +814,7 @@ These elements must contain either a single filter, or a list of filters, as the
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;countdown&gt;</code>
+            <code>{{'<countdown>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -1242,7 +1242,7 @@ Cause filters are used to filter an event or action according to its cause.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;cause&gt; &lt;/cause&gt;</code>
+            <code>{{'<cause> </cause>' | escape_once}}</code>
           </span>
         </td>
         <td>Filter an event's cause.</td>
@@ -1382,7 +1382,7 @@ This filter is only used in damage related contexts i.e., [damage filters](/modu
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;relation&gt; &lt;/relation&gt;</code>
+            <code>{{'<relation> </relation>' | escape_once}}</code>
           </span>
         </td>
         <td>The relation between the player and their damage cause.</td>

@@ -24,7 +24,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;map&gt; &lt;/map&gt;</code>
+            <code>{{'<map> </map>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -100,7 +100,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;name&gt;</code>
+            <code>{{'<name>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -115,7 +115,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;slug&gt;</code>
+            <code>{{'<slug>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -134,7 +134,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;version&gt;</code>
+            <code>{{'<version>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -151,7 +151,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;objective&gt;</code>
+            <code>{{'<objective>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -166,7 +166,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;authors&gt;</code>
+            <code>{{'<authors>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -174,28 +174,28 @@ The maps version should follow the versioning schema `major.minor.patch`.
           The authors of the map, at least one author is required.
         </td>
         <td>
-          <code>&lt;author&gt;</code>
+          <code>{{'<author>' | escape_once}}</code>
         </td>
         <td></td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;contributors&gt;</code>
+            <code>{{'<contributors>' | escape_once}}</code>
           </span>
         </td>
         <td>
           Contributors to the map.
         </td>
         <td>
-          <code>&lt;contributor&gt;</code>
+          <code>{{'<contributor>' | escape_once}}</code>
         </td>
         <td></td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;phase&gt;</code>
+            <code>{{'<phase>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -212,7 +212,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;edition&gt;</code>
+            <code>{{'<edition>' | escape_once}}</code>
           </span>
         </td>
         <td>Edition of this map, describes which servers it is run on.</td>
@@ -228,7 +228,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;gamemode&gt;</code>
+            <code>{{'<gamemode>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -277,12 +277,12 @@ A players name should **not** be used to credit them, instead their UUID should 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;author&gt;</code>
+            <code>{{'<author>' | escape_once}}</code>
           </span>
         </td>
         <td>
           A major author of the map, used in
-          <code>&lt;authors&gt;</code>
+          <code>{{'<authors>' | escape_once}}</code>
           <br>
         </td>
         <td>
@@ -292,12 +292,12 @@ A players name should **not** be used to credit them, instead their UUID should 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;contributor&gt;</code>
+            <code>{{'<contributor>' | escape_once}}</code>
           </span>
         </td>
         <td>
           A contributor to the map, used in
-          <code>&lt;contributors&gt;</code>
+          <code>{{'<contributors>' | escape_once}}</code>
         </td>
         <td>
           <span class='label label-primary'>String</span>
@@ -374,7 +374,7 @@ This means that a map that uses destroyables and flags would be listed as a "DTM
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;gamemode&gt; &lt;/gamemode&gt;</code>
+            <code>{{'<gamemode> </gamemode>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -23,7 +23,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;renewables&gt; &lt;/renewables&gt;</code>
+            <code>{{'<renewables> </renewables>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing this map's renewable block rules.</td>
@@ -36,7 +36,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;renewable&gt;</code>
+            <code>{{'<renewable>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual renewable block rule.</td>
@@ -207,7 +207,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -221,7 +221,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;renew-filter&gt;</code>
+            <code>{{'<renew-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -235,7 +235,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;replace-filter&gt;</code>
+            <code>{{'<replace-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -249,7 +249,7 @@ specify blocks to renew. If neither are specified, the renewable affects all blo
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;shuffle-filter&gt;</code>
+            <code>{{'<shuffle-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -26,7 +26,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;portals&gt; &lt;/portals&gt;</code>
+            <code>{{'<portals> </portals>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='2'>Node containing the portals on this map.</td>
@@ -38,7 +38,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;portal&gt;</code>
+            <code>{{'<portal>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual portal node.</td>
@@ -118,7 +118,7 @@ Portals respond to any player move event, this allows almost instant teleportati
           <a href='/modules/filters'>Filter</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
@@ -174,7 +174,7 @@ Portals respond to any player move event, this allows almost instant teleportati
           <a href='/modules/filters'>Filter</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
@@ -262,7 +262,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -277,7 +277,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;destination&gt;</code>
+            <code>{{'<destination>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -293,7 +293,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -307,7 +307,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;forward&gt;</code>
+            <code>{{'<forward>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -322,7 +322,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;reverse&gt;</code>
+            <code>{{'<reverse>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -337,7 +337,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;transit&gt;</code>
+            <code>{{'<transit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -354,7 +354,7 @@ Portals respond to any player move event, this allows almost instant teleportati
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;observers&gt;</code>
+            <code>{{'<observers>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -25,7 +25,7 @@ Then once they have collected enough ingots they can craft armor, etc.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kill-rewards&gt; &lt;/kill-rewards&gt;</code>
+            <code>{{'<kill-rewards> </kill-rewards>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all kill reward definitions.</td>
@@ -39,7 +39,7 @@ Then once they have collected enough ingots they can craft armor, etc.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kill-reward&gt; &lt;/kill-reward&gt;</code>
+            <code>{{'<kill-reward> </kill-reward>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -82,7 +82,7 @@ Then once they have collected enough ingots they can craft armor, etc.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt;</code>
+            <code>{{'<item>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -95,7 +95,7 @@ Then once they have collected enough ingots they can craft armor, etc.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -109,7 +109,7 @@ Then once they have collected enough ingots they can craft armor, etc.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kit&gt;</code>
+            <code>{{'<kit>' | escape_once}}</code>
           </span>
         </td>
         <td>

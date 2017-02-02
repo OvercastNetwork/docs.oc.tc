@@ -36,7 +36,7 @@ Stages are displayed in the order that they are defined as in the XML.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;tutorial&gt; &lt;/tutorial&gt;</code>
+            <code>{{'<tutorial> </tutorial>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the defined tutorial stages.</td>
@@ -49,7 +49,7 @@ Stages are displayed in the order that they are defined as in the XML.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;stage&gt; &lt;/stage&gt;</code>
+            <code>{{'<stage> </stage>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -102,23 +102,23 @@ Stages are displayed in the order that they are defined as in the XML.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;message&gt;</code>
+            <code>{{'<message>' | escape_once}}</code>
           </span>
         </td>
         <td>Container for the tutorial message lines.</td>
         <td>
-          <code>&lt;line&gt;</code>
+          <code>{{'<line>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;line&gt;</code>
+            <code>{{'<line>' | escape_once}}</code>
           </span>
         </td>
         <td>
           The message lines for this stage. Used in
-          <code>&lt;message&gt;</code>
+          <code>{{'<message>' | escape_once}}</code>
         </td>
         <td>
           <span class='label label-primary'>String</span>
@@ -127,7 +127,7 @@ Stages are displayed in the order that they are defined as in the XML.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;teleport&gt;</code>
+            <code>{{'<teleport>' | escape_once}}</code>
           </span>
         </td>
         <td>The viewing location for this stage.</td>

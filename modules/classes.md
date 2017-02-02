@@ -20,7 +20,7 @@ Classes allow the player to pick a specific class at the beginning of the game w
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;classes&gt; &lt;/classes&gt;</code>
+            <code>{{'<classes> </classes>' | escape_once}}</code>
           </span>
         </td>
         <td>A node containing a single class or a group of classes.</td>
@@ -33,7 +33,7 @@ Classes allow the player to pick a specific class at the beginning of the game w
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;class&gt; &lt;/class&gt;</code>
+            <code>{{'<class> </class>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -181,7 +181,7 @@ Classes allow the player to pick a specific class at the beginning of the game w
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;kit&gt;</code>
+            <code>{{'<kit>' | escape_once}}</code>
           </span>
         </td>
         <td>

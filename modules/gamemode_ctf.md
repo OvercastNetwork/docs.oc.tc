@@ -33,7 +33,7 @@ In addition to flags, a CTF map also requires **nets** for flags to be captured 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flags&gt; &lt;/flags&gt;</code>
+            <code>{{'<flags> </flags>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing a group of flags, nets and posts for this match.</td>
@@ -46,7 +46,7 @@ In addition to flags, a CTF map also requires **nets** for flags to be captured 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag&gt;</code>
+            <code>{{'<flag>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -60,7 +60,7 @@ In addition to flags, a CTF map also requires **nets** for flags to be captured 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;post&gt;X,Y,Z&lt;/post&gt;</code>
+            <code>{{'<post>X,Y,Z</post>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -74,7 +74,7 @@ In addition to flags, a CTF map also requires **nets** for flags to be captured 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;net&gt;</code>
+            <code>{{'<net>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -112,7 +112,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;flag&gt;</code>
+            <code>{{'<flag>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -459,7 +459,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;net&gt;</code>
+            <code>{{'<net>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -470,7 +470,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;post&gt;X,Y,Z&lt;/post&gt;</code>
+            <code>{{'<post>X,Y,Z</post>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -485,7 +485,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickup-filter&gt;</code>
+            <code>{{'<pickup-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -499,7 +499,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;drop-filter&gt;</code>
+            <code>{{'<drop-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -514,7 +514,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;capture-filter&gt;</code>
+            <code>{{'<capture-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -528,7 +528,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickup-kit&gt;</code>
+            <code>{{'<pickup-kit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -542,7 +542,7 @@ Filters can be used to control who can pickup/capture the flag and when.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;drop-kit&gt;</code>
+            <code>{{'<drop-kit>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -588,7 +588,7 @@ The `permanent` option can be used to make a post into something like a [monumen
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;post&gt;X,Y,Z&lt;/post&gt;</code>
+            <code>{{'<post>X,Y,Z</post>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -749,7 +749,7 @@ The `permanent` option can be used to make a post into something like a [monumen
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pickup-filter&gt;</code>
+            <code>{{'<pickup-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -790,7 +790,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;net&gt;</code>
+            <code>{{'<net>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -1028,7 +1028,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -1043,7 +1043,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;capture-filter&gt;</code>
+            <code>{{'<capture-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -1057,7 +1057,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;respawn-filter&gt;</code>
+            <code>{{'<respawn-filter>' | escape_once}}</code>
           </span>
         </td>
         <td>

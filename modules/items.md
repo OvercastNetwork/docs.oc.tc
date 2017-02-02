@@ -42,7 +42,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt;</code>
+            <code>{{'<item>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -65,7 +65,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;enchantment&gt; &lt;/enchantment&gt;</code>
+            <code>{{'<enchantment> </enchantment>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -75,7 +75,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;stored-enchantment&gt; &lt;/stored-enchantment&gt;</code>
+            <code>{{'<stored-enchantment> </stored-enchantment>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -85,7 +85,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt; &lt;/effect&gt;</code>
+            <code>{{'<effect> </effect>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -96,7 +96,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;attribute&gt; &lt;/attribute&gt;</code>
+            <code>{{'<attribute> </attribute>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -106,7 +106,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-destroy&gt; &lt;/can-destroy&gt;</code>
+            <code>{{'<can-destroy> </can-destroy>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -117,7 +117,7 @@ or on the [bukkit docs - Material](https://hub.spigotmc.org/javadocs/bukkit/org/
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-place-on&gt; &lt;/can-place-on&gt;</code>
+            <code>{{'<can-place-on> </can-place-on>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -485,7 +485,7 @@ There is a limit of one request a minute for each UUID so be sure to copy the da
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;uuid&gt;</code>
+            <code>{{'<uuid>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -500,7 +500,7 @@ There is a limit of one request a minute for each UUID so be sure to copy the da
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;skin&gt;</code>
+            <code>{{'<skin>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -623,7 +623,7 @@ and [Minecraft wiki - Status Effect](http://minecraft.gamepedia.com/Status_effec
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;effect&gt;</code>
+            <code>{{'<effect>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -669,15 +669,15 @@ Each page in a book can contain a maximum of 13 lines, with approximately 19 cha
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;book&gt;</code>
+            <code>{{'<book>' | escape_once}}</code>
           </span>
         </td>
         <td>
           The element containing the books
-          <code>&lt;title&gt;</code>
-          <code>&lt;author&gt;</code>
+          <code>{{'<title>' | escape_once}}</code>
+          <code>{{'<author>' | escape_once}}</code>
           &
-          <code>&lt;pages&gt;</code>
+          <code>{{'<pages>' | escape_once}}</code>
         </td>
         <td>
           <span class='label label-primary'>Formatted Text</span>
@@ -700,7 +700,7 @@ Each page in a book can contain a maximum of 13 lines, with approximately 19 cha
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;title&gt;</code>
+            <code>{{'<title>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -714,7 +714,7 @@ Each page in a book can contain a maximum of 13 lines, with approximately 19 cha
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;author&gt;</code>
+            <code>{{'<author>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -728,23 +728,23 @@ Each page in a book can contain a maximum of 13 lines, with approximately 19 cha
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;pages&gt;</code>
+            <code>{{'<pages>' | escape_once}}</code>
           </span>
         </td>
         <td>The pages in the book.</td>
         <td>
-          <code>&lt;page&gt;</code>
+          <code>{{'<page>' | escape_once}}</code>
         </td>
       </tr>
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;page&gt;</code>
+            <code>{{'<page>' | escape_once}}</code>
           </span>
         </td>
         <td>
           A newline separated string. Used inside
-          <code>&lt;pages&gt;</code>
+          <code>{{'<pages>' | escape_once}}</code>
         </td>
         <td>
           <span class='label label-primary'>Formatted Text</span>
@@ -797,7 +797,7 @@ simply replace the tag `enchantment` with `stored-enchantment`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;enchantment&gt; &lt;/enchantment&gt;</code>
+            <code>{{'<enchantment> </enchantment>' | escape_once}}</code>
           </span>
         </td>
         <td>An item enchantment.</td>
@@ -809,7 +809,7 @@ simply replace the tag `enchantment` with `stored-enchantment`.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;stored-enchantment&gt; &lt;/stored-enchantment&gt;</code>
+            <code>{{'<stored-enchantment> </stored-enchantment>' | escape_once}}</code>
           </span>
         </td>
         <td>An enchantment stored in an enchanted book.</td>
@@ -932,7 +932,7 @@ massive tooltip being displayed to the player.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-destroy&gt; &lt;/can-destroy&gt;</code>
+            <code>{{'<can-destroy> </can-destroy>' | escape_once}}</code>
           </span>
         </td>
         <td>A node containing the materials this item can destroy.</td>
@@ -941,7 +941,7 @@ massive tooltip being displayed to the player.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;can-place-on&gt; &lt;/can-place-on&gt;</code>
+            <code>{{'<can-place-on> </can-place-on>' | escape_once}}</code>
           </span>
         </td>
         <td>A node containing materials this item can be placed on.</td>
@@ -954,7 +954,7 @@ massive tooltip being displayed to the player.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;material&gt; &lt;/material&gt;</code>
+            <code>{{'<material> </material>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -969,7 +969,7 @@ massive tooltip being displayed to the player.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;all-blocks/&gt;</code>
+            <code>{{'<all-blocks/>' | escape_once}}</code>
           </span>
         </td>
         <td>Match all block type materials.</td>

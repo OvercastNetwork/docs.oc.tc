@@ -35,7 +35,7 @@ This is used with [conditionals](/modules/includes_conditionals#conditionals) to
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;terrain/&gt;</code>
+            <code>{{'<terrain/>' | escape_once}}</code>
           </span>
         </td>
         <td>

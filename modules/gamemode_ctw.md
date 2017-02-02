@@ -31,7 +31,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;wools&gt; &lt;/wools&gt;</code>
+            <code>{{'<wools> </wools>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the wools for this map.</td>
@@ -44,7 +44,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;wool&gt; &lt;/wool&gt;</code>
+            <code>{{'<wool> </wool>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -245,7 +245,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;monument&gt;</code>
+            <code>{{'<monument>' | escape_once}}</code>
           </span>
         </td>
         <td>

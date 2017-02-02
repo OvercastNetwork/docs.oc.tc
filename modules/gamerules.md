@@ -21,7 +21,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;gamerules&gt; &lt;/gamerules&gt;</code>
+            <code>{{'<gamerules> </gamerules>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing the defined game rules.</td>
@@ -43,7 +43,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;doFireTick&gt;</code>
+            <code>{{'<doFireTick>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether firespread occurs.</td>
@@ -54,7 +54,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;doTileDrops&gt;</code>
+            <code>{{'<doTileDrops>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether tile entities drop.</td>
@@ -65,7 +65,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;doMobLoot&gt;</code>
+            <code>{{'<doMobLoot>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether mobs drop loot on death.</td>
@@ -76,7 +76,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mobGriefing&gt;</code>
+            <code>{{'<mobGriefing>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether mobs such as Creepers and Endermen cause enviromental damage.</td>
@@ -87,7 +87,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;naturalRegeneration&gt;</code>
+            <code>{{'<naturalRegeneration>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether or not players naturally regain heath.</td>
@@ -98,7 +98,7 @@ When stopping the daylight cycle, you should either use the `<doDaylightCycle>` 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;doDaylightCycle&gt;</code>
+            <code>{{'<doDaylightCycle>' | escape_once}}</code>
           </span>
         </td>
         <td>Toggles whether or not the time tick occurs.</td>

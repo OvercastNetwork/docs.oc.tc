@@ -22,7 +22,7 @@ The `<modes>` tag can contain any number of `<mode>` tags with different duratio
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;modes&gt; &lt;/modes&gt;</code>
+            <code>{{'<modes> </modes>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing the monument modes for this match.</td>
@@ -35,7 +35,7 @@ The `<modes>` tag can contain any number of `<mode>` tags with different duratio
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;mode/&gt;</code>
+            <code>{{'<mode/>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual monument mode.</td>

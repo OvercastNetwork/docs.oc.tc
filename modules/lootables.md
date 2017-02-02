@@ -21,7 +21,7 @@ They can optionally refill themselves on a schedule, or in response to dynamic f
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;lootables&gt; &lt;/lootables&gt;</code>
+            <code>{{'<lootables> </lootables>' | escape_once}}</code>
           </span>
         </td>
         <td></td>
@@ -34,7 +34,7 @@ They can optionally refill themselves on a schedule, or in response to dynamic f
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;loot&gt;</code>
+            <code>{{'<loot>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -48,7 +48,7 @@ They can optionally refill themselves on a schedule, or in response to dynamic f
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fill&gt;</code>
+            <code>{{'<fill>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -80,7 +80,7 @@ and operations for choosing them.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;loot&gt;</code>
+            <code>{{'<loot>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -132,7 +132,7 @@ and operations for choosing them.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt;</code>
+            <code>{{'<item>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -146,7 +146,7 @@ and operations for choosing them.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;any&gt;</code>
+            <code>{{'<any>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -158,7 +158,7 @@ and operations for choosing them.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;maybe&gt;</code>
+            <code>{{'<maybe>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -227,7 +227,7 @@ Its children can be `<option>` elements, or any other `<loot>` sub-element.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;option&gt;</code>
+            <code>{{'<option>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -327,7 +327,7 @@ chests to be filled, then you will have to prevent that somehow.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;fill&gt;</code>
+            <code>{{'<fill>' | escape_once}}</code>
           </span>
         </td>
         <td>

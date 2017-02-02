@@ -22,7 +22,7 @@ Attributes for multiple world borders can be applied for all borders by specifyi
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;world-borders&gt; &lt;/world-borders&gt;</code>
+            <code>{{'<world-borders> </world-borders>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -37,7 +37,7 @@ Attributes for multiple world borders can be applied for all borders by specifyi
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;world-border&gt;</code>
+            <code>{{'<world-border>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -194,7 +194,7 @@ Attributes for multiple world borders can be applied for all borders by specifyi
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;when&gt;</code>
+            <code>{{'<when>' | escape_once}}</code>
           </span>
         </td>
         <td>

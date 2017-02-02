@@ -31,7 +31,7 @@ This also works with non-tool items such as arrows. When people pick up item in 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;toolrepair&gt; &lt;/toolrepair&gt;</code>
+            <code>{{'<toolrepair> </toolrepair>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -46,7 +46,7 @@ This also works with non-tool items such as arrows. When people pick up item in 
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;tool&gt; &lt;/tool&gt;</code>
+            <code>{{'<tool> </tool>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -84,7 +84,7 @@ Defines items that will be deleted when dropped on the map. Also works when item
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;itemremove&gt; &lt;/itemremove&gt;</code>
+            <code>{{'<itemremove> </itemremove>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -99,7 +99,7 @@ Defines items that will be deleted when dropped on the map. Also works when item
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt; &lt;/item&gt;</code>
+            <code>{{'<item> </item>' | escape_once}}</code>
           </span>
         </td>
         <td>The item that will be removed when dropped.</td>
@@ -137,7 +137,7 @@ Defines items that will be kept on death. If there is a spawn kit, kept items wi
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;itemkeep&gt; &lt;/itemkeep&gt;</code>
+            <code>{{'<itemkeep> </itemkeep>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -152,7 +152,7 @@ Defines items that will be kept on death. If there is a spawn kit, kept items wi
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt; &lt;/item&gt;</code>
+            <code>{{'<item> </item>' | escape_once}}</code>
           </span>
         </td>
         <td>The item that will remain in a player's inventory when they die and respawn.</td>
@@ -188,7 +188,7 @@ Similar to `<itemkeep>` except that the specified items are only kept if they ar
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;armorkeep&gt; &lt;/armorkeep&gt;</code>
+            <code>{{'<armorkeep> </armorkeep>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -205,7 +205,7 @@ Similar to `<itemkeep>` except that the specified items are only kept if they ar
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;item&gt; &lt;/item&gt;</code>
+            <code>{{'<item> </item>' | escape_once}}</code>
           </span>
         </td>
         <td>A equipped armor item that will remain in a player's inventory when they die and respawn.</td>

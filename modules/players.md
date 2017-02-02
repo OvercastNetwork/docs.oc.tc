@@ -25,7 +25,7 @@ Win conditions are set by using the score and time limit modules.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;players/&gt;</code>
+            <code>{{'<players/>' | escape_once}}</code>
           </span>
         </td>
         <td>The players node, containing player settings.</td>

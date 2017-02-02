@@ -56,7 +56,7 @@ title:  "Structures"
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;structures&gt; &lt;/structures&gt;</code>
+            <code>{{'<structures> </structures>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -69,7 +69,7 @@ title:  "Structures"
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;structure&gt;</code>
+            <code>{{'<structure>' | escape_once}}</code>
           </span>
         </td>
         <td>Defines a block structure that is part of the map</td>
@@ -77,7 +77,7 @@ title:  "Structures"
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;dynamic&gt;</code>
+            <code>{{'<dynamic>' | escape_once}}</code>
           </span>
         </td>
         <td>Causes a structure to be placed/removed at some location in reaction to a filter</td>
@@ -213,9 +213,9 @@ title:  "Structures"
           <br>
           <em>
             Only
-            <code>&lt;objective&gt;</code>
+            <code>{{'<objective>' | escape_once}}</code>
             ,
-            <code>&lt;time&gt;</code>
+            <code>{{'<time>' | escape_once}}</code>
             , and flag-related filters are currently supported.
           </em>
         </td>
@@ -223,7 +223,7 @@ title:  "Structures"
           <a href='/modules/filters'>Filter</a>
         </td>
         <td>
-          <code>&lt;always/&gt;</code>
+          <code>{{'<always/>' | escape_once}}</code>
           <br>
           (structure is permanently placed)
         </td>

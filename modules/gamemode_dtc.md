@@ -20,7 +20,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;cores&gt; &lt;/cores&gt;</code>
+            <code>{{'<cores> </cores>' | escape_once}}</code>
           </span>
         </td>
         <td>Node containing all the defined cores.</td>
@@ -33,7 +33,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;core&gt; &lt;/core&gt;</code>
+            <code>{{'<core> </core>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -214,7 +214,7 @@ Players have to locate and break the enemy team's core, usually an obsidian sphe
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>

@@ -24,7 +24,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;proximity-alarms&gt; &lt;/proximity-alarms&gt;</code>
+            <code>{{'<proximity-alarms> </proximity-alarms>' | escape_once}}</code>
           </span>
         </td>
         <td colspan='2'>Node containing this maps proximity-alarms.</td>
@@ -36,7 +36,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;proximity-alarm&gt;</code>
+            <code>{{'<proximity-alarm>' | escape_once}}</code>
           </span>
         </td>
         <td>An individual proximity-alarm node.</td>
@@ -106,7 +106,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;region&gt;</code>
+            <code>{{'<region>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -121,7 +121,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;detect&gt;</code>
+            <code>{{'<detect>' | escape_once}}</code>
           </span>
         </td>
         <td>Filter who gets detected by the proximity alarm.</td>
@@ -132,7 +132,7 @@ Flares will only be set off if a `flare-radius=""` is defined. If this attribute
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;notify&gt;</code>
+            <code>{{'<notify>' | escape_once}}</code>
           </span>
         </td>
         <td>Filter who gets notified by the proximity alarm.</td>

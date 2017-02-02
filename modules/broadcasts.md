@@ -26,7 +26,7 @@ It should not be used to for generic OCN related messages.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;broadcasts&gt; &lt;/broadcasts&gt;</code>
+            <code>{{'<broadcasts> </broadcasts>' | escape_once}}</code>
           </span>
         </td>
         <td>An element containing all the defined broadcast messages.</td>
@@ -39,7 +39,7 @@ It should not be used to for generic OCN related messages.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;tip&gt; &lt;/tip&gt;</code>
+            <code>{{'<tip> </tip>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -52,7 +52,7 @@ It should not be used to for generic OCN related messages.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;alert&gt; &lt;/alert&gt;</code>
+            <code>{{'<alert> </alert>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -140,7 +140,7 @@ It should not be used to for generic OCN related messages.
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;filter&gt;</code>
+            <code>{{'<filter>' | escape_once}}</code>
           </span>
         </td>
         <td>

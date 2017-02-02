@@ -130,7 +130,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;if a=&quot;true&quot;&gt; &lt;/if&gt;</code>
+            <code>{{'<if a="true"> </if>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -140,7 +140,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;if a=&quot;true&quot; b=&quot;true&quot;&gt; &lt;/if&gt;</code>
+            <code>{{'<if a="true" b="true"> </if>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -150,7 +150,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;unless a=&quot;true&quot;&gt; &lt;/unless&gt;</code>
+            <code>{{'<unless a="true"> </unless>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -160,7 +160,7 @@ attributes can only equate to true/false and conditions are defined in the PGM s
       <tr>
         <td>
           <span class='highlight'>
-            <code>&lt;unless a=&quot;false&quot; b=&quot;false&quot;&gt; &lt;/unless&gt;</code>
+            <code>{{'<unless a="false" b="false"> </unless>' | escape_once}}</code>
           </span>
         </td>
         <td>
