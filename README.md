@@ -3,9 +3,11 @@
 Documentation for the XML format [PGM](https://github.com/OvercastNetwork/ProjectAres/) uses to define map specific features.
 Pages are hosted using github pages.
 
-#### Editing
+#### Editing Notes
 
-1. Care should be taken when removing trailing whitespace since markdown uses two spaces to create a newline.
+1. Pages are formated in markdown and may contain HTML, HTML should only be used where absolutely needed.
+2. Markdown is parsed with [kramdown](https://kramdown.gettalong.org/) which has an [enhanced syntax](https://kramdown.gettalong.org/syntax.html).
+3. Care should be taken when removing trailing whitespace since markdown uses two spaces to create a newline.
 
 
 #### Pull Requests
