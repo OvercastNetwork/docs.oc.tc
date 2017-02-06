@@ -6,36 +6,27 @@ title:  "Structures"
 
 ---
 
+Structures are sets of blocks that can be dynamically copied into the world in response to match events.
+The original structure is built into the map by the mapmaker, and defined in XML with regions.
+When the match loads, the original structures are cleared from the world and saved.
 
-<p>
-  Structures are sets of blocks that can be dynamically copied into the world in response to match events.
-  The original structure is built into the map by the mapmaker, and defined in XML with regions.
-  When the match loads, the original structures are cleared from the world and saved.
-</p>
-<p>
-  Structures are brought to life by something called a
-  <em>dynamic.</em>
-  This is an XML construct that causes a structure to appear at a specified location in reaction to a given
-  <a href='/modules/filters'>filter.</a>
-  Whenever the filter is in a passing state (when it has a value of
-  <code>ALLOW</code>
-  or
-  <code>ABSTAIN</code>
-  ), the structure will appear.
-  When the filter is not passing, (when its value is
-  <code>DENY</code>
-  ), the structure will disappear.
-</p>
-<p>
-  Structures are a very powerful feature that can be used to implement an endless variety of custom game mechanics.
-</p>
+Structures are brought to life by something called a _dynamic._
+This is an XML construct that causes a structure to appear at a specified location in reaction to a given
+[filter](/modules/filters).
+Whenever the filter is in a passing state (when it has a value of `ALLOW` or `ABSTAIN`),
+the structure will appear. When the filter is not passing,
+(when its value is `DENY`), the structure will disappear.
+
+
+Structures are a very powerful feature that can be used to implement an endless variety of custom game mechanics.
+
+
 <div class='alert alert-warning alert-small'>
   <div class='clearfix'>
     <i class='fa fa-2x fa-exclamation-triangle'></i>
     <p class='alert-content'>
       Currently, only
-      <a href='/modules/filters#objectiveFilter'>objective filters</a>
-      , time filters, and
+      <a href='/modules/filters#objectiveFilter'>objective filters</a>, time filters, and
       <a href='/modules/filters#flagFilter'>flag filters</a>
       can be used with dynamic structures, as well as
       <a href='/modules/filters#filterModifiers'>filter modifiers.</a>
@@ -44,6 +35,7 @@ title:  "Structures"
     </p>
   </div>
 </div>
+
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -277,7 +269,7 @@ title:  "Structures"
           <span class='label label-primary'>X,Y,Z</span>
         </td>
         <td>
-          0,0,0
+          <code>0,0,0</code>
           <br/>
           (structure placed at its original location)
         </td>
@@ -285,7 +277,9 @@ title:  "Structures"
     </tbody>
   </table>
 </div>
-<h2 id='examples'>Examples</h2>
+
+### Examples {#examples}
+
     <structures>
         <!-- Define a 25x2x7 cuboid structure called blue-bridge -->
         <!-- The original structure is high in the sky around 0,0 -->
