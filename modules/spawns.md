@@ -382,6 +382,18 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
       </tr>
       <tr>
         <td>
+          <code>freeze</code>
+        </td>
+        <td>
+          Freeze the player during the end of the spawn countdown for this duration.
+        </td>
+        <td>
+          <a href='/reference/time_periods'>Time Period</a>
+        </td>
+        <td>3s</td>
+      </tr>
+      <tr>
+        <td>
           <code>auto</code>
         </td>
         <td>
