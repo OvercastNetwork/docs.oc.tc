@@ -5,7 +5,7 @@ layout: default
 <div class="container">
 <div class="jumbotron">
 <h1>XML Documentation</h1>
-<p class="lead">Documentation on XML files that are required for each map added to the servers</p>
+<p class="lead">Documentation on XML files that are required for each map to be added to the servers</p>
 </div>
 <section>
 <div class="page-header">
@@ -14,24 +14,24 @@ layout: default
 <div class="row">
 <div class="col-sm-6" markdown="1">
 ### What Do XML Files Do?
-XML files configure how the PGM plug-in manages the map during game-play. Any map released on the Lifeboat Network requires a XML file to function properly. The XML defines aspects of the game such as spawn points, teams, kits and more. Each file is unique to its map, however the individual components are generic and are used on many different maps.
+XML files configure how the PGM plug-in controls the map during a match. Any map released on Stratus requires an XML file to function. The XML defines aspects of the game such as spawn points, teams, kits and more. Each file is unique to its map, however the components and modules are generic and are used on many different maps.
 
 
 ### Writing XML Files
-Almost every generic text editor can create and edit XML files, however editors designed for XML can automatically indent and syntax hi-light your code to help spot mistakes.
+Almost every text editor can create and edit XML files, however editors designed for XML can automatically indent and syntax your code to help spot mistakes.
 
 We recommend that you use [Sublime Text](http://www.sublimetext.com) to create and edit XML files.
 
-To keep your XML file clean & readable you should properly indent them using 4 spaces and only specify elements or attributes you intend to use.
+To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use.
 
 ### Releasing Your Map
-Before releasing your map for the map developers to test, we strongly recommend you package your map following [these guidelines](/guides/packaging/cleaning_files).
+Before releasing your map for testing, you must package your map following [these guidelines](/guides/packaging/cleaning_files).
 This will speed up the time it takes to get your map ready for testing.
 
 </div>
 <div class="col-sm-6" markdown="1">
 ### Using These Docs
-This documentation is intended to list all currently available XML modules, their attributes & sub-elements; and describe how the modules work and interact with the player. It is intended to be used as a reference when coding the XML files accompanying a map to ensure that the XML is valid and works like it is supposed to.
+This documentation is intended to list all currently available XML modules, their attributes & sub-elements; and describe how the modules work and interact with the player. It is designed to be used as a reference when coding the XML files accompanying a map to ensure that the XML is valid and works as intended.
 
 All attributes or sub-elements for a element or module are listed in a table and required attributes or sub-elements are marked in red. In the following example the `color` attribute is required but `id` is not. The attribute or elements default value is also listed if there is one.
 
