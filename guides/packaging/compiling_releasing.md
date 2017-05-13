@@ -56,4 +56,5 @@ To compress a folder:
 <br/>
 
 #### Uploading the map
-To upload the map, we recommend using [MediaFire](https://www.mediafire.com/) or [Dropbox](https://www.dropbox.com/).
+To upload the map, we recommend using [Google Drive](https://drive.google.com/) or [Dropbox](https://www.dropbox.com/).
+Note: We do not allow submissions through Mediafire
