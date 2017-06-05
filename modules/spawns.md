@@ -334,8 +334,6 @@ Example
 ### Respawn Module {#respawn}
 The respawn module allows the map creator to adjust the respawn time and if players are automatically respawned. The respawn time must be greater than 1 second (20 ticks), if the respawn time is less it will automatically default to one second, allowing the death to fully complete and the player to be reset properly.
 
-To allow players to spawn at a bed set the bed attribute to true. Players spawning at beds will not spawn with a kit even if there is one specified. If a player has a bed spawn location set it overrides all other spawn regions for that player.
-
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
     <thead>
@@ -345,6 +343,14 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<respawns/>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>Node specifying multiple respawn settings for this map.</td>
+      </tr>
       <tr>
         <td>
           <span class='highlight'>
@@ -443,6 +449,19 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
       </tr>
       <tr>
         <td>
+          <code>filter</code>
+        </td>
+        <td>
+          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
+          Filter when this respawn setting is used.
+        </td>
+        <td>
+          <a href='/modules/filters'>Filter</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
           <code>message</code>
         </td>
         <td>
@@ -495,3 +514,9 @@ To allow players to spawn at a bed set the bed attribute to true. Players spawni
     <respawn delay="5s" spectate="true">
         <message>{translate: "death.respawn.confirmed.waiting.flagDropped"}</message>
     </respawn>
+    
+    <!-- Allow respawning after different delays for red and blue team -->
+    <respawns>
+        <respawn delay="3s" filter="only-red"/>
+        <respawn delay="5s" filter="only-blue"/>
+    </respawns>
