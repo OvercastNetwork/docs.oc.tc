@@ -10,6 +10,10 @@ nav_content:
     name: "Game-mode"
   - path: "#healthHunger"
     name: "Health &amp; Hunger"
+  - path: "#eliminate"
+    name: "Eliminate"
+  - path: "#teamSwitch"
+    name: "Team Switch"
   - path: "#potionEffect"
     name: "Potion Effects"
   - path: "#attributes"
@@ -363,7 +367,94 @@ By default health or hunger values are only increased, not decreased. For exampl
 
 <br/>
 
+### Eliminate Kit {#eliminate}
+Eliminates the player from a blitz match when applied regardless the amount of lives the player has remaining. Only works when used with the <a href='/modules/gamemode_blitz'>Blitz module</a>.
 
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<eliminate/>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>
+          Eliminate the player from the current blitz match.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <kit>
+        <eliminate/>
+    </kit>
+
+<br/>
+
+### Team Switch Kit {#teamSwitch}
+A player's team can be changed or switched to another when they enter a region or are dynamically applied a kit, for example. Once applied, players will be 'respawned' at their new team's spawn with a corresponding kit keeping no previous items.
+
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<team-switch/>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>
+          Move the player to another team.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h5>Team Switch Attributes</h5>
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Value</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>team</code>
+        </td>
+        <td>
+          The team which the player will be moved to
+        </td>
+        <td>
+          <a href='/modules/teams'>Team ID</a>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <kit>
+        <team-switch team="red-team"/>
+    </kit>
+
+<br/>
 
 ### Potion Effect Kits (removable) {#potionEffect}
 
