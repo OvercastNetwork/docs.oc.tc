@@ -30,7 +30,7 @@ h6,
 }
 
 /* Main navigation */
-/* - Position the OC.TC logo in relation to the navbar-brand text */
+/* - Position the Stratus logo in relation to the navbar-brand text */
 .navbar-brand img {
     margin-top: -6px;
     margin-right: 8px;
@@ -50,7 +50,7 @@ h6,
 .jumbotron {
     position: relative;
     color: #fff;
-    background: #450f43;
+    background: #0C4537;
     -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
        -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
             box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
@@ -256,4 +256,42 @@ ul.changelog .label {
 /* Material table styling */
 #blocks #dataTable tr td.data {
     text-align: right;
+}
+
+/* Custom map thumbnail style */
+.map-thumbnail {
+    float: none;
+    display: inline-block;
+    width: 270px;
+    text-align: left;
+}
+
+.map-image {
+    width: 260px;
+    height: 218px;
+    margin: 0;
+    background-color: #525252;
+    background-size: 260px 218px;
+}
+
+.map-banner {
+    height: 40px;
+    background-color: rgba(255,255,255,0.7);
+    padding-left: 6px;
+    overflow: hidden;
+}
+
+.map-name {
+    font-size: 14px;
+    color: #000;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.map-gamemode {
+    display: block;
+    margin-top: -6px;
+    font-size: 10px;
+    color: #393939;
 }

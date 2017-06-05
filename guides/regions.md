@@ -45,6 +45,3 @@ So the region would be:
 
 
 <br/>
-
-### Regions: The Wrong Way
-I know that many of you are using WorldEdit to get region coordinates, and my advice to you is **DON'T** . WorldEdit uses a dumb coordinate system that will not give you correct regions, and while it's possible to convert the coordinates, it's going to confuse you and cause mistakes, and it's just not worth the trouble. I suspect that WorldEdit is the reason we have so many region errors in our map collection right now.

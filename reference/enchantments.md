@@ -146,6 +146,18 @@ Bukkit enchantment names are not case sensitive and a space can be used instead 
         <td>Create frost blocks when walking over water.</td>
       </tr>
       <tr>
+        <td>
+          10
+        </td>
+        <td>
+          <code>BINDING_CURSE</code>
+        </td>
+        <td>
+          <code>curse_of_binding</code>
+        </td>
+        <td>Item cannot be removed.</td>
+      </tr>
+      <tr>
         <th colspan='4'>Tool Enchantments</th>
       </tr>
       <tr>
@@ -382,6 +394,18 @@ Bukkit enchantment names are not case sensitive and a space can be used instead 
           <code>mending</code>
         </td>
         <td>Repair the item using experience orbs.</td>
+      </tr>
+      <tr>
+        <td>
+          71
+        </td>
+        <td>
+          <code>VANISHING_CURSE</code>
+        </td>
+        <td>
+          <code>curse_of_vanishing</code>
+        </td>
+        <td>Item disappears instead of dropping.</td>
       </tr>
     </tbody>
   </table>
