@@ -22,8 +22,8 @@
   slug: "race_for_victory_3"
   gamemode: "Capture the Wool"
   
-- name: "Seige"
-  slug: "seige"
+- name: "Siege"
+  slug: "siege"
   gamemode: "Capture Points"
   
 - name: "Snowy Wars"
