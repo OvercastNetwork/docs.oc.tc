@@ -170,6 +170,38 @@ In the example above players from blue team will get a blue helmet,
 players from red team will get a red helmet; both teams will get the items from the spawn kit.
 The spawn kit contains a 5 second healing potion to help prevent spawn killing.
 
+Kits can also take advantage of [loot sub-elements](/modules/lootables#loot) to randomly or conditionally give items to players through their kits. This allows you to randomly give players sets of items in the spawn kit, or provide stronger tools if a team has completed a certain objective.
+
+    <kits>
+        <kit id="random-spawn" force="true">
+            <!-- Randomly pick between a stone or iron sword -->
+            <any count="1">
+                <item slot="0" material="stone sword" unbreakable="true"/>
+                <item slot="0" material="iron sword" unbreakable="true"/>
+            </any>
+            <!-- Pick between 0 and 2 unique options -->
+            <any count="0..2" unique="true">
+                <item amount="6" material="wood"/>
+                <item amount="12" material="wood"/>
+                <item amount="3" material="cobblestone"/>
+                <item amount="6" material="cobblestone"/>
+            </any>
+            <!-- Randomly pick a chestplate from a weighted pool -->
+            <any count="1">
+                <option weight="0.70">
+                    <chestplate material="gold chestplate" unbreakable="true"/>
+                </option>
+                <option weight="0.30">
+                    <chestplate material="iron chestplate" unbreakable="true"/>
+                </option>
+            </any>
+            <!-- Only give a golden apple to players matching the 'red-team' filter -->
+            <maybe filter="red-team">
+                <item material="golden apple"/>
+            </maybe>
+        </kit>
+    </kits>
+
 ### Dynamic Kits {#dynamic-kits}
 Kits are able to be dynamically applied to players which match the response of [dynamic filters](/modules/filters). This allows you to give players special kits or items without them needing to respawn or enter a particular region. 
 
@@ -761,6 +793,7 @@ Recharging of the shield is based on when damage was taken last, every time a pl
     </tbody>
   </table>
 </div>
+    <kit id="shield-kit">
         <shield health="4" delay="8s"/>
     </kit>
 
