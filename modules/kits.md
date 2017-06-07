@@ -30,6 +30,8 @@ nav_content:
     name: "Double Jump"
   - path: "#fly"
     name: "Fly"
+  - path: "#force-impulse"
+    name: "Force &amp; Impulse"
 
 ---
 
@@ -944,3 +946,105 @@ If no attributes are specified can-fly defaults to true.
         <fly flying="true"/>      <!-- Make the player fly right away -->
         <fly flying="false"/>     <!-- Make the player stop flying right away -->
     </kit>
+
+<br/>
+
+### Force and Impulse Kits (removable) {#force-impulse}
+The force and impulse kits apply a force to the player, propelling them in a certain direction. Forces can be relative to the direction the player is facing. When the force direction is relative, <code>X</code> will always be infront of the player.
+
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<force> </force>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>
+          Apply a continuous force to the player
+        </td>
+        <td>
+          <span class='label label-primary'>X,Y,Z</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<impulse> </impulse>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>
+          Apply a single impulse of force to the player
+        </td>
+        <td>
+          <span class='label label-primary'>X,Y,Z</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h5>Force and Impulse Kit Attributes</h5>
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>yaw</code>
+        </td>
+        <td>
+          Set if the force will be relative to the player's current yaw angle
+        </td>
+        <td>
+          <span class='label label-primary'>true/false</span>
+        </td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>
+          <code>pitch</code>
+        </td>
+        <td>
+          Set if the force will be relative to the player's currenlt pitch angle
+        </td>
+        <td>
+          <span class='label label-primary'>true/false</span>
+        </td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <!-- Propel the player forwards and upwards -->
+    <kit id="impulse-kit">
+        <impulse yaw="true" pitch="false">0.5,0.8,0</impulse>
+    </kit>
+    
+    <!-- Apply a continuous upwards force to the player -->
+    <kit id="force-kit">
+        <force yaw="false" pitch="false">0,0.8,0</force>
+    </kit>
+    
+    <!-- Apply a continuous upwards force only when the player is gliding -->
+    <lend> 
+        <kit>
+            <force yaw="false" pitch="false">0,1.2,0</force>
+        </kit>
+        <filter>
+            <gliding/>
+        </filter>
+    </lend>
