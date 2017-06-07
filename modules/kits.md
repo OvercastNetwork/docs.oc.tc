@@ -191,7 +191,7 @@ and potion effects can be replaced with the same effect at a lower level or shor
 
     <kits>
         <kit id="spawn" force="true">
-            <item slot="0" material ="iron sword"/>
+            <item slot="0" material="iron sword"/>
             <item slot="8" amount="32" material="bread"/>
             <effect duration="5" amplifier="1">instant_health</effect>
         </kit>
@@ -282,7 +282,7 @@ A player's gamemode can be changed when they spawn or enter a region, etc. by us
         </td>
         <td>
           The gamemode to change the player to.
-          <br/>Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.</br>
+          <br/>Accepts <code>creative</code>, <code>survival</code>, <code>spectator</code>& <code>adventure</code>.
         </td>
         <td>
           <span class='label label-default'>Game Mode String</span>
@@ -291,7 +291,9 @@ A player's gamemode can be changed when they spawn or enter a region, etc. by us
     </tbody>
   </table>
 </div>
-    <game-mode>adventure</game-mode>
+    <kit id="adventure-mode-kit">
+        <game-mode>adventure</game-mode>
+    </kit>
 
 
 <br/>
@@ -368,7 +370,7 @@ By default health or hunger values are only increased, not decreased. For exampl
 <br/>
 
 ### Eliminate Kit {#eliminate}
-Eliminates the player from a blitz match when applied regardless the amount of lives the player has remaining. Only works when used with the <a href='/modules/gamemode_blitz'>Blitz module</a>.
+Eliminates the player from a blitz match when applied regardless the amount of lives the player has remaining. Only works when used with the [Blitz module](/modules/gamemode_blitz).
 
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
@@ -392,7 +394,7 @@ Eliminates the player from a blitz match when applied regardless the amount of l
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="double-jump-kit">
         <eliminate/>
     </kit>
 
@@ -450,7 +452,7 @@ A player's team can be changed or switched to another when they enter a region o
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="shield-kit">
         <team-switch team="red-team"/>
     </kit>
 
@@ -460,7 +462,7 @@ A player's team can be changed or switched to another when they enter a region o
 
 Potion effects can be applied and removed with a kit. See [Potion Effects](/modules/potions) for details about the `<effect>` element.
 
-    <kit>
+    <kit id="reduce-knockback">
         <effect duration="10" amplifier="4">resistance</effect>
     </kit>
 
@@ -544,7 +546,7 @@ affect a modifier applied by a different kit.
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="eliminate-kit">
         <attribute operation="add" amount="0.5">generic.movementSpeed</attribute>
     </kit>
 
@@ -623,7 +625,7 @@ and anything lower than zero pushes the player to the attacker instead of away f
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="switch-to-red">
         <knockback-reduction>0.5</knockback-reduction>
     </kit>
 
@@ -646,7 +648,7 @@ Recharging of the shield is based on when damage was taken last, every time a pl
       <tr>
         <td>
           <span class='highlight'>
-            <code>{{'<shield health="4" delay="4s"/>' | escape_once}}</code>
+            <code>{{'<shield/>' | escape_once}}</code>
           </span>
         </td>
         <td>
@@ -695,7 +697,7 @@ Recharging of the shield is based on when damage was taken last, every time a pl
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="resistance-kit">
         <shield health="4" delay="8s"/>
     </kit>
 
@@ -788,7 +790,7 @@ This element's enabled attribute can be used to disable double-jump inside regio
     </tbody>
   </table>
 </div>
-    <kit>
+    <kit id="increase-speed">
         <double-jump recharge-before-landing="true"/>
     </kit>
 
@@ -875,7 +877,7 @@ If no attributes are specified can-fly defaults to true.
     </tbody>
   </table>
 </div>
-    <kit id="fly">
+    <kit id="fly-kit">
         <fly/>                    <!-- Allow player to fly -->
         <fly can-fly="false"/>    <!-- Don't allow player to fly -->
         <fly flying="true"/>      <!-- Make the player fly right away -->
