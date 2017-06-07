@@ -4,6 +4,8 @@ layout: page
 category: "Modules"
 title:  "Kits"
 nav_content:
+  - path: "#dynamic-kits"
+    name: "Dynamic Kits"
   - path: "#itemArmor"
     name: "Item &amp; Armor"
   - path: "#game-mode"
@@ -97,47 +99,6 @@ these kits will be automatically removed from the player at an appropriate time.
       </tr>
       <tr>
         <td>
-          <code>give</code>
-        </td>
-        <td>
-          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
-          Dynamic filter used to apply the kit.
-        </td>
-        <td>
-          <a href='/modules/filters'>Dynamic Filter</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <code>take</code>
-        </td>
-        <td>
-          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
-          Dynamic filter used to remove the kit.
-        </td>
-        <td>
-          <a href='/modules/filters'>Dynamic Filter</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <code>lend</code>
-        </td>
-        <td>
-          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
-          Kit is applied when the dynamic filter returns allow and removed when it is deny.
-          <br/>
-          <i>Cannot combine <code>lend</code> property with <code>give</code> or <code>take</code></i>
-        </td>
-        <td>
-          <a href='/modules/filters'>Dynamic Filter</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
           <code>parents</code>
         </td>
         <td>The kit's parent or a comma separated list of parent kits.</td>
@@ -206,6 +167,107 @@ and potion effects can be replaced with the same effect at a lower level or shor
 In the example above players from blue team will get a blue helmet,
 players from red team will get a red helmet; both teams will get the items from the spawn kit.
 The spawn kit contains a 5 second healing potion to help prevent spawn killing.
+
+### Dynamic Kits {#dynamic-kits}
+Kits are able to be dynamically applied to players which match the response of [dynamic filters](/modules/filters). This allows you to give players special kits or items without them needing to respawn or enter a particular region. 
+
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<give> </give>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>A give node, containing a specific kit to dynamically give a player.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<take> </take>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>A take node, containing a specific kit to dynamically take from a player. Can only take <code>removeable</code> kits from the player.</td>
+      </tr>
+      <tr>
+        <td>
+          <span class='highlight'>
+            <code>{{'<lend> </lend>' | escape_once}}</code>
+          </span>
+        </td>
+        <td>A lend node, containing a specific kit to dynamically give a player when the filter returns allow and removed when it is deny. Can only take <code>removeable</code> kits from the player.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h5>Give/Take/Lend Attributes</h5>
+<div class='table-responsive'>
+  <table class='table table-striped table-condensed'>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Value</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>kit</code>
+        </td>
+        <td>
+          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
+          The kit to apply to players.
+        </td>
+        <td>
+          <a href='/modules/kits'>Kit ID</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <code>filter</code>
+        </td>
+        <td>
+          <span class='label label-default' title='Can be either this attribute or a sub-element.'>Property</span>
+          Filter when this kit is dynamically given or removed.
+        </td>
+        <td>
+          <a href='/modules/filters'>Dynamic Filter</a>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <kits>
+        <!-- Give 'gold-kit' to players when the filter returns true -->
+        <give kit="gold-kit" filter="owns-center-hill"/>
+        <kit id="gold-kit">
+            <item material="gold sword"/>
+            <chestplate material="gold chestplate"/>
+        </kit>
+
+        <!-- Lend players kit while they have the highest score, remove it otherwise -->
+        <lend>
+            <kit>
+                <walk-speed>1.8</walk-speed>
+                <effect duration="10" amplifier="4">resistance</effect>
+            </kit>
+            <filter>
+                <rank>1</rank>
+            </filter>
+        </lend>
+    </kits>
 
 <br/>
 
@@ -394,7 +456,7 @@ Eliminates the player from a blitz match when applied regardless the amount of l
     </tbody>
   </table>
 </div>
-    <kit id="double-jump-kit">
+    <kit id="eliminate-kit">
         <eliminate/>
     </kit>
 
@@ -452,7 +514,7 @@ A player's team can be changed or switched to another when they enter a region o
     </tbody>
   </table>
 </div>
-    <kit id="shield-kit">
+    <kit id="switch-to-red">
         <team-switch team="red-team"/>
     </kit>
 
@@ -462,7 +524,7 @@ A player's team can be changed or switched to another when they enter a region o
 
 Potion effects can be applied and removed with a kit. See [Potion Effects](/modules/potions) for details about the `<effect>` element.
 
-    <kit id="reduce-knockback">
+    <kit id="resistance-kit">
         <effect duration="10" amplifier="4">resistance</effect>
     </kit>
 
@@ -546,7 +608,7 @@ affect a modifier applied by a different kit.
     </tbody>
   </table>
 </div>
-    <kit id="eliminate-kit">
+    <kit id="increase-speed">
         <attribute operation="add" amount="0.5">generic.movementSpeed</attribute>
     </kit>
 
@@ -625,7 +687,7 @@ and anything lower than zero pushes the player to the attacker instead of away f
     </tbody>
   </table>
 </div>
-    <kit id="switch-to-red">
+    <kit id="reduce-knockback">
         <knockback-reduction>0.5</knockback-reduction>
     </kit>
 
@@ -697,7 +759,6 @@ Recharging of the shield is based on when damage was taken last, every time a pl
     </tbody>
   </table>
 </div>
-    <kit id="resistance-kit">
         <shield health="4" delay="8s"/>
     </kit>
 
@@ -790,7 +851,7 @@ This element's enabled attribute can be used to disable double-jump inside regio
     </tbody>
   </table>
 </div>
-    <kit id="increase-speed">
+    <kit id="double-jump-kit">
         <double-jump recharge-before-landing="true"/>
     </kit>
 
