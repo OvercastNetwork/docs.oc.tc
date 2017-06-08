@@ -47,7 +47,21 @@ To change world settings click on the banner, it will take you to a page like th
 
 <img src="http://i.imgur.com/bJLiIt5.png"/>
 
-Each item is a setting and hovering over them will tell you which setting it is. Clicking on a item will disable/enable the setting. For example, clicking on the clock will disable the daylight cycle and clicking on it again will enable it. Another important example is the lime wool block, clicking on it will enable players to teleport to your world, so if you want help or feedback from others make sure that it is **enabled**.
+Each item is a setting and hovering over them will tell you which setting it is. Clicking on a item will disable/enable the setting. For example, clicking on the clock will disable the daylight cycle and clicking on it again will enable it.
+
+Each item has a different function:
+- Spawn Egg: `Animals` - Toggle animal spawning in this world
+- Stick: `Entity Collision` - Toggle entities interacting in this world
+- Ice: `World Freeze` - Toggle building and interacting in this world
+- TNT: `Explosion` - Toggle explosions working in this world
+- Wood Hoe: `Permanent Farmland` - Toggle farmland from disappearing naturally
+- Flint & Steel: `Fire` - Toggle fire from spreading/combusting in this world
+- Leaves: `Leaves` - Toggle leaves from decaying in this world
+- Spawn Egg: `Monsters` - Toggle monsters from spawning in this world
+- Night Vision: `Night Vision` - Toggle automatic night vision in this world
+- Lime Wool: `Public` - Toggle any player from entering in this world
+- Clock: `Night/Day` - Toggle time from changing in this world
+- Water Bucket: `Rain` - Toggle raining in this world
 
 # 4. Adding/removing builders
 
