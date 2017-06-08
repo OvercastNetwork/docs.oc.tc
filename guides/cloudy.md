@@ -48,6 +48,31 @@ To change world settings click on the banner, it will take you to a page like th
 <img src="http://i.imgur.com/bJLiIt5.png"/>
 
 Each item is a setting and hovering over them will tell you which setting it is. Clicking on a item will disable/enable the setting. For example, clicking on the clock will disable the daylight cycle and clicking on it again will enable it. Another important example is the lime wool block, clicking on it will enable players to teleport to your world, so if you want help or feedback from others make sure that it is **enabled**.
+
+# 4. Adding/removing builders
+
+Collaborators are one of the most prime aspects of mapmaking. To add the ability for users to edit your world, you must click the **diamond pickaxe** in the main GUI menu.
+
+<img src="http://i.imgur.com/9ztA24j.png?1"/>
+
+Once you click that, you are greeted with a green clay block and a red clay block. The functions of them are that:
+- Red clay will remove builders from the selected world
+- Green clay will add builders to the selected world
+
+<img src="http://i.imgur.com/qYiowbk.png?1"/>
+
+To change which permissions a builder has in your world, you must click on the player head that corresponds with their name once hovered over. Clicking on them will open a menu with all of their permissions, and you may individually edit permissions that users will have in your world. Always be cautious with who you add!
+
+<img src="http://i.imgur.com/MGFqG5O.png?1"/>
+
+Each different item has a different function:
+- Wooden Axe: `Building` - Toggle building and interacting
+- Book: `Commands` - Toggle having permission to all commands
+- Paper: `Edit Comments` - Toggle being able to edit and read comments
+- Skull: `Edit Builders` - Toggle being able to add and remove builders
+- Redstone Lamp: `Offline Building` - Toggle building when you are offline
+- Wooden Door: `Visiting` - Toggle visiting your world
+- Minecart: `Download Map` - Toggle being able to download the map
  
 Hopefully this guide helps simplify Cloudy, and makes mapmaking easier for you, good luck with your mapmaking!
 
