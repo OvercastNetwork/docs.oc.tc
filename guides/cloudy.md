@@ -7,7 +7,7 @@ title:  "Cloudy"
 
 ---
 
-Stratus has its own build server called **Cloudy**. Cloudy makes building maps with others or by yourself simple and easy! To get started, connect to the server using the address `mapdev.stratus.network`. The following guide will explain how to create a world, choose the world settings, and how to add people to your world.
+Stratus has its own build server called **Cloudy**. Cloudy makes building maps with others or by yourself simple and easy! To get started, connect to the server using the address `play.stratus.network` and type `/server cloudy`. The following guide will explain how to create a world, choose the world settings, and how to add people to your world.
 
 # 1. Main Menu
 
