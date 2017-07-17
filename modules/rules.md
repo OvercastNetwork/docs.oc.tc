@@ -6,7 +6,7 @@ title:  "Rules"
 
 ---
 
-You can use the rules module to add custom rules to your map that are not already included in the standard Lifeboat Network rules. Regions and filters should be used to enforce access and block rules.
+You can use the rules module to add custom rules to your map that are not already included in the standard Stratus Network rules. Regions and filters should be used to enforce access and block rules.
 
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
