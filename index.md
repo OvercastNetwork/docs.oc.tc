@@ -20,9 +20,9 @@ XML files configure how the PGM plug-in controls the map during a match. Any map
 ### Writing XML Files
 Almost every text editor can create and edit XML files, however editors designed for XML can automatically indent and syntax your code to help spot mistakes.
 
-We recommend that you use [Sublime Text](http://www.sublimetext.com) to create and edit XML files.
+We recommend that you use [Atom](https://atom.io/) to create and edit XML files. You can also install the [Thunder](https://github.com/Matic0B/Thunder) plugin to simplify and help with creation of your XML files.
 
-To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use.
+To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use. If you are using Atom, we recommend the [Thunder](https://github.com/Matic0B/Thunder) plugin for Atom to simplify and help you with creating XML for your map.
 
 ### Releasing Your Map
 Before releasing your map for testing, you must package your map following [these guidelines](/guides/packaging/cleaning_files).
