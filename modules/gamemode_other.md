@@ -4,8 +4,6 @@ layout: page
 category: "Modules"
 title:  "Other Game Modes"
 nav_content:
-  - path: "#gs"
-    name: "Ghost Squadron"
   - path: "#rage"
     name: "Rage
   - path: "#tdm"
@@ -14,25 +12,6 @@ nav_content:
     name: "Free-For-All"
 
 ---
-
-### Ghost Squadron {#gs}
-Enables the ghostsquadron gamemode and all its features.
-The default ghostsquadron classes can be found [here](https://maps.oc.tc/Blitz/GS/gs.xml).
-Ghost squadron maps set a custom gamemode title in the `gs.xml` with the `<map game="Ghost Squadron">` attribute.
-When not using the default GS XML include a custom title should be set.
-
-`NOTE:` This module must be used in conjunction with another gamemode.
-
-    <ghostsquadron/>
-    <include src="gs.xml"/>
-
-    <time>6m</time>
-    <blitz>
-        <broadcastLives>false</broadcastLives>
-    </blitz>
-
-
-<br/>
 
 ### Rage {#rage}
 Enable the one hit kill, rage style gamemode.
