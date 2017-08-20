@@ -82,6 +82,13 @@ Example:
     <time>10m</time>
 
     <include src="blitz-global.xml"/>
+    
+Example using team filters, defining a custom amount of lives for each team:
+
+    <blitz>
+        <rule filter="only-red" lives="1"/>
+        <rule filter="only-blue" lives="2"/>
+    </blitz>
 
 ````
 <blitz/>    <!-- Use the default blitz settings -->
