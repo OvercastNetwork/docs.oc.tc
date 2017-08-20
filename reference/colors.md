@@ -19,7 +19,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
     </thead>
     <tbody>
       <tr>
-        <td>WHITE</td>
+        <td><span class="label dye white-dye">WHITE</span></td>
         <td>
           <code>FFFFFF</code>
         </td>
@@ -28,7 +28,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>ORANGE</td>
+        <td><span class="label dye orange-dye">ORANGE</span></td>
         <td>
           <code>D87F33</code>
         </td>
@@ -37,7 +37,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>MAGENTA</td>
+        <td><span class="label dye magenta-dye">MAGENTA</span></td>
         <td>
           <code>B24CD8</code>
         </td>
@@ -46,7 +46,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>LIGHT_BLUE</td>
+        <td><span class="label dye light-blue-dye">LIGHT_BLUE</span></td>
         <td>
           <code>6699D8</code>
         </td>
@@ -55,7 +55,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>YELLOW</td>
+        <td><span class="label dye yellow-dye">YELLOW</span></td>
         <td>
           <code>E5E533</code>
         </td>
@@ -64,7 +64,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>LIME</td>
+        <td><span class="label dye lime-dye">LIME</span></td>
         <td>
           <code>7FCC19</code>
         </td>
@@ -73,7 +73,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>PINK</td>
+        <td><span class="label dye pink-dye">PINK</span></td>
         <td>
           <code>F27FA5</code>
         </td>
@@ -82,7 +82,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>GRAY</td>
+        <td><span class="label dye grey-dye">GRAY</span></td>
         <td>
           <code>4C4C4C</code>
         </td>
@@ -91,7 +91,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>SILVER</td>
+        <td><span class="label dye silver-dye">SILVER</span></td>
         <td>
           <code>999999</code>
         </td>
@@ -100,7 +100,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>CYAN</td>
+        <td><span class="label dye cyan-dye">CYAN</span></td>
         <td>
           <code>4C7F99</code>
         </td>
@@ -109,7 +109,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>PURPLE</td>
+        <td><span class="label dye purple-dye">PURPLE</span></td>
         <td>
           <code>7F3FB2</code>
         </td>
@@ -118,7 +118,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>BLUE</td>
+        <td><span class="label dye blue-dye">BLUE</span></td>
         <td>
           <code>334CB2</code>
         </td>
@@ -127,7 +127,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>BROWN</td>
+        <td><span class="label dye brown-dye">BROWN</span></td>
         <td>
           <code>664C33</code>
         </td>
@@ -136,7 +136,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>GREEN</td>
+        <td><span class="label dye green-dye">GREEN</span></td>
         <td>
           <code>667F33</code>
         </td>
@@ -145,7 +145,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>RED</td>
+        <td><span class="label dye red-dye">RED</span></td>
         <td>
           <code>993333</code>
         </td>
@@ -154,7 +154,7 @@ Dye color names are used to define a wools color on [CTW](/modules/gamemode_ctw)
         </td>
       </tr>
       <tr>
-        <td>BLACK</td>
+        <td><span class="label dye black-dye">BLACK</span></td>
         <td>
           <code>191919</code>
         </td>

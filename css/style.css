@@ -295,3 +295,87 @@ ul.changelog .label {
     font-size: 10px;
     color: #393939;
 }
+
+.dye {
+  border: 1px solid #C8C8C8;
+}
+
+.white-dye {
+  background-color: #FFFFFF;
+  color: #393939;
+}
+
+.orange-dye {
+  background-color: #D87F33;
+  color: #FFFFFF;
+}
+
+.magenta-dye {
+  background-color: #B24CD8;
+  color: #FFFFFF;
+}
+
+.light-blue-dye {
+  background-color: #6699D8;
+  color: #FFFFFF;
+}
+
+.yellow-dye {
+  background-color: #E5E533;
+  color: #393939;
+}
+
+.lime-dye {
+  background-color: #7FCC19;
+  color: #FFFFFF;
+}
+
+.pink-dye {
+  background-color: #F27FA5;
+  color: #FFFFFF;
+}
+
+.grey-dye {
+  background-color: #4C4C4C;
+  color: #FFFFFF;
+}
+
+.silver-dye {
+  background-color: #999999;
+  color: #FFFFFF;
+}
+
+.cyan-dye {
+  background-color: #4C7F99;
+  color: #FFFFFF;
+}
+
+.purple-dye {
+  background-color: #7F3FB2;
+  color: #FFFFFF;
+}
+
+.blue-dye {
+  background-color: #334CB2;
+  color: #FFFFFF;
+}
+
+.brown-dye {
+  background-color: #664C33;
+  color: #FFFFFF;
+}
+
+.green-dye {
+  background-color: #667F33;
+  color: #FFFFFF;
+}
+
+.red-dye {
+  background-color: #993333;
+  color: #FFFFFF;
+}
+
+.black-dye {
+  background-color: #191919;
+  color: #FFFFFF;
+}
