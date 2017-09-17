@@ -144,6 +144,18 @@ Control point give a certain amount of point to the team currently holding it. O
       </tr>
       <tr>
         <td>
+          <code>owner-points</code>
+        </td>
+        <td>
+          Amount of points given to the team that owns the point, they are removed when the team looses the point.
+        </td>
+        <td>
+          <span class='label label-primary'>Number</span>
+        </td>
+        <td colspan='2'></td>
+      </tr>
+      <tr>
+        <td>
           <code>capture-rule</code>
         </td>
         <td>
