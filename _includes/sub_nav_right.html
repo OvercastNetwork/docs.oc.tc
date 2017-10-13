@@ -1,0 +1,16 @@
+{% unless page.nav_content == nil %}
+<div class="sidebar hidden-xs no-deco" style="border-left-style: solid; border-left-width: 1px; border-left-color: #BDBDBD">
+    {% for item in page.nav_content %}
+    {% if item.first %}
+    <span class="{% if page.url contains item.path %}second-active{% endif %}" style="padding-left: 20px">
+        <a href="{{item.path}}">{{ item.name }}</a>
+        <br>
+    </span>
+    {% else %}
+    {% if forloop.first != true %}
+    <span class="divider"></li>
+    {% endif %}
+    <li class="dropdown-header">{{item}}</li>
+    {% endif %}{% endfor %}
+</div>
+{% endunless %}

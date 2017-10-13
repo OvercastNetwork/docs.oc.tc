@@ -5,7 +5,7 @@ category: "Modules"
 title:  "Other Game Modes"
 nav_content:
   - path: "#rage"
-    name: "Rage
+    name: "Rage"
   - path: "#tdm"
     name: "Team Deathmatch"
   - path: "#ffa"

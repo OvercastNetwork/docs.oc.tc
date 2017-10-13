@@ -3,8 +3,17 @@ layout: page
 
 category: "Modules"
 title:  "Main Map Element"
+nav_content:
+  - path: "#elements"
+    name: "Main Elements"
+  - path: "#authors_contributors"
+    name: "Authors & contributors"
+  - path: "#gamemode"
+    name: "Map Gamemode"
 
 ---
+
+### Main Elements {#elements}
 
 Every map XML file must contain the base `<map>` module. It contains modules that specify the map name, version, objective, authors, contributors and all other map settings. The objective is the text that players see when they join the match, and so it's important for this to be very clear, concise, and informative.
 
@@ -123,7 +132,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
           The map's slug, usually auto generated from the maps name.
           This should only be used when a map is renamed to retain the map's ratings, etc.
           <br/>
-          Valid slugs are lowercase and only contain the characters: <code>a-z 0-9 _</code>
+          Valid slugs are lowercase and only contain the characters: <code>a-z 0-9 _ </code>
         </td>
         <td>
           <span class='label label-primary'>String</span>

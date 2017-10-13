@@ -6,4 +6,4 @@ title:  "MIDI Files"
 
 ---
 
-<p><span class='label label-warning'>Note!</span>This module has not yet been supported, but is currently in development. Please check back soon!</p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-triangle"></i>This module has not yet been supported, but is currently in development.</div>

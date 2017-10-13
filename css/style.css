@@ -1,5 +1,5 @@
 body {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 h1,
@@ -14,7 +14,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: bold;
 }
 
@@ -44,10 +44,16 @@ h6,
     background-color: #E5E5E5
 }
 
+/* - Navbar Tweaks */
+.navbar {
+    margin-bottom: 0px;
+}
+
 /* Jumbotron */
 /* - Reduce overall size of jumbotron subheads
    - Add a pattern background overlay to all sizes */
 .jumbotron {
+    border-radius: 0px;
     position: relative;
     color: #fff;
     background: #2F4E84;
@@ -57,6 +63,7 @@ h6,
 }
 
 .jumbotron .container {
+    border-radius: 0px;
     position: relative;
     z-index: 2;
 }
@@ -295,6 +302,28 @@ ul.changelog .label {
     font-size: 10px;
     color: #393939;
 }
+
+/* Other */
+.no-deco a {
+    color: #424242;
+    text-decoration: none !important;
+}
+
+.no-deco a:hover {
+    font-weight: bold;
+    color: #000000;
+}
+
+.second-active {
+    font-weight: bold;
+    color: #000000;
+}
+
+.badge-primary {
+    background-color: #337AB7;
+}
+
+/* Dye colors */
 
 .dye {
   border: 1px solid #C8C8C8;

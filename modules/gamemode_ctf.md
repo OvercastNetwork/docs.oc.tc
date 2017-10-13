@@ -3,8 +3,21 @@ layout: page
 
 category: "Modules"
 title:  "Capture the Flag"
+nav_content:
+  - path: "#overview"
+    name: "Overview"
+  - path: "#flags"
+    name: "Flags"
+  - path: "#posts"
+    name: "Posts"
+  - path: "#nets"
+    name: "Nets"
+  - path: "#examples"
+    name: "Examples"
 
 ---
+
+### Overview {#overview}
 
 Flags are [banners](http://minecraft.gamepedia.com/Banner) that can be picked up and carried by players, and captured in designated regions.
 They are highly configurable and can be used to implement a wide variety of gamemodes.
@@ -1075,7 +1088,7 @@ If the net has no owner, then the player carrying the flag will receive the poin
   </table>
 </div>
 
-### Examples
+### Examples {#examples}
 
 #### Classic CTF
 

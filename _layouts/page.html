@@ -2,29 +2,27 @@
 layout: default
 ---
 
-<div class="container">
-  <div class="jumbotron subhead">
-    <h1>
-      {{page.category}}
-      {% if page.category_lead %}<p class='lead'>{{page.category_lead}}</p>{% endif %}
+<div class="jumbotron subhead">
+    <h1 style="text-align: center">
+        {{page.category}}
+        {% if page.category_lead %}
+        <p class="lead">{{page.category_lead}}</p>
+        {% endif %}
     </h1>
-  </div>
-  <section>
-    <div class="row">
-      <div class="col-sm-3">
-        {% include sidebar.html %}
-      </div>
-      <div class="col-sm-9">
-        <div class="page-header">
-          <h1>
-            {% include sub_nav_btn.html %}
-            {{page.title}}
-          </h1>
-        </div>
-
-        {{ content }}
-
-      </div>
-    </div>
-  </section>
 </div>
+<section>
+    <div class="col-sm-12">
+        <div class="col-sm-2">
+            {% include sidebar.html %}
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header">
+                <h1>{{page.title}}</h1>
+            </div>
+            {{ content }}
+        </div>
+        <div class="col-sm-2">
+            {% include sub_nav_right.html %}
+        </div>
+    </div>
+ </section>

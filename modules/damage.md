@@ -3,6 +3,17 @@ layout: page
 
 category: "Modules"
 title:  "Damage & Disable Damage"
+nav_content:
+  - path: "#friendly_fire"
+    name: "Friedly Fire"
+  - path: "#difficulty"
+    name: "Difficulty"
+  - path: "#hunger"
+    name: "Hunger"
+  - path: "#filtering"
+    name: "Damage Filtering"
+  - path: "#disable"
+    name: "Disable Damage"
 
 ---
 
@@ -34,7 +45,7 @@ This can also be accomplished with the `naturalRegeneration` [gamerule](/modules
 
 <br/>
 
-### Damage Filtering {#filter}
+### Damage Filtering {#filtering}
 
 This module is used to filter when or if damage is applied to entities.
 Its contents can be a filter or combination of filters.
@@ -114,7 +125,7 @@ Example
 
 <br/>
 
-#### Block Explosion Attributes {#block_explosion}
+### Block Explosion Attributes
 
 The `BLOCK_EXPLOSION` damage cause has several extended attributes to customize who/what gets damaged. Only attributes with `false` as the value need to be explicitly defined since all attributes default to `true`.
 
@@ -183,7 +194,7 @@ Example
 
 <br/>
 
-#### Damage Causes {#causes}
+### Damage Causes
 The following damage causes can be used in the disable damage module.
 These causes do not need to be capitalized or contain underscores, i.e., `FIRE_TICK` and `fire tick` will both work.
 

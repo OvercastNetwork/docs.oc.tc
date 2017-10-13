@@ -3,8 +3,15 @@ layout: page
 
 category: "Modules"
 title:  "Spawns"
+nav_content:
+  - path: "#overview"
+    name: "Overview"
+  - path: "#respawn"
+    name: "Respawn Module"
 
 ---
+
+### Overview {#overview}
 
 The spawns module is required in a complete map XML because it specifies where players and observers can spawn. Default and observer spawns are defined with the `<default>` element and all other spawns in `<spawn>` elements. Only one default spawn element may be defined per map.
 
@@ -310,7 +317,7 @@ Example
             </regions>
         </default>
     </spawns>
-  
+
     <spawns safe="true" sequential="true">
         <spawn team="blue" kit="blue" yaw="180">
             <regions>
@@ -514,7 +521,7 @@ The respawn module allows the map creator to adjust the respawn time and if play
     <respawn delay="5s" spectate="true">
         <message>{translate: "death.respawn.confirmed.waiting.flagDropped"}</message>
     </respawn>
-    
+
     <!-- Allow respawning after different delays for red and blue team -->
     <respawns>
         <respawn delay="3s" filter="only-red"/>

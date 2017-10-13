@@ -3,8 +3,17 @@ layout: page
 
 category: "Modules"
 title:  "Control Points"
+nav_content:
+  - path: "#overview"
+    name: "Overview"
+  - path: "#capture_rule"
+    name: "Capture Rule"
+  - path: "#regions"
+    name: "Control Point Regions"
 
 ---
+
+### Overview {#overview}
 
 Control point give a certain amount of point to the team currently holding it. Once a team has captured all points, or reached a certain score (using the [score module](/modules/scoring)) the match ends. Control points can be mixed with and used in addition to other gamemodes. Other uses of control points include unlocking an area of the map using objective filters, etc.
 
@@ -500,6 +509,6 @@ Players who match either `capture-filter` or `player-filter` are counted when ca
 
 <br/>
 
-#### Control Point Regions
+#### Control Point Regions {#regions}
 
 Capture progress is displayed inside the defined `<progress>` region using the dominating teams color. After a control point is captured the `<captured>` region is also filled with that color. The progress and captured regions must be bounded regions, e.g. cylinders & cuboids will work, circles and squares will not. Only the default visual materials or materials defined in `visual-materials` will be modified in the progress regions when they are updated.

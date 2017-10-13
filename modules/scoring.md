@@ -3,8 +3,19 @@ layout: page
 
 category: "Modules"
 title:  "Scoring"
+nav_content:
+  - path: "#overview"
+    name: "Overview"
+  - path: "#score_boxes"
+    name: "Score Boxes"
+  - path: "#redeemables"
+    name: "Redeemables"
+  - path: "#time_limit"
+    name: "Time Limit"
 
 ---
+
+### Overview {#overview}
 
 The score module can be used to give matches a score limit and modify how many points are added to the score for each kill or death. It can also be used to create score boxes that give a player or team a certain amount of points when they enter it.
 
@@ -111,7 +122,7 @@ Example
 
 <br/>
 
-#### Score Boxes {#score_box}
+#### Score Boxes {#score_boxes}
 A score box will give points to a players team when they enter or bring a redeemable item to the score box region. [Portals](/modules/portals) should be setup to remove the player from the immediate vicinity of the score box to prevent multiple scores.
 
 <div class='table-responsive'>
@@ -304,7 +315,7 @@ Example
 
 <br/>
 
-#### Redeemables
+#### Redeemables {#redeemables}
 A score box can also award points in exchange for particular items carried by the player when they
 enter the box. These items are defined inside a `<redeemables>` score box sub-element as `<item>` tags.
 Each item contains a [material name](/reference/inventory#material_finder)
@@ -325,7 +336,7 @@ Example
 
 <br/>
 
-### Time Limit {#timeLimit}
+#### Time Limit {#time_limit}
 Give the match a time limit, the result attribute determines how the winning team or player is calculated when the time runs out.
 Result can be the name of a team, or one of the special values; "tie" for no winner, or "objectives" for the team that has the most objectives completed. The time limit can be specified in minutes, etc., by formatting it as a [time period](/reference/time_periods).
 

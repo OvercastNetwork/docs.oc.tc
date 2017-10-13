@@ -3,8 +3,19 @@ layout: page
 
 category: "Modules"
 title:  "Lootables"
+nav_content:
+  - path: "#overview"
+    name: "Overview"
+  - path: "#loot"
+    name: "Loot"
+  - path: "#fill"
+    name: "Fill"
+  - path: "#examples"
+    name: "Examples"
 
 ---
+
+### Overview {#overview}
 
 Lootables are chests or other containers that generate their contents based on custom rules and probabilities.
 They can optionally refill themselves on a schedule, or in response to dynamic filters.
@@ -173,7 +184,7 @@ and operations for choosing them.
   </table>
 </div>
 
-#### Random Selection {#any}
+#### Random Selection
 
 The `<any>` element makes a random selection from any number of child elements.
 Its children can be `<option>` elements, or any other `<loot>` sub-element.
@@ -280,7 +291,7 @@ Its children can be `<option>` elements, or any other `<loot>` sub-element.
   </table>
 </div>
 
-#### Conditional Inclusion {#maybe}
+#### Conditional Inclusion
 
 The `<maybe>` element includes its child elements only if the specified filter matches.
 The filter is matched against the first player to access the loot.
@@ -424,7 +435,7 @@ chests to be filled, then you will have to prevent that somehow.
   </table>
 </div>
 
-### Examples
+### Examples {examples}
 
     <lootables>
         <!-- Define a procedural list of loot -->

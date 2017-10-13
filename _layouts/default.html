@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>XML Documentation</title>
-    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
-    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
-    <link href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' />
-    <link href='/css/style.css' rel='stylesheet' />
-    <link href='/css/custom-highlight.css' rel='stylesheet' />
-    <link href='/img/favicon.ico' rel='shortcut icon' type='image/x-icon' />
-    <link href='/img/favicon.ico' rel='apple-touch-icon' type='image/x-icon' />
-    <link href='//fonts.googleapis.com/css?family=Lato:700,400,300' rel='stylesheet' />
-    <link href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
-    <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js'></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js'></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script>$(function () { $("[data-toggle='tooltip']").tooltip(); });</script>
-    <script>$(document).ready(function() { $('span.highlight > code').each(function(i, block) {hljs.highlightBlock(block);}); });</script>
-  </head>
-  <body>
-    <header class='navbar navbar-default navbar-static-top' role='navigation'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <a class='navbar-brand' href='/'>
-            <img width="48" height="48" src='/img/logo.png' />
-            XML Documentation
-          </a>
-          <button class='navbar-toggle' data-target='.navbar-main-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/custom-highlight.css" rel="stylesheet" />
+    <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/img/favicon.ico" rel="apple-touch-icon" type="image/x-icon" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:700,400,300" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script>
+        $(function() {
+            $("[data-toggle="tooltip"]").tooltip();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("span.highlight > code").each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <img width="48" height="48" src="/img/logo.png" /> XML Documentation
+            </a>
+            <button class="navbar-toggle" data-target=".navbar-main-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-        <nav class='collapse navbar-collapse navbar-main-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li class='{% if page.url == "/" %}active{% endif %}'>
-              <a href='/'>
-                <i class='fa fa-home'></i>
-                Home
-              </a>
-            </li>
-            <li class='{% if page.url contains "/modules/" %}active{% endif %}'>
-              <a href='/modules/main'>
-                <i class='fa fa-th-large'></i>
-                Modules
-              </a>
-            </li>
-            <li class='{% if page.url contains "/reference/" %}active{% endif %}'>
-              <a href='/reference/inventory'>
-                <i class='fa fa-book'></i>
-                Reference
-              </a>
-            </li>
-            <li class='{% if page.url contains "/guides/" %}active{% endif %}'>
-              <a href='/guides/packaging/cleaning_files'>
-                <i class='fa fa-clipboard'></i>
-                Guides
-              </a>
-            </li>
-            <li class='{% if page.url contains "/examples/" %}active{% endif %}'>
-              <a href='/examples'>
-                <i class='fa fa-file-text'></i>
-                Examples
-              </a>
-            </li>
-          </ul>
+        <nav class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="{% if page.url == "/" %}active{% endif %}">
+                    <a href="/">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="{% if page.url contains "/modules/" %}active{% endif %}">
+                    <a href="/modules/main">
+                        <i class="fa fa-th-large"></i> Modules
+                    </a>
+                </li>
+                <li class="{% if page.url contains "/reference/" %}active{% endif %}">
+                    <a href="/reference/inventory">
+                        <i class="fa fa-book"></i> Reference
+                    </a>
+                </li>
+                <li class="{% if page.url contains "/guides/" %}active{% endif %}">
+                    <a href="/guides/packaging/cleaning_files">
+                        <i class="fa fa-clipboard"></i> Guides
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a href="/modules/proto">
+                        <span style="padding-right: 10px"><i class="fa fa-certificate"></i> Current map proto is<span>
+                        <span class="badge badge-primary pull-right">{{site.current_proto}}</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
-      </div>
     </header>
     {{ content }}
-    <div class='container'>
-      <hr />
-      <footer class='docs-footer'>
-        <ul class='nav nav-pills'>
-          <li class='pull-left'>
-            <a>&copy; 2017 Stratus Network</a>
-          </li>
-          <li class="pull-right">
-            <a href="https://github.com/stratusnetwork" target="_blank">GitHub</a>
-          </li>
-          <li class="pull-right">
-            <a href="https://twitter.com/stratusmc" target="_blank">Twitter</a>
-          </li>
-          <li class="pull-right">
-            <a href="https://discord.me/stratus" target="_blank">Discord</a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-  </body>
+    <footer>
+        <hr>
+        <div class="col-sm-12" style="padding-top: 50px; text-align: center; font-weight: bold">
+            <h5>
+                <p><i class="fa fa-copyright"></i> Stratus Network</p>
+                <a href="https://twitter.com/stratusmc" target="_blank"><i class="fa fa-twitter" style="color: #424242; padding-left: 5px; padding-right: 5px"></i></a>
+                <a href="https://github.com/stratusnetwork" target="_blank"><i class="fa fa-github" style="color: #424242; padding-left: 5px; padding-right: 5px"></i></a>
+                <a href="https://discord.me/stratus" target="_blank"><i class="fa fa-microphone" style="color: #424242; padding-left: 5px; padding-right: 5px"></i></a>
+            </h5>
+        </div>
+    </footer>
+</body>
 </html>

@@ -1,15 +1,15 @@
-<div class='well well-sm'>
-  Current map proto is
-  <a href='/modules/proto'>{{site.current_proto}}</a>
-</div>
 {% if page.url contains "/modules/" %}
 {% assign sidebar = site.data.modules_nav %}
+
 {% elsif page.url contains "/guides/" %}
 {% assign sidebar = site.data.guides_nav %}
+
 {% elsif page.url contains "/examples/" %}
 {% assign sidebar = site.data.examples_nav %}
+
 {% elsif page.url contains "/reference/" %}
 {% assign sidebar = site.data.reference_nav %}
+
 {% endif %}
 {% include section_nav_btn.html %}
 {% include section_nav_side.html %}
