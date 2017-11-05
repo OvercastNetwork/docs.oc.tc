@@ -209,7 +209,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
           </span>
         </td>
         <td>
-          Phase of this map. Only maps with phase:`production` and edition:`standard` show up on the website.
+          Phase of this map. Only maps with phase `production` show up on the website.
         </td>
         <td>
           <code>development</code>
@@ -225,7 +225,7 @@ The maps version should follow the versioning schema `major.minor.patch`.
             <code>{{'<edition>' | escape_once}}</code>
           </span>
         </td>
-        <td>Edition of this map, describes which servers it is run on.</td>
+        <td>Edition of this map, describes which servers it is run on. Only maps with edition `standard` and/or phase `production` show up on the website.</td>
         <td>
           <code>standard</code>
           <code>ranked</code>
@@ -270,9 +270,9 @@ The maps version should follow the versioning schema `major.minor.patch`.
 <br/>
 
 #### Authors & Contributors {#authors_contributors}
-The authors and contributers elements provide information about who created and helped create the map. There can be multiple authors and contributors to a map. The contribution attribute should be used to specify what their contribution to the map was.
+The authors and contributors elements provide information about who created and helped create the map. There can be multiple authors and contributors to a map. The contribution attribute should be used to specify what their contribution to the map was.
 
-A players name should **not** be used to credit them, instead their UUID should be used. A UUID is a unique user identifier that is used to keep track of players even if they change their name. You can check player UUID's at [mcuuid.net](http://mcuuid.net). If an author or contributor is defined without a UUID that player will not get any mapmaker perks on the map.
+A players name should **not** be used to credit them, instead their UUID should be used. A UUID is a unique user identifier that is used to keep track of players even if they change their name. You can check player UUID's at [mcuuid.net](http://mcuuid.net). If an author or contributor is defined without a UUID that player will not get any mapmaker perks on the map. The mapmaker perks include being able to join the map as if they had a premium rank, and a designated map maker star.
 <h5>Author or Contributor Sub-elements</h5>
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>

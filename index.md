@@ -23,7 +23,7 @@ Almost every text editor can create and edit XML files, however editors designed
 
 We recommend that you use [Atom](https://atom.io/) to create and edit XML files.
 
-To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use. 
+To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use.
 
 ### Releasing Your Map
 Before releasing your map for testing, you must package your map following [these guidelines](/guides/packaging/cleaning_files).
@@ -56,7 +56,7 @@ All attributes or sub-elements for a element or module are listed in a table and
             </tr>
             <tr>
                 <td><code>color</code></td>
-                <td><span class="label label-danger">Required</span>This examples color.</td>
+                <td><span class="label label-danger">Required</span> This example's color.</td>
                 <td><a href="/reference/colors"> Dye Color Name</a></td>
                 <td></td>
             </tr>

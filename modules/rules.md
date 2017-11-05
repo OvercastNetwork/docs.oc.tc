@@ -51,5 +51,5 @@ You can use the rules module to add custom rules to your map that are not alread
 Example
 
     <rules>
-        <rule>Do not intentional prolong the match by hiding or exiting the playing area.</rule>
+        <rule>Do not intentionally prolong the match by hiding or exiting the playing area.</rule>
     </rules>
