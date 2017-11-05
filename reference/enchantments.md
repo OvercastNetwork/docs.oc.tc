@@ -6,7 +6,7 @@ title:  "Item Enchantments"
 
 ---
 
-Enchantments can be referenced by their Bukkit or [Minecraft](http://minecraft.gamepedia.com/Data_values#Enchantment_IDs) name.
+Enchantments can be referenced by their Bukkit or [Minecraft](https://minecraft.gamepedia.com/Java_Edition_data_values#Enchantment_IDs) name.
 Bukkit enchantment names are not case sensitive and a space can be used instead of an underscore.
 
 `NOTE:`  PGM allows enchantments to be applied to any item regardless if the enchant was intended for it or not.
@@ -238,6 +238,18 @@ Bukkit enchantment names are not case sensitive and a space can be used instead 
         </td>
         <td>Provides a chance of gaining extra loot when killing monsters.</td>
       </tr>
+      <tr>
+        <td>
+          22
+        </td>
+        <td>
+          <code>SWEEPING_EDGE</code>
+        </td>
+        <td>
+          <code>sweeping</code>
+        </td>
+        <td>Increases damage against targets when using a sweep attack.</td>
+      </tr>	  
       <tr>
         <td>
           32

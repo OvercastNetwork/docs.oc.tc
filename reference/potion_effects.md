@@ -9,7 +9,7 @@ title:  "Potion Effects"
 <div class='alert alert-danger'>
   <h4>Obsolete - Don't use these</h4>
   Use
-  <a href='http://minecraft.gamepedia.com/Data_values#Status_effects'>Status Effect IDs</a>
+  <a href='https://minecraft.gamepedia.com/Java_Edition_data_values#Status_effects'>Status Effect IDs</a>
   instead
 </div>
 <div class='table-responsive'>
