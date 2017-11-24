@@ -23,7 +23,7 @@ Almost every text editor can create and edit XML files, however editors designed
 
 We recommend that you use [Atom](https://atom.io/) to create and edit XML files.
 
-To keep your XML file clean & readable you should indent lines using 4 spaces and only specify elements or attributes you intend to use.
+To keep your XML file clean, consistent, & readable you should follow the [XML Conventions](http://docs.stratus.network/guides/xml_conventions) and only specify elements or attributes you intend to use.
 
 ### Releasing Your Map
 Before releasing your map for testing, you must package your map following [these guidelines](/guides/packaging/cleaning_files).
