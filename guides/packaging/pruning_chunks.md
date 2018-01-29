@@ -81,8 +81,8 @@ title:  "Pruning Chunks"
 <br/>
 <i>
   Thanks to
-  <a href='https://oc.tc/Plastix' target='_blank'>Plastix</a>
+  <a href='https://stratus.network/Plastix' target='_blank'>Plastix</a>
   and
-  <a href='https://oc.tc/Timothee38' target='_blank'>Timothee38</a>
+  <a href='https://stratus.network/Timotheeee' target='_blank'>Timotheeee</a>
   for the images!
 </i>
