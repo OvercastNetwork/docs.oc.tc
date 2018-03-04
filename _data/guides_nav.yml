@@ -17,6 +17,3 @@ content:
   - "Physical"
   - path: "/guides/plugins"
     name: "Recommended Plugins"
-  - "Miscellaneous"
-  - path: "/guides/cloudy"
-    name: "Cloudy"
