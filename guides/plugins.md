@@ -51,3 +51,20 @@ Multiverse-Core is maintained by the [Multiverse Team](https://github.com/Multiv
 
 - An [End-user documentation](https://github.com/Multiverse/Multiverse-Core/wiki) for plugin abilities
 
+NBTEditor
+-
+[<span class='label label-success'>Download</span>](https://dev.bukkit.org/projects/nbteditor) **NBTEditor** allows easy customization of many aspects of Minecraft, through the modification of NBT tags, with a user friendly interface. If you want to customize your items, blocks, and special tiles, this plugin is recommended.
+
+    - Customization of entities and spawners
+    - Turn entities into '/summon' commands
+    - Customization of items (including potions, leather armor, player heads, etc.)
+    - Enchanting of items, with no limits
+    - Turn items into '/give' commands
+    - Edit beacons, command blocks and other special tiles
+    - Turn tiles into '/setblock' commands
+    - *and more...*
+
+NBTEditor is maintained by the [goncalomb](https://dev.bukkit.org/members/goncalomb), and provides:
+
+- A [command documentation](https://github.com/goncalomb/NBTEditor/wiki/Commands) for plugin abilities
+- A [FAQ page](https://github.com/goncalomb/NBTEditor/wiki/FAQ) to troubleshoot common problems with the plugin
