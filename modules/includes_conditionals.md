@@ -42,61 +42,61 @@ The master map repository contains the following pre-made XML files for you to u
     <tbody>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/tutorial.xml'>tutorial.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/tutorial.xml'>tutorial.xml</a>
         </td>
         <td>Contains the starting and ending stages of a tutorial</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/continuity-tnt.xml'>continuity-tnt.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/continuity-tnt.xml'>continuity-tnt.xml</a>
         </td>
         <td>Contains a pre-designed TNT inventory, used on maps such as BoomBox</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/blasternauts.xml'>blasternauts.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/blasternauts.xml'>blasternauts.xml</a>
         </td>
         <td>Contains the base XML for an arcade gamemode called 'blasternauts'</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Blitz/blitz-global.xml'>blitz-global.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/blitz-global.xml'>blitz-global.xml</a>
         </td>
         <td>Contains the autorespawn mechanism for blitz maps</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Blitz/GS/gs.xml'>gs.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Blitz/GS/gs.xml'>gs.xml</a>
         </td>
         <td>Contains pre-made classes for the Ghost Squadron gamemode</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Blitz/GS/gs-ffa.xml'>gs-ffa.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Blitz/GS/gs-ffa.xml'>gs-ffa.xml</a>
         </td>
         <td>Contains pre-made teams for the Ghost Squadron FFA gamemode</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/stamina.xml'>stamina.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/stamina.xml'>stamina.xml</a>
         </td>
         <td>Contains the default settings for the stamina module</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Include/skywars.xml'>skywars.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/skywars.xml'>skywars.xml</a>
         </td>
         <td>Contains the base XML for Skywars</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Include/block-runner.xml'>block-runner.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/block-runner.xml'>block-runner.xml</a>
         </td>
         <td>Contains the base XML for an arcade gamemode called 'block runner'</td>
       </tr>
       <tr>
         <td>
-          <a href='https://maps.oc.tc/Include/disable-boat-crafting.xml'>disable-boat-crafting.xml</a>
+          <a href='https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/disable-boat-crafting.xml'>disable-boat-crafting.xml</a>
         </td>
         <td>Contains XML that disables boat crafting of any kind</td>
       </tr>
