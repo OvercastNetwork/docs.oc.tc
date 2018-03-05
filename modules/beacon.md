@@ -63,8 +63,9 @@ Beacons are used to signify important locations, such as objectives. They can al
         <td>
           <code>location</code>
         </td>
-        <span class='label label-danger'>Required</span>
-        <td>A vector location that specifies where the beam spawns.</td>
+        <td>
+          <span class='label label-danger'>Required</span>
+          A vector location that specifies where the beam spawns.</td>
         <td>
           <span class='label label-primary'>X,Y,Z</span>
         </td>
@@ -75,11 +76,13 @@ Beacons are used to signify important locations, such as objectives. They can al
           <code>color</code>
         </td>
         <td>
-          <span class='label label-danger'>Required</span>
           The dye color used to assign the beam's color.
         </td>
         <td>
           <span class='label label-primary'>Dye Color</span>
+        </td>
+        <td>
+          white
         </td>
         <td></td>
       </tr>
