@@ -37,6 +37,8 @@ content:
     name: "Destroy the Monument"
   - path: "/modules/gamemode_dtc"
     name: "Destroy the Core"
+  - path: "/modules/gamemode_payload"
+    name: "Payload"
   - path: "/modules/monument_modes"
     name: "Monument Modes"
   - path: "/modules/gamemode_blitz"
