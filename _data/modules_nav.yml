@@ -21,6 +21,8 @@ content:
     name: "World Border"
   - path: "/modules/mobs"
     name: "Mob Spawning"
+  - path: "/modules/beacon"
+    name: "Beacons"
   - "Format"
   - path: "/modules/players"
     name: "Players (free-for-all)"
