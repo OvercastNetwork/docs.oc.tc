@@ -68,3 +68,25 @@ NBTEditor is maintained by the [goncalomb](https://dev.bukkit.org/members/goncal
 
 - A [command documentation](https://github.com/goncalomb/NBTEditor/wiki/Commands) for plugin abilities
 - A [FAQ page](https://github.com/goncalomb/NBTEditor/wiki/FAQ) to troubleshoot common problems with the plugin
+
+Armor Stand Tools
+-
+[<span class='label label-success'>Download</span>](https://www.spigotmc.org/resources/armor-stand-tools.2237/) **Armor Stand Tools** allows simple creation of armor stands for decorative, and/or informative purposes (such as creating "holograms".) If you want to add holograms or armor stands dressed as people, this plugin is recommended.
+
+    - Summon armor stands.
+    - Name armor stands.
+    - Toggle: Gravity, Visibility, Arms, Base, Size, Invulnerability, Equipment Lock.
+    - Manipulate the x/y/z rotations of the Head, Body, Arms and Legs. The value depends on how high up the armor stand's body you click with the tool (i.e. click near the feet is one extreme, near the top of the head is the other extreme).
+    - Full control over armor stand's inventory (armor & items in hands).
+    - Pick up and move armor stands.
+    - Armor stand cloning tool.
+    - Save tool: Automatically generate a command block with the command to summon that armor stand in its current state.
+    - Player head tool: Give an armor stand the head of a specific player.
+    - WorldGuard region support.
+    - Customizable language config file.
+    - Assign commands to armor stands that are run when a player right clicks that armor stand (see below).
+
+Armor Stand Tools is maintained by [St3venAU](https://www.spigotmc.org/resources/authors/st3venau.24889/), and provides:
+
+- A [command documentation](https://www.spigotmc.org/resources/armor-stand-tools.2237/) for plugin abilities (scroll down)
+- [Translatable components](https://www.spigotmc.org/resources/armor-stand-tools.2237/) for users to localize the plugin to their fitting (scroll down)
