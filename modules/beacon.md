@@ -116,6 +116,6 @@ Beacons are used to signify important locations, such as objectives. They can al
 Example
 
     <beacons>
-          <beacon location=�4.5,4.0,-21.5� color=�blue� particle-count=�200� visibility-filter=�iamafilter�/>
-          <beacon location=�14.5,4.0,-21.5� color=�red�/>
+          <beacon location="4.5,4.0,-21.5" color="blue" particle-count="200" visibility-filter="iamafilter"/>
+          <beacon location="14.5,4.0,-21.5" color="red"/>
     </beacons>
