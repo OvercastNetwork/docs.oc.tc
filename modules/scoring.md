@@ -101,7 +101,7 @@ The score module can be used to give matches a score limit and modify how many p
           A single score box.
         </td>
         <td>
-          <a href='#score_box'>Score Box</a>
+          <a href='#score_boxes'>Score Box</a>
         </td>
         <td></td>
       </tr>
