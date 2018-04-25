@@ -12,7 +12,7 @@ The text in broadcasts can be formatted by using [formatting codes](/reference/f
 
 <span class="label label-warning">Note!</span>
 This module should **only** be used to to show important information that is **specific** and **unique** to the map.
-It should not be used to for generic OCN related messages.
+It should not be used to for generic Stratus related messages.
 
 <div class='table-responsive'>
   <table class='table table-striped table-condensed'>
