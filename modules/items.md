@@ -399,7 +399,7 @@ Player heads can be given to players by using the heads element.
 A player's skin data can be found by using `https://sessionserver.mojang.com/session/minecraft/profile/(UUID)`
 There is a limit of one request a minute for each UUID so be sure to copy the data the first time.
 
-    <head name="Cubist" uuid="3fbec7dd0a5f40bf9d11885a54507112">
+    <head name="Cubist" uuid="3fbec7dd-0a5f-40bf-9d11-885a54507112">
         <skin>eyJ0aW1lc3RhbXAiOjE0NDY0MDgwOTExNzQsInByb2ZpbGVJZCI6IjNmYmVjN2RkMGE1ZjQwYmY5ZDExODg1YTU0NTA3MTEyIiwicHJvZmlsZU5hbWUiOiJDdWJpc3QiLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTRlZGExMjg4NWIzYmE2ZGY2ODMyZGZkMTIzNGEyNjc5MmQwNDI2ZDkyMDM2ZWVlYzc1M2ZiZmM2NmRiIn19fQ==</skin>
     </head>
 <h5>
