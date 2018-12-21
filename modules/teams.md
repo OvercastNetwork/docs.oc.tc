@@ -157,6 +157,17 @@ It is common for maps to only have 2 teams, although more are possible it usuall
           <span class='label label-primary'>Number</span>
         </td>
       </tr>
+      <tr>
+        <td>
+          <code>lives</code>
+        </td>
+        <td>
+          Specify the amount of lives shared amongst the team. This is an alternative way to restrict the number of lives players have, much like the <a href='/modules/gamemode_blitz'>blitz module</a>.
+        </td>
+        <td>
+          <span class='label label-primary'>Number</span>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
