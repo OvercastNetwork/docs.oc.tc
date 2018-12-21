@@ -11,7 +11,7 @@ Each player has a limited amount of lives, and after they are used up the player
 The match ends after the specified amount of time, or when one team is eliminated.
 If the match timer ends before a team is eliminated the team with the most players remaining wins.
 
-The blitz module is used with the [Ghost Squadron](/modules/gamemode_other#gs) gamemode, and is also often combined with the [rage](/modules/gamemode_other#rage) module.
+The blitz module is often combined with the [rage](/modules/gamemode_other#rage) module.
 
 Blitz maps should include the [global blitz XML](https://github.com/OvercastNetwork/maps.oc.tc/blob/master/Include/blitz-global.xml) file.
 
