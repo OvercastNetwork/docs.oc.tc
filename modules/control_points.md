@@ -300,7 +300,7 @@ Control point give a certain amount of point to the team currently holding it. O
           false
         </td>
         <td>
-          true
+          false
         </td>
       </tr>
       <tr>
