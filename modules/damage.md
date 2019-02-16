@@ -14,7 +14,8 @@ nav_content:
     name: "Damage Filtering"
   - path: "#disable"
     name: "Disable Damage"
-
+  - path: "#causes"
+    name: "Damage Causes"
 ---
 
 ### Friendly Fire
@@ -194,7 +195,7 @@ Example
 
 <br/>
 
-### Damage Causes
+### Damage Causes {#causes}
 The following damage causes can be used in the disable damage module.
 These causes do not need to be capitalized or contain underscores, i.e., `FIRE_TICK` and `fire tick` will both work.
 
