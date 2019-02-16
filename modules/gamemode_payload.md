@@ -208,6 +208,18 @@ Players have to push a Minecart (known as a "Payload") to the end of their track
   </table>
 </div>
     <payloads time-multiplier="0.25" capture-time="4s" recovery="4" decay="7" empty-decay="1">
-         <payload name="Payload" id="payload" spawn-location="0.5,22.0,0.5" location="59.5,22.0,33.5" radius="3" yaw="180.0" owner="blue-team" neutral-state="false" capture-rule="majority" enemy-speed="1.25" friendly-speed="1.25" required="false" friendly-points="1" points="1" checkpoint-material="activator rail" friendly-checkpoints="true"/>
-
+         <payload name="Payload" id="payload" spawn-location="0.5,22.0,0.5" location="59.5,22.0,33.5" 
+                  radius="3" 
+                  yaw="180.0" 
+                  owner="blue-team" 
+                  neutral-state="false" 
+                  capture-rule="majority" 
+                  enemy-speed="1.25" 
+                  friendly-speed="1.25" 
+                  required="false" 
+                  friendly-points="1" 
+                  points="1" 
+                  checkpoint-material="activator rail" 
+                  friendly-checkpoints="true"
+          />
     </payloads>
