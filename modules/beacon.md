@@ -108,7 +108,7 @@ Beacons are used to signify important locations, such as objectives. They can al
            Filters whether or not a player can see it.
         </td>
         <td>
-          <span class='label label-primary'>Filter</span>
+          <a href='/modules/filters'>Filter</a>
         </td>
         <td></td>
       </tr>
