@@ -435,7 +435,7 @@ chests to be filled, then you will have to prevent that somehow.
   </table>
 </div>
 
-### Examples {examples}
+### Examples {#examples}
 
     <lootables>
         <!-- Define a procedural list of loot -->
