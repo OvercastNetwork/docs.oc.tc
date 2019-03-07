@@ -40,7 +40,7 @@ We decided this would also be useful to you guys to ensure you meet what we are 
 Modules must all start on column one. This means that all children tags under the `<map>` tag must be aligned with said `<map>` tag.
 
     <?xml version="1.0"?>
-    <map proto="1.4.0">
+    <map proto="1.4.2">
     <name>Blocks DTC</name>
     <version>1.3.4</version>
     <objective>Leak lava from the enemy's obsidian core.</objective>
@@ -50,7 +50,7 @@ Modules must all start on column one. This means that all children tags under th
 Modules that have sub elements such as the `author` tag must be indented with 4 spaces below the parent element.
 
     <?xml version="1.0"?>
-    <map proto=”1.4.0">
+    <map proto=”1.4.2">
     <authors>
         <author uuid="060baa18-2852-40d8-afcb-e61607c04be3"/> <!-- PepsiDog -->
     </authors>
@@ -61,7 +61,7 @@ There should be no white spaces between modules. That means the end of one modul
 
     <!-- Correct -->
     <?xml version="1.0"?>
-    <map proto="1.4.0">
+    <map proto="1.4.2">
     <name>Blocks DTC</name>
     <version>1.3.4</version>
     <objective>Leak lava from the enemy's obsidian core.</objective>
@@ -71,7 +71,7 @@ There should be no white spaces between modules. That means the end of one modul
     <!-- Incorrect! -->
     <?xml version="1.0"?>
 
-    <map proto="1.4.0">
+    <map proto="1.4.2">
 
     <name>Blocks DTC</name>
 
@@ -99,7 +99,7 @@ There are 6 modules that make up the maps definition. They should all be placed 
 NOTE: Contributors are optional but are still to remain at the top.
 
     <?xml version="1.0"?>
-    <map proto="1.4.0">
+    <map proto="1.4.2">
     <name>Blocks DTC</name>
     <version>1.3.4</version>
     <objective>Leak lava from the enemy's obsidian core.</objective>
@@ -112,7 +112,7 @@ NOTE: Contributors are optional but are still to remain at the top.
     </map>
 
 ##### 2.2 The Protocol
-All maps being added to the repository should use the most up to date protocol.
+All newly submitted maps must use the `1.4.0` protocol or above.
 
 ##### 2.3 Authors and Contributors
 An author using a uuid definition should have an inline comment to denote the players IGN.
