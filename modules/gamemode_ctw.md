@@ -184,9 +184,7 @@ Players have to retrieve wool blocks from the enemy teams side of the map and th
         <td>
           <span class='label label-primary'>Proximity Metric</span>
         </td>
-        <td>
-          <code>closest kill</code>
-        </td>
+        <td></td>
       </tr>
       <tr>
         <td>
