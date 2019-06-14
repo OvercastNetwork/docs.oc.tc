@@ -107,6 +107,18 @@ This is used with [conditionals](/modules/includes_conditionals#conditionals) to
         </td>
         <td>false</td>
       </tr>
+      <tr>
+        <td>
+          <code>remove-36</code>
+        </td>
+        <td>
+          Removes <a href='/reference/inventory#material_finder'>block 36</a> prior to loading a map if set to true.
+        </td>
+        <td>
+          <span class='label label-primary'>true/false</span>
+        </td>
+        <td>false</td>
+      </tr>
     </tbody>
   </table>
 </div>
